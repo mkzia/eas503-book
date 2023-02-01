@@ -5,7 +5,7 @@
   - To understand what is a program.
   - To understand what is a programming language.
   - To learn about the features of Python.
-  - To being using Python.
+  - To begin using Python.
 
 
 ## Computers
