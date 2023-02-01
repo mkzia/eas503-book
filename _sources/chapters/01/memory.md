@@ -9,17 +9,17 @@ kernelspec:
   language: python
   name: python3
 ---
-
+ 
 # Memory management in Python
-The memory model for understanding how variables are stored in Python is different from other programming languages. In most programming languages, variables can be thought of as a named storage location in computer memory, a box that we can put a value in. When the variable change,s the old value is erased and a new one written in. 
+The memory model for understanding how variables are stored in Python is different from other programming languages. In most programming languages, variables can be thought of as a named storage location in computer memory, a box that we can put a value in. When the variable changes the old value is erased and a new one written in. 
 
 ![mem_model1](./mem_model1.png)
 
-In Python, values may end up anywhere in memory, and variables are used to refer to them. Assigning a variable is like putting one of those little yellow sticky notes on teh value and saying, "this is x." This is memory model is called the sticky-note model. 
+In Python, values may end up anywhere in memory, and variables are used to refer to them. Assigning a variable is like putting one of those little yellow sticky notes on the value and saying, "this is x." This memory model is called the sticky-note model. 
 
 ![mem_model2](./mem_model2.png)
 
-What happens when execute the following statement?
+What happens when we execute the following statement?
 
 ```
 <<variable>> = <<expression>>

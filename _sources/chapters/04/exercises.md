@@ -63,7 +63,7 @@ print("\nThe solutions are:", root1, root2)
 ```
 
 ## Exercise 4 
-Modify ex3 to add conditionals to print no real roots, double root, roots
+Modify ex3 to add conditionals to print no real roots, double root, roots.
 
 
 ```{code-cell} ipython3
@@ -89,7 +89,7 @@ else:
 ```
 
 ## Exercise 5
-Prompt user for three  numbers and find the maximum value
+Prompt user for three  numbers and find the maximum value.
 
 
 ```{code-cell} ipython3
@@ -110,7 +110,7 @@ print(maxval)
 
 ## Exercise 6 
 Write a program to prompt the user for their user name. 
-If it is 'jdoe', print a log in allowed message; otherwise, print another message
+If it is 'jdoe', print a log in allowed message; otherwise, print another message.
 
 
 ```{code-cell} ipython3
@@ -124,7 +124,7 @@ else:
 ```
 
 ## Exercise 7 
-Modify ex6 to only allow login if the user is active
+Modify ex6 to only allow login if the user is active.
 
 
 ```{code-cell} ipython3
@@ -148,7 +148,7 @@ else:
 
 
 ## Exercise 8 
-Write a program to prompt the user for name and check if it is john or jane
+Write a program to prompt the user for name and check if it is john or jane.
 
 
 
@@ -169,7 +169,7 @@ elif name == 'jane'.lower():
 ```
 
 ## Exercise 9
-Write a program that only allows a user to log in if they are a superuser or if they are are teach and active
+Write a program that only allows a user to log in if they are a superuser or if they are a teacher and active.
 
 
 ```{code-cell} ipython3

@@ -27,7 +27,7 @@ Welcome to EAS503! EAS503 is a course taught in the Department of Engineering & 
 - Individual Mini-Projects (3) - 30%
 
 ## Exam
-The first exam will be on Friday, February 17, 20235:00 PM - 8:00 PM EAS 503 in Knox 20. The exam will be administered via UB Learns, but you must be in class to take it. Ensure your computer battery can last for three hours. Knox 20 has limited charging ports. 
+The first exam will be on Monday, February 20, 20235:00 PM - 8:00 PM EAS 503 in Nsc 225. The exam will be administered via UB Learns, but you must be in class to take it. Ensure your computer battery can last for three hours. Nsc 225 has limited charging ports. 
 
 ## Quizzes
 30-minute paper quizzes will be given at the beginning of class. 

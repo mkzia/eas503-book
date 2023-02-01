@@ -59,27 +59,17 @@ elif ph > 7.0:
 
 ```python
 ph = float(input('Enter the pH level: '))
-if ph < 7.0:
+if ph < 7.0
     ph = 8.0 #indentation important
-
 if ph > 7.0:
     print(ph, " is basic.") 
 ```
 
-
 ```python
 ph = float(input('Enter the pH level: '))
 if ph < 7.0:
     ph = 8.0  #indentation important
-elif ph > 7.0:
-    print(ph, " is basic.") 
-```
-
-
-```python
-ph = float(input('Enter the pH level: '))
-if ph < 7.0:
-    ph = 8.0  #indentation important
+    print(ph, " is basic.") #
 elif ph > 7.0:
     print(ph, " is basic.") 
 ```
@@ -94,8 +84,6 @@ elif compound == 'CH4':
     print('Methane')
 else:
     print('Unknown compound')
-
-
 ```
 
 
@@ -113,7 +101,6 @@ if len(value) > 0:
 
 else:
     print('No pH value was given!')
-
 ```
 
 
@@ -167,6 +154,9 @@ if ph < 7.0:
 elif ph < 3.0:
     print(ph, ' is VERY acidic! Be careful.')
 ```
+
+- Given a number x, print FizzBuzz if it is a multiple of 5 and 7, Fizz if it is a multiple of 5, and Buzz if it is a multiple of 7. 
+
 
 ```python
 # Implement the min() function for three inputs

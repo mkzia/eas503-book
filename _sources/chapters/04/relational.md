@@ -12,18 +12,18 @@ kernelspec:
 
 
 # Relational Operators
-- A relational operator converts a conditional into a boolean, which is a basic Python data type.
+- A relational operator converts an expression into a boolean type, which is a basic Python data type.
 
 - Assume `a=1` and `b=1`
 
 | Relational Operators | What it does?                                | Example       |
 |----|---------------------------------------------|---------------|
-| == | True if a has the same value as b           | a == b #True  |
-| != | True if a does not have the same value as b | a != b #False |
-| >  | True if a is greater than b                 | a > b # False |
-| <  | True if a is less than b                    | a < b # False |
-| >= | True if a is greater than or equal to b     | a >= b # True |
-| <= | True if a is less than or equal to b        | a <= b # True |
+| == | True if a has the same value as b           | a == b (True)  |
+| != | True if a does not have the same value as b | a != b (False) |
+| >  | True if a is greater than b                 | a > b (False) |
+| <  | True if a is less than b                    | a < b (False) |
+| >= | True if a is greater than or equal to b     | a >= b (True) |
+| <= | True if a is less than or equal to b        | a <= b (True) |
 
 - These operators evaluate to True or False depending on the values you give them.
 - Conditionals are used to instruct computer to make a decision. 

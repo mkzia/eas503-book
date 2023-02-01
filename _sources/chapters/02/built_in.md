@@ -12,7 +12,7 @@ kernelspec:
 
 # Built-in functions
 
-`abs(-9)` -- `-9` is the argument. Arguments appear between the parenthesis after the function name. Arguments are evaluated left to right.
+`abs(-9)`: `-9` is the argument. Arguments appear between the parenthesis after the function name. Arguments are evaluated left to right.
 
 ```{code-cell} ipython3
 day_temperature = 3

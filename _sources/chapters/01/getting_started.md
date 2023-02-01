@@ -12,7 +12,7 @@
 - A modern computer can be defined as "a machine that **stores** and **manipulates** information
 under the control of a **changeable program**."
 
-- **manipulation** means to to transform information into new, useful forms, and then store, output,
+- **manipulation** means to transform information into new, useful forms, and then store, output,
 or display information for our interpretation. 
   - Examples
     - Find students with highest and lowest GPA
@@ -26,11 +26,11 @@ or display information for our interpretation.
 - A computer program is a detailed step-by-step set of instructions telling a computer exactly what to do.
 
 - If we **change** the program, then the computer performs a different sequence of actions, and hence, performs
-a different tasks. 
+a different task. 
 
 - A program is written in terms of a few basic operations that its reader already understands. Using these few basic operations, you can "teach" a computer new operations by defining them in terms of the basic operations.
-  - Example: Computers understand the addition and division operator, which are the basic mathematical operators. You can teach the computer to calculate the average by using the addition and division operator by instruction the computer to add all the numbers in a sequence and divide by the size of the sequence. 
-  - Example: You can then use the new average operation and combine with other operations to create more operations. It’s a lot like creating life by putting atoms together to make proteins and then combining proteins to build cells, combining cells to make organs, and combining organs to make a creature.
+  - Example: Computers understand the addition and division operator, which are the basic mathematical operators. You can teach the computer to calculate the average by using the addition and division operator by instructing the computer to add all the numbers in a sequence and divide by the size of the sequence. 
+  - Example: You can then use the new average operation and combine with other operations to create more operations. It is a lot like creating life by putting atoms together to make proteins and then combining proteins to build cells, combining cells to make organs, and combining organs to make a creature.
   Defining new operations and combining them to do useful things is the heart and soul of programming.
 
 - Every computer is just a machine for executing (carrying out) programs.
@@ -53,9 +53,9 @@ a different tasks.
 - These special notations are called "programming languages."
 - Similar to natural languages, there are many programming languages. But they all are instructions that a machine
 can understand. Programming languages can also look different. For example `3 + 4` in Python means add three to four. This same
-instruction in Schema is express as `(+ 3 4)`.  They are both express the same idea-- they just look different. 
+instruction in Schema is express as `(+ 3 4)`.  They are both expressing the same idea-- they just look different. 
 - Every programming language has a way to write mathematical expressions, repeat instructions a number of times, choose which instructions based on the current information you have, and much more.
-- Programming languages take a high-level human readable language expression such as `c = a + b` and translates to machine language that the computer can execute.
+- Programming languages take a **high-level** language, which are  human readable language expressions such as `c = a + b`, and translates to machine language that the computer can execute.
 - Machine language consists of actual instructions to CPUs. For adding two numbers, the CPU instructions might looking something like this:
 ```text
 load the number from memory location 2001 into the CPU

@@ -17,7 +17,7 @@ kernelspec:
 - So far we have only written small programs that are a sequence of instructions. Sometimes you have to alter the sequential flow of a program to suit the needs of a particular situation.
 
 ## Boolean Type
-- Python has a built-in Boolean type called `bool`. Unlike `int` and `float`, which can have almost unlimited possible values, `bool` has only two: `True` and `False`. `True` and `False` are values just like 0 and -43.7. 
+- Python has a built-in Boolean type called `bool`. Unlike `int` and `float`, which can have almost unlimited possible values, `bool` has only two: `True` and `False`. 
 
 ## Boolean Operators
 - There are three basic Boolean operators: `and`, `or`, and `not`. `not` has the highest precedence, followed by `and`, followed by `or`. 

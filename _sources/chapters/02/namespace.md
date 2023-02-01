@@ -12,7 +12,7 @@ kernelspec:
 
 # Namespace and Scope
 
-**Namespace**: an association between identifiers and the things they they represent in a program. In Python, modules, classes, and objects act as namespaces. 
+**Namespace**: an association between identifiers and the things they represent in a program. In Python, modules, classes, and objects act as namespaces. 
 
 **Scope**: The area of a program where a given variable maybe reference. For examples, variables defined in functions are said to have local scope. 
 
