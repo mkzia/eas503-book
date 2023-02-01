@@ -43,10 +43,6 @@ int(-4.3)
 float(21)
 ```
 
-```{code-cell} ipython3
-str(21)
-```
-
 The Round function can round floats
 ```{code-cell} ipython3
 str(21)

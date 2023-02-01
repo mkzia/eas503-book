@@ -23,8 +23,7 @@ def f(x):
 
 ```python
 def f(x):
-    squared_x = x ** 2
-    return squared_x
+    return x ** 2
 ```
 
 ```python
@@ -55,7 +54,7 @@ convert_to_celsius(80)
   - A function definition is a kind of Python statement. The general form of a function definition is as follows:
   ```
     def <<function_name>>(<<parameters>>):
-    <<block>>
+        <<block>>
   ```
 - What is a function header? First line of function definition.
 - What is a function body? What comes after the function definition and is indented by four spaces. 

@@ -46,7 +46,7 @@ An **IndentationError** is a type of **SyntaxError** that occurs when the indent
 
 ```python
 def convert_celsius_to_fahrenheit(degrees_in_celsius):
-    f = 9 / 5 * degrees_celsius + 32
+    f = 9 / 5 * degrees_in_celsius + 32
   return 
 ```
 

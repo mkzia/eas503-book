@@ -23,7 +23,7 @@ Variables names **MUST** follow certain rules and it is **BEST** to follow Pytho
 3. Symbols cannot be used in name `(@,+)`.
 4. Do not use Python keywords or reserved words such as `print`, `str`, `int`, `float`.
  - `int = 3` do `del int` to restore python keyword
- - `print = Yah` do `del print` to restore Python keyword
+ - `print = 'Yah'` do `del print` to restore Python keyword
 
 ## Conventions for variable names:
 1. Use snake_case not camelCase for variable and function names.
@@ -55,7 +55,7 @@ degrees_celsius = 15.5
 9 / 5 * degrees_celsius + 32
 ```
 
-## Python Reserved Keywords
+## Python Keywords
 
 ```text
 False      await      else       import     pass

@@ -27,7 +27,7 @@ Welcome to EAS503! EAS503 is a course taught in the Department of Engineering & 
 - Individual Mini-Projects (3) - 30%
 
 ## Exam
-The first exam will be on Monday, February 20, 20235:00 PM - 8:00 PM EAS 503 in Nsc 225. The exam will be administered via UB Learns, but you must be in class to take it. Ensure your computer battery can last for three hours. Nsc 225 has limited charging ports. 
+The first exam will be on Monday, February 20, 2023 5:00 PM - 8:00 PM EAS 503 in Nsc 225. The exam will be administered via UB Learns, but you must be in class to take it. Ensure your computer battery can last for three hours. Nsc 225 has limited charging ports. 
 
 ## Quizzes
 30-minute paper quizzes will be given at the beginning of class. 
@@ -42,7 +42,7 @@ Quiz Dates:
 ## Programming Assignments
 - Descriptions for the programming assignments and necessary files will be posted on UB Learn.
 - You will submit your Python file on Gradescope. 
-- You have unlimited submissions/retires until the deadline 
+- You have unlimited submissions/retries until the deadline 
 - We will return the finalized programming assignment grades seven days after the deadline. We will announce via Piazza when the programming assignment grading has been completed. After this announcement, you have seven days to contest your grades. 
 - All programming assignments must be submitted on Gradescope. If you submit on UB Learns, your assignment will not be graded. 
 - The very first thing you should do when an assignment has been released, is to upload the template solution online. 
