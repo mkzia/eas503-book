@@ -201,32 +201,32 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/intro.html">
-     2.1. Introduction to Functions
+     2.1. Video Recording
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/built_in.html">
-     2.2. Built-in Functions
+     2.3. Built-in Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/user_defined.html">
-     2.3. User Defined Functions
+     2.4. User Defined Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/return.html">
-     2.4. Return Statement
+     2.5. Return Statement
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/namespace.html">
-     2.5. Namespace and Scope
+     2.6. Namespace and Scope
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/exercises.html">
-     2.6. Exercises
+     2.7. Exercises
     </a>
    </li>
   </ul>
@@ -301,6 +301,80 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../04/exercises.html">
      4.5. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/intro.html">
+   5. Lists and Tuples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/lists.html">
+     5.1. Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/methods.html">
+     5.2. List Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/tuples.html">
+     5.3. Tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/strings.html">
+     5.4. Strings as a List
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/intro.html">
+   6. Loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/loop.html">
+     6.1. for/while loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/for_loop_exercises.html">
+     6.2. For Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/while_loop_exercises.html">
+     6.3. While Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/modify_loop_exercises.html">
+     6.4. Modifying Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/comprehension.html">
+     6.5. List Comprehension
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/comprehension_exercises.html">
+     6.7. List Comprehension Exercises
     </a>
    </li>
   </ul>
@@ -530,42 +604,42 @@ the methods that are attached to string types.</p></li>
 <section id="strip-methods">
 <h2><span class="section-number">3.4.1. </span>Strip Methods<a class="headerlink" href="#strip-methods" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>strip</p></li>
-<li><p>lstrip</p></li>
-<li><p>rstrip</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">strip()</span></code> – Strip spaces on the left and right of string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lstrip()</span></code> – Strip spaces from the left of string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rstrip()</span></code> – Strip spaces from the right of string</p></li>
 </ul>
 </section>
 <section id="case-methods">
 <h2><span class="section-number">3.4.2. </span>Case Methods<a class="headerlink" href="#case-methods" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>islower</p></li>
-<li><p>isupper</p></li>
-<li><p>lower</p></li>
-<li><p>upper</p></li>
-<li><p>title</p></li>
-<li><p>capitalize</p></li>
-<li><p>swapcase</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">islower()</span></code> – Check if all alphabet characters are lower case</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isupper()</span></code> – Check if all alphabet characters are upper case</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">lower()</span></code> – Lower case the string; returns a new string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">upper()</span></code> – Upper case the string; returns a new string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">title()</span></code> – Make the first letter of each word upper case</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">capitalize()</span></code> – Make the first letter upper case</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">swapcase()</span></code> – Make upper case upper and upper case lower</p></li>
 </ul>
 </section>
 <section id="content-methods">
 <h2><span class="section-number">3.4.3. </span>Content Methods<a class="headerlink" href="#content-methods" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>isalpha</p></li>
-<li><p>isdecimal</p></li>
-<li><p>isdigit</p></li>
-<li><p>isnumeric</p></li>
-<li><p>isalnum</p></li>
-<li><p>startswith</p></li>
-<li><p>endswith</p></li>
-<li><p>find</p></li>
-<li><p>index</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isalpha()</span></code> – Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if all the characters are alphabet</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isdecimal()</span></code> – Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if all the characters are decimals (0-9)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isdigit()</span></code> – Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if all the characters are decimals (0-9)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isnumeric()</span></code> – Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if all the characters are digits; Note it supports exponents <code class="docutils literal notranslate"><span class="pre">'2\u00B3'</span></code> and fractions <code class="docutils literal notranslate"><span class="pre">'\u00BC'</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">isalnum()</span></code> – Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the string is alpha numeric</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">startswith()</span></code> – Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the string starts with the specific input argument</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">endswith()</span></code> – Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if the string ends with the specific input argument</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">find()</span></code> – Returns the index if the character is found; otherwise returns <code class="docutils literal notranslate"><span class="pre">-1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">index()</span></code> – Returns the index if the character is found; otherwise raises an error.</p></li>
 </ul>
 </section>
 <section id="modification-methods">
 <h2><span class="section-number">3.4.4. </span>Modification Methods<a class="headerlink" href="#modification-methods" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>replace</p></li>
-<li><p>split</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">replace()</span></code> – Replaces character(s) with other character(s); returns a new string</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">split()</span></code> – Splits a string; Default is space; <strong>Can specify how many times to split</strong></p></li>
 </ul>
 </section>
 </section>

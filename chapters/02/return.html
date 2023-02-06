@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.4. Return Statement &#8212; EAS503: Python for Data Scientists</title>
+    <title>2.5. Return Statement &#8212; EAS503: Python for Data Scientists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/02/return.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.5. Namespace and Scope" href="namespace.html" />
-    <link rel="prev" title="2.3. Defining your own functions" href="user_defined.html" />
+    <link rel="next" title="2.6. Namespace and Scope" href="namespace.html" />
+    <link rel="prev" title="2.4. Defining your own functions" href="user_defined.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -201,32 +201,32 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="intro.html">
-     2.1. Introduction to Functions
+     2.1. Video Recording
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="built_in.html">
-     2.2. Built-in Functions
+     2.3. Built-in Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="user_defined.html">
-     2.3. User Defined Functions
+     2.4. User Defined Functions
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.4. Return Statement
+     2.5. Return Statement
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="namespace.html">
-     2.5. Namespace and Scope
+     2.6. Namespace and Scope
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="exercises.html">
-     2.6. Exercises
+     2.7. Exercises
     </a>
    </li>
   </ul>
@@ -301,6 +301,80 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../04/exercises.html">
      4.5. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/intro.html">
+   5. Lists and Tuples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/lists.html">
+     5.1. Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/methods.html">
+     5.2. List Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/tuples.html">
+     5.3. Tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/strings.html">
+     5.4. Strings as a List
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/intro.html">
+   6. Loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/loop.html">
+     6.1. for/while loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/for_loop_exercises.html">
+     6.2. For Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/while_loop_exercises.html">
+     6.3. While Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/modify_loop_exercises.html">
+     6.4. Modifying Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/comprehension.html">
+     6.5. List Comprehension
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/comprehension_exercises.html">
+     6.7. List Comprehension Exercises
     </a>
    </li>
   </ul>
@@ -499,7 +573,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="return-statement">
-<h1><span class="section-number">2.4. </span>Return Statement<a class="headerlink" href="#return-statement" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.5. </span>Return Statement<a class="headerlink" href="#return-statement" title="Permalink to this headline">#</a></h1>
 <p>All functions return a value. If you do not have a <code class="docutils literal notranslate"><span class="pre">return</span></code> statement in a function, nothing is produced, but by default the <code class="docutils literal notranslate"><span class="pre">None</span></code> data type is returned.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -577,13 +651,13 @@ title="Print to PDF"
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.3. </span>Defining your own functions</p>
+            <p class="prev-next-title"><span class="section-number">2.4. </span>Defining your own functions</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="namespace.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.5. </span>Namespace and Scope</p>
+        <p class="prev-next-title"><span class="section-number">2.6. </span>Namespace and Scope</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

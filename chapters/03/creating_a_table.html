@@ -201,32 +201,32 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/intro.html">
-     2.1. Introduction to Functions
+     2.1. Video Recording
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/built_in.html">
-     2.2. Built-in Functions
+     2.3. Built-in Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/user_defined.html">
-     2.3. User Defined Functions
+     2.4. User Defined Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/return.html">
-     2.4. Return Statement
+     2.5. Return Statement
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/namespace.html">
-     2.5. Namespace and Scope
+     2.6. Namespace and Scope
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/exercises.html">
-     2.6. Exercises
+     2.7. Exercises
     </a>
    </li>
   </ul>
@@ -301,6 +301,80 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../04/exercises.html">
      4.5. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/intro.html">
+   5. Lists and Tuples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/lists.html">
+     5.1. Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/methods.html">
+     5.2. List Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/tuples.html">
+     5.3. Tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/strings.html">
+     5.4. Strings as a List
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/intro.html">
+   6. Loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/loop.html">
+     6.1. for/while loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/for_loop_exercises.html">
+     6.2. For Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/while_loop_exercises.html">
+     6.3. While Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/modify_loop_exercises.html">
+     6.4. Modifying Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/comprehension.html">
+     6.5. List Comprehension
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/comprehension_exercises.html">
+     6.7. List Comprehension Exercises
     </a>
    </li>
   </ul>
@@ -474,12 +548,36 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-to-a-file">
+   3.3.1. Writing to a file
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -491,6 +589,19 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#writing-to-a-file">
+   3.3.1. Writing to a file
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -535,6 +646,33 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<section id="writing-to-a-file">
+<h2><span class="section-number">3.3.1. </span>Writing to a file<a class="headerlink" href="#writing-to-a-file" title="Permalink to this headline">#</a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">with</span></code> context to manage closing file automatically.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;line1</span><span class="se">\n</span><span class="s1">line2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;|&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">{:^51}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Cereal Yields (kg/ha)&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;|&#39;</span>
+<span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">15</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">8</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span>
+<span class="n">row</span> <span class="o">=</span> <span class="s1">&#39;| </span><span class="si">{:&lt;13}</span><span class="s1"> |&#39;</span> <span class="o">+</span> <span class="s1">&#39; </span><span class="si">{:6,d}</span><span class="s1"> |&#39;</span><span class="o">*</span><span class="mi">4</span>
+<span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;| </span><span class="si">{:^13s}</span><span class="s1"> |&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39; </span><span class="si">{:^6d}</span><span class="s1"> |&#39;</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1980</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span>
+                                                                  <span class="mi">2000</span><span class="p">,</span> <span class="mi">2010</span><span class="p">)</span>
+<span class="n">file_content</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">title</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span>
+      <span class="n">title</span><span class="p">,</span>
+      <span class="n">line</span><span class="p">,</span>
+      <span class="n">header</span><span class="p">,</span>
+      <span class="n">line</span><span class="p">,</span>
+      <span class="n">row</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;China&#39;</span><span class="p">,</span> <span class="mi">2937</span><span class="p">,</span> <span class="mi">4321</span><span class="p">,</span> <span class="mi">4752</span><span class="p">,</span> <span class="mi">5527</span><span class="p">),</span>
+      <span class="n">row</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Germany&#39;</span><span class="p">,</span> <span class="mi">4225</span><span class="p">,</span> <span class="mi">5411</span><span class="p">,</span> <span class="mi">6453</span><span class="p">,</span> <span class="mi">6718</span><span class="p">),</span>
+      <span class="n">row</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">3772</span><span class="p">,</span> <span class="mi">4755</span><span class="p">,</span> <span class="mi">5854</span><span class="p">,</span> <span class="mi">6988</span><span class="p">),</span>
+      <span class="n">line</span><span class="p">))</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test_file2.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">file_content</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">

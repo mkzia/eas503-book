@@ -12,7 +12,7 @@ kernelspec:
 
 # Strings Basics
 
-- In Python, text is represented as a string, which is a sequence of characters (letters, digits, and symbols).
+- In Python, text is represented as a string, which is a **sequence** of characters (letters, digits, and symbols).
 - In Python, we indicate that a value is a string by putting either single or double quotes around it.
 
 ## Operations on Strings
@@ -25,7 +25,6 @@ kernelspec:
 
 
 ## Single Quotes vs Double Quotes
--
 ```python
 'Aristotle'
 "Issac Newton"
@@ -43,6 +42,12 @@ kernelspec:
 This is a string literal. 
         Spaces are printed as is. 
   Hello there!"""
+```
+
+## Printing in Python
+```python
+print('abbcd', 2, 3)
+print('abbcd', 2, 3, sep='\n') # default separator is space
 ```
 
 ## Determining the length of a string
@@ -89,16 +94,15 @@ float('-324.40')
 
 
 
-## Printing in Python
-```python
-print('abbcd', 2, 3)
-print('abbcd', 2, 3, sep='\n') # default separator is space
-```
-
-
 ## Getting information from the Keyboard
 ```python
 number = input('Please enter a number: ')
+```
+
+- Input returns a `str` data type. 
+
+```{warning}
+Input arguments to a function are not the same as the `input` function!
 ```
 
 ## Converting Numeric Values
@@ -116,5 +120,4 @@ def convert_celsius():
     fahrenheit = float(input('Please enter temperature in Fahrenheit: '))
     celsius =  (fahrenheit - 32.0) * 5.0 / 9.0  
     print('The temperature in celsius is: ', celsius) 
-
 ```

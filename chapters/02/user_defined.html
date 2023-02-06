@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.3. Defining your own functions &#8212; EAS503: Python for Data Scientists</title>
+    <title>2.4. Defining your own functions &#8212; EAS503: Python for Data Scientists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/02/user_defined.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.4. Return Statement" href="return.html" />
-    <link rel="prev" title="2.2. Built-in functions" href="built_in.html" />
+    <link rel="next" title="2.5. Return Statement" href="return.html" />
+    <link rel="prev" title="2.3. Built-in functions" href="built_in.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -201,32 +201,32 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="intro.html">
-     2.1. Introduction to Functions
+     2.1. Video Recording
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="built_in.html">
-     2.2. Built-in Functions
+     2.3. Built-in Functions
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.3. User Defined Functions
+     2.4. User Defined Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="return.html">
-     2.4. Return Statement
+     2.5. Return Statement
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="namespace.html">
-     2.5. Namespace and Scope
+     2.6. Namespace and Scope
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="exercises.html">
-     2.6. Exercises
+     2.7. Exercises
     </a>
    </li>
   </ul>
@@ -301,6 +301,80 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../04/exercises.html">
      4.5. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/intro.html">
+   5. Lists and Tuples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/lists.html">
+     5.1. Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/methods.html">
+     5.2. List Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/tuples.html">
+     5.3. Tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/strings.html">
+     5.4. Strings as a List
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/intro.html">
+   6. Loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/loop.html">
+     6.1. for/while loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/for_loop_exercises.html">
+     6.2. For Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/while_loop_exercises.html">
+     6.3. While Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/modify_loop_exercises.html">
+     6.4. Modifying Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/comprehension.html">
+     6.5. List Comprehension
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/comprehension_exercises.html">
+     6.7. List Comprehension Exercises
     </a>
    </li>
   </ul>
@@ -498,24 +572,24 @@ title="Print to PDF"
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#designing-new-functions-a-recipe">
-   2.3.1. Designing New Functions: A Recipe
+   2.4.1. Designing New Functions: A Recipe
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#practice">
-     2.3.1.1. Practice
+     2.4.1.1. Practice
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variations-in-functions">
-   2.3.2. Variations in functions
+   2.4.2. Variations in functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
-   2.3.3. Summary
+   2.4.3. Summary
   </a>
  </li>
 </ul>
@@ -539,24 +613,24 @@ title="Print to PDF"
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#designing-new-functions-a-recipe">
-   2.3.1. Designing New Functions: A Recipe
+   2.4.1. Designing New Functions: A Recipe
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#practice">
-     2.3.1.1. Practice
+     2.4.1.1. Practice
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#variations-in-functions">
-   2.3.2. Variations in functions
+   2.4.2. Variations in functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#summary">
-   2.3.3. Summary
+   2.4.3. Summary
   </a>
  </li>
 </ul>
@@ -570,7 +644,7 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="defining-your-own-functions">
-<h1><span class="section-number">2.3. </span>Defining your own functions<a class="headerlink" href="#defining-your-own-functions" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.4. </span>Defining your own functions<a class="headerlink" href="#defining-your-own-functions" title="Permalink to this headline">#</a></h1>
 <p>The built-in functions (e.g, type, print, input) that Python provides do basic tasks. We can write our own functions that can execute complicated sequence of instructions.</p>
 <p><a class="reference external" href="https://www.mathsisfun.com/sets/function.html">https://www.mathsisfun.com/sets/function.html</a></p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
@@ -617,7 +691,7 @@ title="Print to PDF"
 </ul>
 <p><img alt="def_call" src="../../_images/def_call.png" /></p>
 <section id="designing-new-functions-a-recipe">
-<h2><span class="section-number">2.3.1. </span>Designing New Functions: A Recipe<a class="headerlink" href="#designing-new-functions-a-recipe" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.4.1. </span>Designing New Functions: A Recipe<a class="headerlink" href="#designing-new-functions-a-recipe" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>What do you name the function?</p></li>
 <li><p>What are the parameters, and what types of information do they refer to?</p></li>
@@ -625,7 +699,7 @@ title="Print to PDF"
 <li><p>What information does the function return?</p></li>
 </ul>
 <section id="practice">
-<h3><span class="section-number">2.3.1.1. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.4.1.1. </span>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">#</a></h3>
 <ol class="simple">
 <li><p>Write a Python function that prints the following:</p></li>
 </ol>
@@ -690,7 +764,7 @@ Happy birthday to you!!!
 </section>
 </section>
 <section id="variations-in-functions">
-<h2><span class="section-number">2.3.2. </span>Variations in functions<a class="headerlink" href="#variations-in-functions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.4.2. </span>Variations in functions<a class="headerlink" href="#variations-in-functions" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>No input; no output; example – print something</p></li>
 <li><p>One or more input; no output; example – print the input</p></li>
@@ -699,7 +773,7 @@ Happy birthday to you!!!
 </ul>
 </section>
 <section id="summary">
-<h2><span class="section-number">2.3.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.4.3. </span>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>A function definition introduces a new variable that refers to a function object. The return statement describes the value that will be produced as a result of the function when this function is done being executed.</p></li>
 <li><p>A parameter is a variable that appears between the parentheses of a function header.</p></li>
@@ -742,13 +816,13 @@ Happy birthday to you!!!
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.2. </span>Built-in functions</p>
+            <p class="prev-next-title"><span class="section-number">2.3. </span>Built-in functions</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="return.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.4. </span>Return Statement</p>
+        <p class="prev-next-title"><span class="section-number">2.5. </span>Return Statement</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>

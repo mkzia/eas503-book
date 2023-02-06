@@ -12,7 +12,7 @@ kernelspec:
 
 # String Formatting
 
-The fastest and latest way to do string formatting is using the F-strings (https://realpython.com/python-f-strings/)
+The fastest and latest way to do string formatting is using the F-strings. 
 
 ```{code-cell} ipython3
   PI = 3.14159265359 
@@ -28,7 +28,7 @@ But you have to know the other ways so you can read older code or use these ways
 ```
 
 ## Newer Method
-Still used for creating string templates
+Still used for creating string templates.
 ```{code-cell} ipython3
 PI = 3.14159265359 
 name = 'PI'
@@ -37,7 +37,7 @@ print(('{0} is {1:.2f}'.format('PI', PI)) ) #
 ```
 
 ## Newest Method
-Newest and fastest method for string formatting
+Newest and fastest method for string formatting.
 ```{code-cell} ipython3
 PI = 3.14159265359 
 name = 'PI'

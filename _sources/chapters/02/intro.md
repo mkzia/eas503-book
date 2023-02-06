@@ -10,9 +10,12 @@ kernelspec:
   name: python3
 ---
 
+# Video Recording
+
+
 # Introduction to Functions
 
-A Functions is a small, self-contained sequence of statements/instructions that has a name. Example: convert Celsius to Fahrenheit
+A Functions is a small, self-contained sequence of statements/instructions that has a name. Example: a function to convert Celsius to Fahrenheit. Since the formula for converting from Celsius to Fahrenheit is always the same and the only variable is the temperature in Celsius, you can write a function that takes the temperature as an argument, perform the conversion, and then return the temperature in Fahrenheit. 
 
 What are the advantages of using functions?
   - Many programs require a particular sequence of statements/instructions to be executed repeatedly. The repeated statements/instructions can be placed with a single function, which can be accessed whenever needed. Therefore, they reduce repeated statements/instructions. 
@@ -28,10 +31,9 @@ def <<function_name>>(<<parameters>>):
     body
 ```
 
-```text
-Note the difference between parameters and arguments: Function parameters are the names listed in the function's definition. Function arguments are the real values passed to the function. Parameters are initialized to the values of the arguments supplied. 
+```{note}
+Note the difference between parameters and arguments: Function parameters are the names listed in the function's definition. Function arguments are the real values passed to the function. Parameters are initialized to the values of the arguments supplied.  [Reference](https://developer.mozilla.org/en-US/docs/Glossary/Parameter)
 ```
-[Reference](https://developer.mozilla.org/en-US/docs/Glossary/Parameter)
 
 In many programming languages, braces ({}) are used to enclose the contents of a function. In Python, however, a function body is distinguished from surrounding code by indenting all the function content by four spaces. 
 

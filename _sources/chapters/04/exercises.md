@@ -29,7 +29,7 @@ def ex1():
 Modify exercise 1 to print a message when F > 90 and F < 32
 
 ```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
+:tags: ["hide-input", "hide-output", "output_scroll"]
 celsius = float(input("What is the Celsius temperature? "))
 fahrenheit = 9/5 * celsius + 32
 print("The temperature is", fahrenheit, "degrees Fahrenheit.")
@@ -48,7 +48,7 @@ Prompt the user to the coefficients a, b, and c.
 
 
 ```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
+:tags: ["hide-input", "hide-output", "output_scroll"]
 import math
 print("This program finds the real solutions to a quadratic\n")
 a = float(input("Enter coefficient a: "))
@@ -67,7 +67,7 @@ Modify ex3 to add conditionals to print no real roots, double root, roots.
 
 
 ```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
+:tags: ["hide-input", "hide-output", "output_scroll"]
 import math
 print("This program finds the real solutions to a quadratic\n")
 a = float(input("Enter coefficient a: "))
@@ -93,7 +93,7 @@ Prompt user for three  numbers and find the maximum value.
 
 
 ```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
+:tags: ["hide-input", "hide-output", "output_scroll"]
 x = int(input("Enter a number: "))
 y = int(input("Enter another number: "))
 z = int(input("Enter enter a third number: "))
@@ -114,7 +114,7 @@ If it is 'jdoe', print a log in allowed message; otherwise, print another messag
 
 
 ```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
+:tags: ["hide-input", "hide-output", "output_scroll"]
 username = 'jdoe'
 
 if username == 'jdoe':
@@ -128,12 +128,12 @@ Modify ex6 to only allow login if the user is active.
 
 
 ```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
+:tags: ["hide-input", "hide-output", "output_scroll"]
 active_status = False
 username = 'jdoe'
 
 if username =='jdoe' and active_status:
-	print('Hi, Jone your are allowed to log in!')
+	print(f'Hi {username}!  Your are allowed to log in.')
 else:
 	print('You are not allowed to log in!')
 
@@ -141,7 +141,7 @@ active_status = True
 username = 'jdoe'
 
 if username =='jdoe' and active_status:
-	print('Hi, Jone your are allowed to log in!')
+	print(f'Hi {username}!  Your are allowed to log in.')
 else:
 	print('You are not allowed to log in!')
 ```
@@ -150,10 +150,8 @@ else:
 ## Exercise 8 
 Write a program to prompt the user for name and check if it is john or jane.
 
-
-
 ```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
+:tags: ["hide-input", "hide-output", "output_scroll"]
 name = input('What is your name? ')
 if name == 'john':
 	print('Your name is John!')
@@ -173,7 +171,7 @@ Write a program that only allows a user to log in if they are a superuser or if 
 
 
 ```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
+:tags: ["hide-input", "hide-output", "output_scroll"]
 is_super_user = True
 is_teacher = True
 is_active = False
@@ -187,7 +185,7 @@ Prompt user for age and check if they are 18 or older
 
 
 ```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
+:tags: ["hide-input", "hide-output", "output_scroll"]
 age = int(input('What is your age? '))
 
 if age >= 18:
@@ -201,7 +199,7 @@ Prompt the user for two numbers and see if they are equal
 
 
 ```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
+:tags: ["hide-input", "hide-output", "output_scroll"]
 number1 = int(input('Please enter a number: '))
 number2 = int(input('Please enter a number: '))
 
@@ -215,7 +213,7 @@ Prompt user to enter a number and check if it is odd or even
 
 
 ```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
+:tags: ["hide-input", "hide-output", "output_scroll"]
 number = int(input('Please enter a number: '))
 
 if number == 0:
@@ -224,4 +222,22 @@ elif number % 2 == 0:
 	print('The number is even')
 else: 
 	print('The number is odd')
+```
+
+
+## Exercise 12
+Prompt user to enter a number and print 'FizzBuzz' if the number is a multiple of 5 and 7, 'Fizz' 
+if is a multiple of 5, and 'Buzz' if it is multiple of 7. 
+
+
+```{code-cell} ipython3
+:tags: ["hide-input", "hide-output", "output_scroll"]
+number = int(input('Please enter a number: '))
+
+if number % 5 == 0 and number % 7 == 0:
+	print('FizzBuzz')
+elif number % 5 == 0:
+	print('Fizz')
+elif number % 7 == 0:
+	print('Buzz')
 ```

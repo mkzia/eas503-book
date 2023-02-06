@@ -53,6 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/04/exercises.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="5. Lists and Tuples" href="../05/intro.html" />
     <link rel="prev" title="4.4. Choosing which statements to execute" href="statement_selection.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -200,32 +201,32 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/intro.html">
-     2.1. Introduction to Functions
+     2.1. Video Recording
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/built_in.html">
-     2.2. Built-in Functions
+     2.3. Built-in Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/user_defined.html">
-     2.3. User Defined Functions
+     2.4. User Defined Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/return.html">
-     2.4. Return Statement
+     2.5. Return Statement
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/namespace.html">
-     2.5. Namespace and Scope
+     2.6. Namespace and Scope
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/exercises.html">
-     2.6. Exercises
+     2.7. Exercises
     </a>
    </li>
   </ul>
@@ -300,6 +301,80 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
      4.5. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/intro.html">
+   5. Lists and Tuples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/lists.html">
+     5.1. Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/methods.html">
+     5.2. List Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/tuples.html">
+     5.3. Tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/strings.html">
+     5.4. Strings as a List
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/intro.html">
+   6. Loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/loop.html">
+     6.1. for/while loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/for_loop_exercises.html">
+     6.2. For Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/while_loop_exercises.html">
+     6.3. While Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/modify_loop_exercises.html">
+     6.4. Modifying Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/comprehension.html">
+     6.5. List Comprehension
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/comprehension_exercises.html">
+     6.7. List Comprehension Exercises
     </a>
    </li>
   </ul>
@@ -555,6 +630,11 @@ title="Print to PDF"
    4.5.12. Exercise 12
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   4.5.13. Exercise 12
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -634,6 +714,11 @@ title="Print to PDF"
    4.5.12. Exercise 12
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id1">
+   4.5.13. Exercise 12
+  </a>
+ </li>
 </ul>
 
                         </nav>
@@ -663,7 +748,7 @@ title="Print to PDF"
 <section id="exercise-2">
 <h2><span class="section-number">4.5.2. </span>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h2>
 <p>Modify exercise 1 to print a message when F &gt; 90 and F &lt; 32</p>
-<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">celsius</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What is the Celsius temperature? &quot;</span><span class="p">))</span>
 <span class="n">fahrenheit</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span> <span class="o">*</span> <span class="n">celsius</span> <span class="o">+</span> <span class="mi">32</span>
@@ -707,7 +792,7 @@ title="Print to PDF"
 <p>Write a function to calculate the solution to a quadratic equation.
 <a class="reference external" href="https://www.mathsisfun.com/algebra/quadratic-equation.html">https://www.mathsisfun.com/algebra/quadratic-equation.html</a>
 Prompt the user to the coefficients a, b, and c.</p>
-<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This program finds the real solutions to a quadratic</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -756,7 +841,7 @@ Prompt the user to the coefficients a, b, and c.</p>
 <section id="exercise-4">
 <h2><span class="section-number">4.5.4. </span>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h2>
 <p>Modify ex3 to add conditionals to print no real roots, double root, roots.</p>
-<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This program finds the real solutions to a quadratic</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -812,7 +897,7 @@ Prompt the user to the coefficients a, b, and c.</p>
 <section id="exercise-5">
 <h2><span class="section-number">4.5.5. </span>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h2>
 <p>Prompt user for three  numbers and find the maximum value.</p>
-<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">))</span>
 <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter another number: &quot;</span><span class="p">))</span>
@@ -858,7 +943,7 @@ Prompt the user to the coefficients a, b, and c.</p>
 <h2><span class="section-number">4.5.6. </span>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">#</a></h2>
 <p>Write a program to prompt the user for their user name.
 If it is ‘jdoe’, print a log in allowed message; otherwise, print another message.</p>
-<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;jdoe&#39;</span>
 
@@ -879,13 +964,13 @@ If it is ‘jdoe’, print a log in allowed message; otherwise, print another me
 <section id="exercise-7">
 <h2><span class="section-number">4.5.7. </span>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">#</a></h2>
 <p>Modify ex6 to only allow login if the user is active.</p>
-<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">active_status</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;jdoe&#39;</span>
 
 <span class="k">if</span> <span class="n">username</span> <span class="o">==</span><span class="s1">&#39;jdoe&#39;</span> <span class="ow">and</span> <span class="n">active_status</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hi, Jone your are allowed to log in!&#39;</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hi </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s1">!  Your are allowed to log in.&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
 	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are not allowed to log in!&#39;</span><span class="p">)</span>
 
@@ -893,7 +978,7 @@ If it is ‘jdoe’, print a log in allowed message; otherwise, print another me
 <span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;jdoe&#39;</span>
 
 <span class="k">if</span> <span class="n">username</span> <span class="o">==</span><span class="s1">&#39;jdoe&#39;</span> <span class="ow">and</span> <span class="n">active_status</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Hi, Jone your are allowed to log in!&#39;</span><span class="p">)</span>
+	<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hi </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s1">!  Your are allowed to log in.&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
 	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are not allowed to log in!&#39;</span><span class="p">)</span>
 </pre></div>
@@ -901,7 +986,7 @@ If it is ‘jdoe’, print a log in allowed message; otherwise, print another me
 </div>
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You are not allowed to log in!
-Hi, Jone your are allowed to log in!
+Hi jdoe!  Your are allowed to log in.
 </pre></div>
 </div>
 </div>
@@ -910,7 +995,7 @@ Hi, Jone your are allowed to log in!
 <section id="exercise-8">
 <h2><span class="section-number">4.5.8. </span>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">#</a></h2>
 <p>Write a program to prompt the user for name and check if it is john or jane.</p>
-<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your name? &#39;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;john&#39;</span><span class="p">:</span>
@@ -955,7 +1040,7 @@ Hi, Jone your are allowed to log in!
 <section id="exercise-9">
 <h2><span class="section-number">4.5.9. </span>Exercise 9<a class="headerlink" href="#exercise-9" title="Permalink to this headline">#</a></h2>
 <p>Write a program that only allows a user to log in if they are a superuser or if they are a teacher and active.</p>
-<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_super_user</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">is_teacher</span> <span class="o">=</span> <span class="kc">True</span>
@@ -976,7 +1061,7 @@ Hi, Jone your are allowed to log in!
 <section id="exercise-10">
 <h2><span class="section-number">4.5.10. </span>Exercise 10<a class="headerlink" href="#exercise-10" title="Permalink to this headline">#</a></h2>
 <p>Prompt user for age and check if they are 18 or older</p>
-<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your age? &#39;</span><span class="p">))</span>
 
@@ -1015,7 +1100,7 @@ Hi, Jone your are allowed to log in!
 <section id="exercise-11">
 <h2><span class="section-number">4.5.11. </span>Exercise 11<a class="headerlink" href="#exercise-11" title="Permalink to this headline">#</a></h2>
 <p>Prompt the user for two numbers and see if they are equal</p>
-<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
 <span class="n">number2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
@@ -1053,7 +1138,7 @@ Hi, Jone your are allowed to log in!
 <section id="exercise-12">
 <h2><span class="section-number">4.5.12. </span>Exercise 12<a class="headerlink" href="#exercise-12" title="Permalink to this headline">#</a></h2>
 <p>Prompt user to enter a number and check if it is odd or even</p>
-<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
 
@@ -1073,6 +1158,48 @@ Hi, Jone your are allowed to log in!
 <span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
 <span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">if</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> 	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number is even&#39;</span><span class="p">)</span>
+
+<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/ipykernel/kernelbase.py:1186,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1184</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
+<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
+<span class="ne">-&gt; </span><span class="mi">1186</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
+<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
+<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
+<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
+<span class="g g-Whitespace">   </span><span class="mi">1191</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
+<span class="g g-Whitespace">   </span><span class="mi">1192</span> <span class="p">)</span>
+
+<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h2><span class="section-number">4.5.13. </span>Exercise 12<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<p>Prompt user to enter a number and print ‘FizzBuzz’ if the number is a multiple of 5 and 7, ‘Fizz’
+if is a multiple of 5, and ‘Buzz’ if it is multiple of 7.</p>
+<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
+
+<span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FizzBuzz&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fizz&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Buzz&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FizzBuzz&#39;</span><span class="p">)</span>
 
 <span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/ipykernel/kernelbase.py:1186,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
 <span class="g g-Whitespace">   </span><span class="mi">1184</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
@@ -1126,6 +1253,13 @@ Hi, Jone your are allowed to log in!
             <p class="prev-next-subtitle">previous</p>
             <p class="prev-next-title"><span class="section-number">4.4. </span>Choosing which statements to execute</p>
         </div>
+    </a>
+    <a class='right-next' id="next-link" href="../05/intro.html" title="next page">
+    <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">5. </span>Lists and Tuples</p>
+    </div>
+    <i class="fas fa-angle-right"></i>
     </a>
 </div>
             </footer>

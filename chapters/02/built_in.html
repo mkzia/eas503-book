@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>2.2. Built-in functions &#8212; EAS503: Python for Data Scientists</title>
+    <title>2.3. Built-in functions &#8212; EAS503: Python for Data Scientists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,8 +53,8 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/02/built_in.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="2.3. Defining your own functions" href="user_defined.html" />
-    <link rel="prev" title="2.1. Introduction to Functions" href="intro.html" />
+    <link rel="next" title="2.4. Defining your own functions" href="user_defined.html" />
+    <link rel="prev" title="2.1. Video Recording" href="intro.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -201,32 +201,32 @@ const thebe_selector_output = ".output, .cell_output"
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="intro.html">
-     2.1. Introduction to Functions
+     2.1. Video Recording
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.2. Built-in Functions
+     2.3. Built-in Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="user_defined.html">
-     2.3. User Defined Functions
+     2.4. User Defined Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="return.html">
-     2.4. Return Statement
+     2.5. Return Statement
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="namespace.html">
-     2.5. Namespace and Scope
+     2.6. Namespace and Scope
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="exercises.html">
-     2.6. Exercises
+     2.7. Exercises
     </a>
    </li>
   </ul>
@@ -301,6 +301,80 @@ const thebe_selector_output = ".output, .cell_output"
    <li class="toctree-l2">
     <a class="reference internal" href="../04/exercises.html">
      4.5. Exercises
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/intro.html">
+   5. Lists and Tuples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/lists.html">
+     5.1. Lists
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/methods.html">
+     5.2. List Methods
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/tuples.html">
+     5.3. Tuples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/strings.html">
+     5.4. Strings as a List
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../06/intro.html">
+   6. Loops
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/loop.html">
+     6.1. for/while loop
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/for_loop_exercises.html">
+     6.2. For Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/while_loop_exercises.html">
+     6.3. While Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/modify_loop_exercises.html">
+     6.4. Modifying Loop Exercises
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/comprehension.html">
+     6.5. List Comprehension
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../06/comprehension_exercises.html">
+     6.7. List Comprehension Exercises
     </a>
    </li>
   </ul>
@@ -474,12 +548,98 @@ title="Print to PDF"
     </ul>
   </div>
 </div>
+<label for="__page-toc"
+  class="headerbtn headerbtn-page-toc"
+  
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-list"></i>
+  </span>
+
+</label>
 
     </div>
 </div>
 
 <!-- Table of contents -->
 <div class="col-md-3 bd-toc show noprint">
+    <div class="tocsection onthispage pt-5 pb-3">
+        <i class="fas fa-list"></i> Contents
+    </div>
+    <nav id="bd-toc-nav" aria-label="Page">
+        <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#absolute-value-function">
+   2.3.1. Absolute Value Function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-to-convert-data-type">
+   2.3.2. Functions to Convert Data Type
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#int">
+     2.3.2.1. int
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#float">
+     2.3.2.2. float
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#str">
+     2.3.2.3. str
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#round">
+     2.3.2.4. round
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#help">
+     2.3.2.5. help
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pow">
+     2.3.2.6. pow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#min">
+     2.3.2.7. min
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#max">
+     2.3.2.8. max
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id">
+     2.3.2.9. id
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#function-memory-address">
+   2.3.3. Function Memory Address
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-function-calls-as-arguments-to-other-functions">
+   2.3.4. Using Function Calls as Arguments to Other Functions
+  </a>
+ </li>
+</ul>
+
+    </nav>
 </div>
     </div>
     <div class="article row">
@@ -491,6 +651,81 @@ title="Print to PDF"
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
+                        <div>
+                            <h2> Contents </h2>
+                        </div>
+                        <nav aria-label="Page">
+                            <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#absolute-value-function">
+   2.3.1. Absolute Value Function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#functions-to-convert-data-type">
+   2.3.2. Functions to Convert Data Type
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#int">
+     2.3.2.1. int
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#float">
+     2.3.2.2. float
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#str">
+     2.3.2.3. str
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#round">
+     2.3.2.4. round
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#help">
+     2.3.2.5. help
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pow">
+     2.3.2.6. pow
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#min">
+     2.3.2.7. min
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#max">
+     2.3.2.8. max
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id">
+     2.3.2.9. id
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#function-memory-address">
+   2.3.3. Function Memory Address
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-function-calls-as-arguments-to-other-functions">
+   2.3.4. Using Function Calls as Arguments to Other Functions
+  </a>
+ </li>
+</ul>
+
+                        </nav>
                     </div>
                 </div>
             </div>
@@ -499,7 +734,10 @@ title="Print to PDF"
               <div>
                 
   <section class="tex2jax_ignore mathjax_ignore" id="built-in-functions">
-<h1><span class="section-number">2.2. </span>Built-in functions<a class="headerlink" href="#built-in-functions" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.3. </span>Built-in functions<a class="headerlink" href="#built-in-functions" title="Permalink to this headline">#</a></h1>
+<section id="absolute-value-function">
+<h2><span class="section-number">2.3.1. </span>Absolute Value Function<a class="headerlink" href="#absolute-value-function" title="Permalink to this headline">#</a></h2>
+<p><code class="docutils literal notranslate"><span class="pre">abs()</span></code> takes the absolute value of a number.</p>
 <p><code class="docutils literal notranslate"><span class="pre">abs(-9)</span></code>: <code class="docutils literal notranslate"><span class="pre">-9</span></code> is the argument. Arguments appear between the parenthesis after the function name. Arguments are evaluated left to right.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -528,8 +766,13 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p><img alt="subexpression" src="../../_images/subexpression.png" /></p>
-<p>Functions to convert one type of variable to another</p>
+</section>
+<section id="functions-to-convert-data-type">
+<h2><span class="section-number">2.3.2. </span>Functions to Convert Data Type<a class="headerlink" href="#functions-to-convert-data-type" title="Permalink to this headline">#</a></h2>
+<p>These functions convert the data type from one type to another if possible. This is called type casting.</p>
+<section id="int">
+<h3><span class="section-number">2.3.2.1. </span>int<a class="headerlink" href="#int" title="Permalink to this headline">#</a></h3>
+<p>Note, for floating point numbers, <code class="docutils literal notranslate"><span class="pre">int()</span></code> truncates towards zero.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="mf">34.6</span><span class="p">)</span>
@@ -538,6 +781,36 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;34&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>34
+</pre></div>
+</div>
+</div>
+</div>
+<p>This will fail!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">int</span><span class="p">(</span><span class="s1">&#39;34.6&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="nb">int</span><span class="p">(</span><span class="s1">&#39;34.6&#39;</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: invalid literal for int() with base 10: &#39;34.6&#39;
 </pre></div>
 </div>
 </div>
@@ -554,6 +827,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+</section>
+<section id="float">
+<h3><span class="section-number">2.3.2.2. </span>float<a class="headerlink" href="#float" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>
@@ -566,7 +842,33 @@ title="Print to PDF"
 </div>
 </div>
 </div>
-<p>The Round function can round floats</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;3.14&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.14
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="s1">&#39;300&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>300.0
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="str">
+<h3><span class="section-number">2.3.2.3. </span>str<a class="headerlink" href="#str" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>
@@ -579,6 +881,22 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;3.14&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="round">
+<h3><span class="section-number">2.3.2.4. </span>round<a class="headerlink" href="#round" title="Permalink to this headline">#</a></h3>
+<p>The round function can be used to round. The optional second input argument specifies the number of digits after the decimal place.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.8</span><span class="p">)</span>
@@ -611,6 +929,82 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">4.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>Why do both <code class="docutils literal notranslate"><span class="pre">3.5</span></code> and <code class="docutils literal notranslate"><span class="pre">4.5</span></code> go to 4? Python uses IEEE 754 standard for rounding called the banker’s rounding. In this method when a number is between two numbers, the number is rounded to the nearest value with an even least significant digit. Still, the behavior of <code class="docutils literal notranslate"><span class="pre">round()</span></code> can be surprising.</p>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">2.675</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2.67
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">4.55</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">4.65</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>4.7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.55</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.5
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">round</span><span class="p">(</span><span class="mf">3.65</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.6
 </pre></div>
 </div>
 </div>
@@ -652,6 +1046,9 @@ title="Print to PDF"
 </div>
 </div>
 </div>
+</section>
+<section id="help">
+<h3><span class="section-number">2.3.2.5. </span>help<a class="headerlink" href="#help" title="Permalink to this headline">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">help(fxn)</span></code> function gives information about a function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -689,6 +1086,9 @@ pow(base, exp, mod=None)
 </div>
 </div>
 </div>
+</section>
+<section id="pow">
+<h3><span class="section-number">2.3.2.6. </span>pow<a class="headerlink" href="#pow" title="Permalink to this headline">#</a></h3>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">pow</span></code> function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -704,7 +1104,7 @@ pow(base, exp, mod=None)
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">pow</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span> 
 </pre></div>
 </div>
 </div>
@@ -714,20 +1114,9 @@ pow(base, exp, mod=None)
 </div>
 </div>
 </div>
-<p>We can also use function calls as arguments to other functions:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">pow</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="mf">4.3</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
-</pre></div>
-</div>
-</div>
-</div>
-<p>Some other useful functions</p>
+</section>
+<section id="min">
+<h3><span class="section-number">2.3.2.7. </span>min<a class="headerlink" href="#min" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">min</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -740,6 +1129,9 @@ pow(base, exp, mod=None)
 </div>
 </div>
 </div>
+</section>
+<section id="max">
+<h3><span class="section-number">2.3.2.8. </span>max<a class="headerlink" href="#max" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span>
@@ -764,7 +1156,9 @@ pow(base, exp, mod=None)
 </div>
 </div>
 </div>
-<p>Function objects have memory addresses just like variables:</p>
+</section>
+<section id="id">
+<h3><span class="section-number">2.3.2.9. </span>id<a class="headerlink" href="#id" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="o">-</span><span class="mi">9</span><span class="p">)</span>
@@ -772,7 +1166,7 @@ pow(base, exp, mod=None)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140370211122832
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140219812961200
 </pre></div>
 </div>
 </div>
@@ -784,24 +1178,45 @@ pow(base, exp, mod=None)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140370211113904
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140219566333360
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">show_size</span> <span class="o">=</span> <span class="mf">8.5</span>
-<span class="nb">id</span><span class="p">(</span><span class="n">show_size</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="mf">8.5</span><span class="p">))</span>
+
+<span class="n">size1</span> <span class="o">=</span> <span class="mf">8.5</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">size1</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">size1</span><span class="p">))</span>
+
+<span class="n">size2</span> <span class="o">=</span> <span class="mf">8.5</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">size2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="nb">id</span><span class="p">(</span><span class="n">size2</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140370211120400
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140219566339920
+8.5
+140219566338576
+8.5
+140219812961200
 </pre></div>
 </div>
 </div>
 </div>
+<p><img alt="Size Memory Model" src="../../_images/size.png" /></p>
+</section>
+</section>
+<section id="function-memory-address">
+<h2><span class="section-number">2.3.3. </span>Function Memory Address<a class="headerlink" href="#function-memory-address" title="Permalink to this headline">#</a></h2>
+<p>Function objects have memory addresses just like variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="nb">abs</span><span class="p">)</span>
@@ -809,7 +1224,7 @@ pow(base, exp, mod=None)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140370261346800
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140219907869168
 </pre></div>
 </div>
 </div>
@@ -821,11 +1236,29 @@ pow(base, exp, mod=None)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140370261349760
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140219907872128
 </pre></div>
 </div>
 </div>
 </div>
+</section>
+<section id="using-function-calls-as-arguments-to-other-functions">
+<h2><span class="section-number">2.3.4. </span>Using Function Calls as Arguments to Other Functions<a class="headerlink" href="#using-function-calls-as-arguments-to-other-functions" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">pow</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="mf">4.3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>16
+</pre></div>
+</div>
+</div>
+</div>
+<p><img alt="subexpression" src="../../_images/subexpression.png" /></p>
+<p>There are many other built-in functions. The Python documentation describes all of <a class="reference external" href="https://docs.python.org/3/library/functions.html#built-in-functions">here</a></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -859,13 +1292,13 @@ pow(base, exp, mod=None)
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">2.1. </span>Introduction to Functions</p>
+            <p class="prev-next-title"><span class="section-number">2.1. </span>Video Recording</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="user_defined.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">2.3. </span>Defining your own functions</p>
+        <p class="prev-next-title"><span class="section-number">2.4. </span>Defining your own functions</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
