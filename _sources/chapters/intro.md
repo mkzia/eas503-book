@@ -23,7 +23,7 @@ Welcome to EAS503! EAS503 is a course taught in the Department of Engineering & 
 - Exam (1) - 5%
 - Quizzes (5) - 20%
 - Programming Assignments (8) - 30%
-- Kritik Assignments (8) - 15%
+- Kritik Assignments (6) - 15%
 - Individual Mini-Projects (3) - 30%
 
 ## Exam
