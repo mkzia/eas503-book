@@ -73,7 +73,7 @@ def string_ex5():
 
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
-def string_ex7(:)
+def string_ex7():
     x = 3
     y = 12.5
     print(f"{x} * {y}.")

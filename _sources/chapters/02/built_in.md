@@ -79,8 +79,8 @@ str(3.14)
 ```
 
 
-### round
-The round function can be used to round. The optional second input argument specifies the number of digits after the decimal place. 
+### Rounding
+The `round()` function can be used to round floats. The optional second input argument specifies the number of digits after the decimal place. 
 
 ```{code-cell} ipython3
 round(3.8)
@@ -135,6 +135,15 @@ The round function can take an OPTIONAL second argument
 ```{code-cell} ipython3
 round(3.141592653,2)
 ```
+
+You can also ceil and floor values by first importing the `math` module and using ceil and floor
+```{code-cell} ipython3
+import math
+print('round:', round(3.141592653))
+print('ceil:', math.ceil(3.141592653))
+print('floor:', math.floor(3.141592653))
+```
+
 
 ### help
 

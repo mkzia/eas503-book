@@ -17,7 +17,7 @@ kernelspec:
 Write a program that takes integers from the user and returns the average. Use a while loop and make an empty string the stop criteria.
 
 ```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
+:tags: ["hide-input",  "remove-output", "output_scroll"]
 summed_values = 0  # a container to store the sum of interger values collected
 number_count = 0  # a container to store the number of integer values collected
 
@@ -40,7 +40,7 @@ print('The average of %d numbers is %f' %(number_count, summed_values))
 Write a program that takes integers from the user and returns the average. Use a while loop and make negative number the stop criteria.
 
 ```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
+:tags: ["hide-input",  "remove-output", "output_scroll"]
 summed_values = 0  # a container to store the sum of interger values collected
 number_count = 0  # a container to store the number of integer values collected
 
@@ -67,7 +67,7 @@ F 59 or less
 
 
 ```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
+:tags: ["hide-input",  "remove-output", "output_scroll"]
 test_grades = 0  # a container to store the sum of interger values collected
 number_tests = 0  # a container to store the number of integer values collected
 
@@ -102,7 +102,7 @@ print(average, letter_grade)
 Write a program that takes an integer and counts down to zero -- print the value
 
 ```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
+:tags: ["hide-input",  "remove-output", "output_scroll"]
 number = int(input('Enter a starting number: '))
 
 while number >= 0:

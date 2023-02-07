@@ -16,7 +16,7 @@ kernelspec:
 - In Python, we indicate that a value is a string by putting either single or double quotes around it.
 
 ## Operations on Strings
-- `len()` -- to get length of a string
+- `len(string)` -- to get length of a string
 - `+` -- can add strings, but not str and type float or int
 - `*` -- to repeat a string 
 - `+=` -- add to another string and save value

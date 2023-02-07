@@ -601,10 +601,22 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#limiting-splits">
    5.4.3. Limiting splits
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extract-the-key-value-pairs">
+     5.4.3.1. Extract the key-value pairs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#splitting-lines">
+   5.4.4. Splitting lines
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#checking-character-type-manually">
-   5.4.4. Checking Character Type Manually
+   5.4.5. Checking Character Type Manually
   </a>
  </li>
 </ul>
@@ -657,10 +669,22 @@ title="Print to PDF"
   <a class="reference internal nav-link" href="#limiting-splits">
    5.4.3. Limiting splits
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extract-the-key-value-pairs">
+     5.4.3.1. Extract the key-value pairs
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#splitting-lines">
+   5.4.4. Splitting lines
+  </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#checking-character-type-manually">
-   5.4.4. Checking Character Type Manually
+   5.4.5. Checking Character Type Manually
   </a>
  </li>
 </ul>
@@ -768,20 +792,61 @@ title="Print to PDF"
 <h2><span class="section-number">5.4.3. </span>Limiting splits<a class="headerlink" href="#limiting-splits" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;range=start=3;end=10&#39;</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;range=start=3;end=20;step=2&#39;</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">my_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;range&#39;, &#39;start=3;end=10&#39;]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;range&#39;, &#39;start=3;end=20;step=2&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<section id="extract-the-key-value-pairs">
+<h3><span class="section-number">5.4.3.1. </span>Extract the key-value pairs<a class="headerlink" href="#extract-the-key-value-pairs" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;range=start=3;end=20;step=2&#39;</span>
+<span class="n">range_options</span> <span class="o">=</span> <span class="n">my_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span> <span class="o">=</span> <span class="n">range_options</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">)</span>
+<span class="n">start</span> <span class="o">=</span> <span class="n">start</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># or [-1]</span>
+<span class="n">end</span> <span class="o">=</span> <span class="n">end</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># or [-1]</span>
+<span class="n">step</span> <span class="o">=</span> <span class="n">step</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># or [-1]</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">start</span><span class="p">,</span> <span class="n">end</span><span class="p">,</span> <span class="n">step</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3 20 2
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="splitting-lines">
+<h2><span class="section-number">5.4.4. </span>Splitting lines<a class="headerlink" href="#splitting-lines" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">long_string</span><span class="o">=</span><span class="s1">&#39;First line</span><span class="se">\n</span><span class="s1">Second line</span><span class="se">\n</span><span class="s1">Third line&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">long_string</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">long_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">long_string</span><span class="o">.</span><span class="n">splitlines</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;First&#39;, &#39;line&#39;, &#39;Second&#39;, &#39;line&#39;, &#39;Third&#39;, &#39;line&#39;]
+[&#39;First line&#39;, &#39;Second line&#39;, &#39;Third line&#39;]
+[&#39;First line&#39;, &#39;Second line&#39;, &#39;Third line&#39;]
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="checking-character-type-manually">
-<h2><span class="section-number">5.4.4. </span>Checking Character Type Manually<a class="headerlink" href="#checking-character-type-manually" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">5.4.5. </span>Checking Character Type Manually<a class="headerlink" href="#checking-character-type-manually" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;EaS503!&#39;</span>

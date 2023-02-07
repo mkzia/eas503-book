@@ -66,7 +66,7 @@ x = 3
 x = 7
 (1 < x) and (x <= 5)
 
-
+- Chain comparison allows you to combine multiple comparisons
 x = 3 
 1 < x <= 5 # You can chain comparisons
 
@@ -79,6 +79,8 @@ x = 3
 
 ## Short-Circuit Evaluation 
 - When Python evaluates an expression containing `and` or `or`, it does so from left to right. As soon as it knows enough to stop evaluating, it stops, even if some operands have not been looked at yet. This is called short-circuit evaluation. 
+- For `and` operation, if the first expression is false, the second expression is not evaluated.
+- For `or` operation, if the first expression is true, the second expression is not evaluated.
 
 ```python
 is_superuser = True

@@ -60,8 +60,27 @@ print(int(month), int(day), int(year))
 ## Limiting splits
 
 ```{code-cell} ipython3
-my_string = 'range=start=3;end=10'
+my_string = 'range=start=3;end=20;step=2'
 print(my_string.split('=', 1))
+```
+
+### Extract the key-value pairs
+```{code-cell} ipython3
+my_string = 'range=start=3;end=20;step=2'
+range_options = my_string.split('=', 1)[1]
+start, end, step = range_options.split(';')
+start = start.split('=')[1] # or [-1]
+end = end.split('=')[1] # or [-1]
+step = step.split('=')[1] # or [-1]
+print(start, end, step)
+```
+
+## Splitting lines
+```{code-cell} ipython3
+long_string='First line\nSecond line\nThird line'
+print(long_string.split())
+print(long_string.split('\n'))
+print(long_string.splitlines())
 ```
 
 ## Checking Character Type Manually  
