@@ -10,8 +10,6 @@ kernelspec:
   name: python3
 ---
 
-- [Introduction to functions video lecture](https://www.google.com)
-
 # Introduction to Functions
 
 A Functions is a small, self-contained sequence of statements/instructions that has a name. Example: a function to convert Celsius to Fahrenheit. Since the formula for converting from Celsius to Fahrenheit is always the same and the only variable is the temperature in Celsius, you can write a function that takes the temperature as an argument, perform the conversion, and then return the temperature in Fahrenheit. 
