@@ -201,32 +201,32 @@ const thebe_selector_output = ".output, .cell_output"
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/intro.html">
-     2.1. Video Recording
+     2.1. Introduction to Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/built_in.html">
-     2.3. Built-in Functions
+     2.2. Built-in Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/user_defined.html">
-     2.4. User Defined Functions
+     2.3. User Defined Functions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/return.html">
-     2.5. Return Statement
+     2.4. Return Statement
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/namespace.html">
-     2.6. Namespace and Scope
+     2.5. Namespace and Scope
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../02/exercises.html">
-     2.7. Exercises
+     2.6. Exercises
     </a>
    </li>
   </ul>
@@ -1012,15 +1012,41 @@ True
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;(EAS503)&#39;</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;(&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;)&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;(&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;)&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">my_string</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;(&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;)&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
-                                                     <span class="o">^</span>
-<span class="ne">SyntaxError</span>: incomplete input
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>EAS503
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">zfill(number_of_zeros)</span></code> – prepend zeros to a string; returns a new string</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;EAS503&#39;</span>
+<span class="n">my_string</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;00EAS503&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;123&#39;</span>
+<span class="n">my_string</span><span class="o">.</span><span class="n">zfill</span><span class="p">(</span><span class="mi">8</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;00000123&#39;
 </pre></div>
 </div>
 </div>
@@ -1078,7 +1104,7 @@ True
   
     By Mohammad Zia<br/>
   
-      &copy; Copyright 2022.<br/>
+      &copy; Copyright 2023.<br/>
 </p>
         </footer>
     </div>

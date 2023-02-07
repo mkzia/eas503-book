@@ -10,8 +10,7 @@ kernelspec:
   name: python3
 ---
 
-# Video Recording
-
+- [Video Recording](https://www.google.com)
 
 # Introduction to Functions
 

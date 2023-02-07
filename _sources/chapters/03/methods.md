@@ -139,10 +139,19 @@ print(my_string.count('CC'))
 print(my_string.count('CCC'))
 ```
 
-
 ## Modification Methods
 - `replace()` -- Replaces character(s) with other character(s); returns a new string
 ```{code-cell} ipython3
 my_string = '(EAS503)'
-print(my_string.replace('(', '').replace(')', '')
+print(my_string.replace('(', '').replace(')', ''))
+```
+- `zfill(number_of_zeros)` -- prepend zeros to a string; returns a new string
+```{code-cell} ipython3
+my_string = 'EAS503'
+my_string.zfill(8)
+```
+
+```{code-cell} ipython3
+my_string = '123'
+my_string.zfill(8)
 ```
