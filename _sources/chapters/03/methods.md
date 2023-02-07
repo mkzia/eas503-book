@@ -155,3 +155,21 @@ my_string.zfill(8)
 my_string = '123'
 my_string.zfill(8)
 ```
+
+## Creating a new String
+- `join((value1, value2, value3))` -- Creates a new string separated the values by whatever is in the string
+
+```{code-cell} ipython3
+years = ('1900', '1924', '1950', '1990')
+''.join((years))
+```
+
+```{code-cell} ipython3
+years = ('1900', '1924', '1950', '1990')
+'-'.join((years))
+```
+
+```{code-cell} ipython3
+years = ('1900', '1924', '1950', '1990')
+print('\n'.join((years)))
+```

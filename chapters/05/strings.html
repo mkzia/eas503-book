@@ -369,12 +369,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06/comprehension.html">
-     6.5. List Comprehension
+     6.5. List/Tuple Comprehension
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06/comprehension_exercises.html">
-     6.7. List Comprehension Exercises
+     6.6. List Comprehension Exercises
     </a>
    </li>
   </ul>
@@ -700,6 +700,23 @@ title="Print to PDF"
   <section class="tex2jax_ignore mathjax_ignore" id="strings-as-lists">
 <h1><span class="section-number">5.4. </span>Strings as Lists<a class="headerlink" href="#strings-as-lists" title="Permalink to this headline">#</a></h1>
 <p>Remember, strings are a sequence, so you can index them.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_string</span> <span class="o">=</span> <span class="s1">&#39;Doe, John&#39;</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_string</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_string</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">my_string</span><span class="p">[</span><span class="mi">2</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>D
+n
+e
+</pre></div>
+</div>
+</div>
+</div>
 <section id="splitting-a-name">
 <h2><span class="section-number">5.4.1. </span>Splitting a Name<a class="headerlink" href="#splitting-a-name" title="Permalink to this headline">#</a></h2>
 <p>When you split a string using split, a list is returned.</p>

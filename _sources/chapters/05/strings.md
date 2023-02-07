@@ -14,6 +14,13 @@ kernelspec:
 # Strings as Lists
 Remember, strings are a sequence, so you can index them. 
 
+```{code-cell} ipython3
+my_string = 'Doe, John'
+print(my_string[0])
+print(my_string[-1])
+print(my_string[2])
+```
+
 ## Splitting a Name
 
 When you split a string using split, a list is returned. 

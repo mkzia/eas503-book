@@ -59,9 +59,9 @@ print(grades)
 grades = ['A', 'B', 'C', 'D', 'F']
 grades.pop() # deletes the last element in list and returns it 
 print(grades)
-grades.pop(1) # deletes the first element in list and returns it
+grades.pop(0) # deletes the first element in list and returns it
 print(grades)
-grades.pop(3) # deletes the fourth element in list and returns it
+grades.pop(2) # deletes the second element in list and returns it
 print(grades)
 ```
 

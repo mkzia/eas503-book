@@ -369,12 +369,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06/comprehension.html">
-     6.5. List Comprehension
+     6.5. List/Tuple Comprehension
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="../06/comprehension_exercises.html">
-     6.7. List Comprehension Exercises
+     6.6. List Comprehension Exercises
     </a>
    </li>
   </ul>
@@ -590,6 +590,11 @@ title="Print to PDF"
    3.4.4. Modification Methods
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-new-string">
+   3.4.5. Creating a new String
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -627,6 +632,11 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#modification-methods">
    3.4.4. Modification Methods
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-a-new-string">
+   3.4.5. Creating a new String
   </a>
  </li>
 </ul>
@@ -1047,6 +1057,54 @@ True
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;00000123&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="creating-a-new-string">
+<h2><span class="section-number">3.4.5. </span>Creating a new String<a class="headerlink" href="#creating-a-new-string" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">join((value1,</span> <span class="pre">value2,</span> <span class="pre">value3))</span></code> – Creates a new string separated the values by whatever is in the string</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;1900&#39;</span><span class="p">,</span> <span class="s1">&#39;1924&#39;</span><span class="p">,</span> <span class="s1">&#39;1950&#39;</span><span class="p">,</span> <span class="s1">&#39;1990&#39;</span><span class="p">)</span>
+<span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">years</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1900192419501990&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;1900&#39;</span><span class="p">,</span> <span class="s1">&#39;1924&#39;</span><span class="p">,</span> <span class="s1">&#39;1950&#39;</span><span class="p">,</span> <span class="s1">&#39;1990&#39;</span><span class="p">)</span>
+<span class="s1">&#39;-&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">years</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39;1900-1924-1950-1990&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;1900&#39;</span><span class="p">,</span> <span class="s1">&#39;1924&#39;</span><span class="p">,</span> <span class="s1">&#39;1950&#39;</span><span class="p">,</span> <span class="s1">&#39;1990&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="n">years</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1900
+1924
+1950
+1990
 </pre></div>
 </div>
 </div>

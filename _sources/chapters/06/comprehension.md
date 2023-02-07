@@ -9,9 +9,9 @@ kernelspec:
   language: python
   name: python3
 ---
+# Comprehension
 
-
-# List Comprehension
+## List Comprehension
 
 - Unique to Python
 - Three variations
@@ -26,7 +26,7 @@ kernelspec:
 ```
 
 
-# Tuple Comprehension
+## Tuple Comprehension
 - Tuple Comprehension returns a generator
 - Generators generate one-time use values
 

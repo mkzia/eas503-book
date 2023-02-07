@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>6.5. List Comprehension &#8212; EAS503: Python for Data Scientists</title>
+    <title>6.5. Comprehension &#8212; EAS503: Python for Data Scientists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -53,7 +53,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/06/comprehension.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="6.7. List Comprehension Exercises" href="comprehension_exercises.html" />
+    <link rel="next" title="6.6. List Comprehension Exercises" href="comprehension_exercises.html" />
     <link rel="prev" title="6.4. Modify Loop Exercises" href="modify_loop_exercises.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
@@ -369,12 +369,12 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     6.5. List Comprehension
+     6.5. List/Tuple Comprehension
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="comprehension_exercises.html">
-     6.7. List Comprehension Exercises
+     6.6. List Comprehension Exercises
     </a>
    </li>
   </ul>
@@ -570,14 +570,14 @@ title="Print to PDF"
     </div>
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   6.5. List Comprehension
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-comprehension">
+   6.5.1. List Comprehension
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tuple-comprehension">
-   6.6. Tuple Comprehension
+   6.5.2. Tuple Comprehension
   </a>
  </li>
 </ul>
@@ -589,7 +589,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>List Comprehension</h1>
+                <h1>Comprehension</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -599,14 +599,14 @@ title="Print to PDF"
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   6.5. List Comprehension
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-comprehension">
+   6.5.1. List Comprehension
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tuple-comprehension">
-   6.6. Tuple Comprehension
+   6.5.2. Tuple Comprehension
   </a>
  </li>
 </ul>
@@ -619,8 +619,10 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="list-comprehension">
-<h1><span class="section-number">6.5. </span>List Comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this headline">#</a></h1>
+  <section class="tex2jax_ignore mathjax_ignore" id="comprehension">
+<h1><span class="section-number">6.5. </span>Comprehension<a class="headerlink" href="#comprehension" title="Permalink to this headline">#</a></h1>
+<section id="list-comprehension">
+<h2><span class="section-number">6.5.1. </span>List Comprehension<a class="headerlink" href="#list-comprehension" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Unique to Python</p></li>
 <li><p>Three variations</p></li>
@@ -634,8 +636,8 @@ title="Print to PDF"
 </pre></div>
 </div>
 </section>
-<section class="tex2jax_ignore mathjax_ignore" id="tuple-comprehension">
-<h1><span class="section-number">6.6. </span>Tuple Comprehension<a class="headerlink" href="#tuple-comprehension" title="Permalink to this headline">#</a></h1>
+<section id="tuple-comprehension">
+<h2><span class="section-number">6.5.2. </span>Tuple Comprehension<a class="headerlink" href="#tuple-comprehension" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Tuple Comprehension returns a generator</p></li>
 <li><p>Generators generate one-time use values</p></li>
@@ -648,6 +650,7 @@ title="Print to PDF"
 
 </pre></div>
 </div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -687,7 +690,7 @@ title="Print to PDF"
     <a class='right-next' id="next-link" href="comprehension_exercises.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">6.7. </span>List Comprehension Exercises</p>
+        <p class="prev-next-title"><span class="section-number">6.6. </span>List Comprehension Exercises</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
