@@ -92,7 +92,7 @@ print(my_string.isalpha())
 ```
 - `isdecimal()` -- Returns `True` if all the characters are numbers (0-9); USE THIS!
 - `isdigit()` -- Returns `True` if all the characters are numbers (0-9), superscripts (`"\u00B2"`), or fractions `'\u00BC'`; 
-- `isnumeric()` -- Returns `True` if all the characters are numbers (0-9), superscripts (`"\u00B2"`), fractions `'\u00BC'`, Roman Numerals!
+- `isnumeric()` -- Returns `True` if all the characters are numbers (0-9), superscripts (`"\u00B2"`), fractions `'\u00BC'`, or Roman Numerals!
 
 - `isalnum()` -- Returns `True` if the string is alpha numeric
 ```{code-cell} ipython3
