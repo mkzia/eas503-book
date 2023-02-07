@@ -158,7 +158,7 @@ print(f_string)
 course_number = 'EAS503'
 class_size = 113
 class_average = 92.3
-str_format = 'The course number is {0}. It has {1} students. The class average is {2}'.format(course_number, class_size, class_average)
+str_format = 'The course number is {0}. It has {1} students. The class average is {2}.'.format(course_number, class_size, class_average)
 f_string = f'The course number is {class_size}. It has {course_number} students. The class average is {class_average}.'
 
 print(str_format)
@@ -171,7 +171,7 @@ print(f_string)
 course_number = 'EAS503'
 class_size = 113
 class_average = 92.3
-str_format = 'The course number is {0:10}. It has {1:10} students. The class average is {2:10}'.format(course_number, class_size, class_average)
+str_format = 'The course number is {0:10}. It has {1:10} students. The class average is {2:10}.'.format(course_number, class_size, class_average)
 f_string = f'The course number is {course_number:10}. It has {class_size:10} students. The class average is {class_average:10}.'
 
 print(str_format)
@@ -185,8 +185,8 @@ print(f_string)
 course_number = 'EAS503'
 class_size = 113
 class_average = 92.3
-str_format = 'The course number is {0:>10}. It has {1:>10} students. The class average is {2:>10}'.format(course_number, class_size, class_average)
-f_string = f'The course number is {class_size:>10}. It has {class_size:>10} students. The class average is {class_average:>10}.'
+str_format = 'The course number is {0:>10}. It has {1:>10} students. The class average is {2:>10}.'.format(course_number, class_size, class_average)
+f_string = f'The course number is {course_number:>10}. It has {class_size:>10} students. The class average is {class_average:>10}.'
 
 print(str_format)
 print(f_string)
@@ -198,7 +198,7 @@ print(f_string)
 course_number = 'EAS503'
 class_size = 113
 class_average = 92.3
-str_format = 'The course number is {0:<10}. It has {1:<10} students. The class average is {2:<10}'.format(course_number, class_size, class_average)
+str_format = 'The course number is {0:<10}. It has {1:<10} students. The class average is {2:<10}.'.format(course_number, class_size, class_average)
 f_string = f'The course number is {course_number:<10}. It has {class_size:<10} students. The class average is {class_average:<10}.'
 
 print(str_format)
@@ -212,7 +212,7 @@ print(f_string)
 course_number = 'EAS503'
 class_size = 113
 class_average = 92.3
-str_format = 'The course number is {0:^10}. It has {1:^10} students. The class average is {2:^10}'.format(course_number, class_size, class_average)
+str_format = 'The course number is {0:^10}. It has {1:^10} students. The class average is {2:^10}.'.format(course_number, class_size, class_average)
 f_string = f'The course number is {course_number:^10}. It has {class_size:^10} students. The class average is {class_average:^10}.'
 
 print(str_format)
@@ -220,7 +220,7 @@ print(f_string)
 ```
 
 ## Example 10 Padding with zeros
-
+- Zero padding does not require a alignment specifier
 ```{code-cell} ipython3
 student_id = 223333
 

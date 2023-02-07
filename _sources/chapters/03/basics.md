@@ -10,6 +10,9 @@ kernelspec:
   name: python3
 ---
 
+- [Video Recording](https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ece9dc53-4a27-41e3-8e1e-afa30048c043)
+- [Jupyter Notebook](https://github.com/mkzia/eas503-book-notes/blob/main/03/basics.ipynb)
+
 # Strings Basics
 
 - In Python, text is represented as a string, which is a **sequence** of characters (letters, digits, and symbols).
