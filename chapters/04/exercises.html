@@ -748,7 +748,7 @@ title="Print to PDF"
 <section id="exercise-2">
 <h2><span class="section-number">4.5.2. </span>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h2>
 <p>Modify exercise 1 to print a message when F &gt; 90 and F &lt; 32</p>
-<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_remove-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">celsius</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What is the Celsius temperature? &quot;</span><span class="p">))</span>
 <span class="n">fahrenheit</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span> <span class="o">*</span> <span class="n">celsius</span> <span class="o">+</span> <span class="mi">32</span>
@@ -762,29 +762,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">celsius</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What is the Celsius temperature? &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">fahrenheit</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span> <span class="o">*</span> <span class="n">celsius</span> <span class="o">+</span> <span class="mi">32</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The temperature is&quot;</span><span class="p">,</span> <span class="n">fahrenheit</span><span class="p">,</span> <span class="s2">&quot;degrees Fahrenheit.&quot;</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/ipykernel/kernelbase.py:1186,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1184</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1186</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1191</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1192</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="exercise-3">
@@ -792,7 +769,7 @@ title="Print to PDF"
 <p>Write a function to calculate the solution to a quadratic equation.
 <a class="reference external" href="https://www.mathsisfun.com/algebra/quadratic-equation.html">https://www.mathsisfun.com/algebra/quadratic-equation.html</a>
 Prompt the user to the coefficients a, b, and c.</p>
-<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_remove-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This program finds the real solutions to a quadratic</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -808,40 +785,12 @@ Prompt the user to the coefficients a, b, and c.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This program finds the real solutions to a quadratic
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">math</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This program finds the real solutions to a quadratic</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient a: &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient b: &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient c: &quot;</span><span class="p">))</span>
-
-<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/ipykernel/kernelbase.py:1186,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1184</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1186</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1191</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1192</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="exercise-4">
 <h2><span class="section-number">4.5.4. </span>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h2>
 <p>Modify ex3 to add conditionals to print no real roots, double root, roots.</p>
-<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_remove-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This program finds the real solutions to a quadratic</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
@@ -864,40 +813,12 @@ Prompt the user to the coefficients a, b, and c.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>This program finds the real solutions to a quadratic
-</pre></div>
-</div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">math</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This program finds the real solutions to a quadratic</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient a: &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient b: &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient c: &quot;</span><span class="p">))</span>
-
-<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/ipykernel/kernelbase.py:1186,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1184</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1186</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1191</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1192</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="exercise-5">
 <h2><span class="section-number">4.5.5. </span>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h2>
 <p>Prompt user for three  numbers and find the maximum value.</p>
-<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_remove-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">))</span>
 <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter another number: &quot;</span><span class="p">))</span>
@@ -914,36 +835,13 @@ Prompt the user to the coefficients a, b, and c.</p>
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter another number: &quot;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">z</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter enter a third number: &quot;</span><span class="p">))</span>
-
-<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/ipykernel/kernelbase.py:1186,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1184</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1186</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1191</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1192</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="exercise-6">
 <h2><span class="section-number">4.5.6. </span>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">#</a></h2>
 <p>Write a program to prompt the user for their user name.
 If it is ‘jdoe’, print a log in allowed message; otherwise, print another message.</p>
-<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_remove-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;jdoe&#39;</span>
 
@@ -954,17 +852,12 @@ If it is ‘jdoe’, print a log in allowed message; otherwise, print another me
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Hi, John.
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="exercise-7">
 <h2><span class="section-number">4.5.7. </span>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">#</a></h2>
 <p>Modify ex6 to only allow login if the user is active.</p>
-<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_remove-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">active_status</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;jdoe&#39;</span>
@@ -984,18 +877,12 @@ If it is ‘jdoe’, print a log in allowed message; otherwise, print another me
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You are not allowed to log in!
-Hi jdoe!  Your are allowed to log in.
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="exercise-8">
 <h2><span class="section-number">4.5.8. </span>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">#</a></h2>
 <p>Write a program to prompt the user for name and check if it is john or jane.</p>
-<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_remove-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your name? &#39;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;john&#39;</span><span class="p">:</span>
@@ -1012,35 +899,12 @@ Hi jdoe!  Your are allowed to log in.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your name? &#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;john&#39;</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> 	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your name is John!&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/ipykernel/kernelbase.py:1186,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1184</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1186</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1191</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1192</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="exercise-9">
 <h2><span class="section-number">4.5.9. </span>Exercise 9<a class="headerlink" href="#exercise-9" title="Permalink to this headline">#</a></h2>
 <p>Write a program that only allows a user to log in if they are a superuser or if they are a teacher and active.</p>
-<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_remove-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">is_super_user</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">is_teacher</span> <span class="o">=</span> <span class="kc">True</span>
@@ -1051,17 +915,12 @@ Hi jdoe!  Your are allowed to log in.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>You can access the system
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="exercise-10">
 <h2><span class="section-number">4.5.10. </span>Exercise 10<a class="headerlink" href="#exercise-10" title="Permalink to this headline">#</a></h2>
 <p>Prompt user for age and check if they are 18 or older</p>
-<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_remove-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your age? &#39;</span><span class="p">))</span>
 
@@ -1072,35 +931,12 @@ Hi jdoe!  Your are allowed to log in.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your age? &#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are older 18 or older&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/ipykernel/kernelbase.py:1186,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1184</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1186</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1191</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1192</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="exercise-11">
 <h2><span class="section-number">4.5.11. </span>Exercise 11<a class="headerlink" href="#exercise-11" title="Permalink to this headline">#</a></h2>
 <p>Prompt the user for two numbers and see if they are equal</p>
-<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_remove-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
 <span class="n">number2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
@@ -1110,35 +946,12 @@ Hi jdoe!  Your are allowed to log in.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">number1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">number2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">if</span> <span class="n">number1</span> <span class="o">==</span> <span class="n">number2</span><span class="p">:</span>
-
-<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/ipykernel/kernelbase.py:1186,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1184</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1186</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1191</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1192</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="exercise-12">
 <h2><span class="section-number">4.5.12. </span>Exercise 12<a class="headerlink" href="#exercise-12" title="Permalink to this headline">#</a></h2>
 <p>Prompt user to enter a number and check if it is odd or even</p>
-<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_remove-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
 
@@ -1151,36 +964,13 @@ Hi jdoe!  Your are allowed to log in.
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">if</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number is even&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/ipykernel/kernelbase.py:1186,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1184</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1186</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1191</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1192</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="id1">
 <h2><span class="section-number">4.5.13. </span>Exercise 12<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
 <p>Prompt user to enter a number and print ‘FizzBuzz’ if the number is a multiple of 5 and 7, ‘Fizz’
 if is a multiple of 5, and ‘Buzz’ if it is multiple of 7.</p>
-<div class="cell tag_hide-input tag_hide-output tag_output_scroll docutils container">
+<div class="cell tag_hide-input tag_remove-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
 
@@ -1190,29 +980,6 @@ if is a multiple of 5, and ‘Buzz’ if it is multiple of 7.</p>
 	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fizz&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
 	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Buzz&#39;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> 	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FizzBuzz&#39;</span><span class="p">)</span>
-
-<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/ipykernel/kernelbase.py:1186,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1184</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1185</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1186</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1187</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1188</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1189</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1190</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1191</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1192</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
 </pre></div>
 </div>
 </div>
