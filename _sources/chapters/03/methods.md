@@ -10,6 +10,11 @@ kernelspec:
   name: python3
 ---
 
+- [Video Recording (24 minutes)](https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=cd3a23f0-dff6-428b-b224-afa3017c2a79)
+- [Jupyter Notebook](https://github.com/mkzia/eas503-book-notes/blob/main/03/methods.ipynb)
+
+
+
 # String methods
 - We have already encountered functions: built-in functions and functions we have defined. A method is another kind of function that is attached to a particular type. This section covers
 the methods that are attached to string types.  
@@ -75,7 +80,7 @@ print(my_string.title())
 my_string = 'the lazy dog jumped over the quick brown fox'
 print(my_string.capitalize())
 ```
-- `swapcase()` -- Make upper case upper and upper case lower
+- `swapcase()` -- Make upper case lower case and lower case upper case
 ```{code-cell} ipython3
 my_string = 'tHe laZy dOg Jumped oveR thE quIck bRown Fox'
 print(my_string.swapcase())
@@ -107,7 +112,7 @@ print(my_string.startswith('EAS'))
 - `endswith(substring)` -- Returns `True` if the string ends with the specific input argument
 ```{code-cell} ipython3
 my_string = 'EAS503'
-print(my_string.startswith('03'))
+print(my_string.endswith('03'))
 ```
 - `find(substring)` -- Returns the index if the character is found; otherwise returns `-1`
 ```{code-cell} ipython3
@@ -141,6 +146,17 @@ print(my_string.count('CCC'))
 
 ## Modification Methods
 - `replace()` -- Replaces character(s) with other character(s); returns a new string
+- Given `(EAS503)`, how can you remove the parentheses?
+
+```{code-cell} ipython3
+my_string = '(EAS503)'
+tmp1 = my_string.replace('(', '')
+print(tmp1)
+tmp2 = tmp1.replace(')', '')
+print(tmp2)
+```
+
+- You can **chain** methods! **Chaining** lets you avoid having to save intermediate results. 
 ```{code-cell} ipython3
 my_string = '(EAS503)'
 print(my_string.replace('(', '').replace(')', ''))
@@ -157,7 +173,7 @@ my_string.zfill(8)
 ```
 
 ## Creating a new String
-- `join((value1, value2, value3))` -- Creates a new string separated the values by whatever is in the string
+- `join((value1, value2, value3))` -- Creates a new string separating the values by whatever is in the string
 
 ```{code-cell} ipython3
 years = ('1900', '1924', '1950', '1990')
@@ -171,5 +187,15 @@ years = ('1900', '1924', '1950', '1990')
 
 ```{code-cell} ipython3
 years = ('1900', '1924', '1950', '1990')
+', '.join((years))
+```
+
+```{code-cell} ipython3
+years = ('1900', '1924', '1950', '1990')
 print('\n'.join((years)))
+```
+- You can only join strings, you cannot join an integer. 
+```{code-cell} ipython3
+years = ('1900', '1924', '1950', 1990)
+', '.join(years)
 ```

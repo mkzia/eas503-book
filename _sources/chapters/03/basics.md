@@ -10,7 +10,7 @@ kernelspec:
   name: python3
 ---
 
-- [Video Recording](https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ece9dc53-4a27-41e3-8e1e-afa30048c043)
+- [Video Recording (26 minutes)](https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ece9dc53-4a27-41e3-8e1e-afa30048c043)
 - [Jupyter Notebook](https://github.com/mkzia/eas503-book-notes/blob/main/03/basics.ipynb)
 
 # Strings Basics
