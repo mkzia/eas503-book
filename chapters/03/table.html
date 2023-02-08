@@ -6,7 +6,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>5.3. Tuples &#8212; EAS503: Python for Data Scientists</title>
+    <title>3.3. Creating a Table &#8212; EAS503: Python for Data Scientists</title>
     
   <!-- Loaded before other Sphinx assets -->
   <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
@@ -50,11 +50,11 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
-    <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/05/tuples.html" />
+    <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/03/table.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="5.4. Strings as Lists" href="strings.html" />
-    <link rel="prev" title="5.2. List methods (functions)" href="methods.html" />
+    <link rel="next" title="3.4. String methods" href="methods.html" />
+    <link rel="prev" title="3.2. String Formatting" href="formatting.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -231,38 +231,38 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03/intro.html">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="intro.html">
    3. Strings
   </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
   <label for="toctree-checkbox-3">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul>
+  <ul class="current">
    <li class="toctree-l2">
-    <a class="reference internal" href="../03/basics.html">
+    <a class="reference internal" href="basics.html">
      3.1. String Basics
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03/formatting.html">
+    <a class="reference internal" href="formatting.html">
      3.2. String Formatting
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/table.html">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
      3.3. Creating a Table
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03/methods.html">
+    <a class="reference internal" href="methods.html">
      3.4. String Methods
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="../03/exercises.html">
+    <a class="reference internal" href="exercises.html">
      3.5. Exercises
     </a>
    </li>
@@ -305,33 +305,33 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="intro.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../05/intro.html">
    5. Lists and Tuples
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
   <label for="toctree-checkbox-5">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="lists.html">
+    <a class="reference internal" href="../05/lists.html">
      5.1. Lists
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="methods.html">
+    <a class="reference internal" href="../05/methods.html">
      5.2. List Methods
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
+   <li class="toctree-l2">
+    <a class="reference internal" href="../05/tuples.html">
      5.3. Tuples
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="strings.html">
+    <a class="reference internal" href="../05/strings.html">
      5.4. Strings as a List
     </a>
    </li>
@@ -438,7 +438,7 @@ title="Toggle navigation"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapters/05/tuples.md"
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapters/03/table.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -494,7 +494,7 @@ title="Source repository"
   <div class="menu-dropdown__content">
     <ul>
       <li>
-        <a href="../../_sources/chapters/05/tuples.ipynb"
+        <a href="../../_sources/chapters/03/table.ipynb"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -511,7 +511,7 @@ title="Download notebook file"
       </li>
       
       <li>
-        <a href="../../_sources/chapters/05/tuples.md"
+        <a href="../../_sources/chapters/03/table.md"
    class="headerbtn"
    data-toggle="tooltip"
 data-placement="left"
@@ -571,8 +571,8 @@ title="Print to PDF"
     <nav id="bd-toc-nav" aria-label="Page">
         <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#actually-you-can-modify-a-tuple">
-   5.3.1. Actually you can modify a tuple
+  <a class="reference internal nav-link" href="#writing-to-a-file">
+   3.3.1. Writing to a file
   </a>
  </li>
 </ul>
@@ -584,7 +584,7 @@ title="Print to PDF"
         <div class="col pl-md-3 pl-lg-5 content-container">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Tuples</h1>
+                <h1>Creating a Table</h1>
                 <!-- Table of contents -->
                 <div id="print-main-content">
                     <div id="jb-print-toc">
@@ -595,8 +595,8 @@ title="Print to PDF"
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#actually-you-can-modify-a-tuple">
-   5.3.1. Actually you can modify a tuple
+  <a class="reference internal nav-link" href="#writing-to-a-file">
+   3.3.1. Writing to a file
   </a>
  </li>
 </ul>
@@ -609,33 +609,72 @@ title="Print to PDF"
                 
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="tuples">
-<h1><span class="section-number">5.3. </span>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">#</a></h1>
-<ul class="simple">
-<li><p>Tuples just like lists except that they are immutable. Once you have created a tuple, you cannot modify it.</p></li>
-<li><p>Why use them?</p>
-<ul>
-<li><p>Faster than lists</p></li>
-<li><p>Make code safer – because you cannot change it</p></li>
-<li><p>Valid keys in a dictionary</p></li>
+  <ul class="simple">
+<li><p><a class="reference external" href="https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=8ccd12bd-44ce-49b3-a394-afa300e3d1f8">Video Recording</a></p></li>
+<li><p><a class="reference external" href="https://github.com/mkzia/eas503-book-notes/blob/main/03/table.ipynb">Jupyter Notebook</a></p></li>
 </ul>
-</li>
-</ul>
-<section id="actually-you-can-modify-a-tuple">
-<h2><span class="section-number">5.3.1. </span>Actually you can modify a tuple<a class="headerlink" href="#actually-you-can-modify-a-tuple" title="Permalink to this headline">#</a></h2>
+<section class="tex2jax_ignore mathjax_ignore" id="creating-a-table">
+<h1><span class="section-number">3.3. </span>Creating a Table<a class="headerlink" href="#creating-a-table" title="Permalink to this headline">#</a></h1>
+<p>Ref: <a class="reference external" href="https://scipython.com/book/chapter-2-the-core-python-language-i/string-representation-of-integers-with-comma-separated-thousands/">https://scipython.com/book/chapter-2-the-core-python-language-i/string-representation-of-integers-with-comma-separated-thousands/</a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_tuple</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">])</span>
-<span class="n">my_tuple</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="mi">7</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">my_tuple</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;|&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">{:^51}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Cereal Yields (kg/ha)&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;|&#39;</span>
+<span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">15</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">8</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span>
+<span class="n">row</span> <span class="o">=</span> <span class="s1">&#39;| </span><span class="si">{:&lt;13}</span><span class="s1"> |&#39;</span> <span class="o">+</span> <span class="s1">&#39; </span><span class="si">{:6,d}</span><span class="s1"> |&#39;</span><span class="o">*</span><span class="mi">4</span>
+<span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;| </span><span class="si">{:^13s}</span><span class="s1"> |&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39; </span><span class="si">{:^6d}</span><span class="s1"> |&#39;</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1980</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span>
+                                                                  <span class="mi">2000</span><span class="p">,</span> <span class="mi">2010</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">title</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span>
+      <span class="n">title</span><span class="p">,</span>
+      <span class="n">line</span><span class="p">,</span>
+      <span class="n">header</span><span class="p">,</span>
+      <span class="n">line</span><span class="p">,</span>
+      <span class="n">row</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;China&#39;</span><span class="p">,</span> <span class="mi">2937</span><span class="p">,</span> <span class="mi">4321</span><span class="p">,</span> <span class="mi">4752</span><span class="p">,</span> <span class="mi">5527</span><span class="p">),</span>
+      <span class="n">row</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Germany&#39;</span><span class="p">,</span> <span class="mi">4225</span><span class="p">,</span> <span class="mi">5411</span><span class="p">,</span> <span class="mi">6453</span><span class="p">,</span> <span class="mi">6718</span><span class="p">),</span>
+      <span class="n">row</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">3772</span><span class="p">,</span> <span class="mi">4755</span><span class="p">,</span> <span class="mi">5854</span><span class="p">,</span> <span class="mi">6988</span><span class="p">),</span>
+      <span class="n">line</span><span class="p">,</span>
+      <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(1, 2, 3, [4, 5, 6, 7])
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>+---------------------------------------------------+
+|               Cereal Yields (kg/ha)               |
++---------------+--------+--------+--------+--------+
+|    Country    |  1980  |  1990  |  2000  |  2010  |
++---------------+--------+--------+--------+--------+
+| China         |  2,937 |  4,321 |  4,752 |  5,527 |
+| Germany       |  4,225 |  5,411 |  6,453 |  6,718 |
+| United States |  3,772 |  4,755 |  5,854 |  6,988 |
++---------------+--------+--------+--------+--------+
 </pre></div>
 </div>
 </div>
+</div>
+<section id="writing-to-a-file">
+<h2><span class="section-number">3.3.1. </span>Writing to a file<a class="headerlink" href="#writing-to-a-file" title="Permalink to this headline">#</a></h2>
+<p>Use <code class="docutils literal notranslate"><span class="pre">with</span></code> context to manage closing file automatically.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test_file.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="s1">&#39;line1</span><span class="se">\n</span><span class="s1">line2&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">title</span> <span class="o">=</span> <span class="s1">&#39;|&#39;</span> <span class="o">+</span> <span class="s1">&#39;</span><span class="si">{:^51}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Cereal Yields (kg/ha)&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;|&#39;</span>
+<span class="n">line</span> <span class="o">=</span> <span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">15</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">8</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">)</span><span class="o">*</span><span class="mi">4</span>
+<span class="n">row</span> <span class="o">=</span> <span class="s1">&#39;| </span><span class="si">{:&lt;13}</span><span class="s1"> |&#39;</span> <span class="o">+</span> <span class="s1">&#39; </span><span class="si">{:6,d}</span><span class="s1"> |&#39;</span><span class="o">*</span><span class="mi">4</span>
+<span class="n">header</span> <span class="o">=</span> <span class="s1">&#39;| </span><span class="si">{:^13s}</span><span class="s1"> |&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Country&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="p">(</span><span class="s1">&#39; </span><span class="si">{:^6d}</span><span class="s1"> |&#39;</span><span class="o">*</span><span class="mi">4</span><span class="p">)</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="mi">1980</span><span class="p">,</span> <span class="mi">1990</span><span class="p">,</span>
+                                                                  <span class="mi">2000</span><span class="p">,</span> <span class="mi">2010</span><span class="p">)</span>
+<span class="n">file_content</span> <span class="o">=</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">((</span><span class="s1">&#39;+&#39;</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">title</span><span class="p">)</span><span class="o">-</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="s1">&#39;+&#39;</span><span class="p">,</span>
+      <span class="n">title</span><span class="p">,</span>
+      <span class="n">line</span><span class="p">,</span>
+      <span class="n">header</span><span class="p">,</span>
+      <span class="n">line</span><span class="p">,</span>
+      <span class="n">row</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;China&#39;</span><span class="p">,</span> <span class="mi">2937</span><span class="p">,</span> <span class="mi">4321</span><span class="p">,</span> <span class="mi">4752</span><span class="p">,</span> <span class="mi">5527</span><span class="p">),</span>
+      <span class="n">row</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;Germany&#39;</span><span class="p">,</span> <span class="mi">4225</span><span class="p">,</span> <span class="mi">5411</span><span class="p">,</span> <span class="mi">6453</span><span class="p">,</span> <span class="mi">6718</span><span class="p">),</span>
+      <span class="n">row</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="s1">&#39;United States&#39;</span><span class="p">,</span> <span class="mi">3772</span><span class="p">,</span> <span class="mi">4755</span><span class="p">,</span> <span class="mi">5854</span><span class="p">,</span> <span class="mi">6988</span><span class="p">),</span>
+      <span class="n">line</span><span class="p">))</span>
+
+<span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;test_file2.txt&#39;</span><span class="p">,</span> <span class="s1">&#39;w&#39;</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
+    <span class="n">file</span><span class="o">.</span><span class="n">write</span><span class="p">(</span><span class="n">file_content</span><span class="p">)</span>
+</pre></div>
 </div>
 </section>
 </section>
@@ -653,7 +692,7 @@ title="Print to PDF"
         },
         kernelOptions: {
             kernelName: "python3",
-            path: "./chapters/05"
+            path: "./chapters/03"
         },
         predefinedOutput: true
     }
@@ -667,17 +706,17 @@ title="Print to PDF"
                 
     <!-- Previous / next buttons -->
 <div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="methods.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="formatting.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">5.2. </span>List methods (functions)</p>
+            <p class="prev-next-title"><span class="section-number">3.2. </span>String Formatting</p>
         </div>
     </a>
-    <a class='right-next' id="next-link" href="strings.html" title="next page">
+    <a class='right-next' id="next-link" href="methods.html" title="next page">
     <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">5.4. </span>Strings as Lists</p>
+        <p class="prev-next-title"><span class="section-number">3.4. </span>String methods</p>
     </div>
     <i class="fas fa-angle-right"></i>
     </a>
