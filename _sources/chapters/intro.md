@@ -19,7 +19,7 @@ Welcome to EAS503! EAS503 is a course taught in the Department of Engineering & 
 **Registration:** Students interested in enrolling outside of the Engineering Science MS Data Science program should fill out a force registration request: https://academics.eng.buffalo.edu/
 
 ## Course Content
-- UB Learns Syllabus/Cheating Quiz (1) -- Due 2/10/23
+- UB Learns Syllabus/Cheating Quiz (1) -- Due 2/15/23
 - Exam (1) - 5%
 - Quizzes (5) - 20%
 - Programming Assignments (8) - 30%
@@ -27,17 +27,22 @@ Welcome to EAS503! EAS503 is a course taught in the Department of Engineering & 
 - Individual Mini-Projects (3) - 30%
 
 ## Exam
-The first exam will be on Monday, February 20, 2023 5:00 PM - 8:00 PM EAS 503 in Nsc 225. The exam will be administered via UB Learns, but you must be in class to take it. Ensure your computer battery can last for three hours. Nsc 225 has limited charging ports. 
+The first exam will be on Friday, February 24, 2023 5:00 PM - 8:00 PM EAS 503 in NSC 225. This will be a paper exam. Please bring the following the the exam:
+1. Pencils
+2. Erasers
+3. Student ID 
+4. One page **handwritten** cheat-sheet
 
 ## Quizzes
 30-minute paper quizzes will be given at the beginning of class. 
 Quiz Dates:
-1. 3/1/2023
-2. 3/15/2023
-3. 4/5/2023
-4. 4/19/2023
-5. 5/3/2023
+1. 3/8/2023
+2. 3/29/2023
+3. 4/12/2023
+4. 4/26/2023
+5. 5/10/2023
 
+- You are allowed one page **handwritten** cheat-sheet for the quizzes. 
 
 ## Programming Assignments
 - Descriptions for the programming assignments and necessary files will be posted on UB Learn.

@@ -25,6 +25,7 @@ kernelspec:
 - `+=` -- add to another string and save value
 - `int("3")` -- convert str to int
 - `float("3.4")` -- convert str to float
+- `str(<input>)` -- convert the input to a string data type. Useful for converting numbers to strings so you can concatenate strings and numbers.
 
 
 ## Single Quotes vs Double Quotes
