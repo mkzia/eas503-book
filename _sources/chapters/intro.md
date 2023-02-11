@@ -27,7 +27,7 @@ Welcome to EAS503! EAS503 is a course taught in the Department of Engineering & 
 - Individual Mini-Projects (3) - 30%
 
 ## Exam
-The first exam will be on Friday, February 24, 2023 5:00 PM - 8:00 PM EAS 503 in NSC 225. This will be a paper exam. Please bring the following the the exam:
+The first exam will be on **Friday, February 24, 2023 5:00 PM - 8:00 PM in NSC 225**. This will be a paper exam. Please bring the following the the exam:
 1. Pencils
 2. Erasers
 3. Student ID 
