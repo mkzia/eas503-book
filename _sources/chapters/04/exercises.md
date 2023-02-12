@@ -96,9 +96,9 @@ Prompt user for three numbers and find the maximum value.
 ```{code-cell} ipython3
 :tags: ["hide-input", "remove-output", "output_scroll"]
 def ex5():
-    x = int(input("Enter a number: "))
-    y = int(input("Enter another number: "))
-    z = int(input("Enter enter a third number: "))
+    x1 = int(input("Enter a number: "))
+    x2 = int(input("Enter another number: "))
+    x3 = int(input("Enter enter a third number: "))
 
     if x1 >= x2 and x1 >= x3:
         maxval = x1
