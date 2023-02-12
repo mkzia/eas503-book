@@ -750,15 +750,15 @@ title="Print to PDF"
 <p>Modify exercise 1 to print a message when F &gt; 90 and F &lt; 32</p>
 <div class="cell tag_hide-input tag_remove-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">celsius</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What is the Celsius temperature? &quot;</span><span class="p">))</span>
-<span class="n">fahrenheit</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span> <span class="o">*</span> <span class="n">celsius</span> <span class="o">+</span> <span class="mi">32</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The temperature is&quot;</span><span class="p">,</span> <span class="n">fahrenheit</span><span class="p">,</span> <span class="s2">&quot;degrees Fahrenheit.&quot;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ex2</span><span class="p">():</span>
+    <span class="n">celsius</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;What is the Celsius temperature? &quot;</span><span class="p">))</span>
+    <span class="n">fahrenheit</span> <span class="o">=</span> <span class="mi">9</span><span class="o">/</span><span class="mi">5</span> <span class="o">*</span> <span class="n">celsius</span> <span class="o">+</span> <span class="mi">32</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;The temperature is&quot;</span><span class="p">,</span> <span class="n">fahrenheit</span><span class="p">,</span> <span class="s2">&quot;degrees Fahrenheit.&quot;</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="n">fahrenheit</span> <span class="o">&gt;</span> <span class="mi">95</span><span class="p">:</span> <span class="c1"># &lt;expr&gt; &lt;relop&gt; &lt;expr&gt;, where &lt;relop&gt; is relation operator</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s really hot out there. Be careful!&quot;</span><span class="p">)</span>
-
-<span class="k">if</span> <span class="n">fahrenheit</span> <span class="o">&lt;</span> <span class="mi">32</span><span class="p">:</span> <span class="c1"># &lt;expr&gt; &lt;relop&gt; &lt;expr&gt;, where &lt;relop&gt; is relation is operator</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Be sure to dress warmly!&quot;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">fahrenheit</span> <span class="o">&gt;</span> <span class="mi">95</span><span class="p">:</span> <span class="c1"># &lt;expr&gt; &lt;relop&gt; &lt;expr&gt;, where &lt;relop&gt; is relation operator</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;It&#39;s really hot out there. Be careful!&quot;</span><span class="p">)</span>
+    <span class="k">elif</span> <span class="n">fahrenheit</span> <span class="o">&lt;</span> <span class="mi">32</span><span class="p">:</span> <span class="c1"># &lt;expr&gt; &lt;relop&gt; &lt;expr&gt;, where &lt;relop&gt; is relation is operator</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Be sure to dress warmly!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -771,17 +771,18 @@ title="Print to PDF"
 Prompt the user to the coefficients a, b, and c.</p>
 <div class="cell tag_hide-input tag_remove-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This program finds the real solutions to a quadratic</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient a: &quot;</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient b: &quot;</span><span class="p">))</span>
-<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient c: &quot;</span><span class="p">))</span>
-<span class="n">disc_root</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">b</span> <span class="o">-</span><span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ex3</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This program finds the real solutions to a quadratic</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient a: &quot;</span><span class="p">))</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient b: &quot;</span><span class="p">))</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient c: &quot;</span><span class="p">))</span>
+    <span class="n">disc_root</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">b</span> <span class="o">-</span><span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
 
-<span class="n">root1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">disc_root</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
-<span class="n">root2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">disc_root</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+    <span class="n">root1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">disc_root</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+    <span class="n">root2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">disc_root</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The solutions are:&quot;</span><span class="p">,</span> <span class="n">root1</span><span class="p">,</span> <span class="n">root2</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The solutions are:&quot;</span><span class="p">,</span> <span class="n">root1</span><span class="p">,</span> <span class="n">root2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -792,24 +793,25 @@ Prompt the user to the coefficients a, b, and c.</p>
 <p>Modify ex3 to add conditionals to print no real roots, double root, roots.</p>
 <div class="cell tag_hide-input tag_remove-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This program finds the real solutions to a quadratic</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
-<span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient a: &quot;</span><span class="p">))</span>
-<span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient b: &quot;</span><span class="p">))</span>
-<span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient c: &quot;</span><span class="p">))</span>
-<span class="n">discrim</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">b</span> <span class="o">-</span><span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ex4</span><span class="p">():</span>
+    <span class="kn">import</span> <span class="nn">math</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;This program finds the real solutions to a quadratic</span><span class="se">\n</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="n">a</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient a: &quot;</span><span class="p">))</span>
+    <span class="n">b</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient b: &quot;</span><span class="p">))</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter coefficient c: &quot;</span><span class="p">))</span>
+    <span class="n">discrim</span> <span class="o">=</span> <span class="n">b</span> <span class="o">*</span> <span class="n">b</span> <span class="o">-</span><span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span>
 
-<span class="k">if</span> <span class="n">discrim</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
-    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The equation has no real roots!&quot;</span><span class="p">)</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">if</span> <span class="n">discrim</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-        <span class="n">root</span> <span class="o">=</span> <span class="o">-</span><span class="n">b</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">There is a double root at:&quot;</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">discrim</span> <span class="o">&lt;</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The equation has no real roots!&quot;</span><span class="p">)</span>
     <span class="k">else</span><span class="p">:</span>
-        <span class="n">disc_root</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">b</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
-        <span class="n">root1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">disc_root</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
-        <span class="n">root2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">disc_root</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
-        <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The solutions are:&quot;</span><span class="p">,</span> <span class="n">root1</span><span class="p">,</span> <span class="n">root2</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">discrim</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">root</span> <span class="o">=</span> <span class="o">-</span><span class="n">b</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">There is a double root at:&quot;</span><span class="p">,</span> <span class="n">root</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">disc_root</span> <span class="o">=</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">b</span> <span class="o">*</span> <span class="n">b</span> <span class="o">-</span> <span class="mi">4</span> <span class="o">*</span> <span class="n">a</span> <span class="o">*</span> <span class="n">c</span><span class="p">)</span>
+            <span class="n">root1</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">+</span> <span class="n">disc_root</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+            <span class="n">root2</span> <span class="o">=</span> <span class="p">(</span><span class="o">-</span><span class="n">b</span> <span class="o">-</span> <span class="n">disc_root</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">2</span> <span class="o">*</span> <span class="n">a</span><span class="p">)</span>
+            <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">The solutions are:&quot;</span><span class="p">,</span> <span class="n">root1</span><span class="p">,</span> <span class="n">root2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -817,21 +819,22 @@ Prompt the user to the coefficients a, b, and c.</p>
 </section>
 <section id="exercise-5">
 <h2><span class="section-number">4.5.5. </span>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h2>
-<p>Prompt user for three  numbers and find the maximum value.</p>
+<p>Prompt user for three numbers and find the maximum value.</p>
 <div class="cell tag_hide-input tag_remove-output tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">))</span>
-<span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter another number: &quot;</span><span class="p">))</span>
-<span class="n">z</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter enter a third number: &quot;</span><span class="p">))</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">ex5</span><span class="p">():</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter a number: &quot;</span><span class="p">))</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter another number: &quot;</span><span class="p">))</span>
+    <span class="n">z</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s2">&quot;Enter enter a third number: &quot;</span><span class="p">))</span>
 
-<span class="k">if</span> <span class="n">x1</span> <span class="o">&gt;=</span> <span class="n">x2</span> <span class="ow">and</span> <span class="n">x1</span> <span class="o">&gt;=</span> <span class="n">x3</span><span class="p">:</span>
-    <span class="n">maxval</span> <span class="o">=</span> <span class="n">x1</span>
-<span class="k">elif</span> <span class="n">x2</span> <span class="o">&gt;=</span> <span class="n">x1</span> <span class="ow">and</span> <span class="n">x2</span> <span class="o">&gt;=</span> <span class="n">x3</span><span class="p">:</span>
-    <span class="n">maxval</span> <span class="o">=</span> <span class="n">x2</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="n">maxval</span> <span class="o">=</span> <span class="n">x3</span>
+    <span class="k">if</span> <span class="n">x1</span> <span class="o">&gt;=</span> <span class="n">x2</span> <span class="ow">and</span> <span class="n">x1</span> <span class="o">&gt;=</span> <span class="n">x3</span><span class="p">:</span>
+        <span class="n">maxval</span> <span class="o">=</span> <span class="n">x1</span>
+    <span class="k">elif</span> <span class="n">x2</span> <span class="o">&gt;=</span> <span class="n">x1</span> <span class="ow">and</span> <span class="n">x2</span> <span class="o">&gt;=</span> <span class="n">x3</span><span class="p">:</span>
+        <span class="n">maxval</span> <span class="o">=</span> <span class="n">x2</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">maxval</span> <span class="o">=</span> <span class="n">x3</span>
 
-<span class="nb">print</span><span class="p">(</span><span class="n">maxval</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">maxval</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

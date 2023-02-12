@@ -30,15 +30,15 @@ Modify exercise 1 to print a message when F > 90 and F < 32
 
 ```{code-cell} ipython3
 :tags: ["hide-input", "remove-output", "output_scroll"]
-celsius = float(input("What is the Celsius temperature? "))
-fahrenheit = 9/5 * celsius + 32
-print("The temperature is", fahrenheit, "degrees Fahrenheit.")
+def ex2():
+    celsius = float(input("What is the Celsius temperature? "))
+    fahrenheit = 9/5 * celsius + 32
+    print("The temperature is", fahrenheit, "degrees Fahrenheit.")
 
-if fahrenheit > 95: # <expr> <relop> <expr>, where <relop> is relation operator
-    print("It's really hot out there. Be careful!")
-
-if fahrenheit < 32: # <expr> <relop> <expr>, where <relop> is relation is operator
-    print("Be sure to dress warmly!")
+    if fahrenheit > 95: # <expr> <relop> <expr>, where <relop> is relation operator
+        print("It's really hot out there. Be careful!")
+    elif fahrenheit < 32: # <expr> <relop> <expr>, where <relop> is relation is operator
+        print("Be sure to dress warmly!")
 ```
 
 ## Exercise 3 
@@ -49,17 +49,18 @@ Prompt the user to the coefficients a, b, and c.
 
 ```{code-cell} ipython3
 :tags: ["hide-input", "remove-output", "output_scroll"]
-import math
-print("This program finds the real solutions to a quadratic\n")
-a = float(input("Enter coefficient a: "))
-b = float(input("Enter coefficient b: "))
-c = float(input("Enter coefficient c: "))
-disc_root = math.sqrt(b * b -4 * a * c)
+def ex3():
+    import math
+    print("This program finds the real solutions to a quadratic\n")
+    a = float(input("Enter coefficient a: "))
+    b = float(input("Enter coefficient b: "))
+    c = float(input("Enter coefficient c: "))
+    disc_root = math.sqrt(b * b -4 * a * c)
 
-root1 = (-b + disc_root) / (2 * a)
-root2 = (-b - disc_root) / (2 * a)
+    root1 = (-b + disc_root) / (2 * a)
+    root2 = (-b - disc_root) / (2 * a)
 
-print("\nThe solutions are:", root1, root2)
+    print("\nThe solutions are:", root1, root2)
 ```
 
 ## Exercise 4 
@@ -68,44 +69,45 @@ Modify ex3 to add conditionals to print no real roots, double root, roots.
 
 ```{code-cell} ipython3
 :tags: ["hide-input", "remove-output", "output_scroll"]
-import math
-print("This program finds the real solutions to a quadratic\n")
-a = float(input("Enter coefficient a: "))
-b = float(input("Enter coefficient b: "))
-c = float(input("Enter coefficient c: "))
-discrim = b * b -4 * a * c
+def ex4():
+    import math
+    print("This program finds the real solutions to a quadratic\n")
+    a = float(input("Enter coefficient a: "))
+    b = float(input("Enter coefficient b: "))
+    c = float(input("Enter coefficient c: "))
+    discrim = b * b -4 * a * c
 
-if discrim < 0:
-    print("\nThe equation has no real roots!")
-else:
-    if discrim == 0:
-        root = -b / (2 * a)
-        print("\nThere is a double root at:", root)
+    if discrim < 0:
+        print("\nThe equation has no real roots!")
     else:
-        disc_root = math.sqrt(b * b - 4 * a * c)
-        root1 = (-b + disc_root) / (2 * a)
-        root2 = (-b - disc_root) / (2 * a)
-        print("\nThe solutions are:", root1, root2)
+        if discrim == 0:
+            root = -b / (2 * a)
+            print("\nThere is a double root at:", root)
+        else:
+            disc_root = math.sqrt(b * b - 4 * a * c)
+            root1 = (-b + disc_root) / (2 * a)
+            root2 = (-b - disc_root) / (2 * a)
+            print("\nThe solutions are:", root1, root2)
 ```
 
 ## Exercise 5
-Prompt user for three  numbers and find the maximum value.
-
+Prompt user for three numbers and find the maximum value.
 
 ```{code-cell} ipython3
 :tags: ["hide-input", "remove-output", "output_scroll"]
-x = int(input("Enter a number: "))
-y = int(input("Enter another number: "))
-z = int(input("Enter enter a third number: "))
+def ex5():
+    x = int(input("Enter a number: "))
+    y = int(input("Enter another number: "))
+    z = int(input("Enter enter a third number: "))
 
-if x1 >= x2 and x1 >= x3:
-    maxval = x1
-elif x2 >= x1 and x2 >= x3:
-    maxval = x2
-else:
-    maxval = x3
+    if x1 >= x2 and x1 >= x3:
+        maxval = x1
+    elif x2 >= x1 and x2 >= x3:
+        maxval = x2
+    else:
+        maxval = x3
 
-print(maxval)
+    print(maxval)
 ```
 
 ## Exercise 6 

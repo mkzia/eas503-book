@@ -646,7 +646,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">ph</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the pH level: &#39;</span><span class="p">))</span>
-<span class="k">if</span> <span class="n">ph</span> <span class="o">&lt;</span> <span class="mf">7.0</span>
+<span class="k">if</span> <span class="n">ph</span> <span class="o">&lt;</span> <span class="mf">7.0</span><span class="p">:</span>
     <span class="n">ph</span> <span class="o">=</span> <span class="mf">8.0</span> <span class="c1">#indentation important</span>
 <span class="k">if</span> <span class="n">ph</span> <span class="o">&gt;</span> <span class="mf">7.0</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">ph</span><span class="p">,</span> <span class="s2">&quot; is basic.&quot;</span><span class="p">)</span> 
@@ -661,7 +661,7 @@ title="Print to PDF"
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">compound</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter the compound: &#39;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">compound</span> <span class="o">==</span> <span class="s1">&#39;H20&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="n">compound</span> <span class="o">==</span> <span class="s1">&#39;H2O&#39;</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Water&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">compound</span> <span class="o">==</span> <span class="s1">&#39;NH3&#39;</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Ammonia&#39;</span><span class="p">)</span>
@@ -723,7 +723,7 @@ title="Print to PDF"
     <span class="n">risk</span> <span class="o">=</span> <span class="s1">&#39;medium&#39;</span>
 <span class="k">elif</span> <span class="ow">not</span> <span class="n">young</span> <span class="ow">and</span> <span class="n">slim</span><span class="p">:</span>
     <span class="n">risk</span> <span class="o">=</span> <span class="s1">&#39;medium&#39;</span>
-<span class="k">elif</span> <span class="ow">not</span> <span class="n">you</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">slim</span><span class="p">:</span>
+<span class="k">elif</span> <span class="ow">not</span> <span class="n">young</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">slim</span><span class="p">:</span>
     <span class="n">risk</span> <span class="o">=</span> <span class="s1">&#39;high&#39;</span>
 </pre></div>
 </div>
@@ -741,24 +741,22 @@ title="Print to PDF"
 <li><p>Given a number x, print FizzBuzz if it is a multiple of 5 and 7, Fizz if it is a multiple of 5, and Buzz if it is a multiple of 7.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Implement the min() function for three inputs</span>
-
 <span class="k">def</span> <span class="nf">my_min</span><span class="p">():</span>
-  <span class="n">number1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter first integer: &#39;</span><span class="p">))</span>
-  <span class="n">number2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter second integer: &#39;</span><span class="p">))</span>
-  <span class="n">number3</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter third integer: &#39;</span><span class="p">))</span>
+    <span class="n">number1</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter first integer: &#39;</span><span class="p">))</span>
+    <span class="n">number2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter second integer: &#39;</span><span class="p">))</span>
+    <span class="n">number3</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Enter third integer: &#39;</span><span class="p">))</span>
 
-  <span class="n">minimum</span> <span class="o">=</span> <span class="n">number1</span>  
+    <span class="n">minimum</span> <span class="o">=</span> <span class="n">number1</span>  
 
-  <span class="k">if</span> <span class="n">number2</span> <span class="o">&lt;</span> <span class="n">minimum</span><span class="p">:</span>
-      <span class="n">minimum</span> <span class="o">=</span> <span class="n">number2</span>
+    <span class="k">if</span> <span class="n">number2</span> <span class="o">&lt;</span> <span class="n">minimum</span><span class="p">:</span>
+        <span class="n">minimum</span> <span class="o">=</span> <span class="n">number2</span>
 
-  <span class="k">if</span> <span class="n">number3</span> <span class="o">&lt;</span> <span class="n">minimum</span><span class="p">:</span>
-      <span class="n">minimum</span> <span class="o">=</span> <span class="n">number3</span>
+    <span class="k">if</span> <span class="n">number3</span> <span class="o">&lt;</span> <span class="n">minimum</span><span class="p">:</span>
+        <span class="n">minimum</span> <span class="o">=</span> <span class="n">number3</span>
 
-  <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Minimum value is&#39;</span><span class="p">,</span> <span class="n">minimum</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Minimum value is&#39;</span><span class="p">,</span> <span class="n">minimum</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><a class="reference external" href="https://www.analyzemath.com/Equations/solve-quadratic-equations-using-discriminants.html">https://www.analyzemath.com/Equations/solve-quadratic-equations-using-discriminants.html</a></p>
 </section>
 </section>
 

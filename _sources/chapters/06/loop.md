@@ -162,3 +162,35 @@ with open(filename, 'r') as file:
 ```
 
 
+## Skipping Bad values
+You can use a `try/except` blocks to skip bad values
+
+```python
+try:
+    value = float(line)
+except:
+    continue
+```
+
+## Initial Values
+Sometimes before the for loop code you have initialize a variable to 0 or an empty list.
+1. If you want to calculate the average or sum of a list, for example, you would need to initialize a variable to zero and update it every time you access a new element in a list.
+
+```python
+total = 0
+count = 0
+for value in my_list:
+   total += value
+   count += 1
+average = total / count
+```
+
+2. If you want to keep track of some values as you loop over some list, you might need to initialize an empty list. One example is removing duplicates from a sequence.
+
+```python
+unique_values = []
+for ele in sequence:
+    if ele not in unique_values:
+        unique_values.append(ele)
+```
+

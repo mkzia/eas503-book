@@ -657,6 +657,16 @@ title="Print to PDF"
    6.1.8. File Handling
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skipping-bad-values">
+   6.1.9. Skipping Bad values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-values">
+   6.1.10. Initial Values
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -761,6 +771,16 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#file-handling">
    6.1.8. File Handling
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#skipping-bad-values">
+   6.1.9. Skipping Bad values
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#initial-values">
+   6.1.10. Initial Values
   </a>
  </li>
 </ul>
@@ -933,6 +953,40 @@ title="Print to PDF"
         <span class="k">if</span> <span class="ow">not</span> <span class="n">line</span><span class="o">.</span><span class="n">strip</span><span class="p">():</span> <span class="c1"># used for skipping empty lines!</span>
             <span class="k">continue</span>
         <span class="c1"># do something with line</span>
+</pre></div>
+</div>
+</section>
+<section id="skipping-bad-values">
+<h2><span class="section-number">6.1.9. </span>Skipping Bad values<a class="headerlink" href="#skipping-bad-values" title="Permalink to this headline">#</a></h2>
+<p>You can use a <code class="docutils literal notranslate"><span class="pre">try/except</span></code> blocks to skip bad values</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">try</span><span class="p">:</span>
+    <span class="n">value</span> <span class="o">=</span> <span class="nb">float</span><span class="p">(</span><span class="n">line</span><span class="p">)</span>
+<span class="k">except</span><span class="p">:</span>
+    <span class="k">continue</span>
+</pre></div>
+</div>
+</section>
+<section id="initial-values">
+<h2><span class="section-number">6.1.10. </span>Initial Values<a class="headerlink" href="#initial-values" title="Permalink to this headline">#</a></h2>
+<p>Sometimes before the for loop code you have initialize a variable to 0 or an empty list.</p>
+<ol class="simple">
+<li><p>If you want to calculate the average or sum of a list, for example, you would need to initialize a variable to zero and update it every time you access a new element in a list.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">total</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="n">count</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
+   <span class="n">total</span> <span class="o">+=</span> <span class="n">value</span>
+   <span class="n">count</span> <span class="o">+=</span> <span class="mi">1</span>
+<span class="n">average</span> <span class="o">=</span> <span class="n">total</span> <span class="o">/</span> <span class="n">count</span>
+</pre></div>
+</div>
+<ol class="simple">
+<li><p>If you want to keep track of some values as you loop over some list, you might need to initialize an empty list. One example is removing duplicates from a sequence.</p></li>
+</ol>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">unique_values</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">sequence</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">ele</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">unique_values</span><span class="p">:</span>
+        <span class="n">unique_values</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ele</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>

@@ -59,7 +59,7 @@ elif ph > 7.0:
 
 ```python
 ph = float(input('Enter the pH level: '))
-if ph < 7.0
+if ph < 7.0:
     ph = 8.0 #indentation important
 if ph > 7.0:
     print(ph, " is basic.") 
@@ -76,7 +76,7 @@ elif ph > 7.0:
 
 ```python
 compound = input('Enter the compound: ')
-if compound == 'H20':
+if compound == 'H2O':
     print('Water')
 elif compound == 'NH3':
     print('Ammonia')
@@ -142,7 +142,7 @@ elif young and not slim :
     risk = 'medium'
 elif not young and slim:
     risk = 'medium'
-elif not you and not slim:
+elif not young and not slim:
     risk = 'high'
 ```
 
@@ -160,22 +160,18 @@ elif ph < 3.0:
 
 ```python
 # Implement the min() function for three inputs
-
 def my_min():
-  number1 = int(input('Enter first integer: '))
-  number2 = int(input('Enter second integer: '))
-  number3 = int(input('Enter third integer: '))
+    number1 = int(input('Enter first integer: '))
+    number2 = int(input('Enter second integer: '))
+    number3 = int(input('Enter third integer: '))
 
-  minimum = number1  
+    minimum = number1  
 
-  if number2 < minimum:
-      minimum = number2
+    if number2 < minimum:
+        minimum = number2
 
-  if number3 < minimum:
-      minimum = number3
+    if number3 < minimum:
+        minimum = number3
 
-  print('Minimum value is', minimum)
+    print('Minimum value is', minimum)
 ```
-
-
-https://www.analyzemath.com/Equations/solve-quadratic-equations-using-discriminants.html
