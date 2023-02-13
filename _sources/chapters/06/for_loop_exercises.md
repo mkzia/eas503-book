@@ -164,12 +164,12 @@ print(coin_toss(10))
 ## Exercise 9
 Write a function that uses the output from the 
 coin_toss function and calculates the probability of H and T
-Input: number of simulation
-Output: probability of H and T
+- Input: number of simulation
+- Output: probability of H and T
 
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
-def coin_toss_probablity(number):
+def coin_toss_probability(number):
     result = coin_toss(number)
     head_count = 0
     tail_count = 0
@@ -183,32 +183,32 @@ def coin_toss_probablity(number):
     return (head_count / len(result), tail_count / len(result))
 
 
-print(coin_toss_probablity(10))
+print(coin_toss_probability(100))
 ```
 
 ## Exercise 10
 Write a function that simulates coin_toss_probability for a given number of times and calculates the average of H and T
-Input: number of simulations
-Input: number of coin tosses
-Output: average probability
+- Input: number of simulations
+- Input: number of coin tosses
+- Output: average probability
 
 
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
-def simulate_coin_toss_probablity(num_sims, num_toss):
+def simulate_coin_toss_probability(num_sims, num_toss):
 
     head_prob = 0
     tail_prob = 0
 
     for i in range(num_sims):
-        h_prob, t_prob = coin_toss_probablity(num_toss)
+        h_prob, t_prob = coin_toss_probability(num_toss)
         head_prob += h_prob
         tail_prob += t_prob
 
     return (head_prob / num_sims, tail_prob / num_sims)
 
 
-print(simulate_coin_toss_probablity(10, 5))
+print(simulate_coin_toss_probability(10, 100))
 ```
 
 ## Exercise 11
@@ -236,6 +236,7 @@ print_student_average('for_ex11_data.txt')
 Write a function that generates a given number of students with a given number of grades and saves them to a file
 inputs: output_filename, number_of_students, number_of_tests, test_score_range(low, high)
 example output:
+```text
 student1,93,78,82,83,65
 student2,86,76,85,86,65
 student3,70,98,88,80,93
@@ -246,6 +247,7 @@ student7,67,93,90,92,66
 student8,89,83,90,97,91
 student9,92,84,75,92,92
 student10,65,89,80,68,89
+```
 
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]

@@ -377,6 +377,11 @@ const thebe_selector_output = ".output, .cell_output"
      6.6. List Comprehension Exercises
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="additional_exercises.html">
+     6.7. Additional Exercises
+    </a>
+   </li>
   </ul>
  </li>
 </ul>
@@ -939,12 +944,14 @@ Instead of using a for loop as in ex2, use sum() and len() to calculate the aver
 <section id="exercise-9">
 <h2><span class="section-number">6.2.9. </span>Exercise 9<a class="headerlink" href="#exercise-9" title="Permalink to this headline">#</a></h2>
 <p>Write a function that uses the output from the
-coin_toss function and calculates the probability of H and T
-Input: number of simulation
-Output: probability of H and T</p>
+coin_toss function and calculates the probability of H and T</p>
+<ul class="simple">
+<li><p>Input: number of simulation</p></li>
+<li><p>Output: probability of H and T</p></li>
+</ul>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coin_toss_probablity</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coin_toss_probability</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">coin_toss</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
     <span class="n">head_count</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">tail_count</span> <span class="o">=</span> <span class="mi">0</span>
@@ -958,7 +965,7 @@ Output: probability of H and T</p>
     <span class="k">return</span> <span class="p">(</span><span class="n">head_count</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">),</span> <span class="n">tail_count</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">result</span><span class="p">))</span>
 
 
-<span class="nb">print</span><span class="p">(</span><span class="n">coin_toss_probablity</span><span class="p">(</span><span class="mi">10</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">coin_toss_probability</span><span class="p">(</span><span class="mi">100</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -971,26 +978,28 @@ Output: probability of H and T</p>
 </section>
 <section id="exercise-10">
 <h2><span class="section-number">6.2.10. </span>Exercise 10<a class="headerlink" href="#exercise-10" title="Permalink to this headline">#</a></h2>
-<p>Write a function that simulates coin_toss_probability for a given number of times and calculates the average of H and T
-Input: number of simulations
-Input: number of coin tosses
-Output: average probability</p>
+<p>Write a function that simulates coin_toss_probability for a given number of times and calculates the average of H and T</p>
+<ul class="simple">
+<li><p>Input: number of simulations</p></li>
+<li><p>Input: number of coin tosses</p></li>
+<li><p>Output: average probability</p></li>
+</ul>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_coin_toss_probablity</span><span class="p">(</span><span class="n">num_sims</span><span class="p">,</span> <span class="n">num_toss</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_coin_toss_probability</span><span class="p">(</span><span class="n">num_sims</span><span class="p">,</span> <span class="n">num_toss</span><span class="p">):</span>
 
     <span class="n">head_prob</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">tail_prob</span> <span class="o">=</span> <span class="mi">0</span>
 
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">num_sims</span><span class="p">):</span>
-        <span class="n">h_prob</span><span class="p">,</span> <span class="n">t_prob</span> <span class="o">=</span> <span class="n">coin_toss_probablity</span><span class="p">(</span><span class="n">num_toss</span><span class="p">)</span>
+        <span class="n">h_prob</span><span class="p">,</span> <span class="n">t_prob</span> <span class="o">=</span> <span class="n">coin_toss_probability</span><span class="p">(</span><span class="n">num_toss</span><span class="p">)</span>
         <span class="n">head_prob</span> <span class="o">+=</span> <span class="n">h_prob</span>
         <span class="n">tail_prob</span> <span class="o">+=</span> <span class="n">t_prob</span>
 
     <span class="k">return</span> <span class="p">(</span><span class="n">head_prob</span> <span class="o">/</span> <span class="n">num_sims</span><span class="p">,</span> <span class="n">tail_prob</span> <span class="o">/</span> <span class="n">num_sims</span><span class="p">)</span>
 
 
-<span class="nb">print</span><span class="p">(</span><span class="n">simulate_coin_toss_probablity</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">simulate_coin_toss_probability</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">100</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
@@ -1042,8 +1051,8 @@ student10 78.2
 <h2><span class="section-number">6.2.12. </span>Exercise 12<a class="headerlink" href="#exercise-12" title="Permalink to this headline">#</a></h2>
 <p>Write a function that generates a given number of students with a given number of grades and saves them to a file
 inputs: output_filename, number_of_students, number_of_tests, test_score_range(low, high)
-example output:
-student1,93,78,82,83,65
+example output:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>student1,93,78,82,83,65
 student2,86,76,85,86,65
 student3,70,98,88,80,93
 student4,89,68,81,80,76
@@ -1052,7 +1061,9 @@ student6,75,77,69,72,76
 student7,67,93,90,92,66
 student8,89,83,90,97,91
 student9,92,84,75,92,92
-student10,65,89,80,68,89</p>
+student10,65,89,80,68,89
+</pre></div>
+</div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_students</span><span class="p">(</span><span class="n">output_filename</span><span class="p">,</span> <span class="n">number_of_students</span><span class="p">,</span> <span class="n">number_of_tests</span><span class="p">,</span> <span class="n">test_score_range</span><span class="p">):</span>
