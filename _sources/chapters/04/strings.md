@@ -10,6 +10,12 @@ kernelspec:
   name: python3
 ---
 
+- [Video Recording (16 minutes)](https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=99864159-cd4e-4f0f-b2d3-afa800ca3bb4)
+- [Jupyter Notebook](https://github.com/mkzia/eas503-book-notes/blob/main/04/strings.ipynb)
+
+
+
+
 # String Comparisons
 
 - When strings are compared, they are compared lexicographic, meaning strings are put into alphabetical order and uppercase comes before lowercase and numbers come before the alphabets. 

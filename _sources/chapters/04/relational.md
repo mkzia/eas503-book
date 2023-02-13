@@ -10,6 +10,9 @@ kernelspec:
   name: python3
 ---
 
+- [Video Recording (5 minutes)](https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=ef1b44a9-3194-492b-9cf2-afa800ca2f90)
+- [Jupyter Notebook](https://github.com/mkzia/eas503-book-notes/blob/main/04/relational.ipynb)
+
 
 # Relational Operators
 - A relational operator converts an expression into a boolean type, which is a basic Python data type.

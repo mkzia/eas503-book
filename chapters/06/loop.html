@@ -819,7 +819,7 @@ title="Print to PDF"
 </section>
 <section id="range">
 <h2><span class="section-number">6.1.3. </span>Range<a class="headerlink" href="#range" title="Permalink to this headline">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">:</span><span class="n">stop</span><span class="p">:</span><span class="n">step</span><span class="p">)</span> <span class="c1"># [start:step:stop)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">range</span><span class="p">(</span><span class="n">start</span><span class="p">,</span><span class="n">stop</span><span class="p">,</span><span class="n">step</span><span class="p">)</span> <span class="c1"># [start:step:stop)</span>
 </pre></div>
 </div>
 </section>
@@ -894,9 +894,11 @@ title="Print to PDF"
 </section>
 <section id="example-8">
 <h3><span class="section-number">6.1.4.9. </span>Example 8<a class="headerlink" href="#example-8" title="Permalink to this headline">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;Isaac Newton&#39;</span><span class="p">,</span> <span class="mi">1643</span><span class="p">,</span> <span class="mi">1727</span><span class="p">],</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">info</span> <span class="o">=</span> <span class="p">[</span>
+    <span class="p">[</span><span class="s1">&#39;Isaac Newton&#39;</span><span class="p">,</span> <span class="mi">1643</span><span class="p">,</span> <span class="mi">1727</span><span class="p">],</span>
     <span class="p">[</span><span class="s1">&#39;Charles Darwin&#39;</span><span class="p">,</span> <span class="mi">1809</span><span class="p">,</span> <span class="mi">1882</span><span class="p">],</span>
-    <span class="p">[</span><span class="s1">&#39;Alan Turing&#39;</span><span class="p">,</span> <span class="mi">1912</span><span class="p">,</span> <span class="mi">1954</span><span class="p">,</span> <span class="s1">&#39;alan@bletchley.uk&#39;</span><span class="p">]]</span>
+    <span class="p">[</span><span class="s1">&#39;Alan Turing&#39;</span><span class="p">,</span> <span class="mi">1912</span><span class="p">,</span> <span class="mi">1954</span><span class="p">,</span> <span class="s1">&#39;alan@bletchley.uk&#39;</span><span class="p">]</span>
+<span class="p">]</span>
 <span class="k">for</span> <span class="n">item</span> <span class="ow">in</span> <span class="n">info</span><span class="p">:</span>
     <span class="nb">print</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">item</span><span class="p">))</span>
 </pre></div>
@@ -915,11 +917,10 @@ title="Print to PDF"
 </section>
 <section id="how-to-sort-without-sorting">
 <h2><span class="section-number">6.1.6. </span>How to sort without sorting?<a class="headerlink" href="#how-to-sort-without-sorting" title="Permalink to this headline">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
-
-<span class="nb">sum</span> <span class="o">=</span> <span class="mi">0</span>
-<span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">x</span><span class="p">:</span>
-    <span class="nb">sum</span> <span class="o">=</span> <span class="nb">sum</span> <span class="o">*</span><span class="mi">10</span> <span class="o">+</span> <span class="n">ele</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">string1</span> <span class="o">=</span> <span class="s1">&#39;1134000234&#39;</span>
+<span class="n">string2</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">([</span><span class="n">ele</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">string1</span><span class="p">]))</span>
+<span class="n">string3</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="nb">sorted</span><span class="p">([</span><span class="n">ele</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">string1</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">string1</span><span class="p">,</span> <span class="n">string2</span><span class="p">,</span> <span class="n">string3</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">store</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">*</span> <span class="mi">10</span>
@@ -968,7 +969,7 @@ title="Print to PDF"
 </section>
 <section id="initial-values">
 <h2><span class="section-number">6.1.10. </span>Initial Values<a class="headerlink" href="#initial-values" title="Permalink to this headline">#</a></h2>
-<p>Sometimes before the for loop code you have initialize a variable to 0 or an empty list.</p>
+<p>Sometimes before the for loop code you to have initialize a variable to 0 or an empty list.</p>
 <ol class="simple">
 <li><p>If you want to calculate the average or sum of a list, for example, you would need to initialize a variable to zero and update it every time you access a new element in a list.</p></li>
 </ol>

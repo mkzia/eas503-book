@@ -1,3 +1,8 @@
+
+- [Video Recording (21 minutes)](https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=aaa0850c-4d41-4658-a59a-afa800ca2fc8)
+- [Jupyter Notebook](https://github.com/mkzia/eas503-book-notes/blob/main/04/statement_selection.ipynb)
+
+
 # Choosing which statements to execute
 
 ```Python

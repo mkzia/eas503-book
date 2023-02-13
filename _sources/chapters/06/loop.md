@@ -35,7 +35,7 @@ while <condition>
 ## Range
 
 ```python
-range(start:stop:step) # [start:step:stop)
+range(start,stop,step) # [start:step:stop)
 ```
 
 ## Examples
@@ -102,9 +102,11 @@ for inner_list in elements:
 ### Example 8
 
 ```python
-info = [['Isaac Newton', 1643, 1727],
+info = [
+    ['Isaac Newton', 1643, 1727],
     ['Charles Darwin', 1809, 1882],
-    ['Alan Turing', 1912, 1954, 'alan@bletchley.uk']]
+    ['Alan Turing', 1912, 1954, 'alan@bletchley.uk']
+]
 for item in info:
     print(len(item))
 ```
@@ -121,11 +123,10 @@ for ele in x:
 
 ## How to sort without sorting?
 ```python
-x = [1, 7, 3]
-
-sum = 0
-for ele in x:
-    sum = sum *10 + ele
+string1 = '1134000234'
+string2 = ''.join(sorted([ele for ele in string1]))
+string3 = ''.join(sorted([ele for ele in string1], reverse=True))
+print(string1, string2, string3)
 ```
 
 ```python
@@ -173,7 +174,7 @@ except:
 ```
 
 ## Initial Values
-Sometimes before the for loop code you have initialize a variable to 0 or an empty list.
+Sometimes before the for loop code you to have initialize a variable to 0 or an empty list.
 1. If you want to calculate the average or sum of a list, for example, you would need to initialize a variable to zero and update it every time you access a new element in a list.
 
 ```python

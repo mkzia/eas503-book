@@ -10,6 +10,9 @@ kernelspec:
   name: python3
 ---
 
+- [Video Recording (5 minutes)](https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=add3c7e4-de13-4755-b598-afa800ca2ff9)
+- [Jupyter Notebook](https://github.com/mkzia/eas503-book-notes/blob/main/04/boolean.ipynb)
+
 
 
 # Conditionals/Making Choices Using Flow Controls

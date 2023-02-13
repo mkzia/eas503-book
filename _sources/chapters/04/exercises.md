@@ -10,6 +10,11 @@ kernelspec:
   name: python3
 ---
 
+- [Video Recording (16 minutes)](https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=29edda21-9bcc-4a82-ad6e-afa800ca3027)
+- [Jupyter Notebook](https://github.com/mkzia/eas503-book-notes/blob/main/04/exercises.ipynb)
+
+
+
 
 # Exercises
 
