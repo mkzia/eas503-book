@@ -137,7 +137,7 @@ print(average_from_file('for_ex7_data1.txt'))
 ```
 
 ## Exercise 8
-Write a function simulates a coin toss
+Write a function that simulates a coin toss
 - Input: number of simulation
 - Output: a string that concatenates the results, ex. 'HHHTTTHTHTHT'
 
