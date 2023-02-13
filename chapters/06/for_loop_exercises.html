@@ -918,11 +918,12 @@ Instead of using a for loop as in ex2, use sum() and len() to calculate the aver
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coin_toss</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
     <span class="kn">import</span> <span class="nn">random</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">503</span><span class="p">)</span>
     <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
         <span class="n">toss</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
 
-        <span class="k">if</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">toss</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
             <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;H&#39;</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;T&#39;</span>
@@ -935,7 +936,7 @@ Instead of using a for loop as in ex2, use sum() and len() to calculate the aver
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>TTTTTTTTTT
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HHTHTTHHHT
 </pre></div>
 </div>
 </div>
@@ -951,7 +952,22 @@ coin_toss function and calculates the probability of H and T</p>
 </ul>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coin_toss_probability</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coin_toss</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">random</span>
+    <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">503</span><span class="p">)</span>
+    <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
+    <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+        <span class="n">toss</span> <span class="o">=</span> <span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="n">toss</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;H&#39;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">output</span> <span class="o">+=</span> <span class="s1">&#39;T&#39;</span>
+
+    <span class="k">return</span> <span class="n">output</span>
+
+
+<span class="k">def</span> <span class="nf">coin_toss_probability</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">coin_toss</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
     <span class="n">head_count</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">tail_count</span> <span class="o">=</span> <span class="mi">0</span>
@@ -970,7 +986,7 @@ coin_toss function and calculates the probability of H and T</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.54, 0.46)
 </pre></div>
 </div>
 </div>
@@ -1004,7 +1020,7 @@ coin_toss function and calculates the probability of H and T</p>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1.0)
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.54, 0.4600000000000001)
 </pre></div>
 </div>
 </div>

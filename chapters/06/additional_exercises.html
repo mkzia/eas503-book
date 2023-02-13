@@ -940,10 +940,13 @@ title="Print to PDF"
 <section id="exercise-7">
 <h2><span class="section-number">6.7.6. </span>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">#</a></h2>
 <p>Write code to extract the individual columns or key/value pairs and print them.</p>
-<p>large_string = “Cristiano Ronaldo	Nationality=Portugal;National_Position=LS;National_Kit=7.0;Club=Real Madrid;Club_Position=LW;Club_Kit=7.0;Club_Joining=07/01/2009;Contract_Expiry=2021.0;Rating=94;Height=185 cm;Weight=80 kg;Preferred_Foot=Right;Birth_Date=02/05/1985;Age=32;Preferred_Position=LW/ST;Work_Rate=High / Low;Weak_foot=4;Skill_Moves=5;Ball_Control=93;Dribbling=92;Marking=22;Sliding_Tackle=23;Standing_Tackle=31;Aggression=63;Reactions=96;Attacking_Position=94;Interceptions=29;Vision=85;Composure=86;Crossing=84;Short_Pass=83;Long_Pass=77;Acceleration=91;Speed=92;Stamina=92;Strength=80;Balance=63;Agility=90;Jumping=95;Heading=85;Shot_Power=92;Finishing=93;Long_Shots=90;Curve=81;Freekick_Accuracy=76;Penalties=85;Volleys=88;GK_Positioning=14;GK_Diving=7;GK_Kicking=15;GK_Handling=11;GK_Reflexes=11”</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">large_string</span> <span class="o">=</span> <span class="s2">&quot;Cristiano Ronaldo	Nationality=Portugal;National_Position=LS;National_Kit=7.0;Club=Real Madrid;Club_Position=LW;Club_Kit=7.0;Club_Joining=07/01/2009;Contract_Expiry=2021.0;Rating=94;Height=185 cm;Weight=80 kg;Preferred_Foot=Right;Birth_Date=02/05/1985;Age=32;Preferred_Position=LW/ST;Work_Rate=High / Low;Weak_foot=4;Skill_Moves=5;Ball_Control=93;Dribbling=92;Marking=22;Sliding_Tackle=23;Standing_Tackle=31;Aggression=63;Reactions=96;Attacking_Position=94;Interceptions=29;Vision=85;Composure=86;Crossing=84;Short_Pass=83;Long_Pass=77;Acceleration=91;Speed=92;Stamina=92;Strength=80;Balance=63;Agility=90;Jumping=95;Heading=85;Shot_Power=92;Finishing=93;Long_Shots=90;Curve=81;Freekick_Accuracy=76;Penalties=85;Volleys=88;GK_Positioning=14;GK_Diving=7;GK_Kicking=15;GK_Handling=11;GK_Reflexes=11&quot;</span>
+</pre></div>
+</div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span><span class="p">,</span> <span class="n">string</span> <span class="o">=</span> <span class="n">large_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">large_string</span> <span class="o">=</span> <span class="s2">&quot;Cristiano Ronaldo	Nationality=Portugal;National_Position=LS;National_Kit=7.0;Club=Real Madrid;Club_Position=LW;Club_Kit=7.0;Club_Joining=07/01/2009;Contract_Expiry=2021.0;Rating=94;Height=185 cm;Weight=80 kg;Preferred_Foot=Right;Birth_Date=02/05/1985;Age=32;Preferred_Position=LW/ST;Work_Rate=High / Low;Weak_foot=4;Skill_Moves=5;Ball_Control=93;Dribbling=92;Marking=22;Sliding_Tackle=23;Standing_Tackle=31;Aggression=63;Reactions=96;Attacking_Position=94;Interceptions=29;Vision=85;Composure=86;Crossing=84;Short_Pass=83;Long_Pass=77;Acceleration=91;Speed=92;Stamina=92;Strength=80;Balance=63;Agility=90;Jumping=95;Heading=85;Shot_Power=92;Finishing=93;Long_Shots=90;Curve=81;Freekick_Accuracy=76;Penalties=85;Volleys=88;GK_Positioning=14;GK_Diving=7;GK_Kicking=15;GK_Handling=11;GK_Reflexes=11&quot;</span>
+<span class="n">name</span><span class="p">,</span> <span class="n">string</span> <span class="o">=</span> <span class="n">large_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">key_value</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">):</span>
     <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">key_value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">name</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">)</span>
@@ -951,14 +954,58 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">name</span><span class="p">,</span> <span class="n">string</span> <span class="o">=</span> <span class="n">large_string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="k">for</span> <span class="n">key_value</span> <span class="ow">in</span> <span class="n">string</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;;&#39;</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">key</span><span class="p">,</span> <span class="n">value</span> <span class="o">=</span> <span class="n">key_value</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;=&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;large_string&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Cristiano Ronaldo Nationality Portugal
+Cristiano Ronaldo National_Position LS
+Cristiano Ronaldo National_Kit 7.0
+Cristiano Ronaldo Club Real Madrid
+Cristiano Ronaldo Club_Position LW
+Cristiano Ronaldo Club_Kit 7.0
+Cristiano Ronaldo Club_Joining 07/01/2009
+Cristiano Ronaldo Contract_Expiry 2021.0
+Cristiano Ronaldo Rating 94
+Cristiano Ronaldo Height 185 cm
+Cristiano Ronaldo Weight 80 kg
+Cristiano Ronaldo Preferred_Foot Right
+Cristiano Ronaldo Birth_Date 02/05/1985
+Cristiano Ronaldo Age 32
+Cristiano Ronaldo Preferred_Position LW/ST
+Cristiano Ronaldo Work_Rate High / Low
+Cristiano Ronaldo Weak_foot 4
+Cristiano Ronaldo Skill_Moves 5
+Cristiano Ronaldo Ball_Control 93
+Cristiano Ronaldo Dribbling 92
+Cristiano Ronaldo Marking 22
+Cristiano Ronaldo Sliding_Tackle 23
+Cristiano Ronaldo Standing_Tackle 31
+Cristiano Ronaldo Aggression 63
+Cristiano Ronaldo Reactions 96
+Cristiano Ronaldo Attacking_Position 94
+Cristiano Ronaldo Interceptions 29
+Cristiano Ronaldo Vision 85
+Cristiano Ronaldo Composure 86
+Cristiano Ronaldo Crossing 84
+Cristiano Ronaldo Short_Pass 83
+Cristiano Ronaldo Long_Pass 77
+Cristiano Ronaldo Acceleration 91
+Cristiano Ronaldo Speed 92
+Cristiano Ronaldo Stamina 92
+Cristiano Ronaldo Strength 80
+Cristiano Ronaldo Balance 63
+Cristiano Ronaldo Agility 90
+Cristiano Ronaldo Jumping 95
+Cristiano Ronaldo Heading 85
+Cristiano Ronaldo Shot_Power 92
+Cristiano Ronaldo Finishing 93
+Cristiano Ronaldo Long_Shots 90
+Cristiano Ronaldo Curve 81
+Cristiano Ronaldo Freekick_Accuracy 76
+Cristiano Ronaldo Penalties 85
+Cristiano Ronaldo Volleys 88
+Cristiano Ronaldo GK_Positioning 14
+Cristiano Ronaldo GK_Diving 7
+Cristiano Ronaldo GK_Kicking 15
+Cristiano Ronaldo GK_Handling 11
+Cristiano Ronaldo GK_Reflexes 11
 </pre></div>
 </div>
 </div>

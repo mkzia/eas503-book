@@ -212,11 +212,14 @@ print(min_val, max_val)
 ## Exercise 7
 Write code to extract the individual columns or key/value pairs and print them. 
 
-
+```
 large_string = "Cristiano Ronaldo	Nationality=Portugal;National_Position=LS;National_Kit=7.0;Club=Real Madrid;Club_Position=LW;Club_Kit=7.0;Club_Joining=07/01/2009;Contract_Expiry=2021.0;Rating=94;Height=185 cm;Weight=80 kg;Preferred_Foot=Right;Birth_Date=02/05/1985;Age=32;Preferred_Position=LW/ST;Work_Rate=High / Low;Weak_foot=4;Skill_Moves=5;Ball_Control=93;Dribbling=92;Marking=22;Sliding_Tackle=23;Standing_Tackle=31;Aggression=63;Reactions=96;Attacking_Position=94;Interceptions=29;Vision=85;Composure=86;Crossing=84;Short_Pass=83;Long_Pass=77;Acceleration=91;Speed=92;Stamina=92;Strength=80;Balance=63;Agility=90;Jumping=95;Heading=85;Shot_Power=92;Finishing=93;Long_Shots=90;Curve=81;Freekick_Accuracy=76;Penalties=85;Volleys=88;GK_Positioning=14;GK_Diving=7;GK_Kicking=15;GK_Handling=11;GK_Reflexes=11"
+```
+
 
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
+large_string = "Cristiano Ronaldo	Nationality=Portugal;National_Position=LS;National_Kit=7.0;Club=Real Madrid;Club_Position=LW;Club_Kit=7.0;Club_Joining=07/01/2009;Contract_Expiry=2021.0;Rating=94;Height=185 cm;Weight=80 kg;Preferred_Foot=Right;Birth_Date=02/05/1985;Age=32;Preferred_Position=LW/ST;Work_Rate=High / Low;Weak_foot=4;Skill_Moves=5;Ball_Control=93;Dribbling=92;Marking=22;Sliding_Tackle=23;Standing_Tackle=31;Aggression=63;Reactions=96;Attacking_Position=94;Interceptions=29;Vision=85;Composure=86;Crossing=84;Short_Pass=83;Long_Pass=77;Acceleration=91;Speed=92;Stamina=92;Strength=80;Balance=63;Agility=90;Jumping=95;Heading=85;Shot_Power=92;Finishing=93;Long_Shots=90;Curve=81;Freekick_Accuracy=76;Penalties=85;Volleys=88;GK_Positioning=14;GK_Diving=7;GK_Kicking=15;GK_Handling=11;GK_Reflexes=11"
 name, string = large_string.split('\t')
 for key_value in string.split(';'):
     key, value = key_value.split('=')

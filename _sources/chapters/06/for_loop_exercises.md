@@ -146,11 +146,12 @@ Write a function simulates a coin toss
 :tags: ["hide-input", "output_scroll"]
 def coin_toss(number):
     import random
+    random.seed(503)
     output = ''
     for i in range(number):
         toss = random.randint(0, 1)
 
-        if number == 0:
+        if toss == 0:
             output += 'H'
         else:
             output += 'T'
@@ -169,6 +170,21 @@ coin_toss function and calculates the probability of H and T
 
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
+def coin_toss(number):
+    import random
+    random.seed(503)
+    output = ''
+    for i in range(number):
+        toss = random.randint(0, 1)
+
+        if toss == 0:
+            output += 'H'
+        else:
+            output += 'T'
+
+    return output
+
+
 def coin_toss_probability(number):
     result = coin_toss(number)
     head_count = 0
