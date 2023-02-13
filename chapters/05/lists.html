@@ -800,7 +800,7 @@ consume large amount of computer memory and significantly slow down program perf
 <h3><span class="section-number">5.1.1.2. </span>Creating a list<a class="headerlink" href="#creating-a-list" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">]</span>
 <span class="n">days_in_months</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">28</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">,</span> <span class="mi">30</span><span class="p">,</span> <span class="mi">31</span><span class="p">]</span>
-<span class="n">grades_count</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">grades_count</span> <span class="o">=</span> <span class="p">[</span><span class="mi">20</span><span class="p">,</span> <span class="mi">40</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -829,7 +829,7 @@ consume large amount of computer memory and significantly slow down program perf
 <li><p>Here are some variations of slicing:</p>
 <ol class="simple">
 <li><p>start index, but no end index – my_list[3:] – will take all elements from index 3 to the end of list, including the last value</p></li>
-<li><p>end index, but not start index – my_list[:10] – will take all elements from start of the of the list to index 10, but not include value at index 10</p></li>
+<li><p>end index, but no start index – my_list[:10] – will take all elements from start of the of the list to index 10, but not include value at index 10</p></li>
 <li><p>both start and end index – my_list[3:10] – this will include all elements from index 3 all the way up to index 10, but not include index 10.</p></li>
 <li><p>start and end index and step size – my_list[3:10:2] – same as #3 but take every other element.</p></li>
 <li><p>no start index, end index, and step size – my_list[:10:2] – take all elements from start of list to index number 10, but not including index number 10; also take every other element.</p></li>
@@ -877,7 +877,7 @@ consume large amount of computer memory and significantly slow down program perf
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">grades</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="s1">&#39;D&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">]</span>
 <span class="n">grades</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span> <span class="c1"># deletes the last element in list and returns it </span>
-<span class="n">grades</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># deletes the first element in list and returns it</span>
+<span class="n">grades</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">0</span><span class="p">)</span> <span class="c1"># deletes the first element in list and returns it</span>
 <span class="n">grades</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span> <span class="c1"># deletes the fourth element in list and returns it</span>
 </pre></div>
 </div>
@@ -909,7 +909,7 @@ consume large amount of computer memory and significantly slow down program perf
 <li><p>But you will lose some processing functionality, such as <code class="docutils literal notranslate"><span class="pre">max</span></code>, <code class="docutils literal notranslate"><span class="pre">min</span></code>, and <code class="docutils literal notranslate"><span class="pre">sum</span></code>.</p></li>
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;Spam&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">]</span>
-<span class="n">my_list2</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">86</span><span class="p">]],</span> <span class="p">[</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">]]</span>
+<span class="n">my_list2</span> <span class="o">=</span> <span class="p">[[</span><span class="s1">&#39;John&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">55</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">86</span><span class="p">]],</span> <span class="p">[</span><span class="s1">&#39;Jane&#39;</span><span class="p">,</span> <span class="p">[</span><span class="mi">70</span><span class="p">,</span> <span class="mi">80</span><span class="p">,</span> <span class="mi">80</span><span class="p">]]]</span>
 </pre></div>
 </div>
 </section>

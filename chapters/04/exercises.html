@@ -866,17 +866,17 @@ If it is ‘jdoe’, print a log in allowed message; otherwise, print another me
 <span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;jdoe&#39;</span>
 
 <span class="k">if</span> <span class="n">username</span> <span class="o">==</span><span class="s1">&#39;jdoe&#39;</span> <span class="ow">and</span> <span class="n">active_status</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hi </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s1">!  Your are allowed to log in.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hi </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s1">!  Your are allowed to log in.&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are not allowed to log in!&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are not allowed to log in!&#39;</span><span class="p">)</span>
 
 <span class="n">active_status</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="n">username</span> <span class="o">=</span> <span class="s1">&#39;jdoe&#39;</span>
 
 <span class="k">if</span> <span class="n">username</span> <span class="o">==</span><span class="s1">&#39;jdoe&#39;</span> <span class="ow">and</span> <span class="n">active_status</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hi </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s1">!  Your are allowed to log in.&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;Hi </span><span class="si">{</span><span class="n">username</span><span class="si">}</span><span class="s1">!  Your are allowed to log in.&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are not allowed to log in!&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are not allowed to log in!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -889,16 +889,16 @@ If it is ‘jdoe’, print a log in allowed message; otherwise, print another me
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your name? &#39;</span><span class="p">)</span>
 <span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;john&#39;</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your name is John!&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your name is John!&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;jane&#39;</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your name is Jane!&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your name is Jane!&#39;</span><span class="p">)</span>
 
 
 <span class="n">name</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your name? &#39;</span><span class="p">)</span>
-<span class="k">if</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;john&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your name is John!&#39;</span><span class="p">)</span>
-<span class="k">elif</span> <span class="n">name</span> <span class="o">==</span> <span class="s1">&#39;jane&#39;</span><span class="o">.</span><span class="n">lower</span><span class="p">():</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your name is Jane!&#39;</span><span class="p">)</span>
+<span class="k">if</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;john&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your name is John!&#39;</span><span class="p">)</span>
+<span class="k">elif</span> <span class="n">name</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="o">==</span> <span class="s1">&#39;jane&#39;</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Your name is Jane!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -914,7 +914,7 @@ If it is ‘jdoe’, print a log in allowed message; otherwise, print another me
 <span class="n">is_active</span> <span class="o">=</span> <span class="kc">False</span>
 
 <span class="k">if</span> <span class="n">is_super_user</span> <span class="ow">or</span> <span class="p">(</span><span class="n">is_teacher</span> <span class="ow">and</span> <span class="n">is_active</span><span class="p">):</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You can access the system&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You can access the system&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -928,9 +928,9 @@ If it is ‘jdoe’, print a log in allowed message; otherwise, print another me
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">age</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is your age? &#39;</span><span class="p">))</span>
 
 <span class="k">if</span> <span class="n">age</span> <span class="o">&gt;=</span> <span class="mi">18</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are older 18 or older&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are 18 or older&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are not 18!&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;You are not 18!&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -945,7 +945,7 @@ If it is ‘jdoe’, print a log in allowed message; otherwise, print another me
 <span class="n">number2</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
 
 <span class="k">if</span> <span class="n">number1</span> <span class="o">==</span> <span class="n">number2</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Both numbers are equal&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Both numbers are equal&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -959,11 +959,11 @@ If it is ‘jdoe’, print a log in allowed message; otherwise, print another me
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
 
 <span class="k">if</span> <span class="n">number</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number is even&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number is even&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number is even&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number is even&#39;</span><span class="p">)</span>
 <span class="k">else</span><span class="p">:</span> 
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number is odd&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;The number is odd&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -978,11 +978,11 @@ if is a multiple of 5, and ‘Buzz’ if it is multiple of 7.</p>
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="nb">int</span><span class="p">(</span><span class="nb">input</span><span class="p">(</span><span class="s1">&#39;Please enter a number: &#39;</span><span class="p">))</span>
 
 <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FizzBuzz&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;FizzBuzz&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">5</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fizz&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Fizz&#39;</span><span class="p">)</span>
 <span class="k">elif</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">7</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
-	<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Buzz&#39;</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Buzz&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>

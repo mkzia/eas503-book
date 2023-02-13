@@ -135,17 +135,17 @@ active_status = False
 username = 'jdoe'
 
 if username =='jdoe' and active_status:
-	print(f'Hi {username}!  Your are allowed to log in.')
+    print(f'Hi {username}!  Your are allowed to log in.')
 else:
-	print('You are not allowed to log in!')
+    print('You are not allowed to log in!')
 
 active_status = True
 username = 'jdoe'
 
 if username =='jdoe' and active_status:
-	print(f'Hi {username}!  Your are allowed to log in.')
+    print(f'Hi {username}!  Your are allowed to log in.')
 else:
-	print('You are not allowed to log in!')
+    print('You are not allowed to log in!')
 ```
 
 
@@ -156,16 +156,16 @@ Write a program to prompt the user for name and check if it is john or jane.
 :tags: ["hide-input", "remove-output", "output_scroll"]
 name = input('What is your name? ')
 if name == 'john':
-	print('Your name is John!')
+    print('Your name is John!')
 elif name == 'jane':
-	print('Your name is Jane!')
+    print('Your name is Jane!')
 
 
 name = input('What is your name? ')
-if name == 'john'.lower():
-	print('Your name is John!')
-elif name == 'jane'.lower():
-	print('Your name is Jane!')
+if name.lower() == 'john':
+    print('Your name is John!')
+elif name.lower() == 'jane':
+    print('Your name is Jane!')
 ```
 
 ## Exercise 9
@@ -179,7 +179,7 @@ is_teacher = True
 is_active = False
 
 if is_super_user or (is_teacher and is_active):
-	print('You can access the system')
+    print('You can access the system')
 ```
 
 ## Exercise 10
@@ -191,9 +191,9 @@ Prompt user for age and check if they are 18 or older
 age = int(input('What is your age? '))
 
 if age >= 18:
-	print('You are older 18 or older')
+    print('You are 18 or older')
 else:
-	print('You are not 18!')
+    print('You are not 18!')
 ```
 
 ## Exercise 11
@@ -206,7 +206,7 @@ number1 = int(input('Please enter a number: '))
 number2 = int(input('Please enter a number: '))
 
 if number1 == number2:
-	print('Both numbers are equal')
+    print('Both numbers are equal')
 
 ```
 
@@ -219,11 +219,11 @@ Prompt user to enter a number and check if it is odd or even
 number = int(input('Please enter a number: '))
 
 if number == 0:
-	print('The number is even')
+    print('The number is even')
 elif number % 2 == 0:
-	print('The number is even')
+    print('The number is even')
 else: 
-	print('The number is odd')
+    print('The number is odd')
 ```
 
 
@@ -237,9 +237,9 @@ if is a multiple of 5, and 'Buzz' if it is multiple of 7.
 number = int(input('Please enter a number: '))
 
 if number % 5 == 0 and number % 7 == 0:
-	print('FizzBuzz')
+    print('FizzBuzz')
 elif number % 5 == 0:
-	print('Fizz')
+    print('Fizz')
 elif number % 7 == 0:
-	print('Buzz')
+    print('Buzz')
 ```

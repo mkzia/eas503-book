@@ -580,6 +580,56 @@ title="Print to PDF"
    6.5.2. Tuple Comprehension
   </a>
  </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-comprehension-exercises">
+   6.5.3. List Comprehension Exercises
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1">
+   6.5.4. Exercise 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2">
+   6.5.5. Exercise 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3">
+   6.5.6. Exercise 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4">
+   6.5.7. Exercise 4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-5">
+   6.5.8. Exercise 5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-6">
+   6.5.9. Exercise 6
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-7">
+   6.5.10. Exercise 7
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-8">
+   6.5.11. Exercise 8
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-9">
+   6.5.12. Exercise 9
+  </a>
+ </li>
 </ul>
 
     </nav>
@@ -607,6 +657,56 @@ title="Print to PDF"
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#tuple-comprehension">
    6.5.2. Tuple Comprehension
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#list-comprehension-exercises">
+   6.5.3. List Comprehension Exercises
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-1">
+   6.5.4. Exercise 1
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-2">
+   6.5.5. Exercise 2
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-3">
+   6.5.6. Exercise 3
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-4">
+   6.5.7. Exercise 4
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-5">
+   6.5.8. Exercise 5
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-6">
+   6.5.9. Exercise 6
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-7">
+   6.5.10. Exercise 7
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-8">
+   6.5.11. Exercise 8
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exercise-9">
+   6.5.12. Exercise 9
   </a>
  </li>
 </ul>
@@ -649,6 +749,158 @@ title="Print to PDF"
 <span class="p">(</span> <span class="n">f</span><span class="p">(</span><span class="n">ele</span><span class="p">)</span> <span class="k">if</span> <span class="n">condition</span> <span class="k">else</span> <span class="n">g</span><span class="p">(</span><span class="n">ele</span><span class="p">)</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">sequence</span> <span class="p">)</span>
 
 </pre></div>
+</div>
+</section>
+<section id="list-comprehension-exercises">
+<h2><span class="section-number">6.5.3. </span>List Comprehension Exercises<a class="headerlink" href="#list-comprehension-exercises" title="Permalink to this headline">#</a></h2>
+</section>
+<section id="exercise-1">
+<h2><span class="section-number">6.5.4. </span>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h2>
+<p>Re-write the following code to use List Comprehension</p>
+<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">ele</span> <span class="o">*</span> <span class="n">ele</span>
+    <span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+<span class="n">new_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">ele</span><span class="o">*</span><span class="n">ele</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-2">
+<h2><span class="section-number">6.5.5. </span>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h2>
+<p>Re-write the following code to use List Comprehension
+Multiply each number by 10</p>
+<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+<span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
+    <span class="n">tmp</span> <span class="o">=</span> <span class="n">ele</span> <span class="o">*</span> <span class="mi">10</span>
+    <span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">tmp</span><span class="p">)</span>
+<span class="n">new_list</span> <span class="o">=</span> <span class="p">[</span><span class="n">ele</span><span class="o">*</span><span class="mi">10</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-3">
+<h2><span class="section-number">6.5.6. </span>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h2>
+<p>Upper case each letter in animal variable</p>
+<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">animal</span> <span class="o">=</span> <span class="s1">&#39;buffalo&#39;</span>
+<span class="p">[</span><span class="n">char</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">animal</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;B&#39;, &#39;U&#39;, &#39;F&#39;, &#39;F&#39;, &#39;A&#39;, &#39;L&#39;, &#39;O&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-4">
+<h2><span class="section-number">6.5.7. </span>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h2>
+<p>Title each name in the student list</p>
+<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;john&#39;</span><span class="p">,</span> <span class="s1">&#39;jane&#39;</span><span class="p">,</span> <span class="s1">&#39;doe&#39;</span><span class="p">]</span>
+<span class="p">[</span><span class="n">student</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">upper</span><span class="p">()</span><span class="o">+</span><span class="n">student</span><span class="p">[</span><span class="mi">1</span><span class="p">:]</span> <span class="k">for</span> <span class="n">student</span> <span class="ow">in</span> <span class="n">students</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;John&#39;, &#39;Jane&#39;, &#39;Doe&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-5">
+<h2><span class="section-number">6.5.8. </span>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h2>
+<p>Use list comprehension to get the Truthiness of each element in <code class="docutils literal notranslate"><span class="pre">my_list</span></code></p>
+<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">,</span> <span class="p">[]]</span>
+<span class="p">[</span><span class="nb">bool</span><span class="p">(</span><span class="n">ele</span><span class="p">)</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[False, False, False]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-6">
+<h2><span class="section-number">6.5.9. </span>Exercise 6<a class="headerlink" href="#exercise-6" title="Permalink to this headline">#</a></h2>
+<p>Convert each element of my_list to str using list comprehension</p>
+<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">6</span><span class="p">)</span>
+<span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">element</span><span class="p">)</span> <span class="k">for</span> <span class="n">element</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;0&#39;, &#39;1&#39;, &#39;2&#39;, &#39;3&#39;, &#39;4&#39;, &#39;5&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-7">
+<h2><span class="section-number">6.5.10. </span>Exercise 7<a class="headerlink" href="#exercise-7" title="Permalink to this headline">#</a></h2>
+<p>Use list comprehension to reduce a list of numbers to just even or odd</p>
+<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">even</span> <span class="o">=</span> <span class="p">[</span><span class="n">number</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="p">]</span>
+<span class="n">odd</span> <span class="o">=</span> <span class="p">[</span><span class="n">number</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="n">numbers</span> <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">!=</span> <span class="mi">0</span> <span class="p">]</span>
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-8">
+<h2><span class="section-number">6.5.11. </span>Exercise 8<a class="headerlink" href="#exercise-8" title="Permalink to this headline">#</a></h2>
+<p>Use list comprehension to modify a list of numbers such that evens are left as is
+and the odds are raised to the three power</p>
+<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">numbers</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="p">[</span><span class="n">number</span> <span class="k">if</span> <span class="n">number</span> <span class="o">%</span> <span class="mi">2</span> <span class="o">==</span> <span class="mi">0</span> <span class="k">else</span> <span class="n">number</span><span class="o">**</span><span class="mi">3</span> <span class="k">for</span> <span class="n">number</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="mi">10</span><span class="p">)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1, 2, 27, 4, 125, 6, 343, 8, 729]
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="exercise-9">
+<h2><span class="section-number">6.5.12. </span>Exercise 9<a class="headerlink" href="#exercise-9" title="Permalink to this headline">#</a></h2>
+<p>Use list comprehension to remove vowels from a sentence</p>
+<div class="cell tag_hide-input tag_output_scroll docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sentence</span> <span class="o">=</span> <span class="s1">&#39;I rEAlly want to gO to work&#39;</span>
+<span class="s1">&#39;&#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">char</span> <span class="k">for</span> <span class="n">char</span> <span class="ow">in</span> <span class="n">sentence</span> <span class="k">if</span> <span class="n">char</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;aeiou&#39;</span> <span class="ow">and</span> <span class="n">char</span><span class="o">.</span><span class="n">lower</span><span class="p">()</span> <span class="ow">not</span> <span class="ow">in</span> <span class="s1">&#39;nt&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&#39; rlly w  g  wrk&#39;
+</pre></div>
+</div>
+</div>
 </div>
 </section>
 </section>

@@ -13,9 +13,9 @@ kernelspec:
 
 # List methods (functions)
 Lists supports the following methods:
-- `append(value)` - add an element to end of list
+- `append(value)` - add an element to the end of a list
 - `insert(index, value)` - insert an element to the list at the specified location
-- `remove(value)` - remove the first matching value from list 
+- `remove(value)` - remove the first matching value from a list 
 - `pop()` - remove the last element in the list; also returns the value; you can save this to another variable
 - `pop(index)` - remove the element at specified index in the list; also returns the value; you can save this to another variable
 - `clear()` - empty the list
@@ -61,7 +61,7 @@ grades.pop() # deletes the last element in list and returns it
 print(grades)
 grades.pop(0) # deletes the first element in list and returns it
 print(grades)
-grades.pop(2) # deletes the second element in list and returns it
+grades.pop(2) # deletes the third element in list and returns it
 print(grades)
 ```
 

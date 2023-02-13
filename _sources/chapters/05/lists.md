@@ -51,7 +51,7 @@ An index is used to access a particular element in a list. All the elements in t
 ```python
 grades = ['A', 'B', 'C', 'D', 'F']
 days_in_months = [0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31]
-grades_count [20, 40, 10, 2, 3]
+grades_count = [20, 40, 10, 2, 3]
 ```
 
 ### Accessing a list
@@ -72,7 +72,7 @@ days_in_months[0]
   5. Start index, end index, and step size are all optional, but you need at least one
 - Here are some variations of slicing:
   1. start index, but no end index -- my_list[3:] -- will take all elements from index 3 to the end of list, including the last value
-  2. end index, but not start index -- my_list[:10] -- will take all elements from start of the of the list to index 10, but not include value at index 10
+  2. end index, but no start index -- my_list[:10] -- will take all elements from start of the of the list to index 10, but not include value at index 10
   3. both start and end index -- my_list[3:10] -- this will include all elements from index 3 all the way up to index 10, but not include index 10.
   4. start and end index and step size -- my_list[3:10:2] -- same as #3 but take every other element.
   5. no start index, end index, and step size -- my_list[:10:2] -- take all elements from start of list to index number 10, but not including index number 10; also take every other element.
@@ -111,7 +111,7 @@ del grades
 ```python
 grades = ['A', 'B', 'C', 'D', 'F']
 grades.pop() # deletes the last element in list and returns it 
-grades.pop(1) # deletes the first element in list and returns it
+grades.pop(0) # deletes the first element in list and returns it
 grades.pop(3) # deletes the fourth element in list and returns it
 ```
 
@@ -134,7 +134,7 @@ grades *= 3
 - But you will lose some processing functionality, such as `max`, `min`, and `sum`.
 ```python
 my_list = ['A', 1, 'Spam', True]
-my_list2 = [['John', [55, 65, 86]], ['Jane', [70, 80, 80]]
+my_list2 = [['John', [55, 65, 86]], ['Jane', [70, 80, 80]]]
 ```
 
 ### `in` Operator
