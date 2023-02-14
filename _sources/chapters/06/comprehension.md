@@ -9,6 +9,11 @@ kernelspec:
   language: python
   name: python3
 ---
+
+- [Video Recording (10 minutes)](https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=03d72d47-5c45-4273-b59e-afa9005ee0dc)
+- [Jupyter Notebook](https://github.com/mkzia/eas503-book-notes/blob/main/06/comprehension.ipynb)
+
+
 # Comprehension
 
 ## List Comprehension
@@ -22,6 +27,8 @@ kernelspec:
 [ f(ele) for ele in sequence if condition ]
 
 [ f(ele) if condition else g(ele) for ele in sequence ]
+
+[ f(ele) for ele in sequence if condition1 and condition2]
 
 ```
 
@@ -111,6 +118,8 @@ students = ['john', 'jane', 'doe']
 :tags: ["hide-input", "output_scroll"]
 students = ['john', 'jane', 'doe']
 [student[0].upper()+student[1:] for student in students]
+students = ['john', 'jane', 'doe']
+print([student.title() for student in students])
 ```
 
 ## Exercise 5
@@ -180,5 +189,5 @@ sentence = 'I rEAlly want to gO to work'
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
 sentence = 'I rEAlly want to gO to work'
-''.join([char for char in sentence if char.lower() not in 'aeiou' and char.lower() not in 'nt'])
+''.join([char for char in sentence if char.lower() not in 'aeiou'])
 ```

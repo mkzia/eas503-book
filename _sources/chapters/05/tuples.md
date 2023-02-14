@@ -10,6 +10,10 @@ kernelspec:
   name: python3
 ---
 
+- [Video Recording (2 minutes)](https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=698387e6-f38b-401c-b3fc-afa90059a21b)
+- [Jupyter Notebook](https://github.com/mkzia/eas503-book-notes/blob/main/05/lists.ipynb)
+
+
 
 # Tuples
 - Tuples just like lists except that they are immutable. Once you have created a tuple, you cannot modify it. 

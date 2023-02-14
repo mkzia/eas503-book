@@ -11,6 +11,11 @@ kernelspec:
 ---
 
 
+- [Video Recording (24 minutes)](https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=e65a660b-816f-4485-b190-afa90059a1b1)
+- [Jupyter Notebook](https://github.com/mkzia/eas503-book-notes/blob/main/05/lists.ipynb)
+
+
+
 # Lists and Tuples
 - So far we have covered the following data types: `int`, `float`, `str`, `None` and `bool`. Now we will cover `list`, and `tuple` which are a sequence data types. 
 - Data types in Python can be classified as `mutable` and `immutable`. 

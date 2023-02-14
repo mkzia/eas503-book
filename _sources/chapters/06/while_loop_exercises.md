@@ -10,6 +10,9 @@ kernelspec:
   name: python3
 ---
 
+- [Video Recording (6 minutes)](https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=c9cb67cd-f676-4dcc-9908-afa9005c269c)
+- [Jupyter Notebook](https://github.com/mkzia/eas503-book-notes/blob/main/06/while_loop_exercises.ipynb)
+
 
 # While Loop Exercises
 

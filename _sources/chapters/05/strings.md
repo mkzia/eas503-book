@@ -10,6 +10,10 @@ kernelspec:
   name: python3
 ---
 
+- [Video Recording (8 minutes)](https://ub.hosted.panopto.com/Panopto/Pages/Viewer.aspx?id=f994b76e-1368-4c8b-b242-afa90059a25b)
+- [Jupyter Notebook](https://github.com/mkzia/eas503-book-notes/blob/main/05/lists.ipynb)
+
+
 
 # Strings as Lists
 Remember, strings are a sequence, so you can index them. 
