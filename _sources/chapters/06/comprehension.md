@@ -45,6 +45,15 @@ kernelspec:
 ## Exercise 1
 Re-write the following code to use List Comprehension
 
+```python
+my_list = [1, 2, 3]
+new_list = []
+for ele in my_list:
+    tmp = ele * ele
+    new_list.append(tmp)
+```
+
+
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
 my_list = [1, 2, 3]
@@ -59,6 +68,15 @@ new_list = [ele*ele for ele in my_list]
 Re-write the following code to use List Comprehension
 Multiply each number by 10
 
+```python
+my_list = [1, 2, 3]
+new_list = []
+for ele in my_list:
+    tmp = ele * 10
+    new_list.append(tmp)
+```
+
+
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
 my_list = [1, 2, 3]
@@ -72,6 +90,10 @@ new_list = [ele*10 for ele in my_list]
 ## Exercise 3
 Upper case each letter in animal variable
 
+```python
+animal = 'buffalo'
+```
+
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
 animal = 'buffalo'
@@ -80,6 +102,10 @@ animal = 'buffalo'
 
 ## Exercise 4
 Title each name in the student list
+
+```python
+students = ['john', 'jane', 'doe']
+```
 
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
@@ -90,6 +116,11 @@ students = ['john', 'jane', 'doe']
 ## Exercise 5
 Use list comprehension to get the Truthiness of each element in `my_list`
 
+```python
+my_list = [0, '', []]
+```
+
+
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
 my_list = [0, '', []]
@@ -98,6 +129,12 @@ my_list = [0, '', []]
 
 ## Exercise 6
 Convert each element of my_list to str using list comprehension
+
+```python
+my_list = range(6)
+```
+
+
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
 my_list = range(6)
@@ -106,6 +143,11 @@ my_list = range(6)
 
 ## Exercise 7
 Use list comprehension to reduce a list of numbers to just even or odd
+
+```python
+numbers = range(20)
+```
+
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
 numbers = range(20)
@@ -117,6 +159,11 @@ odd = [number for number in numbers if number % 2 != 0 ]
 Use list comprehension to modify a list of numbers such that evens are left as is
 and the odds are raised to the three power
 
+```python
+numbers = range(10)
+```
+
+
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
 numbers = range(10)
@@ -125,6 +172,10 @@ numbers = range(10)
 
 ## Exercise 9
 Use list comprehension to remove vowels from a sentence
+
+```python
+sentence = 'I rEAlly want to gO to work'
+```
 
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
