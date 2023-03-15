@@ -238,6 +238,10 @@ students = ['john', 'Janette', 'doe']
 print(min(students))
 print(min(students, key=lambda student: len(student)))
 print(max(students, key=lambda student: len(student)))
+
+
+print(min(students, key=len))
+print(max(students, key=len))
 ```
 
 ## Exercise 12

@@ -140,14 +140,14 @@ original = ['H', 'He', 'Li']
 final = original + ['Be']
 ```
 
-![list](concat.png)
+![list1](concat.png)
 
 
 ```python
 life =[['Canada',76.5],['United States', 75.5],['Mexico', 72.0]]
 ```
 
-![list](nested_lists.png)
+![list2](nested_lists.png)
 
 
 ```python
@@ -155,7 +155,7 @@ life​​ ​​=​​ ​​[[​​'Canada'​​,​​ ​​76.5],​​ 
 ​​canada​​ ​​=​​ ​​life[0]​
 ```
 
-![list](sublist_alias.png)
+![list3](sublist_alias.png)
 
 
 ### Scope Example 1

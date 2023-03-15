@@ -43,6 +43,7 @@ sorted(x, key=operator.itemgetter(2))
 ```
 
 ```python
+import operator
 x = [
     {'name': 'student2', 'test1': '100', 'test2': '90','test3': '65', 'test4': '68', 'test5': '94'},
     {'name': 'student83', 'test1': '88', 'test2': '76', 'test3': '65', 'test4': '97', 'test5': '82'},
@@ -52,6 +53,15 @@ sorted(x, key=operator.itemgetter('name'))
 sorted(x, key=operator.itemgetter('test1'))
 ```
 
+```python
+x = (
+    (2, 2, 3),
+    (2, 1, 3),
+    (1, 10, 2),
+)
+
+sorted(x, key=lambda ele: (ele[0], ele[1]))
+```
 
 
 ```python

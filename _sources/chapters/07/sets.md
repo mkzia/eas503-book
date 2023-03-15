@@ -98,7 +98,7 @@ A.discard('P')
 A = {1, 2, 3, 4, 5}
 A.remove(1)
 print(A)
-A.discard('P')
+A.remove('P')
 ```
 
 
