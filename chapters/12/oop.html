@@ -551,6 +551,35 @@ title="Toggle navigation"
         
     </div>
     <div class="header-article__right">
+<div class="menu-dropdown menu-dropdown-launch-buttons">
+  <button class="headerbtn menu-dropdown__trigger"
+      aria-label="Launch interactive content">
+      <i class="fas fa-rocket"></i>
+  </button>
+  <div class="menu-dropdown__content">
+    <ul>
+      <li>
+        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapters/12/oop.md"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Launch on Binder"
+>
+  
+
+<span class="headerbtn__icon-container">
+  
+    <img src="../../_static/images/logo_binder.svg">
+  </span>
+<span class="headerbtn__text-container">Binder</span>
+</a>
+
+      </li>
+      
+    </ul>
+  </div>
+</div>
+
 <button onclick="toggleFullScreen()"
   class="headerbtn"
   data-toggle="tooltip"
@@ -585,6 +614,23 @@ title="Source repository"
   </button>
   <div class="menu-dropdown__content">
     <ul>
+      <li>
+        <a href="../../_sources/chapters/12/oop.ipynb"
+   class="headerbtn"
+   data-toggle="tooltip"
+data-placement="left"
+title="Download notebook file"
+>
+  
+
+<span class="headerbtn__icon-container">
+  <i class="fas fa-code"></i>
+  </span>
+<span class="headerbtn__text-container">.ipynb</span>
+</a>
+
+      </li>
+      
       <li>
         <a href="../../_sources/chapters/12/oop.md"
    class="headerbtn"
@@ -661,77 +707,153 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-building-blocks-to-defining-a-class">
+   12.1.4. Basic Building Blocks to defining a class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#benefits-of-oop">
-   12.1.4. Benefits of OOP
+   12.1.5. Benefits of OOP
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#thoughts-on-oop">
-   12.1.5. Thoughts on OOP
+   12.1.6. Thoughts on OOP
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-building-blocks-to-defining-a-class">
-   12.1.6. Basic Building Blocks to defining a class
+  <a class="reference internal nav-link" href="#data-class-builders">
+   12.1.7. Data Class Builders
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#namedtuple">
+     12.1.7.1. namedtuple
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equality-vs-reference">
+     12.1.7.2. Equality vs Reference
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#passing-in-a-mutable-object-to-a-class">
+     12.1.7.3. Passing in a mutable object to a class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#repr-vs-str">
+     12.1.7.4.
+     <strong>
+      repr
+     </strong>
+     vs
+     <strong>
+      str
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     12.1.7.5. NamedTuple
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataclass">
+     12.1.7.6. Dataclass
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-data-as-a-dict">
+   12.1.8. Getting data as a dict
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#replacing-values-in-an-immutable-data-class">
+   12.1.9. Replacing values in an immutable data class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#default-values-in-data-classes">
+   12.1.10. Default values in data classes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#examples">
-   12.1.7. Examples
+   12.1.11. Examples
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-1">
-     12.1.7.1. Exercise 1
+     12.1.11.1. Exercise 1
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-2">
-     12.1.7.2. Exercise 2
+     12.1.11.2. Exercise 2
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-3">
-     12.1.7.3. Exercise 3
+     12.1.11.3. Exercise 3
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-4">
-     12.1.7.4. Exercise 4
+     12.1.11.4. Exercise 4
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-5">
-     12.1.7.5. Exercise 5
+     12.1.11.5. Exercise 5
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#payroll-system-using-polymorphism">
-   12.1.8. Payroll system using polymorphism
+   12.1.12. Payroll system using polymorphism
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise">
-     12.1.8.1. Exercise
+     12.1.12.1. Exercise
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#operator-overloading">
-   12.1.9. Operator overloading
+   12.1.13. Operator overloading
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-class">
+     12.1.13.1. Basic Class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-add">
+     12.1.13.2. Adding Add
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterator-class">
+     12.1.13.3. Iterator Class
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#self">
-   12.1.10. Self
+   12.1.14. Self
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#item-assignment">
-   12.1.11. Item assignment
+   12.1.15. Item assignment
   </a>
  </li>
 </ul>
@@ -769,77 +891,153 @@ title="Print to PDF"
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-building-blocks-to-defining-a-class">
+   12.1.4. Basic Building Blocks to defining a class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#benefits-of-oop">
-   12.1.4. Benefits of OOP
+   12.1.5. Benefits of OOP
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#thoughts-on-oop">
-   12.1.5. Thoughts on OOP
+   12.1.6. Thoughts on OOP
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic-building-blocks-to-defining-a-class">
-   12.1.6. Basic Building Blocks to defining a class
+  <a class="reference internal nav-link" href="#data-class-builders">
+   12.1.7. Data Class Builders
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#namedtuple">
+     12.1.7.1. namedtuple
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#equality-vs-reference">
+     12.1.7.2. Equality vs Reference
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#passing-in-a-mutable-object-to-a-class">
+     12.1.7.3. Passing in a mutable object to a class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#repr-vs-str">
+     12.1.7.4.
+     <strong>
+      repr
+     </strong>
+     vs
+     <strong>
+      str
+     </strong>
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     12.1.7.5. NamedTuple
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dataclass">
+     12.1.7.6. Dataclass
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#getting-data-as-a-dict">
+   12.1.8. Getting data as a dict
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#replacing-values-in-an-immutable-data-class">
+   12.1.9. Replacing values in an immutable data class
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#default-values-in-data-classes">
+   12.1.10. Default values in data classes
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#examples">
-   12.1.7. Examples
+   12.1.11. Examples
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-1">
-     12.1.7.1. Exercise 1
+     12.1.11.1. Exercise 1
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-2">
-     12.1.7.2. Exercise 2
+     12.1.11.2. Exercise 2
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-3">
-     12.1.7.3. Exercise 3
+     12.1.11.3. Exercise 3
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-4">
-     12.1.7.4. Exercise 4
+     12.1.11.4. Exercise 4
     </a>
    </li>
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise-5">
-     12.1.7.5. Exercise 5
+     12.1.11.5. Exercise 5
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#payroll-system-using-polymorphism">
-   12.1.8. Payroll system using polymorphism
+   12.1.12. Payroll system using polymorphism
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#exercise">
-     12.1.8.1. Exercise
+     12.1.12.1. Exercise
     </a>
    </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#operator-overloading">
-   12.1.9. Operator overloading
+   12.1.13. Operator overloading
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#basic-class">
+     12.1.13.1. Basic Class
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-add">
+     12.1.13.2. Adding Add
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#iterator-class">
+     12.1.13.3. Iterator Class
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#self">
-   12.1.10. Self
+   12.1.14. Self
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#item-assignment">
-   12.1.11. Item assignment
+   12.1.15. Item assignment
   </a>
  </li>
 </ul>
@@ -868,8 +1066,7 @@ the data and functions in one place.</p></li>
 <ul>
 <li><p>We write a list of nouns (data)</p></li>
 <li><p>We also have a separate list of verbs (functions)</p></li>
-<li><p>We leave it up to the programmer to figure out which
-data goes with with function</p></li>
+<li><p>We leave it up to the programmer to figure out which data goes with with function</p></li>
 </ul>
 </li>
 <li><p>Object-oriented programming:</p>
@@ -905,24 +1102,42 @@ data and the function to manipulate it.</p></li>
 <li><p>So put the scores list and the average function
 inside a class</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ScoreList</span><span class="p">():</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ScoreList</span><span class="p">():</span>
   <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scores</span><span class="p">):</span>
     <span class="bp">self</span><span class="o">.</span><span class="n">scores</span> <span class="o">=</span> <span class="n">scores</span>
 
   <span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scores</span><span class="p">)</span>
 
-<span class="n">scores</span> <span class="o">=</span> <span class="n">ScoreList</span><span class="p">([</span><span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">92</span> <span class="mi">85</span><span class="p">])</span> 
+<span class="n">scores</span> <span class="o">=</span> <span class="n">ScoreList</span><span class="p">([</span><span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">85</span><span class="p">])</span> 
 <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The final score is </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">average</span><span class="p">()</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>   
 </pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The final score is 88.4.
+</pre></div>
+</div>
+</div>
 </div>
 <ul class="simple">
 <li><p>No difference it the actual calculation, only that the
 code is organized differently.</p></li>
 </ul>
 </section>
+<section id="basic-building-blocks-to-defining-a-class">
+<h2><span class="section-number">12.1.4. </span>Basic Building Blocks to defining a class<a class="headerlink" href="#basic-building-blocks-to-defining-a-class" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">class</span></code> - keyword to indicate that you are creating/defining a class; example <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ScoreList</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> - a method that is invoked automatically
+when an instance of a class is created. Class is analogous to a blue print and an object is an instance
+of a class with its own separate data from other objects (attributes/data), but shared functionality (methods/functions).</p></li>
+</ul>
+</section>
 <section id="benefits-of-oop">
-<h2><span class="section-number">12.1.4. </span>Benefits of OOP<a class="headerlink" href="#benefits-of-oop" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.5. </span>Benefits of OOP<a class="headerlink" href="#benefits-of-oop" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>We can organize our code into distinct objects, so each object handles storing and manipulating the data.</p></li>
 <li><p>We can create hierarchies of classes where each child
@@ -930,41 +1145,240 @@ inherits from its parent class attributes and methods, reducing code repetition 
 </ul>
 </section>
 <section id="thoughts-on-oop">
-<h2><span class="section-number">12.1.5. </span>Thoughts on OOP<a class="headerlink" href="#thoughts-on-oop" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.6. </span>Thoughts on OOP<a class="headerlink" href="#thoughts-on-oop" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>In Python everything is an object, which means every entity has some attributes and associated functionality called methods. This means that <code class="docutils literal notranslate"><span class="pre">str</span></code> and <code class="docutils literal notranslate"><span class="pre">dict</span></code> are classes that know how to store data and how to operate on them.</p></li>
 <li><p>Do not overdo OOP. It is possible to create a very large object which then basically functions like a procedural system disguised as an object-oriented one.</p></li>
 </ul>
 </section>
-<section id="basic-building-blocks-to-defining-a-class">
-<h2><span class="section-number">12.1.6. </span>Basic Building Blocks to defining a class<a class="headerlink" href="#basic-building-blocks-to-defining-a-class" title="Permalink to this headline">#</a></h2>
+<section id="data-class-builders">
+<h2><span class="section-number">12.1.7. </span>Data Class Builders<a class="headerlink" href="#data-class-builders" title="Permalink to this headline">#</a></h2>
+<section id="namedtuple">
+<h3><span class="section-number">12.1.7.1. </span>namedtuple<a class="headerlink" href="#namedtuple" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">class</span></code> - keyword to indicate that you are creating/defining a class; example <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ScoreList</span></code></p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> - a method that is invoked automatically
-when an instance of a class is created. Class is analogous to a blue print and an object is an instance
-of a class with its own separate data from other objects (attributes/data), but shared functionality (methods/functions).</p></li>
+<li><p>Sometimes you want to build a class that simply contains data and no added functionality. For this, use use <code class="docutils literal notranslate"><span class="pre">namedtuple</span></code></p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-  <span class="k">pass</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="ow">is</span> <span class="n">p2</span><span class="p">)</span>
 </pre></div>
 </div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Point object at 0x7fafd3f93940&gt;
+&lt;__main__.Point object at 0x7fafd3f92ad0&gt;
+False
+False
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="n">Point</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Point&#39;</span><span class="p">,</span> <span class="s1">&#39;x y&#39;</span><span class="p">)</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="ow">is</span> <span class="n">p2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point(x=10, y=10)
+Point(x=10, y=10)
+True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Right away we notice that a <code class="docutils literal notranslate"><span class="pre">namedtuple</span></code> provides a useful representation of the object.</p></li>
+</ul>
+</section>
+<section id="equality-vs-reference">
+<h3><span class="section-number">12.1.7.2. </span>Equality vs Reference<a class="headerlink" href="#equality-vs-reference" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> is for value equality</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">is</span></code> is for reference equality</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">4</span><span class="p">}</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">x</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span><span class="p">)</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="p">{</span><span class="mi">3</span><span class="p">:</span><span class="mi">4</span><span class="p">,</span> <span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">}</span>
+<span class="n">y</span> <span class="o">=</span> <span class="p">{</span><span class="mi">1</span><span class="p">:</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">:</span><span class="mi">4</span><span class="p">}</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="o">==</span> <span class="n">y</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">x</span> <span class="ow">is</span> <span class="n">y</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>True
+True
+True
+False
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="passing-in-a-mutable-object-to-a-class">
+<h3><span class="section-number">12.1.7.3. </span>Passing in a mutable object to a class<a class="headerlink" href="#passing-in-a-mutable-object-to-a-class" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ScoreList</span><span class="p">():</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">scores</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">scores</span> <span class="o">=</span> <span class="n">scores</span>
+
+    <span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scores</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">scores</span><span class="p">)</span>
+
+<span class="n">l1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">80</span><span class="p">,</span> <span class="mi">90</span><span class="p">,</span> <span class="mi">95</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">85</span><span class="p">]</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="n">ScoreList</span><span class="p">(</span><span class="n">l1</span><span class="p">)</span> 
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The final score is </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">average</span><span class="p">()</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span> 
+<span class="n">l1</span><span class="o">.</span><span class="n">pop</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s1">&#39;The final score is </span><span class="si">{</span><span class="n">scores</span><span class="o">.</span><span class="n">average</span><span class="p">()</span><span class="si">}</span><span class="s1">.&#39;</span><span class="p">)</span>    
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>The final score is 88.4.
+The final score is 89.25.
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="repr-vs-str">
+<h3><span class="section-number">12.1.7.4. </span><strong>repr</strong> vs <strong>str</strong><a class="headerlink" href="#repr-vs-str" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">__repr__</span></code> - a method that returns a string containing
-an object’s printed representation.</p></li>
+an object’s printed representation. Its purpose is to unambiguous</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">__str__</span></code> - a method that also returns a string representation of an object, but it is supposed to be human readable.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print()</span></code> will first try to use <code class="docutils literal notranslate"><span class="pre">__str__</span></code>. If that is not available, then it will use <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>. That if that is not available, then it will use the parents <code class="docutils literal notranslate"><span class="pre">__repr__</span></code>.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-  <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;&lt;some string &gt;&#39;</span>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">a</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">value</span> <span class="o">=</span> <span class="n">value</span>
+    
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;__repr__: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span>
+        
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;__str__: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">value</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">))</span>
+<span class="n">a</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">super()</span></code> - used to invoke parent class’s methods</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">()</span>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__str__: 1
 </pre></div>
 </div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>__repr__: 1
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="id1">
+<h3><span class="section-number">12.1.7.5. </span>NamedTuple<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">dataclasses.dataclass</span></code> - new in Python 3.7, a convenient way add common things to <code class="docutils literal notranslate"><span class="pre">__init__</span></code> and reduce redundancy.</p></li>
+<li><p>You can also use the <code class="docutils literal notranslate"><span class="pre">NamedTuple</span></code> class to build a data class. The benefit is that you can overwrite default functions, for example `<strong>str</strong>.</p></li>
 </ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NamedTuple</span>
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;x: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">; y: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="ow">is</span> <span class="n">p2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x: 10; y: 10
+x: 10; y: 10
+True
+False
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>Equality is meaningful and now you control what is printed</p></li>
+</ul>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">namedtuple</span></code> and <code class="docutils literal notranslate"><span class="pre">NamedTuple</span></code> are immutable!</p>
+</div>
+</section>
+<section id="dataclass">
+<h3><span class="section-number">12.1.7.6. </span>Dataclass<a class="headerlink" href="#dataclass" title="Permalink to this headline">#</a></h3>
+<ul class="simple">
+<li><p>A third way to build a data class is to use the <code class="docutils literal notranslate"><span class="pre">dataclass</span></code> operator</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;x: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">; y: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">10</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="o">==</span> <span class="n">p2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span> <span class="ow">is</span> <span class="n">p2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>x: 10; y: 10
+x: 10; y: 10
+True
+False
+</pre></div>
+</div>
+</div>
+</div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
 
 <span class="nd">@dataclass</span>
@@ -979,15 +1393,198 @@ an object’s printed representation.</p></li>
 
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">unit_price</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">quantity_on_hand</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">unit_price</span> <span class="o">=</span> <span class="n">unit_price</span>
-    <span class="bp">self</span><span class="o">.</span><span class="n">quantity_on_hand</span> <span class="o">=</span> <span class="n">quantity_on_hand</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">InventoryItem</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">unit_price</span><span class="p">:</span> <span class="nb">float</span><span class="p">,</span> <span class="n">quantity_on_hand</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">name</span> <span class="o">=</span> <span class="n">name</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">unit_price</span> <span class="o">=</span> <span class="n">unit_price</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">quantity_on_hand</span> <span class="o">=</span> <span class="n">quantity_on_hand</span>
 </pre></div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p><code class="docutils literal notranslate"><span class="pre">dataclasses</span></code> are mutable by default. You can make them immutable by passing in an optional argument, <code class="docutils literal notranslate"><span class="pre">&#64;dataclass(frozen=True)</span></code></p>
+</div>
+</section>
+</section>
+<section id="getting-data-as-a-dict">
+<h2><span class="section-number">12.1.8. </span>Getting data as a dict<a class="headerlink" href="#getting-data-as-a-dict" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NamedTuple</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+
+
+<span class="n">Pointnamedtuple</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Point&#39;</span><span class="p">,</span> <span class="s1">&#39;x y&#39;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">PointNamedTuple</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;x: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">; y: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Pointdataclass</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;x: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">; y: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Pointnamedtuple</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">PointNamedTuple</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">Pointdataclass</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">_asdict</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">_asdict</span><span class="p">())</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dataclasses</span><span class="o">.</span><span class="n">asdict</span><span class="p">(</span><span class="n">p3</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;x&#39;: 10, &#39;y&#39;: 12}
+{&#39;x&#39;: 10, &#39;y&#39;: 12}
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">29</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">_asdict</span><span class="p">())</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">_asdict</span><span class="p">())</span>
+<span class="ne">---&gt; </span><span class="mi">29</span> <span class="nb">print</span><span class="p">(</span><span class="n">dataclasses</span><span class="o">.</span><span class="n">asdict</span><span class="p">(</span><span class="n">p3</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;dataclasses&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="replacing-values-in-an-immutable-data-class">
+<h2><span class="section-number">12.1.9. </span>Replacing values in an immutable data class<a class="headerlink" href="#replacing-values-in-an-immutable-data-class" title="Permalink to this headline">#</a></h2>
+<ul class="simple">
+<li><p>Returns a new object</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NamedTuple</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+
+
+<span class="n">Pointnamedtuple</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Point&#39;</span><span class="p">,</span> <span class="s1">&#39;x y&#39;</span><span class="p">)</span>
+
+
+<span class="k">class</span> <span class="nc">PointNamedTuple</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;x: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">; y: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Pointdataclass</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;x: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">; y: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Pointnamedtuple</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">PointNamedTuple</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">Pointdataclass</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">_replace</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">_replace</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">dataclasses</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">p3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point(x=5, y=12)
+x: 5; y: 12
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">29</span>
+<span class="g g-Whitespace">     </span><span class="mi">27</span> <span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">_replace</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+<span class="g g-Whitespace">     </span><span class="mi">28</span> <span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">.</span><span class="n">_replace</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+<span class="ne">---&gt; </span><span class="mi">29</span> <span class="nb">print</span><span class="p">(</span><span class="n">dataclasses</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="n">p3</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">5</span><span class="p">))</span>
+
+<span class="ne">NameError</span>: name &#39;dataclasses&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="default-values-in-data-classes">
+<h2><span class="section-number">12.1.10. </span>Default values in data classes<a class="headerlink" href="#default-values-in-data-classes" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">NamedTuple</span>
+<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+
+
+<span class="n">Pointnamedtuple</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Point&#39;</span><span class="p">,</span> <span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="n">defaults</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">,</span> <span class="mi">10</span><span class="p">])</span>
+
+
+<span class="k">class</span> <span class="nc">PointNamedTuple</span><span class="p">(</span><span class="n">NamedTuple</span><span class="p">):</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;x: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">; y: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="nd">@dataclass</span>
+<span class="k">class</span> <span class="nc">Pointdataclass</span><span class="p">:</span>
+    <span class="n">x</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">5</span>
+    <span class="n">y</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">10</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;x: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">; y: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Pointnamedtuple</span><span class="p">()</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">PointNamedTuple</span><span class="p">()</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">Pointdataclass</span><span class="p">()</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point(x=5, y=10)
+x: 5; y: 10
+x: 5; y: 10
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p>The order of defaults in <code class="docutils literal notranslate"><span class="pre">namedtuple</span></code> is flipped!</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">Point</span> <span class="o">=</span> <span class="n">namedtuple</span><span class="p">(</span><span class="s1">&#39;Point&#39;</span><span class="p">,</span> <span class="s1">&#39;x y&#39;</span><span class="p">,</span> <span class="n">defaults</span><span class="o">=</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Point(x=1, y=5)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="admonition warning">
+<p class="admonition-title">Warning</p>
+<p>If you are using lots of data classes and have processing logic elsewhere, then you should probably not use a dataclass and put the processing logic and data together.</p>
 </div>
 </section>
 <section id="examples">
-<h2><span class="section-number">12.1.7. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.11. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span> <span class="o">=</span> <span class="n">first_name</span>
@@ -1054,6 +1651,9 @@ an object’s printed representation.</p></li>
 <span class="n">s1</span><span class="o">.</span><span class="n">print_classes</span><span class="p">()</span>
 </pre></div>
 </div>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">super()</span></code> - used to invoke parent class’s methods</p></li>
+</ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
     <span class="n">PROGRAMS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;graduate&#39;</span><span class="p">,</span> <span class="s1">&#39;undergraduate&#39;</span><span class="p">]</span>
 
@@ -1212,7 +1812,7 @@ an object’s printed representation.</p></li>
 first_name –&gt; FirstName (classes)</p>
 </div>
 <section id="exercise-1">
-<h3><span class="section-number">12.1.7.1. </span>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.11.1. </span>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
 <p>Modify enroll to accept multiple classes!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
     <span class="n">PROGRAMS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;undergraduate&#39;</span><span class="p">,</span> <span class="s1">&#39;graduate&#39;</span><span class="p">]</span>
@@ -1250,7 +1850,7 @@ first_name –&gt; FirstName (classes)</p>
 </div>
 </section>
 <section id="exercise-2">
-<h3><span class="section-number">12.1.7.2. </span>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.11.2. </span>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
 <p>Write a Beverage class whose instances will
 represent beverages. Each beverage should have
 two attributes: a name (describing the beverage)
@@ -1276,7 +1876,7 @@ handled correctly.</p>
 </div>
 </section>
 <section id="exercise-3">
-<h3><span class="section-number">12.1.7.3. </span>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.11.3. </span>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
 <p>Modify the Beverage class, such that you can create
 a new instance specifying the name,
 and not the temperature.
@@ -1304,7 +1904,7 @@ not specified.</p>
 </div>
 </section>
 <section id="exercise-4">
-<h3><span class="section-number">12.1.7.4. </span>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.11.4. </span>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
 <p>Create a new LogFile class that expects to
 be initialized with a filename.
 Inside of <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, open the file for
@@ -1346,7 +1946,7 @@ possible to write to the file via the file attribute.</p>
 </div>
 </section>
 <section id="exercise-5">
-<h3><span class="section-number">12.1.7.5. </span>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.11.5. </span>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span> <span class="o">=</span> <span class="n">first_name</span>
@@ -1386,7 +1986,7 @@ possible to write to the file via the file attribute.</p>
 </section>
 </section>
 <section id="payroll-system-using-polymorphism">
-<h2><span class="section-number">12.1.8. </span>Payroll system using polymorphism<a class="headerlink" href="#payroll-system-using-polymorphism" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.12. </span>Payroll system using polymorphism<a class="headerlink" href="#payroll-system-using-polymorphism" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Employee – Abstract</p>
 <ul>
@@ -1412,7 +2012,7 @@ possible to write to the file via the file attribute.</p>
 <li><p>Demonstrate polymorphism</p></li>
 </ul>
 <section id="exercise">
-<h3><span class="section-number">12.1.8.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.12.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Java How to Program Deitel et. al</span>
 
 <span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
@@ -1529,7 +2129,7 @@ possible to write to the file via the file attribute.</p>
 </section>
 </section>
 <section id="operator-overloading">
-<h2><span class="section-number">12.1.9. </span>Operator overloading<a class="headerlink" href="#operator-overloading" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.13. </span>Operator overloading<a class="headerlink" href="#operator-overloading" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>We know how to create objects. Now we will learn how to define what +, -, or lte means for an object</p></li>
 <li><p>add</p></li>
@@ -1539,126 +2139,154 @@ possible to write to the file via the file attribute.</p>
 <li><p>iterators <a class="reference external" href="https://www.programiz.com/python-programming/iterator">https://www.programiz.com/python-programming/iterator</a></p></li>
 <li><p>generators <a class="reference external" href="https://www.programiz.com/python-programming/generator">https://www.programiz.com/python-programming/generator</a></p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>import math
-class Circle:
+<section id="basic-class">
+<h3><span class="section-number">12.1.13.1. </span>Basic Class<a class="headerlink" href="#basic-class" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
 
-    def __init__(self, radius):
-        self.radius = radius
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
 
-    def get_area(self):
-        return math.pi * self.radius**2
-
-
-    def __repr__(self):
-        return &quot;Circle with radius &quot; + str(self.radius)
-    def __str__(self):
-        return &quot;Circle with radius &quot; + str(self.radius)
-
-c1 = Circle(10)
-c2 = Circle(5)
-
-# print(c1)
-# print(c2)
-# print(c2.get_area())
+    <span class="k">def</span> <span class="nf">get_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
 
 
-# lets does c1 + c2 have any meaning? no
-# https://thepythonguru.com/python-operator-overloading/
+    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Circle with radius &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Circle with radius &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
 
-class Circle:
+<span class="n">c1</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
 
-    def __init__(self, radius):
-        self.radius = radius
+<span class="nb">print</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c2</span><span class="o">.</span><span class="n">get_area</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Circle with radius 10
+Circle with radius 5
+78.53981633974483
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="adding-add">
+<h3><span class="section-number">12.1.13.2. </span>Adding Add<a class="headerlink" href="#adding-add" title="Permalink to this headline">#</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
 
-    def get_area(self):
-        return math.pi * self.radius**2
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
 
-    def __str__(self):
-        return &quot;Circle with radius &quot; + str(self.radius)
+    <span class="k">def</span> <span class="nf">get_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
 
-    def __add__(self, another_circle):
-        return Circle(self.radius + another_circle.radius)
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Circle with radius &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
 
-
-c1 = Circle(10)
-c2 = Circle(5)
-c3 = c1 + c2 ### ==&gt; c1.__add__(c2) ==&gt; Circle.__add__(c1, c2)
-print(c3)
-
-
-class Circle:
-
-    def __init__(self, radius):
-        self.radius = radius
-
-    def get_area(self):
-        return math.pi * self.radius**2
-
-    def __str__(self):
-        return &quot;Circle with radius &quot; + str(self.radius)
-
-    def __add__(self, another_circle):
-        return Circle(self.radius + another_circle.radius)
-
-    def __gt__(self, another_circle):
-        return self.radius &gt; another_circle.radius
-
-    def __lt__(self, another_circle):
-        return self.radius &lt; another_circle.radius
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_circle</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Circle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">+</span> <span class="n">another_circle</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
 
 
-
-c1 = Circle(10)
-c2 = Circle(5)
-print(c1 &lt; c2)
-
-
-
-class Point:
-    def __init__(self, x=0, y=0):
-        self.x = x
-        self.y = y
-
-    def __add__(self, another_point):
-        return Point(self.x + another_point.x, self.y + another_point.y)
-
-    def __sub__(self, another_point):
-        return Point(self.x - another_point.x, self.y - another_point.y)
-
-    def __str__(self):
-        return f&#39;{self.x}, {self.y}&#39;
-
-p1 = Point(3, 4)
-p2 = Point(8, 6)
-print(p2+p1)
-
-import math
-class Point:
-    def __init__(self, x=0, y=0):
-        self.x = x
-        self.y = y
-
-    def __add__(self, another_point):
-        return Point(self.x + another_point.x, self.y + another_point.y)
-
-    def __sub__(self, another_point):
-        return Point(self.x - another_point.x, self.y - another_point.y)
-
-    def length(self):
-        return math.sqrt(self.x**2 + self.y**2)
-
-    def distance(self, another_point):
-        return (self - another_point).length()
-
-    def __str__(self):
-        return f&#39;{self.x}, {self.y}&#39;
-
-p1 = Point(3, 4)
-p2 = Point(8, 6)
-print(p1.distance(p2))
+<span class="n">c1</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">c3</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">+</span> <span class="n">c2</span> <span class="c1">### ==&gt; c1.__add__(c2) ==&gt; Circle.__add__(c1, c2)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c3</span><span class="p">)</span>
 
 
-class MyRange:
+<span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
+
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
+
+    <span class="k">def</span> <span class="nf">get_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Circle with radius &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_circle</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Circle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">+</span> <span class="n">another_circle</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_circle</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">&gt;</span> <span class="n">another_circle</span><span class="o">.</span><span class="n">radius</span>
+
+    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_circle</span><span class="p">):</span>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">&lt;</span> <span class="n">another_circle</span><span class="o">.</span><span class="n">radius</span>
+
+
+
+<span class="n">c1</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">c1</span> <span class="o">&lt;</span> <span class="n">c2</span><span class="p">)</span>
+
+
+
+<span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_point</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">another_point</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">another_point</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_point</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">another_point</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">another_point</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">+</span><span class="n">p1</span><span class="p">)</span>
+
+<span class="kn">import</span> <span class="nn">math</span>
+<span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
+
+    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_point</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">another_point</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">another_point</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_point</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">another_point</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">another_point</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_point</span><span class="p">):</span>
+        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span> <span class="o">-</span> <span class="n">another_point</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
+
+    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">p2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Circle with radius 15
+False
+11, 10
+5.385164807134504
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+<section id="iterator-class">
+<h3><span class="section-number">12.1.13.3. </span>Iterator Class<a class="headerlink" href="#iterator-class" title="Permalink to this headline">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>class MyRange:
 
     def __init__(self, limit):
         self.limit = limit
@@ -1724,8 +2352,9 @@ for number in numbers:
 </pre></div>
 </div>
 </section>
+</section>
 <section id="self">
-<h2><span class="section-number">12.1.10. </span>Self<a class="headerlink" href="#self" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.14. </span>Self<a class="headerlink" href="#self" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">self</span></code> is a reference to an instance of a class. You can use <code class="docutils literal notranslate"><span class="pre">self</span></code> to access attributes and methods bound to an instance.</p></li>
 <li><p>class variable vs instance variable (<a class="reference external" href="https://www.digitalocean.com/community/tutorials/understanding-class-and-instance-variables-in-python-3">https://www.digitalocean.com/community/tutorials/understanding-class-and-instance-variables-in-python-3</a>)</p></li>
@@ -1912,19 +2541,26 @@ for number in numbers:
 </div>
 </section>
 <section id="item-assignment">
-<h2><span class="section-number">12.1.11. </span>Item assignment<a class="headerlink" href="#item-assignment" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.15. </span>Item assignment<a class="headerlink" href="#item-assignment" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
-        
+              
     <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
         
     <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
-        
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>      
 </pre></div>
 </div>
+<ul class="simple">
+<li><p>add functionality pass in multiple data; with and wihtout header</p></li>
+<li><p>add functionality to select multiple columns</p></li>
+<li><p>add functionality to add two columns</p></li>
+<li><p>add functionality to take a mean of a column(s)</p></li>
+<li><p>add functionality to select rows</p></li>
+<li><p>add functionality slicing!</p></li>
+</ul>
 </section>
 </section>
 

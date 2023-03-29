@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Object-Oriented Programming
 - We know how to store various data in Python using various data types  
 - We also know how to define functions that manipulate
@@ -9,8 +21,7 @@ the data and functions in one place.
 - Procedural programming:
   - We write a list of nouns (data)
   - We also have a separate list of verbs (functions)
-  - We leave it up to the programmer to figure out which 
-  data goes with with function
+  - We leave it up to the programmer to figure out which data goes with with function
 - Object-oriented programming:
   - We define an object which contains both the nouns (data) and verbs (functions) that manipulate that data. 
   - Data --> Attribute
@@ -40,7 +51,7 @@ data and the function to manipulate it.
 - So put the scores list and the average function
 inside a class
 
-```python
+```{code-cell} ipython3
 class ScoreList():
   def __init__(self, scores):
     self.scores = scores
@@ -48,12 +59,18 @@ class ScoreList():
   def average(self):
     return sum(self.scores) / len(self.scores)
 
-scores = ScoreList([80, 90, 95, 92 85]) 
+scores = ScoreList([80, 90, 95, 92, 85]) 
 print(f'The final score is {scores.average()}.')   
 ```
 
 - No difference it the actual calculation, only that the
 code is organized differently.
+
+## Basic Building Blocks to defining a class
+- `class` - keyword to indicate that you are creating/defining a class; example `class ScoreList`
+- `__init__` - a method that is invoked automatically
+when an instance of a class is created. Class is analogous to a blue print and an object is an instance
+of a class with its own separate data from other objects (attributes/data), but shared functionality (methods/functions). 
 
 ## Benefits of OOP
 - We can organize our code into distinct objects, so each object handles storing and manipulating the data. 
@@ -66,32 +83,147 @@ inherits from its parent class attributes and methods, reducing code repetition 
 - Do not overdo OOP. It is possible to create a very large object which then basically functions like a procedural system disguised as an object-oriented one. 
 
 
-## Basic Building Blocks to defining a class
-- `class` - keyword to indicate that you are creating/defining a class; example `class ScoreList`
-- `__init__` - a method that is invoked automatically
-when an instance of a class is created. Class is analogous to a blue print and an object is an instance
-of a class with its own separate data from other objects (attributes/data), but shared functionality (methods/functions). 
+## Data Class Builders
 
-```python
-def __init__(self):
-  pass
+### namedtuple
+
+- Sometimes you want to build a class that simply contains data and no added functionality. For this, use use `namedtuple`
+
+```{code-cell} ipython3
+class Point:
+    def __init__(self, x, y):
+        self.x = x
+        self.y = y
+
+p1 = Point(10, 10)
+p2 = Point(10, 10)
+print(p1)
+print(p2)
+print(p1 == p2)
+print(p1 is p2)
 ```
 
+```{code-cell} ipython3
+from collections import namedtuple
+Point = namedtuple('Point', 'x y')
+
+p1 = Point(10, 10)
+p2 = Point(10, 10)
+print(p1)
+print(p2)
+print(p1 == p2)
+print(p1 is p2)
+```
+
+- Right away we notice that a `namedtuple` provides a useful representation of the object. 
+
+### Equality vs Reference
+
+- `==` is for value equality
+- `is` is for reference equality
+
+```{code-cell} ipython3
+x = {1: 2, 3:4}
+y = x
+print(x == y)
+print(x is y)
+
+x = {3:4, 1:2}
+y = {1:2, 3:4}
+print(x == y)
+print(x is y)
+```
+
+### Passing in a mutable object to a class 
+```{code-cell} ipython3
+class ScoreList():
+    def __init__(self, scores):
+        self.scores = scores
+
+    def average(self):
+        return sum(self.scores) / len(self.scores)
+
+l1 = [80, 90, 95, 92, 85]
+scores = ScoreList(l1) 
+print(f'The final score is {scores.average()}.') 
+l1.pop()
+print(f'The final score is {scores.average()}.')    
+```
+
+
+
+### __repr__ vs __str__
 - `__repr__` - a method that returns a string containing
-an object's printed representation. 
+an object's printed representation. Its purpose is to unambiguous
+- `__str__` - a method that also returns a string representation of an object, but it is supposed to be human readable. 
+- `print()` will first try to use `__str__`. If that is not available, then it will use `__repr__`. That if that is not available, then it will use the parents `__repr__`. 
 
-```python
-def __repr__(self):
-  return f'<some string >'
+```{code-cell} ipython3
+class a:
+    def __init__(self, value):
+        self.value = value
+    
+    def __repr__(self):
+        return f'__repr__: {self.value}'
+        
+    def __str__(self):
+        return f'__str__: {self.value}'
+
+print(a(1))
+a(1)
 ```
 
-- `super()` - used to invoke parent class's methods
+### NamedTuple
 
-```python
-super().__init__()
+- You can also use the `NamedTuple` class to build a data class. The benefit is that you can overwrite default functions, for example `__str__. 
+
+```{code-cell} ipython3
+from typing import NamedTuple
+
+class Point(NamedTuple):
+    x: int
+    y: int
+
+    def __str__(self):
+        return f'x: {self.x}; y: {self.y}'
+
+p1 = Point(10, 10)
+p2 = Point(10, 10)
+print(p1)
+print(p2)
+print(p1 == p2)
+print(p1 is p2)
 ```
 
-- `dataclasses.dataclass` - new in Python 3.7, a convenient way add common things to `__init__` and reduce redundancy. 
+- Equality is meaningful and now you control what is printed
+
+:::{warning}
+`namedtuple` and `NamedTuple` are immutable!
+:::
+
+
+### Dataclass
+
+- A third way to build a data class is to use the `dataclass` operator
+
+```{code-cell} ipython3
+from dataclasses import dataclass
+
+@dataclass
+class Point:
+    x: int
+    y: int
+
+    def __str__(self):
+        return f'x: {self.x}; y: {self.y}'
+
+p1 = Point(10, 10)
+p2 = Point(10, 10)
+print(p1)
+print(p2)
+print(p1 == p2)
+print(p1 is p2)
+```
 
 ```python
 from dataclasses import dataclass
@@ -109,11 +241,137 @@ class InventoryItem:
 ```
 
 ```python
-def __init__(self, name: str, unit_price: float, quantity_on_hand: int = 0):
-    self.name = name
-    self.unit_price = unit_price
-    self.quantity_on_hand = quantity_on_hand
+class InventoryItem:
+    def __init__(self, name: str, unit_price: float, quantity_on_hand: int = 0):
+        self.name = name
+        self.unit_price = unit_price
+        self.quantity_on_hand = quantity_on_hand
 ```
+
+:::{warning}
+`dataclasses` are mutable by default. You can make them immutable by passing in an optional argument, `@dataclass(frozen=True)`
+:::
+
+## Getting data as a dict
+
+
+```{code-cell} ipython3
+from collections import namedtuple
+from typing import NamedTuple
+from dataclasses import dataclass
+
+
+Pointnamedtuple = namedtuple('Point', 'x y')
+
+
+class PointNamedTuple(NamedTuple):
+    x: int
+    y: int
+
+    def __str__(self):
+        return f'x: {self.x}; y: {self.y}'
+
+@dataclass
+class Pointdataclass:
+    x: int
+    y: int
+
+    def __str__(self):
+        return f'x: {self.x}; y: {self.y}'
+
+p1 = Pointnamedtuple(10, 12)
+p2 = PointNamedTuple(10, 12)
+p3 = Pointdataclass(10, 12)
+print(p1._asdict())
+print(p2._asdict())
+print(dataclasses.asdict(p3))
+
+```
+
+## Replacing values in an immutable data class
+
+- Returns a new object
+
+```{code-cell} ipython3
+from collections import namedtuple
+from typing import NamedTuple
+from dataclasses import dataclass
+
+
+Pointnamedtuple = namedtuple('Point', 'x y')
+
+
+class PointNamedTuple(NamedTuple):
+    x: int
+    y: int
+
+    def __str__(self):
+        return f'x: {self.x}; y: {self.y}'
+
+@dataclass
+class Pointdataclass:
+    x: int
+    y: int
+
+    def __str__(self):
+        return f'x: {self.x}; y: {self.y}'
+
+p1 = Pointnamedtuple(10, 12)
+p2 = PointNamedTuple(10, 12)
+p3 = Pointdataclass(10, 12)
+print(p1._replace(x=5))
+print(p2._replace(x=5))
+print(dataclasses.replace(p3, x=5))
+```
+
+
+## Default values in data classes
+
+```{code-cell} ipython3
+from collections import namedtuple
+from typing import NamedTuple
+from dataclasses import dataclass
+
+
+Pointnamedtuple = namedtuple('Point', 'x y', defaults=[5, 10])
+
+
+class PointNamedTuple(NamedTuple):
+    x: int = 5
+    y: int = 10
+
+    def __str__(self):
+        return f'x: {self.x}; y: {self.y}'
+
+@dataclass
+class Pointdataclass:
+    x: int = 5
+    y: int = 10
+
+    def __str__(self):
+        return f'x: {self.x}; y: {self.y}'
+
+p1 = Pointnamedtuple()
+p2 = PointNamedTuple()
+p3 = Pointdataclass()
+print(p1)
+print(p2)
+print(p3)
+```
+
+- The order of defaults in `namedtuple` is flipped!
+
+```{code-cell} ipython3
+Point = namedtuple('Point', 'x y', defaults=[5])
+p1 = Point(1)
+print(p1)
+```
+
+
+:::{warning}
+If you are using lots of data classes and have processing logic elsewhere, then you should probably not use a dataclass and put the processing logic and data together. 
+:::
+
 
 
 ## Examples
@@ -187,6 +445,9 @@ s1.enroll('efg')
 s1.enroll('hij')
 s1.print_classes()
 ```
+
+- `super()` - used to invoke parent class's methods
+
 
 ```python
 class Student(Person):
@@ -664,7 +925,9 @@ for employee in employees:
 - iterators https://www.programiz.com/python-programming/iterator
 - generators https://www.programiz.com/python-programming/generator
 
-```python
+### Basic Class
+
+```{code-cell} ipython3
 import math
 class Circle:
 
@@ -683,14 +946,16 @@ class Circle:
 c1 = Circle(10)
 c2 = Circle(5)
 
-# print(c1)
-# print(c2)
-# print(c2.get_area())
+print(c1)
+print(c2)
+print(c2.get_area())
+```
 
 
-# lets does c1 + c2 have any meaning? no
-# https://thepythonguru.com/python-operator-overloading/
+### Adding Add
 
+
+```{code-cell} ipython3
 class Circle:
 
     def __init__(self, radius):
@@ -782,8 +1047,12 @@ class Point:
 p1 = Point(3, 4)
 p2 = Point(8, 6)
 print(p1.distance(p2))
+```
+
+### Iterator Class
 
 
+```python
 class MyRange:
 
     def __init__(self, limit):
@@ -1038,14 +1307,18 @@ print('Call from object -- add_object: ', t1.add_object(13, 14))
 ## Item assignment
 ```python
 class MyClass:
-    def __init__(self):
+    def __init__(self, **kwargs):
         self.data = {}
-        
+              
     def __setitem__(self, key, value):
         self.data[key] = value
         
     def __getitem__(self, key):
-        return self.data[key]
-        
-```        
-    
+        return self.data[key]      
+```   
+- add functionality pass in multiple data; with and wihtout header   
+- add functionality to select multiple columns
+- add functionality to add two columns  
+- add functionality to take a mean of a column(s)  
+- add functionality to select rows   
+- add functionality slicing!
