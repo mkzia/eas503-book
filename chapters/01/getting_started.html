@@ -501,6 +501,78 @@ const thebe_selector_output = ".output, .cell_output"
    </li>
   </ul>
  </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="../13/sql.html">
+   13. SQL with SQLite
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../13/sql_0_tables.html">
+     13.1. Creating Tables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../13/sql_1_query_primer.html">
+     13.2. SQL Query Primer
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../13/sql_2_filtering.html">
+     13.3. Filtering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../13/sql_3_sets.html">
+     13.4. Sets
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../13/sql_4_grouping.html">
+     13.5. Grouping and Aggregates
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../13/sql_5_subqueries.html">
+     13.6. Subqueries
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../13/sql_6_conditionals.html">
+     13.7. Conditionals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../13/sql_7_analytic_functions.html">
+     13.8. Analytic Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../13/sql_8_normalization.html">
+     13.9. Normalization
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../13/sql_9_python.html">
+     13.10. Python and SQLite3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../13/sql_10_india_export_data.html">
+     13.11. India Export Database
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../13/sql_11_soccer.html">
+     13.13. Soccer Database
+    </a>
+   </li>
+  </ul>
+ </li>
 </ul>
 
     </div>
@@ -744,11 +816,11 @@ title="Print to PDF"
 <ul class="simple">
 <li><p>Objectives</p>
 <ul>
-<li><p>To understand what is a computer.</p></li>
-<li><p>To understand what is a program.</p></li>
-<li><p>To understand what is a programming language.</p></li>
-<li><p>To learn about the features of Python.</p></li>
-<li><p>To begin using Python.</p></li>
+<li><p>To understand what is a computer</p></li>
+<li><p>To understand what is a program</p></li>
+<li><p>To understand what is a programming language</p></li>
+<li><p>To learn about the features of Python</p></li>
+<li><p>To begin using Python</p></li>
 </ul>
 </li>
 </ul>
@@ -756,17 +828,20 @@ title="Print to PDF"
 <h2><span class="section-number">1.1.1. </span>Computers<a class="headerlink" href="#computers" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>A modern computer can be defined as “a machine that <strong>stores</strong> and <strong>manipulates</strong> information
-under the control of a <strong>changeable program</strong>.”</p></li>
+under the control of a <strong>changeable program</strong>.”</p>
+<ul>
 <li><p><strong>manipulation</strong> means to transform information into new, useful forms, and then store, output,
 or display information for our interpretation.</p>
 <ul>
-<li><p>Examples</p>
+<li><p><strong>Examples</strong>:</p>
 <ul>
-<li><p>Find students with highest and lowest GPA</p></li>
+<li><p>Find students with the highest and lowest GPA</p></li>
 <li><p>Find patients whose stay in a hospital was more than 15 days</p></li>
 <li><p>Sort the monthly sales of a bakery to determine which months have the highest sales</p></li>
 <li><p>Classify a cancer case as benign or malignant based on diagnostic measurements</p></li>
-<li><p>Predict house price based on historical data</p></li>
+<li><p>Predict house prices based on historical data</p></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -776,61 +851,61 @@ or display information for our interpretation.</p>
 <section id="what-is-a-program">
 <h2><span class="section-number">1.1.2. </span>What is a Program?<a class="headerlink" href="#what-is-a-program" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>A computer program is a detailed step-by-step set of instructions telling a computer exactly what to do.</p></li>
-<li><p>If we <strong>change</strong> the program, then the computer performs a different sequence of actions, and hence, performs
+<li><p>A computer program is a detailed step-by-step set of instructions telling a computer exactly what to do</p></li>
+<li><p>If we <strong>change</strong> the program, then the computer performs a different sequence of actions and hence, performs
 a different task.</p></li>
 <li><p>A program is written in terms of a few basic operations that its reader already understands. Using these few basic operations, you can “teach” a computer new operations by defining them in terms of the basic operations.</p>
 <ul>
-<li><p>Example: Computers understand the addition and division operator, which are the basic mathematical operators. You can teach the computer to calculate the average by using the addition and division operator by instructing the computer to add all the numbers in a sequence and divide by the size of the sequence.</p></li>
-<li><p>Example: You can then use the new average operation and combine with other operations to create more operations. It is a lot like creating life by putting atoms together to make proteins and then combining proteins to build cells, combining cells to make organs, and combining organs to make a creature.
-Defining new operations and combining them to do useful things is the heart and soul of programming.</p></li>
+<li><p><strong>Example</strong>: Computers understand addition and division operators, which are basic mathematical operators. You can teach the computer to calculate the average using the addition and division operators by instructing the computer to add all the numbers in a sequence and divide by the sequence size.</p></li>
+<li><p><strong>Example</strong>: You can then combine the new average operation with other operations to create more operations. It is a lot like creating life by putting atoms together to make proteins and then combining proteins to build cells, combining cells to make organs, and combining organs to make a creature.</p></li>
+<li><p>Defining new operations and combining them to do useful things is the heart and soul of programming.</p></li>
 </ul>
 </li>
 <li><p>Every computer is just a machine for executing (carrying out) programs.</p></li>
-<li><p>Software (programs) rules the hardware (the physical machines). It is the software that determines what any computer can do. Without software, computers would just be expensive paperweights. The process of creating software is called programming.</p></li>
+<li><p>Software (programs) rules the hardware (the physical machines), and the software determines what any computer can do. Without software, computers would be expensive paperweights. The process of creating software is called programming.</p></li>
 </ul>
 </section>
 <section id="what-is-a-programming-language">
 <h2><span class="section-number">1.1.3. </span>What is a Programming Language?<a class="headerlink" href="#what-is-a-programming-language" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
-<li><p>You can express directions to the nearest bus station in many different languages such as English, Spanish, or Hindi.</p></li>
+<li><p>You can express directions to the nearest bus station in many different languages, such as English, Spanish, or Hindi.</p></li>
 <li><p>But natural languages are fraught with ambiguity and imprecision.</p>
 <ul>
-<li><p>English example: “I saw a man on a hill with a telescope.”</p>
+<li><p><strong>English example</strong>: “I saw a man on a hill with a telescope”</p>
 <ul>
-<li><p>There is a man on a hill, and I am watching him with my telescope.</p></li>
-<li><p>There is a man on a hill, who I am seeing, and he has a telescope.</p></li>
-<li><p>There is a man, and he is on a hill that also has a telescope on it.</p></li>
-<li><p>I am on a hill, and I saw a man using a telescope.</p></li>
+<li><p>There is a man on a hill, and I am watching him with my telescope</p></li>
+<li><p>There is a man on a hill, who I am seeing, and he has a telescope</p></li>
+<li><p>There is a man, and he is on a hill that also has a telescope on it</p></li>
+<li><p>I am on a hill, and I saw a man using a telescope</p></li>
 <li><p>There is a man on a hill, and I am sawing him with a telescope.</p></li>
 <li><p>source: <a class="reference external" href="https://www.quora.com/What-are-some-examples-of-ambiguous-sentences">https://www.quora.com/What-are-some-examples-of-ambiguous-sentences</a></p></li>
 </ul>
 </li>
 </ul>
 </li>
-<li><p>Computer scientists have gotten around this problem by designing notations for expressing computations in an exact and unambiguous way.</p></li>
+<li><p>Computer scientists have solved this problem by designing notations for expressing computations precisely and unambiguously.</p></li>
 <li><p>These special notations are called “programming languages.”</p></li>
 <li><p>Similar to natural languages, there are many programming languages. But they all are instructions that a machine
 can understand. Programming languages can also look different. For example <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></code> in Python means add three to four. This same
-instruction in Schema is express as <code class="docutils literal notranslate"><span class="pre">(+</span> <span class="pre">3</span> <span class="pre">4)</span></code>.  They are both expressing the same idea– they just look different.</p></li>
-<li><p>Every programming language has a way to write mathematical expressions, repeat instructions a number of times, choose which instructions based on the current information you have, and much more.</p></li>
-<li><p>Programming languages take a <strong>high-level</strong> language, which are  human readable language expressions such as <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>, and translates to machine language that the computer can execute.</p></li>
-<li><p>Machine language consists of actual instructions to CPUs. For adding two numbers, the CPU instructions might looking something like this:</p></li>
+instruction in Schema is express as <code class="docutils literal notranslate"><span class="pre">(+</span> <span class="pre">3</span> <span class="pre">4)</span></code>. They are both expressing the same idea; they look different.</p></li>
+<li><p>Every programming language has a way to write mathematical expressions, repeat instructions several times, choose which instructions based on the current information you have, and much more.</p></li>
+<li><p>Programming languages take a <strong>high-level</strong> language, which are human-readable language expressions such as <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>, and translate it to machine language that the computer can execute.</p></li>
+<li><p>A machine language consists of precise instructions to CPUs. For adding two numbers, the CPU instructions might look something like this:</p></li>
 </ul>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>load the number from memory location 2001 into the CPU
 load the number from memory location 2002 into the CPU
 add the two numbers in the CPU
-store the result into location 2003
+store the result in to location 2003
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Compilers convert programs written in a high-level language into the machine language of some computer; the compiled code is hardware dependent.</p></li>
+<li><p>Compilers convert programs written in a high-level language into the machine language of some computer; the compiled code is hardware and operating system dependent.</p></li>
 <li><p>Interpreters simulate a computer that understands a high-level language.</p></li>
 <li><p>The source program is not translated into machine language all at once.</p></li>
 <li><p>An interpreter analyzes and executes the source code instruction by instruction (line-by-line).</p></li>
 <li><p>Compiling vs. Interpreting</p>
 <ul>
-<li><p>Once program is compiled, it can be executed over and over without the source code or compiler. If it is interpreted, the source code and interpreter are needed each time the program runs</p></li>
+<li><p>Once a program has been compiled, it can be executed repeatedly without the source code or compiler. If it is interpreted, the source code and interpreter are needed each time the program runs</p></li>
 <li><p>Compiled programs generally run faster since the translation of the source code happens only once.</p></li>
 <li><p>Interpreted languages are part of a more flexible programming environment since they can be developed and run interactively</p></li>
 <li><p>Interpreted programs are more portable, meaning the executable code produced from a compiler for a Pentium won’t run on a Mac, without recompiling. If a suitable interpreter already exists, the interpreted code can be run with no modifications.</p></li>

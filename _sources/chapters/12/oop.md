@@ -1051,7 +1051,6 @@ print(p1.distance(p2))
 
 ### Iterator Class
 
-
 ```python
 class MyRange:
 
