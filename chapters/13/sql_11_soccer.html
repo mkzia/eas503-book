@@ -809,14 +809,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;all_players.csv&#39;</span><span class="p">)</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5493
 </pre></div>
 </div>
 </div>
@@ -828,18 +821,6 @@ title="Print to PDF"
 <span class="n">df</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;players&#39;</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># - writes the all_players.df to SQLIte DB</span>
 <span class="n">conn</span><span class="o">.</span><span class="n">commit</span><span class="p">()</span>
 <span class="n">conn</span><span class="o">.</span><span class="n">close</span><span class="p">()</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;all_players.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">df</span><span class="o">.</span><span class="n">to_sql</span><span class="p">(</span><span class="s1">&#39;players&#39;</span><span class="p">,</span> <span class="n">conn</span><span class="p">,</span> <span class="n">if_exists</span><span class="o">=</span><span class="s1">&#39;replace&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="c1"># - writes the all_players.df to SQLIte DB</span>
-
-<span class="ne">NameError</span>: name &#39;sqlite3&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -882,18 +863,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">sqlite3</span> <span class="kn">import</span> <span class="n">Error</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -902,15 +871,160 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;df&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Player</th>
+      <th>Club</th>
+      <th>POS</th>
+      <th>GP</th>
+      <th>GS</th>
+      <th>MINS</th>
+      <th>Year</th>
+      <th>Season</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Roy Lassiter</td>
+      <td>TB</td>
+      <td>F</td>
+      <td>30</td>
+      <td>30</td>
+      <td>2580</td>
+      <td>1996</td>
+      <td>reg</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Raul Diaz Arce</td>
+      <td>DC</td>
+      <td>F</td>
+      <td>28</td>
+      <td>28</td>
+      <td>2351</td>
+      <td>1996</td>
+      <td>reg</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Eduardo Hurtado</td>
+      <td>LA</td>
+      <td>F</td>
+      <td>26</td>
+      <td>26</td>
+      <td>2323</td>
+      <td>1996</td>
+      <td>reg</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Preki</td>
+      <td>KC</td>
+      <td>M</td>
+      <td>32</td>
+      <td>32</td>
+      <td>2880</td>
+      <td>1996</td>
+      <td>reg</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Brian McBride</td>
+      <td>CLB</td>
+      <td>F</td>
+      <td>28</td>
+      <td>28</td>
+      <td>2307</td>
+      <td>1996</td>
+      <td>reg</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>15762</th>
+      <td>Alejandro Pozuelo</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>1</td>
+      <td>1</td>
+      <td>120</td>
+      <td>2020</td>
+      <td>post</td>
+    </tr>
+    <tr>
+      <th>15763</th>
+      <td>Franco Jara</td>
+      <td>NaN</td>
+      <td>F</td>
+      <td>2</td>
+      <td>2</td>
+      <td>210</td>
+      <td>2020</td>
+      <td>post</td>
+    </tr>
+    <tr>
+      <th>15764</th>
+      <td>Andy Polo</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>1</td>
+      <td>1</td>
+      <td>105</td>
+      <td>2020</td>
+      <td>post</td>
+    </tr>
+    <tr>
+      <th>15765</th>
+      <td>Cristian Roldan</td>
+      <td>NaN</td>
+      <td>M</td>
+      <td>4</td>
+      <td>4</td>
+      <td>360</td>
+      <td>2020</td>
+      <td>post</td>
+    </tr>
+    <tr>
+      <th>15766</th>
+      <td>Joevin Jones</td>
+      <td>NaN</td>
+      <td>D-M</td>
+      <td>4</td>
+      <td>4</td>
+      <td>260</td>
+      <td>2020</td>
+      <td>post</td>
+    </tr>
+  </tbody>
+</table>
+<p>15767 rows × 8 columns</p>
+</div></div></div>
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="tables">
@@ -929,16 +1043,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;all_players.db&#39;</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;sqlite3&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -947,19 +1051,6 @@ title="Print to PDF"
 <span class="n">rows</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rows</span><span class="p">)</span>
 <span class="n">clubs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">rows</span><span class="p">))</span>
 <span class="n">clubs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">clubs</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;SELECT DISTINCT CLUB FROM players&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">execute_sql_statement</span><span class="p">(</span><span class="n">sql_statement</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">rows</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rows</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">clubs</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">rows</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;execute_sql_statement&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -974,14 +1065,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
-<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">clubs</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;clubs&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Counter({&#39;NE&#39;: 1, &#39;NYR&#39;: 1, &#39;PAN&#39;: 1, &#39;LA&#39;: 1, &#39;HON&#39;: 1, &#39;NSH&#39;: 1, &#39;MTQ&#39;: 1, &#39;SKC&#39;: 1, &#39;CIV&#39;: 1, &#39;MCF&#39;: 1, &#39;PHI&#39;: 1, &#39;GHA&#39;: 1, &#39;COL&#39;: 1, &#39;MTL&#39;: 1, &#39;ATL&#39;: 1, &#39;KC&#39;: 1, &#39;SJ&#39;: 1, &#39;CAN&#39;: 1, &#39;ROC&#39;: 1, &#39;MET&#39;: 1, &#39;POR&#39;: 1, &#39;CHI&#39;: 1, &#39;NY&#39;: 1, &#39;ECU&#39;: 1, &#39;LAFC&#39;: 1, &#39;ORL&#39;: 1, &#39;DC&#39;: 1, &#39;MIA&#39;: 1, &#39;RBNY&#39;: 1, &#39;CIN&#39;: 1, &#39;MIN&#39;: 1, &#39;RSL&#39;: 1, &#39;NYC&#39;: 1, &#39;LFC&#39;: 1, &#39;VAN&#39;: 1, &#39;USA&#39;: 1, &#39;TOR&#39;: 1, &#39;TB&#39;: 1, &#39;HOU&#39;: 1, &#39;JAM&#39;: 1, &#39;HAI&#39;: 1, &#39;SLV&#39;: 1, &#39;DAL&#39;: 1, &#39;CHV&#39;: 1, &#39;SEA&#39;: 1, &#39;CLB&#39;: 1})
 </pre></div>
 </div>
 </div>
@@ -1020,16 +1104,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">conn_norm</span> <span class="o">=</span> <span class="n">create_connection</span><span class="p">(</span><span class="s1">&#39;players_norm.db&#39;</span><span class="p">,</span> <span class="kc">True</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;create_connection&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1039,20 +1113,6 @@ title="Print to PDF"
 <span class="s2">&quot;&quot;&quot;</span>
 
 <span class="n">create_table</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="n">create_table_sql</span><span class="p">)</span> <span class="c1"># doesn&#39;t require commit</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">create_table_sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;CREATE TABLE IF NOT EXISTS[Clubs] (</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="s2">     [Club] TEXT NOT NULL PRIMARY KEY</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s2"> );</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="s2"> &quot;&quot;&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">create_table</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="n">create_table_sql</span><span class="p">)</span> <span class="c1"># doesn&#39;t require commit</span>
-
-<span class="ne">NameError</span>: name &#39;create_table&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1073,20 +1133,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">return</span> <span class="n">cur</span><span class="o">.</span><span class="n">lastrowid</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="k">with</span> <span class="n">conn_norm</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="k">for</span> <span class="n">club</span> <span class="ow">in</span> <span class="n">clubs</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="n">insert_club</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="p">(</span><span class="n">club</span><span class="p">,))</span>
-
-<span class="ne">NameError</span>: name &#39;conn_norm&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1097,14 +1143,7 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;SELECT DISTINCT CLUB FROM Clubs&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">execute_sql_statement</span><span class="p">(</span><span class="n">sql_statement</span><span class="p">,</span> <span class="n">conn_norm</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="nb">print</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;execute_sql_statement&#39; is not defined
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;NE&#39;,), (&#39;NYR&#39;,), (&#39;PAN&#39;,), (&#39;LA&#39;,), (&#39;HON&#39;,), (&#39;NSH&#39;,), (&#39;MTQ&#39;,), (&#39;SKC&#39;,), (&#39;CIV&#39;,), (&#39;MCF&#39;,), (&#39;PHI&#39;,), (&#39;GHA&#39;,), (&#39;COL&#39;,), (&#39;MTL&#39;,), (&#39;ATL&#39;,), (&#39;KC&#39;,), (&#39;SJ&#39;,), (&#39;CAN&#39;,), (&#39;ROC&#39;,), (&#39;MET&#39;,), (&#39;POR&#39;,), (&#39;CHI&#39;,), (&#39;NY&#39;,), (&#39;ECU&#39;,), (&#39;LAFC&#39;,), (&#39;ORL&#39;,), (&#39;DC&#39;,), (&#39;MIA&#39;,), (&#39;RBNY&#39;,), (&#39;CIN&#39;,), (&#39;MIN&#39;,), (&#39;RSL&#39;,), (&#39;NYC&#39;,), (&#39;LFC&#39;,), (&#39;VAN&#39;,), (&#39;USA&#39;,), (&#39;TOR&#39;,), (&#39;TB&#39;,), (&#39;HOU&#39;,), (&#39;JAM&#39;,), (&#39;HAI&#39;,), (&#39;SLV&#39;,), (&#39;DAL&#39;,), (&#39;CHV&#39;,), (&#39;SEA&#39;,), (&#39;CLB&#39;,)]
 </pre></div>
 </div>
 </div>
@@ -1119,19 +1158,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;SELECT DISTINCT POS FROM players&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">execute_sql_statement</span><span class="p">(</span><span class="n">sql_statement</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">rows</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rows</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">positions</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">rows</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;execute_sql_statement&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1141,20 +1167,6 @@ title="Print to PDF"
 <span class="s2">&quot;&quot;&quot;</span>
 
 <span class="n">create_table</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="n">create_table_sql</span><span class="p">)</span> <span class="c1"># doesn&#39;t require commit</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">create_table_sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;CREATE TABLE IF NOT EXISTS[Positions] (</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="s2">     [Position] TEXT NOT NULL PRIMARY KEY</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s2"> );</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="s2"> &quot;&quot;&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">create_table</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="n">create_table_sql</span><span class="p">)</span> <span class="c1"># doesn&#39;t require commit</span>
-
-<span class="ne">NameError</span>: name &#39;create_table&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1175,20 +1187,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">return</span> <span class="n">cur</span><span class="o">.</span><span class="n">lastrowid</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="k">with</span> <span class="n">conn_norm</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="k">for</span> <span class="n">position</span> <span class="ow">in</span> <span class="n">positions</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="n">insert_position</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="p">(</span><span class="n">position</span><span class="p">,))</span>
-
-<span class="ne">NameError</span>: name &#39;conn_norm&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1197,19 +1195,6 @@ title="Print to PDF"
 <span class="n">rows</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rows</span><span class="p">)</span>
 <span class="n">years</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">rows</span><span class="p">))</span>
 <span class="n">years</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">years</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;SELECT DISTINCT Year FROM players&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">execute_sql_statement</span><span class="p">(</span><span class="n">sql_statement</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">rows</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rows</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">years</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="nb">int</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]),</span> <span class="n">rows</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;execute_sql_statement&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1222,20 +1207,6 @@ title="Print to PDF"
 <span class="s2">&quot;&quot;&quot;</span>
 
 <span class="n">create_table</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="n">create_table_sql</span><span class="p">)</span> <span class="c1"># doesn&#39;t require commit</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">create_table_sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;CREATE TABLE IF NOT EXISTS[Years] (</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="s2">     [Year] INTEGER NOT NULL PRIMARY KEY</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s2"> );</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="s2"> &quot;&quot;&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">create_table</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="n">create_table_sql</span><span class="p">)</span> <span class="c1"># doesn&#39;t require commit</span>
-
-<span class="ne">NameError</span>: name &#39;create_table&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1256,20 +1227,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">return</span> <span class="n">cur</span><span class="o">.</span><span class="n">lastrowid</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="k">with</span> <span class="n">conn_norm</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="k">for</span> <span class="n">year</span> <span class="ow">in</span> <span class="n">years</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="n">insert_year</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="p">(</span><span class="n">year</span><span class="p">,))</span>
-
-<span class="ne">NameError</span>: name &#39;conn_norm&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1278,19 +1235,6 @@ title="Print to PDF"
 <span class="n">rows</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rows</span><span class="p">)</span>
 <span class="n">seasons</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">rows</span><span class="p">))</span>
 <span class="n">seasons</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">seasons</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;SELECT DISTINCT season FROM players&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">execute_sql_statement</span><span class="p">(</span><span class="n">sql_statement</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">rows</span> <span class="o">=</span> <span class="nb">filter</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">rows</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">seasons</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">map</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">row</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">(),</span> <span class="n">rows</span><span class="p">))</span>
-
-<span class="ne">NameError</span>: name &#39;execute_sql_statement&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1303,20 +1247,6 @@ title="Print to PDF"
 <span class="s2">&quot;&quot;&quot;</span>
 
 <span class="n">create_table</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="n">create_table_sql</span><span class="p">)</span> <span class="c1"># doesn&#39;t require commit</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">6</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">create_table_sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;CREATE TABLE IF NOT EXISTS[Seasons] (</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="s2">     [Season] TEXT NOT NULL PRIMARY KEY</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s2"> );</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="s2"> &quot;&quot;&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">6</span> <span class="n">create_table</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="n">create_table_sql</span><span class="p">)</span> <span class="c1"># doesn&#39;t require commit</span>
-
-<span class="ne">NameError</span>: name &#39;create_table&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1334,20 +1264,6 @@ title="Print to PDF"
 <span class="k">with</span> <span class="n">conn_norm</span><span class="p">:</span>
     <span class="k">for</span> <span class="n">season</span> <span class="ow">in</span> <span class="n">seasons</span><span class="p">:</span>
         <span class="n">insert_season</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="p">(</span><span class="n">season</span><span class="p">,))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">return</span> <span class="n">cur</span><span class="o">.</span><span class="n">lastrowid</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="k">with</span> <span class="n">conn_norm</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="k">for</span> <span class="n">season</span> <span class="ow">in</span> <span class="n">seasons</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="n">insert_season</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="p">(</span><span class="n">season</span><span class="p">,))</span>
-
-<span class="ne">NameError</span>: name &#39;conn_norm&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1371,19 +1287,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;SELECT DISTINCT player FROM players&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">execute_sql_statement</span><span class="p">(</span><span class="n">sql_statement</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">players</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
-
-<span class="ne">NameError</span>: name &#39;execute_sql_statement&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1395,22 +1298,6 @@ title="Print to PDF"
 <span class="s2">&quot;&quot;&quot;</span>
 
 <span class="n">create_table</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="n">create_table_sql</span><span class="p">)</span> <span class="c1"># doesn&#39;t require commit</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">8</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">create_table_sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;CREATE TABLE IF NOT EXISTS[Players] (</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="s2">     [PlayerID] INTEGER NOT NULL PRIMARY KEY,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s2">     [FirstName] TEXT NOT NULL,</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span><span class="s2">     [LastName] TEXT</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span><span class="s2"> );</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span><span class="s2"> &quot;&quot;&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">create_table</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="n">create_table_sql</span><span class="p">)</span> <span class="c1"># doesn&#39;t require commit</span>
-
-<span class="ne">NameError</span>: name &#39;create_table&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1431,20 +1318,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">line</span> <span class="mi">9</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="n">values</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="k">return</span> <span class="n">cur</span><span class="o">.</span><span class="n">lastrowid</span>
-<span class="ne">----&gt; </span><span class="mi">9</span> <span class="k">with</span> <span class="n">conn_norm</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span>     <span class="k">for</span> <span class="n">player</span> <span class="ow">in</span> <span class="n">players</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span>         <span class="n">insert_player</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="n">player</span><span class="p">)</span>
-
-<span class="ne">NameError</span>: name &#39;conn_norm&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1455,12 +1328,12 @@ title="Print to PDF"
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">conn_norm</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;DROP TABLE PlayerStats&#39;</span><span class="p">)</span>
+<span class="ne">OperationalError</span><span class="g g-Whitespace">                          </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">cur</span> <span class="o">=</span> <span class="n">conn_norm</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;DROP TABLE PlayerStats&#39;</span><span class="p">)</span>
 
-<span class="ne">NameError</span>: name &#39;conn_norm&#39; is not defined
+<span class="ne">OperationalError</span>: no such table: PlayerStats
 </pre></div>
 </div>
 </div>
@@ -1488,22 +1361,6 @@ title="Print to PDF"
 </pre></div>
 </div>
 </div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">18</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">create_table_sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;CREATE TABLE IF NOT EXISTS[PlayerStats] (</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span><span class="s2">     [StatID] INTEGER NOT NULL PRIMARY KEY,</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span><span class="s2">     [PlayerID] INTEGER NOT NULL,</span>
-<span class="s2">   (...)</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="s2"> );</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="s2"> &quot;&quot;&quot;</span>
-<span class="ne">---&gt; </span><span class="mi">18</span> <span class="n">create_table</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="n">create_table_sql</span><span class="p">)</span> <span class="c1"># doesn&#39;t require commit</span>
-
-<span class="ne">NameError</span>: name &#39;create_table&#39; is not defined
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1514,14 +1371,16 @@ title="Print to PDF"
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;SELECT DISTINCT * FROM players&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">execute_sql_statement</span><span class="p">(</span><span class="n">sql_statement</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">rows</span><span class="p">[:</span><span class="mi">10</span><span class="p">]</span>
-
-<span class="ne">NameError</span>: name &#39;execute_sql_statement&#39; is not defined
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;Roy Lassiter&#39;, &#39;TB &#39;, &#39;F&#39;, 30, 30, 2580, 1996, &#39;reg&#39;),
+ (&#39;Raul Diaz Arce&#39;, &#39;DC &#39;, &#39;F&#39;, 28, 28, 2351, 1996, &#39;reg&#39;),
+ (&#39;Eduardo Hurtado&#39;, &#39;LA &#39;, &#39;F&#39;, 26, 26, 2323, 1996, &#39;reg&#39;),
+ (&#39;Preki&#39;, &#39;KC &#39;, &#39;M&#39;, 32, 32, 2880, 1996, &#39;reg&#39;),
+ (&#39;Brian McBride&#39;, &#39;CLB&#39;, &#39;F&#39;, 28, 28, 2307, 1996, &#39;reg&#39;),
+ (&#39;Steve Rammel&#39;, &#39;DC &#39;, &#39;F&#39;, 26, 20, 1649, 1996, &#39;reg&#39;),
+ (&#39;Vitalis Takawira&#39;, &#39;KC &#39;, &#39;F&#39;, 28, 25, 2233, 1996, &#39;reg&#39;),
+ (&#39;Paul Bravo&#39;, &#39;SJ &#39;, &#39;M&#39;, 31, 31, 2654, 1996, &#39;reg&#39;),
+ (&#39;Jason Kreis&#39;, &#39;DAL&#39;, &#39;M&#39;, 31, 29, 2564, 1996, &#39;reg&#39;),
+ (&#39;Giovanni Savarese&#39;, &#39;MET&#39;, &#39;F&#39;, 26, 15, 1576, 1996, &#39;reg&#39;)]
 </pre></div>
 </div>
 </div>
@@ -1539,19 +1398,6 @@ title="Print to PDF"
     <span class="k">else</span><span class="p">:</span>
         <span class="n">player_lookup_dict</span><span class="p">[</span><span class="n">first</span><span class="p">]</span> <span class="o">=</span> <span class="n">pid</span>
         
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM players&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">execute_sql_statement</span><span class="p">(</span><span class="n">sql_statement</span><span class="p">,</span> <span class="n">conn_norm</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">player_lookup_dict</span> <span class="o">=</span> <span class="p">{}</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
-
-<span class="ne">NameError</span>: name &#39;execute_sql_statement&#39; is not defined
 </pre></div>
 </div>
 </div>
@@ -1578,20 +1424,6 @@ title="Print to PDF"
             <span class="k">continue</span>
         <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="o">=</span> <span class="n">row</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span>
         <span class="n">insert_playerstats</span><span class="p">(</span><span class="n">conn_norm</span><span class="p">,</span> <span class="n">row</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;SELECT DISTINCT * FROM players&quot;</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">execute_sql_statement</span><span class="p">(</span><span class="n">sql_statement</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">insert_playerstats</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO PlayerStats(PlayerID, Club, position, gp, gs, min, year, season)</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2">                 VALUES(?, ?, ?, ?, ?, ?, ?,?)&quot;&quot;&quot;</span>
-
-<span class="ne">NameError</span>: name &#39;execute_sql_statement&#39; is not defined
 </pre></div>
 </div>
 </div>
