@@ -1,35 +1,45 @@
 
+
 <!DOCTYPE html>
 
-<html>
+
+<html >
+
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
     <title>13.1. Creating Tables &#8212; EAS503: Python for Data Scientists</title>
-    
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../../_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
 
-    
-  <link rel="stylesheet"
-    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
-  <link rel="preload" as="font" type="font/woff2" crossorigin
-    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+  
+  <link href="../../_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
-    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=5115cc725059bd94278eecd172e13a965bf8f5a9" type="text/css" />
+    <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
-    
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
     <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
     <script src="../../_static/jquery.js"></script>
@@ -37,12 +47,12 @@
     <script src="../../_static/doctools.js"></script>
     <script src="../../_static/clipboard.min.js"></script>
     <script src="../../_static/copybutton.js"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?digest=9c920249402e914e316237a7dbc6769907cce411"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js"></script>
-    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
     <script src="../../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
@@ -50,1087 +60,416 @@ const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
     <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/13/sql_0_tables';</script>
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/13/sql_0_tables.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="13.2. SQL Query Primer" href="sql_1_query_primer.html" />
     <link rel="prev" title="13. SQL with SQLite" href="sql.html" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="docsearch:language" content="None">
-    
-
-    <!-- Google Analytics -->
-    
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
 
-    
-    <div class="container-fluid" id="banner"></div>
-
-    
-
-    <div class="container-xl">
-      <div class="row">
-          
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
-    <a class="navbar-brand text-wrap" href="../../index.html">
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
       
-        <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
+      <div class="bd-sidebar-primary bd-sidebar">
         
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+    
+    
       
-      
-      <img src="../../_static/ub.png" class="logo" alt="logo">
-      
-      
-      <h1 class="site-logo" id="site-title">EAS503: Python for Data Scientists</h1>
-      
-    </a>
-</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
-  <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
-    <div class="bd-toc-item active">
+    
+    
+    <img src="../../_static/ub.png" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="../../_static/ub.png" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../01/fundamentals.html">
-   1. Fundamentals
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
-  <label for="toctree-checkbox-1">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/getting_started.html">
-     1.1. Getting Started
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/definitions.html">
-     1.2. Definitions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/arithmetic.html">
-     1.3. Arithmetic
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/numeric_data_types.html">
-     1.4. Numeric Data Types
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/large_numbers.html">
-     1.5. Working with Large Numbers
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/operator_precedence.html">
-     1.6. Operator Precedence
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/variables.html">
-     1.7. Variables
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/memory.html">
-     1.8. Memory Model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/augmented.html">
-     1.9. Augmented Assignments
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/errors.html">
-     1.10. Error Types
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/formatting_code.html">
-     1.11. Formatting Code
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/describing_code.html">
-     1.12. Describing Code
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/simultaneous_assignment.html">
-     1.13. Simultaneous Assignment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../01/exercises.html">
-     1.14. Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../02/functions.html">
-   2. Functions
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
-  <label for="toctree-checkbox-2">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/intro.html">
-     2.1. Introduction to Functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/built_in.html">
-     2.2. Built-in Functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/user_defined.html">
-     2.3. User Defined Functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/return.html">
-     2.4. Return Statement
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/namespace.html">
-     2.5. Namespace and Scope
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../02/exercises.html">
-     2.6. Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../03/intro.html">
-   3. Strings
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
-  <label for="toctree-checkbox-3">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/basics.html">
-     3.1. String Basics
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/formatting.html">
-     3.2. String Formatting
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/table.html">
-     3.3. Creating a Table
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/methods.html">
-     3.4. String Methods
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../03/exercises.html">
-     3.5. Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../04/intro.html">
-   4. Conditionals
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
-  <label for="toctree-checkbox-4">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/boolean.html">
-     4.1. Boolean/Logical Operators
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/relational.html">
-     4.2. Relational Operators
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/strings.html">
-     4.3. String Comparison
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/statement_selection.html">
-     4.4. Statement Selection
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../04/exercises.html">
-     4.5. Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../05/intro.html">
-   5. Lists and Tuples
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
-  <label for="toctree-checkbox-5">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/lists.html">
-     5.1. Lists
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/methods.html">
-     5.2. List Methods
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/tuples.html">
-     5.3. Tuples
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../05/strings.html">
-     5.4. Strings as a List
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../06/intro.html">
-   6. Loops
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
-  <label for="toctree-checkbox-6">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/loop.html">
-     6.1. for/while loop
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/for_loop_exercises.html">
-     6.2. For Loop Exercises
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/while_loop_exercises.html">
-     6.3. While Loop Exercises
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/modify_loop_exercises.html">
-     6.5. Modifying Loop Exercises
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/comprehension.html">
-     6.6. List/Tuple Comprehension
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../06/additional_exercises.html">
-     6.7. Additional Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../07/intro.html">
-   7. Dictionaries and Sets
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
-  <label for="toctree-checkbox-7">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../07/dictionary.html">
-     7.1. Dictionaries
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../07/dictionary_exercises.html">
-     7.2. Dictionary Exercises
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../07/sets.html">
-     7.3. Sets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../07/set_exercises.html">
-     7.4. Set Exercises
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../08/intro.html">
-   8. Lambda, Filters, Maps, Sorted
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
-  <label for="toctree-checkbox-8">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08/lambda.html">
-     8.1. Lambda, Filter, Map, and Sorted
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../08/lambda_exercises.html">
-     8.2. Lambda, Filter, Map, and Sorted Solutions
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../09/intro.html">
-   9. Error Handling
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
-  <label for="toctree-checkbox-9">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../09/errors.html">
-     9.1. Errors and Exception Handling
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../10/intro.html">
-   10. Functions Revisited
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
-  <label for="toctree-checkbox-10">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../10/functions.html">
-     10.1. Functions Revisited
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../11/intro.html">
-   11. Miscellaneous Topics
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
-  <label for="toctree-checkbox-11">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../11/misc.html">
-     11.1. Miscellaneous Topics
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="../12/intro.html">
-   12. Object Oriented Programming
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
-  <label for="toctree-checkbox-12">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../12/oop.html">
-     12.1. Object-Oriented Programming
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="sql.html">
-   13. SQL with SQLite
-  </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
-  <label for="toctree-checkbox-13">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul class="current">
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     13.1. Creating Tables
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sql_1_query_primer.html">
-     13.2. SQL Query Primer
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sql_2_filtering.html">
-     13.3. Filtering
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sql_3_sets.html">
-     13.4. Sets
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sql_4_grouping.html">
-     13.5. Grouping and Aggregates
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sql_5_subqueries.html">
-     13.6. Subqueries
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sql_6_conditionals.html">
-     13.7. Conditionals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sql_7_analytic_functions.html">
-     13.8. Analytic Functions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sql_8_normalization.html">
-     13.9. Normalization
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sql_9_python.html">
-     13.10. Python and SQLite3
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sql_10_india_export_data.html">
-     13.11. India Export Database
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="sql_11_soccer.html">
-     13.13. Soccer Database
-    </a>
-   </li>
-  </ul>
- </li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/fundamentals.html">1. Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/getting_started.html">1.1. Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/definitions.html">1.2. Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/arithmetic.html">1.3. Arithmetic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/numeric_data_types.html">1.4. Numeric Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/large_numbers.html">1.5. Working with Large Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/operator_precedence.html">1.6. Operator Precedence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/variables.html">1.7. Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/memory.html">1.8. Memory Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/augmented.html">1.9. Augmented Assignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/errors.html">1.10. Error Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/formatting_code.html">1.11. Formatting Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/describing_code.html">1.12. Describing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/simultaneous_assignment.html">1.13. Simultaneous Assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/exercises.html">1.14. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02/functions.html">2. Functions</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02/intro.html">2.1. Introduction to Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/built_in.html">2.2. Built-in Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/user_defined.html">2.3. User Defined Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/return.html">2.4. Return Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/namespace.html">2.5. Namespace and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/exercises.html">2.6. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03/intro.html">3. Strings</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03/basics.html">3.1. String Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/formatting.html">3.2. String Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/table.html">3.3. Creating a Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/methods.html">3.4. String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/exercises.html">3.5. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04/intro.html">4. Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04/boolean.html">4.1. Boolean/Logical Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/relational.html">4.2. Relational Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/strings.html">4.3. String Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/statement_selection.html">4.4. Statement Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/exercises.html">4.5. Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05/intro.html">5. Lists and Tuples</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05/lists.html">5.1. Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/methods.html">5.2. List Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/tuples.html">5.3. Tuples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/strings.html">5.4. Strings as a List</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/intro.html">6. Loops</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06/loop.html">6.1. for/while loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/for_loop_exercises.html">6.2. For Loop Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/while_loop_exercises.html">6.3. While Loop Exercises</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../06/modify_loop_exercises.html">6.5. Modifying Loop Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/comprehension.html">6.6. List/Tuple Comprehension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/additional_exercises.html">6.7. Additional Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07/intro.html">7. Dictionaries and Sets</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07/dictionary.html">7.1. Dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/dictionary_exercises.html">7.2. Dictionary Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/sets.html">7.3. Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/set_exercises.html">7.4. Set Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08/intro.html">8. Lambda, Filters, Maps, Sorted</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08/lambda.html">8.1. Lambda, Filter, Map, and Sorted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/lambda_exercises.html">8.2. Lambda, Filter, Map, and Sorted Solutions</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09/intro.html">9. Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09/errors.html">9.1. Errors and Exception Handling</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10/intro.html">10. Functions Revisited</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10/functions.html">10.1. Functions Revisited</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../11/intro.html">11. Miscellaneous Topics</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../11/misc.html">11.1. Miscellaneous Topics</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../12/intro.html">12. Object Oriented Programming</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../12/oop.html">12.1. Object-Oriented Programming</a></li>
+</ul>
+</li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="sql.html">13. SQL with SQLite</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">13.1. Creating Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_1_query_primer.html">13.2. SQL Query Primer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_2_filtering.html">13.3. Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_3_sets.html">13.4. Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_4_grouping.html">13.5. Grouping and Aggregates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_5_subqueries.html">13.6. Subqueries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_6_conditionals.html">13.7. Conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_7_analytic_functions.html">13.8. Analytic Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_8_normalization.html">13.9. Normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_9_python.html">13.10. Python and SQLite3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_10_india_export_data.html">13.11. India Export Database</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="sql_11_soccer.html">13.13. Soccer Database</a></li>
+
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../14/intro.html">14. NumPy and Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../14/np_pd.html">14.1. Numpy and Pandas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../14/exercises.html">14.2. Cross-referenced Exercises</a></li>
+</ul>
+</li>
 </ul>
 
     </div>
 </nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
     </div>
-    <div id="rtd-footer-container"></div>
-</div>
-
-
-          
-
-
-          
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
-    
-    <div class="header-article row sticky-top noprint">
-        
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
   
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<div class="menu-dropdown menu-dropdown-launch-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Launch interactive content">
-      <i class="fas fa-rocket"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://mybinder.org/v2/gh/executablebooks/jupyter-book/master?urlpath=tree/docs/chapters/13/sql_0_tables.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Launch on Binder"
->
   
-
-<span class="headerbtn__icon-container">
-  
-    <img src="../../_static/images/logo_binder.svg">
-  </span>
-<span class="headerbtn__text-container">Binder</span>
-</a>
-
-      </li>
-      
-    </ul>
+  <div class="sidebar-primary-items__end sidebar-primary__section">
   </div>
-</div>
+  
+  <div id="rtd-footer-container"></div>
 
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/executablebooks/jupyter-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-<a href="https://github.com/executablebooks/jupyter-book"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="bottom"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fab fa-github"></i>
   </span>
 
 </a>
 
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
   </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../../_sources/chapters/13/sql_0_tables.ipynb"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download notebook file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-code"></i>
-  </span>
-<span class="headerbtn__text-container">.ipynb</span>
-</a>
-
-      </li>
+  <ul class="dropdown-menu">
       
-      <li>
-        <a href="../../_sources/chapters/13/sql_0_tables.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
+      
+      
+      <li><a href="../../_sources/chapters/13/sql_0_tables.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file"></i>
   </span>
-<span class="headerbtn__text-container">.md</span>
+<span class="btn__text-container">.md</span>
 </a>
-
-      </li>
+</li>
+      
+      
+      
       
       <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
+<span class="btn__icon-container">
   <i class="fas fa-file-pdf"></i>
   </span>
-<span class="headerbtn__text-container">.pdf</span>
+<span class="btn__text-container">.pdf</span>
 </button>
-
-      </li>
+</li>
       
-    </ul>
-  </div>
+  </ul>
 </div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
 >
   
 
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
   </span>
 
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
 </label>
-
+</div></div>
+      
     </div>
+  
 </div>
-
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
-    </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic">
-   13.1.1. Basic
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sqlite3">
-   13.1.2. SQLite3
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-a-table">
-   13.1.3. Creating a table
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-simple-table">
-     13.1.3.1. A simple table
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inserting-some-values-into-a-table">
-     13.1.3.2. Inserting some values into a table
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#valid-insert-statements">
-       13.1.3.2.1. Valid Insert statements
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#invalid-insert-statement">
-       13.1.3.2.2. Invalid Insert Statement
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-not-null-constraint">
-     13.1.3.3. Adding
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       NOT
-      </span>
-      <span class="pre">
-       NULL
-      </span>
-     </code>
-     constraint
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#primary-keys">
-   13.1.4. Primary Keys
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-a-unique-constraint">
-   13.1.5. Adding a unique constraint
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#foreign-keys">
-   13.1.6. Foreign Keys
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-relationship">
-     13.1.6.1. Creating a relationship
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-the-relationship">
-     13.1.6.2. Using the relationship
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#joining-tables">
-   13.1.7. Joining Tables
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inner-join">
-     13.1.7.1. Inner Join
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#left-join">
-     13.1.7.2. Left Join
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#right-join-doesn-t-work-in-sqlite3">
-     13.1.7.3. Right Join – Doesn’t work in SQLITE3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#right-join-by-doing-left-join">
-     13.1.7.4. Right Join by doing Left Join
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#full-outer-join-does-not-work-in-sqlite3">
-     13.1.7.5. Full Outer join – does not work in SQLite3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#emulate-full-outer-join">
-     13.1.7.6. Emulate Full outer join
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#joining-multiple-tables">
-   13.1.8. Joining Multiple Tables
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#updating-tables">
-   13.1.9. Updating Tables
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#update-color">
-     13.1.9.1. Update Color
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#update-makemodel">
-     13.1.9.2. Update MakeModel
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#update-car">
-     13.1.9.3. Update Car
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simple-delete">
-   13.1.10. Simple Delete
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#deleting-a-referenced-row">
-   13.1.11. Deleting a referenced row
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#on-delete">
-     13.1.11.1.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       ON
-      </span>
-      <span class="pre">
-       DELETE
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-    </nav>
 </div>
-    </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
-            <!-- Table of contents that is only displayed when printing the page -->
-            <div id="jb-print-docs-body" class="onlyprint">
-                <h1>Creating Tables</h1>
-                <!-- Table of contents -->
-                <div id="print-main-content">
-                    <div id="jb-print-toc">
-                        
-                        <div>
-                            <h2> Contents </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#basic">
-   13.1.1. Basic
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sqlite3">
-   13.1.2. SQLite3
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#creating-a-table">
-   13.1.3. Creating a table
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#a-simple-table">
-     13.1.3.1. A simple table
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inserting-some-values-into-a-table">
-     13.1.3.2. Inserting some values into a table
-    </a>
-    <ul class="nav section-nav flex-column">
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#valid-insert-statements">
-       13.1.3.2.1. Valid Insert statements
-      </a>
-     </li>
-     <li class="toc-h4 nav-item toc-entry">
-      <a class="reference internal nav-link" href="#invalid-insert-statement">
-       13.1.3.2.2. Invalid Insert Statement
-      </a>
-     </li>
-    </ul>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#adding-not-null-constraint">
-     13.1.3.3. Adding
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       NOT
-      </span>
-      <span class="pre">
-       NULL
-      </span>
-     </code>
-     constraint
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#primary-keys">
-   13.1.4. Primary Keys
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#adding-a-unique-constraint">
-   13.1.5. Adding a unique constraint
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#foreign-keys">
-   13.1.6. Foreign Keys
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#creating-a-relationship">
-     13.1.6.1. Creating a relationship
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#using-the-relationship">
-     13.1.6.2. Using the relationship
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#joining-tables">
-   13.1.7. Joining Tables
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#inner-join">
-     13.1.7.1. Inner Join
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#left-join">
-     13.1.7.2. Left Join
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#right-join-doesn-t-work-in-sqlite3">
-     13.1.7.3. Right Join – Doesn’t work in SQLITE3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#right-join-by-doing-left-join">
-     13.1.7.4. Right Join by doing Left Join
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#full-outer-join-does-not-work-in-sqlite3">
-     13.1.7.5. Full Outer join – does not work in SQLite3
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#emulate-full-outer-join">
-     13.1.7.6. Emulate Full outer join
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#joining-multiple-tables">
-   13.1.8. Joining Multiple Tables
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#updating-tables">
-   13.1.9. Updating Tables
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#update-color">
-     13.1.9.1. Update Color
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#update-makemodel">
-     13.1.9.2. Update MakeModel
-    </a>
-   </li>
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#update-car">
-     13.1.9.3. Update Car
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simple-delete">
-   13.1.10. Simple Delete
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#deleting-a-referenced-row">
-   13.1.11. Deleting a referenced row
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#on-delete">
-     13.1.11.1.
-     <code class="docutils literal notranslate">
-      <span class="pre">
-       ON
-      </span>
-      <span class="pre">
-       DELETE
-      </span>
-     </code>
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
+              
+              
 
-                        </nav>
-                    </div>
-                </div>
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Creating Tables</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
             </div>
-            <main id="main-content" role="main">
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic">13.1.1. Basic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sqlite3">13.1.2. SQLite3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-table">13.1.3. Creating a table</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-table">13.1.3.1. A simple table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inserting-some-values-into-a-table">13.1.3.2. Inserting some values into a table</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#valid-insert-statements">13.1.3.2.1. Valid Insert statements</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#invalid-insert-statement">13.1.3.2.2. Invalid Insert Statement</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-not-null-constraint">13.1.3.3. Adding <code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">NULL</span></code> constraint</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-keys">13.1.4. Primary Keys</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-unique-constraint">13.1.5. Adding a unique constraint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foreign-keys">13.1.6. Foreign Keys</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-relationship">13.1.6.1. Creating a relationship</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-relationship">13.1.6.2. Using the relationship</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-tables">13.1.7. Joining Tables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-join">13.1.7.1. Inner Join</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#left-join">13.1.7.2. Left Join</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#right-join-doesn-t-work-in-sqlite3">13.1.7.3. Right Join – Doesn’t work in SQLITE3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#right-join-by-doing-left-join">13.1.7.4. Right Join by doing Left Join</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-outer-join-does-not-work-in-sqlite3">13.1.7.5. Full Outer join – does not work in SQLite3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emulate-full-outer-join">13.1.7.6. Emulate Full outer join</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-multiple-tables">13.1.8. Joining Multiple Tables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-tables">13.1.9. Updating Tables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-color">13.1.9.1. Update Color</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-makemodel">13.1.9.2. Update MakeModel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-car">13.1.9.3. Update Car</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-delete">13.1.10. Simple Delete</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-a-referenced-row">13.1.11. Deleting a referenced row</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-delete">13.1.11.1. <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span></code></a></li>
+</ul>
+</li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
                 
-              <div>
-                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
   <section class="tex2jax_ignore mathjax_ignore" id="creating-tables">
 <h1><span class="section-number">13.1. </span>Creating Tables<a class="headerlink" href="#creating-tables" title="Permalink to this headline">#</a></h1>
 <section id="basic">
@@ -1189,7 +528,7 @@ variations.</p>
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Students</span><span class="w">  </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="mi">56</span><span class="p">,</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span><span class="w"> </span><span class="mi">33</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Eaglestone&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Ken&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;keagle&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>In the first insert statement all columns names and their corresponding values are supplied in the order of create table statement.</p></li>
 <li><p>In the second insert statement, the order of the columns names are changed (first and last name), but SQLite3 will put them in the correct column.</p></li>
 <li><p>In the third insert statement, if all the number of values supplied correspond to the number of rows, then SQLite3 will insert them into the table in the order of the create statement.</p></li>
@@ -1210,7 +549,7 @@ variations.</p>
 <span class="k">INSERT</span><span class="w"> </span><span class="k">INTO</span><span class="w"> </span><span class="n">Students</span><span class="w">  </span><span class="k">VALUES</span><span class="w"> </span><span class="p">(</span><span class="s1">&#39;Smith&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;Jake&#39;</span><span class="p">,</span><span class="w"> </span><span class="s1">&#39;johnsmith&#39;</span><span class="p">);</span>
 </pre></div>
 </div>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>If fewer values are provided without explicitly mentioning the column names, SQLite3 will raise an error.</p></li>
 </ol>
 </section>
@@ -1260,6 +599,11 @@ We fix this by making the student fields <code class="docutils literal notransla
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1298,6 +642,7 @@ We fix this by making the student fields <code class="docutils literal notransla
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -1368,14 +713,14 @@ We fix this by making the student fields <code class="docutils literal notransla
 </table>
 </div></div></div>
 </div>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Note: <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span> <span class="pre">IF</span> <span class="pre">EXISTS</span> <span class="pre">Teachers;</span></code> is used to drop the table if it exists. This is useful if you want to run the create statement over and over again with changes.</p></li>
 </ol>
 <p>When you create a table that has an INTEGER NOT NULL PRIMARY KEY column, this column is the alias of the rowid column.</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>It uniquely identifies a row in a table. Primary keys have the following properties:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>Primary keys can consist of one or more columns, meaning multiple columns combined can uniquely define a row.</p></li>
 <li><p>Primary keys cannot be duplicated since they uniquely identify a row in a table.</p></li>
 <li><p>Primary keys cannot be NULL since a blank value cannot identify a row in a table.</p></li>
@@ -1395,6 +740,11 @@ We fix this by making the student fields <code class="docutils literal notransla
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1425,27 +775,28 @@ We fix this by making the student fields <code class="docutils literal notransla
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_55ab9" style="font-size: 12px">
+<table id="T_2eb2d" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_55ab9_level0_col0" class="col_heading level0 col0" >TeacherId</th>
-      <th id="T_55ab9_level0_col1" class="col_heading level0 col1" >TeacherName</th>
+      <th id="T_2eb2d_level0_col0" class="col_heading level0 col0" >TeacherId</th>
+      <th id="T_2eb2d_level0_col1" class="col_heading level0 col1" >TeacherName</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_55ab9_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_55ab9_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_55ab9_row0_col1" class="data row0 col1" >John Smith</td>
+      <th id="T_2eb2d_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_2eb2d_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_2eb2d_row0_col1" class="data row0 col1" >John Smith</td>
     </tr>
     <tr>
-      <th id="T_55ab9_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_55ab9_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_55ab9_row1_col1" class="data row1 col1" >John Smith</td>
+      <th id="T_2eb2d_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_2eb2d_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_2eb2d_row1_col1" class="data row1 col1" >John Smith</td>
     </tr>
   </tbody>
 </table>
@@ -1470,6 +821,11 @@ by using the <code class="docutils literal notranslate"><span class="pre">UNIQUE
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1500,30 +856,31 @@ by using the <code class="docutils literal notranslate"><span class="pre">UNIQUE
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_5c962" style="font-size: 12px">
+<table id="T_ad58e" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_5c962_level0_col0" class="col_heading level0 col0" >TeacherId</th>
-      <th id="T_5c962_level0_col1" class="col_heading level0 col1" >TeacherName</th>
-      <th id="T_5c962_level0_col2" class="col_heading level0 col2" >TeacherEmployeeID</th>
+      <th id="T_ad58e_level0_col0" class="col_heading level0 col0" >TeacherId</th>
+      <th id="T_ad58e_level0_col1" class="col_heading level0 col1" >TeacherName</th>
+      <th id="T_ad58e_level0_col2" class="col_heading level0 col2" >TeacherEmployeeID</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_5c962_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_5c962_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_5c962_row0_col1" class="data row0 col1" >John Smith</td>
-      <td id="T_5c962_row0_col2" class="data row0 col2" >100001</td>
+      <th id="T_ad58e_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_ad58e_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_ad58e_row0_col1" class="data row0 col1" >John Smith</td>
+      <td id="T_ad58e_row0_col2" class="data row0 col2" >100001</td>
     </tr>
     <tr>
-      <th id="T_5c962_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_5c962_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_5c962_row1_col1" class="data row1 col1" >John Smith</td>
-      <td id="T_5c962_row1_col2" class="data row1 col2" >100002</td>
+      <th id="T_ad58e_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_ad58e_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_ad58e_row1_col1" class="data row1 col1" >John Smith</td>
+      <td id="T_ad58e_row1_col2" class="data row1 col2" >100002</td>
     </tr>
   </tbody>
 </table>
@@ -1581,6 +938,11 @@ key constraint.</p>
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1626,6 +988,7 @@ key constraint.</p>
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 </section>
 <section id="using-the-relationship">
@@ -1643,6 +1006,11 @@ key constraint.</p>
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1664,6 +1032,7 @@ key constraint.</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -1725,6 +1094,11 @@ key constraint.</p>
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1748,6 +1122,7 @@ key constraint.</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -1801,6 +1176,11 @@ key constraint.</p>
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1821,6 +1201,7 @@ key constraint.</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -1881,6 +1262,11 @@ key constraint.</p>
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1902,6 +1288,7 @@ key constraint.</p>
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -1961,6 +1348,11 @@ Example database: <code class="docutils literal notranslate"><span class="pre">j
 </li>
 </ul>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1987,6 +1379,7 @@ Example database: <code class="docutils literal notranslate"><span class="pre">j
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><div>
 <style scoped>
@@ -2137,6 +1530,11 @@ Example database: <code class="docutils literal notranslate"><span class="pre">j
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2156,48 +1554,49 @@ Example database: <code class="docutils literal notranslate"><span class="pre">j
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_8e119" style="font-size: 12px">
+<table id="T_1684a" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_8e119_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
-      <th id="T_8e119_level0_col1" class="col_heading level0 col1" >PRICE</th>
-      <th id="T_8e119_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
+      <th id="T_1684a_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
+      <th id="T_1684a_level0_col1" class="col_heading level0 col1" >PRICE</th>
+      <th id="T_1684a_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_8e119_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_8e119_row0_col0" class="data row0 col0" >Potatoes</td>
-      <td id="T_8e119_row0_col1" class="data row0 col1" >3</td>
-      <td id="T_8e119_row0_col2" class="data row0 col2" >45</td>
+      <th id="T_1684a_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_1684a_row0_col0" class="data row0 col0" >Potatoes</td>
+      <td id="T_1684a_row0_col1" class="data row0 col1" >3</td>
+      <td id="T_1684a_row0_col2" class="data row0 col2" >45</td>
     </tr>
     <tr>
-      <th id="T_8e119_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_8e119_row1_col0" class="data row1 col0" >Avacados</td>
-      <td id="T_8e119_row1_col1" class="data row1 col1" >4</td>
-      <td id="T_8e119_row1_col2" class="data row1 col2" >63</td>
+      <th id="T_1684a_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_1684a_row1_col0" class="data row1 col0" >Avacados</td>
+      <td id="T_1684a_row1_col1" class="data row1 col1" >4</td>
+      <td id="T_1684a_row1_col2" class="data row1 col2" >63</td>
     </tr>
     <tr>
-      <th id="T_8e119_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_8e119_row2_col0" class="data row2 col0" >Kiwis</td>
-      <td id="T_8e119_row2_col1" class="data row2 col1" >2</td>
-      <td id="T_8e119_row2_col2" class="data row2 col2" >19</td>
+      <th id="T_1684a_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_1684a_row2_col0" class="data row2 col0" >Kiwis</td>
+      <td id="T_1684a_row2_col1" class="data row2 col1" >2</td>
+      <td id="T_1684a_row2_col2" class="data row2 col2" >19</td>
     </tr>
     <tr>
-      <th id="T_8e119_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_8e119_row3_col0" class="data row3 col0" >Onions</td>
-      <td id="T_8e119_row3_col1" class="data row3 col1" >1</td>
-      <td id="T_8e119_row3_col2" class="data row3 col2" >20</td>
+      <th id="T_1684a_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_1684a_row3_col0" class="data row3 col0" >Onions</td>
+      <td id="T_1684a_row3_col1" class="data row3 col1" >1</td>
+      <td id="T_1684a_row3_col2" class="data row3 col2" >20</td>
     </tr>
     <tr>
-      <th id="T_8e119_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_8e119_row4_col0" class="data row4 col0" >Melons</td>
-      <td id="T_8e119_row4_col1" class="data row4 col1" >5</td>
-      <td id="T_8e119_row4_col2" class="data row4 col2" >66</td>
+      <th id="T_1684a_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_1684a_row4_col0" class="data row4 col0" >Melons</td>
+      <td id="T_1684a_row4_col1" class="data row4 col1" >5</td>
+      <td id="T_1684a_row4_col2" class="data row4 col2" >66</td>
     </tr>
   </tbody>
 </table>
@@ -2216,6 +1615,11 @@ Example database: <code class="docutils literal notranslate"><span class="pre">j
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2236,60 +1640,61 @@ Example database: <code class="docutils literal notranslate"><span class="pre">j
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_ac5eb" style="font-size: 12px">
+<table id="T_52db6" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_ac5eb_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
-      <th id="T_ac5eb_level0_col1" class="col_heading level0 col1" >PRICE</th>
-      <th id="T_ac5eb_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
+      <th id="T_52db6_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
+      <th id="T_52db6_level0_col1" class="col_heading level0 col1" >PRICE</th>
+      <th id="T_52db6_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_ac5eb_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_ac5eb_row0_col0" class="data row0 col0" >Potatoes</td>
-      <td id="T_ac5eb_row0_col1" class="data row0 col1" >3</td>
-      <td id="T_ac5eb_row0_col2" class="data row0 col2" >45.000000</td>
+      <th id="T_52db6_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_52db6_row0_col0" class="data row0 col0" >Potatoes</td>
+      <td id="T_52db6_row0_col1" class="data row0 col1" >3</td>
+      <td id="T_52db6_row0_col2" class="data row0 col2" >45.000000</td>
     </tr>
     <tr>
-      <th id="T_ac5eb_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_ac5eb_row1_col0" class="data row1 col0" >Avacados</td>
-      <td id="T_ac5eb_row1_col1" class="data row1 col1" >4</td>
-      <td id="T_ac5eb_row1_col2" class="data row1 col2" >63.000000</td>
+      <th id="T_52db6_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_52db6_row1_col0" class="data row1 col0" >Avacados</td>
+      <td id="T_52db6_row1_col1" class="data row1 col1" >4</td>
+      <td id="T_52db6_row1_col2" class="data row1 col2" >63.000000</td>
     </tr>
     <tr>
-      <th id="T_ac5eb_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_ac5eb_row2_col0" class="data row2 col0" >Kiwis</td>
-      <td id="T_ac5eb_row2_col1" class="data row2 col1" >2</td>
-      <td id="T_ac5eb_row2_col2" class="data row2 col2" >19.000000</td>
+      <th id="T_52db6_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_52db6_row2_col0" class="data row2 col0" >Kiwis</td>
+      <td id="T_52db6_row2_col1" class="data row2 col1" >2</td>
+      <td id="T_52db6_row2_col2" class="data row2 col2" >19.000000</td>
     </tr>
     <tr>
-      <th id="T_ac5eb_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_ac5eb_row3_col0" class="data row3 col0" >Onions</td>
-      <td id="T_ac5eb_row3_col1" class="data row3 col1" >1</td>
-      <td id="T_ac5eb_row3_col2" class="data row3 col2" >20.000000</td>
+      <th id="T_52db6_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_52db6_row3_col0" class="data row3 col0" >Onions</td>
+      <td id="T_52db6_row3_col1" class="data row3 col1" >1</td>
+      <td id="T_52db6_row3_col2" class="data row3 col2" >20.000000</td>
     </tr>
     <tr>
-      <th id="T_ac5eb_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_ac5eb_row4_col0" class="data row4 col0" >Melons</td>
-      <td id="T_ac5eb_row4_col1" class="data row4 col1" >5</td>
-      <td id="T_ac5eb_row4_col2" class="data row4 col2" >66.000000</td>
+      <th id="T_52db6_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_52db6_row4_col0" class="data row4 col0" >Melons</td>
+      <td id="T_52db6_row4_col1" class="data row4 col1" >5</td>
+      <td id="T_52db6_row4_col2" class="data row4 col2" >66.000000</td>
     </tr>
     <tr>
-      <th id="T_ac5eb_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_ac5eb_row5_col0" class="data row5 col0" >Oranges</td>
-      <td id="T_ac5eb_row5_col1" class="data row5 col1" >5</td>
-      <td id="T_ac5eb_row5_col2" class="data row5 col2" >nan</td>
+      <th id="T_52db6_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_52db6_row5_col0" class="data row5 col0" >Oranges</td>
+      <td id="T_52db6_row5_col1" class="data row5 col1" >5</td>
+      <td id="T_52db6_row5_col2" class="data row5 col2" >nan</td>
     </tr>
     <tr>
-      <th id="T_ac5eb_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_ac5eb_row6_col0" class="data row6 col0" >Tomatoes</td>
-      <td id="T_ac5eb_row6_col1" class="data row6 col1" >6</td>
-      <td id="T_ac5eb_row6_col2" class="data row6 col2" >nan</td>
+      <th id="T_52db6_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_52db6_row6_col0" class="data row6 col0" >Tomatoes</td>
+      <td id="T_52db6_row6_col1" class="data row6 col1" >6</td>
+      <td id="T_52db6_row6_col2" class="data row6 col2" >nan</td>
     </tr>
   </tbody>
 </table>
@@ -2333,6 +1738,11 @@ Example database: <code class="docutils literal notranslate"><span class="pre">j
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2353,60 +1763,61 @@ Example database: <code class="docutils literal notranslate"><span class="pre">j
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_edfb1" style="font-size: 12px">
+<table id="T_b1b45" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_edfb1_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
-      <th id="T_edfb1_level0_col1" class="col_heading level0 col1" >PRICE</th>
-      <th id="T_edfb1_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
+      <th id="T_b1b45_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
+      <th id="T_b1b45_level0_col1" class="col_heading level0 col1" >PRICE</th>
+      <th id="T_b1b45_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_edfb1_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_edfb1_row0_col0" class="data row0 col0" >Potatoes</td>
-      <td id="T_edfb1_row0_col1" class="data row0 col1" >3.000000</td>
-      <td id="T_edfb1_row0_col2" class="data row0 col2" >45</td>
+      <th id="T_b1b45_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_b1b45_row0_col0" class="data row0 col0" >Potatoes</td>
+      <td id="T_b1b45_row0_col1" class="data row0 col1" >3.000000</td>
+      <td id="T_b1b45_row0_col2" class="data row0 col2" >45</td>
     </tr>
     <tr>
-      <th id="T_edfb1_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_edfb1_row1_col0" class="data row1 col0" >Avacados</td>
-      <td id="T_edfb1_row1_col1" class="data row1 col1" >4.000000</td>
-      <td id="T_edfb1_row1_col2" class="data row1 col2" >63</td>
+      <th id="T_b1b45_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_b1b45_row1_col0" class="data row1 col0" >Avacados</td>
+      <td id="T_b1b45_row1_col1" class="data row1 col1" >4.000000</td>
+      <td id="T_b1b45_row1_col2" class="data row1 col2" >63</td>
     </tr>
     <tr>
-      <th id="T_edfb1_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_edfb1_row2_col0" class="data row2 col0" >Kiwis</td>
-      <td id="T_edfb1_row2_col1" class="data row2 col1" >2.000000</td>
-      <td id="T_edfb1_row2_col2" class="data row2 col2" >19</td>
+      <th id="T_b1b45_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_b1b45_row2_col0" class="data row2 col0" >Kiwis</td>
+      <td id="T_b1b45_row2_col1" class="data row2 col1" >2.000000</td>
+      <td id="T_b1b45_row2_col2" class="data row2 col2" >19</td>
     </tr>
     <tr>
-      <th id="T_edfb1_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_edfb1_row3_col0" class="data row3 col0" >Onions</td>
-      <td id="T_edfb1_row3_col1" class="data row3 col1" >1.000000</td>
-      <td id="T_edfb1_row3_col2" class="data row3 col2" >20</td>
+      <th id="T_b1b45_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_b1b45_row3_col0" class="data row3 col0" >Onions</td>
+      <td id="T_b1b45_row3_col1" class="data row3 col1" >1.000000</td>
+      <td id="T_b1b45_row3_col2" class="data row3 col2" >20</td>
     </tr>
     <tr>
-      <th id="T_edfb1_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_edfb1_row4_col0" class="data row4 col0" >Melons</td>
-      <td id="T_edfb1_row4_col1" class="data row4 col1" >5.000000</td>
-      <td id="T_edfb1_row4_col2" class="data row4 col2" >66</td>
+      <th id="T_b1b45_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_b1b45_row4_col0" class="data row4 col0" >Melons</td>
+      <td id="T_b1b45_row4_col1" class="data row4 col1" >5.000000</td>
+      <td id="T_b1b45_row4_col2" class="data row4 col2" >66</td>
     </tr>
     <tr>
-      <th id="T_edfb1_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_edfb1_row5_col0" class="data row5 col0" >Broccoli</td>
-      <td id="T_edfb1_row5_col1" class="data row5 col1" >nan</td>
-      <td id="T_edfb1_row5_col2" class="data row5 col2" >27</td>
+      <th id="T_b1b45_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_b1b45_row5_col0" class="data row5 col0" >Broccoli</td>
+      <td id="T_b1b45_row5_col1" class="data row5 col1" >nan</td>
+      <td id="T_b1b45_row5_col2" class="data row5 col2" >27</td>
     </tr>
     <tr>
-      <th id="T_edfb1_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_edfb1_row6_col0" class="data row6 col0" >Squash</td>
-      <td id="T_edfb1_row6_col1" class="data row6 col1" >nan</td>
-      <td id="T_edfb1_row6_col2" class="data row6 col2" >92</td>
+      <th id="T_b1b45_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_b1b45_row6_col0" class="data row6 col0" >Squash</td>
+      <td id="T_b1b45_row6_col1" class="data row6 col1" >nan</td>
+      <td id="T_b1b45_row6_col2" class="data row6 col2" >92</td>
     </tr>
   </tbody>
 </table>
@@ -2444,6 +1855,11 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2466,102 +1882,103 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_47bd2" style="font-size: 12px">
+<table id="T_e08fe" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_47bd2_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
-      <th id="T_47bd2_level0_col1" class="col_heading level0 col1" >PRICE</th>
-      <th id="T_47bd2_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
+      <th id="T_e08fe_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
+      <th id="T_e08fe_level0_col1" class="col_heading level0 col1" >PRICE</th>
+      <th id="T_e08fe_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_47bd2_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_47bd2_row0_col0" class="data row0 col0" >Potatoes</td>
-      <td id="T_47bd2_row0_col1" class="data row0 col1" >3.000000</td>
-      <td id="T_47bd2_row0_col2" class="data row0 col2" >45.000000</td>
+      <th id="T_e08fe_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_e08fe_row0_col0" class="data row0 col0" >Potatoes</td>
+      <td id="T_e08fe_row0_col1" class="data row0 col1" >3.000000</td>
+      <td id="T_e08fe_row0_col2" class="data row0 col2" >45.000000</td>
     </tr>
     <tr>
-      <th id="T_47bd2_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_47bd2_row1_col0" class="data row1 col0" >Avacados</td>
-      <td id="T_47bd2_row1_col1" class="data row1 col1" >4.000000</td>
-      <td id="T_47bd2_row1_col2" class="data row1 col2" >63.000000</td>
+      <th id="T_e08fe_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_e08fe_row1_col0" class="data row1 col0" >Avacados</td>
+      <td id="T_e08fe_row1_col1" class="data row1 col1" >4.000000</td>
+      <td id="T_e08fe_row1_col2" class="data row1 col2" >63.000000</td>
     </tr>
     <tr>
-      <th id="T_47bd2_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_47bd2_row2_col0" class="data row2 col0" >Kiwis</td>
-      <td id="T_47bd2_row2_col1" class="data row2 col1" >2.000000</td>
-      <td id="T_47bd2_row2_col2" class="data row2 col2" >19.000000</td>
+      <th id="T_e08fe_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_e08fe_row2_col0" class="data row2 col0" >Kiwis</td>
+      <td id="T_e08fe_row2_col1" class="data row2 col1" >2.000000</td>
+      <td id="T_e08fe_row2_col2" class="data row2 col2" >19.000000</td>
     </tr>
     <tr>
-      <th id="T_47bd2_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_47bd2_row3_col0" class="data row3 col0" >Onions</td>
-      <td id="T_47bd2_row3_col1" class="data row3 col1" >1.000000</td>
-      <td id="T_47bd2_row3_col2" class="data row3 col2" >20.000000</td>
+      <th id="T_e08fe_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_e08fe_row3_col0" class="data row3 col0" >Onions</td>
+      <td id="T_e08fe_row3_col1" class="data row3 col1" >1.000000</td>
+      <td id="T_e08fe_row3_col2" class="data row3 col2" >20.000000</td>
     </tr>
     <tr>
-      <th id="T_47bd2_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_47bd2_row4_col0" class="data row4 col0" >Melons</td>
-      <td id="T_47bd2_row4_col1" class="data row4 col1" >5.000000</td>
-      <td id="T_47bd2_row4_col2" class="data row4 col2" >66.000000</td>
+      <th id="T_e08fe_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_e08fe_row4_col0" class="data row4 col0" >Melons</td>
+      <td id="T_e08fe_row4_col1" class="data row4 col1" >5.000000</td>
+      <td id="T_e08fe_row4_col2" class="data row4 col2" >66.000000</td>
     </tr>
     <tr>
-      <th id="T_47bd2_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_47bd2_row5_col0" class="data row5 col0" >None</td>
-      <td id="T_47bd2_row5_col1" class="data row5 col1" >5.000000</td>
-      <td id="T_47bd2_row5_col2" class="data row5 col2" >nan</td>
+      <th id="T_e08fe_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_e08fe_row5_col0" class="data row5 col0" >None</td>
+      <td id="T_e08fe_row5_col1" class="data row5 col1" >5.000000</td>
+      <td id="T_e08fe_row5_col2" class="data row5 col2" >nan</td>
     </tr>
     <tr>
-      <th id="T_47bd2_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_47bd2_row6_col0" class="data row6 col0" >None</td>
-      <td id="T_47bd2_row6_col1" class="data row6 col1" >6.000000</td>
-      <td id="T_47bd2_row6_col2" class="data row6 col2" >nan</td>
+      <th id="T_e08fe_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_e08fe_row6_col0" class="data row6 col0" >None</td>
+      <td id="T_e08fe_row6_col1" class="data row6 col1" >6.000000</td>
+      <td id="T_e08fe_row6_col2" class="data row6 col2" >nan</td>
     </tr>
     <tr>
-      <th id="T_47bd2_level0_row7" class="row_heading level0 row7" >7</th>
-      <td id="T_47bd2_row7_col0" class="data row7 col0" >Potatoes</td>
-      <td id="T_47bd2_row7_col1" class="data row7 col1" >3.000000</td>
-      <td id="T_47bd2_row7_col2" class="data row7 col2" >45.000000</td>
+      <th id="T_e08fe_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_e08fe_row7_col0" class="data row7 col0" >Potatoes</td>
+      <td id="T_e08fe_row7_col1" class="data row7 col1" >3.000000</td>
+      <td id="T_e08fe_row7_col2" class="data row7 col2" >45.000000</td>
     </tr>
     <tr>
-      <th id="T_47bd2_level0_row8" class="row_heading level0 row8" >8</th>
-      <td id="T_47bd2_row8_col0" class="data row8 col0" >Avacados</td>
-      <td id="T_47bd2_row8_col1" class="data row8 col1" >4.000000</td>
-      <td id="T_47bd2_row8_col2" class="data row8 col2" >63.000000</td>
+      <th id="T_e08fe_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_e08fe_row8_col0" class="data row8 col0" >Avacados</td>
+      <td id="T_e08fe_row8_col1" class="data row8 col1" >4.000000</td>
+      <td id="T_e08fe_row8_col2" class="data row8 col2" >63.000000</td>
     </tr>
     <tr>
-      <th id="T_47bd2_level0_row9" class="row_heading level0 row9" >9</th>
-      <td id="T_47bd2_row9_col0" class="data row9 col0" >Kiwis</td>
-      <td id="T_47bd2_row9_col1" class="data row9 col1" >2.000000</td>
-      <td id="T_47bd2_row9_col2" class="data row9 col2" >19.000000</td>
+      <th id="T_e08fe_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_e08fe_row9_col0" class="data row9 col0" >Kiwis</td>
+      <td id="T_e08fe_row9_col1" class="data row9 col1" >2.000000</td>
+      <td id="T_e08fe_row9_col2" class="data row9 col2" >19.000000</td>
     </tr>
     <tr>
-      <th id="T_47bd2_level0_row10" class="row_heading level0 row10" >10</th>
-      <td id="T_47bd2_row10_col0" class="data row10 col0" >Onions</td>
-      <td id="T_47bd2_row10_col1" class="data row10 col1" >1.000000</td>
-      <td id="T_47bd2_row10_col2" class="data row10 col2" >20.000000</td>
+      <th id="T_e08fe_level0_row10" class="row_heading level0 row10" >10</th>
+      <td id="T_e08fe_row10_col0" class="data row10 col0" >Onions</td>
+      <td id="T_e08fe_row10_col1" class="data row10 col1" >1.000000</td>
+      <td id="T_e08fe_row10_col2" class="data row10 col2" >20.000000</td>
     </tr>
     <tr>
-      <th id="T_47bd2_level0_row11" class="row_heading level0 row11" >11</th>
-      <td id="T_47bd2_row11_col0" class="data row11 col0" >Melons</td>
-      <td id="T_47bd2_row11_col1" class="data row11 col1" >5.000000</td>
-      <td id="T_47bd2_row11_col2" class="data row11 col2" >66.000000</td>
+      <th id="T_e08fe_level0_row11" class="row_heading level0 row11" >11</th>
+      <td id="T_e08fe_row11_col0" class="data row11 col0" >Melons</td>
+      <td id="T_e08fe_row11_col1" class="data row11 col1" >5.000000</td>
+      <td id="T_e08fe_row11_col2" class="data row11 col2" >66.000000</td>
     </tr>
     <tr>
-      <th id="T_47bd2_level0_row12" class="row_heading level0 row12" >12</th>
-      <td id="T_47bd2_row12_col0" class="data row12 col0" >Broccoli</td>
-      <td id="T_47bd2_row12_col1" class="data row12 col1" >nan</td>
-      <td id="T_47bd2_row12_col2" class="data row12 col2" >27.000000</td>
+      <th id="T_e08fe_level0_row12" class="row_heading level0 row12" >12</th>
+      <td id="T_e08fe_row12_col0" class="data row12 col0" >Broccoli</td>
+      <td id="T_e08fe_row12_col1" class="data row12 col1" >nan</td>
+      <td id="T_e08fe_row12_col2" class="data row12 col2" >27.000000</td>
     </tr>
     <tr>
-      <th id="T_47bd2_level0_row13" class="row_heading level0 row13" >13</th>
-      <td id="T_47bd2_row13_col0" class="data row13 col0" >Squash</td>
-      <td id="T_47bd2_row13_col1" class="data row13 col1" >nan</td>
-      <td id="T_47bd2_row13_col2" class="data row13 col2" >92.000000</td>
+      <th id="T_e08fe_level0_row13" class="row_heading level0 row13" >13</th>
+      <td id="T_e08fe_row13_col0" class="data row13 col0" >Squash</td>
+      <td id="T_e08fe_row13_col1" class="data row13 col1" >nan</td>
+      <td id="T_e08fe_row13_col2" class="data row13 col2" >92.000000</td>
     </tr>
   </tbody>
 </table>
@@ -2617,6 +2034,11 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2674,11 +2096,17 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Colors</span><span class="p">;</span>
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2693,32 +2121,33 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_ef6fa" style="font-size: 12px">
+<table id="T_82578" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_ef6fa_level0_col0" class="col_heading level0 col0" >color_id</th>
-      <th id="T_ef6fa_level0_col1" class="col_heading level0 col1" >color</th>
+      <th id="T_82578_level0_col0" class="col_heading level0 col0" >color_id</th>
+      <th id="T_82578_level0_col1" class="col_heading level0 col1" >color</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_ef6fa_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_ef6fa_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_ef6fa_row0_col1" class="data row0 col1" >Red</td>
+      <th id="T_82578_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_82578_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_82578_row0_col1" class="data row0 col1" >Red</td>
     </tr>
     <tr>
-      <th id="T_ef6fa_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_ef6fa_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_ef6fa_row1_col1" class="data row1 col1" >Blue</td>
+      <th id="T_82578_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_82578_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_82578_row1_col1" class="data row1 col1" >Blue</td>
     </tr>
     <tr>
-      <th id="T_ef6fa_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_ef6fa_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_ef6fa_row2_col1" class="data row2 col1" >Green</td>
+      <th id="T_82578_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_82578_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_82578_row2_col1" class="data row2 col1" >Green</td>
     </tr>
   </tbody>
 </table>
@@ -2728,6 +2157,11 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2742,40 +2176,41 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_2c968" style="font-size: 12px">
+<table id="T_283d1" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_2c968_level0_col0" class="col_heading level0 col0" >make_model_id</th>
-      <th id="T_2c968_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_2c968_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_2c968_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_283d1_level0_col0" class="col_heading level0 col0" >make_model_id</th>
+      <th id="T_283d1_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_283d1_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_283d1_level0_col3" class="col_heading level0 col3" >Year</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_2c968_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_2c968_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_2c968_row0_col1" class="data row0 col1" >Ford</td>
-      <td id="T_2c968_row0_col2" class="data row0 col2" >Explorer</td>
-      <td id="T_2c968_row0_col3" class="data row0 col3" >2019</td>
+      <th id="T_283d1_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_283d1_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_283d1_row0_col1" class="data row0 col1" >Ford</td>
+      <td id="T_283d1_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_283d1_row0_col3" class="data row0 col3" >2019</td>
     </tr>
     <tr>
-      <th id="T_2c968_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_2c968_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_2c968_row1_col1" class="data row1 col1" >Toyota</td>
-      <td id="T_2c968_row1_col2" class="data row1 col2" >Camry</td>
-      <td id="T_2c968_row1_col3" class="data row1 col3" >2010</td>
+      <th id="T_283d1_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_283d1_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_283d1_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_283d1_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_283d1_row1_col3" class="data row1 col3" >2010</td>
     </tr>
     <tr>
-      <th id="T_2c968_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_2c968_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_2c968_row2_col1" class="data row2 col1" >Honda</td>
-      <td id="T_2c968_row2_col2" class="data row2 col2" >Accord</td>
-      <td id="T_2c968_row2_col3" class="data row2 col3" >2015</td>
+      <th id="T_283d1_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_283d1_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_283d1_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_283d1_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_283d1_row2_col3" class="data row2 col3" >2015</td>
     </tr>
   </tbody>
 </table>
@@ -2785,6 +2220,11 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2799,61 +2239,62 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_5e7f8" style="font-size: 12px">
+<table id="T_e5350" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_5e7f8_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_5e7f8_level0_col1" class="col_heading level0 col1" >make_model_id</th>
-      <th id="T_5e7f8_level0_col2" class="col_heading level0 col2" >color_id</th>
-      <th id="T_5e7f8_level0_col3" class="col_heading level0 col3" >available</th>
+      <th id="T_e5350_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_e5350_level0_col1" class="col_heading level0 col1" >make_model_id</th>
+      <th id="T_e5350_level0_col2" class="col_heading level0 col2" >color_id</th>
+      <th id="T_e5350_level0_col3" class="col_heading level0 col3" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_5e7f8_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_5e7f8_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_5e7f8_row0_col1" class="data row0 col1" >1</td>
-      <td id="T_5e7f8_row0_col2" class="data row0 col2" >1</td>
-      <td id="T_5e7f8_row0_col3" class="data row0 col3" >1</td>
+      <th id="T_e5350_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_e5350_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_e5350_row0_col1" class="data row0 col1" >1</td>
+      <td id="T_e5350_row0_col2" class="data row0 col2" >1</td>
+      <td id="T_e5350_row0_col3" class="data row0 col3" >1</td>
     </tr>
     <tr>
-      <th id="T_5e7f8_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_5e7f8_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_5e7f8_row1_col1" class="data row1 col1" >2</td>
-      <td id="T_5e7f8_row1_col2" class="data row1 col2" >1</td>
-      <td id="T_5e7f8_row1_col3" class="data row1 col3" >1</td>
+      <th id="T_e5350_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_e5350_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_e5350_row1_col1" class="data row1 col1" >2</td>
+      <td id="T_e5350_row1_col2" class="data row1 col2" >1</td>
+      <td id="T_e5350_row1_col3" class="data row1 col3" >1</td>
     </tr>
     <tr>
-      <th id="T_5e7f8_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_5e7f8_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_5e7f8_row2_col1" class="data row2 col1" >3</td>
-      <td id="T_5e7f8_row2_col2" class="data row2 col2" >1</td>
-      <td id="T_5e7f8_row2_col3" class="data row2 col3" >1</td>
+      <th id="T_e5350_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_e5350_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_e5350_row2_col1" class="data row2 col1" >3</td>
+      <td id="T_e5350_row2_col2" class="data row2 col2" >1</td>
+      <td id="T_e5350_row2_col3" class="data row2 col3" >1</td>
     </tr>
     <tr>
-      <th id="T_5e7f8_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_5e7f8_row3_col0" class="data row3 col0" >4</td>
-      <td id="T_5e7f8_row3_col1" class="data row3 col1" >1</td>
-      <td id="T_5e7f8_row3_col2" class="data row3 col2" >2</td>
-      <td id="T_5e7f8_row3_col3" class="data row3 col3" >0</td>
+      <th id="T_e5350_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_e5350_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_e5350_row3_col1" class="data row3 col1" >1</td>
+      <td id="T_e5350_row3_col2" class="data row3 col2" >2</td>
+      <td id="T_e5350_row3_col3" class="data row3 col3" >0</td>
     </tr>
     <tr>
-      <th id="T_5e7f8_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_5e7f8_row4_col0" class="data row4 col0" >5</td>
-      <td id="T_5e7f8_row4_col1" class="data row4 col1" >1</td>
-      <td id="T_5e7f8_row4_col2" class="data row4 col2" >2</td>
-      <td id="T_5e7f8_row4_col3" class="data row4 col3" >0</td>
+      <th id="T_e5350_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_e5350_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_e5350_row4_col1" class="data row4 col1" >1</td>
+      <td id="T_e5350_row4_col2" class="data row4 col2" >2</td>
+      <td id="T_e5350_row4_col3" class="data row4 col3" >0</td>
     </tr>
     <tr>
-      <th id="T_5e7f8_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_5e7f8_row5_col0" class="data row5 col0" >6</td>
-      <td id="T_5e7f8_row5_col1" class="data row5 col1" >3</td>
-      <td id="T_5e7f8_row5_col2" class="data row5 col2" >3</td>
-      <td id="T_5e7f8_row5_col3" class="data row5 col3" >0</td>
+      <th id="T_e5350_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_e5350_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_e5350_row5_col1" class="data row5 col1" >3</td>
+      <td id="T_e5350_row5_col2" class="data row5 col2" >3</td>
+      <td id="T_e5350_row5_col3" class="data row5 col3" >0</td>
     </tr>
   </tbody>
 </table>
@@ -2866,6 +2307,11 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2883,75 +2329,76 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_ecfa4" style="font-size: 12px">
+<table id="T_243d5" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_ecfa4_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_ecfa4_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_ecfa4_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_ecfa4_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_ecfa4_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_ecfa4_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_243d5_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_243d5_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_243d5_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_243d5_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_243d5_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_243d5_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_ecfa4_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_ecfa4_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_ecfa4_row0_col1" class="data row0 col1" >Ford</td>
-      <td id="T_ecfa4_row0_col2" class="data row0 col2" >Explorer</td>
-      <td id="T_ecfa4_row0_col3" class="data row0 col3" >2019</td>
-      <td id="T_ecfa4_row0_col4" class="data row0 col4" >Red</td>
-      <td id="T_ecfa4_row0_col5" class="data row0 col5" >1</td>
+      <th id="T_243d5_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_243d5_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_243d5_row0_col1" class="data row0 col1" >Ford</td>
+      <td id="T_243d5_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_243d5_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_243d5_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_243d5_row0_col5" class="data row0 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_ecfa4_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_ecfa4_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_ecfa4_row1_col1" class="data row1 col1" >Toyota</td>
-      <td id="T_ecfa4_row1_col2" class="data row1 col2" >Camry</td>
-      <td id="T_ecfa4_row1_col3" class="data row1 col3" >2010</td>
-      <td id="T_ecfa4_row1_col4" class="data row1 col4" >Red</td>
-      <td id="T_ecfa4_row1_col5" class="data row1 col5" >1</td>
+      <th id="T_243d5_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_243d5_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_243d5_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_243d5_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_243d5_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_243d5_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_243d5_row1_col5" class="data row1 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_ecfa4_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_ecfa4_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_ecfa4_row2_col1" class="data row2 col1" >Honda</td>
-      <td id="T_ecfa4_row2_col2" class="data row2 col2" >Accord</td>
-      <td id="T_ecfa4_row2_col3" class="data row2 col3" >2015</td>
-      <td id="T_ecfa4_row2_col4" class="data row2 col4" >Red</td>
-      <td id="T_ecfa4_row2_col5" class="data row2 col5" >1</td>
+      <th id="T_243d5_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_243d5_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_243d5_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_243d5_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_243d5_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_243d5_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_243d5_row2_col5" class="data row2 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_ecfa4_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_ecfa4_row3_col0" class="data row3 col0" >4</td>
-      <td id="T_ecfa4_row3_col1" class="data row3 col1" >Ford</td>
-      <td id="T_ecfa4_row3_col2" class="data row3 col2" >Explorer</td>
-      <td id="T_ecfa4_row3_col3" class="data row3 col3" >2019</td>
-      <td id="T_ecfa4_row3_col4" class="data row3 col4" >Blue</td>
-      <td id="T_ecfa4_row3_col5" class="data row3 col5" >0</td>
+      <th id="T_243d5_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_243d5_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_243d5_row3_col1" class="data row3 col1" >Ford</td>
+      <td id="T_243d5_row3_col2" class="data row3 col2" >Explorer</td>
+      <td id="T_243d5_row3_col3" class="data row3 col3" >2019</td>
+      <td id="T_243d5_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_243d5_row3_col5" class="data row3 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_ecfa4_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_ecfa4_row4_col0" class="data row4 col0" >5</td>
-      <td id="T_ecfa4_row4_col1" class="data row4 col1" >Ford</td>
-      <td id="T_ecfa4_row4_col2" class="data row4 col2" >Explorer</td>
-      <td id="T_ecfa4_row4_col3" class="data row4 col3" >2019</td>
-      <td id="T_ecfa4_row4_col4" class="data row4 col4" >Blue</td>
-      <td id="T_ecfa4_row4_col5" class="data row4 col5" >0</td>
+      <th id="T_243d5_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_243d5_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_243d5_row4_col1" class="data row4 col1" >Ford</td>
+      <td id="T_243d5_row4_col2" class="data row4 col2" >Explorer</td>
+      <td id="T_243d5_row4_col3" class="data row4 col3" >2019</td>
+      <td id="T_243d5_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_243d5_row4_col5" class="data row4 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_ecfa4_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_ecfa4_row5_col0" class="data row5 col0" >6</td>
-      <td id="T_ecfa4_row5_col1" class="data row5 col1" >Honda</td>
-      <td id="T_ecfa4_row5_col2" class="data row5 col2" >Accord</td>
-      <td id="T_ecfa4_row5_col3" class="data row5 col3" >2015</td>
-      <td id="T_ecfa4_row5_col4" class="data row5 col4" >Green</td>
-      <td id="T_ecfa4_row5_col5" class="data row5 col5" >0</td>
+      <th id="T_243d5_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_243d5_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_243d5_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_243d5_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_243d5_row5_col3" class="data row5 col3" >2015</td>
+      <td id="T_243d5_row5_col4" class="data row5 col4" >Green</td>
+      <td id="T_243d5_row5_col5" class="data row5 col5" >0</td>
     </tr>
   </tbody>
 </table>
@@ -3007,6 +2454,11 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -3073,75 +2525,76 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_10dd7" style="font-size: 12px">
+<table id="T_ec4e4" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_10dd7_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_10dd7_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_10dd7_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_10dd7_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_10dd7_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_10dd7_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_ec4e4_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_ec4e4_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_ec4e4_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_ec4e4_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_ec4e4_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_ec4e4_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_10dd7_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_10dd7_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_10dd7_row0_col1" class="data row0 col1" >Frd</td>
-      <td id="T_10dd7_row0_col2" class="data row0 col2" >Explorer</td>
-      <td id="T_10dd7_row0_col3" class="data row0 col3" >2019</td>
-      <td id="T_10dd7_row0_col4" class="data row0 col4" >Red</td>
-      <td id="T_10dd7_row0_col5" class="data row0 col5" >1</td>
+      <th id="T_ec4e4_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_ec4e4_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_ec4e4_row0_col1" class="data row0 col1" >Frd</td>
+      <td id="T_ec4e4_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_ec4e4_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_ec4e4_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_ec4e4_row0_col5" class="data row0 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_10dd7_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_10dd7_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_10dd7_row1_col1" class="data row1 col1" >Toyota</td>
-      <td id="T_10dd7_row1_col2" class="data row1 col2" >Camrey</td>
-      <td id="T_10dd7_row1_col3" class="data row1 col3" >2010</td>
-      <td id="T_10dd7_row1_col4" class="data row1 col4" >Red</td>
-      <td id="T_10dd7_row1_col5" class="data row1 col5" >1</td>
+      <th id="T_ec4e4_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_ec4e4_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_ec4e4_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_ec4e4_row1_col2" class="data row1 col2" >Camrey</td>
+      <td id="T_ec4e4_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_ec4e4_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_ec4e4_row1_col5" class="data row1 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_10dd7_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_10dd7_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_10dd7_row2_col1" class="data row2 col1" >Honda</td>
-      <td id="T_10dd7_row2_col2" class="data row2 col2" >Accord</td>
-      <td id="T_10dd7_row2_col3" class="data row2 col3" >2015</td>
-      <td id="T_10dd7_row2_col4" class="data row2 col4" >Red</td>
-      <td id="T_10dd7_row2_col5" class="data row2 col5" >1</td>
+      <th id="T_ec4e4_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_ec4e4_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_ec4e4_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_ec4e4_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_ec4e4_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_ec4e4_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_ec4e4_row2_col5" class="data row2 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_10dd7_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_10dd7_row3_col0" class="data row3 col0" >4</td>
-      <td id="T_10dd7_row3_col1" class="data row3 col1" >Frd</td>
-      <td id="T_10dd7_row3_col2" class="data row3 col2" >Explorer</td>
-      <td id="T_10dd7_row3_col3" class="data row3 col3" >2019</td>
-      <td id="T_10dd7_row3_col4" class="data row3 col4" >Blue</td>
-      <td id="T_10dd7_row3_col5" class="data row3 col5" >0</td>
+      <th id="T_ec4e4_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_ec4e4_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_ec4e4_row3_col1" class="data row3 col1" >Frd</td>
+      <td id="T_ec4e4_row3_col2" class="data row3 col2" >Explorer</td>
+      <td id="T_ec4e4_row3_col3" class="data row3 col3" >2019</td>
+      <td id="T_ec4e4_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_ec4e4_row3_col5" class="data row3 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_10dd7_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_10dd7_row4_col0" class="data row4 col0" >5</td>
-      <td id="T_10dd7_row4_col1" class="data row4 col1" >Frd</td>
-      <td id="T_10dd7_row4_col2" class="data row4 col2" >Explorer</td>
-      <td id="T_10dd7_row4_col3" class="data row4 col3" >2019</td>
-      <td id="T_10dd7_row4_col4" class="data row4 col4" >Blue</td>
-      <td id="T_10dd7_row4_col5" class="data row4 col5" >0</td>
+      <th id="T_ec4e4_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_ec4e4_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_ec4e4_row4_col1" class="data row4 col1" >Frd</td>
+      <td id="T_ec4e4_row4_col2" class="data row4 col2" >Explorer</td>
+      <td id="T_ec4e4_row4_col3" class="data row4 col3" >2019</td>
+      <td id="T_ec4e4_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_ec4e4_row4_col5" class="data row4 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_10dd7_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_10dd7_row5_col0" class="data row5 col0" >6</td>
-      <td id="T_10dd7_row5_col1" class="data row5 col1" >Honda</td>
-      <td id="T_10dd7_row5_col2" class="data row5 col2" >Accord</td>
-      <td id="T_10dd7_row5_col3" class="data row5 col3" >2015</td>
-      <td id="T_10dd7_row5_col4" class="data row5 col4" >Greene</td>
-      <td id="T_10dd7_row5_col5" class="data row5 col5" >0</td>
+      <th id="T_ec4e4_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_ec4e4_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_ec4e4_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_ec4e4_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_ec4e4_row5_col3" class="data row5 col3" >2015</td>
+      <td id="T_ec4e4_row5_col4" class="data row5 col4" >Greene</td>
+      <td id="T_ec4e4_row5_col5" class="data row5 col5" >0</td>
     </tr>
   </tbody>
 </table>
@@ -3155,6 +2608,11 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -3172,6 +2630,7 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">car_id</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Make</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Model</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">available</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Cars</span>
@@ -3180,6 +2639,11 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -3197,75 +2661,76 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_22f57" style="font-size: 12px">
+<table id="T_66401" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_22f57_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_22f57_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_22f57_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_22f57_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_22f57_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_22f57_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_66401_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_66401_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_66401_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_66401_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_66401_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_66401_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_22f57_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_22f57_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_22f57_row0_col1" class="data row0 col1" >Frd</td>
-      <td id="T_22f57_row0_col2" class="data row0 col2" >Explorer</td>
-      <td id="T_22f57_row0_col3" class="data row0 col3" >2019</td>
-      <td id="T_22f57_row0_col4" class="data row0 col4" >Red</td>
-      <td id="T_22f57_row0_col5" class="data row0 col5" >1</td>
+      <th id="T_66401_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_66401_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_66401_row0_col1" class="data row0 col1" >Frd</td>
+      <td id="T_66401_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_66401_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_66401_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_66401_row0_col5" class="data row0 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_22f57_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_22f57_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_22f57_row1_col1" class="data row1 col1" >Toyota</td>
-      <td id="T_22f57_row1_col2" class="data row1 col2" >Camrey</td>
-      <td id="T_22f57_row1_col3" class="data row1 col3" >2010</td>
-      <td id="T_22f57_row1_col4" class="data row1 col4" >Red</td>
-      <td id="T_22f57_row1_col5" class="data row1 col5" >1</td>
+      <th id="T_66401_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_66401_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_66401_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_66401_row1_col2" class="data row1 col2" >Camrey</td>
+      <td id="T_66401_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_66401_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_66401_row1_col5" class="data row1 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_22f57_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_22f57_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_22f57_row2_col1" class="data row2 col1" >Honda</td>
-      <td id="T_22f57_row2_col2" class="data row2 col2" >Accord</td>
-      <td id="T_22f57_row2_col3" class="data row2 col3" >2015</td>
-      <td id="T_22f57_row2_col4" class="data row2 col4" >Red</td>
-      <td id="T_22f57_row2_col5" class="data row2 col5" >1</td>
+      <th id="T_66401_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_66401_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_66401_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_66401_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_66401_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_66401_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_66401_row2_col5" class="data row2 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_22f57_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_22f57_row3_col0" class="data row3 col0" >4</td>
-      <td id="T_22f57_row3_col1" class="data row3 col1" >Frd</td>
-      <td id="T_22f57_row3_col2" class="data row3 col2" >Explorer</td>
-      <td id="T_22f57_row3_col3" class="data row3 col3" >2019</td>
-      <td id="T_22f57_row3_col4" class="data row3 col4" >Blue</td>
-      <td id="T_22f57_row3_col5" class="data row3 col5" >0</td>
+      <th id="T_66401_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_66401_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_66401_row3_col1" class="data row3 col1" >Frd</td>
+      <td id="T_66401_row3_col2" class="data row3 col2" >Explorer</td>
+      <td id="T_66401_row3_col3" class="data row3 col3" >2019</td>
+      <td id="T_66401_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_66401_row3_col5" class="data row3 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_22f57_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_22f57_row4_col0" class="data row4 col0" >5</td>
-      <td id="T_22f57_row4_col1" class="data row4 col1" >Frd</td>
-      <td id="T_22f57_row4_col2" class="data row4 col2" >Explorer</td>
-      <td id="T_22f57_row4_col3" class="data row4 col3" >2019</td>
-      <td id="T_22f57_row4_col4" class="data row4 col4" >Blue</td>
-      <td id="T_22f57_row4_col5" class="data row4 col5" >0</td>
+      <th id="T_66401_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_66401_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_66401_row4_col1" class="data row4 col1" >Frd</td>
+      <td id="T_66401_row4_col2" class="data row4 col2" >Explorer</td>
+      <td id="T_66401_row4_col3" class="data row4 col3" >2019</td>
+      <td id="T_66401_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_66401_row4_col5" class="data row4 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_22f57_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_22f57_row5_col0" class="data row5 col0" >6</td>
-      <td id="T_22f57_row5_col1" class="data row5 col1" >Honda</td>
-      <td id="T_22f57_row5_col2" class="data row5 col2" >Accord</td>
-      <td id="T_22f57_row5_col3" class="data row5 col3" >2015</td>
-      <td id="T_22f57_row5_col4" class="data row5 col4" >Green</td>
-      <td id="T_22f57_row5_col5" class="data row5 col5" >0</td>
+      <th id="T_66401_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_66401_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_66401_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_66401_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_66401_row5_col3" class="data row5 col3" >2015</td>
+      <td id="T_66401_row5_col4" class="data row5 col4" >Green</td>
+      <td id="T_66401_row5_col5" class="data row5 col5" >0</td>
     </tr>
   </tbody>
 </table>
@@ -3284,6 +2749,11 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -3305,6 +2775,7 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">car_id</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Make</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Model</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">available</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Cars</span>
@@ -3313,6 +2784,11 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -3330,75 +2806,76 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_70cec" style="font-size: 12px">
+<table id="T_ab6f7" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_70cec_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_70cec_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_70cec_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_70cec_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_70cec_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_70cec_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_ab6f7_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_ab6f7_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_ab6f7_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_ab6f7_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_ab6f7_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_ab6f7_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_70cec_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_70cec_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_70cec_row0_col1" class="data row0 col1" >Ford</td>
-      <td id="T_70cec_row0_col2" class="data row0 col2" >Explorer</td>
-      <td id="T_70cec_row0_col3" class="data row0 col3" >2019</td>
-      <td id="T_70cec_row0_col4" class="data row0 col4" >Red</td>
-      <td id="T_70cec_row0_col5" class="data row0 col5" >1</td>
+      <th id="T_ab6f7_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_ab6f7_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_ab6f7_row0_col1" class="data row0 col1" >Ford</td>
+      <td id="T_ab6f7_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_ab6f7_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_ab6f7_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_ab6f7_row0_col5" class="data row0 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_70cec_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_70cec_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_70cec_row1_col1" class="data row1 col1" >Toyota</td>
-      <td id="T_70cec_row1_col2" class="data row1 col2" >Camry</td>
-      <td id="T_70cec_row1_col3" class="data row1 col3" >2010</td>
-      <td id="T_70cec_row1_col4" class="data row1 col4" >Red</td>
-      <td id="T_70cec_row1_col5" class="data row1 col5" >1</td>
+      <th id="T_ab6f7_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_ab6f7_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_ab6f7_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_ab6f7_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_ab6f7_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_ab6f7_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_ab6f7_row1_col5" class="data row1 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_70cec_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_70cec_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_70cec_row2_col1" class="data row2 col1" >Honda</td>
-      <td id="T_70cec_row2_col2" class="data row2 col2" >Accord</td>
-      <td id="T_70cec_row2_col3" class="data row2 col3" >2015</td>
-      <td id="T_70cec_row2_col4" class="data row2 col4" >Red</td>
-      <td id="T_70cec_row2_col5" class="data row2 col5" >1</td>
+      <th id="T_ab6f7_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_ab6f7_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_ab6f7_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_ab6f7_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_ab6f7_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_ab6f7_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_ab6f7_row2_col5" class="data row2 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_70cec_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_70cec_row3_col0" class="data row3 col0" >4</td>
-      <td id="T_70cec_row3_col1" class="data row3 col1" >Ford</td>
-      <td id="T_70cec_row3_col2" class="data row3 col2" >Explorer</td>
-      <td id="T_70cec_row3_col3" class="data row3 col3" >2019</td>
-      <td id="T_70cec_row3_col4" class="data row3 col4" >Blue</td>
-      <td id="T_70cec_row3_col5" class="data row3 col5" >0</td>
+      <th id="T_ab6f7_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_ab6f7_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_ab6f7_row3_col1" class="data row3 col1" >Ford</td>
+      <td id="T_ab6f7_row3_col2" class="data row3 col2" >Explorer</td>
+      <td id="T_ab6f7_row3_col3" class="data row3 col3" >2019</td>
+      <td id="T_ab6f7_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_ab6f7_row3_col5" class="data row3 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_70cec_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_70cec_row4_col0" class="data row4 col0" >5</td>
-      <td id="T_70cec_row4_col1" class="data row4 col1" >Ford</td>
-      <td id="T_70cec_row4_col2" class="data row4 col2" >Explorer</td>
-      <td id="T_70cec_row4_col3" class="data row4 col3" >2019</td>
-      <td id="T_70cec_row4_col4" class="data row4 col4" >Blue</td>
-      <td id="T_70cec_row4_col5" class="data row4 col5" >0</td>
+      <th id="T_ab6f7_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_ab6f7_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_ab6f7_row4_col1" class="data row4 col1" >Ford</td>
+      <td id="T_ab6f7_row4_col2" class="data row4 col2" >Explorer</td>
+      <td id="T_ab6f7_row4_col3" class="data row4 col3" >2019</td>
+      <td id="T_ab6f7_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_ab6f7_row4_col5" class="data row4 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_70cec_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_70cec_row5_col0" class="data row5 col0" >6</td>
-      <td id="T_70cec_row5_col1" class="data row5 col1" >Honda</td>
-      <td id="T_70cec_row5_col2" class="data row5 col2" >Accord</td>
-      <td id="T_70cec_row5_col3" class="data row5 col3" >2015</td>
-      <td id="T_70cec_row5_col4" class="data row5 col4" >Green</td>
-      <td id="T_70cec_row5_col5" class="data row5 col5" >0</td>
+      <th id="T_ab6f7_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_ab6f7_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_ab6f7_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_ab6f7_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_ab6f7_row5_col3" class="data row5 col3" >2015</td>
+      <td id="T_ab6f7_row5_col4" class="data row5 col4" >Green</td>
+      <td id="T_ab6f7_row5_col5" class="data row5 col5" >0</td>
     </tr>
   </tbody>
 </table>
@@ -3413,6 +2890,11 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -3430,6 +2912,7 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">car_id</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Make</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Model</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">available</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Cars</span>
@@ -3438,6 +2921,11 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -3455,75 +2943,76 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_13b89" style="font-size: 12px">
+<table id="T_31064" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_13b89_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_13b89_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_13b89_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_13b89_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_13b89_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_13b89_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_31064_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_31064_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_31064_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_31064_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_31064_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_31064_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_13b89_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_13b89_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_13b89_row0_col1" class="data row0 col1" >Ford</td>
-      <td id="T_13b89_row0_col2" class="data row0 col2" >Explorer</td>
-      <td id="T_13b89_row0_col3" class="data row0 col3" >2019</td>
-      <td id="T_13b89_row0_col4" class="data row0 col4" >Red</td>
-      <td id="T_13b89_row0_col5" class="data row0 col5" >1</td>
+      <th id="T_31064_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_31064_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_31064_row0_col1" class="data row0 col1" >Ford</td>
+      <td id="T_31064_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_31064_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_31064_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_31064_row0_col5" class="data row0 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_13b89_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_13b89_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_13b89_row1_col1" class="data row1 col1" >Toyota</td>
-      <td id="T_13b89_row1_col2" class="data row1 col2" >Camry</td>
-      <td id="T_13b89_row1_col3" class="data row1 col3" >2010</td>
-      <td id="T_13b89_row1_col4" class="data row1 col4" >Red</td>
-      <td id="T_13b89_row1_col5" class="data row1 col5" >1</td>
+      <th id="T_31064_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_31064_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_31064_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_31064_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_31064_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_31064_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_31064_row1_col5" class="data row1 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_13b89_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_13b89_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_13b89_row2_col1" class="data row2 col1" >Honda</td>
-      <td id="T_13b89_row2_col2" class="data row2 col2" >Accord</td>
-      <td id="T_13b89_row2_col3" class="data row2 col3" >2015</td>
-      <td id="T_13b89_row2_col4" class="data row2 col4" >Red</td>
-      <td id="T_13b89_row2_col5" class="data row2 col5" >1</td>
+      <th id="T_31064_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_31064_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_31064_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_31064_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_31064_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_31064_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_31064_row2_col5" class="data row2 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_13b89_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_13b89_row3_col0" class="data row3 col0" >4</td>
-      <td id="T_13b89_row3_col1" class="data row3 col1" >Ford</td>
-      <td id="T_13b89_row3_col2" class="data row3 col2" >Explorer</td>
-      <td id="T_13b89_row3_col3" class="data row3 col3" >2019</td>
-      <td id="T_13b89_row3_col4" class="data row3 col4" >Blue</td>
-      <td id="T_13b89_row3_col5" class="data row3 col5" >0</td>
+      <th id="T_31064_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_31064_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_31064_row3_col1" class="data row3 col1" >Ford</td>
+      <td id="T_31064_row3_col2" class="data row3 col2" >Explorer</td>
+      <td id="T_31064_row3_col3" class="data row3 col3" >2019</td>
+      <td id="T_31064_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_31064_row3_col5" class="data row3 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_13b89_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_13b89_row4_col0" class="data row4 col0" >5</td>
-      <td id="T_13b89_row4_col1" class="data row4 col1" >Ford</td>
-      <td id="T_13b89_row4_col2" class="data row4 col2" >Explorer</td>
-      <td id="T_13b89_row4_col3" class="data row4 col3" >2019</td>
-      <td id="T_13b89_row4_col4" class="data row4 col4" >Blue</td>
-      <td id="T_13b89_row4_col5" class="data row4 col5" >0</td>
+      <th id="T_31064_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_31064_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_31064_row4_col1" class="data row4 col1" >Ford</td>
+      <td id="T_31064_row4_col2" class="data row4 col2" >Explorer</td>
+      <td id="T_31064_row4_col3" class="data row4 col3" >2019</td>
+      <td id="T_31064_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_31064_row4_col5" class="data row4 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_13b89_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_13b89_row5_col0" class="data row5 col0" >6</td>
-      <td id="T_13b89_row5_col1" class="data row5 col1" >Honda</td>
-      <td id="T_13b89_row5_col2" class="data row5 col2" >Accord</td>
-      <td id="T_13b89_row5_col3" class="data row5 col3" >2015</td>
-      <td id="T_13b89_row5_col4" class="data row5 col4" >Green</td>
-      <td id="T_13b89_row5_col5" class="data row5 col5" >1</td>
+      <th id="T_31064_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_31064_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_31064_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_31064_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_31064_row5_col3" class="data row5 col3" >2015</td>
+      <td id="T_31064_row5_col4" class="data row5 col4" >Green</td>
+      <td id="T_31064_row5_col5" class="data row5 col5" >1</td>
     </tr>
   </tbody>
 </table>
@@ -3539,6 +3028,11 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -3555,8 +3049,14 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -3574,57 +3074,58 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_ce1c5" style="font-size: 12px">
+<table id="T_325b5" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_ce1c5_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_ce1c5_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_ce1c5_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_ce1c5_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_ce1c5_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_ce1c5_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_325b5_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_325b5_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_325b5_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_325b5_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_325b5_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_325b5_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_ce1c5_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_ce1c5_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_ce1c5_row0_col1" class="data row0 col1" >Ford</td>
-      <td id="T_ce1c5_row0_col2" class="data row0 col2" >Explorer</td>
-      <td id="T_ce1c5_row0_col3" class="data row0 col3" >2019</td>
-      <td id="T_ce1c5_row0_col4" class="data row0 col4" >Red</td>
-      <td id="T_ce1c5_row0_col5" class="data row0 col5" >1</td>
+      <th id="T_325b5_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_325b5_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_325b5_row0_col1" class="data row0 col1" >Ford</td>
+      <td id="T_325b5_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_325b5_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_325b5_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_325b5_row0_col5" class="data row0 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_ce1c5_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_ce1c5_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_ce1c5_row1_col1" class="data row1 col1" >Toyota</td>
-      <td id="T_ce1c5_row1_col2" class="data row1 col2" >Camry</td>
-      <td id="T_ce1c5_row1_col3" class="data row1 col3" >2010</td>
-      <td id="T_ce1c5_row1_col4" class="data row1 col4" >Red</td>
-      <td id="T_ce1c5_row1_col5" class="data row1 col5" >1</td>
+      <th id="T_325b5_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_325b5_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_325b5_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_325b5_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_325b5_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_325b5_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_325b5_row1_col5" class="data row1 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_ce1c5_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_ce1c5_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_ce1c5_row2_col1" class="data row2 col1" >Honda</td>
-      <td id="T_ce1c5_row2_col2" class="data row2 col2" >Accord</td>
-      <td id="T_ce1c5_row2_col3" class="data row2 col3" >2015</td>
-      <td id="T_ce1c5_row2_col4" class="data row2 col4" >Red</td>
-      <td id="T_ce1c5_row2_col5" class="data row2 col5" >1</td>
+      <th id="T_325b5_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_325b5_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_325b5_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_325b5_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_325b5_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_325b5_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_325b5_row2_col5" class="data row2 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_ce1c5_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_ce1c5_row3_col0" class="data row3 col0" >6</td>
-      <td id="T_ce1c5_row3_col1" class="data row3 col1" >Honda</td>
-      <td id="T_ce1c5_row3_col2" class="data row3 col2" >Accord</td>
-      <td id="T_ce1c5_row3_col3" class="data row3 col3" >2015</td>
-      <td id="T_ce1c5_row3_col4" class="data row3 col4" >Green</td>
-      <td id="T_ce1c5_row3_col5" class="data row3 col5" >1</td>
+      <th id="T_325b5_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_325b5_row3_col0" class="data row3 col0" >6</td>
+      <td id="T_325b5_row3_col1" class="data row3 col1" >Honda</td>
+      <td id="T_325b5_row3_col2" class="data row3 col2" >Accord</td>
+      <td id="T_325b5_row3_col3" class="data row3 col3" >2015</td>
+      <td id="T_325b5_row3_col4" class="data row3 col4" >Green</td>
+      <td id="T_325b5_row3_col5" class="data row3 col5" >1</td>
     </tr>
   </tbody>
 </table>
@@ -3655,6 +3156,11 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -3673,6 +3179,7 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">car_id</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Make</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Model</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">available</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Cars</span>
@@ -3681,6 +3188,11 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -3698,30 +3210,31 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_c0e67" style="font-size: 12px">
+<table id="T_a18f7" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_c0e67_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_c0e67_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_c0e67_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_c0e67_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_c0e67_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_c0e67_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_a18f7_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_a18f7_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_a18f7_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_a18f7_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_a18f7_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_a18f7_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_c0e67_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_c0e67_row0_col0" class="data row0 col0" >6</td>
-      <td id="T_c0e67_row0_col1" class="data row0 col1" >Honda</td>
-      <td id="T_c0e67_row0_col2" class="data row0 col2" >Accord</td>
-      <td id="T_c0e67_row0_col3" class="data row0 col3" >2015</td>
-      <td id="T_c0e67_row0_col4" class="data row0 col4" >Green</td>
-      <td id="T_c0e67_row0_col5" class="data row0 col5" >1</td>
+      <th id="T_a18f7_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_a18f7_row0_col0" class="data row0 col0" >6</td>
+      <td id="T_a18f7_row0_col1" class="data row0 col1" >Honda</td>
+      <td id="T_a18f7_row0_col2" class="data row0 col2" >Accord</td>
+      <td id="T_a18f7_row0_col3" class="data row0 col3" >2015</td>
+      <td id="T_a18f7_row0_col4" class="data row0 col4" >Green</td>
+      <td id="T_a18f7_row0_col5" class="data row0 col5" >1</td>
     </tr>
   </tbody>
 </table>
@@ -3776,6 +3289,11 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -3835,6 +3353,7 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Colors</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Red&quot;</span><span class="p">;</span>
@@ -3844,6 +3363,11 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -3864,6 +3388,7 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </pre></div>
 </div>
 </div>
+</details>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">car_id</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Make</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Model</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">available</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Cars</span>
@@ -3872,6 +3397,11 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -3889,30 +3419,31 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_031c0" style="font-size: 12px">
+<table id="T_acf9e" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_031c0_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_031c0_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_031c0_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_031c0_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_031c0_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_031c0_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_acf9e_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_acf9e_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_acf9e_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_acf9e_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_acf9e_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_acf9e_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_031c0_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_031c0_row0_col0" class="data row0 col0" >6</td>
-      <td id="T_031c0_row0_col1" class="data row0 col1" >Honda</td>
-      <td id="T_031c0_row0_col2" class="data row0 col2" >Accord</td>
-      <td id="T_031c0_row0_col3" class="data row0 col3" >2015</td>
-      <td id="T_031c0_row0_col4" class="data row0 col4" >Green</td>
-      <td id="T_031c0_row0_col5" class="data row0 col5" >0</td>
+      <th id="T_acf9e_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_acf9e_row0_col0" class="data row0 col0" >6</td>
+      <td id="T_acf9e_row0_col1" class="data row0 col1" >Honda</td>
+      <td id="T_acf9e_row0_col2" class="data row0 col2" >Accord</td>
+      <td id="T_acf9e_row0_col3" class="data row0 col3" >2015</td>
+      <td id="T_acf9e_row0_col4" class="data row0 col4" >Green</td>
+      <td id="T_acf9e_row0_col5" class="data row0 col5" >0</td>
     </tr>
   </tbody>
 </table>
@@ -3925,6 +3456,11 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -3942,75 +3478,76 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </pre></div>
 </div>
 </div>
+</details>
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_d4998" style="font-size: 12px">
+<table id="T_f15d7" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_d4998_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_d4998_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_d4998_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_d4998_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_d4998_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_d4998_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_f15d7_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_f15d7_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_f15d7_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_f15d7_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_f15d7_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_f15d7_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_d4998_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_d4998_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_d4998_row0_col1" class="data row0 col1" >None</td>
-      <td id="T_d4998_row0_col2" class="data row0 col2" >None</td>
-      <td id="T_d4998_row0_col3" class="data row0 col3" >nan</td>
-      <td id="T_d4998_row0_col4" class="data row0 col4" >None</td>
-      <td id="T_d4998_row0_col5" class="data row0 col5" >1</td>
+      <th id="T_f15d7_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_f15d7_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_f15d7_row0_col1" class="data row0 col1" >None</td>
+      <td id="T_f15d7_row0_col2" class="data row0 col2" >None</td>
+      <td id="T_f15d7_row0_col3" class="data row0 col3" >nan</td>
+      <td id="T_f15d7_row0_col4" class="data row0 col4" >None</td>
+      <td id="T_f15d7_row0_col5" class="data row0 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_d4998_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_d4998_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_d4998_row1_col1" class="data row1 col1" >Toyota</td>
-      <td id="T_d4998_row1_col2" class="data row1 col2" >Camry</td>
-      <td id="T_d4998_row1_col3" class="data row1 col3" >2010.000000</td>
-      <td id="T_d4998_row1_col4" class="data row1 col4" >None</td>
-      <td id="T_d4998_row1_col5" class="data row1 col5" >1</td>
+      <th id="T_f15d7_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_f15d7_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_f15d7_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_f15d7_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_f15d7_row1_col3" class="data row1 col3" >2010.000000</td>
+      <td id="T_f15d7_row1_col4" class="data row1 col4" >None</td>
+      <td id="T_f15d7_row1_col5" class="data row1 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_d4998_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_d4998_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_d4998_row2_col1" class="data row2 col1" >Honda</td>
-      <td id="T_d4998_row2_col2" class="data row2 col2" >Accord</td>
-      <td id="T_d4998_row2_col3" class="data row2 col3" >2015.000000</td>
-      <td id="T_d4998_row2_col4" class="data row2 col4" >None</td>
-      <td id="T_d4998_row2_col5" class="data row2 col5" >1</td>
+      <th id="T_f15d7_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_f15d7_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_f15d7_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_f15d7_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_f15d7_row2_col3" class="data row2 col3" >2015.000000</td>
+      <td id="T_f15d7_row2_col4" class="data row2 col4" >None</td>
+      <td id="T_f15d7_row2_col5" class="data row2 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_d4998_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_d4998_row3_col0" class="data row3 col0" >4</td>
-      <td id="T_d4998_row3_col1" class="data row3 col1" >None</td>
-      <td id="T_d4998_row3_col2" class="data row3 col2" >None</td>
-      <td id="T_d4998_row3_col3" class="data row3 col3" >nan</td>
-      <td id="T_d4998_row3_col4" class="data row3 col4" >Blue</td>
-      <td id="T_d4998_row3_col5" class="data row3 col5" >0</td>
+      <th id="T_f15d7_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_f15d7_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_f15d7_row3_col1" class="data row3 col1" >None</td>
+      <td id="T_f15d7_row3_col2" class="data row3 col2" >None</td>
+      <td id="T_f15d7_row3_col3" class="data row3 col3" >nan</td>
+      <td id="T_f15d7_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_f15d7_row3_col5" class="data row3 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_d4998_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_d4998_row4_col0" class="data row4 col0" >5</td>
-      <td id="T_d4998_row4_col1" class="data row4 col1" >None</td>
-      <td id="T_d4998_row4_col2" class="data row4 col2" >None</td>
-      <td id="T_d4998_row4_col3" class="data row4 col3" >nan</td>
-      <td id="T_d4998_row4_col4" class="data row4 col4" >Blue</td>
-      <td id="T_d4998_row4_col5" class="data row4 col5" >0</td>
+      <th id="T_f15d7_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_f15d7_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_f15d7_row4_col1" class="data row4 col1" >None</td>
+      <td id="T_f15d7_row4_col2" class="data row4 col2" >None</td>
+      <td id="T_f15d7_row4_col3" class="data row4 col3" >nan</td>
+      <td id="T_f15d7_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_f15d7_row4_col5" class="data row4 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_d4998_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_d4998_row5_col0" class="data row5 col0" >6</td>
-      <td id="T_d4998_row5_col1" class="data row5 col1" >Honda</td>
-      <td id="T_d4998_row5_col2" class="data row5 col2" >Accord</td>
-      <td id="T_d4998_row5_col3" class="data row5 col3" >2015.000000</td>
-      <td id="T_d4998_row5_col4" class="data row5 col4" >Green</td>
-      <td id="T_d4998_row5_col5" class="data row5 col5" >0</td>
+      <th id="T_f15d7_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_f15d7_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_f15d7_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_f15d7_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_f15d7_row5_col3" class="data row5 col3" >2015.000000</td>
+      <td id="T_f15d7_row5_col4" class="data row5 col4" >Green</td>
+      <td id="T_f15d7_row5_col5" class="data row5 col5" >0</td>
     </tr>
   </tbody>
 </table>
@@ -4032,7 +3569,7 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
             mode: "python"
         },
         kernelOptions: {
-            kernelName: "python3",
+            name: "python3",
             path: "./chapters/13"
         },
         predefinedOutput: true
@@ -4040,50 +3577,144 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
     </script>
     <script>kernelName = 'python3'</script>
 
-              </div>
+                </article>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
-    <a class='left-prev' id="prev-link" href="sql.html" title="previous page">
-        <i class="fas fa-angle-left"></i>
-        <div class="prev-next-info">
-            <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title"><span class="section-number">13. </span>SQL with SQLite</p>
-        </div>
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+    <a class="left-prev"
+       href="sql.html"
+       title="previous page">
+      <i class="fa-solid fa-angle-left"></i>
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">previous</p>
+        <p class="prev-next-title"><span class="section-number">13. </span>SQL with SQLite</p>
+      </div>
     </a>
-    <a class='right-next' id="next-link" href="sql_1_query_primer.html" title="next page">
-    <div class="prev-next-info">
+    <a class="right-next"
+       href="sql_1_query_primer.html"
+       title="next page">
+      <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
         <p class="prev-next-title"><span class="section-number">13.2. </span>SQL Query Primer</p>
-    </div>
-    <i class="fas fa-angle-right"></i>
-    </a>
-</div>
-            </footer>
-        </div>
-    </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Mohammad Zia<br/>
-  
-      &copy; Copyright 2023.<br/>
-</p>
-        </footer>
-    </div>
-    
-</div>
-
-
       </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#basic">13.1.1. Basic</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sqlite3">13.1.2. SQLite3</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-table">13.1.3. Creating a table</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-table">13.1.3.1. A simple table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inserting-some-values-into-a-table">13.1.3.2. Inserting some values into a table</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#valid-insert-statements">13.1.3.2.1. Valid Insert statements</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#invalid-insert-statement">13.1.3.2.2. Invalid Insert Statement</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-not-null-constraint">13.1.3.3. Adding <code class="docutils literal notranslate"><span class="pre">NOT</span> <span class="pre">NULL</span></code> constraint</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#primary-keys">13.1.4. Primary Keys</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-a-unique-constraint">13.1.5. Adding a unique constraint</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#foreign-keys">13.1.6. Foreign Keys</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#creating-a-relationship">13.1.6.1. Creating a relationship</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-the-relationship">13.1.6.2. Using the relationship</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-tables">13.1.7. Joining Tables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#inner-join">13.1.7.1. Inner Join</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#left-join">13.1.7.2. Left Join</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#right-join-doesn-t-work-in-sqlite3">13.1.7.3. Right Join – Doesn’t work in SQLITE3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#right-join-by-doing-left-join">13.1.7.4. Right Join by doing Left Join</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#full-outer-join-does-not-work-in-sqlite3">13.1.7.5. Full Outer join – does not work in SQLite3</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#emulate-full-outer-join">13.1.7.6. Emulate Full outer join</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#joining-multiple-tables">13.1.8. Joining Multiple Tables</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#updating-tables">13.1.9. Updating Tables</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-color">13.1.9.1. Update Color</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-makemodel">13.1.9.2. Update MakeModel</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#update-car">13.1.9.3. Update Car</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#simple-delete">13.1.10. Simple Delete</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#deleting-a-referenced-row">13.1.11. Deleting a referenced row</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#on-delete">13.1.11.1. <code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span></code></a></li>
+</ul>
+</li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mohammad Zia
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2023.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
     </div>
+  </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
 
-
+  <footer class="bd-footer">
+  </footer>
   </body>
 </html>
