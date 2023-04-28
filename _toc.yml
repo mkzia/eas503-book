@@ -133,6 +133,10 @@ chapters:
   - file: chapters/13/sql_11_soccer
 - file: chapters/14/intro
   sections:
+  - file: chapters/14/intro_numpy
+  - file: chapters/14/implementing_numpy
+  - file: chapters/14/intro_pandas
+  - file: chapters/14/selecting_dataframes
   - file: chapters/14/np_pd
   - file: chapters/14/exercises
 
