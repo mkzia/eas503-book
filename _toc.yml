@@ -139,4 +139,9 @@ chapters:
   - file: chapters/14/selecting_dataframes
   - file: chapters/14/np_pd
   - file: chapters/14/exercises
-
+- file: chapters/15/intro
+  sections:
+  - file: chapters/15/intro_ml
+  - file: chapters/15/intro_scikit_learn
+  - file: chapters/15/part1
+  - file: chapters/15/part2
