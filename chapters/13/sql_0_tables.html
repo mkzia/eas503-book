@@ -255,7 +255,15 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../14/intro.html">14. NumPy and Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../14/np_pd.html">14.1. Numpy and Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../14/exercises.html">14.2. Cross-referenced Exercises</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../14/exercises.html">14.3. Cross-referenced Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../15/intro.html">15. Plotting with Matplotlib</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../16/intro.html">16. Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../16/introduction.html">16.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/loading_data.html">16.2. Loading Data</a></li>
+
 </ul>
 </li>
 </ul>
@@ -779,24 +787,24 @@ We fix this by making the student fields <code class="docutils literal notransla
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_2eb2d" style="font-size: 12px">
+<table id="T_41a83" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_2eb2d_level0_col0" class="col_heading level0 col0" >TeacherId</th>
-      <th id="T_2eb2d_level0_col1" class="col_heading level0 col1" >TeacherName</th>
+      <th id="T_41a83_level0_col0" class="col_heading level0 col0" >TeacherId</th>
+      <th id="T_41a83_level0_col1" class="col_heading level0 col1" >TeacherName</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_2eb2d_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_2eb2d_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_2eb2d_row0_col1" class="data row0 col1" >John Smith</td>
+      <th id="T_41a83_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_41a83_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_41a83_row0_col1" class="data row0 col1" >John Smith</td>
     </tr>
     <tr>
-      <th id="T_2eb2d_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_2eb2d_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_2eb2d_row1_col1" class="data row1 col1" >John Smith</td>
+      <th id="T_41a83_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_41a83_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_41a83_row1_col1" class="data row1 col1" >John Smith</td>
     </tr>
   </tbody>
 </table>
@@ -860,27 +868,27 @@ by using the <code class="docutils literal notranslate"><span class="pre">UNIQUE
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_ad58e" style="font-size: 12px">
+<table id="T_7c963" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_ad58e_level0_col0" class="col_heading level0 col0" >TeacherId</th>
-      <th id="T_ad58e_level0_col1" class="col_heading level0 col1" >TeacherName</th>
-      <th id="T_ad58e_level0_col2" class="col_heading level0 col2" >TeacherEmployeeID</th>
+      <th id="T_7c963_level0_col0" class="col_heading level0 col0" >TeacherId</th>
+      <th id="T_7c963_level0_col1" class="col_heading level0 col1" >TeacherName</th>
+      <th id="T_7c963_level0_col2" class="col_heading level0 col2" >TeacherEmployeeID</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_ad58e_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_ad58e_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_ad58e_row0_col1" class="data row0 col1" >John Smith</td>
-      <td id="T_ad58e_row0_col2" class="data row0 col2" >100001</td>
+      <th id="T_7c963_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_7c963_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_7c963_row0_col1" class="data row0 col1" >John Smith</td>
+      <td id="T_7c963_row0_col2" class="data row0 col2" >100001</td>
     </tr>
     <tr>
-      <th id="T_ad58e_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_ad58e_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_ad58e_row1_col1" class="data row1 col1" >John Smith</td>
-      <td id="T_ad58e_row1_col2" class="data row1 col2" >100002</td>
+      <th id="T_7c963_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_7c963_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_7c963_row1_col1" class="data row1 col1" >John Smith</td>
+      <td id="T_7c963_row1_col2" class="data row1 col2" >100002</td>
     </tr>
   </tbody>
 </table>
@@ -1558,45 +1566,45 @@ Example database: <code class="docutils literal notranslate"><span class="pre">j
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_1684a" style="font-size: 12px">
+<table id="T_4d4a8" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_1684a_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
-      <th id="T_1684a_level0_col1" class="col_heading level0 col1" >PRICE</th>
-      <th id="T_1684a_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
+      <th id="T_4d4a8_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
+      <th id="T_4d4a8_level0_col1" class="col_heading level0 col1" >PRICE</th>
+      <th id="T_4d4a8_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_1684a_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_1684a_row0_col0" class="data row0 col0" >Potatoes</td>
-      <td id="T_1684a_row0_col1" class="data row0 col1" >3</td>
-      <td id="T_1684a_row0_col2" class="data row0 col2" >45</td>
+      <th id="T_4d4a8_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_4d4a8_row0_col0" class="data row0 col0" >Potatoes</td>
+      <td id="T_4d4a8_row0_col1" class="data row0 col1" >3</td>
+      <td id="T_4d4a8_row0_col2" class="data row0 col2" >45</td>
     </tr>
     <tr>
-      <th id="T_1684a_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_1684a_row1_col0" class="data row1 col0" >Avacados</td>
-      <td id="T_1684a_row1_col1" class="data row1 col1" >4</td>
-      <td id="T_1684a_row1_col2" class="data row1 col2" >63</td>
+      <th id="T_4d4a8_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_4d4a8_row1_col0" class="data row1 col0" >Avacados</td>
+      <td id="T_4d4a8_row1_col1" class="data row1 col1" >4</td>
+      <td id="T_4d4a8_row1_col2" class="data row1 col2" >63</td>
     </tr>
     <tr>
-      <th id="T_1684a_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_1684a_row2_col0" class="data row2 col0" >Kiwis</td>
-      <td id="T_1684a_row2_col1" class="data row2 col1" >2</td>
-      <td id="T_1684a_row2_col2" class="data row2 col2" >19</td>
+      <th id="T_4d4a8_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_4d4a8_row2_col0" class="data row2 col0" >Kiwis</td>
+      <td id="T_4d4a8_row2_col1" class="data row2 col1" >2</td>
+      <td id="T_4d4a8_row2_col2" class="data row2 col2" >19</td>
     </tr>
     <tr>
-      <th id="T_1684a_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_1684a_row3_col0" class="data row3 col0" >Onions</td>
-      <td id="T_1684a_row3_col1" class="data row3 col1" >1</td>
-      <td id="T_1684a_row3_col2" class="data row3 col2" >20</td>
+      <th id="T_4d4a8_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_4d4a8_row3_col0" class="data row3 col0" >Onions</td>
+      <td id="T_4d4a8_row3_col1" class="data row3 col1" >1</td>
+      <td id="T_4d4a8_row3_col2" class="data row3 col2" >20</td>
     </tr>
     <tr>
-      <th id="T_1684a_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_1684a_row4_col0" class="data row4 col0" >Melons</td>
-      <td id="T_1684a_row4_col1" class="data row4 col1" >5</td>
-      <td id="T_1684a_row4_col2" class="data row4 col2" >66</td>
+      <th id="T_4d4a8_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_4d4a8_row4_col0" class="data row4 col0" >Melons</td>
+      <td id="T_4d4a8_row4_col1" class="data row4 col1" >5</td>
+      <td id="T_4d4a8_row4_col2" class="data row4 col2" >66</td>
     </tr>
   </tbody>
 </table>
@@ -1644,57 +1652,57 @@ Example database: <code class="docutils literal notranslate"><span class="pre">j
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_52db6" style="font-size: 12px">
+<table id="T_a71d3" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_52db6_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
-      <th id="T_52db6_level0_col1" class="col_heading level0 col1" >PRICE</th>
-      <th id="T_52db6_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
+      <th id="T_a71d3_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
+      <th id="T_a71d3_level0_col1" class="col_heading level0 col1" >PRICE</th>
+      <th id="T_a71d3_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_52db6_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_52db6_row0_col0" class="data row0 col0" >Potatoes</td>
-      <td id="T_52db6_row0_col1" class="data row0 col1" >3</td>
-      <td id="T_52db6_row0_col2" class="data row0 col2" >45.000000</td>
+      <th id="T_a71d3_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_a71d3_row0_col0" class="data row0 col0" >Potatoes</td>
+      <td id="T_a71d3_row0_col1" class="data row0 col1" >3</td>
+      <td id="T_a71d3_row0_col2" class="data row0 col2" >45.000000</td>
     </tr>
     <tr>
-      <th id="T_52db6_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_52db6_row1_col0" class="data row1 col0" >Avacados</td>
-      <td id="T_52db6_row1_col1" class="data row1 col1" >4</td>
-      <td id="T_52db6_row1_col2" class="data row1 col2" >63.000000</td>
+      <th id="T_a71d3_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_a71d3_row1_col0" class="data row1 col0" >Avacados</td>
+      <td id="T_a71d3_row1_col1" class="data row1 col1" >4</td>
+      <td id="T_a71d3_row1_col2" class="data row1 col2" >63.000000</td>
     </tr>
     <tr>
-      <th id="T_52db6_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_52db6_row2_col0" class="data row2 col0" >Kiwis</td>
-      <td id="T_52db6_row2_col1" class="data row2 col1" >2</td>
-      <td id="T_52db6_row2_col2" class="data row2 col2" >19.000000</td>
+      <th id="T_a71d3_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_a71d3_row2_col0" class="data row2 col0" >Kiwis</td>
+      <td id="T_a71d3_row2_col1" class="data row2 col1" >2</td>
+      <td id="T_a71d3_row2_col2" class="data row2 col2" >19.000000</td>
     </tr>
     <tr>
-      <th id="T_52db6_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_52db6_row3_col0" class="data row3 col0" >Onions</td>
-      <td id="T_52db6_row3_col1" class="data row3 col1" >1</td>
-      <td id="T_52db6_row3_col2" class="data row3 col2" >20.000000</td>
+      <th id="T_a71d3_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_a71d3_row3_col0" class="data row3 col0" >Onions</td>
+      <td id="T_a71d3_row3_col1" class="data row3 col1" >1</td>
+      <td id="T_a71d3_row3_col2" class="data row3 col2" >20.000000</td>
     </tr>
     <tr>
-      <th id="T_52db6_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_52db6_row4_col0" class="data row4 col0" >Melons</td>
-      <td id="T_52db6_row4_col1" class="data row4 col1" >5</td>
-      <td id="T_52db6_row4_col2" class="data row4 col2" >66.000000</td>
+      <th id="T_a71d3_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_a71d3_row4_col0" class="data row4 col0" >Melons</td>
+      <td id="T_a71d3_row4_col1" class="data row4 col1" >5</td>
+      <td id="T_a71d3_row4_col2" class="data row4 col2" >66.000000</td>
     </tr>
     <tr>
-      <th id="T_52db6_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_52db6_row5_col0" class="data row5 col0" >Oranges</td>
-      <td id="T_52db6_row5_col1" class="data row5 col1" >5</td>
-      <td id="T_52db6_row5_col2" class="data row5 col2" >nan</td>
+      <th id="T_a71d3_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_a71d3_row5_col0" class="data row5 col0" >Oranges</td>
+      <td id="T_a71d3_row5_col1" class="data row5 col1" >5</td>
+      <td id="T_a71d3_row5_col2" class="data row5 col2" >nan</td>
     </tr>
     <tr>
-      <th id="T_52db6_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_52db6_row6_col0" class="data row6 col0" >Tomatoes</td>
-      <td id="T_52db6_row6_col1" class="data row6 col1" >6</td>
-      <td id="T_52db6_row6_col2" class="data row6 col2" >nan</td>
+      <th id="T_a71d3_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_a71d3_row6_col0" class="data row6 col0" >Tomatoes</td>
+      <td id="T_a71d3_row6_col1" class="data row6 col1" >6</td>
+      <td id="T_a71d3_row6_col2" class="data row6 col2" >nan</td>
     </tr>
   </tbody>
 </table>
@@ -1767,57 +1775,57 @@ Example database: <code class="docutils literal notranslate"><span class="pre">j
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_b1b45" style="font-size: 12px">
+<table id="T_52abd" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_b1b45_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
-      <th id="T_b1b45_level0_col1" class="col_heading level0 col1" >PRICE</th>
-      <th id="T_b1b45_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
+      <th id="T_52abd_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
+      <th id="T_52abd_level0_col1" class="col_heading level0 col1" >PRICE</th>
+      <th id="T_52abd_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_b1b45_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_b1b45_row0_col0" class="data row0 col0" >Potatoes</td>
-      <td id="T_b1b45_row0_col1" class="data row0 col1" >3.000000</td>
-      <td id="T_b1b45_row0_col2" class="data row0 col2" >45</td>
+      <th id="T_52abd_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_52abd_row0_col0" class="data row0 col0" >Potatoes</td>
+      <td id="T_52abd_row0_col1" class="data row0 col1" >3.000000</td>
+      <td id="T_52abd_row0_col2" class="data row0 col2" >45</td>
     </tr>
     <tr>
-      <th id="T_b1b45_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_b1b45_row1_col0" class="data row1 col0" >Avacados</td>
-      <td id="T_b1b45_row1_col1" class="data row1 col1" >4.000000</td>
-      <td id="T_b1b45_row1_col2" class="data row1 col2" >63</td>
+      <th id="T_52abd_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_52abd_row1_col0" class="data row1 col0" >Avacados</td>
+      <td id="T_52abd_row1_col1" class="data row1 col1" >4.000000</td>
+      <td id="T_52abd_row1_col2" class="data row1 col2" >63</td>
     </tr>
     <tr>
-      <th id="T_b1b45_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_b1b45_row2_col0" class="data row2 col0" >Kiwis</td>
-      <td id="T_b1b45_row2_col1" class="data row2 col1" >2.000000</td>
-      <td id="T_b1b45_row2_col2" class="data row2 col2" >19</td>
+      <th id="T_52abd_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_52abd_row2_col0" class="data row2 col0" >Kiwis</td>
+      <td id="T_52abd_row2_col1" class="data row2 col1" >2.000000</td>
+      <td id="T_52abd_row2_col2" class="data row2 col2" >19</td>
     </tr>
     <tr>
-      <th id="T_b1b45_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_b1b45_row3_col0" class="data row3 col0" >Onions</td>
-      <td id="T_b1b45_row3_col1" class="data row3 col1" >1.000000</td>
-      <td id="T_b1b45_row3_col2" class="data row3 col2" >20</td>
+      <th id="T_52abd_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_52abd_row3_col0" class="data row3 col0" >Onions</td>
+      <td id="T_52abd_row3_col1" class="data row3 col1" >1.000000</td>
+      <td id="T_52abd_row3_col2" class="data row3 col2" >20</td>
     </tr>
     <tr>
-      <th id="T_b1b45_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_b1b45_row4_col0" class="data row4 col0" >Melons</td>
-      <td id="T_b1b45_row4_col1" class="data row4 col1" >5.000000</td>
-      <td id="T_b1b45_row4_col2" class="data row4 col2" >66</td>
+      <th id="T_52abd_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_52abd_row4_col0" class="data row4 col0" >Melons</td>
+      <td id="T_52abd_row4_col1" class="data row4 col1" >5.000000</td>
+      <td id="T_52abd_row4_col2" class="data row4 col2" >66</td>
     </tr>
     <tr>
-      <th id="T_b1b45_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_b1b45_row5_col0" class="data row5 col0" >Broccoli</td>
-      <td id="T_b1b45_row5_col1" class="data row5 col1" >nan</td>
-      <td id="T_b1b45_row5_col2" class="data row5 col2" >27</td>
+      <th id="T_52abd_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_52abd_row5_col0" class="data row5 col0" >Broccoli</td>
+      <td id="T_52abd_row5_col1" class="data row5 col1" >nan</td>
+      <td id="T_52abd_row5_col2" class="data row5 col2" >27</td>
     </tr>
     <tr>
-      <th id="T_b1b45_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_b1b45_row6_col0" class="data row6 col0" >Squash</td>
-      <td id="T_b1b45_row6_col1" class="data row6 col1" >nan</td>
-      <td id="T_b1b45_row6_col2" class="data row6 col2" >92</td>
+      <th id="T_52abd_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_52abd_row6_col0" class="data row6 col0" >Squash</td>
+      <td id="T_52abd_row6_col1" class="data row6 col1" >nan</td>
+      <td id="T_52abd_row6_col2" class="data row6 col2" >92</td>
     </tr>
   </tbody>
 </table>
@@ -1886,99 +1894,99 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_e08fe" style="font-size: 12px">
+<table id="T_de422" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_e08fe_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
-      <th id="T_e08fe_level0_col1" class="col_heading level0 col1" >PRICE</th>
-      <th id="T_e08fe_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
+      <th id="T_de422_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
+      <th id="T_de422_level0_col1" class="col_heading level0 col1" >PRICE</th>
+      <th id="T_de422_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_e08fe_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_e08fe_row0_col0" class="data row0 col0" >Potatoes</td>
-      <td id="T_e08fe_row0_col1" class="data row0 col1" >3.000000</td>
-      <td id="T_e08fe_row0_col2" class="data row0 col2" >45.000000</td>
+      <th id="T_de422_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_de422_row0_col0" class="data row0 col0" >Potatoes</td>
+      <td id="T_de422_row0_col1" class="data row0 col1" >3.000000</td>
+      <td id="T_de422_row0_col2" class="data row0 col2" >45.000000</td>
     </tr>
     <tr>
-      <th id="T_e08fe_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_e08fe_row1_col0" class="data row1 col0" >Avacados</td>
-      <td id="T_e08fe_row1_col1" class="data row1 col1" >4.000000</td>
-      <td id="T_e08fe_row1_col2" class="data row1 col2" >63.000000</td>
+      <th id="T_de422_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_de422_row1_col0" class="data row1 col0" >Avacados</td>
+      <td id="T_de422_row1_col1" class="data row1 col1" >4.000000</td>
+      <td id="T_de422_row1_col2" class="data row1 col2" >63.000000</td>
     </tr>
     <tr>
-      <th id="T_e08fe_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_e08fe_row2_col0" class="data row2 col0" >Kiwis</td>
-      <td id="T_e08fe_row2_col1" class="data row2 col1" >2.000000</td>
-      <td id="T_e08fe_row2_col2" class="data row2 col2" >19.000000</td>
+      <th id="T_de422_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_de422_row2_col0" class="data row2 col0" >Kiwis</td>
+      <td id="T_de422_row2_col1" class="data row2 col1" >2.000000</td>
+      <td id="T_de422_row2_col2" class="data row2 col2" >19.000000</td>
     </tr>
     <tr>
-      <th id="T_e08fe_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_e08fe_row3_col0" class="data row3 col0" >Onions</td>
-      <td id="T_e08fe_row3_col1" class="data row3 col1" >1.000000</td>
-      <td id="T_e08fe_row3_col2" class="data row3 col2" >20.000000</td>
+      <th id="T_de422_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_de422_row3_col0" class="data row3 col0" >Onions</td>
+      <td id="T_de422_row3_col1" class="data row3 col1" >1.000000</td>
+      <td id="T_de422_row3_col2" class="data row3 col2" >20.000000</td>
     </tr>
     <tr>
-      <th id="T_e08fe_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_e08fe_row4_col0" class="data row4 col0" >Melons</td>
-      <td id="T_e08fe_row4_col1" class="data row4 col1" >5.000000</td>
-      <td id="T_e08fe_row4_col2" class="data row4 col2" >66.000000</td>
+      <th id="T_de422_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_de422_row4_col0" class="data row4 col0" >Melons</td>
+      <td id="T_de422_row4_col1" class="data row4 col1" >5.000000</td>
+      <td id="T_de422_row4_col2" class="data row4 col2" >66.000000</td>
     </tr>
     <tr>
-      <th id="T_e08fe_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_e08fe_row5_col0" class="data row5 col0" >None</td>
-      <td id="T_e08fe_row5_col1" class="data row5 col1" >5.000000</td>
-      <td id="T_e08fe_row5_col2" class="data row5 col2" >nan</td>
+      <th id="T_de422_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_de422_row5_col0" class="data row5 col0" >None</td>
+      <td id="T_de422_row5_col1" class="data row5 col1" >5.000000</td>
+      <td id="T_de422_row5_col2" class="data row5 col2" >nan</td>
     </tr>
     <tr>
-      <th id="T_e08fe_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_e08fe_row6_col0" class="data row6 col0" >None</td>
-      <td id="T_e08fe_row6_col1" class="data row6 col1" >6.000000</td>
-      <td id="T_e08fe_row6_col2" class="data row6 col2" >nan</td>
+      <th id="T_de422_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_de422_row6_col0" class="data row6 col0" >None</td>
+      <td id="T_de422_row6_col1" class="data row6 col1" >6.000000</td>
+      <td id="T_de422_row6_col2" class="data row6 col2" >nan</td>
     </tr>
     <tr>
-      <th id="T_e08fe_level0_row7" class="row_heading level0 row7" >7</th>
-      <td id="T_e08fe_row7_col0" class="data row7 col0" >Potatoes</td>
-      <td id="T_e08fe_row7_col1" class="data row7 col1" >3.000000</td>
-      <td id="T_e08fe_row7_col2" class="data row7 col2" >45.000000</td>
+      <th id="T_de422_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_de422_row7_col0" class="data row7 col0" >Potatoes</td>
+      <td id="T_de422_row7_col1" class="data row7 col1" >3.000000</td>
+      <td id="T_de422_row7_col2" class="data row7 col2" >45.000000</td>
     </tr>
     <tr>
-      <th id="T_e08fe_level0_row8" class="row_heading level0 row8" >8</th>
-      <td id="T_e08fe_row8_col0" class="data row8 col0" >Avacados</td>
-      <td id="T_e08fe_row8_col1" class="data row8 col1" >4.000000</td>
-      <td id="T_e08fe_row8_col2" class="data row8 col2" >63.000000</td>
+      <th id="T_de422_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_de422_row8_col0" class="data row8 col0" >Avacados</td>
+      <td id="T_de422_row8_col1" class="data row8 col1" >4.000000</td>
+      <td id="T_de422_row8_col2" class="data row8 col2" >63.000000</td>
     </tr>
     <tr>
-      <th id="T_e08fe_level0_row9" class="row_heading level0 row9" >9</th>
-      <td id="T_e08fe_row9_col0" class="data row9 col0" >Kiwis</td>
-      <td id="T_e08fe_row9_col1" class="data row9 col1" >2.000000</td>
-      <td id="T_e08fe_row9_col2" class="data row9 col2" >19.000000</td>
+      <th id="T_de422_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_de422_row9_col0" class="data row9 col0" >Kiwis</td>
+      <td id="T_de422_row9_col1" class="data row9 col1" >2.000000</td>
+      <td id="T_de422_row9_col2" class="data row9 col2" >19.000000</td>
     </tr>
     <tr>
-      <th id="T_e08fe_level0_row10" class="row_heading level0 row10" >10</th>
-      <td id="T_e08fe_row10_col0" class="data row10 col0" >Onions</td>
-      <td id="T_e08fe_row10_col1" class="data row10 col1" >1.000000</td>
-      <td id="T_e08fe_row10_col2" class="data row10 col2" >20.000000</td>
+      <th id="T_de422_level0_row10" class="row_heading level0 row10" >10</th>
+      <td id="T_de422_row10_col0" class="data row10 col0" >Onions</td>
+      <td id="T_de422_row10_col1" class="data row10 col1" >1.000000</td>
+      <td id="T_de422_row10_col2" class="data row10 col2" >20.000000</td>
     </tr>
     <tr>
-      <th id="T_e08fe_level0_row11" class="row_heading level0 row11" >11</th>
-      <td id="T_e08fe_row11_col0" class="data row11 col0" >Melons</td>
-      <td id="T_e08fe_row11_col1" class="data row11 col1" >5.000000</td>
-      <td id="T_e08fe_row11_col2" class="data row11 col2" >66.000000</td>
+      <th id="T_de422_level0_row11" class="row_heading level0 row11" >11</th>
+      <td id="T_de422_row11_col0" class="data row11 col0" >Melons</td>
+      <td id="T_de422_row11_col1" class="data row11 col1" >5.000000</td>
+      <td id="T_de422_row11_col2" class="data row11 col2" >66.000000</td>
     </tr>
     <tr>
-      <th id="T_e08fe_level0_row12" class="row_heading level0 row12" >12</th>
-      <td id="T_e08fe_row12_col0" class="data row12 col0" >Broccoli</td>
-      <td id="T_e08fe_row12_col1" class="data row12 col1" >nan</td>
-      <td id="T_e08fe_row12_col2" class="data row12 col2" >27.000000</td>
+      <th id="T_de422_level0_row12" class="row_heading level0 row12" >12</th>
+      <td id="T_de422_row12_col0" class="data row12 col0" >Broccoli</td>
+      <td id="T_de422_row12_col1" class="data row12 col1" >nan</td>
+      <td id="T_de422_row12_col2" class="data row12 col2" >27.000000</td>
     </tr>
     <tr>
-      <th id="T_e08fe_level0_row13" class="row_heading level0 row13" >13</th>
-      <td id="T_e08fe_row13_col0" class="data row13 col0" >Squash</td>
-      <td id="T_e08fe_row13_col1" class="data row13 col1" >nan</td>
-      <td id="T_e08fe_row13_col2" class="data row13 col2" >92.000000</td>
+      <th id="T_de422_level0_row13" class="row_heading level0 row13" >13</th>
+      <td id="T_de422_row13_col0" class="data row13 col0" >Squash</td>
+      <td id="T_de422_row13_col1" class="data row13 col1" >nan</td>
+      <td id="T_de422_row13_col2" class="data row13 col2" >92.000000</td>
     </tr>
   </tbody>
 </table>
@@ -2125,29 +2133,29 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_82578" style="font-size: 12px">
+<table id="T_b6601" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_82578_level0_col0" class="col_heading level0 col0" >color_id</th>
-      <th id="T_82578_level0_col1" class="col_heading level0 col1" >color</th>
+      <th id="T_b6601_level0_col0" class="col_heading level0 col0" >color_id</th>
+      <th id="T_b6601_level0_col1" class="col_heading level0 col1" >color</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_82578_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_82578_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_82578_row0_col1" class="data row0 col1" >Red</td>
+      <th id="T_b6601_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_b6601_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_b6601_row0_col1" class="data row0 col1" >Red</td>
     </tr>
     <tr>
-      <th id="T_82578_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_82578_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_82578_row1_col1" class="data row1 col1" >Blue</td>
+      <th id="T_b6601_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_b6601_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_b6601_row1_col1" class="data row1 col1" >Blue</td>
     </tr>
     <tr>
-      <th id="T_82578_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_82578_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_82578_row2_col1" class="data row2 col1" >Green</td>
+      <th id="T_b6601_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_b6601_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_b6601_row2_col1" class="data row2 col1" >Green</td>
     </tr>
   </tbody>
 </table>
@@ -2180,37 +2188,37 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_283d1" style="font-size: 12px">
+<table id="T_75c82" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_283d1_level0_col0" class="col_heading level0 col0" >make_model_id</th>
-      <th id="T_283d1_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_283d1_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_283d1_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_75c82_level0_col0" class="col_heading level0 col0" >make_model_id</th>
+      <th id="T_75c82_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_75c82_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_75c82_level0_col3" class="col_heading level0 col3" >Year</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_283d1_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_283d1_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_283d1_row0_col1" class="data row0 col1" >Ford</td>
-      <td id="T_283d1_row0_col2" class="data row0 col2" >Explorer</td>
-      <td id="T_283d1_row0_col3" class="data row0 col3" >2019</td>
+      <th id="T_75c82_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_75c82_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_75c82_row0_col1" class="data row0 col1" >Ford</td>
+      <td id="T_75c82_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_75c82_row0_col3" class="data row0 col3" >2019</td>
     </tr>
     <tr>
-      <th id="T_283d1_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_283d1_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_283d1_row1_col1" class="data row1 col1" >Toyota</td>
-      <td id="T_283d1_row1_col2" class="data row1 col2" >Camry</td>
-      <td id="T_283d1_row1_col3" class="data row1 col3" >2010</td>
+      <th id="T_75c82_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_75c82_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_75c82_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_75c82_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_75c82_row1_col3" class="data row1 col3" >2010</td>
     </tr>
     <tr>
-      <th id="T_283d1_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_283d1_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_283d1_row2_col1" class="data row2 col1" >Honda</td>
-      <td id="T_283d1_row2_col2" class="data row2 col2" >Accord</td>
-      <td id="T_283d1_row2_col3" class="data row2 col3" >2015</td>
+      <th id="T_75c82_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_75c82_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_75c82_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_75c82_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_75c82_row2_col3" class="data row2 col3" >2015</td>
     </tr>
   </tbody>
 </table>
@@ -2243,58 +2251,58 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_e5350" style="font-size: 12px">
+<table id="T_5c924" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_e5350_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_e5350_level0_col1" class="col_heading level0 col1" >make_model_id</th>
-      <th id="T_e5350_level0_col2" class="col_heading level0 col2" >color_id</th>
-      <th id="T_e5350_level0_col3" class="col_heading level0 col3" >available</th>
+      <th id="T_5c924_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_5c924_level0_col1" class="col_heading level0 col1" >make_model_id</th>
+      <th id="T_5c924_level0_col2" class="col_heading level0 col2" >color_id</th>
+      <th id="T_5c924_level0_col3" class="col_heading level0 col3" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_e5350_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_e5350_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_e5350_row0_col1" class="data row0 col1" >1</td>
-      <td id="T_e5350_row0_col2" class="data row0 col2" >1</td>
-      <td id="T_e5350_row0_col3" class="data row0 col3" >1</td>
+      <th id="T_5c924_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_5c924_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_5c924_row0_col1" class="data row0 col1" >1</td>
+      <td id="T_5c924_row0_col2" class="data row0 col2" >1</td>
+      <td id="T_5c924_row0_col3" class="data row0 col3" >1</td>
     </tr>
     <tr>
-      <th id="T_e5350_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_e5350_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_e5350_row1_col1" class="data row1 col1" >2</td>
-      <td id="T_e5350_row1_col2" class="data row1 col2" >1</td>
-      <td id="T_e5350_row1_col3" class="data row1 col3" >1</td>
+      <th id="T_5c924_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_5c924_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_5c924_row1_col1" class="data row1 col1" >2</td>
+      <td id="T_5c924_row1_col2" class="data row1 col2" >1</td>
+      <td id="T_5c924_row1_col3" class="data row1 col3" >1</td>
     </tr>
     <tr>
-      <th id="T_e5350_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_e5350_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_e5350_row2_col1" class="data row2 col1" >3</td>
-      <td id="T_e5350_row2_col2" class="data row2 col2" >1</td>
-      <td id="T_e5350_row2_col3" class="data row2 col3" >1</td>
+      <th id="T_5c924_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_5c924_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_5c924_row2_col1" class="data row2 col1" >3</td>
+      <td id="T_5c924_row2_col2" class="data row2 col2" >1</td>
+      <td id="T_5c924_row2_col3" class="data row2 col3" >1</td>
     </tr>
     <tr>
-      <th id="T_e5350_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_e5350_row3_col0" class="data row3 col0" >4</td>
-      <td id="T_e5350_row3_col1" class="data row3 col1" >1</td>
-      <td id="T_e5350_row3_col2" class="data row3 col2" >2</td>
-      <td id="T_e5350_row3_col3" class="data row3 col3" >0</td>
+      <th id="T_5c924_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_5c924_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_5c924_row3_col1" class="data row3 col1" >1</td>
+      <td id="T_5c924_row3_col2" class="data row3 col2" >2</td>
+      <td id="T_5c924_row3_col3" class="data row3 col3" >0</td>
     </tr>
     <tr>
-      <th id="T_e5350_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_e5350_row4_col0" class="data row4 col0" >5</td>
-      <td id="T_e5350_row4_col1" class="data row4 col1" >1</td>
-      <td id="T_e5350_row4_col2" class="data row4 col2" >2</td>
-      <td id="T_e5350_row4_col3" class="data row4 col3" >0</td>
+      <th id="T_5c924_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_5c924_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_5c924_row4_col1" class="data row4 col1" >1</td>
+      <td id="T_5c924_row4_col2" class="data row4 col2" >2</td>
+      <td id="T_5c924_row4_col3" class="data row4 col3" >0</td>
     </tr>
     <tr>
-      <th id="T_e5350_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_e5350_row5_col0" class="data row5 col0" >6</td>
-      <td id="T_e5350_row5_col1" class="data row5 col1" >3</td>
-      <td id="T_e5350_row5_col2" class="data row5 col2" >3</td>
-      <td id="T_e5350_row5_col3" class="data row5 col3" >0</td>
+      <th id="T_5c924_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_5c924_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_5c924_row5_col1" class="data row5 col1" >3</td>
+      <td id="T_5c924_row5_col2" class="data row5 col2" >3</td>
+      <td id="T_5c924_row5_col3" class="data row5 col3" >0</td>
     </tr>
   </tbody>
 </table>
@@ -2333,72 +2341,72 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_243d5" style="font-size: 12px">
+<table id="T_0f5dd" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_243d5_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_243d5_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_243d5_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_243d5_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_243d5_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_243d5_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_0f5dd_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_0f5dd_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_0f5dd_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_0f5dd_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_0f5dd_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_0f5dd_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_243d5_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_243d5_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_243d5_row0_col1" class="data row0 col1" >Ford</td>
-      <td id="T_243d5_row0_col2" class="data row0 col2" >Explorer</td>
-      <td id="T_243d5_row0_col3" class="data row0 col3" >2019</td>
-      <td id="T_243d5_row0_col4" class="data row0 col4" >Red</td>
-      <td id="T_243d5_row0_col5" class="data row0 col5" >1</td>
+      <th id="T_0f5dd_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_0f5dd_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_0f5dd_row0_col1" class="data row0 col1" >Ford</td>
+      <td id="T_0f5dd_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_0f5dd_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_0f5dd_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_0f5dd_row0_col5" class="data row0 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_243d5_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_243d5_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_243d5_row1_col1" class="data row1 col1" >Toyota</td>
-      <td id="T_243d5_row1_col2" class="data row1 col2" >Camry</td>
-      <td id="T_243d5_row1_col3" class="data row1 col3" >2010</td>
-      <td id="T_243d5_row1_col4" class="data row1 col4" >Red</td>
-      <td id="T_243d5_row1_col5" class="data row1 col5" >1</td>
+      <th id="T_0f5dd_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_0f5dd_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_0f5dd_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_0f5dd_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_0f5dd_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_0f5dd_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_0f5dd_row1_col5" class="data row1 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_243d5_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_243d5_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_243d5_row2_col1" class="data row2 col1" >Honda</td>
-      <td id="T_243d5_row2_col2" class="data row2 col2" >Accord</td>
-      <td id="T_243d5_row2_col3" class="data row2 col3" >2015</td>
-      <td id="T_243d5_row2_col4" class="data row2 col4" >Red</td>
-      <td id="T_243d5_row2_col5" class="data row2 col5" >1</td>
+      <th id="T_0f5dd_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_0f5dd_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_0f5dd_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_0f5dd_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_0f5dd_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_0f5dd_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_0f5dd_row2_col5" class="data row2 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_243d5_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_243d5_row3_col0" class="data row3 col0" >4</td>
-      <td id="T_243d5_row3_col1" class="data row3 col1" >Ford</td>
-      <td id="T_243d5_row3_col2" class="data row3 col2" >Explorer</td>
-      <td id="T_243d5_row3_col3" class="data row3 col3" >2019</td>
-      <td id="T_243d5_row3_col4" class="data row3 col4" >Blue</td>
-      <td id="T_243d5_row3_col5" class="data row3 col5" >0</td>
+      <th id="T_0f5dd_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_0f5dd_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_0f5dd_row3_col1" class="data row3 col1" >Ford</td>
+      <td id="T_0f5dd_row3_col2" class="data row3 col2" >Explorer</td>
+      <td id="T_0f5dd_row3_col3" class="data row3 col3" >2019</td>
+      <td id="T_0f5dd_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_0f5dd_row3_col5" class="data row3 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_243d5_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_243d5_row4_col0" class="data row4 col0" >5</td>
-      <td id="T_243d5_row4_col1" class="data row4 col1" >Ford</td>
-      <td id="T_243d5_row4_col2" class="data row4 col2" >Explorer</td>
-      <td id="T_243d5_row4_col3" class="data row4 col3" >2019</td>
-      <td id="T_243d5_row4_col4" class="data row4 col4" >Blue</td>
-      <td id="T_243d5_row4_col5" class="data row4 col5" >0</td>
+      <th id="T_0f5dd_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_0f5dd_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_0f5dd_row4_col1" class="data row4 col1" >Ford</td>
+      <td id="T_0f5dd_row4_col2" class="data row4 col2" >Explorer</td>
+      <td id="T_0f5dd_row4_col3" class="data row4 col3" >2019</td>
+      <td id="T_0f5dd_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_0f5dd_row4_col5" class="data row4 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_243d5_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_243d5_row5_col0" class="data row5 col0" >6</td>
-      <td id="T_243d5_row5_col1" class="data row5 col1" >Honda</td>
-      <td id="T_243d5_row5_col2" class="data row5 col2" >Accord</td>
-      <td id="T_243d5_row5_col3" class="data row5 col3" >2015</td>
-      <td id="T_243d5_row5_col4" class="data row5 col4" >Green</td>
-      <td id="T_243d5_row5_col5" class="data row5 col5" >0</td>
+      <th id="T_0f5dd_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_0f5dd_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_0f5dd_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_0f5dd_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_0f5dd_row5_col3" class="data row5 col3" >2015</td>
+      <td id="T_0f5dd_row5_col4" class="data row5 col4" >Green</td>
+      <td id="T_0f5dd_row5_col5" class="data row5 col5" >0</td>
     </tr>
   </tbody>
 </table>
@@ -2529,72 +2537,72 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_ec4e4" style="font-size: 12px">
+<table id="T_0ed78" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_ec4e4_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_ec4e4_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_ec4e4_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_ec4e4_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_ec4e4_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_ec4e4_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_0ed78_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_0ed78_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_0ed78_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_0ed78_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_0ed78_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_0ed78_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_ec4e4_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_ec4e4_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_ec4e4_row0_col1" class="data row0 col1" >Frd</td>
-      <td id="T_ec4e4_row0_col2" class="data row0 col2" >Explorer</td>
-      <td id="T_ec4e4_row0_col3" class="data row0 col3" >2019</td>
-      <td id="T_ec4e4_row0_col4" class="data row0 col4" >Red</td>
-      <td id="T_ec4e4_row0_col5" class="data row0 col5" >1</td>
+      <th id="T_0ed78_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_0ed78_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_0ed78_row0_col1" class="data row0 col1" >Frd</td>
+      <td id="T_0ed78_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_0ed78_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_0ed78_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_0ed78_row0_col5" class="data row0 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_ec4e4_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_ec4e4_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_ec4e4_row1_col1" class="data row1 col1" >Toyota</td>
-      <td id="T_ec4e4_row1_col2" class="data row1 col2" >Camrey</td>
-      <td id="T_ec4e4_row1_col3" class="data row1 col3" >2010</td>
-      <td id="T_ec4e4_row1_col4" class="data row1 col4" >Red</td>
-      <td id="T_ec4e4_row1_col5" class="data row1 col5" >1</td>
+      <th id="T_0ed78_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_0ed78_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_0ed78_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_0ed78_row1_col2" class="data row1 col2" >Camrey</td>
+      <td id="T_0ed78_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_0ed78_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_0ed78_row1_col5" class="data row1 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_ec4e4_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_ec4e4_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_ec4e4_row2_col1" class="data row2 col1" >Honda</td>
-      <td id="T_ec4e4_row2_col2" class="data row2 col2" >Accord</td>
-      <td id="T_ec4e4_row2_col3" class="data row2 col3" >2015</td>
-      <td id="T_ec4e4_row2_col4" class="data row2 col4" >Red</td>
-      <td id="T_ec4e4_row2_col5" class="data row2 col5" >1</td>
+      <th id="T_0ed78_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_0ed78_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_0ed78_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_0ed78_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_0ed78_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_0ed78_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_0ed78_row2_col5" class="data row2 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_ec4e4_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_ec4e4_row3_col0" class="data row3 col0" >4</td>
-      <td id="T_ec4e4_row3_col1" class="data row3 col1" >Frd</td>
-      <td id="T_ec4e4_row3_col2" class="data row3 col2" >Explorer</td>
-      <td id="T_ec4e4_row3_col3" class="data row3 col3" >2019</td>
-      <td id="T_ec4e4_row3_col4" class="data row3 col4" >Blue</td>
-      <td id="T_ec4e4_row3_col5" class="data row3 col5" >0</td>
+      <th id="T_0ed78_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_0ed78_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_0ed78_row3_col1" class="data row3 col1" >Frd</td>
+      <td id="T_0ed78_row3_col2" class="data row3 col2" >Explorer</td>
+      <td id="T_0ed78_row3_col3" class="data row3 col3" >2019</td>
+      <td id="T_0ed78_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_0ed78_row3_col5" class="data row3 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_ec4e4_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_ec4e4_row4_col0" class="data row4 col0" >5</td>
-      <td id="T_ec4e4_row4_col1" class="data row4 col1" >Frd</td>
-      <td id="T_ec4e4_row4_col2" class="data row4 col2" >Explorer</td>
-      <td id="T_ec4e4_row4_col3" class="data row4 col3" >2019</td>
-      <td id="T_ec4e4_row4_col4" class="data row4 col4" >Blue</td>
-      <td id="T_ec4e4_row4_col5" class="data row4 col5" >0</td>
+      <th id="T_0ed78_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_0ed78_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_0ed78_row4_col1" class="data row4 col1" >Frd</td>
+      <td id="T_0ed78_row4_col2" class="data row4 col2" >Explorer</td>
+      <td id="T_0ed78_row4_col3" class="data row4 col3" >2019</td>
+      <td id="T_0ed78_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_0ed78_row4_col5" class="data row4 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_ec4e4_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_ec4e4_row5_col0" class="data row5 col0" >6</td>
-      <td id="T_ec4e4_row5_col1" class="data row5 col1" >Honda</td>
-      <td id="T_ec4e4_row5_col2" class="data row5 col2" >Accord</td>
-      <td id="T_ec4e4_row5_col3" class="data row5 col3" >2015</td>
-      <td id="T_ec4e4_row5_col4" class="data row5 col4" >Greene</td>
-      <td id="T_ec4e4_row5_col5" class="data row5 col5" >0</td>
+      <th id="T_0ed78_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_0ed78_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_0ed78_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_0ed78_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_0ed78_row5_col3" class="data row5 col3" >2015</td>
+      <td id="T_0ed78_row5_col4" class="data row5 col4" >Greene</td>
+      <td id="T_0ed78_row5_col5" class="data row5 col5" >0</td>
     </tr>
   </tbody>
 </table>
@@ -2665,72 +2673,72 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_66401" style="font-size: 12px">
+<table id="T_aa261" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_66401_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_66401_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_66401_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_66401_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_66401_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_66401_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_aa261_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_aa261_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_aa261_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_aa261_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_aa261_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_aa261_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_66401_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_66401_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_66401_row0_col1" class="data row0 col1" >Frd</td>
-      <td id="T_66401_row0_col2" class="data row0 col2" >Explorer</td>
-      <td id="T_66401_row0_col3" class="data row0 col3" >2019</td>
-      <td id="T_66401_row0_col4" class="data row0 col4" >Red</td>
-      <td id="T_66401_row0_col5" class="data row0 col5" >1</td>
+      <th id="T_aa261_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_aa261_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_aa261_row0_col1" class="data row0 col1" >Frd</td>
+      <td id="T_aa261_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_aa261_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_aa261_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_aa261_row0_col5" class="data row0 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_66401_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_66401_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_66401_row1_col1" class="data row1 col1" >Toyota</td>
-      <td id="T_66401_row1_col2" class="data row1 col2" >Camrey</td>
-      <td id="T_66401_row1_col3" class="data row1 col3" >2010</td>
-      <td id="T_66401_row1_col4" class="data row1 col4" >Red</td>
-      <td id="T_66401_row1_col5" class="data row1 col5" >1</td>
+      <th id="T_aa261_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_aa261_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_aa261_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_aa261_row1_col2" class="data row1 col2" >Camrey</td>
+      <td id="T_aa261_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_aa261_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_aa261_row1_col5" class="data row1 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_66401_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_66401_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_66401_row2_col1" class="data row2 col1" >Honda</td>
-      <td id="T_66401_row2_col2" class="data row2 col2" >Accord</td>
-      <td id="T_66401_row2_col3" class="data row2 col3" >2015</td>
-      <td id="T_66401_row2_col4" class="data row2 col4" >Red</td>
-      <td id="T_66401_row2_col5" class="data row2 col5" >1</td>
+      <th id="T_aa261_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_aa261_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_aa261_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_aa261_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_aa261_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_aa261_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_aa261_row2_col5" class="data row2 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_66401_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_66401_row3_col0" class="data row3 col0" >4</td>
-      <td id="T_66401_row3_col1" class="data row3 col1" >Frd</td>
-      <td id="T_66401_row3_col2" class="data row3 col2" >Explorer</td>
-      <td id="T_66401_row3_col3" class="data row3 col3" >2019</td>
-      <td id="T_66401_row3_col4" class="data row3 col4" >Blue</td>
-      <td id="T_66401_row3_col5" class="data row3 col5" >0</td>
+      <th id="T_aa261_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_aa261_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_aa261_row3_col1" class="data row3 col1" >Frd</td>
+      <td id="T_aa261_row3_col2" class="data row3 col2" >Explorer</td>
+      <td id="T_aa261_row3_col3" class="data row3 col3" >2019</td>
+      <td id="T_aa261_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_aa261_row3_col5" class="data row3 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_66401_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_66401_row4_col0" class="data row4 col0" >5</td>
-      <td id="T_66401_row4_col1" class="data row4 col1" >Frd</td>
-      <td id="T_66401_row4_col2" class="data row4 col2" >Explorer</td>
-      <td id="T_66401_row4_col3" class="data row4 col3" >2019</td>
-      <td id="T_66401_row4_col4" class="data row4 col4" >Blue</td>
-      <td id="T_66401_row4_col5" class="data row4 col5" >0</td>
+      <th id="T_aa261_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_aa261_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_aa261_row4_col1" class="data row4 col1" >Frd</td>
+      <td id="T_aa261_row4_col2" class="data row4 col2" >Explorer</td>
+      <td id="T_aa261_row4_col3" class="data row4 col3" >2019</td>
+      <td id="T_aa261_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_aa261_row4_col5" class="data row4 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_66401_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_66401_row5_col0" class="data row5 col0" >6</td>
-      <td id="T_66401_row5_col1" class="data row5 col1" >Honda</td>
-      <td id="T_66401_row5_col2" class="data row5 col2" >Accord</td>
-      <td id="T_66401_row5_col3" class="data row5 col3" >2015</td>
-      <td id="T_66401_row5_col4" class="data row5 col4" >Green</td>
-      <td id="T_66401_row5_col5" class="data row5 col5" >0</td>
+      <th id="T_aa261_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_aa261_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_aa261_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_aa261_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_aa261_row5_col3" class="data row5 col3" >2015</td>
+      <td id="T_aa261_row5_col4" class="data row5 col4" >Green</td>
+      <td id="T_aa261_row5_col5" class="data row5 col5" >0</td>
     </tr>
   </tbody>
 </table>
@@ -2810,72 +2818,72 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_ab6f7" style="font-size: 12px">
+<table id="T_d7a41" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_ab6f7_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_ab6f7_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_ab6f7_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_ab6f7_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_ab6f7_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_ab6f7_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_d7a41_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_d7a41_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_d7a41_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_d7a41_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_d7a41_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_d7a41_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_ab6f7_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_ab6f7_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_ab6f7_row0_col1" class="data row0 col1" >Ford</td>
-      <td id="T_ab6f7_row0_col2" class="data row0 col2" >Explorer</td>
-      <td id="T_ab6f7_row0_col3" class="data row0 col3" >2019</td>
-      <td id="T_ab6f7_row0_col4" class="data row0 col4" >Red</td>
-      <td id="T_ab6f7_row0_col5" class="data row0 col5" >1</td>
+      <th id="T_d7a41_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_d7a41_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_d7a41_row0_col1" class="data row0 col1" >Ford</td>
+      <td id="T_d7a41_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_d7a41_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_d7a41_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_d7a41_row0_col5" class="data row0 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_ab6f7_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_ab6f7_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_ab6f7_row1_col1" class="data row1 col1" >Toyota</td>
-      <td id="T_ab6f7_row1_col2" class="data row1 col2" >Camry</td>
-      <td id="T_ab6f7_row1_col3" class="data row1 col3" >2010</td>
-      <td id="T_ab6f7_row1_col4" class="data row1 col4" >Red</td>
-      <td id="T_ab6f7_row1_col5" class="data row1 col5" >1</td>
+      <th id="T_d7a41_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_d7a41_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_d7a41_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_d7a41_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_d7a41_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_d7a41_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_d7a41_row1_col5" class="data row1 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_ab6f7_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_ab6f7_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_ab6f7_row2_col1" class="data row2 col1" >Honda</td>
-      <td id="T_ab6f7_row2_col2" class="data row2 col2" >Accord</td>
-      <td id="T_ab6f7_row2_col3" class="data row2 col3" >2015</td>
-      <td id="T_ab6f7_row2_col4" class="data row2 col4" >Red</td>
-      <td id="T_ab6f7_row2_col5" class="data row2 col5" >1</td>
+      <th id="T_d7a41_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_d7a41_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_d7a41_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_d7a41_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_d7a41_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_d7a41_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_d7a41_row2_col5" class="data row2 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_ab6f7_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_ab6f7_row3_col0" class="data row3 col0" >4</td>
-      <td id="T_ab6f7_row3_col1" class="data row3 col1" >Ford</td>
-      <td id="T_ab6f7_row3_col2" class="data row3 col2" >Explorer</td>
-      <td id="T_ab6f7_row3_col3" class="data row3 col3" >2019</td>
-      <td id="T_ab6f7_row3_col4" class="data row3 col4" >Blue</td>
-      <td id="T_ab6f7_row3_col5" class="data row3 col5" >0</td>
+      <th id="T_d7a41_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_d7a41_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_d7a41_row3_col1" class="data row3 col1" >Ford</td>
+      <td id="T_d7a41_row3_col2" class="data row3 col2" >Explorer</td>
+      <td id="T_d7a41_row3_col3" class="data row3 col3" >2019</td>
+      <td id="T_d7a41_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_d7a41_row3_col5" class="data row3 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_ab6f7_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_ab6f7_row4_col0" class="data row4 col0" >5</td>
-      <td id="T_ab6f7_row4_col1" class="data row4 col1" >Ford</td>
-      <td id="T_ab6f7_row4_col2" class="data row4 col2" >Explorer</td>
-      <td id="T_ab6f7_row4_col3" class="data row4 col3" >2019</td>
-      <td id="T_ab6f7_row4_col4" class="data row4 col4" >Blue</td>
-      <td id="T_ab6f7_row4_col5" class="data row4 col5" >0</td>
+      <th id="T_d7a41_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_d7a41_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_d7a41_row4_col1" class="data row4 col1" >Ford</td>
+      <td id="T_d7a41_row4_col2" class="data row4 col2" >Explorer</td>
+      <td id="T_d7a41_row4_col3" class="data row4 col3" >2019</td>
+      <td id="T_d7a41_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_d7a41_row4_col5" class="data row4 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_ab6f7_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_ab6f7_row5_col0" class="data row5 col0" >6</td>
-      <td id="T_ab6f7_row5_col1" class="data row5 col1" >Honda</td>
-      <td id="T_ab6f7_row5_col2" class="data row5 col2" >Accord</td>
-      <td id="T_ab6f7_row5_col3" class="data row5 col3" >2015</td>
-      <td id="T_ab6f7_row5_col4" class="data row5 col4" >Green</td>
-      <td id="T_ab6f7_row5_col5" class="data row5 col5" >0</td>
+      <th id="T_d7a41_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_d7a41_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_d7a41_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_d7a41_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_d7a41_row5_col3" class="data row5 col3" >2015</td>
+      <td id="T_d7a41_row5_col4" class="data row5 col4" >Green</td>
+      <td id="T_d7a41_row5_col5" class="data row5 col5" >0</td>
     </tr>
   </tbody>
 </table>
@@ -2947,72 +2955,72 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_31064" style="font-size: 12px">
+<table id="T_7b97a" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_31064_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_31064_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_31064_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_31064_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_31064_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_31064_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_7b97a_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_7b97a_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_7b97a_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_7b97a_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_7b97a_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_7b97a_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_31064_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_31064_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_31064_row0_col1" class="data row0 col1" >Ford</td>
-      <td id="T_31064_row0_col2" class="data row0 col2" >Explorer</td>
-      <td id="T_31064_row0_col3" class="data row0 col3" >2019</td>
-      <td id="T_31064_row0_col4" class="data row0 col4" >Red</td>
-      <td id="T_31064_row0_col5" class="data row0 col5" >1</td>
+      <th id="T_7b97a_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_7b97a_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_7b97a_row0_col1" class="data row0 col1" >Ford</td>
+      <td id="T_7b97a_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_7b97a_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_7b97a_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_7b97a_row0_col5" class="data row0 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_31064_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_31064_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_31064_row1_col1" class="data row1 col1" >Toyota</td>
-      <td id="T_31064_row1_col2" class="data row1 col2" >Camry</td>
-      <td id="T_31064_row1_col3" class="data row1 col3" >2010</td>
-      <td id="T_31064_row1_col4" class="data row1 col4" >Red</td>
-      <td id="T_31064_row1_col5" class="data row1 col5" >1</td>
+      <th id="T_7b97a_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_7b97a_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_7b97a_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_7b97a_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_7b97a_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_7b97a_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_7b97a_row1_col5" class="data row1 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_31064_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_31064_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_31064_row2_col1" class="data row2 col1" >Honda</td>
-      <td id="T_31064_row2_col2" class="data row2 col2" >Accord</td>
-      <td id="T_31064_row2_col3" class="data row2 col3" >2015</td>
-      <td id="T_31064_row2_col4" class="data row2 col4" >Red</td>
-      <td id="T_31064_row2_col5" class="data row2 col5" >1</td>
+      <th id="T_7b97a_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_7b97a_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_7b97a_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_7b97a_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_7b97a_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_7b97a_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_7b97a_row2_col5" class="data row2 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_31064_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_31064_row3_col0" class="data row3 col0" >4</td>
-      <td id="T_31064_row3_col1" class="data row3 col1" >Ford</td>
-      <td id="T_31064_row3_col2" class="data row3 col2" >Explorer</td>
-      <td id="T_31064_row3_col3" class="data row3 col3" >2019</td>
-      <td id="T_31064_row3_col4" class="data row3 col4" >Blue</td>
-      <td id="T_31064_row3_col5" class="data row3 col5" >0</td>
+      <th id="T_7b97a_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_7b97a_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_7b97a_row3_col1" class="data row3 col1" >Ford</td>
+      <td id="T_7b97a_row3_col2" class="data row3 col2" >Explorer</td>
+      <td id="T_7b97a_row3_col3" class="data row3 col3" >2019</td>
+      <td id="T_7b97a_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_7b97a_row3_col5" class="data row3 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_31064_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_31064_row4_col0" class="data row4 col0" >5</td>
-      <td id="T_31064_row4_col1" class="data row4 col1" >Ford</td>
-      <td id="T_31064_row4_col2" class="data row4 col2" >Explorer</td>
-      <td id="T_31064_row4_col3" class="data row4 col3" >2019</td>
-      <td id="T_31064_row4_col4" class="data row4 col4" >Blue</td>
-      <td id="T_31064_row4_col5" class="data row4 col5" >0</td>
+      <th id="T_7b97a_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_7b97a_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_7b97a_row4_col1" class="data row4 col1" >Ford</td>
+      <td id="T_7b97a_row4_col2" class="data row4 col2" >Explorer</td>
+      <td id="T_7b97a_row4_col3" class="data row4 col3" >2019</td>
+      <td id="T_7b97a_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_7b97a_row4_col5" class="data row4 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_31064_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_31064_row5_col0" class="data row5 col0" >6</td>
-      <td id="T_31064_row5_col1" class="data row5 col1" >Honda</td>
-      <td id="T_31064_row5_col2" class="data row5 col2" >Accord</td>
-      <td id="T_31064_row5_col3" class="data row5 col3" >2015</td>
-      <td id="T_31064_row5_col4" class="data row5 col4" >Green</td>
-      <td id="T_31064_row5_col5" class="data row5 col5" >1</td>
+      <th id="T_7b97a_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_7b97a_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_7b97a_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_7b97a_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_7b97a_row5_col3" class="data row5 col3" >2015</td>
+      <td id="T_7b97a_row5_col4" class="data row5 col4" >Green</td>
+      <td id="T_7b97a_row5_col5" class="data row5 col5" >1</td>
     </tr>
   </tbody>
 </table>
@@ -3078,54 +3086,54 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_325b5" style="font-size: 12px">
+<table id="T_e8dd0" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_325b5_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_325b5_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_325b5_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_325b5_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_325b5_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_325b5_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_e8dd0_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_e8dd0_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_e8dd0_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_e8dd0_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_e8dd0_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_e8dd0_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_325b5_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_325b5_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_325b5_row0_col1" class="data row0 col1" >Ford</td>
-      <td id="T_325b5_row0_col2" class="data row0 col2" >Explorer</td>
-      <td id="T_325b5_row0_col3" class="data row0 col3" >2019</td>
-      <td id="T_325b5_row0_col4" class="data row0 col4" >Red</td>
-      <td id="T_325b5_row0_col5" class="data row0 col5" >1</td>
+      <th id="T_e8dd0_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_e8dd0_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_e8dd0_row0_col1" class="data row0 col1" >Ford</td>
+      <td id="T_e8dd0_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_e8dd0_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_e8dd0_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_e8dd0_row0_col5" class="data row0 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_325b5_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_325b5_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_325b5_row1_col1" class="data row1 col1" >Toyota</td>
-      <td id="T_325b5_row1_col2" class="data row1 col2" >Camry</td>
-      <td id="T_325b5_row1_col3" class="data row1 col3" >2010</td>
-      <td id="T_325b5_row1_col4" class="data row1 col4" >Red</td>
-      <td id="T_325b5_row1_col5" class="data row1 col5" >1</td>
+      <th id="T_e8dd0_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_e8dd0_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_e8dd0_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_e8dd0_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_e8dd0_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_e8dd0_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_e8dd0_row1_col5" class="data row1 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_325b5_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_325b5_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_325b5_row2_col1" class="data row2 col1" >Honda</td>
-      <td id="T_325b5_row2_col2" class="data row2 col2" >Accord</td>
-      <td id="T_325b5_row2_col3" class="data row2 col3" >2015</td>
-      <td id="T_325b5_row2_col4" class="data row2 col4" >Red</td>
-      <td id="T_325b5_row2_col5" class="data row2 col5" >1</td>
+      <th id="T_e8dd0_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_e8dd0_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_e8dd0_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_e8dd0_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_e8dd0_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_e8dd0_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_e8dd0_row2_col5" class="data row2 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_325b5_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_325b5_row3_col0" class="data row3 col0" >6</td>
-      <td id="T_325b5_row3_col1" class="data row3 col1" >Honda</td>
-      <td id="T_325b5_row3_col2" class="data row3 col2" >Accord</td>
-      <td id="T_325b5_row3_col3" class="data row3 col3" >2015</td>
-      <td id="T_325b5_row3_col4" class="data row3 col4" >Green</td>
-      <td id="T_325b5_row3_col5" class="data row3 col5" >1</td>
+      <th id="T_e8dd0_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_e8dd0_row3_col0" class="data row3 col0" >6</td>
+      <td id="T_e8dd0_row3_col1" class="data row3 col1" >Honda</td>
+      <td id="T_e8dd0_row3_col2" class="data row3 col2" >Accord</td>
+      <td id="T_e8dd0_row3_col3" class="data row3 col3" >2015</td>
+      <td id="T_e8dd0_row3_col4" class="data row3 col4" >Green</td>
+      <td id="T_e8dd0_row3_col5" class="data row3 col5" >1</td>
     </tr>
   </tbody>
 </table>
@@ -3214,27 +3222,27 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_a18f7" style="font-size: 12px">
+<table id="T_1d123" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_a18f7_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_a18f7_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_a18f7_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_a18f7_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_a18f7_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_a18f7_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_1d123_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_1d123_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_1d123_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_1d123_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_1d123_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_1d123_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_a18f7_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_a18f7_row0_col0" class="data row0 col0" >6</td>
-      <td id="T_a18f7_row0_col1" class="data row0 col1" >Honda</td>
-      <td id="T_a18f7_row0_col2" class="data row0 col2" >Accord</td>
-      <td id="T_a18f7_row0_col3" class="data row0 col3" >2015</td>
-      <td id="T_a18f7_row0_col4" class="data row0 col4" >Green</td>
-      <td id="T_a18f7_row0_col5" class="data row0 col5" >1</td>
+      <th id="T_1d123_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_1d123_row0_col0" class="data row0 col0" >6</td>
+      <td id="T_1d123_row0_col1" class="data row0 col1" >Honda</td>
+      <td id="T_1d123_row0_col2" class="data row0 col2" >Accord</td>
+      <td id="T_1d123_row0_col3" class="data row0 col3" >2015</td>
+      <td id="T_1d123_row0_col4" class="data row0 col4" >Green</td>
+      <td id="T_1d123_row0_col5" class="data row0 col5" >1</td>
     </tr>
   </tbody>
 </table>
@@ -3423,27 +3431,27 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_acf9e" style="font-size: 12px">
+<table id="T_8a199" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_acf9e_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_acf9e_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_acf9e_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_acf9e_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_acf9e_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_acf9e_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_8a199_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_8a199_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_8a199_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_8a199_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_8a199_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_8a199_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_acf9e_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_acf9e_row0_col0" class="data row0 col0" >6</td>
-      <td id="T_acf9e_row0_col1" class="data row0 col1" >Honda</td>
-      <td id="T_acf9e_row0_col2" class="data row0 col2" >Accord</td>
-      <td id="T_acf9e_row0_col3" class="data row0 col3" >2015</td>
-      <td id="T_acf9e_row0_col4" class="data row0 col4" >Green</td>
-      <td id="T_acf9e_row0_col5" class="data row0 col5" >0</td>
+      <th id="T_8a199_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_8a199_row0_col0" class="data row0 col0" >6</td>
+      <td id="T_8a199_row0_col1" class="data row0 col1" >Honda</td>
+      <td id="T_8a199_row0_col2" class="data row0 col2" >Accord</td>
+      <td id="T_8a199_row0_col3" class="data row0 col3" >2015</td>
+      <td id="T_8a199_row0_col4" class="data row0 col4" >Green</td>
+      <td id="T_8a199_row0_col5" class="data row0 col5" >0</td>
     </tr>
   </tbody>
 </table>
@@ -3482,72 +3490,72 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_f15d7" style="font-size: 12px">
+<table id="T_a9ebb" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_f15d7_level0_col0" class="col_heading level0 col0" >car_id</th>
-      <th id="T_f15d7_level0_col1" class="col_heading level0 col1" >Make</th>
-      <th id="T_f15d7_level0_col2" class="col_heading level0 col2" >Model</th>
-      <th id="T_f15d7_level0_col3" class="col_heading level0 col3" >Year</th>
-      <th id="T_f15d7_level0_col4" class="col_heading level0 col4" >color</th>
-      <th id="T_f15d7_level0_col5" class="col_heading level0 col5" >available</th>
+      <th id="T_a9ebb_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_a9ebb_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_a9ebb_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_a9ebb_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_a9ebb_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_a9ebb_level0_col5" class="col_heading level0 col5" >available</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_f15d7_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_f15d7_row0_col0" class="data row0 col0" >1</td>
-      <td id="T_f15d7_row0_col1" class="data row0 col1" >None</td>
-      <td id="T_f15d7_row0_col2" class="data row0 col2" >None</td>
-      <td id="T_f15d7_row0_col3" class="data row0 col3" >nan</td>
-      <td id="T_f15d7_row0_col4" class="data row0 col4" >None</td>
-      <td id="T_f15d7_row0_col5" class="data row0 col5" >1</td>
+      <th id="T_a9ebb_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_a9ebb_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_a9ebb_row0_col1" class="data row0 col1" >None</td>
+      <td id="T_a9ebb_row0_col2" class="data row0 col2" >None</td>
+      <td id="T_a9ebb_row0_col3" class="data row0 col3" >nan</td>
+      <td id="T_a9ebb_row0_col4" class="data row0 col4" >None</td>
+      <td id="T_a9ebb_row0_col5" class="data row0 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_f15d7_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_f15d7_row1_col0" class="data row1 col0" >2</td>
-      <td id="T_f15d7_row1_col1" class="data row1 col1" >Toyota</td>
-      <td id="T_f15d7_row1_col2" class="data row1 col2" >Camry</td>
-      <td id="T_f15d7_row1_col3" class="data row1 col3" >2010.000000</td>
-      <td id="T_f15d7_row1_col4" class="data row1 col4" >None</td>
-      <td id="T_f15d7_row1_col5" class="data row1 col5" >1</td>
+      <th id="T_a9ebb_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_a9ebb_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_a9ebb_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_a9ebb_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_a9ebb_row1_col3" class="data row1 col3" >2010.000000</td>
+      <td id="T_a9ebb_row1_col4" class="data row1 col4" >None</td>
+      <td id="T_a9ebb_row1_col5" class="data row1 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_f15d7_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_f15d7_row2_col0" class="data row2 col0" >3</td>
-      <td id="T_f15d7_row2_col1" class="data row2 col1" >Honda</td>
-      <td id="T_f15d7_row2_col2" class="data row2 col2" >Accord</td>
-      <td id="T_f15d7_row2_col3" class="data row2 col3" >2015.000000</td>
-      <td id="T_f15d7_row2_col4" class="data row2 col4" >None</td>
-      <td id="T_f15d7_row2_col5" class="data row2 col5" >1</td>
+      <th id="T_a9ebb_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_a9ebb_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_a9ebb_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_a9ebb_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_a9ebb_row2_col3" class="data row2 col3" >2015.000000</td>
+      <td id="T_a9ebb_row2_col4" class="data row2 col4" >None</td>
+      <td id="T_a9ebb_row2_col5" class="data row2 col5" >1</td>
     </tr>
     <tr>
-      <th id="T_f15d7_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_f15d7_row3_col0" class="data row3 col0" >4</td>
-      <td id="T_f15d7_row3_col1" class="data row3 col1" >None</td>
-      <td id="T_f15d7_row3_col2" class="data row3 col2" >None</td>
-      <td id="T_f15d7_row3_col3" class="data row3 col3" >nan</td>
-      <td id="T_f15d7_row3_col4" class="data row3 col4" >Blue</td>
-      <td id="T_f15d7_row3_col5" class="data row3 col5" >0</td>
+      <th id="T_a9ebb_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_a9ebb_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_a9ebb_row3_col1" class="data row3 col1" >None</td>
+      <td id="T_a9ebb_row3_col2" class="data row3 col2" >None</td>
+      <td id="T_a9ebb_row3_col3" class="data row3 col3" >nan</td>
+      <td id="T_a9ebb_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_a9ebb_row3_col5" class="data row3 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_f15d7_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_f15d7_row4_col0" class="data row4 col0" >5</td>
-      <td id="T_f15d7_row4_col1" class="data row4 col1" >None</td>
-      <td id="T_f15d7_row4_col2" class="data row4 col2" >None</td>
-      <td id="T_f15d7_row4_col3" class="data row4 col3" >nan</td>
-      <td id="T_f15d7_row4_col4" class="data row4 col4" >Blue</td>
-      <td id="T_f15d7_row4_col5" class="data row4 col5" >0</td>
+      <th id="T_a9ebb_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_a9ebb_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_a9ebb_row4_col1" class="data row4 col1" >None</td>
+      <td id="T_a9ebb_row4_col2" class="data row4 col2" >None</td>
+      <td id="T_a9ebb_row4_col3" class="data row4 col3" >nan</td>
+      <td id="T_a9ebb_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_a9ebb_row4_col5" class="data row4 col5" >0</td>
     </tr>
     <tr>
-      <th id="T_f15d7_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_f15d7_row5_col0" class="data row5 col0" >6</td>
-      <td id="T_f15d7_row5_col1" class="data row5 col1" >Honda</td>
-      <td id="T_f15d7_row5_col2" class="data row5 col2" >Accord</td>
-      <td id="T_f15d7_row5_col3" class="data row5 col3" >2015.000000</td>
-      <td id="T_f15d7_row5_col4" class="data row5 col4" >Green</td>
-      <td id="T_f15d7_row5_col5" class="data row5 col5" >0</td>
+      <th id="T_a9ebb_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_a9ebb_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_a9ebb_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_a9ebb_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_a9ebb_row5_col3" class="data row5 col3" >2015.000000</td>
+      <td id="T_a9ebb_row5_col4" class="data row5 col4" >Green</td>
+      <td id="T_a9ebb_row5_col5" class="data row5 col5" >0</td>
     </tr>
   </tbody>
 </table>

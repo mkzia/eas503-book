@@ -436,11 +436,11 @@ df.loc['student1']
 df.iloc[0] ## remember that column names do not count as rows
 ```
 
-## Three Methods for Selecting Data
+# Three Methods for Selecting Data
 
-### Method 1 -- Square brackets
+## Method 1 -- Square brackets
 
-#### Method 1.1 -- index/text -- #column wise
+## Method 1.1 -- index/text -- #column wise
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -448,7 +448,7 @@ df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')
 display(df['StudentName'])  
 ```
 
-#### Method 1.2 -- list, NOT TUPLE # row wise
+## Method 1.2 -- list, NOT TUPLE # row wise
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -457,7 +457,7 @@ display(df[['StudentName', 'E1']])
 ```
 
 
-#### Method 1.3 -- a slice  # row wise
+## Method 1.3 -- a slice  # row wise
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -465,7 +465,7 @@ df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')
 display(df[1:5])
 ```
 
-#### Method 1.4?? -- slice and list?
+## Method 1.4?? -- slice and list?
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -474,7 +474,7 @@ display(df[1:5, ['E1', 'E2']])
 ```
 
 
-#### Method 1.5?? -- slice and slice?
+## Method 1.5?? -- slice and slice?
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -482,7 +482,7 @@ df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')
 display(df[1:5, 1:5])
 ```
 
-### Method 2 -- .iloc
+## Method 2 -- .iloc
 - It uses square braces [] and not () 
 - It uses numerical index
 
@@ -625,6 +625,14 @@ columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
 df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
 df.set_index(df['StudentName'], inplace=True) 
 display(df.loc['student1':'student5'])
+```
+## Method 3.9 -- slice and slice
+```{code-cell} ipython3
+import pandas as pd
+columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
+df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
+df.set_index(df['StudentName'], inplace=True) 
+display(df.loc[:, 'E1':'E4'])
 ```
 
 ## iterrows -- iterate over rows

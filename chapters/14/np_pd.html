@@ -64,7 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/14/np_pd.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="14.2. Cross-referenced Exercises" href="exercises.html" />
+    <link rel="next" title="14.3. Cross-referenced Exercises" href="exercises.html" />
     <link rel="prev" title="14. NumPy and Pandas" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -255,7 +255,15 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">14. NumPy and Pandas</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">14.1. Numpy and Pandas</a></li>
-<li class="toctree-l2"><a class="reference internal" href="exercises.html">14.2. Cross-referenced Exercises</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="exercises.html">14.3. Cross-referenced Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../15/intro.html">15. Plotting with Matplotlib</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../16/intro.html">16. Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../16/introduction.html">16.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/loading_data.html">16.2. Loading Data</a></li>
+
 </ul>
 </li>
 </ul>
@@ -419,6 +427,7 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">14.1. Numpy and Pandas</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">14.1.1. NumPy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">14.1.1.1. Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-is-it-different-from-python-arrays">14.1.1.2. How is it different from Python arrays?</a></li>
@@ -449,55 +458,59 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes">14.1.15. Dataframes –</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-dataframe-rows">14.1.16. Select Dataframe rows</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-methods-for-selecting-data">14.1.17. Three Methods for Selecting Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-square-brackets">14.1.17.1. Method 1 – Square brackets</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-1-index-text-column-wise">14.1.17.1.1. Method 1.1 – index/text – #column wise</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-2-list-not-tuple-row-wise">14.1.17.1.2. Method 1.2 – list, NOT TUPLE # row wise</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-3-a-slice-row-wise">14.1.17.1.3. Method 1.3 – a slice  # row wise</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-4-slice-and-list">14.1.17.1.4. Method 1.4?? – slice and list?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-5-slice-and-slice">14.1.17.1.5. Method 1.5?? – slice and slice?</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-iloc">14.1.17.2. Method 2 – .iloc</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-1-index-only-cannot-index-by-location-index-with-a-non-integer-key">14.1.17.3. Method 2.1 – index only!!! Cannot index by location index with a non-integer key</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-2-list">14.1.17.4. Method 2.2 – list</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-3-list-and-slice">14.1.17.5. Method 2.3 – list and slice</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-4-list-and-list">14.1.17.6. Method 2.4 – list and list</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-5-slice">14.1.17.7. Method 2.5 – slice</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-6-slice-and-list">14.1.17.8. Method 2.6 – slice and list</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#three-methods-for-selecting-data">14.2. Three Methods for Selecting Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-square-brackets">14.2.1. Method 1 – Square brackets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-1-index-text-column-wise">14.2.2. Method 1.1 – index/text – #column wise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-2-list-not-tuple-row-wise">14.2.3. Method 1.2 – list, NOT TUPLE # row wise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-3-a-slice-row-wise">14.2.4. Method 1.3 – a slice  # row wise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-4-slice-and-list">14.2.5. Method 1.4?? – slice and list?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-5-slice-and-slice">14.2.6. Method 1.5?? – slice and slice?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-iloc">14.2.7. Method 2 – .iloc</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-1-index-only-cannot-index-by-location-index-with-a-non-integer-key">14.2.7.1. Method 2.1 – index only!!! Cannot index by location index with a non-integer key</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-2-list">14.2.7.2. Method 2.2 – list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-3-list-and-slice">14.2.7.3. Method 2.3 – list and slice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-4-list-and-list">14.2.7.4. Method 2.4 – list and list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-5-slice">14.2.7.5. Method 2.5 – slice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-6-slice-and-list">14.2.7.6. Method 2.6 – slice and list</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-7-slices">14.1.18. Method 2.7 – sliceS</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-loc">14.1.19. Method 3 – .loc</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-1-index-row-wise">14.1.20. Method 3.1 – index # row-wise</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-2-txt-row-wise">14.1.21. Method 3.2 – txt # row-wise</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-3-list">14.1.22. Method 3.3 – list</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-4-lists">14.1.23. Method 3.4 – listS</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-5-slice-and-list">14.1.24. Method 3.5 – slice and list</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-6-list-and-slice">14.1.25. Method 3.6 – list and Slice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-7-slice-and-slice">14.1.26. Method 3.7 – slice and Slice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-8-slice">14.1.27. Method 3.8 – slice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterrows-iterate-over-rows">14.1.28. iterrows – iterate over rows</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteritems-iterate-over-columns">14.1.29. iteritems – iterate over columns</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-subset-of-data">14.1.30. Select subset of data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-conditions-to-select">14.1.31. Use conditions to select</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-student-index">14.1.32. Adding student index</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-index-data">14.1.33. Multi-index data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-missing-data">14.1.34. Dealing with missing data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">14.1.35. Groupby</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-sql-join">14.1.36. Merging  – SQL JOIN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation">14.1.37. Concatenation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-pandas-operations">14.1.38. More Pandas Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-with-pandas">14.1.39. Lambda with Pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-columns">14.1.40. Dropping columns</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting">14.1.41. Sorting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-csv-tsv">14.1.42. Importing CSV, TSV</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-methods">14.1.43. Other methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-data-manipulation">14.1.44. More data manipulation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#misc">14.1.45. Misc</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-previous-example-in-pandas">14.1.46. A Previous Example in Pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">14.1.47. References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-7-slices">14.2.8. Method 2.7 – sliceS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-loc">14.2.9. Method 3 – .loc</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-1-index-row-wise">14.2.10. Method 3.1 – index # row-wise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-2-txt-row-wise">14.2.11. Method 3.2 – txt # row-wise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-3-list">14.2.12. Method 3.3 – list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-4-lists">14.2.13. Method 3.4 – listS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-5-slice-and-list">14.2.14. Method 3.5 – slice and list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-6-list-and-slice">14.2.15. Method 3.6 – list and Slice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-7-slice-and-slice">14.2.16. Method 3.7 – slice and Slice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-8-slice">14.2.17. Method 3.8 – slice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-9-slice-and-slice">14.2.18. Method 3.9 – slice and slice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterrows-iterate-over-rows">14.2.19. iterrows – iterate over rows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteritems-iterate-over-columns">14.2.20. iteritems – iterate over columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-subset-of-data">14.2.21. Select subset of data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-conditions-to-select">14.2.22. Use conditions to select</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-student-index">14.2.23. Adding student index</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-index-data">14.2.24. Multi-index data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-missing-data">14.2.25. Dealing with missing data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">14.2.26. Groupby</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-sql-join">14.2.27. Merging  – SQL JOIN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation">14.2.28. Concatenation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-pandas-operations">14.2.29. More Pandas Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-with-pandas">14.2.30. Lambda with Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-columns">14.2.31. Dropping columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting">14.2.32. Sorting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-csv-tsv">14.2.33. Importing CSV, TSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-methods">14.2.34. Other methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-data-manipulation">14.2.35. More data manipulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#misc">14.2.36. Misc</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-previous-example-in-pandas">14.2.37. A Previous Example in Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">14.2.38. References</a></li>
 </ul>
+</li>
+</ul>
+
             </nav>
         </div>
     </div>
@@ -970,12 +983,14 @@ document.write(`
 </pre></div>
 </div>
 </section>
-<section id="three-methods-for-selecting-data">
-<h2><span class="section-number">14.1.17. </span>Three Methods for Selecting Data<a class="headerlink" href="#three-methods-for-selecting-data" title="Permalink to this headline">#</a></h2>
+</section>
+<section class="tex2jax_ignore mathjax_ignore" id="three-methods-for-selecting-data">
+<h1><span class="section-number">14.2. </span>Three Methods for Selecting Data<a class="headerlink" href="#three-methods-for-selecting-data" title="Permalink to this headline">#</a></h1>
 <section id="method-1-square-brackets">
-<h3><span class="section-number">14.1.17.1. </span>Method 1 – Square brackets<a class="headerlink" href="#method-1-square-brackets" title="Permalink to this headline">#</a></h3>
+<h2><span class="section-number">14.2.1. </span>Method 1 – Square brackets<a class="headerlink" href="#method-1-square-brackets" title="Permalink to this headline">#</a></h2>
+</section>
 <section id="method-1-1-index-text-column-wise">
-<h4><span class="section-number">14.1.17.1.1. </span>Method 1.1 – index/text – #column wise<a class="headerlink" href="#method-1-1-index-text-column-wise" title="Permalink to this headline">#</a></h4>
+<h2><span class="section-number">14.2.2. </span>Method 1.1 – index/text – #column wise<a class="headerlink" href="#method-1-1-index-text-column-wise" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1003,7 +1018,7 @@ Name: StudentName, dtype: object
 </div>
 </section>
 <section id="method-1-2-list-not-tuple-row-wise">
-<h4><span class="section-number">14.1.17.1.2. </span>Method 1.2 – list, NOT TUPLE # row wise<a class="headerlink" href="#method-1-2-list-not-tuple-row-wise" title="Permalink to this headline">#</a></h4>
+<h2><span class="section-number">14.2.3. </span>Method 1.2 – list, NOT TUPLE # row wise<a class="headerlink" href="#method-1-2-list-not-tuple-row-wise" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1093,7 +1108,7 @@ Name: StudentName, dtype: object
 </div>
 </section>
 <section id="method-1-3-a-slice-row-wise">
-<h4><span class="section-number">14.1.17.1.3. </span>Method 1.3 – a slice  # row wise<a class="headerlink" href="#method-1-3-a-slice-row-wise" title="Permalink to this headline">#</a></h4>
+<h2><span class="section-number">14.2.4. </span>Method 1.3 – a slice  # row wise<a class="headerlink" href="#method-1-3-a-slice-row-wise" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1173,7 +1188,7 @@ Name: StudentName, dtype: object
 </div>
 </section>
 <section id="method-1-4-slice-and-list">
-<h4><span class="section-number">14.1.17.1.4. </span>Method 1.4?? – slice and list?<a class="headerlink" href="#method-1-4-slice-and-list" title="Permalink to this headline">#</a></h4>
+<h2><span class="section-number">14.2.5. </span>Method 1.4?? – slice and list?<a class="headerlink" href="#method-1-4-slice-and-list" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1235,7 +1250,7 @@ Name: StudentName, dtype: object
 </div>
 </section>
 <section id="method-1-5-slice-and-slice">
-<h4><span class="section-number">14.1.17.1.5. </span>Method 1.5?? – slice and slice?<a class="headerlink" href="#method-1-5-slice-and-slice" title="Permalink to this headline">#</a></h4>
+<h2><span class="section-number">14.2.6. </span>Method 1.5?? – slice and slice?<a class="headerlink" href="#method-1-5-slice-and-slice" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1296,16 +1311,14 @@ Name: StudentName, dtype: object
 </div>
 </div>
 </section>
-</section>
 <section id="method-2-iloc">
-<h3><span class="section-number">14.1.17.2. </span>Method 2 – .iloc<a class="headerlink" href="#method-2-iloc" title="Permalink to this headline">#</a></h3>
+<h2><span class="section-number">14.2.7. </span>Method 2 – .iloc<a class="headerlink" href="#method-2-iloc" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>It uses square braces [] and not ()</p></li>
 <li><p>It uses numerical index</p></li>
 </ul>
-</section>
 <section id="method-2-1-index-only-cannot-index-by-location-index-with-a-non-integer-key">
-<h3><span class="section-number">14.1.17.3. </span>Method 2.1 – index only!!! Cannot index by location index with a non-integer key<a class="headerlink" href="#method-2-1-index-only-cannot-index-by-location-index-with-a-non-integer-key" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.2.7.1. </span>Method 2.1 – index only!!! Cannot index by location index with a non-integer key<a class="headerlink" href="#method-2-1-index-only-cannot-index-by-location-index-with-a-non-integer-key" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1329,7 +1342,7 @@ Name: 0, dtype: object
 </div>
 </section>
 <section id="method-2-2-list">
-<h3><span class="section-number">14.1.17.4. </span>Method 2.2 – list<a class="headerlink" href="#method-2-2-list" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.2.7.2. </span>Method 2.2 – list<a class="headerlink" href="#method-2-2-list" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1400,7 +1413,7 @@ Name: 0, dtype: object
 </div>
 </section>
 <section id="method-2-3-list-and-slice">
-<h3><span class="section-number">14.1.17.5. </span>Method 2.3 – list and slice<a class="headerlink" href="#method-2-3-list-and-slice" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.2.7.3. </span>Method 2.3 – list and slice<a class="headerlink" href="#method-2-3-list-and-slice" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1471,7 +1484,7 @@ Name: 0, dtype: object
 </div>
 </section>
 <section id="method-2-4-list-and-list">
-<h3><span class="section-number">14.1.17.6. </span>Method 2.4 – list and list<a class="headerlink" href="#method-2-4-list-and-list" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.2.7.4. </span>Method 2.4 – list and list<a class="headerlink" href="#method-2-4-list-and-list" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1526,7 +1539,7 @@ Name: 0, dtype: object
 </div>
 </section>
 <section id="method-2-5-slice">
-<h3><span class="section-number">14.1.17.7. </span>Method 2.5 – slice<a class="headerlink" href="#method-2-5-slice" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.2.7.5. </span>Method 2.5 – slice<a class="headerlink" href="#method-2-5-slice" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1597,7 +1610,7 @@ Name: 0, dtype: object
 </div>
 </section>
 <section id="method-2-6-slice-and-list">
-<h3><span class="section-number">14.1.17.8. </span>Method 2.6 – slice and list<a class="headerlink" href="#method-2-6-slice-and-list" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.2.7.6. </span>Method 2.6 – slice and list<a class="headerlink" href="#method-2-6-slice-and-list" title="Permalink to this headline">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1688,7 +1701,7 @@ Name: 0, dtype: object
 </section>
 </section>
 <section id="method-2-7-slices">
-<h2><span class="section-number">14.1.18. </span>Method 2.7 – sliceS<a class="headerlink" href="#method-2-7-slices" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.8. </span>Method 2.7 – sliceS<a class="headerlink" href="#method-2-7-slices" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1743,13 +1756,13 @@ Name: 0, dtype: object
 </div>
 </section>
 <section id="method-3-loc">
-<h2><span class="section-number">14.1.19. </span>Method 3 – .loc<a class="headerlink" href="#method-3-loc" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.9. </span>Method 3 – .loc<a class="headerlink" href="#method-3-loc" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>If you didnot specify the index, then numbers are used!</p></li>
 </ul>
 </section>
 <section id="method-3-1-index-row-wise">
-<h2><span class="section-number">14.1.20. </span>Method 3.1 – index # row-wise<a class="headerlink" href="#method-3-1-index-row-wise" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.10. </span>Method 3.1 – index # row-wise<a class="headerlink" href="#method-3-1-index-row-wise" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1773,7 +1786,7 @@ Name: 3, dtype: object
 </div>
 </section>
 <section id="method-3-2-txt-row-wise">
-<h2><span class="section-number">14.1.21. </span>Method 3.2 – txt # row-wise<a class="headerlink" href="#method-3-2-txt-row-wise" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.11. </span>Method 3.2 – txt # row-wise<a class="headerlink" href="#method-3-2-txt-row-wise" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1798,7 +1811,7 @@ Name: student4, dtype: object
 </div>
 </section>
 <section id="method-3-3-list">
-<h2><span class="section-number">14.1.22. </span>Method 3.3 – list<a class="headerlink" href="#method-3-3-list" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.12. </span>Method 3.3 – list<a class="headerlink" href="#method-3-3-list" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1870,7 +1883,7 @@ Name: student4, dtype: object
 </div>
 </section>
 <section id="method-3-4-lists">
-<h2><span class="section-number">14.1.23. </span>Method 3.4 – listS<a class="headerlink" href="#method-3-4-lists" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.13. </span>Method 3.4 – listS<a class="headerlink" href="#method-3-4-lists" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1926,7 +1939,7 @@ Name: student4, dtype: object
 </div>
 </section>
 <section id="method-3-5-slice-and-list">
-<h2><span class="section-number">14.1.24. </span>Method 3.5 – slice and list<a class="headerlink" href="#method-3-5-slice-and-list" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.14. </span>Method 3.5 – slice and list<a class="headerlink" href="#method-3-5-slice-and-list" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2022,7 +2035,7 @@ Name: student4, dtype: object
 </div>
 </section>
 <section id="method-3-6-list-and-slice">
-<h2><span class="section-number">14.1.25. </span>Method 3.6 – list and Slice<a class="headerlink" href="#method-3-6-list-and-slice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.15. </span>Method 3.6 – list and Slice<a class="headerlink" href="#method-3-6-list-and-slice" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2094,7 +2107,7 @@ Name: student4, dtype: object
 </div>
 </section>
 <section id="method-3-7-slice-and-slice">
-<h2><span class="section-number">14.1.26. </span>Method 3.7 – slice and Slice<a class="headerlink" href="#method-3-7-slice-and-slice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.16. </span>Method 3.7 – slice and Slice<a class="headerlink" href="#method-3-7-slice-and-slice" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2193,7 +2206,7 @@ Name: student4, dtype: object
 </div>
 </section>
 <section id="method-3-8-slice">
-<h2><span class="section-number">14.1.27. </span>Method 3.8 – slice<a class="headerlink" href="#method-3-8-slice" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.17. </span>Method 3.8 – slice<a class="headerlink" href="#method-3-8-slice" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2291,8 +2304,128 @@ Name: student4, dtype: object
 </div></div></div>
 </div>
 </section>
+<section id="method-3-9-slice-and-slice">
+<h2><span class="section-number">14.2.18. </span>Method 3.9 – slice and slice<a class="headerlink" href="#method-3-9-slice-and-slice" title="Permalink to this headline">#</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;E2&#39;</span><span class="p">,</span> <span class="s1">&#39;E3&#39;</span><span class="p">,</span> <span class="s1">&#39;E4&#39;</span><span class="p">,</span><span class="s1">&#39;E5&#39;</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">ele</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testdata_1.txt&#39;</span><span class="p">)],</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;E1&#39;</span><span class="p">:</span><span class="s1">&#39;E4&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>E1</th>
+      <th>E2</th>
+      <th>E3</th>
+      <th>E4</th>
+    </tr>
+    <tr>
+      <th>StudentName</th>
+      <th></th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>student1</th>
+      <td>92</td>
+      <td>77</td>
+      <td>87</td>
+      <td>77</td>
+    </tr>
+    <tr>
+      <th>student2</th>
+      <td>74</td>
+      <td>93</td>
+      <td>88</td>
+      <td>67</td>
+    </tr>
+    <tr>
+      <th>student3</th>
+      <td>83</td>
+      <td>96</td>
+      <td>74</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <th>student4</th>
+      <td>100</td>
+      <td>72</td>
+      <td>83</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <th>student5</th>
+      <td>77</td>
+      <td>96</td>
+      <td>66</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <th>student6</th>
+      <td>100</td>
+      <td>86</td>
+      <td>84</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>student7</th>
+      <td>66</td>
+      <td>91</td>
+      <td>94</td>
+      <td>97</td>
+    </tr>
+    <tr>
+      <th>student8</th>
+      <td>97</td>
+      <td>86</td>
+      <td>75</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>student9</th>
+      <td>95</td>
+      <td>98</td>
+      <td>99</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <th>student10</th>
+      <td>78</td>
+      <td>76</td>
+      <td>73</td>
+      <td>88</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
 <section id="iterrows-iterate-over-rows">
-<h2><span class="section-number">14.1.28. </span>iterrows – iterate over rows<a class="headerlink" href="#iterrows-iterate-over-rows" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.19. </span>iterrows – iterate over rows<a class="headerlink" href="#iterrows-iterate-over-rows" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>iterate over the data row-wise. The first element is the index and second element is the row values</p></li>
 </ul>
@@ -2383,7 +2516,7 @@ Name: 9, dtype: object
 </div>
 </section>
 <section id="iteritems-iterate-over-columns">
-<h2><span class="section-number">14.1.29. </span>iteritems – iterate over columns<a class="headerlink" href="#iteritems-iterate-over-columns" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.20. </span>iteritems – iterate over columns<a class="headerlink" href="#iteritems-iterate-over-columns" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -2397,7 +2530,7 @@ Name: 9, dtype: object
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">4</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;E2&#39;</span><span class="p">,</span> <span class="s1">&#39;E3&#39;</span><span class="p">,</span> <span class="s1">&#39;E4&#39;</span><span class="p">,</span><span class="s1">&#39;E5&#39;</span><span class="p">)</span>
 <span class="nn">      3 df = pd.DataFrame(data=[ele.strip().split(&#39;,&#39;) for ele</span> in <span class="ni">open</span><span class="nt">(&#39;testdata_1.txt&#39;)], columns=columns)</span>
 <span class="ne">----&gt; </span><span class="mi">4</span> <span class="k">for</span> <span class="n">column_name</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
@@ -2420,7 +2553,7 @@ Name: 9, dtype: object
 </div>
 </section>
 <section id="select-subset-of-data">
-<h2><span class="section-number">14.1.30. </span>Select subset of data<a class="headerlink" href="#select-subset-of-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.21. </span>Select subset of data<a class="headerlink" href="#select-subset-of-data" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">,</span> <span class="s1">&#39;exam2&#39;</span><span class="p">,</span> <span class="s1">&#39;exam3&#39;</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;student1&#39;</span><span class="p">,</span> <span class="s1">&#39;student2&#39;</span><span class="p">,</span> <span class="s1">&#39;student3&#39;</span><span class="p">,</span> <span class="s1">&#39;student4&#39;</span><span class="p">]</span>
@@ -2432,7 +2565,7 @@ Name: 9, dtype: object
 </div>
 </section>
 <section id="use-conditions-to-select">
-<h2><span class="section-number">14.1.31. </span>Use conditions to select<a class="headerlink" href="#use-conditions-to-select" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.22. </span>Use conditions to select<a class="headerlink" href="#use-conditions-to-select" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">,</span> <span class="s1">&#39;exam2&#39;</span><span class="p">,</span> <span class="s1">&#39;exam3&#39;</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;student1&#39;</span><span class="p">,</span> <span class="s1">&#39;student2&#39;</span><span class="p">,</span> <span class="s1">&#39;student3&#39;</span><span class="p">,</span> <span class="s1">&#39;student4&#39;</span><span class="p">]</span>
@@ -2455,7 +2588,7 @@ Name: 9, dtype: object
 </div>
 </section>
 <section id="adding-student-index">
-<h2><span class="section-number">14.1.32. </span>Adding student index<a class="headerlink" href="#adding-student-index" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.23. </span>Adding student index<a class="headerlink" href="#adding-student-index" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">header</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">,</span> <span class="s1">&#39;exam2&#39;</span><span class="p">,</span> <span class="s1">&#39;exam3&#39;</span><span class="p">]</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">12</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">4</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;student1&#39;</span><span class="p">,</span> <span class="s1">&#39;student2&#39;</span><span class="p">,</span> <span class="s1">&#39;student3&#39;</span><span class="p">,</span> <span class="s1">&#39;student4&#39;</span><span class="p">]</span>
@@ -2469,7 +2602,7 @@ Name: 9, dtype: object
 </div>
 </section>
 <section id="multi-index-data">
-<h2><span class="section-number">14.1.33. </span>Multi-index data<a class="headerlink" href="#multi-index-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.24. </span>Multi-index data<a class="headerlink" href="#multi-index-data" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="s1">&#39;student1 student1 student1 student2 student2 student2 student3 student3 student3&#39;</span>
 <span class="n">exams</span> <span class="o">=</span> <span class="s1">&#39;exam1 exam2 exam3&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span><span class="o">*</span><span class="mi">3</span>
 <span class="n">classes</span> <span class="o">=</span> <span class="s1">&#39;class1 class2&#39;</span>
@@ -2487,7 +2620,7 @@ Name: 9, dtype: object
 </div>
 </section>
 <section id="dealing-with-missing-data">
-<h2><span class="section-number">14.1.34. </span>Dealing with missing data<a class="headerlink" href="#dealing-with-missing-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.25. </span>Dealing with missing data<a class="headerlink" href="#dealing-with-missing-data" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;student1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">90</span><span class="p">,</span> <span class="mi">84</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">],</span> <span class="s1">&#39;student2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">77</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">nan</span><span class="p">],</span> <span class="s1">&#39;student3&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">88</span><span class="p">,</span> <span class="mi">65</span><span class="p">,</span> <span class="mi">93</span><span class="p">]}</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span>
@@ -2503,7 +2636,7 @@ Name: 9, dtype: object
 </div>
 </section>
 <section id="groupby">
-<h2><span class="section-number">14.1.35. </span>Groupby<a class="headerlink" href="#groupby" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.26. </span>Groupby<a class="headerlink" href="#groupby" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;Exams&#39;</span><span class="p">:</span> <span class="s1">&#39;exam1 exam1 exam1&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;exam2 exam2 exam2&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;exam3 exam3 exam3&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span>
     <span class="s1">&#39;Students&#39;</span><span class="p">:</span> <span class="s1">&#39;student1 student2 student3&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span>   
@@ -2519,7 +2652,7 @@ Name: 9, dtype: object
 </div>
 </section>
 <section id="merging-sql-join">
-<h2><span class="section-number">14.1.36. </span>Merging  – SQL JOIN<a class="headerlink" href="#merging-sql-join" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.27. </span>Merging  – SQL JOIN<a class="headerlink" href="#merging-sql-join" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">departments</span> <span class="o">=</span> <span class="p">{</span> 
     <span class="s1">&#39;DepartmentId&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
     <span class="s1">&#39;DepartmentName&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;IT&#39;</span><span class="p">,</span> <span class="s1">&#39;Physics&#39;</span><span class="p">,</span> <span class="s1">&#39;Arts&#39;</span><span class="p">,</span> <span class="s1">&#39;Math&#39;</span><span class="p">]</span> 
@@ -2560,7 +2693,7 @@ Name: 9, dtype: object
 </ul>
 </section>
 <section id="concatenation">
-<h2><span class="section-number">14.1.37. </span>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.28. </span>Concatenation<a class="headerlink" href="#concatenation" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">d1</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;C0&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;COR0&#39;</span><span class="p">,</span> <span class="s1">&#39;COR1&#39;</span><span class="p">,</span> <span class="s1">&#39;COR2&#39;</span><span class="p">],</span>
     <span class="s1">&#39;C1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C1R0&#39;</span><span class="p">,</span> <span class="s1">&#39;C1R1&#39;</span><span class="p">,</span> <span class="s1">&#39;C2R2&#39;</span><span class="p">],</span>
@@ -2618,7 +2751,7 @@ Name: 9, dtype: object
 </div>
 </section>
 <section id="more-pandas-operations">
-<h2><span class="section-number">14.1.38. </span>More Pandas Operations<a class="headerlink" href="#more-pandas-operations" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.29. </span>More Pandas Operations<a class="headerlink" href="#more-pandas-operations" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;DepartmentName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> 
 <span class="n">data</span><span class="p">[</span><span class="s1">&#39;DepartmentName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> 
 <span class="n">data</span><span class="p">[</span><span class="s1">&#39;DepartmentName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
@@ -2627,7 +2760,7 @@ Name: 9, dtype: object
 </div>
 </section>
 <section id="lambda-with-pandas">
-<h2><span class="section-number">14.1.39. </span>Lambda with Pandas<a class="headerlink" href="#lambda-with-pandas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.30. </span>Lambda with Pandas<a class="headerlink" href="#lambda-with-pandas" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Scale marks by 5</p></li>
 </ul>
@@ -2661,21 +2794,21 @@ Name: 9, dtype: object
 </div>
 </section>
 <section id="dropping-columns">
-<h2><span class="section-number">14.1.40. </span>Dropping columns<a class="headerlink" href="#dropping-columns" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.31. </span>Dropping columns<a class="headerlink" href="#dropping-columns" title="Permalink to this headline">#</a></h2>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">columns</span>
 <span class="n">data</span><span class="o">.</span><span class="n">drop</span><span class="p">([</span><span class="s1">&#39;StudentId&#39;</span><span class="p">,</span> <span class="s1">&#39;MarkId&#39;</span> <span class="p">,</span> <span class="s1">&#39;DepartmentId&#39;</span><span class="p">],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="sorting">
-<h2><span class="section-number">14.1.41. </span>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.32. </span>Sorting<a class="headerlink" href="#sorting" title="Permalink to this headline">#</a></h2>
 <div class="highlight-Python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Mark&#39;</span><span class="p">)</span>
 <span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Mark&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="importing-csv-tsv">
-<h2><span class="section-number">14.1.42. </span>Importing CSV, TSV<a class="headerlink" href="#importing-csv-tsv" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.33. </span>Importing CSV, TSV<a class="headerlink" href="#importing-csv-tsv" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;students.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lastname&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="p">,</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;exam1&#39;</span><span class="p">,</span> <span class="s1">&#39;exam2&#39;</span><span class="p">,</span> <span class="s1">&#39;exam3&#39;</span><span class="p">])</span> 
 
@@ -2690,7 +2823,7 @@ Name: 9, dtype: object
 </div>
 </section>
 <section id="other-methods">
-<h2><span class="section-number">14.1.43. </span>Other methods<a class="headerlink" href="#other-methods" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.34. </span>Other methods<a class="headerlink" href="#other-methods" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">()</span>
 <span class="n">data</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
 
@@ -2708,7 +2841,7 @@ Name: 9, dtype: object
 </div>
 </section>
 <section id="more-data-manipulation">
-<h2><span class="section-number">14.1.44. </span>More data manipulation<a class="headerlink" href="#more-data-manipulation" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.35. </span>More data manipulation<a class="headerlink" href="#more-data-manipulation" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">85</span><span class="p">)]</span> 
 <span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">75</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">95</span><span class="p">])]</span>  
 <span class="n">data</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> 
@@ -2718,7 +2851,7 @@ Name: 9, dtype: object
 </div>
 </section>
 <section id="misc">
-<h2><span class="section-number">14.1.45. </span>Misc<a class="headerlink" href="#misc" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.36. </span>Misc<a class="headerlink" href="#misc" title="Permalink to this headline">#</a></h2>
 <ul class="simple">
 <li><p>Iterate over the data frame</p>
 <ul>
@@ -2733,7 +2866,7 @@ Name: 9, dtype: object
 </ul>
 </section>
 <section id="a-previous-example-in-pandas">
-<h2><span class="section-number">14.1.46. </span>A Previous Example in Pandas<a class="headerlink" href="#a-previous-example-in-pandas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.37. </span>A Previous Example in Pandas<a class="headerlink" href="#a-previous-example-in-pandas" title="Permalink to this headline">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
 <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 
@@ -2815,7 +2948,7 @@ Name: 9, dtype: object
 </div>
 </section>
 <section id="references">
-<h2><span class="section-number">14.1.47. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.2.38. </span>References<a class="headerlink" href="#references" title="Permalink to this headline">#</a></h2>
 <p>Ref: <a class="reference external" href="https://www.kaggle.com/shovitbhari/pandas-75-exercises-with-solutions">https://www.kaggle.com/shovitbhari/pandas-75-exercises-with-solutions</a>
 Ref: <a class="reference external" href="https://pythonspeed.com/memory/">https://pythonspeed.com/memory/</a></p>
 </section>
@@ -2866,7 +2999,7 @@ Ref: <a class="reference external" href="https://pythonspeed.com/memory/">https:
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">14.2. </span>Cross-referenced Exercises</p>
+        <p class="prev-next-title"><span class="section-number">14.3. </span>Cross-referenced Exercises</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2888,6 +3021,7 @@ Ref: <a class="reference external" href="https://pythonspeed.com/memory/">https:
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">14.1. Numpy and Pandas</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#numpy">14.1.1. NumPy</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#description">14.1.1.1. Description</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#how-is-it-different-from-python-arrays">14.1.1.2. How is it different from Python arrays?</a></li>
@@ -2918,55 +3052,59 @@ Ref: <a class="reference external" href="https://pythonspeed.com/memory/">https:
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dataframes">14.1.15. Dataframes –</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-dataframe-rows">14.1.16. Select Dataframe rows</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#three-methods-for-selecting-data">14.1.17. Three Methods for Selecting Data</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-square-brackets">14.1.17.1. Method 1 – Square brackets</a><ul class="nav section-nav flex-column">
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-1-index-text-column-wise">14.1.17.1.1. Method 1.1 – index/text – #column wise</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-2-list-not-tuple-row-wise">14.1.17.1.2. Method 1.2 – list, NOT TUPLE # row wise</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-3-a-slice-row-wise">14.1.17.1.3. Method 1.3 – a slice  # row wise</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-4-slice-and-list">14.1.17.1.4. Method 1.4?? – slice and list?</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-5-slice-and-slice">14.1.17.1.5. Method 1.5?? – slice and slice?</a></li>
 </ul>
 </li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-iloc">14.1.17.2. Method 2 – .iloc</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-1-index-only-cannot-index-by-location-index-with-a-non-integer-key">14.1.17.3. Method 2.1 – index only!!! Cannot index by location index with a non-integer key</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-2-list">14.1.17.4. Method 2.2 – list</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-3-list-and-slice">14.1.17.5. Method 2.3 – list and slice</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-4-list-and-list">14.1.17.6. Method 2.4 – list and list</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-5-slice">14.1.17.7. Method 2.5 – slice</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-6-slice-and-list">14.1.17.8. Method 2.6 – slice and list</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#three-methods-for-selecting-data">14.2. Three Methods for Selecting Data</a><ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-square-brackets">14.2.1. Method 1 – Square brackets</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-1-index-text-column-wise">14.2.2. Method 1.1 – index/text – #column wise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-2-list-not-tuple-row-wise">14.2.3. Method 1.2 – list, NOT TUPLE # row wise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-3-a-slice-row-wise">14.2.4. Method 1.3 – a slice  # row wise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-4-slice-and-list">14.2.5. Method 1.4?? – slice and list?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-5-slice-and-slice">14.2.6. Method 1.5?? – slice and slice?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-iloc">14.2.7. Method 2 – .iloc</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-1-index-only-cannot-index-by-location-index-with-a-non-integer-key">14.2.7.1. Method 2.1 – index only!!! Cannot index by location index with a non-integer key</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-2-list">14.2.7.2. Method 2.2 – list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-3-list-and-slice">14.2.7.3. Method 2.3 – list and slice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-4-list-and-list">14.2.7.4. Method 2.4 – list and list</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-5-slice">14.2.7.5. Method 2.5 – slice</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-6-slice-and-list">14.2.7.6. Method 2.6 – slice and list</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-7-slices">14.1.18. Method 2.7 – sliceS</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-loc">14.1.19. Method 3 – .loc</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-1-index-row-wise">14.1.20. Method 3.1 – index # row-wise</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-2-txt-row-wise">14.1.21. Method 3.2 – txt # row-wise</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-3-list">14.1.22. Method 3.3 – list</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-4-lists">14.1.23. Method 3.4 – listS</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-5-slice-and-list">14.1.24. Method 3.5 – slice and list</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-6-list-and-slice">14.1.25. Method 3.6 – list and Slice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-7-slice-and-slice">14.1.26. Method 3.7 – slice and Slice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-8-slice">14.1.27. Method 3.8 – slice</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterrows-iterate-over-rows">14.1.28. iterrows – iterate over rows</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteritems-iterate-over-columns">14.1.29. iteritems – iterate over columns</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-subset-of-data">14.1.30. Select subset of data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-conditions-to-select">14.1.31. Use conditions to select</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-student-index">14.1.32. Adding student index</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-index-data">14.1.33. Multi-index data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-missing-data">14.1.34. Dealing with missing data</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">14.1.35. Groupby</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-sql-join">14.1.36. Merging  – SQL JOIN</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation">14.1.37. Concatenation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-pandas-operations">14.1.38. More Pandas Operations</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-with-pandas">14.1.39. Lambda with Pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-columns">14.1.40. Dropping columns</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting">14.1.41. Sorting</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-csv-tsv">14.1.42. Importing CSV, TSV</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-methods">14.1.43. Other methods</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-data-manipulation">14.1.44. More data manipulation</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#misc">14.1.45. Misc</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-previous-example-in-pandas">14.1.46. A Previous Example in Pandas</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">14.1.47. References</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-7-slices">14.2.8. Method 2.7 – sliceS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-loc">14.2.9. Method 3 – .loc</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-1-index-row-wise">14.2.10. Method 3.1 – index # row-wise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-2-txt-row-wise">14.2.11. Method 3.2 – txt # row-wise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-3-list">14.2.12. Method 3.3 – list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-4-lists">14.2.13. Method 3.4 – listS</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-5-slice-and-list">14.2.14. Method 3.5 – slice and list</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-6-list-and-slice">14.2.15. Method 3.6 – list and Slice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-7-slice-and-slice">14.2.16. Method 3.7 – slice and Slice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-8-slice">14.2.17. Method 3.8 – slice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-9-slice-and-slice">14.2.18. Method 3.9 – slice and slice</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterrows-iterate-over-rows">14.2.19. iterrows – iterate over rows</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteritems-iterate-over-columns">14.2.20. iteritems – iterate over columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-subset-of-data">14.2.21. Select subset of data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-conditions-to-select">14.2.22. Use conditions to select</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-student-index">14.2.23. Adding student index</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-index-data">14.2.24. Multi-index data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-missing-data">14.2.25. Dealing with missing data</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">14.2.26. Groupby</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-sql-join">14.2.27. Merging  – SQL JOIN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation">14.2.28. Concatenation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-pandas-operations">14.2.29. More Pandas Operations</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-with-pandas">14.2.30. Lambda with Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dropping-columns">14.2.31. Dropping columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#sorting">14.2.32. Sorting</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#importing-csv-tsv">14.2.33. Importing CSV, TSV</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#other-methods">14.2.34. Other methods</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-data-manipulation">14.2.35. More data manipulation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#misc">14.2.36. Misc</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#a-previous-example-in-pandas">14.2.37. A Previous Example in Pandas</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#references">14.2.38. References</a></li>
 </ul>
+</li>
+</ul>
+
   </nav></div>
 
 </div></div>

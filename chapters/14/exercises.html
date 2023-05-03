@@ -9,7 +9,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
 
-    <title>14.2. Cross-referenced Exercises &#8212; EAS503: Python for Data Scientists</title>
+    <title>14.3. Cross-referenced Exercises &#8212; EAS503: Python for Data Scientists</title>
   
   
   
@@ -64,6 +64,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/14/exercises.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="15. Plotting with Matplotlib" href="../15/intro.html" />
     <link rel="prev" title="14.1. Numpy and Pandas" href="np_pd.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="None"/>
@@ -254,7 +255,15 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">14. NumPy and Pandas</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="np_pd.html">14.1. Numpy and Pandas</a></li>
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">14.2. Cross-referenced Exercises</a></li>
+
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">14.3. Cross-referenced Exercises</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../15/intro.html">15. Plotting with Matplotlib</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../16/intro.html">16. Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../16/introduction.html">16.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/loading_data.html">16.2. Loading Data</a></li>
+
 </ul>
 </li>
 </ul>
@@ -418,21 +427,21 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-primer">14.2.1. Query Primer</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-query">14.2.1.1. Basic query</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-rows">14.2.1.2. Limit rows</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-some-columns">14.2.1.3. Select some columns</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-column-alias">14.2.1.4. Using column alias</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-columns-not-from-the-table">14.2.1.5. Adding columns not from the table</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-duplicates">14.2.1.6. Removing duplicates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-duplicates-with-multiple-columns">14.2.1.7. Removing duplicates with multiple columns</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derived-table">14.2.1.8. Derived table</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">14.2.1.9. Filtering Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-values">14.2.1.10. Sort Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-primer">14.3.1. Query Primer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-query">14.3.1.1. Basic query</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-rows">14.3.1.2. Limit rows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-some-columns">14.3.1.3. Select some columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-column-alias">14.3.1.4. Using column alias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-columns-not-from-the-table">14.3.1.5. Adding columns not from the table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-duplicates">14.3.1.6. Removing duplicates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-duplicates-with-multiple-columns">14.3.1.7. Removing duplicates with multiple columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derived-table">14.3.1.8. Derived table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">14.3.1.9. Filtering Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-values">14.3.1.10. Sort Values</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering">14.2.2. Filtering</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-evaluation">14.2.2.1. Conditional Evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering">14.3.2. Filtering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-evaluation">14.3.2.1. Conditional Evaluation</a></li>
 </ul>
 </li>
 </ul>
@@ -447,11 +456,11 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="cross-referenced-exercises">
-<h1><span class="section-number">14.2. </span>Cross-referenced Exercises<a class="headerlink" href="#cross-referenced-exercises" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">14.3. </span>Cross-referenced Exercises<a class="headerlink" href="#cross-referenced-exercises" title="Permalink to this headline">#</a></h1>
 <section id="query-primer">
-<h2><span class="section-number">14.2.1. </span>Query Primer<a class="headerlink" href="#query-primer" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.3.1. </span>Query Primer<a class="headerlink" href="#query-primer" title="Permalink to this headline">#</a></h2>
 <section id="basic-query">
-<h3><span class="section-number">14.2.1.1. </span>Basic query<a class="headerlink" href="#basic-query" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.3.1.1. </span>Basic query<a class="headerlink" href="#basic-query" title="Permalink to this headline">#</a></h3>
 <p>SQL cross-reference: <a class="reference internal" href="../13/sql_1_query_primer.html#sql-primer-basic"><span class="std std-ref">Basic query</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -610,7 +619,7 @@ document.write(`
 </div>
 </section>
 <section id="limit-rows">
-<h3><span class="section-number">14.2.1.2. </span>Limit rows<a class="headerlink" href="#limit-rows" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.3.1.2. </span>Limit rows<a class="headerlink" href="#limit-rows" title="Permalink to this headline">#</a></h3>
 <p>SQL cross-reference: <a class="reference internal" href="../13/sql_1_query_primer.html#sql-primer-limit-rows"><span class="std std-ref">Limit rows</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1027,7 +1036,7 @@ document.write(`
 </div>
 </section>
 <section id="select-some-columns">
-<h3><span class="section-number">14.2.1.3. </span>Select some columns<a class="headerlink" href="#select-some-columns" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.3.1.3. </span>Select some columns<a class="headerlink" href="#select-some-columns" title="Permalink to this headline">#</a></h3>
 <p>SQL cross-reference: <a class="reference internal" href="../13/sql_1_query_primer.html#sql-primer-select-some-columns"><span class="std std-ref">Select some columns</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1122,7 +1131,7 @@ document.write(`
 </div>
 </section>
 <section id="using-column-alias">
-<h3><span class="section-number">14.2.1.4. </span>Using column alias<a class="headerlink" href="#using-column-alias" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.3.1.4. </span>Using column alias<a class="headerlink" href="#using-column-alias" title="Permalink to this headline">#</a></h3>
 <p>SQL cross-reference: <a class="reference internal" href="../13/sql_1_query_primer.html#sql-primer-using-column-alias"><span class="std std-ref">Using column alias</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1217,7 +1226,7 @@ document.write(`
 </div>
 </section>
 <section id="adding-columns-not-from-the-table">
-<h3><span class="section-number">14.2.1.5. </span>Adding columns not from the table<a class="headerlink" href="#adding-columns-not-from-the-table" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.3.1.5. </span>Adding columns not from the table<a class="headerlink" href="#adding-columns-not-from-the-table" title="Permalink to this headline">#</a></h3>
 <p>SQL cross-reference: <a class="reference internal" href="../13/sql_1_query_primer.html#sql-primer-adding-column"><span class="std std-ref">Adding columns not from the table</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1332,7 +1341,7 @@ document.write(`
 </div>
 </section>
 <section id="removing-duplicates">
-<h3><span class="section-number">14.2.1.6. </span>Removing duplicates<a class="headerlink" href="#removing-duplicates" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.3.1.6. </span>Removing duplicates<a class="headerlink" href="#removing-duplicates" title="Permalink to this headline">#</a></h3>
 <p>SQL cross-reference: <a class="reference internal" href="../13/sql_1_query_primer.html#sql-primer-removing-duplicates"><span class="std std-ref">Removing duplicates</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1399,7 +1408,7 @@ document.write(`
 </div>
 </section>
 <section id="removing-duplicates-with-multiple-columns">
-<h3><span class="section-number">14.2.1.7. </span>Removing duplicates with multiple columns<a class="headerlink" href="#removing-duplicates-with-multiple-columns" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.3.1.7. </span>Removing duplicates with multiple columns<a class="headerlink" href="#removing-duplicates-with-multiple-columns" title="Permalink to this headline">#</a></h3>
 <p>SQL cross-reference: <a class="reference internal" href="../13/sql_1_query_primer.html#sql-primer-removing-duplicates-2"><span class="std std-ref">Removing duplicates with multiple columns</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1533,7 +1542,7 @@ document.write(`
 </div>
 </section>
 <section id="derived-table">
-<h3><span class="section-number">14.2.1.8. </span>Derived table<a class="headerlink" href="#derived-table" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.3.1.8. </span>Derived table<a class="headerlink" href="#derived-table" title="Permalink to this headline">#</a></h3>
 <p>SQL cross-reference: <a class="reference internal" href="../13/sql_1_query_primer.html#sql-primer-derived-table"><span class="std std-ref">Derived table</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1621,7 +1630,7 @@ document.write(`
 </div>
 </section>
 <section id="filtering-data">
-<h3><span class="section-number">14.2.1.9. </span>Filtering Data<a class="headerlink" href="#filtering-data" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.3.1.9. </span>Filtering Data<a class="headerlink" href="#filtering-data" title="Permalink to this headline">#</a></h3>
 <p>SQL cross-reference: <a class="reference internal" href="../13/sql_1_query_primer.html#sql-primer-where-clause"><span class="std std-ref">The WHERE Clause</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1771,7 +1780,7 @@ document.write(`
 </div>
 </section>
 <section id="sort-values">
-<h3><span class="section-number">14.2.1.10. </span>Sort Values<a class="headerlink" href="#sort-values" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.3.1.10. </span>Sort Values<a class="headerlink" href="#sort-values" title="Permalink to this headline">#</a></h3>
 <p>SQL cross-reference: <a class="reference internal" href="../13/sql_1_query_primer.html#sql-primer-order-by-clause"><span class="std std-ref">The ORDER BY Clauses</span></a></p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1974,9 +1983,9 @@ document.write(`
 </section>
 </section>
 <section id="filtering">
-<h2><span class="section-number">14.2.2. </span>Filtering<a class="headerlink" href="#filtering" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">14.3.2. </span>Filtering<a class="headerlink" href="#filtering" title="Permalink to this headline">#</a></h2>
 <section id="conditional-evaluation">
-<h3><span class="section-number">14.2.2.1. </span>Conditional Evaluation<a class="headerlink" href="#conditional-evaluation" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">14.3.2.1. </span>Conditional Evaluation<a class="headerlink" href="#conditional-evaluation" title="Permalink to this headline">#</a></h3>
 </section>
 </section>
 </section>
@@ -2021,6 +2030,15 @@ document.write(`
         <p class="prev-next-title"><span class="section-number">14.1. </span>Numpy and Pandas</p>
       </div>
     </a>
+    <a class="right-next"
+       href="../15/intro.html"
+       title="next page">
+      <div class="prev-next-info">
+        <p class="prev-next-subtitle">next</p>
+        <p class="prev-next-title"><span class="section-number">15. </span>Plotting with Matplotlib</p>
+      </div>
+      <i class="fa-solid fa-angle-right"></i>
+    </a>
 </div></div>
   
 </div>
@@ -2039,21 +2057,21 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-primer">14.2.1. Query Primer</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-query">14.2.1.1. Basic query</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-rows">14.2.1.2. Limit rows</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-some-columns">14.2.1.3. Select some columns</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-column-alias">14.2.1.4. Using column alias</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-columns-not-from-the-table">14.2.1.5. Adding columns not from the table</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-duplicates">14.2.1.6. Removing duplicates</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-duplicates-with-multiple-columns">14.2.1.7. Removing duplicates with multiple columns</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derived-table">14.2.1.8. Derived table</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">14.2.1.9. Filtering Data</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-values">14.2.1.10. Sort Values</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#query-primer">14.3.1. Query Primer</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-query">14.3.1.1. Basic query</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#limit-rows">14.3.1.2. Limit rows</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#select-some-columns">14.3.1.3. Select some columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-column-alias">14.3.1.4. Using column alias</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-columns-not-from-the-table">14.3.1.5. Adding columns not from the table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-duplicates">14.3.1.6. Removing duplicates</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#removing-duplicates-with-multiple-columns">14.3.1.7. Removing duplicates with multiple columns</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#derived-table">14.3.1.8. Derived table</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering-data">14.3.1.9. Filtering Data</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#sort-values">14.3.1.10. Sort Values</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering">14.2.2. Filtering</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-evaluation">14.2.2.1. Conditional Evaluation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering">14.3.2. Filtering</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-evaluation">14.3.2.1. Conditional Evaluation</a></li>
 </ul>
 </li>
 </ul>
