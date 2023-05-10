@@ -19,7 +19,7 @@ Standardization of datasets is a common requirement for many machine learning es
 
 In practice we often ignore the shape of the distribution and just transform the data to center it by removing the mean value of each feature, then scale it by dividing non-constant features by their standard deviation.
 
-```
+```{code-cell} ipython3
 from IPython.display import display
 from sklearn import preprocessing
 import numpy as np
@@ -38,12 +38,12 @@ X_scaled
 # columns are various features of the patients/subjects/flowers
 ```
 
-```
+```{code-cell} ipython3
 df.describe()
 ```
 
 
-```
+```{code-cell} ipython3
 idata = iris_dataset.data
 id_scaled = preprocessing.scale(idata)
 idata.mean(axis=0)
@@ -51,12 +51,12 @@ id_scaled.mean(axis=0)
 id_scaled.var(axis=0)
 ```
 
-```
+```{code-cell} ipython3
 X_train.mean(axis=0)
 X_scaled.mean(axis=0)
 ```
 
-```
+```{code-cell} ipython3
 X_scaled.std(axis=0)
 X_scaled.mean(axis=1)
 X_scaled.std(axis=1)
@@ -65,7 +65,7 @@ X_scaled.std(axis=1)
 
 - Never ever apply any preprocessing or any other step on all your data and then train. This will lead to Data Leakage!
 
-```
+```{code-cell} ipython3
 scaler = preprocessing.StandardScaler().fit(X_train)
 scaler                         
 scaler.transform(X_train)  
@@ -76,7 +76,7 @@ Be careful about data leakage
 https://www.atoti.io/articles/what-is-data-leakage-and-how-to-mitigate-it/
 :::
 
-```
+```{code-cell} ipython3
 X_test = [[-1., 1., 0.]]
 scaler.transform(X_test)  
 ```
@@ -84,7 +84,7 @@ scaler.transform(X_test)
 ## Scaling features to a range
 
 
-```
+```{code-cell} ipython3
 X_train = np.array([[ 1., -1.,  2.],
                     [ 2.,  0.,  0.],
                     [ 0.,  1., -1.]])
@@ -94,7 +94,7 @@ X_train_minmax = min_max_scaler.fit_transform(X_train)
 X_train_minmax
 ```
 
-```
+```{code-cell} ipython3
 X_test = np.array([[-3., -1.,  4.]])
 X_test_minmax = min_max_scaler.transform(X_test)
 X_test_minmax
@@ -103,18 +103,18 @@ X_test_minmax
 ## Pre-processing data - Non-linear transformation
 - This is a very silly example, but just demonstrating usage. 
 
-```
+```{code-cell} ipython3
 import pandas as pd
 %matplotlib inline
 df = pd.read_csv('international-airline-passengers.csv')
 display(df)
 ```
 
-```
+```{code-cell} ipython3
 df['passengers'].hist(bins=20)
 ```
 
-```
+```{code-cell} ipython3
 import numpy as np
 df['passengers'] = np.log(df['passengers'])
 df['passengers'].hist(bins=20)
@@ -122,7 +122,7 @@ df['passengers'].hist(bins=20)
 
 ## Normalization
 
-```
+```{code-cell} ipython3
 from sklearn import preprocessing
 X = [[ 1., -1.,  2.],
      [ 2.,  0.,  0.],
@@ -135,18 +135,18 @@ X_normalized
 
 ### Can save the normalization for future use
 
-```
+```{code-cell} ipython3
 normalizer = preprocessing.Normalizer().fit(X)  # fit does nothing
 normalizer.transform(X)    
 ```
 
-```
+```{code-cell} ipython3
 normalizer.transform([[2.,  1., 0.]]) 
 ```
 
 ## Preprocessing data - Encoding
 
-```
+```{code-cell} ipython3
 from sklearn import preprocessing
 enc = preprocessing.OrdinalEncoder()
 X = [['male', 'from US', 'uses Safari'], 
@@ -155,21 +155,21 @@ enc.fit(X)
 ```
 
 
-```
+```{code-cell} ipython3
 enc.transform([['female', 'from US', 'uses Safari']])
 ```
 
-```
+```{code-cell} ipython3
 enc.transform([['male', 'from Europe', 'uses Safari']])
 ```
 
-```
+```{code-cell} ipython3
 enc.transform([['female', 'from Europe', 'uses Firefox']])
 ```
 
 ### One Hot Encoder
 
-```
+```{code-cell} ipython3
 genders = ['female', 'male']
 locations = ['from Africa', 'from Asia', 'from Europe', 'from US']
 browsers = ['uses Chrome', 'uses Firefox', 'uses IE', 'uses Safari']
@@ -179,11 +179,11 @@ enc.fit(X)
 enc.categories_
 ```
 
-```
+```{code-cell} ipython3
 enc.transform([['male', 'from US', 'uses Safari']])
 ```
 
-```
+```{code-cell} ipython3
 tmp = enc.transform([['female', 'from Asia', 'uses Chrome'],
                     ['male', 'from Europe', 'uses Safari']]).toarray()
 tmp
@@ -196,7 +196,7 @@ Discretization (otherwise known as quantization or binning) provides a way to pa
 
 One-hot encoded discretized features can make a model more expressive, while maintaining interpretability. For instance, pre-processing with a discretizer can introduce nonlinearity to linear models.
 
-```
+```{code-cell} ipython3
 X = np.array([[ -3., 5., 15 ],
               [  0., 6., 14 ],
               [  6., 3., 11 ]])
@@ -208,7 +208,7 @@ est.transform(X)
 - Impute missing values 
 
 
-```
+```{code-cell} ipython3
 import numpy as np
 from sklearn.impute import SimpleImputer
 imp = SimpleImputer(missing_values=np.nan, strategy='mean')
@@ -219,14 +219,14 @@ imp.fit(orig_data)
 imp.transform(orig_data)
 ```
 
-```
+```{code-cell} ipython3
 X = [[np.nan, 2], 
      [6, np.nan], 
      [7, 6]]
 print(imp.transform(X))  
 ```
 
-```
+```{code-cell} ipython3
 import pandas as pd
 df = pd.DataFrame([["a", "x"],
                    [np.nan, "w"],
@@ -237,7 +237,7 @@ imp = SimpleImputer(strategy="most_frequent")
 print(imp.fit_transform(df)) 
 ```
 
-```
+```{code-cell} ipython3
 import pandas as pd
 df = pd.DataFrame([["a", "x"],
                    [np.nan, "y"],
