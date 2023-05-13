@@ -448,7 +448,7 @@ df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')
 display(df['StudentName'])  
 ```
 
-## Method 1.2 -- list, NOT TUPLE # row wise
+## Method 1.2 -- list, NOT TUPLE # column wise
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')

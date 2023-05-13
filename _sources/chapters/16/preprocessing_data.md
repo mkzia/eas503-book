@@ -21,8 +21,11 @@ In practice we often ignore the shape of the distribution and just transform the
 
 ```{code-cell} ipython3
 from IPython.display import display
+from sklearn.datasets import load_iris
+iris_dataset = load_iris()
 from sklearn import preprocessing
 import numpy as np
+import pandas as pd
 X_train = np.array([[ 1., -1.,  2.],
                     [ 2.,  0.,  0.],
                     [ 0.,  1., -1.]])

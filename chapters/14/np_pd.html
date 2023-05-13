@@ -259,11 +259,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="exercises.html">14.3. Cross-referenced Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../15/intro.html">15. Plotting with Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15/intro.html">15. Plotting in Python</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../16/intro.html">16. Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../16/introduction.html">16.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../16/loading_data.html">16.2. Loading Data</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../16/preprocessing_data.html">16.3. Preprocessing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/select_and_train_a_model.html">16.4. Select and Train a Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/misc.html">16.5. Feature Selection and Evaluation</a></li>
 </ul>
 </li>
 </ul>
@@ -463,7 +465,7 @@ document.write(`
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#three-methods-for-selecting-data">14.2. Three Methods for Selecting Data</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-square-brackets">14.2.1. Method 1 – Square brackets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-1-index-text-column-wise">14.2.2. Method 1.1 – index/text – #column wise</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-2-list-not-tuple-row-wise">14.2.3. Method 1.2 – list, NOT TUPLE # row wise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-2-list-not-tuple-column-wise">14.2.3. Method 1.2 – list, NOT TUPLE # column wise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-3-a-slice-row-wise">14.2.4. Method 1.3 – a slice  # row wise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-4-slice-and-list">14.2.5. Method 1.4?? – slice and list?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-5-slice-and-slice">14.2.6. Method 1.5?? – slice and slice?</a></li>
@@ -1017,8 +1019,8 @@ Name: StudentName, dtype: object
 </div>
 </div>
 </section>
-<section id="method-1-2-list-not-tuple-row-wise">
-<h2><span class="section-number">14.2.3. </span>Method 1.2 – list, NOT TUPLE # row wise<a class="headerlink" href="#method-1-2-list-not-tuple-row-wise" title="Permalink to this headline">#</a></h2>
+<section id="method-1-2-list-not-tuple-column-wise">
+<h2><span class="section-number">14.2.3. </span>Method 1.2 – list, NOT TUPLE # column wise<a class="headerlink" href="#method-1-2-list-not-tuple-column-wise" title="Permalink to this headline">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -3057,7 +3059,7 @@ Ref: <a class="reference external" href="https://pythonspeed.com/memory/">https:
 <li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#three-methods-for-selecting-data">14.2. Three Methods for Selecting Data</a><ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-square-brackets">14.2.1. Method 1 – Square brackets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-1-index-text-column-wise">14.2.2. Method 1.1 – index/text – #column wise</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-2-list-not-tuple-row-wise">14.2.3. Method 1.2 – list, NOT TUPLE # row wise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-2-list-not-tuple-column-wise">14.2.3. Method 1.2 – list, NOT TUPLE # column wise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-3-a-slice-row-wise">14.2.4. Method 1.3 – a slice  # row wise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-4-slice-and-list">14.2.5. Method 1.4?? – slice and list?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-5-slice-and-slice">14.2.6. Method 1.5?? – slice and slice?</a></li>
