@@ -130,13 +130,14 @@ A successful start to the course requires a few preparatory steps. Before the fi
 
 2. **Course Book Access:** Ensure you can access the course book available at [Course Book](https://mkzia.github.io/eas503-book). Familiarize yourself with this resource to get a head start on the course content.
 
-3. **Codio Licensing:** Verify that you have obtained a license for Codio and can successfully log into the platform. Codio will be integral for completing programming assignments.
+3. **Codio Licensing:** Verify that you have obtained a license for Codio and can successfully log into the platform. [Invite Link](https://codio.com/p/signup?courseToken=harmony-basic)
 
 4. **Piazza Login:** Confirm your ability to log into Piazza, where you'll engage in course discussions, ask questions, and stay updated on course-related matters.
 
 5. **Software Installation:**
    - Install Anaconda, a comprehensive data science platform, from [Anaconda Individual Edition](https://www.anaconda.com/products/individual).
-   - Install Microsoft Visual Studio Code, a versatile code editor.
+   - Install Microsoft Visual Studio Code, from [website](https://code.visualstudio.com/).
+   - If you have Windows, install Python 3.11 from the App store. 
 
 Please note that an invitation granting you access to Codio and Piazza will be sent prior to the first lecture. Ensure you accept these invitations, as they are crucial for your participation and success in the course.
 
