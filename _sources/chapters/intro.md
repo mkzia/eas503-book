@@ -101,7 +101,7 @@ By utilizing your allocated late days wisely, you can navigate unexpected challe
 
 Throughout the course, you'll have access to a variety of resources that are vital for your learning journey. Here's where you can find them:
 
-1. **Course Book:** The course book will be available on this website: [Course Book](https://mkzia.github.io/eas503-book). 
+1. **Course Book:** The course book will be available on this website: [Course Book](https://mkzia.github.io/eas503-book).
 
 2. **Lecture Materials:** Lecture Jupyter notebooks will be hosted on GitHub: [Lecture Notebooks](https://github.com/mkzia/eas503). These materials supplement your in-class learning and serve as valuable references.
 
@@ -126,7 +126,7 @@ These resources are designed to support your learning, streamline communication,
 
 A successful start to the course requires a few preparatory steps. Before the first class, ensure you complete the following tasks:
 
-1. **Access UB Learns:** Confirm that you can log into the EAS503 course page on UB Learns. 
+1. **Access UB Learns:** Confirm that you can log into the EAS503 course page on UB Learns.
 
 2. **Course Book Access:** Ensure you can access the course book available at [Course Book](https://mkzia.github.io/eas503-book). Familiarize yourself with this resource to get a head start on the course content.
 
@@ -137,7 +137,7 @@ A successful start to the course requires a few preparatory steps. Before the fi
 5. **Software Installation:**
    - Install Anaconda, a comprehensive data science platform, from [Anaconda Individual Edition](https://www.anaconda.com/products/individual).
    - Install Microsoft Visual Studio Code, from [website](https://code.visualstudio.com/).
-   - If you have Windows, install Python 3.11 from the App store. 
+   - If you have Windows, install Python 3.11 from the App store.
 
 Please note that an invitation granting you access to Codio and Piazza will be sent prior to the first lecture. Ensure you accept these invitations, as they are crucial for your participation and success in the course.
 
