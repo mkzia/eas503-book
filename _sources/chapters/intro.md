@@ -380,7 +380,7 @@ quizz =[
         ]
     },
     {
-        "question": "Your friend was sick, and out of empathy, you gave them your code so they could understand how to solve the problem. Is this considered cheating?",
+        "question": "Your friend was sick, and out of sympathy, you gave them your code so they could understand how to solve the problem. Is this considered cheating?",
         "type": "multiple_choice",
         "answers": [
             {
