@@ -380,7 +380,7 @@ quizz =[
         ]
     },
     {
-        "question": "Your friend was sick, and out of empathy, you gave him your code so they could understand how to solve the problem. Is this considered cheating?",
+        "question": "Your friend was sick, and out of empathy, you gave them your code so they could understand how to solve the problem. Is this considered cheating?",
         "type": "multiple_choice",
         "answers": [
             {
@@ -394,7 +394,7 @@ quizz =[
         ]
     },
     {
-        "question": "Your friend's laptop stopped working right before an assignment deadline so you lend them your laptop. They use your laptop and upload YOUR solution instead of theirs. Will this be considered cheating on your behalf although you did not do anything wrong?",
+        "question": "Your friend's laptop stopped working right before an assignment deadline, so you lend them your laptop. They use your laptop and upload YOUR solution instead of theirs. Will this be considered cheating on your behalf?",
         "type": "multiple_choice",
         "answers": [
             {
