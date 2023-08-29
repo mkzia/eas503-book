@@ -182,7 +182,7 @@ Embrace sound cyber-security practices. Refrain from granting physical or electr
 
 from jupyterquiz import display_quiz
 
-quizz =[
+quiz =[
     {
         "question": "The course has a final exam",
         "type": "multiple_choice",
@@ -406,5 +406,5 @@ quizz =[
         ]
     },
 ]
-display_quiz(quizz)
+display_quiz(quiz, shuffle_questions=False, shuffle_answers=False)
 ```

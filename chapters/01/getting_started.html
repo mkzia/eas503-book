@@ -427,12 +427,16 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers">1.1.1. Computers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-program">1.1.2. What is a Program?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-programming-language">1.1.3. What is a Programming Language?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features-of-python">1.1.4. Features of Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-python">1.1.5. Using Python</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-basic-python-program">1.1.5.1. A Basic Python Program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">1.1.1. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers">1.1.2. Computers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-program">1.1.3. What is a Program?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-programming-language">1.1.4. What is a Programming Language?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling-vs-interpreting">1.1.4.1. Compiling vs. Interpreting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features-of-python">1.1.5. Features of Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-python">1.1.6. Using Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-basic-python-program">1.1.6.1. A Basic Python Program</a></li>
 </ul>
 </li>
 </ul>
@@ -448,35 +452,29 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="getting-started">
 <h1><span class="section-number">1.1. </span>Getting Started<a class="headerlink" href="#getting-started" title="Permalink to this heading">#</a></h1>
+<section id="objectives">
+<h2><span class="section-number">1.1.1. </span>Objectives<a class="headerlink" href="#objectives" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>Objectives</p>
-<ul>
-<li><p>To understand what is a computer</p></li>
-<li><p>To understand what is a program</p></li>
-<li><p>To understand what is a programming language</p></li>
-<li><p>To learn about the features of Python</p></li>
-<li><p>To begin using Python</p></li>
+<li><p>To understand what a computer is.</p></li>
+<li><p>To understand what a program is.</p></li>
+<li><p>To understand what a programming language is.</p></li>
+<li><p>To learn about the features of Python.</p></li>
+<li><p>To begin using Python.</p></li>
 </ul>
-</li>
-</ul>
+</section>
 <section id="computers">
-<h2><span class="section-number">1.1.1. </span>Computers<a class="headerlink" href="#computers" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.2. </span>Computers<a class="headerlink" href="#computers" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>A modern computer can be defined as “a machine that <strong>stores</strong> and <strong>manipulates</strong> information
-under the control of a <strong>changeable program</strong>.”</p>
+<li><p>A modern computer can be defined as ‘a machine that <strong>stores</strong> and <strong>manipulates</strong> information under the control of an <strong>alterable program</strong>.’</p>
 <ul>
-<li><p><strong>manipulation</strong> means to transform information into new, useful forms, and then store, output,
-or display information for our interpretation.</p>
-<ul>
+<li><p><strong>Manipulation</strong> means transforming information into new, useful forms, and then storing, outputting, or displaying information for our interpretation.</p></li>
 <li><p><strong>Examples</strong>:</p>
 <ul>
-<li><p>Find students with the highest and lowest GPA</p></li>
-<li><p>Find patients whose stay in a hospital was more than 15 days</p></li>
-<li><p>Sort the monthly sales of a bakery to determine which months have the highest sales</p></li>
-<li><p>Classify a cancer case as benign or malignant based on diagnostic measurements</p></li>
-<li><p>Predict house prices based on historical data</p></li>
-</ul>
-</li>
+<li><p>Find students with the highest and lowest GPA.</p></li>
+<li><p>Find patients whose stay in a hospital was more than 15 days.</p></li>
+<li><p>Sort the monthly sales of a bakery to determine which months have the highest sales.</p></li>
+<li><p>Classify a cancer case as benign or malignant based on diagnostic measurements.</p></li>
+<li><p>Predict house prices based on historical data.</p></li>
 </ul>
 </li>
 </ul>
@@ -484,24 +482,23 @@ or display information for our interpretation.</p>
 </ul>
 </section>
 <section id="what-is-a-program">
-<h2><span class="section-number">1.1.2. </span>What is a Program?<a class="headerlink" href="#what-is-a-program" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.3. </span>What is a Program?<a class="headerlink" href="#what-is-a-program" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p>A computer program is a detailed step-by-step set of instructions telling a computer exactly what to do</p></li>
-<li><p>If we <strong>change</strong> the program, then the computer performs a different sequence of actions and hence, performs
-a different task.</p></li>
-<li><p>A program is written in terms of a few basic operations that its reader already understands. Using these few basic operations, you can “teach” a computer new operations by defining them in terms of the basic operations.</p>
+<li><p>A computer program is a detailed, step-by-step set of instructions that precisely tells a computer what to do.</p></li>
+<li><p>If we <strong>change</strong> the program, the computer performs a different sequence of actions, resulting in the execution of a distinct task.</p></li>
+<li><p>A program is composed of a few fundamental operations that its reader already comprehends. By utilizing these basic operations, you can introduce new operations to a computer by defining them in relation to the foundational ones.</p>
 <ul>
-<li><p><strong>Example</strong>: Computers understand addition and division operators, which are basic mathematical operators. You can teach the computer to calculate the average using the addition and division operators by instructing the computer to add all the numbers in a sequence and divide by the sequence size.</p></li>
-<li><p><strong>Example</strong>: You can then combine the new average operation with other operations to create more operations. It is a lot like creating life by putting atoms together to make proteins and then combining proteins to build cells, combining cells to make organs, and combining organs to make a creature.</p></li>
-<li><p>Defining new operations and combining them to do useful things is the heart and soul of programming.</p></li>
+<li><p><strong>Example</strong>: Computers comprehend basic mathematical operators such as addition and division. You can instruct the computer to calculate the average using these operators by guiding it to add all numbers in a sequence and then divide by the sequence size.</p></li>
+<li><p><strong>Example</strong>: Subsequently, you can integrate the newly created average operation with other functions to generate additional operations. This process is akin to constructing life, where atoms are assembled to form proteins, proteins are combined to construct cells, cells are organized into organs, and organs are assembled to create a living creature.</p></li>
 </ul>
 </li>
-<li><p>Every computer is just a machine for executing (carrying out) programs.</p></li>
-<li><p>Software (programs) rules the hardware (the physical machines), and the software determines what any computer can do. Without software, computers would be expensive paperweights. The process of creating software is called programming.</p></li>
+<li><p>Defining new operations and combining them to do useful things is the heart and soul of programming.</p></li>
+<li><p>Every computer is essentially a machine designed to execute (carry out) programs.</p></li>
+<li><p>Software (programs) governs the hardware (physical machines), and it is the software that dictates the capabilities of any computer. Without software, computers would be nothing more than costly paperweights. The act of crafting software is referred to as programming.</p></li>
 </ul>
 </section>
 <section id="what-is-a-programming-language">
-<h2><span class="section-number">1.1.3. </span>What is a Programming Language?<a class="headerlink" href="#what-is-a-programming-language" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.4. </span>What is a Programming Language?<a class="headerlink" href="#what-is-a-programming-language" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>You can express directions to the nearest bus station in many different languages, such as English, Spanish, or Hindi.</p></li>
 <li><p>But natural languages are fraught with ambiguity and imprecision.</p>
@@ -518,14 +515,12 @@ a different task.</p></li>
 </li>
 </ul>
 </li>
-<li><p>Computer scientists have solved this problem by designing notations for expressing computations precisely and unambiguously.</p></li>
+<li><p>Computer scientists have resolved this issue by devising notations for expressing computations precisely and without ambiguity.</p></li>
 <li><p>These special notations are called “programming languages.”</p></li>
-<li><p>Similar to natural languages, there are many programming languages. But they all are instructions that a machine
-can understand. Programming languages can also look different. For example <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></code> in Python means add three to four. This same
-instruction in Schema is express as <code class="docutils literal notranslate"><span class="pre">(+</span> <span class="pre">3</span> <span class="pre">4)</span></code>. They are both expressing the same idea; they look different.</p></li>
-<li><p>Every programming language has a way to write mathematical expressions, repeat instructions several times, choose which instructions based on the current information you have, and much more.</p></li>
-<li><p>Programming languages take a <strong>high-level</strong> language, which are human-readable language expressions such as <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>, and translate it to machine language that the computer can execute.</p></li>
-<li><p>A machine language consists of precise instructions to CPUs. For adding two numbers, the CPU instructions might look something like this:</p></li>
+<li><p>Similar to natural languages, there exist numerous programming languages. However, they all serve as instructions that machines can comprehend. These programming languages can also exhibit variations in appearance. For instance, in Python, <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></code> signifies the addition of three and four. In Scheme, this equivalent instruction is presented as <code class="docutils literal notranslate"><span class="pre">(+</span> <span class="pre">3</span> <span class="pre">4)</span></code>. While both convey the same concept, they are visually distinct.</p></li>
+<li><p>Every programming language includes methods for crafting mathematical expressions, iterating instructions multiple times, making selections among instructions based on available information, and much more.</p></li>
+<li><p>Programming languages take a <strong>high-level</strong> language, comprising human-readable expressions like <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>, and translate it into machine language that the computer can execute.</p></li>
+<li><p>A machine language consists of precise instructions for CPUs. When it comes to adding two numbers, the CPU instructions might resemble something like this:</p></li>
 </ul>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>load the number from memory location 2001 into the CPU
 load the number from memory location 2002 into the CPU
@@ -534,64 +529,69 @@ store the result in to location 2003
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Compilers convert programs written in a high-level language into the machine language of some computer; the compiled code is hardware and operating system dependent.</p></li>
-<li><p>Interpreters simulate a computer that understands a high-level language.</p></li>
-<li><p>The source program is not translated into machine language all at once.</p></li>
-<li><p>An interpreter analyzes and executes the source code instruction by instruction (line-by-line).</p></li>
-<li><p>Compiling vs. Interpreting</p>
+<li><p>Compilers transform programs written in a high-level language into the machine language of a specific computer; the compiled code is dependent on the hardware and operating system.</p></li>
+<li><p>Interpreters simulate a computer that understands a high-level language.</p>
 <ul>
-<li><p>Once a program has been compiled, it can be executed repeatedly without the source code or compiler. If it is interpreted, the source code and interpreter are needed each time the program runs</p></li>
-<li><p>Compiled programs generally run faster since the translation of the source code happens only once.</p></li>
-<li><p>Interpreted languages are part of a more flexible programming environment since they can be developed and run interactively</p></li>
-<li><p>Interpreted programs are more portable, meaning the executable code produced from a compiler for a Pentium won’t run on a Mac, without recompiling. If a suitable interpreter already exists, the interpreted code can be run with no modifications.</p></li>
+<li><p>The source program is not translated into machine language all at once.</p></li>
+<li><p>An interpreter analyzes and executes the source code instruction by instruction (line by line).</p></li>
 </ul>
 </li>
+</ul>
+<section id="compiling-vs-interpreting">
+<h3><span class="section-number">1.1.4.1. </span>Compiling vs. Interpreting<a class="headerlink" href="#compiling-vs-interpreting" title="Permalink to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Once a program has been compiled, it can be executed repeatedly without requiring the source code or compiler. If it is interpreted, both the source code and the interpreter are necessary each time the program runs.</p></li>
+<li><p>Compiled programs generally run faster since the translation of the source code occurs only once.</p></li>
+<li><p>Interpreted languages offer a more flexible programming environment as they can be developed and run interactively.</p></li>
+<li><p>Interpreted programs are more portable, meaning the executable code produced by a compiler for a specific architecture won’t run on a different architecture without recompilation. In contrast, if a suitable interpreter already exists, the interpreted code can be run with no modifications.</p></li>
 </ul>
 <div class="admonition warning">
 <p class="admonition-title">Warning</p>
-<p><strong>Bad code can be ambiguous due to human error. To the machine it is not ambiguous.</strong> When this happens, the program might behave unexpectedly. This unexpected behavior is called a <strong>bug</strong>!</p>
+<p><strong> Bad code can become ambiguous due to human error. However, to a machine, it remains unambiguous. </strong>  When this occurs, the program might exhibit unexpected behavior, which is referred to as a <strong>bug!</strong></p>
 </div>
 </section>
+</section>
 <section id="features-of-python">
-<h2><span class="section-number">1.1.4. </span>Features of Python<a class="headerlink" href="#features-of-python" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.1.5. </span>Features of Python<a class="headerlink" href="#features-of-python" title="Permalink to this heading">#</a></h2>
+<p>Python is</p>
 <ul class="simple">
-<li><p>Python is</p>
+<li><p><strong>High-level language:</strong></p>
 <ul>
-<li><p>high-level language</p>
-<ul>
-<li><p>a low-level language provides less abstraction than high-level languages to actual machine language</p></li>
+<li><p>A low-level language provides less abstraction than high-level languages and is closer to the actual machine language.</p></li>
 </ul>
 </li>
-<li><p>an interpreted language</p>
+<li><p><strong>Interpreted language:</strong></p>
 <ul>
-<li><p>Technically, Python uses a hybrid compiling/interpreting process. The Python source in the module file (the <code class="docutils literal notranslate"><span class="pre">.py</span></code>) is compiled into more primitive instructions called <code class="docutils literal notranslate"><span class="pre">byte</span> <span class="pre">code</span></code>. This byte code (the <code class="docutils literal notranslate"><span class="pre">.pyc</span></code>) is then interpreted. Having a <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> file available makes running a module faster the second time around. If you delete this file, Python will create it again.</p></li>
+<li><p>Technically, Python employs a hybrid compiling/interpreting process. The Python source code in the module file (the <code class="docutils literal notranslate"><span class="pre">.py</span></code> file) is compiled into more primitive instructions known as <code class="docutils literal notranslate"><span class="pre">byte</span> <span class="pre">code</span></code>. This byte code (the <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> file) is subsequently interpreted. The presence of a <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> file enhances the speed of module execution on subsequent runs. If this file is deleted, Python will regenerate it.</p></li>
 </ul>
 </li>
-<li><p>an object oriented language</p>
+<li><p><strong>Object-oriented language:</strong></p>
 <ul>
-<li><p>combines data and associated instructions to manipulate the data into one package</p></li>
+<li><p>It combines data and the corresponding instructions for data manipulation into a single package.</p></li>
 </ul>
 </li>
-<li><p>easy to learn because its syntax is simple, hence easy to read</p></li>
-<li><p>versatile</p>
+<li><p><strong>Easy to learn:</strong></p>
 <ul>
-<li><p>can be used for web-development, machine learning, cloud administration</p></li>
+<li><p>Python’s syntax is simple, making it easy to understand and read.</p></li>
 </ul>
 </li>
-<li><p>popular</p>
+<li><p><strong>Versatile:</strong></p>
 <ul>
-<li><p>has many third-party packages that extend its functionality, especially for data science.</p></li>
+<li><p>Python can be used for various purposes such as web development, machine learning, and cloud administration.</p></li>
 </ul>
 </li>
+<li><p><strong>Popular:</strong></p>
+<ul>
+<li><p>It boasts numerous third-party packages that extend its functionality, particularly in the realm of data science.</p></li>
 </ul>
 </li>
 </ul>
 </section>
 <section id="using-python">
-<h2><span class="section-number">1.1.5. </span>Using Python<a class="headerlink" href="#using-python" title="Permalink to this heading">#</a></h2>
-<p>There are four ways in which you can use Python. We will show you how to use all four ways, but we will mostly use Jupyter Notebook and Microsoft Visual Code.</p>
+<h2><span class="section-number">1.1.6. </span>Using Python<a class="headerlink" href="#using-python" title="Permalink to this heading">#</a></h2>
+<p>There are four ways in which you can use Python. We will demonstrate how to utilize all four methods, with a primary focus on Jupyter Notebook and Microsoft Visual Code</p>
 <section id="a-basic-python-program">
-<h3><span class="section-number">1.1.5.1. </span>A Basic Python Program<a class="headerlink" href="#a-basic-python-program" title="Permalink to this heading">#</a></h3>
+<h3><span class="section-number">1.1.6.1. </span>A Basic Python Program<a class="headerlink" href="#a-basic-python-program" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Please install <a class="reference external" href="https://www.anaconda.com/products/distribution">Anaconda Python Distribution</a></p></li>
 </ul>
@@ -699,12 +699,16 @@ store the result in to location 2003
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers">1.1.1. Computers</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-program">1.1.2. What is a Program?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-programming-language">1.1.3. What is a Programming Language?</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features-of-python">1.1.4. Features of Python</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-python">1.1.5. Using Python</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-basic-python-program">1.1.5.1. A Basic Python Program</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">1.1.1. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#computers">1.1.2. Computers</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-program">1.1.3. What is a Program?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-is-a-programming-language">1.1.4. What is a Programming Language?</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#compiling-vs-interpreting">1.1.4.1. Compiling vs. Interpreting</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features-of-python">1.1.5. Features of Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-python">1.1.6. Using Python</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-basic-python-program">1.1.6.1. A Basic Python Program</a></li>
 </ul>
 </li>
 </ul>

@@ -12,37 +12,35 @@ kernelspec:
 
 # Getting Started
 
-- Objectives
-  - To understand what is a computer
-  - To understand what is a program
-  - To understand what is a programming language
-  - To learn about the features of Python
-  - To begin using Python
+## Objectives
+
+- To understand what a computer is.
+- To understand what a program is.
+- To understand what a programming language is.
+- To learn about the features of Python.
+- To begin using Python.
 
 ## Computers
 
-- A modern computer can be defined as "a machine that **stores** and **manipulates** information
-under the control of a **changeable program**."
-  - **manipulation** means to transform information into new, useful forms, and then store, output,
-  or display information for our interpretation.
-    - **Examples**:
-      - Find students with the highest and lowest GPA
-      - Find patients whose stay in a hospital was more than 15 days
-      - Sort the monthly sales of a bakery to determine which months have the highest sales
-      - Classify a cancer case as benign or malignant based on diagnostic measurements
-      - Predict house prices based on historical data
+- A modern computer can be defined as 'a machine that **stores** and **manipulates** information under the control of an **alterable program**.'
+  - **Manipulation** means transforming information into new, useful forms, and then storing, outputting, or displaying information for our interpretation.
+  - **Examples**:
+    - Find students with the highest and lowest GPA.
+    - Find patients whose stay in a hospital was more than 15 days.
+    - Sort the monthly sales of a bakery to determine which months have the highest sales.
+    - Classify a cancer case as benign or malignant based on diagnostic measurements.
+    - Predict house prices based on historical data.
 
 ## What is a Program?
 
-- A computer program is a detailed step-by-step set of instructions telling a computer exactly what to do
-- If we **change** the program, then the computer performs a different sequence of actions and hence, performs
-a different task.
-- A program is written in terms of a few basic operations that its reader already understands. Using these few basic operations, you can "teach" a computer new operations by defining them in terms of the basic operations.
-  - **Example**: Computers understand addition and division operators, which are basic mathematical operators. You can teach the computer to calculate the average using the addition and division operators by instructing the computer to add all the numbers in a sequence and divide by the sequence size.
-  - **Example**: You can then combine the new average operation with other operations to create more operations. It is a lot like creating life by putting atoms together to make proteins and then combining proteins to build cells, combining cells to make organs, and combining organs to make a creature.
-  - Defining new operations and combining them to do useful things is the heart and soul of programming.
-- Every computer is just a machine for executing (carrying out) programs.
-- Software (programs) rules the hardware (the physical machines), and the software determines what any computer can do. Without software, computers would be expensive paperweights. The process of creating software is called programming.
+- A computer program is a detailed, step-by-step set of instructions that precisely tells a computer what to do.
+- If we **change** the program, the computer performs a different sequence of actions, resulting in the execution of a distinct task.
+- A program is composed of a few fundamental operations that its reader already comprehends. By utilizing these basic operations, you can introduce new operations to a computer by defining them in relation to the foundational ones.
+  - **Example**: Computers comprehend basic mathematical operators such as addition and division. You can instruct the computer to calculate the average using these operators by guiding it to add all numbers in a sequence and then divide by the sequence size.
+  - **Example**: Subsequently, you can integrate the newly created average operation with other functions to generate additional operations. This process is akin to constructing life, where atoms are assembled to form proteins, proteins are combined to construct cells, cells are organized into organs, and organs are assembled to create a living creature.
+- Defining new operations and combining them to do useful things is the heart and soul of programming.
+- Every computer is essentially a machine designed to execute (carry out) programs.
+- Software (programs) governs the hardware (physical machines), and it is the software that dictates the capabilities of any computer. Without software, computers would be nothing more than costly paperweights. The act of crafting software is referred to as programming.
 
 ## What is a Programming Language?
 
@@ -55,14 +53,12 @@ a different task.
     - I am on a hill, and I saw a man using a telescope
     - There is a man on a hill, and I am sawing him with a telescope.
     - source: <https://www.quora.com/What-are-some-examples-of-ambiguous-sentences>
-- Computer scientists have solved this problem by designing notations for expressing computations precisely and unambiguously.
+- Computer scientists have resolved this issue by devising notations for expressing computations precisely and without ambiguity.
 - These special notations are called "programming languages."
-- Similar to natural languages, there are many programming languages. But they all are instructions that a machine
-can understand. Programming languages can also look different. For example `3 + 4` in Python means add three to four. This same
-instruction in Schema is express as `(+ 3 4)`. They are both expressing the same idea; they look different.
-- Every programming language has a way to write mathematical expressions, repeat instructions several times, choose which instructions based on the current information you have, and much more.
-- Programming languages take a **high-level** language, which are human-readable language expressions such as `c = a + b`, and translate it to machine language that the computer can execute.
-- A machine language consists of precise instructions to CPUs. For adding two numbers, the CPU instructions might look something like this:
+- Similar to natural languages, there exist numerous programming languages. However, they all serve as instructions that machines can comprehend. These programming languages can also exhibit variations in appearance. For instance, in Python, `3 + 4` signifies the addition of three and four. In Scheme, this equivalent instruction is presented as `(+ 3 4)`. While both convey the same concept, they are visually distinct.
+- Every programming language includes methods for crafting mathematical expressions, iterating instructions multiple times, making selections among instructions based on available information, and much more.
+- Programming languages take a **high-level** language, comprising human-readable expressions like `c = a + b`, and translate it into machine language that the computer can execute.
+- A machine language consists of precise instructions for CPUs. When it comes to adding two numbers, the CPU instructions might resemble something like this:
 
 ```text
 load the number from memory location 2001 into the CPU
@@ -71,38 +67,42 @@ add the two numbers in the CPU
 store the result in to location 2003
 ```
 
-- Compilers convert programs written in a high-level language into the machine language of some computer; the compiled code is hardware and operating system dependent.
+- Compilers transform programs written in a high-level language into the machine language of a specific computer; the compiled code is dependent on the hardware and operating system.
 - Interpreters simulate a computer that understands a high-level language.
-- The source program is not translated into machine language all at once.
-- An interpreter analyzes and executes the source code instruction by instruction (line-by-line).
-- Compiling vs. Interpreting
-  - Once a program has been compiled, it can be executed repeatedly without the source code or compiler. If it is interpreted, the source code and interpreter are needed each time the program runs
-  - Compiled programs generally run faster since the translation of the source code happens only once.
-  - Interpreted languages are part of a more flexible programming environment since they can be developed and run interactively
-  - Interpreted programs are more portable, meaning the executable code produced from a compiler for a Pentium won’t run on a Mac, without recompiling. If a suitable interpreter already exists, the interpreted code can be run with no modifications.
+  - The source program is not translated into machine language all at once.
+  - An interpreter analyzes and executes the source code instruction by instruction (line by line).
+
+### Compiling vs. Interpreting
+
+- Once a program has been compiled, it can be executed repeatedly without requiring the source code or compiler. If it is interpreted, both the source code and the interpreter are necessary each time the program runs.
+- Compiled programs generally run faster since the translation of the source code occurs only once.
+- Interpreted languages offer a more flexible programming environment as they can be developed and run interactively.
+- Interpreted programs are more portable, meaning the executable code produced by a compiler for a specific architecture won't run on a different architecture without recompilation. In contrast, if a suitable interpreter already exists, the interpreted code can be run with no modifications.
 
 :::{warning}
-<strong>Bad code can be ambiguous due to human error. To the machine it is not ambiguous.</strong> When this happens, the program might behave unexpectedly. This unexpected behavior is called a **bug**!
+<strong> Bad code can become ambiguous due to human error. However, to a machine, it remains unambiguous. </strong>  When this occurs, the program might exhibit unexpected behavior, which is referred to as a **bug!**
 :::
 
 ## Features of Python
 
-- Python is
-  - high-level language
-    - a low-level language provides less abstraction than high-level languages to actual machine language
-  - an interpreted language
-    - Technically, Python uses a hybrid compiling/interpreting process. The Python source in the module file (the `.py`) is compiled into more primitive instructions called `byte code`. This byte code (the `.pyc`) is then interpreted. Having a `.pyc` file available makes running a module faster the second time around. If you delete this file, Python will create it again.
-  - an object oriented language
-    - combines data and associated instructions to manipulate the data into one package
-  - easy to learn because its syntax is simple, hence easy to read
-  - versatile
-    - can be used for web-development, machine learning, cloud administration
-  - popular
-    - has many third-party packages that extend its functionality, especially for data science.
+Python is
+
+- **High-level language:**
+  - A low-level language provides less abstraction than high-level languages and is closer to the actual machine language.
+- **Interpreted language:**
+  - Technically, Python employs a hybrid compiling/interpreting process. The Python source code in the module file (the `.py` file) is compiled into more primitive instructions known as `byte code`. This byte code (the `.pyc` file) is subsequently interpreted. The presence of a `.pyc` file enhances the speed of module execution on subsequent runs. If this file is deleted, Python will regenerate it.
+- **Object-oriented language:**
+  - It combines data and the corresponding instructions for data manipulation into a single package.
+- **Easy to learn:**
+  - Python's syntax is simple, making it easy to understand and read.
+- **Versatile:**
+  - Python can be used for various purposes such as web development, machine learning, and cloud administration.
+- **Popular:**
+  - It boasts numerous third-party packages that extend its functionality, particularly in the realm of data science.
 
 ## Using Python
 
-There are four ways in which you can use Python. We will show you how to use all four ways, but we will mostly use Jupyter Notebook and Microsoft Visual Code.
+There are four ways in which you can use Python. We will demonstrate how to utilize all four methods, with a primary focus on Jupyter Notebook and Microsoft Visual Code
 
 ### A Basic Python Program
 
