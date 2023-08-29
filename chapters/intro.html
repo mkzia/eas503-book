@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 
 
@@ -6,7 +7,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
 
     <title>EAS 503 &#8212; EAS503: Python for Data Scientists</title>
   
@@ -28,36 +29,38 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=b76e3c8a" />
+    <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
-    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
-    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css?v=6ad1a40c" />
+    <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js?v=351a2e83"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
-    <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
-    <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
-    <script src="../_static/copybutton.js?v=5eb1bb1e"></script>
+    <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
+    <script src="../_static/jquery.js"></script>
+    <script src="../_static/underscore.js"></script>
+    <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
+    <script src="../_static/doctools.js"></script>
+    <script src="../_static/clipboard.min.js"></script>
+    <script src="../_static/copybutton.js"></script>
     <script src="../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="../_static/design-tabs.js"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/intro';</script>
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/intro.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -161,6 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="01/describing_code.html">1.12. Describing Code</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01/simultaneous_assignment.html">1.13. Simultaneous Assignment</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01/exercises.html">1.14. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="01/quizzes.html">1.15. Quizzes</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="02/functions.html">2. Functions</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -590,13 +594,13 @@ document.write(`
 <h2>Syllabus Review<a class="headerlink" href="#syllabus-review" title="Permalink to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="QshwkgWRaZPD" data-shufflequestions="False"
+<div class="output text_html"><div id="lxVmrwYNtZBy" data-shufflequestions="False"
                data-shuffleanswers="False"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#QshwkgWRaZPD {
+#lxVmrwYNtZBy {
    --jq-multiple-choice-bg: #6f78ffff;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -766,7 +770,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsQshwkgWRaZPD=[{"question": "The course has a final exam", "type": "multiple_choice", "answers": [{"code": "True", "correct": false}, {"code": "False", "correct": true}]}, {"question": "Quizzes are open notes", "type": "multiple_choice", "answers": [{"code": "True", "correct": true}, {"code": "False", "correct": false}]}, {"question": "Mini-projects are group projects", "type": "multiple_choice", "answers": [{"code": "True", "correct": false}, {"code": "False", "correct": true}]}, {"question": "How many students in a group?", "type": "multiple_choice", "answers": [{"code": "1", "correct": false}, {"code": "2-3", "correct": false}, {"code": "3-4", "correct": true}, {"code": "4-5", "correct": false}]}, {"question": "How much time do you have to finish the quiz once started", "type": "multiple_choice", "answers": [{"code": "30 minutes", "correct": false}, {"code": "1 hour", "correct": false}, {"code": "2 hours", "correct": true}, {"code": "3 hours", "correct": false}]}, {"question": "Quizzes must be taken in Respondus Lockdown Browser", "type": "multiple_choice", "answers": [{"code": "True", "correct": true}, {"code": "False", "correct": false}]}, {"question": "All programming assignments must be completed in the Codio IDE?", "type": "multiple_choice", "answers": [{"code": "True", "correct": true}, {"code": "False", "correct": false}]}, {"question": "Codio records keystrokes and copy/pastes", "type": "multiple_choice", "answers": [{"code": "True", "correct": true}, {"code": "False", "correct": false}]}, {"question": "How many days do you have to contest your grade after the submission deadline has passed?", "type": "multiple_choice", "answers": [{"code": "3", "correct": false}, {"code": "5", "correct": false}, {"code": "6", "correct": false}, {"code": "7", "correct": true}]}, {"question": "How many late days do you have at your disposal to submit programming assignments?", "type": "multiple_choice", "answers": [{"code": "5", "correct": false}, {"code": "7", "correct": false}, {"code": "10", "correct": true}, {"code": "15", "correct": false}]}, {"question": "How late can you submit a programming assignment?", "type": "multiple_choice", "answers": [{"code": "2 days", "correct": false}, {"code": "3 days", "correct": false}, {"code": "4 days", "correct": true}, {"code": "5 days", "correct": false}]}, {"question": "Your friend was sick, and out of sympathy, you gave them your code so they could understand how to solve the problem. Is this considered cheating?", "type": "multiple_choice", "answers": [{"code": "Yes", "correct": true}, {"code": "No", "correct": false}]}, {"question": "Your friend's laptop stopped working right before an assignment deadline, so you lend them your laptop. They use your laptop and upload YOUR solution instead of theirs. Will this be considered cheating on your behalf?", "type": "multiple_choice", "answers": [{"code": "Yes", "correct": true}, {"code": "No", "correct": false}]}];
+</style></div><script type="application/javascript">var questionslxVmrwYNtZBy=[{"question": "The course has a final exam", "type": "multiple_choice", "answers": [{"code": "True", "correct": false}, {"code": "False", "correct": true}]}, {"question": "Quizzes are open notes", "type": "multiple_choice", "answers": [{"code": "True", "correct": true}, {"code": "False", "correct": false}]}, {"question": "Mini-projects are group projects", "type": "multiple_choice", "answers": [{"code": "True", "correct": false}, {"code": "False", "correct": true}]}, {"question": "How many students in a group?", "type": "multiple_choice", "answers": [{"code": "1", "correct": false}, {"code": "2-3", "correct": false}, {"code": "3-4", "correct": true}, {"code": "4-5", "correct": false}]}, {"question": "How much time do you have to finish the quiz once started", "type": "multiple_choice", "answers": [{"code": "30 minutes", "correct": false}, {"code": "1 hour", "correct": false}, {"code": "2 hours", "correct": true}, {"code": "3 hours", "correct": false}]}, {"question": "Quizzes must be taken in Respondus Lockdown Browser", "type": "multiple_choice", "answers": [{"code": "True", "correct": true}, {"code": "False", "correct": false}]}, {"question": "All programming assignments must be completed in the Codio IDE?", "type": "multiple_choice", "answers": [{"code": "True", "correct": true}, {"code": "False", "correct": false}]}, {"question": "Codio records keystrokes and copy/pastes", "type": "multiple_choice", "answers": [{"code": "True", "correct": true}, {"code": "False", "correct": false}]}, {"question": "How many days do you have to contest your grade after the submission deadline has passed?", "type": "multiple_choice", "answers": [{"code": "3", "correct": false}, {"code": "5", "correct": false}, {"code": "6", "correct": false}, {"code": "7", "correct": true}]}, {"question": "How many late days do you have at your disposal to submit programming assignments?", "type": "multiple_choice", "answers": [{"code": "5", "correct": false}, {"code": "7", "correct": false}, {"code": "10", "correct": true}, {"code": "15", "correct": false}]}, {"question": "How late can you submit a programming assignment?", "type": "multiple_choice", "answers": [{"code": "2 days", "correct": false}, {"code": "3 days", "correct": false}, {"code": "4 days", "correct": true}, {"code": "5 days", "correct": false}]}, {"question": "Your friend was sick, and out of sympathy, you gave them your code so they could understand how to solve the problem. Is this considered cheating?", "type": "multiple_choice", "answers": [{"code": "Yes", "correct": true}, {"code": "No", "correct": false}]}, {"question": "Your friend's laptop stopped working right before an assignment deadline, so you lend them your laptop. They use your laptop and upload YOUR solution instead of theirs. Will this be considered cheating on your behalf?", "type": "multiple_choice", "answers": [{"code": "Yes", "correct": true}, {"code": "No", "correct": false}]}];
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -1515,8 +1519,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("QshwkgWRaZPD")) {
-            show_questions(questionsQshwkgWRaZPD,  QshwkgWRaZPD); 
+          if(document.getElementById("lxVmrwYNtZBy")) {
+            show_questions(questionslxVmrwYNtZBy,  lxVmrwYNtZBy); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1525,8 +1529,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("QshwkgWRaZPD");
-        // console.log(document.getElementById("QshwkgWRaZPD"));
+        //console.log("lxVmrwYNtZBy");
+        // console.log(document.getElementById("lxVmrwYNtZBy"));
 
         try_show();
         }

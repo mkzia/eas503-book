@@ -11,22 +11,24 @@ kernelspec:
 ---
  
 # Memory management in Python
-The memory model for understanding how variables are stored in Python is different from other programming languages. In most programming languages, variables can be thought of as a named storage location in computer memory, a box that we can put a value in. When the variable changes the old value is erased and a new one written in. 
+
+The memory model for comprehending how variables are stored in Python differs from that of other programming languages. In many programming languages, variables can be likened to named storage locations in computer memory—essentially boxes where we can place values. When a variable changes, the previous value is overwritten by a new one.
 
 ![mem_model1](./mem_model1.png)
 
-In Python, values may end up anywhere in memory, and variables are used to refer to them. Assigning a variable is like putting one of those little yellow sticky notes on the value and saying, "this is x." This memory model is called the sticky-note model. 
+"In Python, values can be stored anywhere in memory, and variables are employed to reference them. Assigning a variable is analogous to placing a small yellow sticky note on the value and declaring, 'this is x.' This memory model is commonly referred to as the sticky-note model.
 
 ![mem_model2](./mem_model2.png)
 
 What happens when we execute the following statement?
 
-```
+```text
 <<variable>> = <<expression>>
 ```
 
 This is executed as follows:
-1. Evaluate the expression on the right of the `=` sign to produce a value. This value has a memory address. We can call this an object: a value at a memory address with a type. 
+
+1. Evaluate the expression on the right of the `=` sign to produce a value. This value has a memory address. We can call this an object: a value at a memory address with a type.
 2. Store the memory address of the value in the variable on the left of the `=`. Create a new variable if that name does not already exist; otherwise, just reuse the existing variable, replacing the memory address that it contains.
 
 ```{code-cell} ipython3
@@ -45,4 +47,4 @@ print(number)
 number = number * number
 ```
 
-You can use [Python Tutor](https://pythontutor.com/) to view how the sticky-notes change. 
+You can use [Python Tutor](https://pythontutor.com/) to view how the sticky-notes change.

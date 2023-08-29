@@ -12,8 +12,8 @@ kernelspec:
 
 
 # Simultaneous Assignment
-Simultaneous assignment is useful when you want to swap values. So instead of doing this:
 
+Simultaneous assignment is useful when you want to swap values. So instead of doing this:
 
 ```Python
   temp = x

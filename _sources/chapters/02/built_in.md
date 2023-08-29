@@ -13,7 +13,8 @@ kernelspec:
 # Built-in functions
 
 ## Absolute Value Function
-`abs()` takes the absolute value of a number. 
+
+`abs()` takes the absolute value of a number.
 
 `abs(-9)`: `-9` is the argument. Arguments appear between the parenthesis after the function name. Arguments are evaluated left to right.
 
@@ -30,7 +31,8 @@ abs(-7) + abs(3.3)
 ```
 
 ## Functions to Convert Data Type
-These functions convert the data type from one type to another if possible. This is called type casting. 
+
+These functions convert the data type from one type to another if possible. This is called type casting.
 
 ### int
 
@@ -45,6 +47,7 @@ int('34')
 ```
 
 This will fail!
+
 ```{code-cell} ipython3
 int('34.6')
 ```
@@ -73,14 +76,13 @@ float('300')
 str(21)
 ```
 
-
 ```{code-cell} ipython3
 str(3.14)
 ```
 
-
 ### Rounding
-The `round()` function can be used to round floats. The optional second input argument specifies the number of digits after the decimal place. 
+
+The `round()` function can be used to round floats. The optional second input argument specifies the number of digits after the decimal place.
 
 ```{code-cell} ipython3
 round(3.8)
@@ -100,6 +102,12 @@ round(4.5)
 
 ```{warning}
 Why do both `3.5` and `4.5` go to 4? Python uses IEEE 754 standard for rounding called the banker’s rounding. In this method when a number is between two numbers, the number is rounded to the nearest value with an even least significant digit. Still, the behavior of `round()` can be surprising. 
+```
+
+The round function can take an OPTIONAL second argument
+
+```{code-cell} ipython3
+round(3.141592653,2)
 ```
 
 ```{code-cell} ipython3
@@ -130,20 +138,14 @@ round(-3.3)
 round(-3.5)
 ```
 
-The round function can take an OPTIONAL second argument
-
-```{code-cell} ipython3
-round(3.141592653,2)
-```
-
 You can also ceil and floor values by first importing the `math` module and using ceil and floor
+
 ```{code-cell} ipython3
 import math
 print('round:', round(3.141592653))
 print('ceil:', math.ceil(3.141592653))
 print('floor:', math.floor(3.141592653))
 ```
-
 
 ### help
 
@@ -170,8 +172,7 @@ pow(2, 4)
 pow(2, 4, 3) 
 ```
 
-
-### min 
+### min
 
 ```{code-cell} ipython3
 min(2, 3, 4)
@@ -187,7 +188,7 @@ max(2, -3, 4, 7, -5)
 max(2, -3, min(4, 7), -5)
 ```
 
-### id 
+### id
 
 ```{code-cell} ipython3
 id(-9)
@@ -213,12 +214,11 @@ print(size2)
 print(id(size2))
 ```
 
-
 ![Size Memory Model](./size.png)
 
 ## Function Memory Address
 
-Function objects have memory addresses just like variables. 
+Function objects have memory addresses just like variables.
 
 ```{code-cell} ipython3
 id(abs)
@@ -228,7 +228,6 @@ id(abs)
 id(round)
 ```
 
-
 ## Using Function Calls as Arguments to Other Functions
 
 ```{code-cell} ipython3
@@ -236,7 +235,5 @@ pow(abs(-2), round(4.3))
 ```
 
 ![subexpression](./subexpression.png)
-
-
 
 There are many other built-in functions. The Python documentation describes all of [here](https://docs.python.org/3/library/functions.html#built-in-functions)

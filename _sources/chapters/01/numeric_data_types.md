@@ -12,9 +12,9 @@ kernelspec:
 
 # Numeric Data Types
 
-Python support many different data types. We will introduce them as we use them. It is important to know the data types because every value in Python has a data type and the data types of values determine how they behave when they are combined. 
+Python supports various data types, which we will introduce as we encounter them. Understanding data types is crucial because each value in Python is associated with a specific data type, and the behavior of values when they are combined is determined by their data types.
 
-To determine the data type of a value, you can use the `type()` function. 
+To determine the data type of a value, you can use the `type()` function.
 
 ```{code-cell} ipython3
 type(2)
@@ -24,14 +24,16 @@ type(2)
 type(3.14)
 ```
 
-## Numeric Data Types
-Values such as `4` and `-7` have data type `int` (short for `integer`). Values such as `2.5` and `-17.0` have data type float (short for `floating point`). The value `7j` is an example of a `complex` data type. 
+## Int and Float
 
-- `int` store whole number, positive or negative, unlimited
-- `float` store number with decimals, positive or negative
+Values such as `4` and `-7` have the data type `int` (short for `integer`). Values like `2.5` and `-17.0` belong to the data type `float` (short for `floating point`). The value `7j` is an instance of the `complex` data type.
+
+- `int` stores whole numbers, whether positive or negative, with unlimited range.
+- `float` stores numbers with decimals, both positive and negative.
 
 With respect to numeric data types, you should know some rules:
-1. An expression involving two `int` operands produces an `int`:
+
+1. An expression involving two `int` operands results in an `int`:
 
 ```{code-cell} ipython3
 1 + 2
@@ -41,7 +43,8 @@ With respect to numeric data types, you should know some rules:
 type(1 + 2)
 ```
 
-2. An expression involving two `float` operands produces a `float`:
+2. An expression involving two `float` operands results in a `float`:
+
 ```{code-cell} ipython3
 1.0 + 2.0
 ```
@@ -50,7 +53,7 @@ type(1 + 2)
 type(1.0 + 2.0)
 ```
 
-3. When an expression's operands are an `int` and a `float`, meaning mixed data type, Python automatically converts the `int` to a `float`. That is why the following two expressions return the same data type. 
+3. When an expression involves an `int` and a `float` as operands, resulting in a mixed data type, Python automatically converts the `int` to a `float`. This is why the following two expressions yield the same data type.
 
 ```{code-cell} ipython3
 17.0 - 10
@@ -68,15 +71,16 @@ type(17.0 - 10)
 type(17 - 10.0)
 ```
 
-You can leave out `0` after the decimal, e.g., `10.`, but this is considered bad style. 
+4. You can omit `0` after the decimal point, for instance, `10.`, but this practice is generally considered poor style.
+
 ```{code-cell} ipython3
 10.
 ```
 
-### Difference between `int` and `float`
-- They are stored differently 
-  - `float` take up a fixed amount of space. `int` take up variable amount of space. 
-  - `int` are stored as `bignum` data type behind the scenes. 
+### Differences between `int` and `float`
+
+- `float` occupies a fixed amount of space, while `int` takes up a variable amount of space.
+- `int` values are stored as `bignum` data type behind the scenes.
 
 ```python
 import sys
@@ -87,9 +91,10 @@ Out[4]: 32
 sys.getsizeof(2**130)
 Out[6]: 44
 ```
-- Both `int` and `float` can store positive and negative numbers
-- `type()` -- used to figure out which type of data type it is
-- `float` can only represent approximations to real numbers because computers have finite amount of memory.
+
+- Both `int` and `float` can store both positive and negative numbers.
+- The `type()` function is used to determine the data type.
+- `float` can only represent approximations of real numbers due to the finite amount of memory available in computers.
   - `2/3` vs `1/3`
 
 ```{code-cell} ipython3

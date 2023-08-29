@@ -11,37 +11,42 @@ kernelspec:
 ---
 
 # Variables
-Variables give names to values (number, string, None). They are an identifier that labels a value for future reference. The value of a variable can be changed through assignment. 
 
-Variables must be assigned values before they can be used in expressions. 
+Variables provide names for values (numbers, strings, None). They act as identifiers that label a value for future reference. The value of a variable can be modified through assignment.
 
-Variables names **MUST** follow certain rules and it is **BEST** to follow Python guidelines for naming.
+Variables must be assigned before they can be utilized in expressions.
 
-## Restrictions for variable names:
-1. Start with a letter or underscore.
-2. The rest can have letters, underscore, and numbers.
-3. Symbols cannot be used in name `(@,+)`.
-4. Do not use Python keywords or reserved words such as `print`, `str`, `int`, `float`.
- - `int = 3` do `del int` to restore python keyword
- - `print = 'Yah'` do `del print` to restore Python keyword
+Variable names **MUST** adhere to specific rules, and it is **BEST** to adhere to Python's guidelines for naming.
 
-## Conventions for variable names:
-1. Use snake_case not camelCase for variable and function names.
-2. Variables should be lowercase.
-3. Upper case are used for constants `PI = 3.14`.
-4. UpperCamelCase for classes.
-5. `__private__`  double underscore is convention that means you are not supposed access this variable directly. They are by convention like private variables in other languages. 
+## Restrictions for Variable Names
 
-Variable names are case sensitive, so `ph` and `pH` are two different names. 
+1. Must start with a letter or underscore.
+2. Can consist of letters, underscores, and numbers.
+3. Symbols like `(@,+)` cannot be used in names.
+4. Avoid using Python keywords or reserved words, such as `print`, `str`, `int`, `float`.
+  
+- `int = 3` do `del int` to restore python keyword
+- `print = 'Yah'` do `del print` to restore Python keyword
+
+## Conventions for Variable Names
+
+1. Use snake_case, not camelCase, for variable and function names.
+2. Variables should be in lowercase.
+3. Uppercase is reserved for constants, such as `PI = 3.14`.
+4. UpperCamelCase is used for classes.
+5. `__private__` with a double underscore is a convention that signifies the variable shouldn't be accessed directly. This convention is analogous to private variables in other programming languages.
+
+Variable names are case-sensitive, meaning `ph` and `pH` are considered two distinct names.
 
 ## Variable Assignment
-Variables are created by executing assignment statements. 
+
+Variables are created by executing assignment statements.
 
 ```python
 degrees_celsius = 26.0
 ```
 
-This is called an assignment statement; we say that `degrees_celsius` is assigned the value `26.0`. Whenever Python sees a variable in an expression, it substitutes the value to which the variables refers:
+This is referred to as an assignment statement; in this case, we assign the value `26.0` to the variable `degrees_celsius`. Whenever Python encounters a variable within an expression, it substitutes the value that the variable represents.
 
 ```{code-cell} ipython3
 degrees_celsius = 26.0
@@ -66,5 +71,3 @@ as         def        from       nonlocal   while
 assert     del        global     not        with
 async      elif       if         or         yield
 ```
-
-Variable names are case sensitive, so `ph` and `pH` are two different names.

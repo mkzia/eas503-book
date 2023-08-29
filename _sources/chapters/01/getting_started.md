@@ -22,7 +22,7 @@ kernelspec:
 
 ## Computers
 
-- A modern computer can be defined as 'a machine that **stores** and **manipulates** information under the control of an **alterable program**.'
+- A modern computer can be defined as 'a machine that **stores** and **manipulates** information under the control of an **changeable program**.'
   - **Manipulation** means transforming information into new, useful forms, and then storing, outputting, or displaying information for our interpretation.
   - **Examples**:
     - Find students with the highest and lowest GPA.

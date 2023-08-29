@@ -12,7 +12,7 @@ kernelspec:
 
 # Return Statement
 
-All functions return a value. If you do not have a `return` statement in a function, nothing is produced, but by default the `None` data type is returned. 
+All functions inherently return a value. If a `return` statement is absent in a function, the `None` data type is automatically returned by default.
 
 ```{code-cell} ipython3
 def f(x):

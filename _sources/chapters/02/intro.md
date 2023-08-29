@@ -12,27 +12,29 @@ kernelspec:
 
 # Introduction to Functions
 
-A Functions is a small, self-contained sequence of statements/instructions that has a name. Example: a function to convert Celsius to Fahrenheit. Since the formula for converting from Celsius to Fahrenheit is always the same and the only variable is the temperature in Celsius, you can write a function that takes the temperature as an argument, perform the conversion, and then return the temperature in Fahrenheit. 
+A function is a self-contained sequence of statements or instructions that possesses a name. For example, consider a function designed to convert Celsius to Fahrenheit. Since the formula for this conversion remains consistent, with the only variable being the temperature in Celsius, you can create a function that accepts the temperature as an argument, performs the conversion, and subsequently returns the temperature in Fahrenheit.
 
 What are the advantages of using functions?
-  - Many programs require a particular sequence of statements/instructions to be executed repeatedly. The repeated statements/instructions can be placed with a single function, which can be accessed whenever needed. Therefore, they reduce repeated statements/instructions. 
-  - Functions help decompose larger programs into logical subprograms. Such programs are easier to write and debug. 
-  - Functions can be executed at any point by using their name 
-  - Functions can call other functions
-  - Functions can OPTIONALLY take argument(s) that they can use inside the function
-  - Functions can OPTIONALLY return value(s)
+
+- Many programs require a specific sequence of statements or instructions to be executed repeatedly. By consolidating these repetitive statements into a single function, which can be accessed whenever necessary, functions help reduce code duplication.
+- Functions aid in breaking down larger programs into logical subprograms, enhancing ease of writing and debugging.
+- Functions can be invoked at any point using their names.
+- Functions can call other functions.
+- Functions can OPTIONALLY accept argument(s) that they can utilize within the function.
+- Functions can OPTIONALLY return value(s).
 
 The general form of a function call is as follows:
-```
+
+```text
 def <<function_name>>(<<parameters>>):
     body
 ```
 
 ```{note}
-Note the difference between parameters and arguments: Function parameters are the names listed in the function's definition. Function arguments are the real values passed to the function. Parameters are initialized to the values of the arguments supplied.  [Reference](https://developer.mozilla.org/en-US/docs/Glossary/Parameter)
+Note the distinction between parameters and arguments: Function parameters are the names listed in the function's definition. Function arguments are the actual values provided to the function. Parameters are initialized with the values of the supplied arguments. [Reference](https://developer.mozilla.org/en-US/docs/Glossary/Parameter)
 ```
 
-In many programming languages, braces ({}) are used to enclose the contents of a function. In Python, however, a function body is distinguished from surrounding code by indenting all the function content by four spaces. 
+In numerous programming languages, braces ({}) are employed to enclose a function's contents. In contrast, in Python, a function body is differentiated from the surrounding code by indenting all of the function content by four spaces
 
 ```{code-cell} ipython3
 def convert_celsius_to_fahrenheit(degrees_in_celsius):
@@ -50,4 +52,3 @@ def convert_celsius_to_fahrenheit(degrees_in_celsius):
 ```
 
 ![indent_error](./indent_error.png)
-
