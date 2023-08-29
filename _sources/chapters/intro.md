@@ -139,8 +139,6 @@ A successful start to the course requires a few preparatory steps. Before the fi
    - Install Microsoft Visual Studio Code, from [website](https://code.visualstudio.com/).
    - If you have Windows, install Python 3.11 from the App store.
 
-Please note that an invitation granting you access to Codio and Piazza will be sent prior to the first lecture. Ensure you accept these invitations, as they are crucial for your participation and success in the course.
-
 :::{note}
 This website will undergo regular updates throughout the semester.
 :::
