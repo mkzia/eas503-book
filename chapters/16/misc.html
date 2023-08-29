@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>16.5. Feature Selection and Evaluation &#8212; EAS503: Python for Data Scientists</title>
   
@@ -29,44 +28,43 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css?v=6ad1a40c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=351a2e83"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=5eb1bb1e"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/16/misc';</script>
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/16/misc.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="prev" title="16.4. Select and Train a Model" href="select_and_train_a_model.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -460,9 +458,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="feature-selection-and-evaluation">
-<h1><span class="section-number">16.5. </span>Feature Selection and Evaluation<a class="headerlink" href="#feature-selection-and-evaluation" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">16.5. </span>Feature Selection and Evaluation<a class="headerlink" href="#feature-selection-and-evaluation" title="Permalink to this heading">#</a></h1>
 <section id="pca">
-<h2><span class="section-number">16.5.1. </span>PCA<a class="headerlink" href="#pca" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.5.1. </span>PCA<a class="headerlink" href="#pca" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.core.interactiveshell</span> <span class="kn">import</span> <span class="n">InteractiveShell</span>
@@ -501,10 +499,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2d20106380&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fbd523631c0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/078d340b9e9124ab583e43a4456881a3961a435e6ef36cce1b94940c79f95934.png" src="../../_images/078d340b9e9124ab583e43a4456881a3961a435e6ef36cce1b94940c79f95934.png" />
+<img alt="../../_images/662f322f8a0f751128137a4778632a769ff4b577b8f7dda66ec6c7dd33005ebb.png" src="../../_images/662f322f8a0f751128137a4778632a769ff4b577b8f7dda66ec6c7dd33005ebb.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -514,10 +512,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2d1dfb75e0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fbd5005c640&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/356deb38ef62cb1fab33a53f46dbbdbef3d698e838ffdea1d9e1a789876d796a.png" src="../../_images/356deb38ef62cb1fab33a53f46dbbdbef3d698e838ffdea1d9e1a789876d796a.png" />
+<img alt="../../_images/cb72d329b97d1c45623ecf840e0b7da2ef4cb5a87ebae50f650d3b911bd66434.png" src="../../_images/cb72d329b97d1c45623ecf840e0b7da2ef4cb5a87ebae50f650d3b911bd66434.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -527,10 +525,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2d1de43fa0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fbd500dd1b0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/badce1dd039dc1a6091ad760dac892cd110ebf9c57be6d5c8ad604d5287431de.png" src="../../_images/badce1dd039dc1a6091ad760dac892cd110ebf9c57be6d5c8ad604d5287431de.png" />
+<img alt="../../_images/18ac413f46f05f1f2ddd6b2c81df9282dd0a6fb2de9e01866d930592b6222997.png" src="../../_images/18ac413f46f05f1f2ddd6b2c81df9282dd0a6fb2de9e01866d930592b6222997.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -543,16 +541,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.43134813, -0.42556686, -0.31720405, ..., -0.45476262,
-        -0.46310638, -0.46768072],
-       [-0.10912201, -0.17902147, -0.0880037 , ..., -0.20269884,
-        -0.17154725, -0.15633787],
-       [-0.61444329, -0.60376647, -0.59089826, ..., -0.61588734,
-        -0.69815835, -0.65696034],
-       [ 0.50863703,  0.54459091,  0.46207826, ...,  0.43485668,
-         0.50038459,  0.42710831],
-       [ 0.06287403, -0.12731327, -0.16610354, ...,  0.04488679,
-         0.04757782, -0.23328333]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.46780602, -0.38808825, -0.35715085, ..., -0.52035344,
+        -0.48851716, -0.53081862],
+       [-0.2108245 , -0.0812076 , -0.13082874, ..., -0.21219606,
+        -0.271428  , -0.13042834],
+       [-0.68761487, -0.57041111, -0.55830934, ..., -0.67175515,
+        -0.68436124, -0.73816118],
+       [ 0.55695315,  0.52314508,  0.56113078, ...,  0.45034806,
+         0.40719481,  0.48596893],
+       [ 0.22923319, -0.12978545,  0.18929431, ...,  0.10780718,
+         0.22341426, -0.24488769]])
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5, 1000)
@@ -568,7 +566,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([20.86175135, 14.30581469,  5.44868413,  1.46351039,  0.9828029 ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([20.93036152, 14.20818005,  5.52156392,  1.4264712 ,  0.97934778])
 </pre></div>
 </div>
 </div>
@@ -616,7 +614,7 @@ document.write(`
 </div>
 </div>
 <section id="scree-plot">
-<h3><span class="section-number">16.5.1.1. </span>Scree plot<a class="headerlink" href="#scree-plot" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.5.1.1. </span>Scree plot<a class="headerlink" href="#scree-plot" title="Permalink to this heading">#</a></h3>
 <p>Gives the measure of the associated principal component’s importance with regards to how much of the total information it represents.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -643,10 +641,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2d1d410fa0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fbd50021480&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/e3ead6f51ddf6ab6f7dc17697e3cb5fa1d876f7e94b3545f905503ca3fa22d82.png" src="../../_images/e3ead6f51ddf6ab6f7dc17697e3cb5fa1d876f7e94b3545f905503ca3fa22d82.png" />
+<img alt="../../_images/eee9a6d02b0b678729eba7ca1c21ce31fcdb97cae163650e51e48fc2e14f343c.png" src="../../_images/eee9a6d02b0b678729eba7ca1c21ce31fcdb97cae163650e51e48fc2e14f343c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -657,10 +655,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2d1d484eb0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fbd4f6fd480&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/8de506de39dea5fc9eb0b1b55d97d0116db7fc3e58fead7d61876285cf8c7d49.png" src="../../_images/8de506de39dea5fc9eb0b1b55d97d0116db7fc3e58fead7d61876285cf8c7d49.png" />
+<img alt="../../_images/32c3b716c8a3b7e2c9895eb2f7435323d415480e5d75eca4b2ee8ab68adb7cf4.png" src="../../_images/32c3b716c8a3b7e2c9895eb2f7435323d415480e5d75eca4b2ee8ab68adb7cf4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -671,15 +669,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2d1d491ab0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fbd4f78c910&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/a1725e7dd36799102eef75fd01de90a4d8dde5ef639014da39bc3bcc200fa9c0.png" src="../../_images/a1725e7dd36799102eef75fd01de90a4d8dde5ef639014da39bc3bcc200fa9c0.png" />
+<img alt="../../_images/8c1b4620f5f18cc458fdc855f372bd4b5bd31f4b3499ee48d30345587da63d2b.png" src="../../_images/8c1b4620f5f18cc458fdc855f372bd4b5bd31f4b3499ee48d30345587da63d2b.png" />
 </div>
 </div>
 </section>
 <section id="pca-on-the-iris-data">
-<h3><span class="section-number">16.5.1.2. </span>PCA on the IRIS Data<a class="headerlink" href="#pca-on-the-iris-data" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.5.1.2. </span>PCA on the IRIS Data<a class="headerlink" href="#pca-on-the-iris-data" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
@@ -732,7 +730,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 800x600 with 0 Axes&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f2d1bd2d750&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fbd4dfee710&gt;
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Sepal length&#39;)
@@ -753,7 +751,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([], [])
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x7f2d1ba53f70&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x7fbd4dfbd750&gt;
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.92, &#39;First three PCA directions&#39;)
@@ -762,7 +760,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;1st eigenvector&#39;)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_5880/1367415577.py:37: MatplotlibDeprecationWarning: The w_xaxis attribute was deprecated in Matplotlib 3.1 and will be removed in 3.8. Use xaxis instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_6173/1367415577.py:37: MatplotlibDeprecationWarning: The w_xaxis attribute was deprecated in Matplotlib 3.1 and will be removed in 3.8. Use xaxis instead.
   ax.w_xaxis.set_ticklabels([])
 </pre></div>
 </div>
@@ -781,7 +779,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.5, &#39;2nd eigenvector&#39;)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_5880/1367415577.py:39: MatplotlibDeprecationWarning: The w_yaxis attribute was deprecated in Matplotlib 3.1 and will be removed in 3.8. Use yaxis instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_6173/1367415577.py:39: MatplotlibDeprecationWarning: The w_yaxis attribute was deprecated in Matplotlib 3.1 and will be removed in 3.8. Use yaxis instead.
   ax.w_yaxis.set_ticklabels([])
 </pre></div>
 </div>
@@ -798,7 +796,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;3rd eigenvector&#39;)
 </pre></div>
 </div>
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_5880/1367415577.py:41: MatplotlibDeprecationWarning: The w_zaxis attribute was deprecated in Matplotlib 3.1 and will be removed in 3.8. Use zaxis instead.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_6173/1367415577.py:41: MatplotlibDeprecationWarning: The w_zaxis attribute was deprecated in Matplotlib 3.1 and will be removed in 3.8. Use zaxis instead.
   ax.w_zaxis.set_ticklabels([])
 </pre></div>
 </div>
@@ -814,7 +812,7 @@ document.write(`
  Text(1.0, 0, &#39;&#39;)]
 </pre></div>
 </div>
-<img alt="../../_images/c661e0121b97db04475a38eb0c3b6efb45b965c39c461495ebc92f6d46f33286.png" src="../../_images/c661e0121b97db04475a38eb0c3b6efb45b965c39c461495ebc92f6d46f33286.png" />
+<img alt="../../_images/d37649b270dfc4afaaa3c0daf93aaec5e313b528eb536fef0e75ed9b37965485.png" src="../../_images/d37649b270dfc4afaaa3c0daf93aaec5e313b528eb536fef0e75ed9b37965485.png" />
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 800x600 with 0 Axes&gt;
 </pre></div>
 </div>
@@ -839,8 +837,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.006     , 3.428     , 1.462     , 0.246     , 5.03471455,
-       3.45167005, 1.48993316, 0.2670955 ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.006     , 3.428     , 1.462     , 0.246     , 5.0272475 ,
+       3.45045395, 1.48050044, 0.27093309])
 </pre></div>
 </div>
 </div>
@@ -854,8 +852,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.006     , 3.428     , 1.462     , 0.246     , 5.03471455,
-       3.45167005, 1.48993316, 0.2670955 ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.006     , 3.428     , 1.462     , 0.246     , 5.0272475 ,
+       3.45045395, 1.48050044, 0.27093309])
 </pre></div>
 </div>
 </div>
@@ -868,8 +866,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([14.38281804, 10.11759085,  8.04256865,  5.03696198,  0.69402886,
-        0.40895537,  0.19906982,  0.16264893])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([14.30163855, 10.1289325 ,  8.18583725,  5.02482051,  0.6261361 ,
+        0.36675378,  0.22315438,  0.18642944])
 </pre></div>
 </div>
 </div>
@@ -885,7 +883,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.52 0.26 0.16 0.06 0.   0.   0.   0.  ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.51 0.26 0.17 0.06 0.   0.   0.   0.  ]
 </pre></div>
 </div>
 </div>
@@ -909,10 +907,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2d1bae7be0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fbd4dd6c640&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/df23940b7f61975718957d5db34581f465b586e50db7cc1eb1ffb8d99ecbe210.png" src="../../_images/df23940b7f61975718957d5db34581f465b586e50db7cc1eb1ffb8d99ecbe210.png" />
+<img alt="../../_images/ed8125a8293ccb1623a8602f9b3958836a6f75c0ed0a20c5da40d7eabff52897.png" src="../../_images/ed8125a8293ccb1623a8602f9b3958836a6f75c0ed0a20c5da40d7eabff52897.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -925,7 +923,7 @@ document.write(`
 </section>
 </section>
 <section id="k-means-clustering">
-<h2><span class="section-number">16.5.2. </span>K-Means Clustering<a class="headerlink" href="#k-means-clustering" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.5.2. </span>K-Means Clustering<a class="headerlink" href="#k-means-clustering" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># https://towardsdatascience.com/machine-learning-algorithms-part-9-k-means-example-in-python-f2ad05ed5203</span>
@@ -942,15 +940,15 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Three blobs&#39;)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f2d1dd2e380&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fbd4f31dd50&gt;
 </pre></div>
 </div>
-<img alt="../../_images/9433c16737331053c792d88dad5c076b01bbbda8f686f01c005e7201491060a1.png" src="../../_images/9433c16737331053c792d88dad5c076b01bbbda8f686f01c005e7201491060a1.png" />
+<img alt="../../_images/228b4b8ccfaa0663a645f4c11c931daa5ea63c191b0f124aac4670dd4134debe.png" src="../../_images/228b4b8ccfaa0663a645f4c11c931daa5ea63c191b0f124aac4670dd4134debe.png" />
 </div>
 </div>
 </section>
 <section id="using-scikit-learn-to-perform-k-means-clustering">
-<h2><span class="section-number">16.5.3. </span>Using scikit-learn to perform K-Means clustering<a class="headerlink" href="#using-scikit-learn-to-perform-k-means-clustering" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.5.3. </span>Using scikit-learn to perform K-Means clustering<a class="headerlink" href="#using-scikit-learn-to-perform-k-means-clustering" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
@@ -975,20 +973,20 @@ document.write(`
   warnings.warn(
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f2d1d661660&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fbd4f7b6260&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f2d1dd11cf0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fbd4fec7f10&gt;
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Data points and cluster centroids&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/2df5d4a60f57780b1bbf43c36c638375807ff2d317f1c36397f943aaaeec696f.png" src="../../_images/2df5d4a60f57780b1bbf43c36c638375807ff2d317f1c36397f943aaaeec696f.png" />
+<img alt="../../_images/6977667962a9846d547f14dfefba6fc90eff0357fb17a1944eb9967be544139c.png" src="../../_images/6977667962a9846d547f14dfefba6fc90eff0357fb17a1944eb9967be544139c.png" />
 </div>
 </div>
 <section id="some-links">
-<h3><span class="section-number">16.5.3.1. </span>Some links<a class="headerlink" href="#some-links" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.5.3.1. </span>Some links<a class="headerlink" href="#some-links" title="Permalink to this heading">#</a></h3>
 <p><a class="reference external" href="https://jakevdp.github.io/PythonDataScienceHandbook/05.07-support-vector-machines.html">https://jakevdp.github.io/PythonDataScienceHandbook/05.07-support-vector-machines.html</a>
 <a class="reference external" href="https://scikit-learn.org/stable/auto_examples/linear_model/plot_ransac.html">https://scikit-learn.org/stable/auto_examples/linear_model/plot_ransac.html</a>
 <a class="reference external" href="http://www.cse.psu.edu/~rtc12/CSE486/lecture15.pdf">http://www.cse.psu.edu/~rtc12/CSE486/lecture15.pdf</a>
@@ -996,7 +994,7 @@ document.write(`
 </section>
 </section>
 <section id="evaluating-algorithms">
-<h2><span class="section-number">16.5.4. </span>Evaluating Algorithms<a class="headerlink" href="#evaluating-algorithms" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.5.4. </span>Evaluating Algorithms<a class="headerlink" href="#evaluating-algorithms" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_breast_cancer</span>
@@ -1109,7 +1107,7 @@ weighted avg       0.96      0.96      0.96       143
 </pre></div>
 </div>
 <section id="lots-of-classifiers">
-<h3><span class="section-number">16.5.4.1. </span>Lots of Classifiers<a class="headerlink" href="#lots-of-classifiers" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.5.4.1. </span>Lots of Classifiers<a class="headerlink" href="#lots-of-classifiers" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
@@ -1270,7 +1268,7 @@ weighted avg       0.96      0.96      0.96       143
 </div>
 </div>
 <section id="feature-importance">
-<h4><span class="section-number">16.5.4.1.1. </span>Feature Importance<a class="headerlink" href="#feature-importance" title="Permalink to this headline">#</a></h4>
+<h4><span class="section-number">16.5.4.1.1. </span>Feature Importance<a class="headerlink" href="#feature-importance" title="Permalink to this heading">#</a></h4>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">for</span> <span class="n">score</span><span class="p">,</span> <span class="n">name</span> <span class="ow">in</span> <span class="nb">sorted</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">classifier</span><span class="o">.</span><span class="n">feature_importances_</span><span class="p">,</span> <span class="n">data</span><span class="o">.</span><span class="n">feature_names</span><span class="p">),</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">):</span>
@@ -1405,10 +1403,10 @@ weighted avg       0.96      0.96      0.96       114
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2d1613d870&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fbd483d24a0&gt;]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f2d1613db10&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fbd483d26e0&gt;]
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1.0)
@@ -1426,28 +1424,28 @@ weighted avg       0.96      0.96      0.96       114
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Receiver operating characteristic example&#39;)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f2d1613dc60&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fbd483d27d0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/03e8194e4c4558118ae576979499686ab5d4e2fc375b4b3829fb5797e7293af5.png" src="../../_images/03e8194e4c4558118ae576979499686ab5d4e2fc375b4b3829fb5797e7293af5.png" />
+<img alt="../../_images/f0b5a87adf9447ea7d38ac26389d272483d2f354648ad52e00c7730e7b6b4240.png" src="../../_images/f0b5a87adf9447ea7d38ac26389d272483d2f354648ad52e00c7730e7b6b4240.png" />
 </div>
 </div>
 </section>
 </section>
 </section>
 <section id="imbalanced-data-sets">
-<h2><span class="section-number">16.5.5. </span>Imbalanced Data sets<a class="headerlink" href="#imbalanced-data-sets" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.5.5. </span>Imbalanced Data sets<a class="headerlink" href="#imbalanced-data-sets" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>For imbalanced data sets, the AUC of precision/recall curve is more informative than the AUC for sensitivity/specificity curve.</p></li>
 <li><p><a class="reference external" href="https://www.kaggle.com/code/vedbharti/classification-precision-recall-vs-roc-plot">https://www.kaggle.com/code/vedbharti/classification-precision-recall-vs-roc-plot</a></p></li>
 </ul>
 </section>
 <section id="stratify">
-<h2><span class="section-number">16.5.6. </span>Stratify<a class="headerlink" href="#stratify" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.5.6. </span>Stratify<a class="headerlink" href="#stratify" title="Permalink to this heading">#</a></h2>
 <p>stratify</p>
 </section>
 <section id="vocabulary">
-<h2><span class="section-number">16.5.7. </span>Vocabulary<a class="headerlink" href="#vocabulary" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.5.7. </span>Vocabulary<a class="headerlink" href="#vocabulary" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Supervised Learning</p></li>
 <li><p>Unsupervised Learning</p></li>

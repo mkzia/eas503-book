@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>16.4. Select and Train a Model &#8212; EAS503: Python for Data Scientists</title>
   
@@ -29,37 +28,36 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css?v=6ad1a40c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=351a2e83"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=5eb1bb1e"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/16/select_and_train_a_model';</script>
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/16/select_and_train_a_model.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -67,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="16.5. Feature Selection and Evaluation" href="misc.html" />
     <link rel="prev" title="16.3. Preprocessing data" href="preprocessing_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -451,9 +449,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="select-and-train-a-model">
-<h1><span class="section-number">16.4. </span>Select and Train a Model<a class="headerlink" href="#select-and-train-a-model" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">16.4. </span>Select and Train a Model<a class="headerlink" href="#select-and-train-a-model" title="Permalink to this heading">#</a></h1>
 <section id="splitting-data-into-train-and-test">
-<h2><span class="section-number">16.4.1. </span>Splitting data into Train and Test<a class="headerlink" href="#splitting-data-into-train-and-test" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.4.1. </span>Splitting data into Train and Test<a class="headerlink" href="#splitting-data-into-train-and-test" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
@@ -487,7 +485,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0]
 </pre></div>
 </div>
 </div>
@@ -550,7 +548,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 0]
 </pre></div>
 </div>
 </div>
@@ -571,7 +569,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 0]
 </pre></div>
 </div>
 </div>
@@ -628,15 +626,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([168., 128., 206., 151., 109., 262., 118.,  92., 259., 174., 252.,
-        68., 181.,  88.,  50., 219., 152.,  87., 181., 156., 216.,  59.,
-       219., 265.,  90., 178., 281.,  88., 122., 158.,  53., 140., 199.,
-        93., 190., 180.,  72., 268., 131., 242.,  49.,  74.,  42., 182.,
-        60., 144., 113., 115., 147., 217.,  97., 279.,  99.,  61., 139.,
-       242., 210., 275.,  93., 131., 101.,  70.,  85.,  90.,  77.,  91.,
-        89., 131., 272., 280., 196., 311., 252., 214., 163., 198.,  52.,
-       270., 292.,  61., 124., 111., 192., 128.,  53., 102., 142., 295.,
-       182.])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 69.,  65., 200., 220., 217.,  66.,  59., 174., 107., 276.,  79.,
+       153.,  91.,  91., 190.,  52., 118., 191., 124.,  69., 182., 142.,
+       142., 144., 215., 306., 280., 230., 219., 150., 168., 246.,  77.,
+       237.,  61., 201.,  64., 110., 258., 246., 265., 252.,  77., 120.,
+       189.,  42.,  72.,  99.,  77., 139.,  90., 202., 103., 185., 297.,
+       191., 180., 109., 143.,  71.,  94., 148., 277.,  96., 162.,  90.,
+       275., 160.,  55., 243., 332., 270.,  97.,  72., 104., 198.,  68.,
+       308., 270., 281., 183.,  83.,  31., 178., 178.,  59., 281., 135.,
+       184.])
 </pre></div>
 </div>
 </div>
@@ -661,7 +659,7 @@ document.write(`
 </div>
 </section>
 <section id="linear-regression-example">
-<h2><span class="section-number">16.4.2. </span>Linear Regression Example<a class="headerlink" href="#linear-regression-example" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.4.2. </span>Linear Regression Example<a class="headerlink" href="#linear-regression-example" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>To predict a numerical value</p></li>
 </ul>
@@ -886,7 +884,7 @@ document.write(`
 </div></div></div>
 </div>
 <section id="selecting-the-data">
-<h3><span class="section-number">16.4.2.1. </span>Selecting the data<a class="headerlink" href="#selecting-the-data" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.4.2.1. </span>Selecting the data<a class="headerlink" href="#selecting-the-data" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">=</span> <span class="n">dataset</span><span class="o">.</span><span class="n">iloc</span><span class="p">[:,</span> <span class="p">:</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="o">.</span><span class="n">values</span>
@@ -908,7 +906,7 @@ document.write(`
 </div>
 </section>
 <section id="split-the-data">
-<h3><span class="section-number">16.4.2.2. </span>Split the data<a class="headerlink" href="#split-the-data" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.4.2.2. </span>Split the data<a class="headerlink" href="#split-the-data" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
@@ -919,7 +917,7 @@ document.write(`
 </div>
 </section>
 <section id="train-and-test">
-<h3><span class="section-number">16.4.2.3. </span>Train and Test<a class="headerlink" href="#train-and-test" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.4.2.3. </span>Train and Test<a class="headerlink" href="#train-and-test" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
@@ -933,7 +931,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3832.7646544560134
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5455.755241542811
 </pre></div>
 </div>
 </div>
@@ -947,7 +945,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26425.765163135446
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26841.162306070335
 </pre></div>
 </div>
 </div>
@@ -964,7 +962,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/885cc982eb6f710fa31d48d7c35fe4b2ad9228614bb7fb0f133f4ce27effcd07.png" src="../../_images/885cc982eb6f710fa31d48d7c35fe4b2ad9228614bb7fb0f133f4ce27effcd07.png" />
+<img alt="../../_images/5196ada519b0952bd32806e3d1ef1dbf95166b82308881ce730e72456ad1e8a3.png" src="../../_images/5196ada519b0952bd32806e3d1ef1dbf95166b82308881ce730e72456ad1e8a3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -979,12 +977,12 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1374421027742f5cce8d8466f5fe7d19ca3969eb5c7c1c2b8f3cb7c6b0b59e81.png" src="../../_images/1374421027742f5cce8d8466f5fe7d19ca3969eb5c7c1c2b8f3cb7c6b0b59e81.png" />
+<img alt="../../_images/3c72c171c4d067acc17bf9e4589690e4d6e159ca9400e7bc398dec176641aea7.png" src="../../_images/3c72c171c4d067acc17bf9e4589690e4d6e159ca9400e7bc398dec176641aea7.png" />
 </div>
 </div>
 </section>
 <section id="apply-decisiontreeregressor">
-<h3><span class="section-number">16.4.2.4. </span>Apply DecisionTreeRegressor<a class="headerlink" href="#apply-decisiontreeregressor" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.4.2.4. </span>Apply DecisionTreeRegressor<a class="headerlink" href="#apply-decisiontreeregressor" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Decision Trees are good for finding complex nonlinear relationships</p></li>
 </ul>
@@ -1006,14 +1004,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7509.539599735792
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6389.8143426341685
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="cross-validation">
-<h3><span class="section-number">16.4.2.5. </span>Cross-Validation<a class="headerlink" href="#cross-validation" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.4.2.5. </span>Cross-Validation<a class="headerlink" href="#cross-validation" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.pipeline</span> <span class="kn">import</span> <span class="n">make_pipeline</span>
@@ -1074,7 +1072,7 @@ document.write(`
 </section>
 </section>
 <section id="classification-example">
-<h2><span class="section-number">16.4.3. </span>Classification Example<a class="headerlink" href="#classification-example" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.4.3. </span>Classification Example<a class="headerlink" href="#classification-example" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_iris</span>
@@ -1106,7 +1104,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/3b4f7da178f8469c311c766d755db0bdf93a50bb2d1b3a166389a057ac9d529e.png" src="../../_images/3b4f7da178f8469c311c766d755db0bdf93a50bb2d1b3a166389a057ac9d529e.png" />
+<img alt="../../_images/402118d611e570d85bb470665a2bf91c73af3e0258dfbe9b189928790a3641f3.png" src="../../_images/402118d611e570d85bb470665a2bf91c73af3e0258dfbe9b189928790a3641f3.png" />
 </div>
 </div>
 <div class="cell docutils container">

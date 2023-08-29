@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>12.1. Object-Oriented Programming &#8212; EAS503: Python for Data Scientists</title>
   
@@ -29,37 +28,36 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css?v=6ad1a40c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=351a2e83"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=5eb1bb1e"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/12/oop';</script>
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/12/oop.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -67,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="13. SQL with SQLite" href="../13/sql.html" />
     <link rel="prev" title="12. Object Oriented Programming" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -259,11 +257,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../14/exercises.html">14.3. Cross-referenced Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../15/intro.html">15. Plotting with Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15/intro.html">15. Plotting in Python</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../16/intro.html">16. Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../16/introduction.html">16.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../16/loading_data.html">16.2. Loading Data</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../16/preprocessing_data.html">16.3. Preprocessing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/select_and_train_a_model.html">16.4. Select and Train a Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/misc.html">16.5. Feature Selection and Evaluation</a></li>
 </ul>
 </li>
 </ul>
@@ -477,7 +477,7 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="object-oriented-programming">
-<h1><span class="section-number">12.1. </span>Object-Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">12.1. </span>Object-Oriented Programming<a class="headerlink" href="#object-oriented-programming" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>We know how to store various data in Python using various data types</p></li>
 <li><p>We also know how to define functions that manipulate
@@ -486,7 +486,7 @@ or operate on that data.</p></li>
 the data and functions in one place.</p></li>
 </ul>
 <section id="comparison-between-procedural-and-object-oriented-programming">
-<h2><span class="section-number">12.1.1. </span>Comparison between Procedural and Object-oriented Programming<a class="headerlink" href="#comparison-between-procedural-and-object-oriented-programming" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.1. </span>Comparison between Procedural and Object-oriented Programming<a class="headerlink" href="#comparison-between-procedural-and-object-oriented-programming" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Procedural programming:</p>
 <ul>
@@ -505,7 +505,7 @@ the data and functions in one place.</p></li>
 </ul>
 </section>
 <section id="procedural-programming-example">
-<h2><span class="section-number">12.1.2. </span>Procedural Programming Example<a class="headerlink" href="#procedural-programming-example" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.2. </span>Procedural Programming Example<a class="headerlink" href="#procedural-programming-example" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># function </span>
 <span class="k">def</span> <span class="nf">average</span><span class="p">(</span><span class="n">numbers</span><span class="p">):</span> 
   <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">numbers</span><span class="p">)</span>
@@ -521,7 +521,7 @@ the data and functions in one place.</p></li>
 </div>
 </section>
 <section id="object-oriented-programming-example">
-<h2><span class="section-number">12.1.3. </span>Object-Oriented Programming Example<a class="headerlink" href="#object-oriented-programming-example" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.3. </span>Object-Oriented Programming Example<a class="headerlink" href="#object-oriented-programming-example" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Define a new class that will contain both the
 data and the function to manipulate it.</p></li>
@@ -554,7 +554,7 @@ code is organized differently.</p></li>
 </ul>
 </section>
 <section id="basic-building-blocks-to-defining-a-class">
-<h2><span class="section-number">12.1.4. </span>Basic Building Blocks to defining a class<a class="headerlink" href="#basic-building-blocks-to-defining-a-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.4. </span>Basic Building Blocks to defining a class<a class="headerlink" href="#basic-building-blocks-to-defining-a-class" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">class</span></code> - keyword to indicate that you are creating/defining a class; example <code class="docutils literal notranslate"><span class="pre">class</span> <span class="pre">ScoreList</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">__init__</span></code> - a method that is invoked automatically
@@ -563,7 +563,7 @@ of a class with its own separate data from other objects (attributes/data), but 
 </ul>
 </section>
 <section id="benefits-of-oop">
-<h2><span class="section-number">12.1.5. </span>Benefits of OOP<a class="headerlink" href="#benefits-of-oop" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.5. </span>Benefits of OOP<a class="headerlink" href="#benefits-of-oop" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>We can organize our code into distinct objects, so each object handles storing and manipulating the data.</p></li>
 <li><p>We can create hierarchies of classes where each child
@@ -571,16 +571,16 @@ inherits from its parent class attributes and methods, reducing code repetition 
 </ul>
 </section>
 <section id="thoughts-on-oop">
-<h2><span class="section-number">12.1.6. </span>Thoughts on OOP<a class="headerlink" href="#thoughts-on-oop" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.6. </span>Thoughts on OOP<a class="headerlink" href="#thoughts-on-oop" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>In Python everything is an object, which means every entity has some attributes and associated functionality called methods. This means that <code class="docutils literal notranslate"><span class="pre">str</span></code> and <code class="docutils literal notranslate"><span class="pre">dict</span></code> are classes that know how to store data and how to operate on them.</p></li>
 <li><p>Do not overdo OOP. It is possible to create a very large object which then basically functions like a procedural system disguised as an object-oriented one.</p></li>
 </ul>
 </section>
 <section id="data-class-builders">
-<h2><span class="section-number">12.1.7. </span>Data Class Builders<a class="headerlink" href="#data-class-builders" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.7. </span>Data Class Builders<a class="headerlink" href="#data-class-builders" title="Permalink to this heading">#</a></h2>
 <section id="namedtuple">
-<h3><span class="section-number">12.1.7.1. </span>namedtuple<a class="headerlink" href="#namedtuple" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.7.1. </span>namedtuple<a class="headerlink" href="#namedtuple" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Sometimes you want to build a class that simply contains data and no added functionality. For this, use use <code class="docutils literal notranslate"><span class="pre">namedtuple</span></code></p></li>
 </ul>
@@ -601,8 +601,8 @@ inherits from its parent class attributes and methods, reducing code repetition 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Point object at 0x7f90c2d8b880&gt;
-&lt;__main__.Point object at 0x7f90c2dd0070&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Point object at 0x7f09c82902b0&gt;
+&lt;__main__.Point object at 0x7f09c8290460&gt;
 False
 False
 </pre></div>
@@ -637,7 +637,7 @@ False
 </ul>
 </section>
 <section id="equality-vs-reference">
-<h3><span class="section-number">12.1.7.2. </span>Equality vs Reference<a class="headerlink" href="#equality-vs-reference" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.7.2. </span>Equality vs Reference<a class="headerlink" href="#equality-vs-reference" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">==</span></code> is for value equality</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">is</span></code> is for reference equality</p></li>
@@ -667,7 +667,7 @@ False
 </div>
 </section>
 <section id="passing-in-a-mutable-object-to-a-class">
-<h3><span class="section-number">12.1.7.3. </span>Passing in a mutable object to a class<a class="headerlink" href="#passing-in-a-mutable-object-to-a-class" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.7.3. </span>Passing in a mutable object to a class<a class="headerlink" href="#passing-in-a-mutable-object-to-a-class" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">ScoreList</span><span class="p">():</span>
@@ -694,7 +694,7 @@ The final score is 89.25.
 </div>
 </section>
 <section id="repr-vs-str">
-<h3><span class="section-number">12.1.7.4. </span><strong>repr</strong> vs <strong>str</strong><a class="headerlink" href="#repr-vs-str" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.7.4. </span><strong>repr</strong> vs <strong>str</strong><a class="headerlink" href="#repr-vs-str" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">__repr__</span></code> - a method that returns a string containing
 an object’s printed representation. Its purpose is to unambiguous</p></li>
@@ -729,7 +729,7 @@ an object’s printed representation. Its purpose is to unambiguous</p></li>
 </div>
 </section>
 <section id="id1">
-<h3><span class="section-number">12.1.7.5. </span>NamedTuple<a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.7.5. </span>NamedTuple<a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>You can also use the <code class="docutils literal notranslate"><span class="pre">NamedTuple</span></code> class to build a data class. The benefit is that you can overwrite default functions, for example `<strong>str</strong>.</p></li>
 </ul>
@@ -771,7 +771,7 @@ False
 </div>
 </section>
 <section id="dataclass">
-<h3><span class="section-number">12.1.7.6. </span>Dataclass<a class="headerlink" href="#dataclass" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.7.6. </span>Dataclass<a class="headerlink" href="#dataclass" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>A third way to build a data class is to use the <code class="docutils literal notranslate"><span class="pre">dataclass</span></code> operator</p></li>
 </ul>
@@ -833,7 +833,7 @@ False
 </section>
 </section>
 <section id="getting-data-as-a-dict">
-<h2><span class="section-number">12.1.8. </span>Getting data as a dict<a class="headerlink" href="#getting-data-as-a-dict" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.8. </span>Getting data as a dict<a class="headerlink" href="#getting-data-as-a-dict" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
@@ -887,7 +887,7 @@ False
 </div>
 </section>
 <section id="replacing-values-in-an-immutable-data-class">
-<h2><span class="section-number">12.1.9. </span>Replacing values in an immutable data class<a class="headerlink" href="#replacing-values-in-an-immutable-data-class" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.9. </span>Replacing values in an immutable data class<a class="headerlink" href="#replacing-values-in-an-immutable-data-class" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Returns a new object</p></li>
 </ul>
@@ -944,7 +944,7 @@ x: 5; y: 12
 </div>
 </section>
 <section id="default-values-in-data-classes">
-<h2><span class="section-number">12.1.10. </span>Default values in data classes<a class="headerlink" href="#default-values-in-data-classes" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.10. </span>Default values in data classes<a class="headerlink" href="#default-values-in-data-classes" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">namedtuple</span>
@@ -1010,7 +1010,7 @@ x: 5; y: 10
 </div>
 </section>
 <section id="examples">
-<h2><span class="section-number">12.1.11. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.11. </span>Examples<a class="headerlink" href="#examples" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">,</span> <span class="n">email</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span> <span class="o">=</span> <span class="n">first_name</span>
@@ -1238,7 +1238,7 @@ x: 5; y: 10
 first_name –&gt; FirstName (classes)</p>
 </div>
 <section id="exercise-1">
-<h3><span class="section-number">12.1.11.1. </span>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.11.1. </span>Exercise 1<a class="headerlink" href="#exercise-1" title="Permalink to this heading">#</a></h3>
 <p>Modify enroll to accept multiple classes!</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Student</span><span class="p">(</span><span class="n">Person</span><span class="p">):</span>
     <span class="n">PROGRAMS</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;undergraduate&#39;</span><span class="p">,</span> <span class="s1">&#39;graduate&#39;</span><span class="p">]</span>
@@ -1276,7 +1276,7 @@ first_name –&gt; FirstName (classes)</p>
 </div>
 </section>
 <section id="exercise-2">
-<h3><span class="section-number">12.1.11.2. </span>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.11.2. </span>Exercise 2<a class="headerlink" href="#exercise-2" title="Permalink to this heading">#</a></h3>
 <p>Write a Beverage class whose instances will
 represent beverages. Each beverage should have
 two attributes: a name (describing the beverage)
@@ -1302,7 +1302,7 @@ handled correctly.</p>
 </div>
 </section>
 <section id="exercise-3">
-<h3><span class="section-number">12.1.11.3. </span>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.11.3. </span>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h3>
 <p>Modify the Beverage class, such that you can create
 a new instance specifying the name,
 and not the temperature.
@@ -1330,7 +1330,7 @@ not specified.</p>
 </div>
 </section>
 <section id="exercise-4">
-<h3><span class="section-number">12.1.11.4. </span>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.11.4. </span>Exercise 4<a class="headerlink" href="#exercise-4" title="Permalink to this heading">#</a></h3>
 <p>Create a new LogFile class that expects to
 be initialized with a filename.
 Inside of <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, open the file for
@@ -1372,7 +1372,7 @@ possible to write to the file via the file attribute.</p>
 </div>
 </section>
 <section id="exercise-5">
-<h3><span class="section-number">12.1.11.5. </span>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.11.5. </span>Exercise 5<a class="headerlink" href="#exercise-5" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Person</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">first_name</span><span class="p">,</span> <span class="n">last_name</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">first_name</span> <span class="o">=</span> <span class="n">first_name</span>
@@ -1412,7 +1412,7 @@ possible to write to the file via the file attribute.</p>
 </section>
 </section>
 <section id="payroll-system-using-polymorphism">
-<h2><span class="section-number">12.1.12. </span>Payroll system using polymorphism<a class="headerlink" href="#payroll-system-using-polymorphism" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.12. </span>Payroll system using polymorphism<a class="headerlink" href="#payroll-system-using-polymorphism" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Employee – Abstract</p>
 <ul>
@@ -1438,7 +1438,7 @@ possible to write to the file via the file attribute.</p>
 <li><p>Demonstrate polymorphism</p></li>
 </ul>
 <section id="exercise">
-<h3><span class="section-number">12.1.12.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.12.1. </span>Exercise<a class="headerlink" href="#exercise" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Java How to Program Deitel et. al</span>
 
 <span class="kn">from</span> <span class="nn">abc</span> <span class="kn">import</span> <span class="n">ABC</span><span class="p">,</span> <span class="n">abstractmethod</span>
@@ -1555,7 +1555,7 @@ possible to write to the file via the file attribute.</p>
 </section>
 </section>
 <section id="operator-overloading">
-<h2><span class="section-number">12.1.13. </span>Operator overloading<a class="headerlink" href="#operator-overloading" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.13. </span>Operator overloading<a class="headerlink" href="#operator-overloading" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>We know how to create objects. Now we will learn how to define what +, -, or lte means for an object</p></li>
 <li><p>add</p></li>
@@ -1566,7 +1566,7 @@ possible to write to the file via the file attribute.</p>
 <li><p>generators <a class="reference external" href="https://www.programiz.com/python-programming/generator">https://www.programiz.com/python-programming/generator</a></p></li>
 </ul>
 <section id="basic-class">
-<h3><span class="section-number">12.1.13.1. </span>Basic Class<a class="headerlink" href="#basic-class" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.13.1. </span>Basic Class<a class="headerlink" href="#basic-class" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
@@ -1603,7 +1603,7 @@ Circle with radius 5
 </div>
 </section>
 <section id="adding-add">
-<h3><span class="section-number">12.1.13.2. </span>Adding Add<a class="headerlink" href="#adding-add" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.13.2. </span>Adding Add<a class="headerlink" href="#adding-add" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
@@ -1711,7 +1711,7 @@ False
 </div>
 </section>
 <section id="iterator-class">
-<h3><span class="section-number">12.1.13.3. </span>Iterator Class<a class="headerlink" href="#iterator-class" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">12.1.13.3. </span>Iterator Class<a class="headerlink" href="#iterator-class" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>class MyRange:
 
     def __init__(self, limit):
@@ -1780,7 +1780,7 @@ for number in numbers:
 </section>
 </section>
 <section id="self">
-<h2><span class="section-number">12.1.14. </span>Self<a class="headerlink" href="#self" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.14. </span>Self<a class="headerlink" href="#self" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">self</span></code> is a reference to an instance of a class. You can use <code class="docutils literal notranslate"><span class="pre">self</span></code> to access attributes and methods bound to an instance.</p></li>
 <li><p>class variable vs instance variable (<a class="reference external" href="https://www.digitalocean.com/community/tutorials/understanding-class-and-instance-variables-in-python-3">https://www.digitalocean.com/community/tutorials/understanding-class-and-instance-variables-in-python-3</a>)</p></li>
@@ -1967,7 +1967,7 @@ for number in numbers:
 </div>
 </section>
 <section id="item-assignment">
-<h2><span class="section-number">12.1.15. </span>Item assignment<a class="headerlink" href="#item-assignment" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">12.1.15. </span>Item assignment<a class="headerlink" href="#item-assignment" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
     <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>

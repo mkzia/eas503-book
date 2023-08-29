@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>3.4. String methods &#8212; EAS503: Python for Data Scientists</title>
   
@@ -29,37 +28,36 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css?v=6ad1a40c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=351a2e83"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=5eb1bb1e"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/03/methods';</script>
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/03/methods.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -67,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="3.5. Exercises" href="exercises.html" />
     <link rel="prev" title="3.3. Creating a Table" href="table.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -259,11 +257,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../14/exercises.html">14.3. Cross-referenced Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../15/intro.html">15. Plotting with Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15/intro.html">15. Plotting in Python</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../16/intro.html">16. Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../16/introduction.html">16.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../16/loading_data.html">16.2. Loading Data</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../16/preprocessing_data.html">16.3. Preprocessing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/select_and_train_a_model.html">16.4. Select and Train a Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/misc.html">16.5. Feature Selection and Evaluation</a></li>
 </ul>
 </li>
 </ul>
@@ -448,7 +448,7 @@ document.write(`
 <li><p><a class="reference external" href="https://github.com/mkzia/eas503-book-notes/blob/main/03/methods.ipynb">Jupyter Notebook</a></p></li>
 </ul>
 <section class="tex2jax_ignore mathjax_ignore" id="string-methods">
-<h1><span class="section-number">3.4. </span>String methods<a class="headerlink" href="#string-methods" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">3.4. </span>String methods<a class="headerlink" href="#string-methods" title="Permalink to this heading">#</a></h1>
 <ul class="simple">
 <li><p>We have already encountered functions: built-in functions and functions we have defined. A method is another kind of function that is attached to a particular type. This section covers
 the methods that are attached to string types.</p></li>
@@ -456,7 +456,7 @@ the methods that are attached to string types.</p></li>
 <li><p>Methods are like functions, except that the first argument must be an object of the class in which the method is defined.</p></li>
 </ul>
 <section id="strip-methods">
-<h2><span class="section-number">3.4.1. </span>Strip Methods<a class="headerlink" href="#strip-methods" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.4.1. </span>Strip Methods<a class="headerlink" href="#strip-methods" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">strip()</span></code> – Strip spaces on the left and right of string</p></li>
 </ul>
@@ -532,7 +532,7 @@ ABBCCC   Dummy
 </div>
 </section>
 <section id="case-methods">
-<h2><span class="section-number">3.4.2. </span>Case Methods<a class="headerlink" href="#case-methods" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.4.2. </span>Case Methods<a class="headerlink" href="#case-methods" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">islower()</span></code> – Check if all alphabet characters are lower case</p></li>
 </ul>
@@ -647,7 +647,7 @@ ABBCCC   Dummy
 </div>
 </section>
 <section id="content-methods">
-<h2><span class="section-number">3.4.3. </span>Content Methods<a class="headerlink" href="#content-methods" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.4.3. </span>Content Methods<a class="headerlink" href="#content-methods" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">isalpha()</span></code> – Returns <code class="docutils literal notranslate"><span class="pre">True</span></code> if all the characters are alphabet</p></li>
 </ul>
@@ -813,7 +813,7 @@ True
 </div>
 </section>
 <section id="modification-methods">
-<h2><span class="section-number">3.4.4. </span>Modification Methods<a class="headerlink" href="#modification-methods" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.4.4. </span>Modification Methods<a class="headerlink" href="#modification-methods" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">replace()</span></code> – Replaces character(s) with other character(s); returns a new string</p></li>
 <li><p>Given <code class="docutils literal notranslate"><span class="pre">(EAS503)</span></code>, how can you remove the parentheses?</p></li>
@@ -882,7 +882,7 @@ EAS503
 </div>
 </section>
 <section id="creating-a-new-string">
-<h2><span class="section-number">3.4.5. </span>Creating a new String<a class="headerlink" href="#creating-a-new-string" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.4.5. </span>Creating a new String<a class="headerlink" href="#creating-a-new-string" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">join((value1,</span> <span class="pre">value2,</span> <span class="pre">value3))</span></code> – Creates a new string separating the values by whatever is in the string</p></li>
 </ul>

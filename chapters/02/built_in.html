@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>2.2. Built-in functions &#8212; EAS503: Python for Data Scientists</title>
   
@@ -29,37 +28,36 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css?v=6ad1a40c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=351a2e83"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=5eb1bb1e"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/02/built_in';</script>
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/02/built_in.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -67,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="2.3. Defining your own functions" href="user_defined.html" />
     <link rel="prev" title="2.1. Introduction to Functions" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -259,11 +257,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../14/exercises.html">14.3. Cross-referenced Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../15/intro.html">15. Plotting with Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15/intro.html">15. Plotting in Python</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../16/intro.html">16. Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../16/introduction.html">16.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../16/loading_data.html">16.2. Loading Data</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../16/preprocessing_data.html">16.3. Preprocessing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/select_and_train_a_model.html">16.4. Select and Train a Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/misc.html">16.5. Feature Selection and Evaluation</a></li>
 </ul>
 </li>
 </ul>
@@ -454,9 +454,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="built-in-functions">
-<h1><span class="section-number">2.2. </span>Built-in functions<a class="headerlink" href="#built-in-functions" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">2.2. </span>Built-in functions<a class="headerlink" href="#built-in-functions" title="Permalink to this heading">#</a></h1>
 <section id="absolute-value-function">
-<h2><span class="section-number">2.2.1. </span>Absolute Value Function<a class="headerlink" href="#absolute-value-function" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2.1. </span>Absolute Value Function<a class="headerlink" href="#absolute-value-function" title="Permalink to this heading">#</a></h2>
 <p><code class="docutils literal notranslate"><span class="pre">abs()</span></code> takes the absolute value of a number.</p>
 <p><code class="docutils literal notranslate"><span class="pre">abs(-9)</span></code>: <code class="docutils literal notranslate"><span class="pre">-9</span></code> is the argument. Arguments appear between the parenthesis after the function name. Arguments are evaluated left to right.</p>
 <div class="cell docutils container">
@@ -488,10 +488,10 @@ document.write(`
 </div>
 </section>
 <section id="functions-to-convert-data-type">
-<h2><span class="section-number">2.2.2. </span>Functions to Convert Data Type<a class="headerlink" href="#functions-to-convert-data-type" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2.2. </span>Functions to Convert Data Type<a class="headerlink" href="#functions-to-convert-data-type" title="Permalink to this heading">#</a></h2>
 <p>These functions convert the data type from one type to another if possible. This is called type casting.</p>
 <section id="int">
-<h3><span class="section-number">2.2.2.1. </span>int<a class="headerlink" href="#int" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.2.1. </span>int<a class="headerlink" href="#int" title="Permalink to this heading">#</a></h3>
 <p>Note, for floating point numbers, <code class="docutils literal notranslate"><span class="pre">int()</span></code> truncates towards zero.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -549,7 +549,7 @@ document.write(`
 </div>
 </section>
 <section id="float">
-<h3><span class="section-number">2.2.2.2. </span>float<a class="headerlink" href="#float" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.2.2. </span>float<a class="headerlink" href="#float" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">float</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>
@@ -588,7 +588,7 @@ document.write(`
 </div>
 </section>
 <section id="str">
-<h3><span class="section-number">2.2.2.3. </span>str<a class="headerlink" href="#str" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.2.3. </span>str<a class="headerlink" href="#str" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">str</span><span class="p">(</span><span class="mi">21</span><span class="p">)</span>
@@ -615,7 +615,7 @@ document.write(`
 </div>
 </section>
 <section id="rounding">
-<h3><span class="section-number">2.2.2.4. </span>Rounding<a class="headerlink" href="#rounding" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.2.4. </span>Rounding<a class="headerlink" href="#rounding" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">round()</span></code> function can be used to round floats. The optional second input argument specifies the number of digits after the decimal place.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -786,7 +786,7 @@ floor: 3
 </div>
 </section>
 <section id="help">
-<h3><span class="section-number">2.2.2.5. </span>help<a class="headerlink" href="#help" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.2.5. </span>help<a class="headerlink" href="#help" title="Permalink to this heading">#</a></h3>
 <p>The <code class="docutils literal notranslate"><span class="pre">help(fxn)</span></code> function gives information about a function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -826,7 +826,7 @@ pow(base, exp, mod=None)
 </div>
 </section>
 <section id="pow">
-<h3><span class="section-number">2.2.2.6. </span>pow<a class="headerlink" href="#pow" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.2.6. </span>pow<a class="headerlink" href="#pow" title="Permalink to this heading">#</a></h3>
 <p>Using the <code class="docutils literal notranslate"><span class="pre">pow</span></code> function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -854,7 +854,7 @@ pow(base, exp, mod=None)
 </div>
 </section>
 <section id="min">
-<h3><span class="section-number">2.2.2.7. </span>min<a class="headerlink" href="#min" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.2.7. </span>min<a class="headerlink" href="#min" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">min</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
@@ -869,7 +869,7 @@ pow(base, exp, mod=None)
 </div>
 </section>
 <section id="max">
-<h3><span class="section-number">2.2.2.8. </span>max<a class="headerlink" href="#max" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.2.8. </span>max<a class="headerlink" href="#max" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">max</span><span class="p">(</span><span class="mi">2</span><span class="p">,</span> <span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="o">-</span><span class="mi">5</span><span class="p">)</span>
@@ -896,7 +896,7 @@ pow(base, exp, mod=None)
 </div>
 </section>
 <section id="id">
-<h3><span class="section-number">2.2.2.9. </span>id<a class="headerlink" href="#id" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">2.2.2.9. </span>id<a class="headerlink" href="#id" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">id</span><span class="p">(</span><span class="o">-</span><span class="mi">9</span><span class="p">)</span>
@@ -904,7 +904,7 @@ pow(base, exp, mod=None)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140360276258864
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140042983595376
 </pre></div>
 </div>
 </div>
@@ -916,7 +916,7 @@ pow(base, exp, mod=None)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140360275784144
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140042981077616
 </pre></div>
 </div>
 </div>
@@ -940,11 +940,11 @@ pow(base, exp, mod=None)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140360275784144
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140042981073520
 8.5
-140360273780976
+140042981077616
 8.5
-140360276258864
+140042983590160
 </pre></div>
 </div>
 </div>
@@ -953,7 +953,7 @@ pow(base, exp, mod=None)
 </section>
 </section>
 <section id="function-memory-address">
-<h2><span class="section-number">2.2.3. </span>Function Memory Address<a class="headerlink" href="#function-memory-address" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2.3. </span>Function Memory Address<a class="headerlink" href="#function-memory-address" title="Permalink to this heading">#</a></h2>
 <p>Function objects have memory addresses just like variables.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -962,7 +962,7 @@ pow(base, exp, mod=None)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140360480344560
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140043086711280
 </pre></div>
 </div>
 </div>
@@ -974,14 +974,14 @@ pow(base, exp, mod=None)
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140360480347520
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>140043086714240
 </pre></div>
 </div>
 </div>
 </div>
 </section>
 <section id="using-function-calls-as-arguments-to-other-functions">
-<h2><span class="section-number">2.2.4. </span>Using Function Calls as Arguments to Other Functions<a class="headerlink" href="#using-function-calls-as-arguments-to-other-functions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">2.2.4. </span>Using Function Calls as Arguments to Other Functions<a class="headerlink" href="#using-function-calls-as-arguments-to-other-functions" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">pow</span><span class="p">(</span><span class="nb">abs</span><span class="p">(</span><span class="o">-</span><span class="mi">2</span><span class="p">),</span> <span class="nb">round</span><span class="p">(</span><span class="mf">4.3</span><span class="p">))</span>

@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>13.10. Python and SQLite3 &#8212; EAS503: Python for Data Scientists</title>
   
@@ -29,37 +28,36 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css?v=6ad1a40c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=351a2e83"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=5eb1bb1e"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/13/sql_9_python';</script>
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/13/sql_9_python.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -67,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="13.11. India Export Database" href="sql_10_india_export_data.html" />
     <link rel="prev" title="13.9. Normalization" href="sql_8_normalization.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -259,11 +257,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../14/exercises.html">14.3. Cross-referenced Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../15/intro.html">15. Plotting with Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15/intro.html">15. Plotting in Python</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../16/intro.html">16. Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../16/introduction.html">16.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../16/loading_data.html">16.2. Loading Data</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../16/preprocessing_data.html">16.3. Preprocessing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/select_and_train_a_model.html">16.4. Select and Train a Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/misc.html">16.5. Feature Selection and Evaluation</a></li>
 </ul>
 </li>
 </ul>
@@ -458,9 +458,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="python-and-sqlite3">
-<h1><span class="section-number">13.10. </span>Python and SQLite3<a class="headerlink" href="#python-and-sqlite3" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">13.10. </span>Python and SQLite3<a class="headerlink" href="#python-and-sqlite3" title="Permalink to this heading">#</a></h1>
 <section id="basic-example">
-<h2><span class="section-number">13.10.1. </span>Basic example<a class="headerlink" href="#basic-example" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.10.1. </span>Basic example<a class="headerlink" href="#basic-example" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>This is a basic example to show you how to use Pandas to open a database file and execute an SQL
 query.</p></li>
@@ -475,7 +475,7 @@ query.</p></li>
 </div>
 </section>
 <section id="homework-example">
-<h2><span class="section-number">13.10.2. </span>Homework Example<a class="headerlink" href="#homework-example" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.10.2. </span>Homework Example<a class="headerlink" href="#homework-example" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Homework will ask you to write an SQL query. In that case you only have to update the <code class="docutils literal notranslate"><span class="pre">sql_statement</span></code> variable and leave rest of the code as is.</p></li>
 </ul>
@@ -510,7 +510,7 @@ query.</p></li>
 </div>
 </section>
 <section id="utility-functions">
-<h2><span class="section-number">13.10.3. </span>Utility functions<a class="headerlink" href="#utility-functions" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.10.3. </span>Utility functions<a class="headerlink" href="#utility-functions" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Two utility functions are provided that you will use often</p></li>
 </ul>
@@ -541,7 +541,7 @@ query.</p></li>
 </ul>
 </section>
 <section id="example-sql-query-using-python">
-<h2><span class="section-number">13.10.4. </span>Example SQL query using Python<a class="headerlink" href="#example-sql-query-using-python" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.10.4. </span>Example SQL query using Python<a class="headerlink" href="#example-sql-query-using-python" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db_file</span> <span class="o">=</span> <span class="s1">&#39;student_test_in_class.db&#39;</span>
 <span class="n">conn</span> <span class="o">=</span> <span class="n">create_connection</span><span class="p">(</span><span class="n">db_file</span><span class="p">)</span>
 <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
@@ -555,14 +555,14 @@ query.</p></li>
 </div>
 </section>
 <section id="steps-to-creating-a-database-using-python">
-<h2><span class="section-number">13.10.5. </span>Steps to creating a database using Python<a class="headerlink" href="#steps-to-creating-a-database-using-python" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.10.5. </span>Steps to creating a database using Python<a class="headerlink" href="#steps-to-creating-a-database-using-python" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Write a create table sql statement(s)</p></li>
 <li><p>Write insert function(s)</p></li>
 <li><p>Read files or data and use the insert function(s) to insert data into table</p></li>
 </ol>
 <section id="create-a-database-and-populate-from-a-file">
-<h3><span class="section-number">13.10.5.1. </span>Create a database and populate from a file<a class="headerlink" href="#create-a-database-and-populate-from-a-file" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.10.5.1. </span>Create a database and populate from a file<a class="headerlink" href="#create-a-database-and-populate-from-a-file" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">os</span>
 <span class="n">db_file</span> <span class="o">=</span> <span class="s1">&#39;student_test_in_class.db&#39;</span>
 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">db_file</span><span class="p">):</span>
@@ -603,7 +603,7 @@ query.</p></li>
 </div>
 </section>
 <section id="fetch-data">
-<h3><span class="section-number">13.10.5.2. </span>Fetch data<a class="headerlink" href="#fetch-data" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.10.5.2. </span>Fetch data<a class="headerlink" href="#fetch-data" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM Students&quot;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">sql_statement</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -612,7 +612,7 @@ query.</p></li>
 </section>
 </section>
 <section id="another-example">
-<h2><span class="section-number">13.10.6. </span>Another example<a class="headerlink" href="#another-example" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.10.6. </span>Another example<a class="headerlink" href="#another-example" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>You must understand that the insert statements take in a tuple even if you are inserting one value!!!!</p></li>
 </ul>
@@ -683,7 +683,7 @@ query.</p></li>
 </pre></div>
 </div>
 <section id="turning-a-single-a-value-into-tuple">
-<h3><span class="section-number">13.10.6.1. </span>Turning a single a value into tuple<a class="headerlink" href="#turning-a-single-a-value-into-tuple" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.10.6.1. </span>Turning a single a value into tuple<a class="headerlink" href="#turning-a-single-a-value-into-tuple" title="Permalink to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">depts</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;IT&#39;</span><span class="p">,</span> <span class="s1">&#39;Physics&#39;</span><span class="p">,</span> <span class="s1">&#39;Arts&#39;</span><span class="p">,</span> <span class="s1">&#39;Math&#39;</span><span class="p">)</span>
 
 <span class="k">for</span> <span class="n">val</span> <span class="ow">in</span> <span class="n">depts</span><span class="p">:</span>
@@ -693,7 +693,7 @@ query.</p></li>
 </div>
 </section>
 <section id="table">
-<h3><span class="section-number">13.10.6.2. </span>Table<a class="headerlink" href="#table" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.10.6.2. </span>Table<a class="headerlink" href="#table" title="Permalink to this heading">#</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;SELECT * FROM Students&quot;</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_sql_query</span><span class="p">(</span><span class="n">sql_statement</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
@@ -701,7 +701,7 @@ query.</p></li>
 </div>
 </section>
 <section id="fetch-all">
-<h3><span class="section-number">13.10.6.3. </span>Fetch all<a class="headerlink" href="#fetch-all" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.10.6.3. </span>Fetch all<a class="headerlink" href="#fetch-all" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
 <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM Departments&#39;</span><span class="p">)</span>
 <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">():</span>  
@@ -710,7 +710,7 @@ query.</p></li>
 </div>
 </section>
 <section id="fetch-all-again">
-<h3><span class="section-number">13.10.6.4. </span>Fetch all again<a class="headerlink" href="#fetch-all-again" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.10.6.4. </span>Fetch all again<a class="headerlink" href="#fetch-all-again" title="Permalink to this heading">#</a></h3>
 <ul class="simple">
 <li><p>Why no data?</p></li>
 </ul>
@@ -720,7 +720,7 @@ query.</p></li>
 </div>
 </section>
 <section id="fetch-one">
-<h3><span class="section-number">13.10.6.5. </span>Fetch one<a class="headerlink" href="#fetch-one" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">13.10.6.5. </span>Fetch one<a class="headerlink" href="#fetch-one" title="Permalink to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="s1">&#39;SELECT * FROM Departments&#39;</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cur</span><span class="o">.</span><span class="n">fetchone</span><span class="p">())</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">cur</span><span class="o">.</span><span class="n">fetchone</span><span class="p">())</span>
@@ -732,7 +732,7 @@ query.</p></li>
 </section>
 </section>
 <section id="creating-a-foreign-key-dictionary">
-<h2><span class="section-number">13.10.7. </span>Creating a foreign key dictionary<a class="headerlink" href="#creating-a-foreign-key-dictionary" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.10.7. </span>Creating a foreign key dictionary<a class="headerlink" href="#creating-a-foreign-key-dictionary" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Creating a foreign key dictionary lookup speeds things up because you are avoiding multiple call to the database</p></li>
 </ul>
@@ -748,7 +748,7 @@ query.</p></li>
 </div>
 </section>
 <section id="insert-data-using-fk-lookup-dictionary">
-<h2><span class="section-number">13.10.8. </span>Insert data using FK lookup dictionary<a class="headerlink" href="#insert-data-using-fk-lookup-dictionary" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">13.10.8. </span>Insert data using FK lookup dictionary<a class="headerlink" href="#insert-data-using-fk-lookup-dictionary" title="Permalink to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">db</span> <span class="o">=</span> <span class="s1">&#39;depts_students.db&#39;</span>
 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">db</span><span class="p">):</span>
     <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">db</span><span class="p">)</span>

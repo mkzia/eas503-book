@@ -1,136 +1,411 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # EAS 503
 
 Welcome to EAS503! EAS503 is a course taught in the Department of Engineering & Applied Sciences at the University at Buffalo
 
-## Course Information 
+## Course Information
 
 **Course Name:** Python for Data Scientists
 
-**Course Number:** EAS 503 
+**Course Number:** EAS 503
 
-**Level:** Graduate 
+**Level:** Graduate
 
 **Credits:** 3
 
 **Prerequisite:** None
 
-**Description:** This course introduces students to computer science fundamentals for building basic data science applications. The course has two parts. The first part covers the fundamentals of programming with Python and Python libraries for data manipulation, visualization, and machine learning. The second part covers database design and use of databases in applications.
+**Description:** Whether you are a beginner looking to embark on a data-centric journey or an experienced programmer aiming to enhance your skill set, this course offers a complete package that covers Python programming, SQL database management, data visualization techniques, and foundational machine learning concepts.
 
-**Registration:** Students interested in enrolling outside of the Engineering Science MS Data Science program should fill out a force registration request: https://academics.eng.buffalo.edu/
+**Registration:** Students interested in enrolling outside of the MS and MPS Data Science program should fill out a force registration request: <https://academics.eng.buffalo.edu/>
 
 ## Course Content
-- Exam (1) - 5%
-- Quizzes (5) - 20%
-- Programming Assignments (8) - 30%
-- Kritik Assignments (6) - 15%
-- Individual Mini-Projects (3) - 30%
 
-## Exam
-The first exam will be on **Friday, February 24, 2023 5:00 PM - 8:00 PM in NSC 225**. This will be a paper exam. Please bring the following the the exam:
-1. Pencils
-2. Erasers
-3. Student ID 
-4. One page **handwritten** cheat-sheet
+- Quizzes (12) - 25%
+- Programming Assignments (9) - 45%
+- Individual Mini-Projects (2) - 20%
+- Group Projects (1) - 10% -- groups of 3-4 students
 
 ## Quizzes
-30-minute paper quizzes will be given at the beginning of class. 
-Quiz Dates -- see Piazza
 
-- You are allowed one page **handwritten** cheat-sheet for the quizzes. 
+1. **Assessment Format:** Throughout the course, there will be a total of 12 open-note quizzes that you will complete via UB Learns.
+
+2. **Quiz Availability:** Quizzes will be accessible on Saturdays.
+
+3. **Completion Window:** Once a quiz is posted, you will have a window of three days to attempt your quiz. Please ensure you manage your time effectively within this period.
+
+4. **Time Limit:** When you begin a quiz, you will be allotted two hours to complete it. Each quiz is designed as an individual assignment, and you are expected to work independently.
+
+5. **Academic Integrity:** Collaboration is not permitted during quizzes. Use only authorized resources, namely the course website, while working on quizzes. Any collaboration with others or unauthorized external resources will result in a score of 0 for the quiz. Cases of academic integrity violations will be reported to the Office of Academic Integrity. You will find a link to the course website accessible within the quiz through the lockdown browser.
+
+6. **Respondus Lockdown Browser Requirement:** Quizzes must be taken using the Respondus LockDown Browser. It is important to familiarize yourself with this browser by completing the practice quiz as soon as possible. Technical issues on the day of the quiz will not warrant extensions, as you have the opportunity to practice and seek clarifications beforehand.
+
+7. **Camera Requirement:** A functional camera is essential for the duration of the quiz. Your camera should capture you within the frame throughout the quiz. Any instances of being out of frame or displaying a black screen will result in an automatic score of 0 for the quiz.
+
+8. **UB ID Verification:** Prior to beginning the quiz, you will undergo a verification process where you must display your UB ID. Failing to do so may result in a score of 0 for the quiz.
+
+9. **Quiz Location:** While you have the flexibility to take the quiz from any location, it's important to emphasize that collaboration with anyone else is strictly prohibited during the quiz. Any instances of collaboration will be reported to the Office of Academic Integrity.
+
+These quiz policies are in place to ensure a fair and consistent assessment environment for all students. By adhering to these guidelines, you demonstrate your commitment to academic integrity and your dedication to mastering the course material. If you have any concerns or questions, please feel free to seek clarification from the course instructor. Your success in this course is a result of your individual effort and commitment to ethical academic practices.
 
 ## Programming Assignments
-- Descriptions for the programming assignments and necessary files will be posted on UB Learn.
-- You will submit your Python file on Gradescope. 
-- You have unlimited submissions/retries until the deadline 
-- We will return the finalized programming assignment grades seven days after the deadline. We will announce via Piazza when the programming assignment grading has been completed. After this announcement, you have seven days to contest your grades. 
-- All programming assignments must be submitted on Gradescope. If you submit on UB Learns, your assignment will not be graded. 
-- The very first thing you should do when an assignment has been released, is to upload the template solution online. 
 
+In this course, programming assignments are a crucial component of your learning experience. To facilitate this, please note the following guidelines:
 
-## Kritik Assignment
-- No late submissions will be accepted 
-- Kritik assignments have three stages: create, evaluation, feedback stage. You must complete each stage. Do not take points off when doing peer evaluation without explaining why you took points off. 
-- You must use Markdown to generate an HTML file with your solution. If you do not submit an HTML file, your assignment will not be graded. 
+1. **Codio License Requirement:** A Codio license, priced at $48, is necessary for completing programming assignments. This platform will be the designated environment for assignment completion and evaluation. [Invite Link](https://codio.com/p/signup?courseToken=harmony-basic)
+
+2. **Assignment Platform:** All programming assignments will be both assigned and evaluated exclusively on the Codio platform. It is essential to familiarize yourself with Codio's interface and tools to ensure a seamless assignment process.
+
+3. **Submission Protocol:** To have your programming assignments graded, you must submit them through the Codio platform. Submissions made via UB Learns will not undergo the grading process.
+
+4. **Submission Retries:** You have the flexibility of unlimited submissions and retries for each assignment up until the specified deadline. This approach encourages iterative learning and allows you to refine your solutions over multiple attempts.
+
+5. **Grade Contest Period:** Following the completion of the assignment evaluations, you will have a window of seven days to contest your assigned grade. This timeframe offers an opportunity to seek clarification and address any concerns you may have regarding the grading process.
+
+The programming assignments are designed to enhance your practical skills and reinforce the theoretical concepts covered in the course. By adhering to these guidelines and utilizing the Codio platform effectively, you can make the most of these assignments and achieve a deeper understanding of the material. If you encounter any challenges or require assistance, please don't hesitate to reach out to your instructor for support. Your success in these assignments contributes significantly to your overall mastery of the course content.
 
 ## Mini-Projects
-- Mini-projects are like programming assignments, but they are longer.
-- Description of mini-projects will be posted on UB Learns along with the required files. 
-- You will submit your final solution via Gradescope for mini-projects 1 and 2 and via Kritik for mini-project 3. 
-- After the grades have been finalized, you have seven days to contest your grade. 
 
-## Late Policy
-You have 10 late days that you can use to submit your programming assignments and mini-projects (1-2) late. Mini-project 3 must be on time. If you submit two hours late, it will be rounded up to one day late. In order to submit a late solution, you must email the professor, TAs, and grader with your solution zipped. Python files are blocked by outlook.
+In this course, we introduce the concept of mini-projects, which serve as extended versions of our programming assignments. Here's what you need to know:
+
+1. **Nature of Mini-Projects:** Mini-projects are designed to provide you with a deeper engagement with the course material. They encompass more complex tasks compared to regular programming assignments.
+
+2. **Codio Utilization:** Similar to programming assignments, mini-projects will be both assigned and assessed using the Codio platform.
+
+3. **Grade Contestation Period:** Following the completion of the mini-project evaluations, a window of seven days will be provided for you to contest your assigned grade. This timeframe is designed to offer you an opportunity to seek clarification and address any concerns regarding the grading process.
+
+By engaging actively with the mini-projects, you will refine your programming skills, gain a deeper understanding of the subject matter, and apply your knowledge to real-world scenarios. If you encounter any difficulties or require guidance, feel free to communicate with your instructor for assistance. Successfully completing these mini-projects is integral to your comprehensive learning journey in this course.
+
+## Late Submission Policy
+
+Understanding the late submission policy is crucial to managing your assignment deadlines effectively. Here's how it works:
+
+1. **Late Days Allocation:** You have a total of 10 late days at your disposal. These can be utilized to submit programming assignments and mini-projects after their original due date.
+
+2. **Maximum Delay:** It's important to note that no assignment can be submitted more than **4 days** after its original due date. This ensures a fair and consistent assessment process for all students.
+
+By utilizing your allocated late days wisely, you can navigate unexpected challenges while maintaining a balanced approach to assignment completion. Remember that efficient time management remains key to your success in the course. If you have any questions or need further clarification, don't hesitate to seek guidance from your instructor.
 
 ## Course Resources
 
-- This website will host the course book (https://mkzia.github.io/eas503-book)
-- Github (https://github.com/mkzia/eas503) for hosting lecture Jupyter notebooks
-- UB Learns will be used for distributing programming assignments' description, forming groups for projects, submitting the final project report, and managing course grades
-- Kritik will be used peer evaluation assignments
-- GradeScope will be used to submit programming assignments
-- The first two mini-projects will be submitted on Gradescope and the final mini-project will be submitted on Kritik. 
-- Piazza will be used for:
-  - course announcements and updates 
-  - asking the instructor and TA questions 
-  - communicating with fellow classmates
-  - posting links to lecture and solution recordings (see pinned post)
-  - posting latest instructor and TA office hours (see pinned posts)
-  - showing the latest quizzes and assignment deadlines (see pinned post)
+Throughout the course, you'll have access to a variety of resources that are vital for your learning journey. Here's where you can find them:
 
+1. **Course Book:** The course book will be available on this website: [Course Book](https://mkzia.github.io/eas503-book). 
 
-## Preparation for the first class
+2. **Lecture Materials:** Lecture Jupyter notebooks will be hosted on GitHub: [Lecture Notebooks](https://github.com/mkzia/eas503). These materials supplement your in-class learning and serve as valuable references.
 
-- Ensure you can access EAS503 course page on UB Learns
-- Ensure you can access the course book (https://mkzia.github.io/eas503-book)
-- Ensure you can log into Gradescope
-- Ensure you can log into Kritik and pay the fee ($24)
-- Ensure you can log into Piazza
-- Install Anaconda (https://www.anaconda.com/products/individual) 
-- Install Microsoft Visual Studio Code
+3. **UB Learns:** UB Learns will serve multiple purposes, including:
+   - Forming groups for project work.
+   - Submission of the final project report.
+   - Management of your course grades.
 
-An invitation to gain access to Kritik, Gradescope, and Piazza should be sent before the first lecture. 
+4. **Codio:** Use Codio to submit your programming assignments. This platform offers a controlled environment for coding tasks and assessments.
+
+5. **Piazza:**  Piazza will serve as a hub for various activities:
+   - Course announcements and updates.
+   - Queries to the instructor and Teaching Assistant (TA).
+   - Interaction with fellow classmates.
+   - Links to lecture and solution recordings (refer to the pinned post).
+   - Notifications of the latest instructor and TA office hours (refer to the pinned posts).
+   - Displaying the most recent quizzes and assignment deadlines (refer to the pinned post).
+
+These resources are designed to support your learning, streamline communication, and provide easy access to essential materials. Regularly utilizing these platforms will help you stay on top of the course requirements and maximize your understanding of the content. If you ever need assistance or have questions, don't hesitate to engage with the instructor, TA, or your fellow classmates through these channels. Your active participation is instrumental to your success in the course.
+
+## Preparing for the First Class
+
+A successful start to the course requires a few preparatory steps. Before the first class, ensure you complete the following tasks:
+
+1. **Access UB Learns:** Confirm that you can log into the EAS503 course page on UB Learns. 
+
+2. **Course Book Access:** Ensure you can access the course book available at [Course Book](https://mkzia.github.io/eas503-book). Familiarize yourself with this resource to get a head start on the course content.
+
+3. **Codio Licensing:** Verify that you have obtained a license for Codio and can successfully log into the platform. Codio will be integral for completing programming assignments.
+
+4. **Piazza Login:** Confirm your ability to log into Piazza, where you'll engage in course discussions, ask questions, and stay updated on course-related matters.
+
+5. **Software Installation:**
+   - Install Anaconda, a comprehensive data science platform, from [Anaconda Individual Edition](https://www.anaconda.com/products/individual).
+   - Install Microsoft Visual Studio Code, a versatile code editor.
+
+Please note that an invitation granting you access to Codio and Piazza will be sent prior to the first lecture. Ensure you accept these invitations, as they are crucial for your participation and success in the course.
 
 :::{note}
-This website will be updated frequently throughout the semester. 
+This website will undergo regular updates throughout the semester.
 :::
 
 ## Academic Integrity
+
 :::{warning}
-Academic integrity is a fundamental university value. Through the
-honest completion of academic work, students sustain the integrity of the university while facilitating the university’s imperative for the transmission of knowledge and culture based upon the
-generation of new and innovative ideas. The UB graduate academic integrity policy is available
-at https://www.buffalo.edu/grad/succeed/current-students/policy-library.html#academic-integrity.
+Academic integrity stands as a cornerstone value within the university setting. By engaging in honest and authentic academic work, students uphold the integrity of the university's mission to disseminate knowledge and foster innovative ideas. The UB graduate academic integrity policy can be accessed at [UB Graduate Academic Integrity Policy](https://www.buffalo.edu/grad/succeed/current-students/policy-library.html#academic-integrity).
 
-The sharing or posting of material related to EAS 503, and requests for help or answers on
-any electronic tool, such as Chegg, Stack Overflow, and Course Hero, is considered a violation of the academic integrity policy. Consequences of violating the academic integrity policy may range from zero points to expulsion from the university, depending on the seriousness of the violation.
+It is imperative to note that sharing or seeking assistance through platforms such as Chegg, Stack Overflow, and Course Hero in relation to EAS 503 assignments constitutes a violation of the academic integrity policy. The consequences of violating this policy can range from receiving zero points for assignments to expulsion from the university, contingent upon the severity of the violation.
 
-The following are the academic integrity policies for this course:
-1. If multiple students submit the same homework solution, then the involved parties will
-earn zero points for the common solution(s).
-2. If we can positively identify a student who has uploaded material to any online resource,
-that student will earn an automatic failure in the course.
-3. All students who are positively identified as viewing the solution for any length of time
-will receive a score of zero for the problem(s) viewed.
+The academic integrity policies specific to this course are as follows:
 
-All Academic Integrity violations will be reported to the Office of Academic Integrity. Multiple violations of the Academic Integrity policy will result in an escalation of the imposed
-sanction.
+1. Submission of identical homework solutions by multiple students will result in all parties involved earning zero points for those shared solutions.
+2. If a student's identity is verified as the source of uploaded content on any online platform, an automatic failure in the course will be incurred.
+3. Any student positively identified as viewing the solution for any problem, regardless of duration, will receive a score of zero for the problem(s) viewed.
 
-Follow good cyber-security practices. Do not provide physical or electronic access
-to your computer or accounts! If another student gains or is provided access to
-your computer or on-line account and they violate the Academic Integrity Policy,
-you will be held responsible!
+All breaches of academic integrity will be reported to the Office of Academic Integrity. Repeated violations will lead to escalated sanctions.
 
-**Example 1**: Student A has been positively identified as posting a assignment question to Chegg, Stack Overflow, Course Hero.
-That student will earn an “F” in the course and be reported to the University.
+Embrace sound cyber-security practices. Refrain from granting physical or electronic access to your computer or accounts. Sharing access that leads to another student violating the Academic Integrity Policy makes you liable.
 
-**Example 2**: Students B and C are working on code for a assignment together. Student B finished the code but Student C is stuck and does not know how to proceed. Student B let’s Student C look (either in person or electronically) at their code, which Student C then uses to complete the problem. Both Student B and Student C will earn a zero on the entire assignment and be reported to the University.
+**Example 1:** Student A is identified as posting an assignment question on Chegg. The consequence is an "F" in the course, along with reporting to the University.
 
-**Example 3**: Students D and E are working on code for a assignment together. Student D finished the code but Student E is stuck and does not know how to proceed. Students D and E verbally discuss the code but do not view each other’s code and Student D does not tell the code that Student E needs. During this Student E learns what was done wrong and how to fix it. This is not a violation of academic integrity and thus no sanction will apply.
+**Example 2:** Students B and C collaborate on an assignment. Student B provides code assistance to Student C, who utilizes it to complete the assignment. Both students receive a zero for the entire assignment and are reported to the University.
 
-**Example 4**: Student F’s computer is non-functional and student G allows student F access to their laptop to finish a homework. While doing so student F copies code that student G has
-already completed. Both students will earn a zero on the entire homework or exam and will be
-reported to the University.
+**Example 3:** Students D and E collaborate verbally but do not share code. No violation of academic integrity occurs.
 
-**By submitting work for a grade, students are accepting the academic integrity
-policy.**
+**Example 4:** Student F's non-functional computer leads Student G to allow access. Code copying occurs, resulting in both students earning a zero and reporting to the University.
+
+**Submission of work for grading indicates acceptance of the academic integrity policy.**
+
+**Important Note:** If you come across a solution on a website (Chegg), be aware that it could potentially be intentionally placed there by the instructor to identify instances of academic misconduct. Always approach your coursework with integrity and refrain from using any unauthorized resources. Your commitment to academic honesty is essential to your personal growth and the integrity of the educational process.
+
+**Codio can detect cheating:** Codio’s code editor is the industry-standard editor used in the VSCode IDE. We require you to complete your assignments in Codio partly for autograding reasons but also because Codio has very advanced keystroke analysis tools for generating insights into how students complete their work, including similarity checkers, time spent in error state, external pastes and insertion/deletion tracking.  So do not copy and paste your solution from another location. Do all your work inside the Codio editor. All your keystrokes and copy and pastes are recorded and can be played back.
 :::
+
+## Syllabus Review
+
+```{code-cell} ipython3
+:tags: ["remove-input"]
+
+from jupyterquiz import display_quiz
+
+quizz =[
+    {
+        "question": "The course has a final exam",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "code": "True",
+                "correct": False
+            },
+            {
+                "code": "False",
+                "correct": True
+            }
+        ]
+    },
+    {
+        "question": "Quizzes are open notes",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "code": "True",
+                "correct": True
+            },
+            {
+                "code": "False",
+                "correct": False
+            }
+        ]
+    },
+    {
+        "question": "Mini-projects are group projects",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "code": "True",
+                "correct": False
+            },
+            {
+                "code": "False",
+                "correct": True
+            }
+        ]
+    },
+    {
+        "question": "How many students in a group?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "code": "1",
+                "correct": False
+            },
+            {
+                "code": "2-3",
+                "correct": False
+            },
+            {
+                "code": "3-4",
+                "correct": True
+            },
+            {
+                "code": "4-5",
+                "correct": False
+            }
+        ]
+    },
+    {
+        "question": "How much time do you have to finish the quiz once started",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "code": "30 minutes",
+                "correct": False
+            },
+            {
+                "code": "1 hour",
+                "correct": False
+            },
+            {
+                "code": "2 hours",
+                "correct": True
+            },
+            {
+                "code": "3 hours",
+                "correct": False
+            }
+        ]
+    },
+    {
+        "question": "Quizzes must be taken in Respondus Lockdown Browser",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "code": "True",
+                "correct": True
+            },
+            {
+                "code": "False",
+                "correct": False
+            },
+        ]
+    },
+    {
+        "question": "All programming assignments must be completed in the Codio IDE?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "code": "True",
+                "correct": True
+            },
+            {
+                "code": "False",
+                "correct": False
+            },
+        ]
+    },
+    {
+        "question": "Codio records keystrokes and copy/pastes",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "code": "True",
+                "correct": True
+            },
+            {
+                "code": "False",
+                "correct": False
+            },
+        ]
+    },
+    {
+        "question": "How many days do you have to contest your grade after the submission deadline has passed?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "code": "3",
+                "correct": False
+            },
+            {
+                "code": "5",
+                "correct": False
+            },
+            {
+                "code": "6",
+                "correct": False
+            },
+            {
+                "code": "7",
+                "correct": True
+            },
+        ]
+    },
+    {
+        "question": "How many late days do you have at your disposal to submit programming assignments?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "code": "5",
+                "correct": False
+            },
+            {
+                "code": "7",
+                "correct": False
+            },
+            {
+                "code": "10",
+                "correct": True
+            },
+            {
+                "code": "15",
+                "correct": False
+            },
+        ]
+    },
+    {
+        "question": "How late can you submit a programming assignment?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "code": "2 days",
+                "correct": False
+            },
+            {
+                "code": "3 days",
+                "correct": False
+            },
+            {
+                "code": "4 days",
+                "correct": True
+            },
+            {
+                "code": "5 days",
+                "correct": False
+            },
+        ]
+    },
+    {
+        "question": "Your friend was sick, and out of empathy, you gave him your code so they could understand how to solve the problem. Is this considered cheating?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "code": "Yes",
+                "correct": True
+            },
+            {
+                "code": "No",
+                "correct": False
+            },
+        ]
+    },
+    {
+        "question": "Your friend's laptop stopped working right before an assignment deadline so you lend them your laptop. They use your laptop and upload YOUR solution instead of theirs. Will this be considered cheating on your behalf although you did not do anything wrong?",
+        "type": "multiple_choice",
+        "answers": [
+            {
+                "code": "Yes",
+                "correct": True
+            },
+            {
+                "code": "No",
+                "correct": False
+            },
+        ]
+    },
+]
+display_quiz(quizz)
+```

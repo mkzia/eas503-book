@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>3.2. String Formatting &#8212; EAS503: Python for Data Scientists</title>
   
@@ -29,37 +28,36 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css?v=6ad1a40c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=351a2e83"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=5eb1bb1e"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/03/formatting';</script>
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/03/formatting.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -67,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="3.3. Creating a Table" href="table.html" />
     <link rel="prev" title="3.1. Strings Basics" href="basics.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -259,11 +257,13 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../14/exercises.html">14.3. Cross-referenced Exercises</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../15/intro.html">15. Plotting with Matplotlib</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../15/intro.html">15. Plotting in Python</a></li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../16/intro.html">16. Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../16/introduction.html">16.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../16/loading_data.html">16.2. Loading Data</a></li>
-
+<li class="toctree-l2"><a class="reference internal" href="../16/preprocessing_data.html">16.3. Preprocessing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/select_and_train_a_model.html">16.4. Select and Train a Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/misc.html">16.5. Feature Selection and Evaluation</a></li>
 </ul>
 </li>
 </ul>
@@ -460,7 +460,7 @@ document.write(`
 <li><p><a class="reference external" href="https://github.com/mkzia/eas503-book-notes/blob/main/03/formatting.ipynb">Jupyter Notebook</a></p></li>
 </ul>
 <section class="tex2jax_ignore mathjax_ignore" id="string-formatting">
-<h1><span class="section-number">3.2. </span>String Formatting<a class="headerlink" href="#string-formatting" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">3.2. </span>String Formatting<a class="headerlink" href="#string-formatting" title="Permalink to this heading">#</a></h1>
 <p>The fastest and latest way to do string formatting is using the F-strings.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -477,7 +477,7 @@ document.write(`
 </div>
 <p>But you have to know the other ways so you can read older code or use these ways if you have to use an older version of Python</p>
 <section id="what-can-you-format">
-<h2><span class="section-number">3.2.1. </span>What can you format?<a class="headerlink" href="#what-can-you-format" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.1. </span>What can you format?<a class="headerlink" href="#what-can-you-format" title="Permalink to this heading">#</a></h2>
 <p>String-formatting allows you to do at least five things. These string-format specifiers come after a colon.</p>
 <ol class="arabic simple">
 <li><p>specify width</p></li>
@@ -488,7 +488,7 @@ document.write(`
 </ol>
 </section>
 <section id="oldest-method">
-<h2><span class="section-number">3.2.2. </span>Oldest Method<a class="headerlink" href="#oldest-method" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.2. </span>Oldest Method<a class="headerlink" href="#oldest-method" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span>  <span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14159265359</span> 
@@ -505,7 +505,7 @@ document.write(`
 </div>
 </section>
 <section id="newer-method">
-<h2><span class="section-number">3.2.3. </span>Newer Method<a class="headerlink" href="#newer-method" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.3. </span>Newer Method<a class="headerlink" href="#newer-method" title="Permalink to this heading">#</a></h2>
 <p>Still used for creating string templates.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -523,7 +523,7 @@ document.write(`
 </div>
 </section>
 <section id="newest-method">
-<h2><span class="section-number">3.2.4. </span>Newest Method<a class="headerlink" href="#newest-method" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.4. </span>Newest Method<a class="headerlink" href="#newest-method" title="Permalink to this heading">#</a></h2>
 <p>Newest and fastest method for string formatting.
 <code class="docutils literal notranslate"><span class="pre">{&lt;index&gt;:&lt;format-specifier&gt;}</span></code> where the format specifier is: <code class="docutils literal notranslate"><span class="pre">&lt;padding_character&gt;&lt;alignment&gt;&lt;width&gt;.&lt;comma&gt;&lt;precision&gt;&lt;type&gt;</span></code></p>
 <ul class="simple">
@@ -607,7 +607,7 @@ document.write(`
 </div>
 </section>
 <section id="example-1">
-<h2><span class="section-number">3.2.5. </span>Example 1<a class="headerlink" href="#example-1" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.5. </span>Example 1<a class="headerlink" href="#example-1" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">course_number</span> <span class="o">=</span> <span class="s1">&#39;EAS503&#39;</span>
@@ -631,7 +631,7 @@ EAS503
 </div>
 </section>
 <section id="example-2">
-<h2><span class="section-number">3.2.6. </span>Example 2<a class="headerlink" href="#example-2" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.6. </span>Example 2<a class="headerlink" href="#example-2" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">course_number</span> <span class="o">=</span> <span class="s1">&#39;EAS503&#39;</span>
@@ -655,7 +655,7 @@ The course number is EAS503.
 </div>
 </section>
 <section id="example-3-use-index">
-<h2><span class="section-number">3.2.7. </span>Example 3 use index<a class="headerlink" href="#example-3-use-index" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.7. </span>Example 3 use index<a class="headerlink" href="#example-3-use-index" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">course_number</span> <span class="o">=</span> <span class="s1">&#39;EAS503&#39;</span>
@@ -679,7 +679,7 @@ The course number is EAS503. It has 113 students.
 </div>
 </section>
 <section id="example-4-change-index">
-<h2><span class="section-number">3.2.8. </span>Example 4 change index<a class="headerlink" href="#example-4-change-index" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.8. </span>Example 4 change index<a class="headerlink" href="#example-4-change-index" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">course_number</span> <span class="o">=</span> <span class="s1">&#39;EAS503&#39;</span>
@@ -702,7 +702,7 @@ The course number is 113. It has EAS503 students.
 </div>
 </section>
 <section id="example-5-adding-a-float">
-<h2><span class="section-number">3.2.9. </span>Example 5 adding a float<a class="headerlink" href="#example-5-adding-a-float" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.9. </span>Example 5 adding a float<a class="headerlink" href="#example-5-adding-a-float" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">course_number</span> <span class="o">=</span> <span class="s1">&#39;EAS503&#39;</span>
@@ -725,7 +725,7 @@ The course number is 113. It has EAS503 students. The class average is 92.3.
 </div>
 </section>
 <section id="example-6-specify-number-of-spaces-to-use-width">
-<h2><span class="section-number">3.2.10. </span>Example 6 specify number of spaces to use – width<a class="headerlink" href="#example-6-specify-number-of-spaces-to-use-width" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.10. </span>Example 6 specify number of spaces to use – width<a class="headerlink" href="#example-6-specify-number-of-spaces-to-use-width" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">course_number</span> <span class="o">=</span> <span class="s1">&#39;EAS503&#39;</span>
@@ -748,7 +748,7 @@ The course number is EAS503    . It has        113 students. The class average i
 </div>
 </section>
 <section id="example-7-right-align">
-<h2><span class="section-number">3.2.11. </span>Example 7 right align<a class="headerlink" href="#example-7-right-align" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.11. </span>Example 7 right align<a class="headerlink" href="#example-7-right-align" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">course_number</span> <span class="o">=</span> <span class="s1">&#39;EAS503&#39;</span>
@@ -771,7 +771,7 @@ The course number is     EAS503. It has        113 students. The class average i
 </div>
 </section>
 <section id="example-8-left-align">
-<h2><span class="section-number">3.2.12. </span>Example 8 left align<a class="headerlink" href="#example-8-left-align" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.12. </span>Example 8 left align<a class="headerlink" href="#example-8-left-align" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">course_number</span> <span class="o">=</span> <span class="s1">&#39;EAS503&#39;</span>
@@ -794,7 +794,7 @@ The course number is EAS503    . It has 113        students. The class average i
 </div>
 </section>
 <section id="example-9-center-align">
-<h2><span class="section-number">3.2.13. </span>Example 9 center align<a class="headerlink" href="#example-9-center-align" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.13. </span>Example 9 center align<a class="headerlink" href="#example-9-center-align" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">course_number</span> <span class="o">=</span> <span class="s1">&#39;EAS503&#39;</span>
@@ -817,7 +817,7 @@ The course number is   EAS503  . It has    113     students. The class average i
 </div>
 </section>
 <section id="example-10-padding-with-zeros">
-<h2><span class="section-number">3.2.14. </span>Example 10 Padding with zeros<a class="headerlink" href="#example-10-padding-with-zeros" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.14. </span>Example 10 Padding with zeros<a class="headerlink" href="#example-10-padding-with-zeros" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Zero padding does not require a alignment specifier</p></li>
 </ul>
@@ -842,7 +842,7 @@ The number padded 223333 padded with zeros 00223333
 </div>
 </section>
 <section id="example-11-padding-with-dashes">
-<h2><span class="section-number">3.2.15. </span>Example 11 Padding with dashes<a class="headerlink" href="#example-11-padding-with-dashes" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.15. </span>Example 11 Padding with dashes<a class="headerlink" href="#example-11-padding-with-dashes" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">student_id</span> <span class="o">=</span> <span class="mi">223333</span>
@@ -864,7 +864,7 @@ The number padded 223333 padded with zeros --223333
 </div>
 </section>
 <section id="example-12-adding-commas">
-<h2><span class="section-number">3.2.16. </span>Example 12 Adding Commas<a class="headerlink" href="#example-12-adding-commas" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.16. </span>Example 12 Adding Commas<a class="headerlink" href="#example-12-adding-commas" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">123456</span>
@@ -893,7 +893,7 @@ The number padded 223333 padded with zeros --223333
 </div>
 </section>
 <section id="rounding">
-<h2><span class="section-number">3.2.17. </span>Rounding<a class="headerlink" href="#rounding" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">3.2.17. </span>Rounding<a class="headerlink" href="#rounding" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>When you use <code class="docutils literal notranslate"><span class="pre">.2f</span></code>, for example, the f-string will round, but keep the trailing zero. When you use the <code class="docutils literal notranslate"><span class="pre">round()</span></code> function, the trailing zero is dropped. Study the following examples.</p></li>
 </ul>

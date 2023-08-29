@@ -1,3 +1,15 @@
+---
+jupytext:
+  formats: md:myst
+  text_representation:
+    extension: .md
+    format_name: myst
+kernelspec:
+  display_name: Python 3
+  language: python
+  name: python3
+---
+
 # Getting Started
 
 - Objectives
@@ -7,12 +19,12 @@
   - To learn about the features of Python
   - To begin using Python
 
-
 ## Computers
+
 - A modern computer can be defined as "a machine that **stores** and **manipulates** information
 under the control of a **changeable program**."
   - **manipulation** means to transform information into new, useful forms, and then store, output,
-  or display information for our interpretation. 
+  or display information for our interpretation.
     - **Examples**:
       - Find students with the highest and lowest GPA
       - Find patients whose stay in a hospital was more than 15 days
@@ -21,18 +33,20 @@ under the control of a **changeable program**."
       - Predict house prices based on historical data
 
 ## What is a Program?
+
 - A computer program is a detailed step-by-step set of instructions telling a computer exactly what to do
 - If we **change** the program, then the computer performs a different sequence of actions and hence, performs
-a different task. 
+a different task.
 - A program is written in terms of a few basic operations that its reader already understands. Using these few basic operations, you can "teach" a computer new operations by defining them in terms of the basic operations.
   - **Example**: Computers understand addition and division operators, which are basic mathematical operators. You can teach the computer to calculate the average using the addition and division operators by instructing the computer to add all the numbers in a sequence and divide by the sequence size.
   - **Example**: You can then combine the new average operation with other operations to create more operations. It is a lot like creating life by putting atoms together to make proteins and then combining proteins to build cells, combining cells to make organs, and combining organs to make a creature.
   - Defining new operations and combining them to do useful things is the heart and soul of programming.
 - Every computer is just a machine for executing (carrying out) programs.
-- Software (programs) rules the hardware (the physical machines), and the software determines what any computer can do. Without software, computers would be expensive paperweights. The process of creating software is called programming. 
+- Software (programs) rules the hardware (the physical machines), and the software determines what any computer can do. Without software, computers would be expensive paperweights. The process of creating software is called programming.
 
 ## What is a Programming Language?
-- You can express directions to the nearest bus station in many different languages, such as English, Spanish, or Hindi. 
+
+- You can express directions to the nearest bus station in many different languages, such as English, Spanish, or Hindi.
 - But natural languages are fraught with ambiguity and imprecision.
   - **English example**: "I saw a man on a hill with a telescope"
     - There is a man on a hill, and I am watching him with my telescope
@@ -40,21 +54,23 @@ a different task.
     - There is a man, and he is on a hill that also has a telescope on it
     - I am on a hill, and I saw a man using a telescope
     - There is a man on a hill, and I am sawing him with a telescope.
-    - source: https://www.quora.com/What-are-some-examples-of-ambiguous-sentences
-- Computer scientists have solved this problem by designing notations for expressing computations precisely and unambiguously. 
+    - source: <https://www.quora.com/What-are-some-examples-of-ambiguous-sentences>
+- Computer scientists have solved this problem by designing notations for expressing computations precisely and unambiguously.
 - These special notations are called "programming languages."
 - Similar to natural languages, there are many programming languages. But they all are instructions that a machine
 can understand. Programming languages can also look different. For example `3 + 4` in Python means add three to four. This same
-instruction in Schema is express as `(+ 3 4)`. They are both expressing the same idea; they look different. 
+instruction in Schema is express as `(+ 3 4)`. They are both expressing the same idea; they look different.
 - Every programming language has a way to write mathematical expressions, repeat instructions several times, choose which instructions based on the current information you have, and much more.
 - Programming languages take a **high-level** language, which are human-readable language expressions such as `c = a + b`, and translate it to machine language that the computer can execute.
 - A machine language consists of precise instructions to CPUs. For adding two numbers, the CPU instructions might look something like this:
+
 ```text
 load the number from memory location 2001 into the CPU
 load the number from memory location 2002 into the CPU
 add the two numbers in the CPU
 store the result in to location 2003
 ```
+
 - Compilers convert programs written in a high-level language into the machine language of some computer; the compiled code is hardware and operating system dependent.
 - Interpreters simulate a computer that understands a high-level language.
 - The source program is not translated into machine language all at once.
@@ -70,6 +86,7 @@ store the result in to location 2003
 :::
 
 ## Features of Python
+
 - Python is
   - high-level language
     - a low-level language provides less abstraction than high-level languages to actual machine language
@@ -79,14 +96,16 @@ store the result in to location 2003
     - combines data and associated instructions to manipulate the data into one package
   - easy to learn because its syntax is simple, hence easy to read
   - versatile
-    -  can be used for web-development, machine learning, cloud administration 
+    - can be used for web-development, machine learning, cloud administration
   - popular
-    - has many third-party packages that extend its functionality, especially for data science. 
+    - has many third-party packages that extend its functionality, especially for data science.
 
 ## Using Python
-There are four ways in which you can use Python. We will show you how to use all four ways, but we will mostly use Jupyter Notebook and Microsoft Visual Code. 
+
+There are four ways in which you can use Python. We will show you how to use all four ways, but we will mostly use Jupyter Notebook and Microsoft Visual Code.
 
 ### A Basic Python Program
+
 - Please install [Anaconda Python Distribution](https://www.anaconda.com/products/distribution)
 
 ```python

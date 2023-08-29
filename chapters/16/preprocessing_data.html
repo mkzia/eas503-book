@@ -1,13 +1,12 @@
 
-
 <!DOCTYPE html>
 
 
-<html >
+<html lang="en" >
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>16.3. Preprocessing data &#8212; EAS503: Python for Data Scientists</title>
   
@@ -29,37 +28,36 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=b76e3c8a" />
     <link rel="stylesheet" href="../../_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/design-style.4045f2051d55cab465a707391d5b2007.min.css?v=6ad1a40c" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
   <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
 <link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
 
-    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js"></script>
-    <script src="../../_static/jquery.js"></script>
-    <script src="../../_static/underscore.js"></script>
-    <script src="../../_static/doctools.js"></script>
-    <script src="../../_static/clipboard.min.js"></script>
-    <script src="../../_static/copybutton.js"></script>
+    <script data-url_root="../../" id="documentation_options" src="../../_static/documentation_options.js?v=351a2e83"></script>
+    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/sphinx_highlight.js?v=4825356b"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=5eb1bb1e"></script>
     <script src="../../_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
-    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js"></script>
+    <script src="../../_static/design-tabs.js?v=36754332"></script>
     <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
 const thebe_selector = ".thebe,.cell"
 const thebe_selector_input = "pre"
 const thebe_selector_output = ".output, .cell_output"
 </script>
-    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/16/preprocessing_data';</script>
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/16/preprocessing_data.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -67,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="next" title="16.4. Select and Train a Model" href="select_and_train_a_model.html" />
     <link rel="prev" title="16.2. Loading Data" href="loading_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <meta name="docsearch:language" content="None"/>
+  <meta name="docsearch:language" content="en"/>
   </head>
   
   
@@ -457,9 +455,9 @@ document.write(`
                 <article class="bd-article" role="main">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="preprocessing-data">
-<h1><span class="section-number">16.3. </span>Preprocessing data<a class="headerlink" href="#preprocessing-data" title="Permalink to this headline">#</a></h1>
+<h1><span class="section-number">16.3. </span>Preprocessing data<a class="headerlink" href="#preprocessing-data" title="Permalink to this heading">#</a></h1>
 <section id="standardization-or-mean-removal-and-variance-scaling">
-<h2><span class="section-number">16.3.1. </span>Standardization, or mean removal and variance scaling<a class="headerlink" href="#standardization-or-mean-removal-and-variance-scaling" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.3.1. </span>Standardization, or mean removal and variance scaling<a class="headerlink" href="#standardization-or-mean-removal-and-variance-scaling" title="Permalink to this heading">#</a></h2>
 <p>Standardization of datasets is a common requirement for many machine learning estimators implemented in scikit-learn; they might behave badly if the individual features do not more or less look like standard normally distributed data: Gaussian with zero mean and unit variance.</p>
 <p>In practice we often ignore the shape of the distribution and just transform the data to center it by removing the mean value of each feature, then scale it by dividing non-constant features by their standard deviation.</p>
 <div class="cell docutils container">
@@ -666,7 +664,7 @@ document.write(`
 </div>
 </section>
 <section id="can-save-scaling-and-apply-to-testing-data">
-<h2><span class="section-number">16.3.2. </span>Can save scaling and apply to testing data<a class="headerlink" href="#can-save-scaling-and-apply-to-testing-data" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.3.2. </span>Can save scaling and apply to testing data<a class="headerlink" href="#can-save-scaling-and-apply-to-testing-data" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Never ever apply any preprocessing or any other step on all your data and then train. This will lead to Data Leakage!</p></li>
 </ul>
@@ -706,7 +704,7 @@ document.write(`
 </div>
 </section>
 <section id="scaling-features-to-a-range">
-<h2><span class="section-number">16.3.3. </span>Scaling features to a range<a class="headerlink" href="#scaling-features-to-a-range" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.3.3. </span>Scaling features to a range<a class="headerlink" href="#scaling-features-to-a-range" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([[</span> <span class="mf">1.</span><span class="p">,</span> <span class="o">-</span><span class="mf">1.</span><span class="p">,</span>  <span class="mf">2.</span><span class="p">],</span>
@@ -743,7 +741,7 @@ document.write(`
 </div>
 </section>
 <section id="pre-processing-data-non-linear-transformation">
-<h2><span class="section-number">16.3.4. </span>Pre-processing data - Non-linear transformation<a class="headerlink" href="#pre-processing-data-non-linear-transformation" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.3.4. </span>Pre-processing data - Non-linear transformation<a class="headerlink" href="#pre-processing-data-non-linear-transformation" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>This is a very silly example, but just demonstrating usage.</p></li>
 </ul>
@@ -850,7 +848,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../../_images/4ee57f9f504f3f92a546e3c0b614ef68504c5bf54748390cd1d857f2da7f7a6b.png" src="../../_images/4ee57f9f504f3f92a546e3c0b614ef68504c5bf54748390cd1d857f2da7f7a6b.png" />
+<img alt="../../_images/8d4cf2f7f8826fd2222895ad22564debd6b3461efdff0733fcbcbffc33b06ff5.png" src="../../_images/8d4cf2f7f8826fd2222895ad22564debd6b3461efdff0733fcbcbffc33b06ff5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -865,12 +863,12 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Axes: &gt;
 </pre></div>
 </div>
-<img alt="../../_images/c4e2d1286da3cfa28c267c590af7fea9db150212e0077aeb20985e638640bea4.png" src="../../_images/c4e2d1286da3cfa28c267c590af7fea9db150212e0077aeb20985e638640bea4.png" />
+<img alt="../../_images/a00e80272ec98bbdff3e98d8f2c1bd57b156f7b7555844a9a37983130d58b829.png" src="../../_images/a00e80272ec98bbdff3e98d8f2c1bd57b156f7b7555844a9a37983130d58b829.png" />
 </div>
 </div>
 </section>
 <section id="normalization">
-<h2><span class="section-number">16.3.5. </span>Normalization<a class="headerlink" href="#normalization" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.3.5. </span>Normalization<a class="headerlink" href="#normalization" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
@@ -893,7 +891,7 @@ document.write(`
 </div>
 </div>
 <section id="can-save-the-normalization-for-future-use">
-<h3><span class="section-number">16.3.5.1. </span>Can save the normalization for future use<a class="headerlink" href="#can-save-the-normalization-for-future-use" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.3.5.1. </span>Can save the normalization for future use<a class="headerlink" href="#can-save-the-normalization-for-future-use" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">normalizer</span> <span class="o">=</span> <span class="n">preprocessing</span><span class="o">.</span><span class="n">Normalizer</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>  <span class="c1"># fit does nothing</span>
@@ -924,7 +922,7 @@ document.write(`
 </section>
 </section>
 <section id="preprocessing-data-encoding">
-<h2><span class="section-number">16.3.6. </span>Preprocessing data - Encoding<a class="headerlink" href="#preprocessing-data-encoding" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.3.6. </span>Preprocessing data - Encoding<a class="headerlink" href="#preprocessing-data-encoding" title="Permalink to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">preprocessing</span>
@@ -975,7 +973,7 @@ document.write(`
 </div>
 </div>
 <section id="one-hot-encoder">
-<h3><span class="section-number">16.3.6.1. </span>One Hot Encoder<a class="headerlink" href="#one-hot-encoder" title="Permalink to this headline">#</a></h3>
+<h3><span class="section-number">16.3.6.1. </span>One Hot Encoder<a class="headerlink" href="#one-hot-encoder" title="Permalink to this heading">#</a></h3>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">genders</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;female&#39;</span><span class="p">,</span> <span class="s1">&#39;male&#39;</span><span class="p">]</span>
@@ -1028,7 +1026,7 @@ document.write(`
 </section>
 </section>
 <section id="discretization">
-<h2><span class="section-number">16.3.7. </span>Discretization<a class="headerlink" href="#discretization" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.3.7. </span>Discretization<a class="headerlink" href="#discretization" title="Permalink to this heading">#</a></h2>
 <p>Discretization (otherwise known as quantization or binning) provides a way to partition continuous features into discrete values. Certain datasets with continuous features may benefit from discretization, because discretization can transform the dataset of continuous attributes to one with only nominal attributes.</p>
 <p>One-hot encoded discretized features can make a model more expressive, while maintaining interpretability. For instance, pre-processing with a discretizer can introduce nonlinearity to linear models.</p>
 <div class="cell docutils container">
@@ -1051,7 +1049,7 @@ document.write(`
 </div>
 </section>
 <section id="univariate-feature-imputation">
-<h2><span class="section-number">16.3.8. </span>Univariate feature imputation<a class="headerlink" href="#univariate-feature-imputation" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.3.8. </span>Univariate feature imputation<a class="headerlink" href="#univariate-feature-imputation" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Impute missing values</p></li>
 </ul>
@@ -1139,13 +1137,13 @@ document.write(`
 </div>
 </section>
 <section id="review-book-examples">
-<h2><span class="section-number">16.3.9. </span>Review Book Examples<a class="headerlink" href="#review-book-examples" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.3.9. </span>Review Book Examples<a class="headerlink" href="#review-book-examples" title="Permalink to this heading">#</a></h2>
 <p><a class="reference external" href="https://en.wikipedia.org/wiki/Correlation#/media/File:Correlation_examples2.svg">https://en.wikipedia.org/wiki/Correlation#/media/File:Correlation_examples2.svg</a></p>
 <p><a class="reference external" href="https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_pipeline_display.html">https://scikit-learn.org/stable/auto_examples/miscellaneous/plot_pipeline_display.html</a></p>
 <p><a class="reference external" href="https://colab.research.google.com/github/ageron/handson-ml3/blob/main/02_end_to_end_machine_learning_project.ipynb">https://colab.research.google.com/github/ageron/handson-ml3/blob/main/02_end_to_end_machine_learning_project.ipynb</a></p>
 </section>
 <section id="id1">
-<h2><span class="section-number">16.3.10. </span><a class="headerlink" href="#id1" title="Permalink to this headline">#</a></h2>
+<h2><span class="section-number">16.3.10. </span><a class="headerlink" href="#id1" title="Permalink to this heading">#</a></h2>
 </section>
 </section>
 
