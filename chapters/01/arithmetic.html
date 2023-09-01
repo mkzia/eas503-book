@@ -433,7 +433,14 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#negation">1.3.1. Negation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-subtraction-multiplication-and-division">1.3.2. Addition, Subtraction, Multiplication, and Division</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-division-modulo-and-exponentiation">1.3.3. Integer Division, Modulo, and Exponentiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-division-modulo">1.3.3. Integer Division, Modulo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-negative-numbers">1.3.3.1. Working with Negative Numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-1-positive-n-and-negative-base">1.3.3.2. Case 1: Positive <code class="docutils literal notranslate"><span class="pre">n</span></code> and Negative <code class="docutils literal notranslate"><span class="pre">base</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-2-negative-n-and-positive-base">1.3.3.3. Case 2: Negative <code class="docutils literal notranslate"><span class="pre">n</span></code> and Positive <code class="docutils literal notranslate"><span class="pre">base</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-3-negative-n-and-negative-base">1.3.3.4. Case 3: Negative <code class="docutils literal notranslate"><span class="pre">n</span></code> and Negative <code class="docutils literal notranslate"><span class="pre">base</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exponentiation">1.3.4. Exponentiation</a></li>
 </ul>
             </nav>
         </div>
@@ -539,8 +546,8 @@ document.write(`
 <p>When the operands are of mixed data type, meaning <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code>, the resulting value will be type <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p>
 </div>
 </section>
-<section id="integer-division-modulo-and-exponentiation">
-<h2><span class="section-number">1.3.3. </span>Integer Division, Modulo, and Exponentiation<a class="headerlink" href="#integer-division-modulo-and-exponentiation" title="Permalink to this heading">#</a></h2>
+<section id="integer-division-modulo">
+<h2><span class="section-number">1.3.3. </span>Integer Division, Modulo<a class="headerlink" href="#integer-division-modulo" title="Permalink to this heading">#</a></h2>
 <p>To know the integer part of a division result, use the integer division operator. For example, to know how many 24-hour days there are in 53 hours.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -567,56 +574,38 @@ document.write(`
 </div>
 </div>
 </div>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p>Python integer division rounds towards negative infinity. This is different from truncation. Truncation would just drop the digits after the decimal. So, be careful with negative operands!</p>
-</div>
+<section id="working-with-negative-numbers">
+<h3><span class="section-number">1.3.3.1. </span>Working with Negative Numbers<a class="headerlink" href="#working-with-negative-numbers" title="Permalink to this heading">#</a></h3>
+<p>To correctly compute the result with negative numbers in integer division and the modulo operation, remember two rules:</p>
+<ul class="simple">
+<li><p><strong>Rule 1</strong>: Python’s integer division rounds towards negative infinity, which differs from truncation. Truncation simply discards digits after the decimal point. Therefore, exercise caution when dealing with negative operands.</p></li>
+<li><p><strong>Rule 2</strong>: <code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">q</span> <span class="pre">*</span> <span class="pre">base</span> <span class="pre">+</span> <span class="pre">r</span></code>, where:</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span></code> represents the dividend, the number to the left of <code class="docutils literal notranslate"><span class="pre">//</span></code> and <code class="docutils literal notranslate"><span class="pre">%</span></code>.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">q</span></code> stands for the quotient, obtained through integer division.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span></code> denotes the divisor, the number to the right of <code class="docutils literal notranslate"><span class="pre">//</span></code> and <code class="docutils literal notranslate"><span class="pre">%</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">r</span></code> signifies the remainder, the outcome of the modulo operator.</p></li>
+</ul>
+</li>
+</ul>
+<p>By considering the equation in rule <strong>Rule 2</strong>, it will follow that for the modulo operator, the sign of the remainder matches the sign of the divisor.</p>
+</section>
+<section id="case-1-positive-n-and-negative-base">
+<h3><span class="section-number">1.3.3.2. </span>Case 1: Positive <code class="docutils literal notranslate"><span class="pre">n</span></code> and Negative <code class="docutils literal notranslate"><span class="pre">base</span></code><a class="headerlink" href="#case-1-positive-n-and-negative-base" title="Permalink to this heading">#</a></h3>
+<p>Consider:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">17</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">=</span> <span class="pre">-10</span></code></p></li>
+</ul>
+<p>When dividing 17 by -10, the result is -1.7, which rounds down to -2 due to <strong>Rule 1</strong> and is the quotient (<code class="docutils literal notranslate"><span class="pre">q</span></code>). To calculate the modulo operator result, solve for <code class="docutils literal notranslate"><span class="pre">r</span></code> in the equation <code class="docutils literal notranslate"><span class="pre">17</span> <span class="pre">=</span> <span class="pre">-2</span> <span class="pre">*</span> <span class="pre">-10</span> <span class="pre">+</span> <span class="pre">r</span></code>, yielding <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">=</span> <span class="pre">-3</span></code>. Observe that the sign of the remainder matches that of the divisor.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">17</span> <span class="o">//</span> <span class="mi">10</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">17</span> <span class="o">//</span> <span class="mi">10</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">17</span> <span class="o">//</span> <span class="o">-</span><span class="mi">10</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2
-</pre></div>
-</div>
-</div>
-</div>
-<p><code class="docutils literal notranslate"><span class="pre">-1.7</span></code> rounded towards negative infinity is <code class="docutils literal notranslate"><span class="pre">-2</span></code>.</p>
-<p>For the modulo operator, the sign of the result matches the sign of the divisors (the second operand)</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">17</span> <span class="o">%</span> <span class="mi">10</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">17</span> <span class="o">%</span> <span class="mi">10</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
 </pre></div>
 </div>
 </div>
@@ -633,6 +622,27 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
+<section id="case-2-negative-n-and-positive-base">
+<h3><span class="section-number">1.3.3.3. </span>Case 2: Negative <code class="docutils literal notranslate"><span class="pre">n</span></code> and Positive <code class="docutils literal notranslate"><span class="pre">base</span></code><a class="headerlink" href="#case-2-negative-n-and-positive-base" title="Permalink to this heading">#</a></h3>
+<p>Consider:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">-17</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">=</span> <span class="pre">10</span></code></p></li>
+</ul>
+<p>When dividing -17 by 10, the result is -1.7, which rounds down to -2 due to <strong>Rule 1</strong> and is the quotient (<code class="docutils literal notranslate"><span class="pre">q</span></code>). To determine the modulo result, solve for <code class="docutils literal notranslate"><span class="pre">r</span></code> in the equation <code class="docutils literal notranslate"><span class="pre">-17</span> <span class="pre">=</span> <span class="pre">-2</span> <span class="pre">*</span> <span class="pre">10</span> <span class="pre">+</span> <span class="pre">r</span></code>, yielding <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">=</span> <span class="pre">3</span></code>. Observe that the sign of the remainder matches that of the divisor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">17</span> <span class="o">//</span> <span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-2
+</pre></div>
+</div>
+</div>
+</div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">17</span> <span class="o">%</span> <span class="mi">10</span>
@@ -645,6 +655,43 @@ document.write(`
 </div>
 </div>
 </div>
+</section>
+<section id="case-3-negative-n-and-negative-base">
+<h3><span class="section-number">1.3.3.4. </span>Case 3: Negative <code class="docutils literal notranslate"><span class="pre">n</span></code> and Negative <code class="docutils literal notranslate"><span class="pre">base</span></code><a class="headerlink" href="#case-3-negative-n-and-negative-base" title="Permalink to this heading">#</a></h3>
+<p>Consider:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n</span> <span class="pre">=</span> <span class="pre">-17</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">base</span> <span class="pre">=</span> <span class="pre">-10</span></code></p></li>
+</ul>
+<p>When dividing 17 by 10, the result is 1.7, which rounds down to 1 due to <strong>Rule 1</strong> and is the quotient (<code class="docutils literal notranslate"><span class="pre">q</span></code>). To determine the modulo result, solve for <code class="docutils literal notranslate"><span class="pre">r</span></code> in the equation <code class="docutils literal notranslate"><span class="pre">-17</span> <span class="pre">=</span> <span class="pre">1</span> <span class="pre">*</span> <span class="pre">-10</span> <span class="pre">+</span> <span class="pre">r</span></code>, yielding <code class="docutils literal notranslate"><span class="pre">r</span> <span class="pre">=</span> <span class="pre">-7</span></code>. Observe that the sign of the remainder matches that of the divisor.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">17</span> <span class="o">//</span> <span class="o">-</span><span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">-</span><span class="mi">17</span> <span class="o">%</span> <span class="o">-</span><span class="mi">10</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>-7
+</pre></div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="exponentiation">
+<h2><span class="section-number">1.3.4. </span>Exponentiation<a class="headerlink" href="#exponentiation" title="Permalink to this heading">#</a></h2>
 <p>The following expression calculates 3 raised to the 6th power:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -730,7 +777,14 @@ document.write(`
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#negation">1.3.1. Negation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#addition-subtraction-multiplication-and-division">1.3.2. Addition, Subtraction, Multiplication, and Division</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-division-modulo-and-exponentiation">1.3.3. Integer Division, Modulo, and Exponentiation</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#integer-division-modulo">1.3.3. Integer Division, Modulo</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#working-with-negative-numbers">1.3.3.1. Working with Negative Numbers</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-1-positive-n-and-negative-base">1.3.3.2. Case 1: Positive <code class="docutils literal notranslate"><span class="pre">n</span></code> and Negative <code class="docutils literal notranslate"><span class="pre">base</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-2-negative-n-and-positive-base">1.3.3.3. Case 2: Negative <code class="docutils literal notranslate"><span class="pre">n</span></code> and Positive <code class="docutils literal notranslate"><span class="pre">base</span></code></a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#case-3-negative-n-and-negative-base">1.3.3.4. Case 3: Negative <code class="docutils literal notranslate"><span class="pre">n</span></code> and Negative <code class="docutils literal notranslate"><span class="pre">base</span></code></a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exponentiation">1.3.4. Exponentiation</a></li>
 </ul>
   </nav></div>
 

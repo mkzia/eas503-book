@@ -54,7 +54,7 @@ The negation operator simply negates the value.
 When the operands are of mixed data type, meaning `int` and `float`, the resulting value will be type `float`.
 :::
 
-## Integer Division, Modulo, and Exponentiation
+## Integer Division, Modulo
 
 To know the integer part of a division result, use the integer division operator. For example, to know how many 24-hour days there are in 53 hours.
 
@@ -68,37 +68,71 @@ To find out how many hours are left over, you can use the modulo operator, which
 53 % 24 
 ```
 
-:::{warning}
-Python integer division rounds towards negative infinity. This is different from truncation. Truncation would just drop the digits after the decimal. So, be careful with negative operands!
-:::
+### Working with Negative Numbers
+
+To correctly compute the result with negative numbers in integer division and the modulo operation, remember two rules:
+
+- **Rule 1**: Python's integer division rounds towards negative infinity, which differs from truncation. Truncation simply discards digits after the decimal point. Therefore, exercise caution when dealing with negative operands.
+- **Rule 2**: `n = q * base + r`, where:
+  - `n` represents the dividend, the number to the left of `//` and `%`.
+  - `q` stands for the quotient, obtained through integer division.
+  - `base` denotes the divisor, the number to the right of `//` and `%`
+  - `r` signifies the remainder, the outcome of the modulo operator.
+  
+By considering the equation in rule **Rule 2**, it will follow that for the modulo operator, the sign of the remainder matches the sign of the divisor.
+
+### Case 1: Positive `n` and Negative `base`
+
+Consider:
+
+- `n = 17`
+- `base = -10`
+
+When dividing 17 by -10, the result is -1.7, which rounds down to -2 due to **Rule 1** and is the quotient (`q`). To calculate the modulo operator result, solve for `r` in the equation `17 = -2 * -10 + r`, yielding `r = -3`. Observe that the sign of the remainder matches that of the divisor.
 
 ```{code-cell} ipython3
-17 // 10
-```
-
-```{code-cell} ipython3
--17 // 10
-```
-
-`-1.7` rounded towards negative infinity is `-2`.
-
-For the modulo operator, the sign of the result matches the sign of the divisors (the second operand)
-
-```{code-cell} ipython3
--17 % 10
-```
-
-```{code-cell} ipython3
-17 % 10
+17 // -10
 ```
 
 ```{code-cell} ipython3
 17 % -10
 ```
 
+### Case 2: Negative `n` and Positive `base`
+
+Consider:
+
+- `n = -17`
+- `base = 10`
+
+When dividing -17 by 10, the result is -1.7, which rounds down to -2 due to **Rule 1** and is the quotient (`q`). To determine the modulo result, solve for `r` in the equation `-17 = -2 * 10 + r`, yielding `r = 3`. Observe that the sign of the remainder matches that of the divisor.
+
+```{code-cell} ipython3
+-17 // 10
+```
+
 ```{code-cell} ipython3
 -17 % 10
 ```
+
+### Case 3: Negative `n` and Negative `base`
+
+Consider:
+
+- `n = -17`
+- `base = -10`
+
+When dividing 17 by 10, the result is 1.7, which rounds down to 1 due to **Rule 1** and is the quotient (`q`). To determine the modulo result, solve for `r` in the equation `-17 = 1 * -10 + r`, yielding `r = -7`. Observe that the sign of the remainder matches that of the divisor.
+
+```{code-cell} ipython3
+-17 // -10
+```
+
+```{code-cell} ipython3
+-17 % -10
+```
+
+## Exponentiation
 
 The following expression calculates 3 raised to the 6th power:
 
