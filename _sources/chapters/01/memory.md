@@ -16,7 +16,7 @@ The memory model for comprehending how variables are stored in Python differs fr
 
 ![mem_model1](./mem_model1.png)
 
-"In Python, values can be stored anywhere in memory, and variables are employed to reference them. Assigning a variable is analogous to placing a small yellow sticky note on the value and declaring, 'this is x.' This memory model is commonly referred to as the sticky-note model.
+In Python, values can be stored anywhere in memory, and variables are employed to reference them. Assigning a variable is analogous to placing a small yellow sticky note on the value and declaring, 'this is x.' This memory model is commonly referred to as the sticky-note model. Put another way, a Python variable is a symbolic name that is a reference or pointer to the value, which is technically an object.
 
 ![mem_model2](./mem_model2.png)
 

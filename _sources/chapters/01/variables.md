@@ -12,21 +12,43 @@ kernelspec:
 
 # Variables
 
-Variables provide names for values (numbers, strings, None). They act as identifiers that label a value for future reference. The value of a variable can be modified through assignment.
+- Variables provide names for values (numbers, strings, None). They act as identifiers that label a value for future reference. The value of a variable can be modified through assignment.
 
-Variables must be assigned before they can be utilized in expressions.
+- Variables must be assigned before they can be utilized in expressions.
 
-Variable names **MUST** adhere to specific rules, and it is **BEST** to adhere to Python's guidelines for naming.
+- Variables do not have to specify the data type of data at the time of assignment. The data type is inferred from the value. For this reason, Python is known as a **Dynamically Typed Language**. Languages that require variable data types to be declared at the time of assignment are called **Statically Typed Languages**. A consequence of Python being a dynamically typed language is that you can reassign a variable to a different data type. This is allowed in Python but is not allowed in some programming languages.
+
+```python
+x = 3 # data type int
+x = 3.14 # data type float; this is allowed!
+```
+
+- Variable names are case-sensitive, meaning `ph` and `pH` are considered two distinct names.
+
+- Variable names **MUST** adhere to specific rules, and it is **BEST** to adhere to Python's guidelines for naming.
 
 ## Restrictions for Variable Names
 
+You must adhere to these
+
 1. Must start with a letter or underscore.
-2. Can consist of letters, underscores, and numbers.
-3. Symbols like `(@,+)` cannot be used in names.
-4. Avoid using Python keywords or reserved words, such as `print`, `str`, `int`, `float`.
-  
-- `int = 3` do `del int` to restore python keyword
-- `print = 'Yah'` do `del print` to restore Python keyword
+2. Can consist of letters, underscores, and numbers. **NO SPACES**
+3. Symbols like `(,),@,+,-,*,/` cannot be used in names.
+4. Cannot use Python keywords
+
+## Python Keywords
+
+- Python keywords are reserved, meaning they cannot be used as variable names.
+
+```text
+False      await      else       import     pass
+None       break      except     in         raise
+True       class      finally    is         return
+and        continue   for        lambda     try
+as         def        from       nonlocal   while
+assert     del        global     not        with
+async      elif       if         or         yield
+```
 
 ## Conventions for Variable Names
 
@@ -35,8 +57,10 @@ Variable names **MUST** adhere to specific rules, and it is **BEST** to adhere t
 3. Uppercase is reserved for constants, such as `PI = 3.14`.
 4. UpperCamelCase is used for classes.
 5. `__private__` with a double underscore is a convention that signifies the variable shouldn't be accessed directly. This convention is analogous to private variables in other programming languages.
+6. Avoid using Python functions as variable names, examples, `int`, `type`, `float`
 
-Variable names are case-sensitive, meaning `ph` and `pH` are considered two distinct names.
+- `int = 3` do `del int` to restore python keyword
+- `print = 'Yah'` do `del print` to restore Python keyword
 
 ## Variable Assignment
 
@@ -60,14 +84,3 @@ degrees_celsius = 15.5
 9 / 5 * degrees_celsius + 32
 ```
 
-## Python Keywords
-
-```text
-False      await      else       import     pass
-None       break      except     in         raise
-True       class      finally    is         return
-and        continue   for        lambda     try
-as         def        from       nonlocal   while
-assert     del        global     not        with
-async      elif       if         or         yield
-```

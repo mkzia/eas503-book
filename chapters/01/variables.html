@@ -432,9 +432,9 @@ document.write(`
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#restrictions-for-variable-names">1.7.1. Restrictions for Variable Names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conventions-for-variable-names">1.7.2. Conventions for Variable Names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-assignment">1.7.3. Variable Assignment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-keywords">1.7.4. Python Keywords</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-keywords">1.7.2. Python Keywords</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conventions-for-variable-names">1.7.3. Conventions for Variable Names</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-assignment">1.7.4. Variable Assignment</a></li>
 </ul>
             </nav>
         </div>
@@ -448,35 +448,61 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="variables">
 <h1><span class="section-number">1.7. </span>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">#</a></h1>
-<p>Variables provide names for values (numbers, strings, None). They act as identifiers that label a value for future reference. The value of a variable can be modified through assignment.</p>
-<p>Variables must be assigned before they can be utilized in expressions.</p>
-<p>Variable names <strong>MUST</strong> adhere to specific rules, and it is <strong>BEST</strong> to adhere to Python’s guidelines for naming.</p>
+<ul class="simple">
+<li><p>Variables provide names for values (numbers, strings, None). They act as identifiers that label a value for future reference. The value of a variable can be modified through assignment.</p></li>
+<li><p>Variables must be assigned before they can be utilized in expressions.</p></li>
+<li><p>Variables do not have to specify the data type of data at the time of assignment. The data type is inferred from the value. For this reason, Python is known as a <strong>Dynamically Typed Language</strong>. Languages that require variable data types to be declared at the time of assignment are called <strong>Statically Typed Languages</strong>. A consequence of Python being a dynamically typed language is that you can reassign a variable to a different data type. This is allowed in Python but is not allowed in some programming languages.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># data type int</span>
+<span class="n">x</span> <span class="o">=</span> <span class="mf">3.14</span> <span class="c1"># data type float; this is allowed!</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Variable names are case-sensitive, meaning <code class="docutils literal notranslate"><span class="pre">ph</span></code> and <code class="docutils literal notranslate"><span class="pre">pH</span></code> are considered two distinct names.</p></li>
+<li><p>Variable names <strong>MUST</strong> adhere to specific rules, and it is <strong>BEST</strong> to adhere to Python’s guidelines for naming.</p></li>
+</ul>
 <section id="restrictions-for-variable-names">
 <h2><span class="section-number">1.7.1. </span>Restrictions for Variable Names<a class="headerlink" href="#restrictions-for-variable-names" title="Permalink to this heading">#</a></h2>
+<p>You must adhere to these</p>
 <ol class="arabic simple">
 <li><p>Must start with a letter or underscore.</p></li>
-<li><p>Can consist of letters, underscores, and numbers.</p></li>
-<li><p>Symbols like <code class="docutils literal notranslate"><span class="pre">(&#64;,+)</span></code> cannot be used in names.</p></li>
-<li><p>Avoid using Python keywords or reserved words, such as <code class="docutils literal notranslate"><span class="pre">print</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code>.</p></li>
+<li><p>Can consist of letters, underscores, and numbers. <strong>NO SPACES</strong></p></li>
+<li><p>Symbols like <code class="docutils literal notranslate"><span class="pre">(,),&#64;,+,-,*,/</span></code> cannot be used in names.</p></li>
+<li><p>Cannot use Python keywords</p></li>
 </ol>
+</section>
+<section id="python-keywords">
+<h2><span class="section-number">1.7.2. </span>Python Keywords<a class="headerlink" href="#python-keywords" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">=</span> <span class="pre">3</span></code> do <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">int</span></code> to restore python keyword</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">=</span> <span class="pre">'Yah'</span></code> do <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">print</span></code> to restore Python keyword</p></li>
+<li><p>Python keywords are reserved, meaning they cannot be used as variable names.</p></li>
 </ul>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>False      await      else       import     pass
+None       break      except     in         raise
+True       class      finally    is         return
+and        continue   for        lambda     try
+as         def        from       nonlocal   while
+assert     del        global     not        with
+async      elif       if         or         yield
+</pre></div>
+</div>
 </section>
 <section id="conventions-for-variable-names">
-<h2><span class="section-number">1.7.2. </span>Conventions for Variable Names<a class="headerlink" href="#conventions-for-variable-names" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.7.3. </span>Conventions for Variable Names<a class="headerlink" href="#conventions-for-variable-names" title="Permalink to this heading">#</a></h2>
 <ol class="arabic simple">
 <li><p>Use snake_case, not camelCase, for variable and function names.</p></li>
 <li><p>Variables should be in lowercase.</p></li>
 <li><p>Uppercase is reserved for constants, such as <code class="docutils literal notranslate"><span class="pre">PI</span> <span class="pre">=</span> <span class="pre">3.14</span></code>.</p></li>
 <li><p>UpperCamelCase is used for classes.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">__private__</span></code> with a double underscore is a convention that signifies the variable shouldn’t be accessed directly. This convention is analogous to private variables in other programming languages.</p></li>
+<li><p>Avoid using Python functions as variable names, examples, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code></p></li>
 </ol>
-<p>Variable names are case-sensitive, meaning <code class="docutils literal notranslate"><span class="pre">ph</span></code> and <code class="docutils literal notranslate"><span class="pre">pH</span></code> are considered two distinct names.</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">=</span> <span class="pre">3</span></code> do <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">int</span></code> to restore python keyword</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">=</span> <span class="pre">'Yah'</span></code> do <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">print</span></code> to restore Python keyword</p></li>
+</ul>
 </section>
 <section id="variable-assignment">
-<h2><span class="section-number">1.7.3. </span>Variable Assignment<a class="headerlink" href="#variable-assignment" title="Permalink to this heading">#</a></h2>
+<h2><span class="section-number">1.7.4. </span>Variable Assignment<a class="headerlink" href="#variable-assignment" title="Permalink to this heading">#</a></h2>
 <p>Variables are created by executing assignment statements.</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">degrees_celsius</span> <span class="o">=</span> <span class="mf">26.0</span>
 </pre></div>
@@ -508,18 +534,6 @@ document.write(`
 </pre></div>
 </div>
 </div>
-</div>
-</section>
-<section id="python-keywords">
-<h2><span class="section-number">1.7.4. </span>Python Keywords<a class="headerlink" href="#python-keywords" title="Permalink to this heading">#</a></h2>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>False      await      else       import     pass
-None       break      except     in         raise
-True       class      finally    is         return
-and        continue   for        lambda     try
-as         def        from       nonlocal   while
-assert     del        global     not        with
-async      elif       if         or         yield
-</pre></div>
 </div>
 </section>
 </section>
@@ -592,9 +606,9 @@ async      elif       if         or         yield
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#restrictions-for-variable-names">1.7.1. Restrictions for Variable Names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conventions-for-variable-names">1.7.2. Conventions for Variable Names</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-assignment">1.7.3. Variable Assignment</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-keywords">1.7.4. Python Keywords</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-keywords">1.7.2. Python Keywords</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conventions-for-variable-names">1.7.3. Conventions for Variable Names</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-assignment">1.7.4. Variable Assignment</a></li>
 </ul>
   </nav></div>
 
