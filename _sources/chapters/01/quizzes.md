@@ -17,7 +17,7 @@ kernelspec:
 ```{code-cell} ipython3
 :tags: ["remove-input"]
 from jupyterquiz import display_quiz
-display_quiz("questions/"+'getting_started.json', shuffle_answers=False, colors='fdsp')
+display_quiz("questions/"+'getting_started.json', shuffle_answers=True, colors='fdsp')
 ```
 
 ## Definitions
@@ -25,7 +25,7 @@ display_quiz("questions/"+'getting_started.json', shuffle_answers=False, colors=
 ```{code-cell} ipython3
 :tags: ["remove-input"]
 from jupyterquiz import display_quiz
-display_quiz("questions/"+'definitions.json', shuffle_answers=False, colors='fdsp')
+display_quiz("questions/"+'definitions.json', shuffle_answers=True, colors='fdsp')
 ```
 
 ## Arithmetic
@@ -33,7 +33,7 @@ display_quiz("questions/"+'definitions.json', shuffle_answers=False, colors='fds
 ```{code-cell} ipython3
 :tags: ["remove-input"]
 from jupyterquiz import display_quiz
-display_quiz("questions/"+'arithmetic.json', shuffle_answers=False, colors='fdsp')
+display_quiz("questions/"+'arithmetic.json', shuffle_answers=True, colors='fdsp')
 ```
 
 ## Numeric Data Type
@@ -41,7 +41,7 @@ display_quiz("questions/"+'arithmetic.json', shuffle_answers=False, colors='fdsp
 ```{code-cell} ipython3
 :tags: ["remove-input"]
 from jupyterquiz import display_quiz
-display_quiz("questions/"+'numeric_data_type.json', shuffle_answers=False, colors='fdsp')
+display_quiz("questions/"+'numeric_data_type.json', shuffle_answers=True, colors='fdsp')
 ```
 
 ## Operator Precedence
@@ -49,7 +49,7 @@ display_quiz("questions/"+'numeric_data_type.json', shuffle_answers=False, color
 ```{code-cell} ipython3
 :tags: ["remove-input"]
 from jupyterquiz import display_quiz
-display_quiz("questions/"+'operator_precedence.json', shuffle_answers=False, colors='fdsp')
+display_quiz("questions/"+'operator_precedence.json', shuffle_answers=True, colors='fdsp')
 ```
 
 ## Variables
@@ -57,7 +57,7 @@ display_quiz("questions/"+'operator_precedence.json', shuffle_answers=False, col
 ```{code-cell} ipython3
 :tags: ["remove-input"]
 from jupyterquiz import display_quiz
-display_quiz("questions/"+'variables.json', shuffle_answers=False, colors='fdsp')
+display_quiz("questions/"+'variables.json', shuffle_answers=True, colors='fdsp')
 ```
 
 ## Miscellaneous
@@ -65,5 +65,5 @@ display_quiz("questions/"+'variables.json', shuffle_answers=False, colors='fdsp'
 ```{code-cell} ipython3
 :tags: ["remove-input"]
 from jupyterquiz import display_quiz
-display_quiz("questions/"+'miscellaneous.json', shuffle_answers=False, colors='fdsp')
+display_quiz("questions/"+'miscellaneous.json', shuffle_answers=True, colors='fdsp')
 ```

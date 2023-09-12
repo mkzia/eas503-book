@@ -180,5 +180,5 @@ Embrace sound cyber-security practices. Refrain from granting physical or electr
 ```{code-cell} ipython3
 :tags: ["remove-input"]
 from jupyterquiz import display_quiz
-display_quiz('syllabus_quiz.json', shuffle_answers=False, colors='fdsp')
+display_quiz('syllabus_quiz.json', shuffle_answers=True, colors='fdsp')
 ```
