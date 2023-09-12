@@ -25,7 +25,7 @@ display_quiz("questions/"+'intro.json', shuffle_answers=True, colors='fdsp')
 ```{code-cell} ipython3
 :tags: ["remove-input"]
 from jupyterquiz import display_quiz
-display_quiz("questions/"+'built-in.json', shuffle_answers=True, colors='fdsp')
+display_quiz("questions/"+'built_in.json', shuffle_answers=True, colors='fdsp')
 ```
 
 ## User Defined
