@@ -35,3 +35,4 @@ display_quiz("questions/"+'built_in.json', shuffle_answers=True, colors='fdsp')
 from jupyterquiz import display_quiz
 display_quiz("questions/"+'user_defined.json', shuffle_answers=True, colors='fdsp')
 ```
+
