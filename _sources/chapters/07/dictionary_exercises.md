@@ -13,11 +13,13 @@ kernelspec:
 # Dictionary Exercises
 
 ## Exercise 1
+
 Load people.tsv into a dictionary. Prompt user for filename
 
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
-filename = input('What is the name of the file? ')
+# filename = input('What is the name of the file? ')
+filename = 'people.tsv'
 header = None
 data_array = []
 
@@ -33,53 +35,53 @@ from pprint import pprint
 pprint(data_array)
 ```
 
-
 ## Exercise 2
+
 Write a function to convert month number to month name. First use a list and then a dictionary
 
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
 def convert_to_month_list(month):
 
-months = [
-	'',
-	'January',
-	'February',
-	'March',
-	'April',
-	'May',
-	'June',
-	'July',
-	'August',
-	'September',
-	'October',
-	'November',
-	'December',
-]
+    months = [
+        '',
+        'January',
+        'February',
+        'March',
+        'April',
+        'May',
+        'June',
+        'July',
+        'August',
+        'September',
+        'October',
+        'November',
+        'December',
+    ]
 
-	return months[month]
+    return months[month]
 
 print(convert_to_month_list(3))
 
 def convert_to_month_dict(month):
 
-	months = {
-		1: 'January',
-		2: 'February',
-		3: 'March',
-		4: 'April',
-		5: 'May',
-		6: 'June',
-		7: 'July',
-		8: 'August',
-		9: 'September',
-		10: 'October',
-		11: 'November',
-		12: 'December',
-	}
+    months = {
+        1: 'January',
+        2: 'February',
+        3: 'March',
+        4: 'April',
+        5: 'May',
+        6: 'June',
+        7: 'July',
+        8: 'August',
+        9: 'September',
+        10: 'October',
+        11: 'November',
+        12: 'December',
+    }
 
 
-	return months[month]
+    return months[month]
 
 print(convert_to_month_list(3))
 ```
@@ -87,19 +89,19 @@ print(convert_to_month_list(3))
 ## Exercise 3
 
 Convert a text message to numbers using the following number scheme
-```
-0 	space
-1 	., ?, !
-2 	ABC
-3 	DEF
-4 	GHI
-5 	JKL
-6 	MNO
-7 	PQRS
-8 	TUV
-9 	WXYZ
-```
 
+```
+0  space
+1  ., ?, !
+2  ABC
+3  DEF
+4  GHI
+5  JKL
+6  MNO
+7  PQRS
+8  TUV
+9  WXYZ
+```
 
 ```{code-cell} ipython3
 :tags: ["hide-input", "output_scroll"]
@@ -176,6 +178,7 @@ print(convert_message_to_numbers('Hello, World!'))
 ```
 
 ## Exercise 4
+
 Write a function that uses enumerate to print the index and value from range.
 Use vary the enumerate start index
 
@@ -189,12 +192,11 @@ def test_enumerate(range_value):
 test_enumerate(10)
 ```
 
-
 ## Exercise 5
 
 Simulate two dice. Print the total, theoretical/expected probability, and simulated probability
 input: the number of simulations
-https://socratic.org/questions/what-is-the-expected-value-of-the-sum-of-two-rolls-of-a-six-sided-die
+<https://socratic.org/questions/what-is-the-expected-value-of-the-sum-of-two-rolls-of-a-six-sided-die>
 
 ```python
 # Total     Simulated Percent     Expected Percent 

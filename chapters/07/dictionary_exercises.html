@@ -184,6 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../03/table.html">3.3. Creating a Table</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/methods.html">3.4. String Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/exercises.html">3.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/quizzes.html">3.6. Quizzes</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../04/intro.html">4. Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -192,6 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../04/strings.html">4.3. String Comparison</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04/statement_selection.html">4.4. Statement Selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04/exercises.html">4.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/quizzes.html">4.6. Quizzes</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../05/intro.html">5. Lists and Tuples</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -460,7 +462,8 @@ document.write(`
 <span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is the name of the file? &#39;</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># filename = input(&#39;What is the name of the file? &#39;)</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;people.tsv&#39;</span>
 <span class="n">header</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="n">data_array</span> <span class="o">=</span> <span class="p">[]</span>
 
@@ -479,25 +482,506 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">StdinNotImplementedError</span><span class="g g-Whitespace">                  </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">filename</span> <span class="o">=</span> <span class="nb">input</span><span class="p">(</span><span class="s1">&#39;What is the name of the file? &#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">header</span> <span class="o">=</span> <span class="kc">None</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">data_array</span> <span class="o">=</span> <span class="p">[]</span>
-
-<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/ipykernel/kernelbase.py:1201,</span> in <span class="ni">Kernel.raw_input</span><span class="nt">(self, prompt)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1199</span> <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">_allow_stdin</span><span class="p">:</span>
-<span class="g g-Whitespace">   </span><span class="mi">1200</span>     <span class="n">msg</span> <span class="o">=</span> <span class="s2">&quot;raw_input was called, but this frontend does not support input requests.&quot;</span>
-<span class="ne">-&gt; </span><span class="mi">1201</span>     <span class="k">raise</span> <span class="n">StdinNotImplementedError</span><span class="p">(</span><span class="n">msg</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">1202</span> <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_input_request</span><span class="p">(</span>
-<span class="g g-Whitespace">   </span><span class="mi">1203</span>     <span class="nb">str</span><span class="p">(</span><span class="n">prompt</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1204</span>     <span class="bp">self</span><span class="o">.</span><span class="n">_parent_ident</span><span class="p">[</span><span class="s2">&quot;shell&quot;</span><span class="p">],</span>
-<span class="g g-Whitespace">   </span><span class="mi">1205</span>     <span class="bp">self</span><span class="o">.</span><span class="n">get_parent</span><span class="p">(</span><span class="s2">&quot;shell&quot;</span><span class="p">),</span>
-<span class="g g-Whitespace">   </span><span class="mi">1206</span>     <span class="n">password</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
-<span class="g g-Whitespace">   </span><span class="mi">1207</span> <span class="p">)</span>
-
-<span class="ne">StdinNotImplementedError</span>: raw_input was called, but this frontend does not support input requests.
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[{&#39;account&#39;: &#39;QVJP6465242365388&#39;,
+  &#39;country&#39;: &#39;Nepal&#39;,
+  &#39;email&#39;: &#39;xdunn@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Michael&#39;,
+  &#39;last_name&#39;: &#39;Weaver&#39;},
+ {&#39;account&#39;: &#39;FVQZ0955529767455&#39;,
+  &#39;country&#39;: &#39;Kazakhstan&#39;,
+  &#39;email&#39;: &#39;iedwards@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Jackson&#39;,
+  &#39;last_name&#39;: &#39;Owens&#39;},
+ {&#39;account&#39;: &#39;QFIM0905182880347&#39;,
+  &#39;country&#39;: &#39;Mauritius&#39;,
+  &#39;email&#39;: &#39;arogers@smith.com&#39;,
+  &#39;first_name&#39;: &#39;Patrick&#39;,
+  &#39;last_name&#39;: &#39;Gilmore&#39;},
+ {&#39;account&#39;: &#39;YWOT0997131632248&#39;,
+  &#39;country&#39;: &#39;New Zealand&#39;,
+  &#39;email&#39;: &#39;plewis@chavez.com&#39;,
+  &#39;first_name&#39;: &#39;Jeffrey&#39;,
+  &#39;last_name&#39;: &#39;Perez&#39;},
+ {&#39;account&#39;: &#39;QAAE9838291982555&#39;,
+  &#39;country&#39;: &#39;Yemen&#39;,
+  &#39;email&#39;: &#39;fred92@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;James&#39;,
+  &#39;last_name&#39;: &#39;Thomas&#39;},
+ {&#39;account&#39;: &#39;PCNE8127696280157&#39;,
+  &#39;country&#39;: &#39;Jordan&#39;,
+  &#39;email&#39;: &#39;mmiller@lynch.com&#39;,
+  &#39;first_name&#39;: &#39;Greg&#39;,
+  &#39;last_name&#39;: &#39;Nelson&#39;},
+ {&#39;account&#39;: &#39;BCEN3299883381338&#39;,
+  &#39;country&#39;: &#39;Palau&#39;,
+  &#39;email&#39;: &#39;steven49@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Joshua&#39;,
+  &#39;last_name&#39;: &#39;White&#39;},
+ {&#39;account&#39;: &#39;XPTQ7837014557677&#39;,
+  &#39;country&#39;: &#39;Argentina&#39;,
+  &#39;email&#39;: &#39;amanda23@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Todd&#39;,
+  &#39;last_name&#39;: &#39;Francis&#39;},
+ {&#39;account&#39;: &#39;TRLQ6559557081716&#39;,
+  &#39;country&#39;: &#39;Marshall Islands&#39;,
+  &#39;email&#39;: &#39;jackduke@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Stephen&#39;,
+  &#39;last_name&#39;: &#39;Shaw&#39;},
+ {&#39;account&#39;: &#39;OHOV7518558201999&#39;,
+  &#39;country&#39;: &#39;Albania&#39;,
+  &#39;email&#39;: &#39;rhodesnicholas@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Mariah&#39;,
+  &#39;last_name&#39;: &#39;Armstrong&#39;},
+ {&#39;account&#39;: &#39;MCQU7347833033110&#39;,
+  &#39;country&#39;: &#39;Kyrgyz Republic&#39;,
+  &#39;email&#39;: &#39;smithashlee@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Anthony&#39;,
+  &#39;last_name&#39;: &#39;Boyle&#39;},
+ {&#39;account&#39;: &#39;PPHE5533473251751&#39;,
+  &#39;country&#39;: &#39;Turkmenistan&#39;,
+  &#39;email&#39;: &#39;ubriggs@hill.info&#39;,
+  &#39;first_name&#39;: &#39;Patrick&#39;,
+  &#39;last_name&#39;: &#39;Cuevas&#39;},
+ {&#39;account&#39;: &#39;JCDK1943355298609&#39;,
+  &#39;country&#39;: &#39;Fiji&#39;,
+  &#39;email&#39;: &#39;brownclarence@gonzalez-moore.com&#39;,
+  &#39;first_name&#39;: &#39;Gerald&#39;,
+  &#39;last_name&#39;: &#39;Reyes&#39;},
+ {&#39;account&#39;: &#39;NERZ5502558659614&#39;,
+  &#39;country&#39;: &#39;Costa Rica&#39;,
+  &#39;email&#39;: &#39;teresa30@carpenter-warner.com&#39;,
+  &#39;first_name&#39;: &#39;Christopher&#39;,
+  &#39;last_name&#39;: &#39;Calderon&#39;},
+ {&#39;account&#39;: &#39;DLDV5789894914403&#39;,
+  &#39;country&#39;: &#39;Martinique&#39;,
+  &#39;email&#39;: &#39;leekatherine@williams.com&#39;,
+  &#39;first_name&#39;: &#39;Shane&#39;,
+  &#39;last_name&#39;: &#39;Weiss&#39;},
+ {&#39;account&#39;: &#39;GZZF6936998445532&#39;,
+  &#39;country&#39;: &#39;Singapore&#39;,
+  &#39;email&#39;: &#39;chasewatkins@perez-phillips.com&#39;,
+  &#39;first_name&#39;: &#39;Crystal&#39;,
+  &#39;last_name&#39;: &#39;Conley&#39;},
+ {&#39;account&#39;: &#39;ECGK2823955143629&#39;,
+  &#39;country&#39;: &#39;Mayotte&#39;,
+  &#39;email&#39;: &#39;hsherman@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Jeffrey&#39;,
+  &#39;last_name&#39;: &#39;Nelson&#39;},
+ {&#39;account&#39;: &#39;QOVO4275314052899&#39;,
+  &#39;country&#39;: &#39;Costa Rica&#39;,
+  &#39;email&#39;: &#39;martinezdaniel@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Brianna&#39;,
+  &#39;last_name&#39;: &#39;Johnson&#39;},
+ {&#39;account&#39;: &#39;UKRT1119626365017&#39;,
+  &#39;country&#39;: &#39;Guadeloupe&#39;,
+  &#39;email&#39;: &#39;justinfischer@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Brandon&#39;,
+  &#39;last_name&#39;: &#39;Werner&#39;},
+ {&#39;account&#39;: &#39;UNPV3347450330173&#39;,
+  &#39;country&#39;: &#39;Bahamas&#39;,
+  &#39;email&#39;: &#39;cindy08@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Brianna&#39;,
+  &#39;last_name&#39;: &#39;Bennett&#39;},
+ {&#39;account&#39;: &#39;GJZT6825738428111&#39;,
+  &#39;country&#39;: &#39;Azerbaijan&#39;,
+  &#39;email&#39;: &#39;carolharrington@fleming.org&#39;,
+  &#39;first_name&#39;: &#39;Austin&#39;,
+  &#39;last_name&#39;: &#39;Fletcher&#39;},
+ {&#39;account&#39;: &#39;JOQE2648899771737&#39;,
+  &#39;country&#39;: &#39;Saint Helena&#39;,
+  &#39;email&#39;: &#39;lopezcarl@johnson.com&#39;,
+  &#39;first_name&#39;: &#39;Patrick&#39;,
+  &#39;last_name&#39;: &#39;Lewis&#39;},
+ {&#39;account&#39;: &#39;MNXY3262955868027&#39;,
+  &#39;country&#39;: &#39;Hong Kong&#39;,
+  &#39;email&#39;: &#39;michael74@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Joseph&#39;,
+  &#39;last_name&#39;: &#39;Smith&#39;},
+ {&#39;account&#39;: &#39;YHXF7256577475630&#39;,
+  &#39;country&#39;: &#39;Turkey&#39;,
+  &#39;email&#39;: &#39;gonzalezrobert@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Sharon&#39;,
+  &#39;last_name&#39;: &#39;Sullivan&#39;},
+ {&#39;account&#39;: &#39;MUVI3570791852556&#39;,
+  &#39;country&#39;: &#39;Swaziland&#39;,
+  &#39;email&#39;: &#39;dawnjohnson@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Krystal&#39;,
+  &#39;last_name&#39;: &#39;Wilson&#39;},
+ {&#39;account&#39;: &#39;UKCP6739617302102&#39;,
+  &#39;country&#39;: &#39;Holy See (Vatican City State)&#39;,
+  &#39;email&#39;: &#39;watersryan@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Diana&#39;,
+  &#39;last_name&#39;: &#39;Schmidt&#39;},
+ {&#39;account&#39;: &#39;WDAT4146843903498&#39;,
+  &#39;country&#39;: &#39;Norfolk Island&#39;,
+  &#39;email&#39;: &#39;byoung@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Sean&#39;,
+  &#39;last_name&#39;: &#39;Huff&#39;},
+ {&#39;account&#39;: &#39;SVMU4403517448078&#39;,
+  &#39;country&#39;: &#39;Kenya&#39;,
+  &#39;email&#39;: &#39;vhanson@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Robin&#39;,
+  &#39;last_name&#39;: &#39;Nguyen&#39;},
+ {&#39;account&#39;: &#39;ZNUY4071301663622&#39;,
+  &#39;country&#39;: &#39;Togo&#39;,
+  &#39;email&#39;: &#39;bfletcher@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Robyn&#39;,
+  &#39;last_name&#39;: &#39;Russell&#39;},
+ {&#39;account&#39;: &#39;GPFA8271551275648&#39;,
+  &#39;country&#39;: &#39;San Marino&#39;,
+  &#39;email&#39;: &#39;colleengarrison@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Tiffany&#39;,
+  &#39;last_name&#39;: &#39;Smith&#39;},
+ {&#39;account&#39;: &#39;MKWY4848668895426&#39;,
+  &#39;country&#39;: &#39;Romania&#39;,
+  &#39;email&#39;: &#39;catherine23@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Lori&#39;,
+  &#39;last_name&#39;: &#39;Smith&#39;},
+ {&#39;account&#39;: &#39;QHIW7412514205367&#39;,
+  &#39;country&#39;: &#39;Algeria&#39;,
+  &#39;email&#39;: &#39;xmurphy@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Sabrina&#39;,
+  &#39;last_name&#39;: &#39;Keith&#39;},
+ {&#39;account&#39;: &#39;QAAO4666689281736&#39;,
+  &#39;country&#39;: &#39;Slovakia (Slovak Republic)&#39;,
+  &#39;email&#39;: &#39;aaronrichard@middleton.net&#39;,
+  &#39;first_name&#39;: &#39;Miguel&#39;,
+  &#39;last_name&#39;: &#39;Johnson&#39;},
+ {&#39;account&#39;: &#39;LRPR8694143910883&#39;,
+  &#39;country&#39;: &#39;Somalia&#39;,
+  &#39;email&#39;: &#39;jesse93@best.com&#39;,
+  &#39;first_name&#39;: &#39;Dustin&#39;,
+  &#39;last_name&#39;: &#39;Barron&#39;},
+ {&#39;account&#39;: &#39;UWFU1921951273393&#39;,
+  &#39;country&#39;: &#39;Turkmenistan&#39;,
+  &#39;email&#39;: &#39;johnperez@johnson.com&#39;,
+  &#39;first_name&#39;: &#39;Michael&#39;,
+  &#39;last_name&#39;: &#39;Robinson&#39;},
+ {&#39;account&#39;: &#39;JQHS4274771257925&#39;,
+  &#39;country&#39;: &#39;Croatia&#39;,
+  &#39;email&#39;: &#39;jessica62@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Robert&#39;,
+  &#39;last_name&#39;: &#39;Nguyen&#39;},
+ {&#39;account&#39;: &#39;RSLD0426398604312&#39;,
+  &#39;country&#39;: &#39;Jamaica&#39;,
+  &#39;email&#39;: &#39;jennifer87@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Brandon&#39;,
+  &#39;last_name&#39;: &#39;Abbott&#39;},
+ {&#39;account&#39;: &#39;UYHI6964741005832&#39;,
+  &#39;country&#39;: &#39;Montserrat&#39;,
+  &#39;email&#39;: &#39;morenolindsay@bass.org&#39;,
+  &#39;first_name&#39;: &#39;Bruce&#39;,
+  &#39;last_name&#39;: &#39;Oneill&#39;},
+ {&#39;account&#39;: &#39;ZKTE5908966955533&#39;,
+  &#39;country&#39;: &#39;Heard Island and McDonald Islands&#39;,
+  &#39;email&#39;: &#39;robertdavis@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Linda&#39;,
+  &#39;last_name&#39;: &#39;Nash&#39;},
+ {&#39;account&#39;: &#39;HHHP3471562002758&#39;,
+  &#39;country&#39;: &#39;Niger&#39;,
+  &#39;email&#39;: &#39;melanie81@rogers.com&#39;,
+  &#39;first_name&#39;: &#39;Kathleen&#39;,
+  &#39;last_name&#39;: &#39;Cameron&#39;},
+ {&#39;account&#39;: &#39;UWLV6407825245995&#39;,
+  &#39;country&#39;: &#39;Saint Vincent and the Grenadines&#39;,
+  &#39;email&#39;: &#39;clineerin@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Wesley&#39;,
+  &#39;last_name&#39;: &#39;Wilkinson&#39;},
+ {&#39;account&#39;: &#39;JRBN0811785293731&#39;,
+  &#39;country&#39;: &#39;Antigua and Barbuda&#39;,
+  &#39;email&#39;: &#39;terri95@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Debbie&#39;,
+  &#39;last_name&#39;: &#39;Wallace&#39;},
+ {&#39;account&#39;: &#39;VDWY7565964041116&#39;,
+  &#39;country&#39;: &#39;Mexico&#39;,
+  &#39;email&#39;: &#39;danielle65@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Kayla&#39;,
+  &#39;last_name&#39;: &#39;Woodward&#39;},
+ {&#39;account&#39;: &#39;DNRB2101855092009&#39;,
+  &#39;country&#39;: &#39;Singapore&#39;,
+  &#39;email&#39;: &#39;sjackson@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Stephanie&#39;,
+  &#39;last_name&#39;: &#39;Bennett&#39;},
+ {&#39;account&#39;: &#39;IILE1765776198023&#39;,
+  &#39;country&#39;: &#39;Botswana&#39;,
+  &#39;email&#39;: &#39;douglas63@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Caleb&#39;,
+  &#39;last_name&#39;: &#39;Jenkins&#39;},
+ {&#39;account&#39;: &#39;ZJUF2687631787282&#39;,
+  &#39;country&#39;: &#39;Guinea&#39;,
+  &#39;email&#39;: &#39;woodardlindsey@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Valerie&#39;,
+  &#39;last_name&#39;: &#39;Edwards&#39;},
+ {&#39;account&#39;: &#39;DHMT4208071148508&#39;,
+  &#39;country&#39;: &#39;Chile&#39;,
+  &#39;email&#39;: &#39;suebrown@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Mary&#39;,
+  &#39;last_name&#39;: &#39;Anderson&#39;},
+ {&#39;account&#39;: &#39;UBRR8524342666714&#39;,
+  &#39;country&#39;: &#39;Mayotte&#39;,
+  &#39;email&#39;: &#39;swhite@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Angela&#39;,
+  &#39;last_name&#39;: &#39;Ray&#39;},
+ {&#39;account&#39;: &#39;OGPU6537909247863&#39;,
+  &#39;country&#39;: &#39;Macedonia&#39;,
+  &#39;email&#39;: &#39;martinkimberly@lopez.com&#39;,
+  &#39;first_name&#39;: &#39;Haley&#39;,
+  &#39;last_name&#39;: &#39;Edwards&#39;},
+ {&#39;account&#39;: &#39;AHYX6128839695452&#39;,
+  &#39;country&#39;: &#39;Ukraine&#39;,
+  &#39;email&#39;: &#39;jessica11@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Charles&#39;,
+  &#39;last_name&#39;: &#39;Clark&#39;},
+ {&#39;account&#39;: &#39;VUPW6891906300822&#39;,
+  &#39;country&#39;: &#39;Saint Martin&#39;,
+  &#39;email&#39;: &#39;hsmith@baker.com&#39;,
+  &#39;first_name&#39;: &#39;Lisa&#39;,
+  &#39;last_name&#39;: &#39;Hill&#39;},
+ {&#39;account&#39;: &#39;PKFW4841194501766&#39;,
+  &#39;country&#39;: &#39;Germany&#39;,
+  &#39;email&#39;: &#39;fklein@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Jonathan&#39;,
+  &#39;last_name&#39;: &#39;Carpenter&#39;},
+ {&#39;account&#39;: &#39;BNYD8693045932496&#39;,
+  &#39;country&#39;: &#39;Lesotho&#39;,
+  &#39;email&#39;: &#39;ryan32@skinner.com&#39;,
+  &#39;first_name&#39;: &#39;Latoya&#39;,
+  &#39;last_name&#39;: &#39;Griffith&#39;},
+ {&#39;account&#39;: &#39;FQJA6381776349463&#39;,
+  &#39;country&#39;: &#39;Nepal&#39;,
+  &#39;email&#39;: &#39;tmurphy@flores.biz&#39;,
+  &#39;first_name&#39;: &#39;Kim&#39;,
+  &#39;last_name&#39;: &#39;Blair&#39;},
+ {&#39;account&#39;: &#39;KCNI2464381879411&#39;,
+  &#39;country&#39;: &#39;Latvia&#39;,
+  &#39;email&#39;: &#39;mary64@ray.org&#39;,
+  &#39;first_name&#39;: &#39;Mary&#39;,
+  &#39;last_name&#39;: &#39;Salazar&#39;},
+ {&#39;account&#39;: &#39;BIGY3006735396533&#39;,
+  &#39;country&#39;: &#39;Central African Republic&#39;,
+  &#39;email&#39;: &#39;jennajoseph@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Kenneth&#39;,
+  &#39;last_name&#39;: &#39;Krueger&#39;},
+ {&#39;account&#39;: &#39;CNJX1222752295544&#39;,
+  &#39;country&#39;: &#39;Peru&#39;,
+  &#39;email&#39;: &#39;watsonsamuel@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Phillip&#39;,
+  &#39;last_name&#39;: &#39;Burke&#39;},
+ {&#39;account&#39;: &#39;ZROP5229895490397&#39;,
+  &#39;country&#39;: &#39;Spain&#39;,
+  &#39;email&#39;: &#39;xvelasquez@hughes.com&#39;,
+  &#39;first_name&#39;: &#39;Erica&#39;,
+  &#39;last_name&#39;: &#39;Juarez&#39;},
+ {&#39;account&#39;: &#39;NXKK2792812848629&#39;,
+  &#39;country&#39;: &#39;Seychelles&#39;,
+  &#39;email&#39;: &#39;april99@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Jason&#39;,
+  &#39;last_name&#39;: &#39;Watkins&#39;},
+ {&#39;account&#39;: &#39;DPLN5056382218296&#39;,
+  &#39;country&#39;: &#39;Faroe Islands&#39;,
+  &#39;email&#39;: &#39;kfletcher@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Lee&#39;,
+  &#39;last_name&#39;: &#39;Carter&#39;},
+ {&#39;account&#39;: &#39;KAOL9792684486009&#39;,
+  &#39;country&#39;: &#39;Tokelau&#39;,
+  &#39;email&#39;: &#39;xchurch@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Randy&#39;,
+  &#39;last_name&#39;: &#39;Huang&#39;},
+ {&#39;account&#39;: &#39;WRXW4627191899235&#39;,
+  &#39;country&#39;: &#39;Cocos (Keeling) Islands&#39;,
+  &#39;email&#39;: &#39;megan24@stewart.net&#39;,
+  &#39;first_name&#39;: &#39;Kristina&#39;,
+  &#39;last_name&#39;: &#39;Owen&#39;},
+ {&#39;account&#39;: &#39;OMOK4767172062189&#39;,
+  &#39;country&#39;: &#39;Burundi&#39;,
+  &#39;email&#39;: &#39;sydneycollins@hunter.com&#39;,
+  &#39;first_name&#39;: &#39;Beth&#39;,
+  &#39;last_name&#39;: &#39;Turner&#39;},
+ {&#39;account&#39;: &#39;KRKF7344951038740&#39;,
+  &#39;country&#39;: &#39;Timor-Leste&#39;,
+  &#39;email&#39;: &#39;robertbowen@chavez-ortega.com&#39;,
+  &#39;first_name&#39;: &#39;Michael&#39;,
+  &#39;last_name&#39;: &#39;Aguirre&#39;},
+ {&#39;account&#39;: &#39;SAAA4141150617330&#39;,
+  &#39;country&#39;: &#39;Montserrat&#39;,
+  &#39;email&#39;: &#39;christiandanielle@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Elizabeth&#39;,
+  &#39;last_name&#39;: &#39;Wilson&#39;},
+ {&#39;account&#39;: &#39;XNWQ1072087896797&#39;,
+  &#39;country&#39;: &#39;Norway&#39;,
+  &#39;email&#39;: &#39;kdavidson@gordon.com&#39;,
+  &#39;first_name&#39;: &#39;Teresa&#39;,
+  &#39;last_name&#39;: &#39;Hardy&#39;},
+ {&#39;account&#39;: &#39;FTHM1005169617995&#39;,
+  &#39;country&#39;: &#39;Sierra Leone&#39;,
+  &#39;email&#39;: &#39;bennettwanda@vega-guerra.net&#39;,
+  &#39;first_name&#39;: &#39;David&#39;,
+  &#39;last_name&#39;: &#39;Stewart&#39;},
+ {&#39;account&#39;: &#39;OSSM9070924947595&#39;,
+  &#39;country&#39;: &#39;French Polynesia&#39;,
+  &#39;email&#39;: &#39;mark00@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Heather&#39;,
+  &#39;last_name&#39;: &#39;Moore&#39;},
+ {&#39;account&#39;: &#39;CFQJ4204773901237&#39;,
+  &#39;country&#39;: &#39;French Guiana&#39;,
+  &#39;email&#39;: &#39;schaefernatalie@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Melissa&#39;,
+  &#39;last_name&#39;: &#39;Grant&#39;},
+ {&#39;account&#39;: &#39;MGFG2793756668287&#39;,
+  &#39;country&#39;: &#39;Cape Verde&#39;,
+  &#39;email&#39;: &#39;moralesmartin@rodgers.com&#39;,
+  &#39;first_name&#39;: &#39;Jennifer&#39;,
+  &#39;last_name&#39;: &#39;Thompson&#39;},
+ {&#39;account&#39;: &#39;IGXK5881682171566&#39;,
+  &#39;country&#39;: &#39;Barbados&#39;,
+  &#39;email&#39;: &#39;dprince@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Raymond&#39;,
+  &#39;last_name&#39;: &#39;Anderson&#39;},
+ {&#39;account&#39;: &#39;QYBW6359021109484&#39;,
+  &#39;country&#39;: &#39;Andorra&#39;,
+  &#39;email&#39;: &#39;cparks@valdez-hudson.com&#39;,
+  &#39;first_name&#39;: &#39;Angela&#39;,
+  &#39;last_name&#39;: &#39;Ramsey&#39;},
+ {&#39;account&#39;: &#39;UTSI0776569247505&#39;,
+  &#39;country&#39;: &#39;Montserrat&#39;,
+  &#39;email&#39;: &#39;martinezrichard@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Betty&#39;,
+  &#39;last_name&#39;: &#39;Gonzales&#39;},
+ {&#39;account&#39;: &#39;LSDI9463735752680&#39;,
+  &#39;country&#39;: &#39;Egypt&#39;,
+  &#39;email&#39;: &#39;kpena@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Thomas&#39;,
+  &#39;last_name&#39;: &#39;Castaneda&#39;},
+ {&#39;account&#39;: &#39;ISYY1401931979959&#39;,
+  &#39;country&#39;: &#39;Malaysia&#39;,
+  &#39;email&#39;: &#39;julie68@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Jonathan&#39;,
+  &#39;last_name&#39;: &#39;Todd&#39;},
+ {&#39;account&#39;: &#39;HNOA0376843856035&#39;,
+  &#39;country&#39;: &#39;Zimbabwe&#39;,
+  &#39;email&#39;: &#39;lukebradford@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Stacey&#39;,
+  &#39;last_name&#39;: &#39;Garcia&#39;},
+ {&#39;account&#39;: &#39;EEVV8325881104553&#39;,
+  &#39;country&#39;: &#39;Portugal&#39;,
+  &#39;email&#39;: &#39;ystewart@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Judy&#39;,
+  &#39;last_name&#39;: &#39;Figueroa&#39;},
+ {&#39;account&#39;: &#39;QXGZ3111246190069&#39;,
+  &#39;country&#39;: &#39;Paraguay&#39;,
+  &#39;email&#39;: &#39;cory33@king-shaw.net&#39;,
+  &#39;first_name&#39;: &#39;Ashley&#39;,
+  &#39;last_name&#39;: &#39;Castillo&#39;},
+ {&#39;account&#39;: &#39;ACQR2846533122117&#39;,
+  &#39;country&#39;: &#39;Central African Republic&#39;,
+  &#39;email&#39;: &#39;zcalhoun@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Zachary&#39;,
+  &#39;last_name&#39;: &#39;Flores&#39;},
+ {&#39;account&#39;: &#39;ZAZD8310339637467&#39;,
+  &#39;country&#39;: &#39;Palau&#39;,
+  &#39;email&#39;: &#39;michaelhall@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Erica&#39;,
+  &#39;last_name&#39;: &#39;Allen&#39;},
+ {&#39;account&#39;: &#39;ARWK1547324119222&#39;,
+  &#39;country&#39;: &#39;Micronesia&#39;,
+  &#39;email&#39;: &#39;kristentaylor@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Savannah&#39;,
+  &#39;last_name&#39;: &#39;Potts&#39;},
+ {&#39;account&#39;: &#39;OMQX4840913072589&#39;,
+  &#39;country&#39;: &#39;Armenia&#39;,
+  &#39;email&#39;: &#39;stephen63@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Zachary&#39;,
+  &#39;last_name&#39;: &#39;Wheeler&#39;},
+ {&#39;account&#39;: &#39;OCFV4659464275270&#39;,
+  &#39;country&#39;: &#39;Bahrain&#39;,
+  &#39;email&#39;: &#39;bryanmartin@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Timothy&#39;,
+  &#39;last_name&#39;: &#39;Thomas&#39;},
+ {&#39;account&#39;: &#39;DTRB4720098955341&#39;,
+  &#39;country&#39;: &#39;Guatemala&#39;,
+  &#39;email&#39;: &#39;kristinavelasquez@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Ann&#39;,
+  &#39;last_name&#39;: &#39;Mcknight&#39;},
+ {&#39;account&#39;: &#39;YYHM5758234683389&#39;,
+  &#39;country&#39;: &#39;Saint Vincent and the Grenadines&#39;,
+  &#39;email&#39;: &#39;denise01@burns.org&#39;,
+  &#39;first_name&#39;: &#39;Ruth&#39;,
+  &#39;last_name&#39;: &#39;Thompson&#39;},
+ {&#39;account&#39;: &#39;AHBN3151680654826&#39;,
+  &#39;country&#39;: &#39;Kazakhstan&#39;,
+  &#39;email&#39;: &#39;beancody@jones.com&#39;,
+  &#39;first_name&#39;: &#39;Daniel&#39;,
+  &#39;last_name&#39;: &#39;Levy&#39;},
+ {&#39;account&#39;: &#39;FGBC0366153271398&#39;,
+  &#39;country&#39;: &#39;Germany&#39;,
+  &#39;email&#39;: &#39;ubradley@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Paul&#39;,
+  &#39;last_name&#39;: &#39;Hubbard&#39;},
+ {&#39;account&#39;: &#39;MHTE8867005510944&#39;,
+  &#39;country&#39;: &#39;Western Sahara&#39;,
+  &#39;email&#39;: &#39;anthony75@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Jason&#39;,
+  &#39;last_name&#39;: &#39;Jones&#39;},
+ {&#39;account&#39;: &#39;IYOD4325345823013&#39;,
+  &#39;country&#39;: &#39;Togo&#39;,
+  &#39;email&#39;: &#39;antonio52@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Margaret&#39;,
+  &#39;last_name&#39;: &#39;Garcia&#39;},
+ {&#39;account&#39;: &#39;NZFX8257739892619&#39;,
+  &#39;country&#39;: &#39;Guam&#39;,
+  &#39;email&#39;: &#39;johnlewis@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Jeremy&#39;,
+  &#39;last_name&#39;: &#39;Peters&#39;},
+ {&#39;account&#39;: &#39;MWRB2515761996641&#39;,
+  &#39;country&#39;: &#39;Kuwait&#39;,
+  &#39;email&#39;: &#39;nmoore@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Mark&#39;,
+  &#39;last_name&#39;: &#39;Stone&#39;},
+ {&#39;account&#39;: &#39;CURJ9953745256871&#39;,
+  &#39;country&#39;: &#39;Eritrea&#39;,
+  &#39;email&#39;: &#39;nchurch@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Darius&#39;,
+  &#39;last_name&#39;: &#39;Edwards&#39;},
+ {&#39;account&#39;: &#39;ATOT8581137487723&#39;,
+  &#39;country&#39;: &#39;Czech Republic&#39;,
+  &#39;email&#39;: &#39;piercejenna@gmail.com&#39;,
+  &#39;first_name&#39;: &#39;Tracy&#39;,
+  &#39;last_name&#39;: &#39;Lawson&#39;},
+ {&#39;account&#39;: &#39;RQGA0882784089265&#39;,
+  &#39;country&#39;: &#39;Maldives&#39;,
+  &#39;email&#39;: &#39;ddavidson@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Christina&#39;,
+  &#39;last_name&#39;: &#39;Cooper&#39;},
+ {&#39;account&#39;: &#39;EOPA8088866975598&#39;,
+  &#39;country&#39;: &#39;Armenia&#39;,
+  &#39;email&#39;: &#39;ndelacruz@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Megan&#39;,
+  &#39;last_name&#39;: &#39;Harris&#39;},
+ {&#39;account&#39;: &#39;JCUN9597199552039&#39;,
+  &#39;country&#39;: &#39;Benin&#39;,
+  &#39;email&#39;: &#39;jenniferadkins@griffin.biz&#39;,
+  &#39;first_name&#39;: &#39;Timothy&#39;,
+  &#39;last_name&#39;: &#39;Jones&#39;},
+ {&#39;account&#39;: &#39;IZYL3351829981461&#39;,
+  &#39;country&#39;: &#39;Fiji&#39;,
+  &#39;email&#39;: &#39;evansmiguel@yahoo.com&#39;,
+  &#39;first_name&#39;: &#39;Tracie&#39;,
+  &#39;last_name&#39;: &#39;Burch&#39;},
+ {&#39;account&#39;: &#39;JDIH2349154465371&#39;,
+  &#39;country&#39;: &#39;Iceland&#39;,
+  &#39;email&#39;: &#39;kenneththompson@baxter.com&#39;,
+  &#39;first_name&#39;: &#39;Jason&#39;,
+  &#39;last_name&#39;: &#39;Chung&#39;},
+ {&#39;account&#39;: &#39;VRZP1447516193511&#39;,
+  &#39;country&#39;: &#39;Macedonia&#39;,
+  &#39;email&#39;: &#39;bcurtis@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Samantha&#39;,
+  &#39;last_name&#39;: &#39;Melton&#39;},
+ {&#39;account&#39;: &#39;QKAF2254397516681&#39;,
+  &#39;country&#39;: &#39;Serbia&#39;,
+  &#39;email&#39;: &#39;phillipssean@hotmail.com&#39;,
+  &#39;first_name&#39;: &#39;Michael&#39;,
+  &#39;last_name&#39;: &#39;Hansen&#39;}]
 </pre></div>
 </div>
 </div>
@@ -515,45 +999,45 @@ document.write(`
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">convert_to_month_list</span><span class="p">(</span><span class="n">month</span><span class="p">):</span>
 
-<span class="n">months</span> <span class="o">=</span> <span class="p">[</span>
-	<span class="s1">&#39;&#39;</span><span class="p">,</span>
-	<span class="s1">&#39;January&#39;</span><span class="p">,</span>
-	<span class="s1">&#39;February&#39;</span><span class="p">,</span>
-	<span class="s1">&#39;March&#39;</span><span class="p">,</span>
-	<span class="s1">&#39;April&#39;</span><span class="p">,</span>
-	<span class="s1">&#39;May&#39;</span><span class="p">,</span>
-	<span class="s1">&#39;June&#39;</span><span class="p">,</span>
-	<span class="s1">&#39;July&#39;</span><span class="p">,</span>
-	<span class="s1">&#39;August&#39;</span><span class="p">,</span>
-	<span class="s1">&#39;September&#39;</span><span class="p">,</span>
-	<span class="s1">&#39;October&#39;</span><span class="p">,</span>
-	<span class="s1">&#39;November&#39;</span><span class="p">,</span>
-	<span class="s1">&#39;December&#39;</span><span class="p">,</span>
-<span class="p">]</span>
+    <span class="n">months</span> <span class="o">=</span> <span class="p">[</span>
+        <span class="s1">&#39;&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;January&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;February&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;March&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;April&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;May&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;June&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;July&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;August&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;September&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;October&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;November&#39;</span><span class="p">,</span>
+        <span class="s1">&#39;December&#39;</span><span class="p">,</span>
+    <span class="p">]</span>
 
-	<span class="k">return</span> <span class="n">months</span><span class="p">[</span><span class="n">month</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">months</span><span class="p">[</span><span class="n">month</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">convert_to_month_list</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 
 <span class="k">def</span> <span class="nf">convert_to_month_dict</span><span class="p">(</span><span class="n">month</span><span class="p">):</span>
 
-	<span class="n">months</span> <span class="o">=</span> <span class="p">{</span>
-		<span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;January&#39;</span><span class="p">,</span>
-		<span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;February&#39;</span><span class="p">,</span>
-		<span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;March&#39;</span><span class="p">,</span>
-		<span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;April&#39;</span><span class="p">,</span>
-		<span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;May&#39;</span><span class="p">,</span>
-		<span class="mi">6</span><span class="p">:</span> <span class="s1">&#39;June&#39;</span><span class="p">,</span>
-		<span class="mi">7</span><span class="p">:</span> <span class="s1">&#39;July&#39;</span><span class="p">,</span>
-		<span class="mi">8</span><span class="p">:</span> <span class="s1">&#39;August&#39;</span><span class="p">,</span>
-		<span class="mi">9</span><span class="p">:</span> <span class="s1">&#39;September&#39;</span><span class="p">,</span>
-		<span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;October&#39;</span><span class="p">,</span>
-		<span class="mi">11</span><span class="p">:</span> <span class="s1">&#39;November&#39;</span><span class="p">,</span>
-		<span class="mi">12</span><span class="p">:</span> <span class="s1">&#39;December&#39;</span><span class="p">,</span>
-	<span class="p">}</span>
+    <span class="n">months</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="mi">1</span><span class="p">:</span> <span class="s1">&#39;January&#39;</span><span class="p">,</span>
+        <span class="mi">2</span><span class="p">:</span> <span class="s1">&#39;February&#39;</span><span class="p">,</span>
+        <span class="mi">3</span><span class="p">:</span> <span class="s1">&#39;March&#39;</span><span class="p">,</span>
+        <span class="mi">4</span><span class="p">:</span> <span class="s1">&#39;April&#39;</span><span class="p">,</span>
+        <span class="mi">5</span><span class="p">:</span> <span class="s1">&#39;May&#39;</span><span class="p">,</span>
+        <span class="mi">6</span><span class="p">:</span> <span class="s1">&#39;June&#39;</span><span class="p">,</span>
+        <span class="mi">7</span><span class="p">:</span> <span class="s1">&#39;July&#39;</span><span class="p">,</span>
+        <span class="mi">8</span><span class="p">:</span> <span class="s1">&#39;August&#39;</span><span class="p">,</span>
+        <span class="mi">9</span><span class="p">:</span> <span class="s1">&#39;September&#39;</span><span class="p">,</span>
+        <span class="mi">10</span><span class="p">:</span> <span class="s1">&#39;October&#39;</span><span class="p">,</span>
+        <span class="mi">11</span><span class="p">:</span> <span class="s1">&#39;November&#39;</span><span class="p">,</span>
+        <span class="mi">12</span><span class="p">:</span> <span class="s1">&#39;December&#39;</span><span class="p">,</span>
+    <span class="p">}</span>
 
 
-	<span class="k">return</span> <span class="n">months</span><span class="p">[</span><span class="n">month</span><span class="p">]</span>
+    <span class="k">return</span> <span class="n">months</span><span class="p">[</span><span class="n">month</span><span class="p">]</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">convert_to_month_list</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
@@ -561,10 +1045,8 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-    <span class="n">months</span> <span class="o">=</span> <span class="p">[</span>
-    <span class="o">^</span>
-<span class="ne">IndentationError</span>: expected an indented block after function definition on line 1
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>March
+March
 </pre></div>
 </div>
 </div>
@@ -573,16 +1055,16 @@ document.write(`
 <section id="exercise-3">
 <h2><span class="section-number">7.2.3. </span>Exercise 3<a class="headerlink" href="#exercise-3" title="Permalink to this heading">#</a></h2>
 <p>Convert a text message to numbers using the following number scheme</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0 	space
-1 	., ?, !
-2 	ABC
-3 	DEF
-4 	GHI
-5 	JKL
-6 	MNO
-7 	PQRS
-8 	TUV
-9 	WXYZ
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>0  space
+1  ., ?, !
+2  ABC
+3  DEF
+4  GHI
+5  JKL
+6  MNO
+7  PQRS
+8  TUV
+9  WXYZ
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
@@ -800,17 +1282,17 @@ input: the number of simulations
 <div class="cell_output docutils container">
 <div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Total     Simulated Percent     Expected Percent 
 
-2                      2.79                 2.78
-3                      5.56                 5.56
-4                      8.32                 8.33
-5                     11.14                11.11
-6                      13.9                13.89
-7                     16.69                16.67
-8                     13.84                13.89
-9                     11.08                11.11
-10                     8.35                 8.33
+2                      2.81                 2.78
+3                      5.51                 5.56
+4                      8.29                 8.33
+5                     11.15                11.11
+6                     13.84                13.89
+7                     16.71                16.67
+8                     13.91                13.89
+9                     11.12                11.11
+10                     8.33                 8.33
 11                     5.56                 5.56
-12                     2.76                 2.78
+12                     2.77                 2.78
 </pre></div>
 </div>
 </div>
