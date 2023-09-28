@@ -15,32 +15,35 @@ kernelspec:
 
 # String Formatting
 
-The fastest and latest way to do string formatting is using the F-strings. 
+The fastest and latest way to do string formatting is using the F-strings.
 
 ```{code-cell} ipython3
   PI = 3.14159265359 
   print(f'{PI:.2f}')
 ```
+
 But you have to know the other ways so you can read older code or use these ways if you have to use an older version of Python
 
 ## What can you format?
-String-formatting allows you to do at least five things. These string-format specifiers come after a colon. 
+
+String-formatting allows you to do at least five things. These string-format specifiers come after a colon.
+
 1. specify width
-2. align data to left, right, or center; make sure to explain the default alignment for string and number; make sure to 
+2. align data to left, right, or center; make sure to explain the default alignment for string and number; make sure to
 3. specify padding character when specified width is greater than the width of the string/number being used
 4. specify precision for floating values
-5. add commas to numbers for easier viewing; 
-
+5. add commas to numbers for easier viewing;
 
 ## Oldest Method
+
 ```{code-cell} ipython3
   PI = 3.14159265359 
   name = 'PI'
   print('%s is %.2f' % (name, PI))  # oldest way format specifier is <width>.<precision><type>
 ```
 
-
 ## Newer Method
+
 Still used for creating string templates.
 
 ```{code-cell} ipython3
@@ -50,19 +53,21 @@ print(('{0} is {1:.2f}'.format('PI', PI)) ) #
 ```
 
 ## Newest Method
+
 Newest and fastest method for string formatting.
-`{<index>:<format-specifier>}` where the format specifier is: `<padding_character><alignment><width>.<comma><precision><type>`
+`{<variable or expression>}:<format-specifier>}` where the format specifier is: `<padding_character><alignment><width>.<comma><precision><type>`
+
 - padding_character can be anything. most common are
   - space (default)
   - `-`
-  - `0` 
+  - `0`
 - alignment
   - `<` -- left aligned
   - `^` -- center aligned
   - `>` -- right aligned
 - width is a number. If the width is greater than the number of characters, then:
   - strings are left aligned
-  - numbers are right aligned 
+  - numbers are right aligned
 - comma is used to add commas to large numbers for easier viewing
 - precision controls how many decimal places to show. **NOTE** This uses round, but leaves trailing zeros.
 - type specifies the data type
@@ -73,11 +78,11 @@ Newest and fastest method for string formatting.
 ```{code-cell} ipython3
 PI = 3.14159265359 
 name = 'PI'
-# {<name_of_variable>:<format-specifier>} where the format specifier is <width>.<precision><type>
+# {<variable or expression>:<format-specifier>} where the format specifier is <width>.<precision><type>
 print(f'{name} is {PI:.2f}') # newest way
 ```
 
-Reference: https://pyformat.info/
+Reference: <https://pyformat.info/>
 
 ```{code-cell} ipython3
 a_str = 'EAS503'
@@ -96,7 +101,6 @@ lines = line1 + line2
 line = 'This is the first line.\n'
 line += 'This is the second line.'
 ```
-
 
 ## Example 1
 
@@ -126,7 +130,6 @@ print(str_format)
 print(f_string)
 ```
 
-
 ## Example 3 use index
 
 ```{code-cell} ipython3
@@ -140,7 +143,6 @@ f_string = f'The course number is {course_number}. It has {class_size} students.
 print(str_format)
 print(f_string)
 ```
-
 
 ## Example 4 change index
 
@@ -183,7 +185,6 @@ print(f_string)
 
 ## Example 7 right align
 
-
 ```{code-cell} ipython3
 course_number = 'EAS503'
 class_size = 113
@@ -208,7 +209,6 @@ print(str_format)
 print(f_string)
 ```
 
-
 ## Example 9 center align
 
 ```{code-cell} ipython3
@@ -223,7 +223,9 @@ print(f_string)
 ```
 
 ## Example 10 Padding with zeros
+
 - Zero padding does not require a alignment specifier
+
 ```{code-cell} ipython3
 student_id = 223333
 
@@ -259,6 +261,7 @@ f'{number:,.2f}'
 ```
 
 ## Rounding
+
 - When you use `.2f`, for example, the f-string will round, but keep the trailing zero. When you use the `round()` function, the trailing zero is dropped. Study the following examples.
 
 ```{code-cell} ipython3
