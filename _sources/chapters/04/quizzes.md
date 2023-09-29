@@ -27,3 +27,4 @@ display_quiz("questions/"+'boolean.json', shuffle_answers=True, colors='fdsp')
 from jupyterquiz import display_quiz
 display_quiz("questions/"+'strings.json', shuffle_answers=True, colors='fdsp')
 ```
+
