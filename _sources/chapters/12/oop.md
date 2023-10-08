@@ -11,22 +11,23 @@ kernelspec:
 ---
 
 # Object-Oriented Programming
+
 - We know how to store various data in Python using various data types  
 - We also know how to define functions that manipulate
-or operate on that data. 
+or operate on that data.
 - Object-oriented programming allows us to define
 the data and functions in one place.
 
 ## Comparison between Procedural and Object-oriented Programming
+
 - Procedural programming:
   - We write a list of nouns (data)
   - We also have a separate list of verbs (functions)
   - We leave it up to the programmer to figure out which data goes with with function
 - Object-oriented programming:
-  - We define an object which contains both the nouns (data) and verbs (functions) that manipulate that data. 
+  - We define an object which contains both the nouns (data) and verbs (functions) that manipulate that data.
   - Data --> Attribute
-  - Function --> Method 
-
+  - Function --> Method
 
 ## Procedural Programming Example
 
@@ -44,10 +45,10 @@ print(f'The average score is {average(scores)}.')
 
 ```
 
-
 ## Object-Oriented Programming Example
+
 - Define a new class that will contain both the
-data and the function to manipulate it. 
+data and the function to manipulate it.
 - So put the scores list and the average function
 inside a class
 
@@ -67,21 +68,22 @@ print(f'The final score is {scores.average()}.')
 code is organized differently.
 
 ## Basic Building Blocks to defining a class
+
 - `class` - keyword to indicate that you are creating/defining a class; example `class ScoreList`
 - `__init__` - a method that is invoked automatically
 when an instance of a class is created. Class is analogous to a blue print and an object is an instance
-of a class with its own separate data from other objects (attributes/data), but shared functionality (methods/functions). 
+of a class with its own separate data from other objects (attributes/data), but shared functionality (methods/functions).
 
 ## Benefits of OOP
-- We can organize our code into distinct objects, so each object handles storing and manipulating the data. 
+
+- We can organize our code into distinct objects, so each object handles storing and manipulating the data.
 - We can create hierarchies of classes where each child
 inherits from its parent class attributes and methods, reducing code repetition and improves code maintainability.
 
-
 ## Thoughts on OOP
-- In Python everything is an object, which means every entity has some attributes and associated functionality called methods. This means that `str` and `dict` are classes that know how to store data and how to operate on them. 
-- Do not overdo OOP. It is possible to create a very large object which then basically functions like a procedural system disguised as an object-oriented one. 
 
+- In Python everything is an object, which means every entity has some attributes and associated functionality called methods. This means that `str` and `dict` are classes that know how to store data and how to operate on them.
+- Do not overdo OOP. It is possible to create a very large object which then basically functions like a procedural system disguised as an object-oriented one.
 
 ## Data Class Builders
 
@@ -115,7 +117,7 @@ print(p1 == p2)
 print(p1 is p2)
 ```
 
-- Right away we notice that a `namedtuple` provides a useful representation of the object. 
+- Right away we notice that a `namedtuple` provides a useful representation of the object.
 
 ### Equality vs Reference
 
@@ -134,7 +136,8 @@ print(x == y)
 print(x is y)
 ```
 
-### Passing in a mutable object to a class 
+### Passing in a mutable object to a class
+
 ```{code-cell} ipython3
 class ScoreList():
     def __init__(self, scores):
@@ -150,13 +153,12 @@ l1.pop()
 print(f'The final score is {scores.average()}.')    
 ```
 
-
-
 ### __repr__ vs __str__
+
 - `__repr__` - a method that returns a string containing
 an object's printed representation. Its purpose is to unambiguous
-- `__str__` - a method that also returns a string representation of an object, but it is supposed to be human readable. 
-- `print()` will first try to use `__str__`. If that is not available, then it will use `__repr__`. That if that is not available, then it will use the parents `__repr__`. 
+- `__str__` - a method that also returns a string representation of an object, but it is supposed to be human readable.
+- `print()` will first try to use `__str__`. If that is not available, then it will use `__repr__`. That if that is not available, then it will use the parents `__repr__`.
 
 ```{code-cell} ipython3
 class a:
@@ -175,7 +177,7 @@ a(1)
 
 ### NamedTuple
 
-- You can also use the `NamedTuple` class to build a data class. The benefit is that you can overwrite default functions, for example `__str__. 
+- You can also use the `NamedTuple` class to build a data class. The benefit is that you can overwrite default functions, for example `__str__.
 
 ```{code-cell} ipython3
 from typing import NamedTuple
@@ -200,7 +202,6 @@ print(p1 is p2)
 :::{warning}
 `namedtuple` and `NamedTuple` are immutable!
 :::
-
 
 ### Dataclass
 
@@ -253,7 +254,6 @@ class InventoryItem:
 :::
 
 ## Getting data as a dict
-
 
 ```{code-cell} ipython3
 from collections import namedtuple
@@ -324,7 +324,6 @@ print(p2._replace(x=5))
 print(dataclasses.replace(p3, x=5))
 ```
 
-
 ## Default values in data classes
 
 ```{code-cell} ipython3
@@ -367,12 +366,9 @@ p1 = Point(1)
 print(p1)
 ```
 
-
 :::{warning}
-If you are using lots of data classes and have processing logic elsewhere, then you should probably not use a dataclass and put the processing logic and data together. 
+If you are using lots of data classes and have processing logic elsewhere, then you should probably not use a dataclass and put the processing logic and data together.
 :::
-
-
 
 ## Examples
 
@@ -447,7 +443,6 @@ s1.print_classes()
 ```
 
 - `super()` - used to invoke parent class's methods
-
 
 ```python
 class Student(Person):
@@ -610,6 +605,7 @@ first_name --> FirstName (classes)
 :::
 
 ### Exercise 1
+
 Modify enroll to accept multiple classes!
 
 ```python
@@ -646,11 +642,13 @@ class Student(Person):
     def print_classes(self):
         print(', '.join([ele.course_name for ele in self.courses]))
 ```
+
 ### Exercise 2
+
 Write a Beverage class whose instances will
-represent beverages. Each beverage should have 
+represent beverages. Each beverage should have
 two attributes: a name (describing the beverage)
-and a temperature. Create several beverages and 
+and a temperature. Create several beverages and
 check that their names and temperatures are all
 handled correctly.
 
@@ -674,13 +672,13 @@ for beverage in beverages:
 
 ### Exercise 3
 
-Modify the Beverage class, such that you can create 
-a new instance specifying the name, 
-and not the temperature. 
-If you do this, then the temperature should 
-have a default value of 75 degrees Celsius. 
-Create several beverages and double-check 
-that the temperature has this default when 
+Modify the Beverage class, such that you can create
+a new instance specifying the name,
+and not the temperature.
+If you do this, then the temperature should
+have a default value of 75 degrees Celsius.
+Create several beverages and double-check
+that the temperature has this default when
 not specified.
 
 ```python
@@ -703,11 +701,11 @@ for beverage in beverages:
 
 ### Exercise 4
 
-Create a new LogFile class that expects to 
-be initialized with a filename. 
-Inside of `__init__`, open the file for 
-writing and assign it to an attribute, file, 
-that sits on the instance. Check that it’s 
+Create a new LogFile class that expects to
+be initialized with a filename.
+Inside of `__init__`, open the file for
+writing and assign it to an attribute, file,
+that sits on the instance. Check that it’s
 possible to write to the file via the file attribute.
 
 ```python
@@ -784,14 +782,15 @@ with open(filename) as file:
 ```
 
 ## Payroll system using polymorphism
+
 - Employee -- Abstract
-    - variables (properties)
-        - lastname
-        - firstname
-        - social_security_number
-    - functions (methods)
-        - __repr__ -- 
-        - earnings() -- 
+  - variables (properties)
+    - lastname
+    - firstname
+    - social_security_number
+  - functions (methods)
+    - __repr__ --
+    - earnings() --
 - SalariedEmployee -- inherits from Employee
 - CommissionEmployee -- inherits from Employee
 - HourlyEmployee -- inherits from Employee
@@ -799,8 +798,7 @@ with open(filename) as file:
 
 - Demonstrate polymorphism
 
-
-### Exercise 
+### Exercise
 
 ```python
 # Java How to Program Deitel et. al
@@ -915,409 +913,3 @@ for employee in employees:
     print(f'earned: ${employee.earnings()}')
 
 ```
-
-## Operator overloading
-- We know how to create objects. Now we will learn how to define what +, -, or lte means for an object
-- add
-- gt
-- lt
-- eq
-- iterators https://www.programiz.com/python-programming/iterator
-- generators https://www.programiz.com/python-programming/generator
-
-### Basic Class
-
-```{code-cell} ipython3
-import math
-class Circle:
-
-    def __init__(self, radius):
-        self.radius = radius
-
-    def get_area(self):
-        return math.pi * self.radius**2
-
-
-    def __repr__(self):
-        return "Circle with radius " + str(self.radius)
-    def __str__(self):
-        return "Circle with radius " + str(self.radius)
-
-c1 = Circle(10)
-c2 = Circle(5)
-
-print(c1)
-print(c2)
-print(c2.get_area())
-```
-
-
-### Adding Add
-
-
-```{code-cell} ipython3
-class Circle:
-
-    def __init__(self, radius):
-        self.radius = radius
-
-    def get_area(self):
-        return math.pi * self.radius**2
-
-    def __str__(self):
-        return "Circle with radius " + str(self.radius)
-
-    def __add__(self, another_circle):
-        return Circle(self.radius + another_circle.radius)
-
-
-c1 = Circle(10)
-c2 = Circle(5)
-c3 = c1 + c2 ### ==> c1.__add__(c2) ==> Circle.__add__(c1, c2)
-print(c3)
-
-
-class Circle:
-
-    def __init__(self, radius):
-        self.radius = radius
-
-    def get_area(self):
-        return math.pi * self.radius**2
-
-    def __str__(self):
-        return "Circle with radius " + str(self.radius)
-
-    def __add__(self, another_circle):
-        return Circle(self.radius + another_circle.radius)
-
-    def __gt__(self, another_circle):
-        return self.radius > another_circle.radius
-
-    def __lt__(self, another_circle):
-        return self.radius < another_circle.radius
-
-
-
-c1 = Circle(10)
-c2 = Circle(5)
-print(c1 < c2)
-
-
-
-class Point:
-    def __init__(self, x=0, y=0):
-        self.x = x
-        self.y = y
-
-    def __add__(self, another_point):
-        return Point(self.x + another_point.x, self.y + another_point.y)
-
-    def __sub__(self, another_point):
-        return Point(self.x - another_point.x, self.y - another_point.y)
-
-    def __str__(self):
-        return f'{self.x}, {self.y}'
-
-p1 = Point(3, 4)
-p2 = Point(8, 6)
-print(p2+p1)
-
-import math
-class Point:
-    def __init__(self, x=0, y=0):
-        self.x = x
-        self.y = y
-
-    def __add__(self, another_point):
-        return Point(self.x + another_point.x, self.y + another_point.y)
-
-    def __sub__(self, another_point):
-        return Point(self.x - another_point.x, self.y - another_point.y)
-
-    def length(self):
-        return math.sqrt(self.x**2 + self.y**2)
-
-    def distance(self, another_point):
-        return (self - another_point).length()
-
-    def __str__(self):
-        return f'{self.x}, {self.y}'
-
-p1 = Point(3, 4)
-p2 = Point(8, 6)
-print(p1.distance(p2))
-```
-
-### Iterator Class
-
-```python
-class MyRange:
-
-    def __init__(self, limit):
-        self.limit = limit
-
-    def __iter__(self):
-        self.value = 0
-        return self
-
-    def __next__(self):
-        if self.value < self.limit:
-            output = self.value
-            self.value += 1
-            return output
-        else:
-            raise StopIteration
-
-
-i = iter(MyRange(10))
-next(i)
-for ele in MyRange(10):
-    print(ele)
-
-
-class PowX:
-    def __init__(self, limit, power):
-        self.limit = limit
-        self.power = power
-
-    def __iter__(self):
-        self.value = 0
-        return self
-
-    def __next__(self):
-        if self.value < self.limit:
-            output = self.value**self.power
-            self.value += 1
-            return output
-        else:
-            raise StopIteration
-
-
-for ele in PowX(10, 3):
-    print(ele)
-
-
-## lets use generator
-
-def PowX(limit, power):
-    value = 0
-    while value < limit:
-        yield value**power
-        value += 1
-
-for ele in PowX(10, 3):
-    print(ele)
-
-new_list = []
-for number in numbers:
-
-    if number % 2 == 0
-        new_list.append(number)
-        I am here!!
-```
-
-
-## Self
-- `self` is a reference to an instance of a class. You can use `self` to access attributes and methods bound to an instance.
-- class variable vs instance variable (https://www.digitalocean.com/community/tutorials/understanding-class-and-instance-variables-in-python-3)
-- staticmethods vs class methods
-
-```python
-class TestClass:
-    class_variable = 1 # Belongs to the class. Shared by all instances
-
-
-
-t1 = TestClass()
-t2 = TestClass()
-
-
-print('\nPrint class_variable')
-print('t1.class_variable: ', t1.class_variable)
-print('t2.class_variable: ', t2.class_variable)
-
-
-print('\nChange class_variable in class definition and print class_variable')
-TestClass.class_variable = 2
-print('t1.class_variable: ', t1.class_variable)
-print('t2.class_variable: ', t2.class_variable)
-
-
-print('\nChange class_variable in instance t1 and print class_variable')
-t1.class_variable = 3
-print('t1.class_variable: ', t1.class_variable)
-print('t2.class_variable: ', t2.class_variable)
-
-
-print('\nChange class_variable in instance t2 and print class_variable')
-t2.class_variable = 4
-print('t1.class_variable: ', t1.class_variable)
-print('t2.class_variable: ', t2.class_variable)
-
-
-print('\n', '-'*60, '\n')
-
-class TestClass:
-    class_variable = 1 # Belongs to the class. Shared by all instances
-
-    def __init__(self, instance_variable):
-        self.instance_variable = instance_variable
-
-
-t1 = TestClass(1)
-t2 = TestClass(2)
-
-
-print('\nPrint class_variable')
-print('t1.class_variable: ', t1.class_variable)
-print('t2.class_variable: ', t2.class_variable)
-
-print('\nPrint instance_variable')
-print('t1.instance_variable: ', t1.instance_variable)
-print('t2.instance_variable: ', t2.instance_variable)
-
-
-print('\nChange class_variable in class definition and print class_variable')
-TestClass.class_variable = 2
-print('t1.class_variable: ', t1.class_variable)
-print('t1.class_variable: ', t2.class_variable)
-
-
-print('\nChange instance_variable for t1 and print instance_variable')
-t1.instance_variable = 10
-print('t1.instance_variable: ', t1.instance_variable)
-print('t2.instance_variable: ', t2.instance_variable)
-
-print('\nChange instance_variable for t2 and print instance_variable')
-t2.instance_variable = 20
-print('t1.instance_variable: ', t1.instance_variable)
-print('t2.instance_variable: ', t2.instance_variable)
-
-
-print('\nChange class_variable in instance t1 and print class_variable')
-t1.class_variable = 3
-print('t1.class_variable: ', t1.class_variable)
-print('t2.class_variable: ', t2.class_variable)
-
-
-print('\nChange class_variable in instance t2 and print class_variable')
-t2.class_variable = 4
-print('t1.class_variable: ', t1.class_variable)
-print('t2.class_variable: ', t2.class_variable)
-
-
-
-print('\n', '-'*60, '\n')
-
-
-class TestClass:
-    class_variable = 1
-
-    # @staticmethod are bound to class rather than object. Therefore, to use them, you do not have
-    # to instantiate an object.
-    # NOTE: staticmethods do no have access to class properties (variables or methods).
-    # This means they cannot access class_variable.
-    # Such methods are used when you do not want subclasses to change/overwrite a specific method.
-
-    @staticmethod
-    def add(number1, number2):
-        return number1 + number2
-
-
-print('@staticmethod add: ', TestClass.add(3,4))
-
-
-class TestClass2:
-    class_variable = 1
-
-    # @staticmethod are bound to class rather than object. Therefore, to use them, you do not have
-    # to instantiate an object.
-    # NOTE: staticmethods do no have access to class properties (variables or methods).
-    # This means they cannot access class_variable.
-    # Such methods are used when you do not want subclasses to change/overwrite a specific method.
-
-    @staticmethod
-    def add(number1, number2):
-        return number1 + number2# + class_variable
-
-print('@staticmethod add: ', TestClass2.add(3,4))
-print('\n', '-'*60, '\n')
-
-class TestClass:
-    class_variable = 1
-
-    # @classmethod are bound to class rather than object. Therefore, to use them, you do not have
-    # to instantiate an object.
-    # NOTE: Unlike staticmethods, classmethods do have access to class properties (variables or methods).
-    # This means they can access class_variable.
-
-    @classmethod
-    def add(cls, number1, number2):
-        return number1 + number2
-print('@classmethod add: ', TestClass.add(5,6))
-
-
-
-class TestClass2:
-    class_variable = 1
-
-    # @classmethod are bound to class rather than object. Therefore, to use them, you do not have
-    # to instantiate an object.
-    # NOTE: Unlike staticmethods, classmethods do have access to class properties (variables or methods).
-    # This means they can access class_variable.
-
-    @classmethod
-    def add(cls, number1, number2):
-        return number1 + number2 + cls.class_variable
-
-print('@classmethod add -- access to class variable: ', TestClass2.add(5,6))
-
-
-print('\n', '-'*60, '\n')
-
-
-class TestClass:
-    class_variable = 1
-
-    @staticmethod
-    def add_static(number1, number2):
-        return number1 + number2
-
-    @classmethod
-    def add_class(cls, number1, number2):
-        return number1 + number2 + cls.class_variable
-
-
-    def add_object(self, number1, number2):
-        return number1 + number2 + self.class_variable + 29
-
-
-print('add_static: ', TestClass.add_static(13,14))
-print('add_class: ', TestClass.add_class(13,14))
-
-
-t1 = TestClass()
-
-print('Call from class -- add_object: ', TestClass.add_object(t1, 13, 14))
-print('Call from object -- add_object: ', t1.add_object(13, 14))
-```
-
-## Item assignment
-```python
-class MyClass:
-    def __init__(self, **kwargs):
-        self.data = {}
-              
-    def __setitem__(self, key, value):
-        self.data[key] = value
-        
-    def __getitem__(self, key):
-        return self.data[key]      
-```   
-- add functionality pass in multiple data; with and wihtout header   
-- add functionality to select multiple columns
-- add functionality to add two columns  
-- add functionality to take a mean of a column(s)  
-- add functionality to select rows   
-- add functionality slicing!

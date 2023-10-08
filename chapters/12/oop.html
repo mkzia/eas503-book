@@ -65,7 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/12/oop.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="13. SQL with SQLite" href="../13/sql.html" />
+    <link rel="next" title="12.2. Operator overloading" href="operator_overloading.html" />
     <link rel="prev" title="12. Object Oriented Programming" href="intro.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -184,6 +184,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../03/table.html">3.3. Creating a Table</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/methods.html">3.4. String Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/exercises.html">3.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/quizzes.html">3.6. Quizzes</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../04/intro.html">4. Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -192,6 +193,7 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../04/strings.html">4.3. String Comparison</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04/statement_selection.html">4.4. Statement Selection</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04/exercises.html">4.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/quizzes.html">4.6. Quizzes</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../05/intro.html">5. Lists and Tuples</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -237,6 +239,9 @@ const thebe_selector_output = ".output, .cell_output"
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">12. Object Oriented Programming</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">12.1. Object-Oriented Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="operator_overloading.html">12.2. Operator overloading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="self.html">12.3. Self</a></li>
+<li class="toctree-l2"><a class="reference internal" href="item_assignment.html">12.4. Item assignment</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../13/sql.html">13. SQL with SQLite</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
@@ -462,14 +467,6 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">12.1.12.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">12.1.13. Operator overloading</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-class">12.1.13.1. Basic Class</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-add">12.1.13.2. Adding Add</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterator-class">12.1.13.3. Iterator Class</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self">12.1.14. Self</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#item-assignment">12.1.15. Item assignment</a></li>
 </ul>
             </nav>
         </div>
@@ -606,8 +603,8 @@ inherits from its parent class attributes and methods, reducing code repetition 
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Point object at 0x7fdfc39cd480&gt;
-&lt;__main__.Point object at 0x7fdfc39ccc40&gt;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;__main__.Point object at 0x7fc68f881060&gt;
+&lt;__main__.Point object at 0x7fc68f882da0&gt;
 False
 False
 </pre></div>
@@ -1559,440 +1556,6 @@ possible to write to the file via the file attribute.</p>
 </div>
 </section>
 </section>
-<section id="operator-overloading">
-<h2><span class="section-number">12.1.13. </span>Operator overloading<a class="headerlink" href="#operator-overloading" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p>We know how to create objects. Now we will learn how to define what +, -, or lte means for an object</p></li>
-<li><p>add</p></li>
-<li><p>gt</p></li>
-<li><p>lt</p></li>
-<li><p>eq</p></li>
-<li><p>iterators <a class="reference external" href="https://www.programiz.com/python-programming/iterator">https://www.programiz.com/python-programming/iterator</a></p></li>
-<li><p>generators <a class="reference external" href="https://www.programiz.com/python-programming/generator">https://www.programiz.com/python-programming/generator</a></p></li>
-</ul>
-<section id="basic-class">
-<h3><span class="section-number">12.1.13.1. </span>Basic Class<a class="headerlink" href="#basic-class" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">math</span>
-<span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
-
-    <span class="k">def</span> <span class="nf">get_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
-
-
-    <span class="k">def</span> <span class="fm">__repr__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Circle with radius &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Circle with radius &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
-
-<span class="n">c1</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">c2</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="n">c1</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c2</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c2</span><span class="o">.</span><span class="n">get_area</span><span class="p">())</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Circle with radius 10
-Circle with radius 5
-78.53981633974483
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="adding-add">
-<h3><span class="section-number">12.1.13.2. </span>Adding Add<a class="headerlink" href="#adding-add" title="Permalink to this heading">#</a></h3>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
-
-    <span class="k">def</span> <span class="nf">get_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
-
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Circle with radius &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_circle</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">Circle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">+</span> <span class="n">another_circle</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
-
-
-<span class="n">c1</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">c2</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="n">c3</span> <span class="o">=</span> <span class="n">c1</span> <span class="o">+</span> <span class="n">c2</span> <span class="c1">### ==&gt; c1.__add__(c2) ==&gt; Circle.__add__(c1, c2)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c3</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">Circle</span><span class="p">:</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">radius</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">=</span> <span class="n">radius</span>
-
-    <span class="k">def</span> <span class="nf">get_area</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> <span class="o">*</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="o">**</span><span class="mi">2</span>
-
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="s2">&quot;Circle with radius &quot;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_circle</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">Circle</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">+</span> <span class="n">another_circle</span><span class="o">.</span><span class="n">radius</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__gt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_circle</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">&gt;</span> <span class="n">another_circle</span><span class="o">.</span><span class="n">radius</span>
-
-    <span class="k">def</span> <span class="fm">__lt__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_circle</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">radius</span> <span class="o">&lt;</span> <span class="n">another_circle</span><span class="o">.</span><span class="n">radius</span>
-
-
-
-<span class="n">c1</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-<span class="n">c2</span> <span class="o">=</span> <span class="n">Circle</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">c1</span> <span class="o">&lt;</span> <span class="n">c2</span><span class="p">)</span>
-
-
-
-<span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
-
-    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_point</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">another_point</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">another_point</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_point</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">another_point</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">another_point</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span>
-
-<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p2</span><span class="o">+</span><span class="n">p1</span><span class="p">)</span>
-
-<span class="kn">import</span> <span class="nn">math</span>
-<span class="k">class</span> <span class="nc">Point</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="mi">0</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">=</span> <span class="n">x</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">=</span> <span class="n">y</span>
-
-    <span class="k">def</span> <span class="fm">__add__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_point</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">+</span> <span class="n">another_point</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">+</span> <span class="n">another_point</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="fm">__sub__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_point</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">Point</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span> <span class="o">-</span> <span class="n">another_point</span><span class="o">.</span><span class="n">x</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span> <span class="o">-</span> <span class="n">another_point</span><span class="o">.</span><span class="n">y</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">length</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">math</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span>
-
-    <span class="k">def</span> <span class="nf">distance</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">another_point</span><span class="p">):</span>
-        <span class="k">return</span> <span class="p">(</span><span class="bp">self</span> <span class="o">-</span> <span class="n">another_point</span><span class="p">)</span><span class="o">.</span><span class="n">length</span><span class="p">()</span>
-
-    <span class="k">def</span> <span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s1">&#39;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">x</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">y</span><span class="si">}</span><span class="s1">&#39;</span>
-
-<span class="n">p1</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">)</span>
-<span class="n">p2</span> <span class="o">=</span> <span class="n">Point</span><span class="p">(</span><span class="mi">8</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">p1</span><span class="o">.</span><span class="n">distance</span><span class="p">(</span><span class="n">p2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Circle with radius 15
-False
-11, 10
-5.385164807134504
-</pre></div>
-</div>
-</div>
-</div>
-</section>
-<section id="iterator-class">
-<h3><span class="section-number">12.1.13.3. </span>Iterator Class<a class="headerlink" href="#iterator-class" title="Permalink to this heading">#</a></h3>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>class MyRange:
-
-    def __init__(self, limit):
-        self.limit = limit
-
-    def __iter__(self):
-        self.value = 0
-        return self
-
-    def __next__(self):
-        if self.value &lt; self.limit:
-            output = self.value
-            self.value += 1
-            return output
-        else:
-            raise StopIteration
-
-
-i = iter(MyRange(10))
-next(i)
-for ele in MyRange(10):
-    print(ele)
-
-
-class PowX:
-    def __init__(self, limit, power):
-        self.limit = limit
-        self.power = power
-
-    def __iter__(self):
-        self.value = 0
-        return self
-
-    def __next__(self):
-        if self.value &lt; self.limit:
-            output = self.value**self.power
-            self.value += 1
-            return output
-        else:
-            raise StopIteration
-
-
-for ele in PowX(10, 3):
-    print(ele)
-
-
-## lets use generator
-
-def PowX(limit, power):
-    value = 0
-    while value &lt; limit:
-        yield value**power
-        value += 1
-
-for ele in PowX(10, 3):
-    print(ele)
-
-new_list = []
-for number in numbers:
-
-    if number % 2 == 0
-        new_list.append(number)
-        I am here!!
-</pre></div>
-</div>
-</section>
-</section>
-<section id="self">
-<h2><span class="section-number">12.1.14. </span>Self<a class="headerlink" href="#self" title="Permalink to this heading">#</a></h2>
-<ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">self</span></code> is a reference to an instance of a class. You can use <code class="docutils literal notranslate"><span class="pre">self</span></code> to access attributes and methods bound to an instance.</p></li>
-<li><p>class variable vs instance variable (<a class="reference external" href="https://www.digitalocean.com/community/tutorials/understanding-class-and-instance-variables-in-python-3">https://www.digitalocean.com/community/tutorials/understanding-class-and-instance-variables-in-python-3</a>)</p></li>
-<li><p>staticmethods vs class methods</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestClass</span><span class="p">:</span>
-    <span class="n">class_variable</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Belongs to the class. Shared by all instances</span>
-
-
-
-<span class="n">t1</span> <span class="o">=</span> <span class="n">TestClass</span><span class="p">()</span>
-<span class="n">t2</span> <span class="o">=</span> <span class="n">TestClass</span><span class="p">()</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Print class_variable&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t1.class_variable: &#39;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">class_variable</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t2.class_variable: &#39;</span><span class="p">,</span> <span class="n">t2</span><span class="o">.</span><span class="n">class_variable</span><span class="p">)</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Change class_variable in class definition and print class_variable&#39;</span><span class="p">)</span>
-<span class="n">TestClass</span><span class="o">.</span><span class="n">class_variable</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t1.class_variable: &#39;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">class_variable</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t2.class_variable: &#39;</span><span class="p">,</span> <span class="n">t2</span><span class="o">.</span><span class="n">class_variable</span><span class="p">)</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Change class_variable in instance t1 and print class_variable&#39;</span><span class="p">)</span>
-<span class="n">t1</span><span class="o">.</span><span class="n">class_variable</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t1.class_variable: &#39;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">class_variable</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t2.class_variable: &#39;</span><span class="p">,</span> <span class="n">t2</span><span class="o">.</span><span class="n">class_variable</span><span class="p">)</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Change class_variable in instance t2 and print class_variable&#39;</span><span class="p">)</span>
-<span class="n">t2</span><span class="o">.</span><span class="n">class_variable</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t1.class_variable: &#39;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">class_variable</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t2.class_variable: &#39;</span><span class="p">,</span> <span class="n">t2</span><span class="o">.</span><span class="n">class_variable</span><span class="p">)</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">TestClass</span><span class="p">:</span>
-    <span class="n">class_variable</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># Belongs to the class. Shared by all instances</span>
-
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">instance_variable</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">instance_variable</span> <span class="o">=</span> <span class="n">instance_variable</span>
-
-
-<span class="n">t1</span> <span class="o">=</span> <span class="n">TestClass</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
-<span class="n">t2</span> <span class="o">=</span> <span class="n">TestClass</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Print class_variable&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t1.class_variable: &#39;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">class_variable</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t2.class_variable: &#39;</span><span class="p">,</span> <span class="n">t2</span><span class="o">.</span><span class="n">class_variable</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Print instance_variable&#39;</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t1.instance_variable: &#39;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">instance_variable</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t2.instance_variable: &#39;</span><span class="p">,</span> <span class="n">t2</span><span class="o">.</span><span class="n">instance_variable</span><span class="p">)</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Change class_variable in class definition and print class_variable&#39;</span><span class="p">)</span>
-<span class="n">TestClass</span><span class="o">.</span><span class="n">class_variable</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t1.class_variable: &#39;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">class_variable</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t1.class_variable: &#39;</span><span class="p">,</span> <span class="n">t2</span><span class="o">.</span><span class="n">class_variable</span><span class="p">)</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Change instance_variable for t1 and print instance_variable&#39;</span><span class="p">)</span>
-<span class="n">t1</span><span class="o">.</span><span class="n">instance_variable</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t1.instance_variable: &#39;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">instance_variable</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t2.instance_variable: &#39;</span><span class="p">,</span> <span class="n">t2</span><span class="o">.</span><span class="n">instance_variable</span><span class="p">)</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Change instance_variable for t2 and print instance_variable&#39;</span><span class="p">)</span>
-<span class="n">t2</span><span class="o">.</span><span class="n">instance_variable</span> <span class="o">=</span> <span class="mi">20</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t1.instance_variable: &#39;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">instance_variable</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t2.instance_variable: &#39;</span><span class="p">,</span> <span class="n">t2</span><span class="o">.</span><span class="n">instance_variable</span><span class="p">)</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Change class_variable in instance t1 and print class_variable&#39;</span><span class="p">)</span>
-<span class="n">t1</span><span class="o">.</span><span class="n">class_variable</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t1.class_variable: &#39;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">class_variable</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t2.class_variable: &#39;</span><span class="p">,</span> <span class="n">t2</span><span class="o">.</span><span class="n">class_variable</span><span class="p">)</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">Change class_variable in instance t2 and print class_variable&#39;</span><span class="p">)</span>
-<span class="n">t2</span><span class="o">.</span><span class="n">class_variable</span> <span class="o">=</span> <span class="mi">4</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t1.class_variable: &#39;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">class_variable</span><span class="p">)</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;t2.class_variable: &#39;</span><span class="p">,</span> <span class="n">t2</span><span class="o">.</span><span class="n">class_variable</span><span class="p">)</span>
-
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">TestClass</span><span class="p">:</span>
-    <span class="n">class_variable</span> <span class="o">=</span> <span class="mi">1</span>
-
-    <span class="c1"># @staticmethod are bound to class rather than object. Therefore, to use them, you do not have</span>
-    <span class="c1"># to instantiate an object.</span>
-    <span class="c1"># NOTE: staticmethods do no have access to class properties (variables or methods).</span>
-    <span class="c1"># This means they cannot access class_variable.</span>
-    <span class="c1"># Such methods are used when you do not want subclasses to change/overwrite a specific method.</span>
-
-    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">number1</span> <span class="o">+</span> <span class="n">number2</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;@staticmethod add: &#39;</span><span class="p">,</span> <span class="n">TestClass</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-
-
-<span class="k">class</span> <span class="nc">TestClass2</span><span class="p">:</span>
-    <span class="n">class_variable</span> <span class="o">=</span> <span class="mi">1</span>
-
-    <span class="c1"># @staticmethod are bound to class rather than object. Therefore, to use them, you do not have</span>
-    <span class="c1"># to instantiate an object.</span>
-    <span class="c1"># NOTE: staticmethods do no have access to class properties (variables or methods).</span>
-    <span class="c1"># This means they cannot access class_variable.</span>
-    <span class="c1"># Such methods are used when you do not want subclasses to change/overwrite a specific method.</span>
-
-    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">number1</span> <span class="o">+</span> <span class="n">number2</span><span class="c1"># + class_variable</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;@staticmethod add: &#39;</span><span class="p">,</span> <span class="n">TestClass2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-<span class="k">class</span> <span class="nc">TestClass</span><span class="p">:</span>
-    <span class="n">class_variable</span> <span class="o">=</span> <span class="mi">1</span>
-
-    <span class="c1"># @classmethod are bound to class rather than object. Therefore, to use them, you do not have</span>
-    <span class="c1"># to instantiate an object.</span>
-    <span class="c1"># NOTE: Unlike staticmethods, classmethods do have access to class properties (variables or methods).</span>
-    <span class="c1"># This means they can access class_variable.</span>
-
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">number1</span> <span class="o">+</span> <span class="n">number2</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;@classmethod add: &#39;</span><span class="p">,</span> <span class="n">TestClass</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-
-
-
-<span class="k">class</span> <span class="nc">TestClass2</span><span class="p">:</span>
-    <span class="n">class_variable</span> <span class="o">=</span> <span class="mi">1</span>
-
-    <span class="c1"># @classmethod are bound to class rather than object. Therefore, to use them, you do not have</span>
-    <span class="c1"># to instantiate an object.</span>
-    <span class="c1"># NOTE: Unlike staticmethods, classmethods do have access to class properties (variables or methods).</span>
-    <span class="c1"># This means they can access class_variable.</span>
-
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">number1</span> <span class="o">+</span> <span class="n">number2</span> <span class="o">+</span> <span class="bp">cls</span><span class="o">.</span><span class="n">class_variable</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;@classmethod add -- access to class variable: &#39;</span><span class="p">,</span> <span class="n">TestClass2</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">))</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">,</span> <span class="s1">&#39;-&#39;</span><span class="o">*</span><span class="mi">60</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\n</span><span class="s1">&#39;</span><span class="p">)</span>
-
-
-<span class="k">class</span> <span class="nc">TestClass</span><span class="p">:</span>
-    <span class="n">class_variable</span> <span class="o">=</span> <span class="mi">1</span>
-
-    <span class="nd">@staticmethod</span>
-    <span class="k">def</span> <span class="nf">add_static</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">number1</span> <span class="o">+</span> <span class="n">number2</span>
-
-    <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">add_class</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">number1</span> <span class="o">+</span> <span class="n">number2</span> <span class="o">+</span> <span class="bp">cls</span><span class="o">.</span><span class="n">class_variable</span>
-
-
-    <span class="k">def</span> <span class="nf">add_object</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
-        <span class="k">return</span> <span class="n">number1</span> <span class="o">+</span> <span class="n">number2</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">class_variable</span> <span class="o">+</span> <span class="mi">29</span>
-
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;add_static: &#39;</span><span class="p">,</span> <span class="n">TestClass</span><span class="o">.</span><span class="n">add_static</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;add_class: &#39;</span><span class="p">,</span> <span class="n">TestClass</span><span class="o">.</span><span class="n">add_class</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span><span class="mi">14</span><span class="p">))</span>
-
-
-<span class="n">t1</span> <span class="o">=</span> <span class="n">TestClass</span><span class="p">()</span>
-
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Call from class -- add_object: &#39;</span><span class="p">,</span> <span class="n">TestClass</span><span class="o">.</span><span class="n">add_object</span><span class="p">(</span><span class="n">t1</span><span class="p">,</span> <span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span>
-<span class="nb">print</span><span class="p">(</span><span class="s1">&#39;Call from object -- add_object: &#39;</span><span class="p">,</span> <span class="n">t1</span><span class="o">.</span><span class="n">add_object</span><span class="p">(</span><span class="mi">13</span><span class="p">,</span> <span class="mi">14</span><span class="p">))</span>
-</pre></div>
-</div>
-</section>
-<section id="item-assignment">
-<h2><span class="section-number">12.1.15. </span>Item assignment<a class="headerlink" href="#item-assignment" title="Permalink to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">MyClass</span><span class="p">:</span>
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data</span> <span class="o">=</span> <span class="p">{}</span>
-              
-    <span class="k">def</span> <span class="fm">__setitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">value</span><span class="p">):</span>
-        <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
-        
-    <span class="k">def</span> <span class="fm">__getitem__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">key</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">data</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>      
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>add functionality pass in multiple data; with and wihtout header</p></li>
-<li><p>add functionality to select multiple columns</p></li>
-<li><p>add functionality to add two columns</p></li>
-<li><p>add functionality to take a mean of a column(s)</p></li>
-<li><p>add functionality to select rows</p></li>
-<li><p>add functionality slicing!</p></li>
-</ul>
-</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -2036,11 +1599,11 @@ for number in numbers:
       </div>
     </a>
     <a class="right-next"
-       href="../13/sql.html"
+       href="operator_overloading.html"
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">13. </span>SQL with SQLite</p>
+        <p class="prev-next-title"><span class="section-number">12.2. </span>Operator overloading</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -2092,14 +1655,6 @@ for number in numbers:
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">12.1.12.1. Exercise</a></li>
 </ul>
 </li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#operator-overloading">12.1.13. Operator overloading</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-class">12.1.13.1. Basic Class</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-add">12.1.13.2. Adding Add</a></li>
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#iterator-class">12.1.13.3. Iterator Class</a></li>
-</ul>
-</li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#self">12.1.14. Self</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#item-assignment">12.1.15. Item assignment</a></li>
 </ul>
   </nav></div>
 
