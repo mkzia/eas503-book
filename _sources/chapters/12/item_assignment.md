@@ -36,7 +36,7 @@ my_class = MyClass()
 
 
 my_class['Exam1'] = 90
-my_class['Exam1]
+my_class['Exam1']
 ```
 
 ## Basic Columnar Functionality
@@ -91,7 +91,7 @@ mc = MyClass(lines=people, header=True)
 print(mc[['first_name', 'last_name', 'email']])
 print(mc['first_name'])
 
-
+people = tuple(people)
 filename = 'testdata.txt'
 grades = []
 with open(filename) as f:
@@ -99,15 +99,15 @@ with open(filename) as f:
         line = line.strip()
         if not line:
             continue
-        grades.append(line.strip().split('\t'))
+        grades.append(line.strip().split(','))
 
-
-mc = MyClass(lines=people, header=True)
+grades = tuple(grades)
+mc = MyClass(lines=list(people), header=True)
 print(mc[['first_name', 'last_name', 'email']])
 print(mc['first_name'])
 
 
-mc = MyClass(lines=grades)
+mc = MyClass(lines=list(grades))
 print(mc[[1, 2]])
 print(mc[0])
 ```
@@ -120,6 +120,20 @@ print(mc[0])
 ```{code-cell} ipython3
 from collections import defaultdict
 
+
+
+class ListV2:
+    def __init__(self, values):
+        self.values = values
+        
+    def __add__(self, right):
+        output = [l + r for l, r in zip(self.values, right.values)]
+#         return ListV2(output)
+        return output
+    
+    def __repr__(self):
+        return str(self.values)
+        
 
 class MyClass:
     def __init__(self, **kwargs):
@@ -153,7 +167,18 @@ class MyClass:
     def as_type(self, column, cast_type):
         self.data[column] = list(map(cast_type, self.data[column]))
 
-mc = MyClass(lines=grades)
+filename = 'testdata.txt'
+grades = []
+with open(filename) as f:
+    for line in f:
+        line = line.strip()
+        if not line:
+            continue
+        grades.append(line.strip().split(','))
+
+grades = tuple(grades)
+
+mc = MyClass(lines=list(grades))
 print(mc[[1, 2]])
 mc.as_type(1, int)
 print(mc[[1, 2]])
@@ -165,6 +190,20 @@ print(mc[[1, 2]])
 
 ```{code-cell} ipython3
 from collections import defaultdict
+
+
+class ListV2:
+    def __init__(self, values):
+        self.values = values
+        
+    def __add__(self, right):
+        output = [l + r for l, r in zip(self.values, right.values)]
+#         return ListV2(output)
+        return output
+    
+    def __repr__(self):
+        return str(self.values)
+        
 
 
 class MyClass:
@@ -218,11 +257,11 @@ with open(filename) as f:
         line = line.strip()
         if not line:
             continue
-        grades.append(line.strip().split('\t'))
+        grades.append(line.strip().split(','))
 
+grades = tuple(grades)
 
-
-mc = MyClass(lines=grades)
+mc = MyClass(lines=list(grades))
 mc.as_type(1, int)
 mc.as_type(2, int)
 a = mc.mean([1, 2])
@@ -267,6 +306,20 @@ list(zip(*x.values()))
 ```{code-cell} ipython3
 from collections import defaultdict
 
+
+
+class ListV2:
+    def __init__(self, values):
+        self.values = values
+        
+    def __add__(self, right):
+        output = [l + r for l, r in zip(self.values, right.values)]
+#         return ListV2(output)
+        return output
+    
+    def __repr__(self):
+        return str(self.values)
+        
 
 class MyClass:
     def __init__(self, **kwargs):
@@ -345,9 +398,11 @@ with open(filename) as f:
         line = line.strip()
         if not line:
             continue
-        grades.append(line.strip().split('\t'))
+        grades.append(line.strip().split(','))
 
-mc = MyClass(lines=grades)
+grades = tuple(grades)
+
+mc = MyClass(lines=list(grades))
 mc.as_type(1, int)
 mc.as_type(2, int)  
 a = mc[5:21:2, 1:6] 
