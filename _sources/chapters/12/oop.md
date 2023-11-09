@@ -259,6 +259,7 @@ class InventoryItem:
 from collections import namedtuple
 from typing import NamedTuple
 from dataclasses import dataclass
+import dataclasses 
 
 
 Pointnamedtuple = namedtuple('Point', 'x y')
@@ -296,6 +297,7 @@ print(dataclasses.asdict(p3))
 from collections import namedtuple
 from typing import NamedTuple
 from dataclasses import dataclass
+import dataclasses 
 
 
 Pointnamedtuple = namedtuple('Point', 'x y')
