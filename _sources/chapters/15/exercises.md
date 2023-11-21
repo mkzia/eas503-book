@@ -15,6 +15,7 @@ kernelspec:
 ## Query Primer
 
 ### Basic query
+
 SQL cross-reference: {ref}`sql:primer:basic`
 
 ```{code-cell} ipython3
@@ -27,6 +28,7 @@ df
 ```
 
 ### Limit rows
+
 SQL cross-reference: {ref}`sql:primer:limit_rows`
 
 ```{code-cell} ipython3
@@ -48,6 +50,7 @@ display(df[50:60])
 ```
 
 ### Select some columns
+
 SQL cross-reference: {ref}`sql:primer:select_some_columns`
 
 ```{code-cell} ipython3
@@ -62,6 +65,7 @@ df[['PatientID', 'PatientDateOfBirth']].head(10)
 ```
 
 ### Using column alias
+
 SQL cross-reference: {ref}`sql:primer:using_column_alias`
 
 ```{code-cell} ipython3
@@ -76,6 +80,7 @@ df[['PatientID', 'PatientDateOfBirth']].rename(columns={'PatientDateOfBirth': 'D
 ```
 
 ### Adding columns not from the table
+
 SQL cross-reference: {ref}`sql:primer:adding_column`
 
 ```{code-cell} ipython3
@@ -99,6 +104,7 @@ df_new.head(10)
 ```
 
 ### Removing duplicates
+
 SQL cross-reference: {ref}`sql:primer:removing_duplicates`
 
 ```{code-cell} ipython3
@@ -112,6 +118,7 @@ pd.DataFrame(df['PatientMaritalStatus'].unique(), columns=['PatientMaritalStatus
 ```
 
 ### Removing duplicates with multiple columns
+
 SQL cross-reference: {ref}`sql:primer:removing_duplicates_2`
 
 ```{code-cell} ipython3
@@ -125,6 +132,7 @@ df[['PatientRace', 'PatientMaritalStatus']].drop_duplicates().sort_values(['Pati
 ```
 
 ### Derived table
+
 SQL cross-reference: {ref}`sql:primer:derived_table`
 
 ```{code-cell} ipython3
@@ -138,8 +146,8 @@ pd.DataFrame(df[['PrimaryDiagnosisCode', 'PrimaryDiagnosisDescription']].apply(l
 
 ```
 
-
 ### Filtering Data
+
 SQL cross-reference: {ref}`sql:primer:where_clause`
 
 ```{code-cell} ipython3
@@ -159,6 +167,7 @@ df_new
 ```
 
 ### Sort Values
+
 SQL cross-reference: {ref}`sql:primer:order_by_clause`
 
 ```{code-cell} ipython3
@@ -189,4 +198,113 @@ display(df_new)
 
 ## Filtering
 
-### Conditional Evaluation 
+### Conditional Evaluation
+
+SQL cross-reference: {ref}`sql:filtering:basic`
+
+```{code-cell} ipython3
+from IPython.display import display
+import pandas as pd
+import numpy as np
+filename = 'PatientCorePopulatedTable.txt'
+
+df = pd.read_csv(filename, delimiter='\t')
+cond = (df['PatientGender'] == 'Male') & (df['PatientDateOfBirth'] < '1950-01-01')
+df_new = df[cond].reset_index(drop=True).sort_values('PatientDateOfBirth')
+display(df_new)
+```
+
+### Using Parenthesis
+
+SQL cross-reference: {ref}`sql:filtering:parenthesis`
+
+```{code-cell} ipython3
+from IPython.display import display
+import pandas as pd
+import numpy as np
+filename = 'PatientCorePopulatedTable.txt'
+
+df = pd.read_csv(filename, delimiter='\t')
+cond = ((df['PatientGender'] == 'Male') | (df['PatientRace'] == 'White')) & (df['PatientDateOfBirth'] < '1950-01-01')
+df_new = df[cond].reset_index(drop=True).sort_values('PatientDateOfBirth')
+display(df_new)
+```
+
+### Range condition
+
+SQL cross-reference: {ref}`sql:filtering:range`
+
+```{code-cell} ipython3
+from IPython.display import display
+import pandas as pd
+import numpy as np
+filename = 'PatientCorePopulatedTable.txt'
+
+df = pd.read_csv(filename, delimiter='\t')
+cond = (df['PatientDateOfBirth'] > '1920-01-01') & (df['PatientDateOfBirth'] < '1950-01-01')
+df_new = df[cond].reset_index(drop=True).sort_values('PatientDateOfBirth')
+display(df_new)
+```
+
+### String condition
+
+SQL cross-reference: {ref}`sql:filtering:string`
+
+```{code-cell} ipython3
+from IPython.display import display
+import pandas as pd
+import numpy as np
+filename = 'PatientCorePopulatedTable.txt'
+
+df = pd.read_csv(filename, delimiter='\t')
+cond = (df['PatientID'] > '2A') & (df['PatientID'] < '53')
+df_new = df[cond].reset_index(drop=True).sort_values('PatientID')
+display(df_new)
+```
+
+### Wildcard Matches
+
+SQL cross-reference: {ref}`sql:filtering:startswith`
+
+```{code-cell} ipython3
+from IPython.display import display
+import pandas as pd
+import numpy as np
+filename = 'AdmissionsDiagnosesCorePopulatedTable.txt'
+
+df = pd.read_csv(filename, delimiter='\t')
+
+cond = (df['PrimaryDiagnosisCode'].str.startswith('M'))
+df_new = df[cond].reset_index(drop=True).sort_values('PrimaryDiagnosisCode')
+display(df_new)
+```
+
+SQL cross-reference: {ref}`sql:filtering:endswith`
+
+```{code-cell} ipython3
+from IPython.display import display
+import pandas as pd
+import numpy as np
+filename = 'AdmissionsDiagnosesCorePopulatedTable.txt'
+
+df = pd.read_csv(filename, delimiter='\t')
+
+cond = (df['PrimaryDiagnosisCode'].str.endswith('M'))
+df_new = df[cond].reset_index(drop=True).sort_values('PrimaryDiagnosisCode')
+display(df_new)
+```
+
+SQL cross-reference: {ref}`sql:filtering:contains`
+
+```{code-cell} ipython3
+from IPython.display import display
+import pandas as pd
+import numpy as np
+filename = 'AdmissionsDiagnosesCorePopulatedTable.txt'
+
+df = pd.read_csv(filename, delimiter='\t')
+
+cond = (df['PrimaryDiagnosisCode'].str.contains('5.'))
+df_new = df[cond].reset_index(drop=True).sort_values('PrimaryDiagnosisCode')
+display(df_new)
+```

@@ -16,7 +16,7 @@ kernelspec:
 
 | Operator | What it does?                                        |
 |----------|------------------------------------------------------|
-| `AND`    | True if both conditions are true  | 
+| `AND`    | True if both conditions are true  |
 | `OR`     | True if one of two conditions is true |
 | `NOT`    | Negate a specified condition |
 | `IN` | Allows for multiple OR conditions |
@@ -24,8 +24,8 @@ kernelspec:
 | `EXISTS`    | True if a record exists |
 | `LIKE`    | True if there is a string match using % |
 
-
 ## Relational Operators
+
 Assume `a=1` and `b=1`
 
 | Relational Operators | What it does?             |
@@ -37,8 +37,9 @@ Assume `a=1` and `b=1`
 | >= | True if a is greater than or equal to b     |
 | <= | True if a is less than or equal to b        |
 
+## Conditional Evaluation
 
-## Conditional Evaluation 
+(sql:filtering:basic)=
 
 ```SQL
 SELECT *
@@ -65,6 +66,8 @@ df.style.set_table_attributes('style="font-size: 12px"')
 ```
 
 ## Using Parenthesis
+
+(sql:filtering:parenthesis)=
 
 ```SQL
 SELECT *
@@ -144,6 +147,8 @@ df.style.set_table_attributes('style="font-size: 12px"')
 
 ## Range using `BETWEEN` condition
 
+(sql:filtering:range)=
+
 ```SQL
 SELECT *
 FROM PatientCorePopulatedTable
@@ -169,6 +174,8 @@ df.style.set_table_attributes('style="font-size: 12px"')
 ```
 
 ## String Condition
+
+(sql:filtering:string)=
 
 ```SQL
 SELECT *
@@ -220,8 +227,8 @@ df = pd.read_sql_query(sql_statement, conn)
 df.style.set_table_attributes('style="font-size: 12px"')
 ```
 
-
 ### `IN` condition
+
 ```SQL
 SELECT *
 FROM PatientCorePopulatedTable
@@ -247,6 +254,7 @@ df.style.set_table_attributes('style="font-size: 12px"')
 ```
 
 ### `NOT IN` condition
+
 ```SQL
 SELECT *
 FROM PatientCorePopulatedTable
@@ -272,6 +280,7 @@ df.style.set_table_attributes('style="font-size: 12px"')
 ```
 
 ### Using subqueries
+
 ```SQL
 SELECT *
 FROM PatientCorePopulatedTable
@@ -298,6 +307,8 @@ df.style.set_table_attributes('style="font-size: 12px"')
 
 ## Using Wildcards
 
+(sql:filtering:startswith)=
+
 ```SQL
 SELECT *
 FROM AdmissionsDiagnosesCorePopulatedTable
@@ -322,6 +333,8 @@ df = pd.read_sql_query(sql_statement, conn)
 df.style.set_table_attributes('style="font-size: 12px"')
 ```
 
+(sql:filtering:endswith)=
+
 ```SQL
 SELECT *
 FROM AdmissionsDiagnosesCorePopulatedTable
@@ -345,6 +358,8 @@ ORDER BY PrimaryDiagnosisCode
 df = pd.read_sql_query(sql_statement, conn)
 df.style.set_table_attributes('style="font-size: 12px"')
 ```
+
+(sql:filtering:contains)=
 
 ```SQL
 SELECT *

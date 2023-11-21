@@ -261,7 +261,8 @@ const thebe_selector_output = ".output, .cell_output"
 
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../14/intro.html">14. Plotting in Python</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul class="simple">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../14/intro.html">14. Plotting in Python</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../14/matplotlib.html">14.1. Matplotlib</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">15. NumPy and Pandas</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
@@ -454,6 +455,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering">15.3.2. Filtering</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-evaluation">15.3.2.1. Conditional Evaluation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-parenthesis">15.3.2.2. Using Parenthesis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range-condition">15.3.2.3. Range condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-condition">15.3.2.4. String condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wildcard-matches">15.3.2.5. Wildcard Matches</a></li>
 </ul>
 </li>
 </ul>
@@ -1569,7 +1574,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7910/1037439662.py:7: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2337/1037439662.py:7: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   pd.DataFrame(df[[&#39;PrimaryDiagnosisCode&#39;, &#39;PrimaryDiagnosisDescription&#39;]].apply(lambda row: f&#39;({row[0]}) {row[1]}&#39;, axis=1), columns=[&#39;CodeWDescription&#39;])
 </pre></div>
 </div>
@@ -2002,6 +2007,1364 @@ document.write(`
 <h2><span class="section-number">15.3.2. </span>Filtering<a class="headerlink" href="#filtering" title="Permalink to this heading">#</a></h2>
 <section id="conditional-evaluation">
 <h3><span class="section-number">15.3.2.1. </span>Conditional Evaluation<a class="headerlink" href="#conditional-evaluation" title="Permalink to this heading">#</a></h3>
+<p>SQL cross-reference: <span class="xref std std-ref">sql:filtering:basic</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;PatientCorePopulatedTable.txt&#39;</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">cond</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PatientGender&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Male&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PatientDateOfBirth&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s1">&#39;1950-01-01&#39;</span><span class="p">)</span>
+<span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;PatientDateOfBirth&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_new</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PatientID</th>
+      <th>PatientGender</th>
+      <th>PatientDateOfBirth</th>
+      <th>PatientRace</th>
+      <th>PatientMaritalStatus</th>
+      <th>PatientLanguage</th>
+      <th>PatientPopulationPercentageBelowPoverty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>14</th>
+      <td>DDC0BC57-7A4E-4E02-9282-177750B74FBC</td>
+      <td>Male</td>
+      <td>1921-03-26 14:38:51.803</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>18.41</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>53B9FFDD-F80B-43BE-93CF-C34A023EE7E9</td>
+      <td>Male</td>
+      <td>1921-08-22 19:17:09.227</td>
+      <td>White</td>
+      <td>Divorced</td>
+      <td>Icelandic</td>
+      <td>18.17</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>DA6CECFF-DE13-4C4C-919F-64E1A2B76C9D</td>
+      <td>Male</td>
+      <td>1924-06-27 19:37:58.823</td>
+      <td>Asian</td>
+      <td>Divorced</td>
+      <td>English</td>
+      <td>83.75</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7C788499-7798-484B-A027-9FCDC4C0DADB</td>
+      <td>Male</td>
+      <td>1926-08-13 10:22:16.247</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>11.89</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>25B786AF-0F99-478C-9CFA-0EA607E45834</td>
+      <td>Male</td>
+      <td>1926-08-20 00:21:38.870</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>93.60</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>4C201C71-CCED-40D1-9642-F9C8C485B854</td>
+      <td>Male</td>
+      <td>1926-09-22 09:17:14.713</td>
+      <td>African American</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>10.30</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>A0A976C8-9B30-4492-B8C4-5B25095B9192</td>
+      <td>Male</td>
+      <td>1931-05-26 14:54:15.847</td>
+      <td>Asian</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>19.52</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1A220558-5996-43E1-AE5D-7B96180FED35</td>
+      <td>Male</td>
+      <td>1937-09-07 22:23:53.143</td>
+      <td>Asian</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>15.11</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>21792512-2D40-4326-BEA2-A40127EB24FF</td>
+      <td>Male</td>
+      <td>1938-03-24 19:25:53.980</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>Unknown</td>
+      <td>89.44</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>C5D09468-574F-4802-B56F-DB38F4EB1687</td>
+      <td>Male</td>
+      <td>1939-07-07 19:39:49.753</td>
+      <td>African American</td>
+      <td>Married</td>
+      <td>Icelandic</td>
+      <td>10.87</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>FB909FAE-72DD-4F6F-9828-D92183DF185F</td>
+      <td>Male</td>
+      <td>1940-07-15 12:18:41.080</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>Spanish</td>
+      <td>14.90</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>FFCDECD6-4048-4DCB-B910-1218160005B3</td>
+      <td>Male</td>
+      <td>1941-05-06 14:56:42.687</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>14.49</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>9BBF3A51-443D-438B-9289-B98B8E0577C0</td>
+      <td>Male</td>
+      <td>1944-11-25 06:12:56.860</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>16.76</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>E483DE6E-D4E6-47FD-905B-22EE86EC7ACE</td>
+      <td>Male</td>
+      <td>1945-11-18 04:14:31.573</td>
+      <td>African American</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>16.88</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>967987B9-FFEF-4776-85CF-AE05CA81F583</td>
+      <td>Male</td>
+      <td>1947-02-13 10:26:55.520</td>
+      <td>White</td>
+      <td>Widowed</td>
+      <td>English</td>
+      <td>88.66</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>FB2ABB23-C9D0-4D09-8464-49BF0B982F0F</td>
+      <td>Male</td>
+      <td>1947-12-28 02:45:40.547</td>
+      <td>Unknown</td>
+      <td>Married</td>
+      <td>Icelandic</td>
+      <td>18.08</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1A40AF35-C6D4-4D46-B475-A15D84E8A9D5</td>
+      <td>Male</td>
+      <td>1949-01-10 15:37:35.543</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>11.25</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="using-parenthesis">
+<h3><span class="section-number">15.3.2.2. </span>Using Parenthesis<a class="headerlink" href="#using-parenthesis" title="Permalink to this heading">#</a></h3>
+<p>SQL cross-reference: <span class="xref std std-ref">sql:filtering:parenthesis</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;PatientCorePopulatedTable.txt&#39;</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">cond</span> <span class="o">=</span> <span class="p">((</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PatientGender&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Male&#39;</span><span class="p">)</span> <span class="o">|</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PatientRace&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;White&#39;</span><span class="p">))</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PatientDateOfBirth&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s1">&#39;1950-01-01&#39;</span><span class="p">)</span>
+<span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;PatientDateOfBirth&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_new</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PatientID</th>
+      <th>PatientGender</th>
+      <th>PatientDateOfBirth</th>
+      <th>PatientRace</th>
+      <th>PatientMaritalStatus</th>
+      <th>PatientLanguage</th>
+      <th>PatientPopulationPercentageBelowPoverty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>20</th>
+      <td>DDC0BC57-7A4E-4E02-9282-177750B74FBC</td>
+      <td>Male</td>
+      <td>1921-03-26 14:38:51.803</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>18.41</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>C8556CC0-32FC-4CA5-A8CD-9CCF38816167</td>
+      <td>Female</td>
+      <td>1921-04-11 11:39:49.197</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>18.20</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>53B9FFDD-F80B-43BE-93CF-C34A023EE7E9</td>
+      <td>Male</td>
+      <td>1921-08-22 19:17:09.227</td>
+      <td>White</td>
+      <td>Divorced</td>
+      <td>Icelandic</td>
+      <td>18.17</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>DA6CECFF-DE13-4C4C-919F-64E1A2B76C9D</td>
+      <td>Male</td>
+      <td>1924-06-27 19:37:58.823</td>
+      <td>Asian</td>
+      <td>Divorced</td>
+      <td>English</td>
+      <td>83.75</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7C788499-7798-484B-A027-9FCDC4C0DADB</td>
+      <td>Male</td>
+      <td>1926-08-13 10:22:16.247</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>11.89</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>25B786AF-0F99-478C-9CFA-0EA607E45834</td>
+      <td>Male</td>
+      <td>1926-08-20 00:21:38.870</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>93.60</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>4C201C71-CCED-40D1-9642-F9C8C485B854</td>
+      <td>Male</td>
+      <td>1926-09-22 09:17:14.713</td>
+      <td>African American</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>10.30</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>81C5B13B-F6B2-4E57-9593-6E7E4C13B2CE</td>
+      <td>Female</td>
+      <td>1930-05-28 02:59:42.857</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>Icelandic</td>
+      <td>19.22</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>A0A976C8-9B30-4492-B8C4-5B25095B9192</td>
+      <td>Male</td>
+      <td>1931-05-26 14:54:15.847</td>
+      <td>Asian</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>19.52</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>FA157FA5-F488-4884-BF87-E144630D595C</td>
+      <td>Female</td>
+      <td>1932-11-01 06:19:56.577</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>16.32</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>B39DC5AC-E003-4E6A-91B6-FC07625A1285</td>
+      <td>Female</td>
+      <td>1935-11-03 21:07:09.040</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>15.31</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>1A220558-5996-43E1-AE5D-7B96180FED35</td>
+      <td>Male</td>
+      <td>1937-09-07 22:23:53.143</td>
+      <td>Asian</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>15.11</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>80D356B4-F974-441F-A5F2-F95986D119A2</td>
+      <td>Female</td>
+      <td>1938-03-06 18:24:18.297</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>18.88</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>21792512-2D40-4326-BEA2-A40127EB24FF</td>
+      <td>Male</td>
+      <td>1938-03-24 19:25:53.980</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>Unknown</td>
+      <td>89.44</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>C5D09468-574F-4802-B56F-DB38F4EB1687</td>
+      <td>Male</td>
+      <td>1939-07-07 19:39:49.753</td>
+      <td>African American</td>
+      <td>Married</td>
+      <td>Icelandic</td>
+      <td>10.87</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>FB909FAE-72DD-4F6F-9828-D92183DF185F</td>
+      <td>Male</td>
+      <td>1940-07-15 12:18:41.080</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>Spanish</td>
+      <td>14.90</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>FFCDECD6-4048-4DCB-B910-1218160005B3</td>
+      <td>Male</td>
+      <td>1941-05-06 14:56:42.687</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>14.49</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>0E0EADE8-5592-4E0B-9F88-D7596E32EE08</td>
+      <td>Female</td>
+      <td>1942-07-13 21:15:37.517</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>Spanish</td>
+      <td>18.80</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>66154E24-D3EE-4311-89DB-6195278F9B3C</td>
+      <td>Female</td>
+      <td>1944-08-26 13:03:24.297</td>
+      <td>White</td>
+      <td>Divorced</td>
+      <td>English</td>
+      <td>19.49</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>9BBF3A51-443D-438B-9289-B98B8E0577C0</td>
+      <td>Male</td>
+      <td>1944-11-25 06:12:56.860</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>16.76</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>E250799D-F6DE-4914-ADB4-B08A6E5029B9</td>
+      <td>Female</td>
+      <td>1945-08-04 19:03:00.757</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>Unknown</td>
+      <td>12.86</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>E483DE6E-D4E6-47FD-905B-22EE86EC7ACE</td>
+      <td>Male</td>
+      <td>1945-11-18 04:14:31.573</td>
+      <td>African American</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>16.88</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>967987B9-FFEF-4776-85CF-AE05CA81F583</td>
+      <td>Male</td>
+      <td>1947-02-13 10:26:55.520</td>
+      <td>White</td>
+      <td>Widowed</td>
+      <td>English</td>
+      <td>88.66</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>FB2ABB23-C9D0-4D09-8464-49BF0B982F0F</td>
+      <td>Male</td>
+      <td>1947-12-28 02:45:40.547</td>
+      <td>Unknown</td>
+      <td>Married</td>
+      <td>Icelandic</td>
+      <td>18.08</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1A40AF35-C6D4-4D46-B475-A15D84E8A9D5</td>
+      <td>Male</td>
+      <td>1949-01-10 15:37:35.543</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>11.25</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="range-condition">
+<h3><span class="section-number">15.3.2.3. </span>Range condition<a class="headerlink" href="#range-condition" title="Permalink to this heading">#</a></h3>
+<p>SQL cross-reference: <span class="xref std std-ref">sql:filtering:range</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;PatientCorePopulatedTable.txt&#39;</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">cond</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PatientDateOfBirth&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;1920-01-01&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PatientDateOfBirth&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s1">&#39;1950-01-01&#39;</span><span class="p">)</span>
+<span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;PatientDateOfBirth&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_new</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PatientID</th>
+      <th>PatientGender</th>
+      <th>PatientDateOfBirth</th>
+      <th>PatientRace</th>
+      <th>PatientMaritalStatus</th>
+      <th>PatientLanguage</th>
+      <th>PatientPopulationPercentageBelowPoverty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>21</th>
+      <td>DDC0BC57-7A4E-4E02-9282-177750B74FBC</td>
+      <td>Male</td>
+      <td>1921-03-26 14:38:51.803</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>18.41</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>C8556CC0-32FC-4CA5-A8CD-9CCF38816167</td>
+      <td>Female</td>
+      <td>1921-04-11 11:39:49.197</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>18.20</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0BC491C5-5A45-4067-BD11-A78BEA00D3BE</td>
+      <td>Female</td>
+      <td>1921-04-18 01:56:01.807</td>
+      <td>Unknown</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>18.05</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>53B9FFDD-F80B-43BE-93CF-C34A023EE7E9</td>
+      <td>Male</td>
+      <td>1921-08-22 19:17:09.227</td>
+      <td>White</td>
+      <td>Divorced</td>
+      <td>Icelandic</td>
+      <td>18.17</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>DA6CECFF-DE13-4C4C-919F-64E1A2B76C9D</td>
+      <td>Male</td>
+      <td>1924-06-27 19:37:58.823</td>
+      <td>Asian</td>
+      <td>Divorced</td>
+      <td>English</td>
+      <td>83.75</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7C788499-7798-484B-A027-9FCDC4C0DADB</td>
+      <td>Male</td>
+      <td>1926-08-13 10:22:16.247</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>11.89</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>25B786AF-0F99-478C-9CFA-0EA607E45834</td>
+      <td>Male</td>
+      <td>1926-08-20 00:21:38.870</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>93.60</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>4C201C71-CCED-40D1-9642-F9C8C485B854</td>
+      <td>Male</td>
+      <td>1926-09-22 09:17:14.713</td>
+      <td>African American</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>10.30</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>EA9B67E2-15F0-450B-A8A6-14F6E4AE3D12</td>
+      <td>Female</td>
+      <td>1930-04-08 20:59:31.057</td>
+      <td>Asian</td>
+      <td>Separated</td>
+      <td>Icelandic</td>
+      <td>98.40</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>81C5B13B-F6B2-4E57-9593-6E7E4C13B2CE</td>
+      <td>Female</td>
+      <td>1930-05-28 02:59:42.857</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>Icelandic</td>
+      <td>19.22</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>A0A976C8-9B30-4492-B8C4-5B25095B9192</td>
+      <td>Male</td>
+      <td>1931-05-26 14:54:15.847</td>
+      <td>Asian</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>19.52</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>FA157FA5-F488-4884-BF87-E144630D595C</td>
+      <td>Female</td>
+      <td>1932-11-01 06:19:56.577</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>16.32</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>B39DC5AC-E003-4E6A-91B6-FC07625A1285</td>
+      <td>Female</td>
+      <td>1935-11-03 21:07:09.040</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>15.31</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>1A220558-5996-43E1-AE5D-7B96180FED35</td>
+      <td>Male</td>
+      <td>1937-09-07 22:23:53.143</td>
+      <td>Asian</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>15.11</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>80D356B4-F974-441F-A5F2-F95986D119A2</td>
+      <td>Female</td>
+      <td>1938-03-06 18:24:18.297</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>18.88</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>21792512-2D40-4326-BEA2-A40127EB24FF</td>
+      <td>Male</td>
+      <td>1938-03-24 19:25:53.980</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>Unknown</td>
+      <td>89.44</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>C5D09468-574F-4802-B56F-DB38F4EB1687</td>
+      <td>Male</td>
+      <td>1939-07-07 19:39:49.753</td>
+      <td>African American</td>
+      <td>Married</td>
+      <td>Icelandic</td>
+      <td>10.87</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>FB909FAE-72DD-4F6F-9828-D92183DF185F</td>
+      <td>Male</td>
+      <td>1940-07-15 12:18:41.080</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>Spanish</td>
+      <td>14.90</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>FFCDECD6-4048-4DCB-B910-1218160005B3</td>
+      <td>Male</td>
+      <td>1941-05-06 14:56:42.687</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>14.49</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>2A5251B1-0945-47FA-A65C-7A6381562591</td>
+      <td>Female</td>
+      <td>1942-01-07 16:45:33.060</td>
+      <td>Unknown</td>
+      <td>Married</td>
+      <td>Spanish</td>
+      <td>18.05</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>CC9CDA72-B37A-4F8F-AFE4-B08F56A183BE</td>
+      <td>Female</td>
+      <td>1942-04-14 14:01:01.130</td>
+      <td>Asian</td>
+      <td>Married</td>
+      <td>Spanish</td>
+      <td>14.15</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>0E0EADE8-5592-4E0B-9F88-D7596E32EE08</td>
+      <td>Female</td>
+      <td>1942-07-13 21:15:37.517</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>Spanish</td>
+      <td>18.80</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>6623F5D6-D581-4268-9F9B-21612FBBF7B5</td>
+      <td>Female</td>
+      <td>1943-02-17 15:36:13.787</td>
+      <td>Asian</td>
+      <td>Single</td>
+      <td>Spanish</td>
+      <td>14.49</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>98F593D2-8894-49BB-93B9-5A0E2CF85E2E</td>
+      <td>Female</td>
+      <td>1944-07-15 19:04:11.487</td>
+      <td>African American</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>9.10</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>66154E24-D3EE-4311-89DB-6195278F9B3C</td>
+      <td>Female</td>
+      <td>1944-08-26 13:03:24.297</td>
+      <td>White</td>
+      <td>Divorced</td>
+      <td>English</td>
+      <td>19.49</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>9BBF3A51-443D-438B-9289-B98B8E0577C0</td>
+      <td>Male</td>
+      <td>1944-11-25 06:12:56.860</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>16.76</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>7A7332AD-88B1-4848-9356-E5260E477C59</td>
+      <td>Female</td>
+      <td>1944-12-01 06:30:01.543</td>
+      <td>Unknown</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>19.46</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>E250799D-F6DE-4914-ADB4-B08A6E5029B9</td>
+      <td>Female</td>
+      <td>1945-08-04 19:03:00.757</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>Unknown</td>
+      <td>12.86</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>E483DE6E-D4E6-47FD-905B-22EE86EC7ACE</td>
+      <td>Male</td>
+      <td>1945-11-18 04:14:31.573</td>
+      <td>African American</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>16.88</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>967987B9-FFEF-4776-85CF-AE05CA81F583</td>
+      <td>Male</td>
+      <td>1947-02-13 10:26:55.520</td>
+      <td>White</td>
+      <td>Widowed</td>
+      <td>English</td>
+      <td>88.66</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>FB2ABB23-C9D0-4D09-8464-49BF0B982F0F</td>
+      <td>Male</td>
+      <td>1947-12-28 02:45:40.547</td>
+      <td>Unknown</td>
+      <td>Married</td>
+      <td>Icelandic</td>
+      <td>18.08</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1A40AF35-C6D4-4D46-B475-A15D84E8A9D5</td>
+      <td>Male</td>
+      <td>1949-01-10 15:37:35.543</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>11.25</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="string-condition">
+<h3><span class="section-number">15.3.2.4. </span>String condition<a class="headerlink" href="#string-condition" title="Permalink to this heading">#</a></h3>
+<p>SQL cross-reference: <span class="xref std std-ref">sql:filtering:string</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;PatientCorePopulatedTable.txt&#39;</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+<span class="n">cond</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PatientID&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="s1">&#39;2A&#39;</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PatientID&#39;</span><span class="p">]</span> <span class="o">&lt;</span> <span class="s1">&#39;53&#39;</span><span class="p">)</span>
+<span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;PatientID&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_new</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PatientID</th>
+      <th>PatientGender</th>
+      <th>PatientDateOfBirth</th>
+      <th>PatientRace</th>
+      <th>PatientMaritalStatus</th>
+      <th>PatientLanguage</th>
+      <th>PatientPopulationPercentageBelowPoverty</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>11</th>
+      <td>2A5251B1-0945-47FA-A65C-7A6381562591</td>
+      <td>Female</td>
+      <td>1942-01-07 16:45:33.060</td>
+      <td>Unknown</td>
+      <td>Married</td>
+      <td>Spanish</td>
+      <td>18.05</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>2A8772FE-61DB-483E-B6BF-6C0A74BA9C2A</td>
+      <td>Female</td>
+      <td>1966-10-14 15:31:48.427</td>
+      <td>Asian</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>11.15</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>2E26695A-EFB0-4C7F-9318-E3030B154E39</td>
+      <td>Female</td>
+      <td>1963-06-28 05:37:36.843</td>
+      <td>Asian</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>14.20</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2EE42DEF-37CA-4694-827E-FA4EAF882BFC</td>
+      <td>Male</td>
+      <td>1964-04-27 00:41:40.410</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>18.91</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3231F930-2978-4F50-8234-755449851E7B</td>
+      <td>Male</td>
+      <td>1979-05-26 04:58:10.627</td>
+      <td>White</td>
+      <td>Single</td>
+      <td>English</td>
+      <td>18.36</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>35FE7491-1A1D-48CB-810C-8DC2599AB3DD</td>
+      <td>Male</td>
+      <td>1969-11-02 06:34:34.527</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>4.51</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>36775002-9EC3-4889-AD4F-80DC6855C8D8</td>
+      <td>Female</td>
+      <td>1963-07-16 22:16:48.477</td>
+      <td>Asian</td>
+      <td>Single</td>
+      <td>Spanish</td>
+      <td>15.56</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>36E2F89E-777A-4D77-9D95-0D70A8AB416F</td>
+      <td>Male</td>
+      <td>1980-05-30 13:23:50.703</td>
+      <td>African American</td>
+      <td>Separated</td>
+      <td>English</td>
+      <td>19.36</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>3B11D6B3-A36A-4B69-A437-C29BF425A941</td>
+      <td>Female</td>
+      <td>1954-05-18 10:19:19.110</td>
+      <td>Asian</td>
+      <td>Separated</td>
+      <td>English</td>
+      <td>10.80</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>3E462A8F-7B90-43A1-A8B6-AD82CB5002C9</td>
+      <td>Female</td>
+      <td>1986-12-20 16:41:34.793</td>
+      <td>White</td>
+      <td>Married</td>
+      <td>Spanish</td>
+      <td>18.33</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>49DADA25-F2C2-42BB-8210-D78E6C7B0D48</td>
+      <td>Male</td>
+      <td>1962-04-08 10:18:26.263</td>
+      <td>African American</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>19.50</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>4C201C71-CCED-40D1-9642-F9C8C485B854</td>
+      <td>Male</td>
+      <td>1926-09-22 09:17:14.713</td>
+      <td>African American</td>
+      <td>Married</td>
+      <td>English</td>
+      <td>10.30</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</section>
+<section id="wildcard-matches">
+<h3><span class="section-number">15.3.2.5. </span>Wildcard Matches<a class="headerlink" href="#wildcard-matches" title="Permalink to this heading">#</a></h3>
+<p>SQL cross-reference: <span class="xref std std-ref">sql:filtering:startswith</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;AdmissionsDiagnosesCorePopulatedTable.txt&#39;</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">cond</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PrimaryDiagnosisCode&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">startswith</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">))</span>
+<span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;PrimaryDiagnosisCode&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_new</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PatientID</th>
+      <th>AdmissionID</th>
+      <th>PrimaryDiagnosisCode</th>
+      <th>PrimaryDiagnosisDescription</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>80AC01B2-BD55-4BE0-A59A-4024104CF4E9</td>
+      <td>2</td>
+      <td>M01.X</td>
+      <td>Direct infection of joint in infectious and pa...</td>
+    </tr>
+    <tr>
+      <th>78</th>
+      <td>4C201C71-CCED-40D1-9642-F9C8C485B854</td>
+      <td>5</td>
+      <td>M01.X1</td>
+      <td>Direct infection of shoulder joint in infectio...</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>25B786AF-0F99-478C-9CFA-0EA607E45834</td>
+      <td>1</td>
+      <td>M01.X5</td>
+      <td>Direct infection of hip in infectious and para...</td>
+    </tr>
+    <tr>
+      <th>71</th>
+      <td>21792512-2D40-4326-BEA2-A40127EB24FF</td>
+      <td>4</td>
+      <td>M01.X72</td>
+      <td>Direct infection of left ankle and foot in inf...</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>DA6CECFF-DE13-4C4C-919F-64E1A2B76C9D</td>
+      <td>2</td>
+      <td>M02.35</td>
+      <td>Reiter's disease, hip</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>43</th>
+      <td>9E18822E-7D13-45C7-B50E-F95CFF92BC3E</td>
+      <td>2</td>
+      <td>M90.6</td>
+      <td>Osteitis deformans in neoplastic diseases</td>
+    </tr>
+    <tr>
+      <th>55</th>
+      <td>8856096E-E59C-4156-A767-C091AF799C80</td>
+      <td>1</td>
+      <td>M90.6</td>
+      <td>Osteitis deformans in neoplastic diseases</td>
+    </tr>
+    <tr>
+      <th>53</th>
+      <td>135C831F-7DA5-46C0-959C-EBCBD8810B43</td>
+      <td>4</td>
+      <td>M90.632</td>
+      <td>Osteitis deformans in neoplastic diseases, lef...</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>21792512-2D40-4326-BEA2-A40127EB24FF</td>
+      <td>3</td>
+      <td>M90.642</td>
+      <td>Osteitis deformans in neoplastic diseases, lef...</td>
+    </tr>
+    <tr>
+      <th>61</th>
+      <td>C60FE675-CA52-4C55-A233-F4B27E94987F</td>
+      <td>3</td>
+      <td>M90.86</td>
+      <td>Osteopathy in diseases classified elsewhere, l...</td>
+    </tr>
+  </tbody>
+</table>
+<p>81 rows × 4 columns</p>
+</div></div></div>
+</div>
+<p>SQL cross-reference: <span class="xref std std-ref">sql:filtering:endswith</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;AdmissionsDiagnosesCorePopulatedTable.txt&#39;</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">cond</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PrimaryDiagnosisCode&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">))</span>
+<span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;PrimaryDiagnosisCode&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_new</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PatientID</th>
+      <th>AdmissionID</th>
+      <th>PrimaryDiagnosisCode</th>
+      <th>PrimaryDiagnosisDescription</th>
+    </tr>
+  </thead>
+  <tbody>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>SQL cross-reference: <span class="xref std std-ref">sql:filtering:contains</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">IPython.display</span> <span class="kn">import</span> <span class="n">display</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s1">&#39;AdmissionsDiagnosesCorePopulatedTable.txt&#39;</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
+
+<span class="n">cond</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PrimaryDiagnosisCode&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">contains</span><span class="p">(</span><span class="s1">&#39;5.&#39;</span><span class="p">))</span>
+<span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;PrimaryDiagnosisCode&#39;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">df_new</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PatientID</th>
+      <th>AdmissionID</th>
+      <th>PrimaryDiagnosisCode</th>
+      <th>PrimaryDiagnosisDescription</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>11</th>
+      <td>DDC0BC57-7A4E-4E02-9282-177750B74FBC</td>
+      <td>4</td>
+      <td>A52.0</td>
+      <td>Cardiovascular and cerebrovascular syphilis</td>
+    </tr>
+    <tr>
+      <th>33</th>
+      <td>967987B9-FFEF-4776-85CF-AE05CA81F583</td>
+      <td>2</td>
+      <td>B95.1</td>
+      <td>Streptococcus, group B, as the cause of diseas...</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>DDC0BC57-7A4E-4E02-9282-177750B74FBC</td>
+      <td>2</td>
+      <td>B95.62</td>
+      <td>Methicillin resistant Staphylococcus aureus in...</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>DDC0BC57-7A4E-4E02-9282-177750B74FBC</td>
+      <td>3</td>
+      <td>C05.1</td>
+      <td>Malignant neoplasm of soft palate</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>1A8791E3-A61C-455A-8DEE-763EB90C9B2C</td>
+      <td>3</td>
+      <td>C15.8</td>
+      <td>Malignant neoplasm of overlapping sites of eso...</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>87</th>
+      <td>21792512-2D40-4326-BEA2-A40127EB24FF</td>
+      <td>1</td>
+      <td>O99.351</td>
+      <td>Diseases of the nervous system complicating pr...</td>
+    </tr>
+    <tr>
+      <th>85</th>
+      <td>714823AF-C52C-414C-B53B-C43EACD194C3</td>
+      <td>3</td>
+      <td>O9A.513</td>
+      <td>Psychological abuse complicating pregnancy, th...</td>
+    </tr>
+    <tr>
+      <th>49</th>
+      <td>53B9FFDD-F80B-43BE-93CF-C34A023EE7E9</td>
+      <td>3</td>
+      <td>O9A.53</td>
+      <td>Psychological abuse complicating the puerperium</td>
+    </tr>
+    <tr>
+      <th>70</th>
+      <td>65A7FBE0-EA9F-49E9-9824-D8F3AD98DAC0</td>
+      <td>2</td>
+      <td>S35.415</td>
+      <td>Laceration of left renal vein</td>
+    </tr>
+    <tr>
+      <th>76</th>
+      <td>C8556CC0-32FC-4CA5-A8CD-9CCF38816167</td>
+      <td>2</td>
+      <td>Z95.810</td>
+      <td>Presence of automatic (implantable) cardiac de...</td>
+    </tr>
+  </tbody>
+</table>
+<p>94 rows × 4 columns</p>
+</div></div></div>
+</div>
 </section>
 </section>
 </section>
@@ -2088,6 +3451,10 @@ document.write(`
 </li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#filtering">15.3.2. Filtering</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditional-evaluation">15.3.2.1. Conditional Evaluation</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-parenthesis">15.3.2.2. Using Parenthesis</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range-condition">15.3.2.3. Range condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-condition">15.3.2.4. String condition</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wildcard-matches">15.3.2.5. Wildcard Matches</a></li>
 </ul>
 </li>
 </ul>
