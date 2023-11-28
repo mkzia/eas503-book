@@ -14,19 +14,26 @@ kernelspec:
 # Numpy and Pandas
 
 ## NumPy
+
 ### Description
-- Ref: https://docs.scipy.org/doc/numpy/user/whatisnumpy.html
-- Ref: https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf
-- NumPy provides a multidimensional array object. 
+
+- Ref: <https://docs.scipy.org/doc/numpy/user/whatisnumpy.html>
+- Ref: <https://s3.amazonaws.com/assets.datacamp.com/blog_assets/Numpy_Python_Cheat_Sheet.pdf>
+- NumPy provides a multidimensional array object.
 - Each object comes with an assortment of routines for fast operations on arrays, including mathematical, logical, shape manipulation, sorting, selecting, I/O, discrete Fourier transforms, basic linear algebra, basic statistical operations, random simulation and much more.
-- Basically, you can use NumPy to create ndarray (N-dimensional array) and easily manipulate the array. It is super fast because it is written in C. 
+- Basically, you can use NumPy to create ndarray (N-dimensional array) and easily manipulate the array. It is super fast because it is written in C.
+
 ### How is it different from Python arrays?
-- Python lists can be modified -- you can add and remove elements. NumPy arrays have a fixed size at creation. 
-- Python lists can contain different data types. NumPy arrays can only have one data type. If you put in mixed types, they become a string. 
+
+- Python lists can be modified -- you can add and remove elements. NumPy arrays have a fixed size at creation.
+- Python lists can contain different data types. NumPy arrays can only have one data type. If you put in mixed types, they become a string.
 - NumPy arrays come prepackaged with advanced mathematical operations. The operations are super fast even on large numbers of data and they use less memory.
+
 ### Why use NumPy
-- Most data analysis programs use NumPy to manipulate data. They might take in data as standard Python lists, but they convert it to a NumPy array and manipulate the data using NumPy routines and output the transformed data as a NumPy array. 
+
+- Most data analysis programs use NumPy to manipulate data. They might take in data as standard Python lists, but they convert it to a NumPy array and manipulate the data using NumPy routines and output the transformed data as a NumPy array.
 - NumPy data array is the main data type used in most scientific and mathematical Python-based packages.
+
 ### Simple example
 
 ```python
@@ -47,11 +54,12 @@ print(vector * vector)
 
 ```
 
-
 ### Numpy Basics
-- NumPy arrays can be a 1-D array, called a vector, or a 2-D array, called a matrix 
+
+- NumPy arrays can be a 1-D array, called a vector, or a 2-D array, called a matrix
 
 #### NumPy casting -- covert Python list to a NumPy array
+
 ```Python
 my_list = [1, 2, 3]
 print(my_list)
@@ -103,18 +111,21 @@ np.linspace(0, 10, 5)
 np.linspace(1900, 2000, 11)
 ```
 
-## Create an identify matrix 
+## Create an identify matrix
+
 ```Python
 np.eye(3)
 ```
 
 ## Creating an empty array
+
 ```python
 np.empty((2,3))
 ```
 
 ## Creating Random Numbers
-- Ref: https://docs.scipy.org/doc/numpy-1.14.0/reference/routines.random.html
+
+- Ref: <https://docs.scipy.org/doc/numpy-1.14.0/reference/routines.random.html>
 
 ```python
 # Uniform distribution 
@@ -141,6 +152,7 @@ print(vector.reshape(3,4))
 ```
 
 ## Basic array operations
+
 ```python
 vector = np.random.randint(1,50,25)
 # Min
@@ -159,6 +171,7 @@ my_matrix.shape
 ```
 
 ## Indexing a 1-D array -- vector
+
 ```python
 vector = np.array(range(10))
 # vector[index]
@@ -176,17 +189,18 @@ vector[-1]
 ```
 
 ## Setting multiple values at once -- Broadcasting
+
 - There are two main features of NumPy arrays
   - Broadcasting -- set multiple values at once
   - Vectorization -- no need for explicit looping -- example, vector multiplication or squaring
-
 
 ```python
 vector[3:6] = 12
 ```
 
 ## BE CAREFUL
-- If you store a slice of an array in a new variable, changes in the new variable will be reflected in the original array. 
+
+- If you store a slice of an array in a new variable, changes in the new variable will be reflected in the original array.
 
 ```python
 vector = np.array(range(10))
@@ -196,6 +210,7 @@ print(vector)
 ```
 
 - Copy the array if you need a copy
+
 ```python
 vector = np.array(range(10))
 my_slice_copy = vector[3:7].copy()
@@ -203,7 +218,9 @@ print(vector)
 ```
 
 ## Indexing a 2-D array -- Matrix
+
 - Remember -- Python is zero-indexed
+
 ```python
 matrix = np.array(range(1,10)).reshape((3,3))
 matrix[0,0]
@@ -255,8 +272,10 @@ vector / 10
 ```
 
 ## Array operations -- Advanced
-- Ref: https://docs.scipy.org/doc/numpy/reference/ufuncs.html#math-operations
-- https://stackoverflow.com/questions/25773245/ambiguity-in-pandas-dataframe-numpy-array-axis-definition/43413031
+
+- Ref: <https://docs.scipy.org/doc/numpy/reference/ufuncs.html#math-operations>
+- <https://stackoverflow.com/questions/25773245/ambiguity-in-pandas-dataframe-numpy-array-axis-definition/43413031>
+
 ```python
 vector = np.arange(10)
 np.max(vector)
@@ -292,14 +311,11 @@ matrix = np.array([1,2,3]*3).reshape(3,3)
 np.unique(matrix.reshape(3,3))
 ```
 
-
-
-
 ## Pandas
+
 - Built-on top of NumPy -- meaning the underlying data structure used is ndarray
 - Pandas provides series which are like NumPy arrays but with associated index labels -- meaning are like column  labels or row labels. Element data type can be different
 - Pandas also provides dataframes which are like Excel sheets or database tables
-
 
 ### Basic examples
 
@@ -383,9 +399,10 @@ s1 = pd.Series(data1)
 s2 = pd.Series(data2)
 ```
 
-## Dataframes -- 
+## Dataframes --
+
 - Dataframe is composed of series
-- Ref: https://pandas.pydata.org/docs/reference/api/pandas.io.formats.style.Styler.html#pandas.io.formats.style.Styler
+- Ref: <https://pandas.pydata.org/docs/reference/api/pandas.io.formats.style.Styler.html#pandas.io.formats.style.Styler>
 
 ```python
 import numpy as np
@@ -426,6 +443,7 @@ df.drop('student3', inplace=True)
 ```
 
 ## Select Dataframe rows
+
 ```python
 header = ['exam1', 'exam2', 'exam3']
 data = np.random.randint(65, 101, 12).reshape(4,3)
@@ -441,6 +459,7 @@ df.iloc[0] ## remember that column names do not count as rows
 ## Method 1 -- Square brackets
 
 ## Method 1.1 -- index/text -- #column wise
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -449,6 +468,7 @@ display(df['StudentName'])
 ```
 
 ## Method 1.2 -- list, NOT TUPLE # column wise
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -456,8 +476,8 @@ df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')
 display(df[['StudentName', 'E1']]) 
 ```
 
-
 ## Method 1.3 -- a slice  # row wise
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -466,6 +486,7 @@ display(df[1:5])
 ```
 
 ## Method 1.4?? -- slice and list?
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -473,8 +494,8 @@ df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')
 display(df[1:5, ['E1', 'E2']])
 ```
 
-
 ## Method 1.5?? -- slice and slice?
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -483,10 +504,12 @@ display(df[1:5, 1:5])
 ```
 
 ## Method 2 -- .iloc
-- It uses square braces [] and not () 
+
+- It uses square braces [] and not ()
 - It uses numerical index
 
 ### Method 2.1 -- index only!!! Cannot index by location index with a non-integer key
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -494,8 +517,8 @@ df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')
 display(df.iloc[0])
 ```
 
-
 ### Method 2.2 -- list
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -504,6 +527,7 @@ display(df.iloc[[0, 1, 2]])
 ```
 
 ### Method 2.3 -- list and slice
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -511,8 +535,8 @@ df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')
 display(df.iloc[[0, 1, 2], :])
 ```
 
-
 ### Method 2.4 -- list and list
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -520,8 +544,8 @@ df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')
 display(df.iloc[[0, 1, 2], [0, 1]])
 ```
 
-
 ### Method 2.5 -- slice
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -529,8 +553,8 @@ df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')
 display(df.iloc[0:3])
 ```
 
-
 ### Method 2.6 -- slice and list
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -538,8 +562,8 @@ df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')
 display(df.iloc[:, [1, 2]])
 ```
 
-
 ## Method 2.7 -- sliceS
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -547,11 +571,18 @@ df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')
 display(df.iloc[0:3, 1:3])
 ```
 
+## Method 3 -- .loc
 
-## Method 3 -- .loc 
-- If you didnot specify the index, then numbers are used!
+- If you did not specify the index, then numbers are used!
+
+:::{warning}
+When you use `.loc` for indexing, it includes the end point. This is unlike `.iloc`, which does not include the end point.
+:::
+
+
 
 ## Method 3.1 -- index # row-wise
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -559,8 +590,8 @@ df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')
 display(df.loc[3])
 ```
 
-
 ## Method 3.2 -- txt # row-wise
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -569,8 +600,8 @@ df.set_index(df['StudentName'], inplace=True)
 display(df.loc['student4'])
 ```
 
-
 ## Method 3.3 -- list
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -579,8 +610,8 @@ df.set_index(df['StudentName'], inplace=True)
 display(df.loc[['student4', 'student1']])
 ```
 
-
 ## Method 3.4 -- listS
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -589,8 +620,8 @@ df.set_index(df['StudentName'], inplace=True)
 display(df.loc[['student4', 'student1'], ['E1', 'E2']])
 ```
 
-
 ## Method 3.5 -- slice and list
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -600,6 +631,7 @@ display(df.loc[:, ['E1', 'E2']])
 ```
 
 ## Method 3.6 -- list and Slice
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -608,8 +640,8 @@ df.set_index(df['StudentName'], inplace=True)
 display(df.loc[['student1', 'student2'], :])
 ```
 
-
 ## Method 3.7 -- slice and Slice
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -619,6 +651,7 @@ display(df.loc['student1':'student5', :])
 ```
 
 ## Method 3.8 -- slice
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -626,7 +659,9 @@ df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')
 df.set_index(df['StudentName'], inplace=True) 
 display(df.loc['student1':'student5'])
 ```
+
 ## Method 3.9 -- slice and slice
+
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -636,6 +671,7 @@ display(df.loc[:, 'E1':'E4'])
 ```
 
 ## iterrows -- iterate over rows
+
 - iterate over the data row-wise. The first element is the index and second element is the row values
 
 ```{code-cell} ipython3
@@ -648,7 +684,6 @@ for idx, row in df.iterrows():
 
 ## iteritems -- iterate over columns
 
-
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
@@ -657,8 +692,8 @@ for column_name, column in df.iteritems():
     print(column_name, column)
 ```
 
-
 ## Select subset of data
+
 ```python
 header = ['exam1', 'exam2', 'exam3']
 data = np.random.randint(65, 101, 12).reshape(4,3)
@@ -670,6 +705,7 @@ df.loc[['student1', 'student3'], ['exam1', 'exam3']]
 ```
 
 ## Use conditions to select
+
 ```python
 header = ['exam1', 'exam2', 'exam3']
 data = np.random.randint(65, 101, 12).reshape(4,3)
@@ -691,8 +727,8 @@ df[(df['exam1']>=85) | (df['exam2']>=85)]
 df[(df['exam1']>=85) | (df['exam2']>=85)]['exam3']
 ```
 
-
 ## Adding student index
+
 ```python
 header = ['exam1', 'exam2', 'exam3']
 data = np.random.randint(65, 101, 12).reshape(4,3)
@@ -706,6 +742,7 @@ df.reset_index(inplace=True)
 ```
 
 ## Multi-index data
+
 ```python
 students = 'student1 student1 student1 student2 student2 student2 student3 student3 student3'
 exams = 'exam1 exam2 exam3'.split()*3
@@ -722,9 +759,7 @@ df.xs('student1')
 df.xs('exam1', level='Exams')
 ```
 
-
 ## Dealing with missing data
-
 
 ```python
 my_dict = {'student1': [90, 84, np.nan], 'student2': [77, np.nan, np.nan], 'student3': [88, 65, 93]}
@@ -740,8 +775,8 @@ df.drop(axis=0, labels=[1,2])
 df.drop(axis=1, columns=['student1']) 
 ```
 
-
 ## Groupby
+
 ```python
 my_dict = {
     'Exams': 'exam1 exam1 exam1'.split() + 'exam2 exam2 exam2'.split() + 'exam3 exam3 exam3'.split(),
@@ -757,6 +792,7 @@ df.groupby('Students').describe().transpose()
 ```
 
 ## Merging  -- SQL JOIN
+
 ```python
 departments = { 
     'DepartmentId': [1, 2, 3, 4],
@@ -792,12 +828,14 @@ data = pd.merge(df3, pd.merge(df2, df1, how='inner', on='DepartmentId'), how='in
 data[['StudentName', 'Mark', 'DepartmentName']] 
 
 ```
-- ref: https://stackoverflow.com/a/48411543
+
+- ref: <https://stackoverflow.com/a/48411543>
 
 ## Concatenation
+
 ```python
 d1 = {
-    'C0': ['COR0', 'COR1', 'COR2'],
+    'C0': ['C0R0', 'C0R1', 'C0R2'],
     'C1': ['C1R0', 'C1R1', 'C2R2'],
     'C2': ['C2R0', 'C2R1', 'C2R2'],
 }
@@ -851,8 +889,8 @@ df3 = pd.DataFrame(d3, index=[7, 8, 9])
 pd.concat([df1, df2, df3])
 ```
 
-
 ## More Pandas Operations
+
 ```python
 data['DepartmentName'].unique() 
 data['DepartmentName'].nunique() 
@@ -861,7 +899,9 @@ data[data['Mark']>17]
 ```
 
 ## Lambda with Pandas
-- Scale marks by 5 
+
+- Scale marks by 5
+
 ```python
 
 def times5(val):
@@ -872,6 +912,7 @@ data['Mark'].apply(times5)
 data['Mark'].apply(lambda val: val*5)
 
 ```
+
 - Upper all department names
 
 ```python
@@ -882,6 +923,7 @@ data['DepartmentName'].apply(upper)
 
 data['DepartmentName'].apply(lambda string: string.upper())
 ```
+
 ```python
 
 mapping = {18: 'B', 14: 'C', 19: 'A-', 20: 'A+'}
@@ -890,21 +932,22 @@ df3['Mark'].map(mapping)
 
 ```
 
-
 ## Dropping columns
+
 ```Python
 data.columns
 data.drop(['StudentId', 'MarkId' , 'DepartmentId'], axis=1)
 ```
 
-## Sorting 
+## Sorting
+
 ```Python
 data.sort_values('Mark')
 data.sort_values('Mark', ascending=False)
 ```
 
-
 ## Importing CSV, TSV
+
 ```python
 
 data = pd.read_csv('students.tsv', sep='\t', names=['lastname', 'firstname', 'username', 'exam1', 'exam2', 'exam3']) 
@@ -919,6 +962,7 @@ data.to_csv('output.tsv', sep='\t', index=False, header=False)
 ```
 
 ## Other methods
+
 ```python
 data.head()
 data.head(2)
@@ -936,6 +980,7 @@ data.describe()
 ```
 
 ## More data manipulation
+
 ```python
 data[data['exam1'].between(75, 85)] 
 data[data['exam1'].isin([75, 85, 95])]  
@@ -945,14 +990,17 @@ np.sort(data['exam1'].unique())
 ```
 
 ## Misc
+
 - Iterate over the data frame
-  - items: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.items.html
-  - iteritems: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iteritems.html
-- Where: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.where.html
-- Plotting: https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html
+  - items: <https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.items.html>
+  - iteritems: <https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.iteritems.html>
+- Where: <https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.where.html>
+- Plotting: <https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html>
 - to_csv
-- to_sql: https://datacarpentry.org/python-ecology-lesson/09-working-with-sql/index.html
+- to_sql: <https://datacarpentry.org/python-ecology-lesson/09-working-with-sql/index.html>
+
 ## A Previous Example in Pandas
+
 ```python
 import numpy as np
 import pandas as pd
@@ -1033,9 +1081,7 @@ data = pd.merge(pd.merge(df_employees_projects, df_employees, how='left', on='Em
 print(data)
 ```
 
-
-
 ## References
-Ref: https://www.kaggle.com/shovitbhari/pandas-75-exercises-with-solutions
-Ref: https://pythonspeed.com/memory/
 
+Ref: <https://www.kaggle.com/shovitbhari/pandas-75-exercises-with-solutions>
+Ref: <https://pythonspeed.com/memory/>

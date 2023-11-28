@@ -289,7 +289,7 @@ filename = 'AdmissionsDiagnosesCorePopulatedTable.txt'
 
 df = pd.read_csv(filename, delimiter='\t')
 
-cond = (df['PrimaryDiagnosisCode'].str.endswith('M'))
+cond = (df['PrimaryDiagnosisCode'].str.endswith('4'))
 df_new = df[cond].reset_index(drop=True).sort_values('PrimaryDiagnosisCode')
 display(df_new)
 ```

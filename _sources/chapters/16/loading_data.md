@@ -11,6 +11,8 @@ kernelspec:
 ---
 
 
+
+
 # Loading Data
 
 ## Ipython Setting

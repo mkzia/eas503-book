@@ -1574,7 +1574,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_2337/1037439662.py:7: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_27584/1037439662.py:7: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   pd.DataFrame(df[[&#39;PrimaryDiagnosisCode&#39;, &#39;PrimaryDiagnosisDescription&#39;]].apply(lambda row: f&#39;({row[0]}) {row[1]}&#39;, axis=1), columns=[&#39;CodeWDescription&#39;])
 </pre></div>
 </div>
@@ -3205,7 +3205,7 @@ document.write(`
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">)</span>
 
-<span class="n">cond</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PrimaryDiagnosisCode&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;M&#39;</span><span class="p">))</span>
+<span class="n">cond</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;PrimaryDiagnosisCode&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">str</span><span class="o">.</span><span class="n">endswith</span><span class="p">(</span><span class="s1">&#39;4&#39;</span><span class="p">))</span>
 <span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">cond</span><span class="p">]</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;PrimaryDiagnosisCode&#39;</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df_new</span><span class="p">)</span>
 </pre></div>
@@ -3237,6 +3237,167 @@ document.write(`
     </tr>
   </thead>
   <tbody>
+    <tr>
+      <th>21</th>
+      <td>868E700E-3C56-458F-A477-078D671DCB20</td>
+      <td>2</td>
+      <td>B33.4</td>
+      <td>Hantavirus (cardio)-pulmonary syndrome [HPS] [...</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>66154E24-D3EE-4311-89DB-6195278F9B3C</td>
+      <td>4</td>
+      <td>B97.34</td>
+      <td>Human T-cell lymphotrophic virus, type II [HTL...</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>DA6CECFF-DE13-4C4C-919F-64E1A2B76C9D</td>
+      <td>3</td>
+      <td>C71.4</td>
+      <td>Malignant neoplasm of occipital lobe</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>6E70D84D-C75F-477C-BC37-9177C3698C66</td>
+      <td>2</td>
+      <td>D13.4</td>
+      <td>Benign neoplasm of liver</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>79A7BA2A-D35A-4CB8-A835-6BAA13B0058C</td>
+      <td>3</td>
+      <td>D14</td>
+      <td>Benign neoplasm of middle ear and respiratory ...</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>6D8008ED-D623-4BE4-B93B-335F9797C170</td>
+      <td>3</td>
+      <td>D41.4</td>
+      <td>Neoplasm of uncertain behavior of bladder</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>35FE7491-1A1D-48CB-810C-8DC2599AB3DD</td>
+      <td>2</td>
+      <td>D48.4</td>
+      <td>Neoplasm of uncertain behavior of peritoneum</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>25B786AF-0F99-478C-9CFA-0EA607E45834</td>
+      <td>5</td>
+      <td>E08.64</td>
+      <td>Diabetes mellitus due to underlying condition ...</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>016A590E-D093-4667-A5DA-D68EA6987D93</td>
+      <td>2</td>
+      <td>E11.64</td>
+      <td>Type 2 diabetes mellitus with hypoglycemia</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>EA9B67E2-15F0-450B-A8A6-14F6E4AE3D12</td>
+      <td>1</td>
+      <td>E72.4</td>
+      <td>Disorders of ornithine metabolism</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>CC12B481-B516-455B-884F-4CA900B29F2E</td>
+      <td>2</td>
+      <td>E87.4</td>
+      <td>Mixed disorder of acid-base balance</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0A9BA3E4-CF3C-49C4-9774-5EEA2EE7D123</td>
+      <td>1</td>
+      <td>F31.4</td>
+      <td>Bipolar disorder, current episode depressed, s...</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>64182B95-EB72-4E2B-BE77-8050B71498CE</td>
+      <td>2</td>
+      <td>F45.4</td>
+      <td>Pain disorders related to psychological factors</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>80D356B4-F974-441F-A5F2-F95986D119A2</td>
+      <td>1</td>
+      <td>H34</td>
+      <td>Retinal vascular occlusions</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>81C5B13B-F6B2-4E57-9593-6E7E4C13B2CE</td>
+      <td>1</td>
+      <td>I25.84</td>
+      <td>Coronary atherosclerosis due to calcified coro...</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>220C8D43-1322-4A9D-B890-D426942A3649</td>
+      <td>3</td>
+      <td>J14</td>
+      <td>Pneumonia due to Hemophilus influenzae</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>80D356B4-F974-441F-A5F2-F95986D119A2</td>
+      <td>2</td>
+      <td>K50.014</td>
+      <td>Crohn's disease of small intestine with abscess</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>FA157FA5-F488-4884-BF87-E144630D595C</td>
+      <td>2</td>
+      <td>M06.34</td>
+      <td>Rheumatoid nodule, hand</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>6D5DCAC1-17FE-4D7C-923B-806EFBA3E6DF</td>
+      <td>3</td>
+      <td>M49.84</td>
+      <td>Spondylopathy in diseases classified elsewhere...</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>2A5251B1-0945-47FA-A65C-7A6381562591</td>
+      <td>4</td>
+      <td>M84</td>
+      <td>Disorder of continuity of bone</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>F0B53A2C-98CA-415D-B928-E3FD0E52B22A</td>
+      <td>3</td>
+      <td>N18.4</td>
+      <td>Chronic kidney disease, stage 4 (severe)</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>53B9FFDD-F80B-43BE-93CF-C34A023EE7E9</td>
+      <td>2</td>
+      <td>Q60.4</td>
+      <td>Renal hypoplasia, bilateral</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>3B11D6B3-A36A-4B69-A437-C29BF425A941</td>
+      <td>2</td>
+      <td>T82.4</td>
+      <td>Mechanical complication of vascular dialysis c...</td>
+    </tr>
   </tbody>
 </table>
 </div></div></div>
