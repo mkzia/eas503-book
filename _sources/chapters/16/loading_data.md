@@ -68,16 +68,19 @@ What is the difference between `.target` and `.target_names`?
 - Iris data 
 ```{code-cell} ipython3
 :tags: ["output_scroll"]
-from sklearn.datasets import load_diabetesiris_dataset = load_iris()
+from sklearn.datasets import load_diabetes 
 diabetes =  load_diabetes()
 print(diabetes.DESCR)
 print(diabetes.data.shape)
 ```
 
 
+
 ### Loading the Data into Pandas
 ```{code-cell} ipython3
 import pandas as pd
+from sklearn.datasets import load_diabetes 
+diabetes =  load_diabetes()
 pd.DataFrame(diabetes.data, columns=diabetes.feature_names)
 ```
 

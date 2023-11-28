@@ -970,7 +970,7 @@ latter are NOT linearly separable from each other.
 </ul>
 <div class="cell tag_output_scroll docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_diabetesiris_dataset</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_diabetes</span> 
 <span class="n">diabetes</span> <span class="o">=</span>  <span class="n">load_diabetes</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">diabetes</span><span class="o">.</span><span class="n">DESCR</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">diabetes</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">shape</span><span class="p">)</span>
@@ -978,10 +978,46 @@ latter are NOT linearly separable from each other.
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>  <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-    <span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_diabetesiris_dataset</span> <span class="o">=</span> <span class="n">load_iris</span><span class="p">()</span>
-                                                           <span class="o">^</span>
-<span class="ne">SyntaxError</span>: invalid syntax
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>.. _diabetes_dataset:
+
+Diabetes dataset
+----------------
+
+Ten baseline variables, age, sex, body mass index, average blood
+pressure, and six blood serum measurements were obtained for each of n =
+442 diabetes patients, as well as the response of interest, a
+quantitative measure of disease progression one year after baseline.
+
+**Data Set Characteristics:**
+
+  :Number of Instances: 442
+
+  :Number of Attributes: First 10 columns are numeric predictive values
+
+  :Target: Column 11 is a quantitative measure of disease progression one year after baseline
+
+  :Attribute Information:
+      - age     age in years
+      - sex
+      - bmi     body mass index
+      - bp      average blood pressure
+      - s1      tc, total serum cholesterol
+      - s2      ldl, low-density lipoproteins
+      - s3      hdl, high-density lipoproteins
+      - s4      tch, total cholesterol / HDL
+      - s5      ltg, possibly log of serum triglycerides level
+      - s6      glu, blood sugar level
+
+Note: Each of these 10 feature variables have been mean centered and scaled by the standard deviation times the square root of `n_samples` (i.e. the sum of squares of each column totals 1).
+
+Source URL:
+https://www4.stat.ncsu.edu/~boos/var.select/diabetes.html
+
+For more information see:
+Bradley Efron, Trevor Hastie, Iain Johnstone and Robert Tibshirani (2004) &quot;Least Angle Regression,&quot; Annals of Statistics (with discussion), 407-499.
+(https://web.stanford.edu/~hastie/Papers/LARS/LeastAngle_2002.pdf)
+
+(442, 10)
 </pre></div>
 </div>
 </div>
@@ -991,21 +1027,191 @@ latter are NOT linearly separable from each other.
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">load_diabetes</span> 
+<span class="n">diabetes</span> <span class="o">=</span>  <span class="n">load_diabetes</span><span class="p">()</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diabetes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">diabetes</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">diabetes</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="n">diabetes</span><span class="o">.</span><span class="n">feature_names</span><span class="p">)</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">NameError</span>: name &#39;diabetes&#39; is not defined
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>age</th>
+      <th>sex</th>
+      <th>bmi</th>
+      <th>bp</th>
+      <th>s1</th>
+      <th>s2</th>
+      <th>s3</th>
+      <th>s4</th>
+      <th>s5</th>
+      <th>s6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.038076</td>
+      <td>0.050680</td>
+      <td>0.061696</td>
+      <td>0.021872</td>
+      <td>-0.044223</td>
+      <td>-0.034821</td>
+      <td>-0.043401</td>
+      <td>-0.002592</td>
+      <td>0.019907</td>
+      <td>-0.017646</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.001882</td>
+      <td>-0.044642</td>
+      <td>-0.051474</td>
+      <td>-0.026328</td>
+      <td>-0.008449</td>
+      <td>-0.019163</td>
+      <td>0.074412</td>
+      <td>-0.039493</td>
+      <td>-0.068332</td>
+      <td>-0.092204</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.085299</td>
+      <td>0.050680</td>
+      <td>0.044451</td>
+      <td>-0.005670</td>
+      <td>-0.045599</td>
+      <td>-0.034194</td>
+      <td>-0.032356</td>
+      <td>-0.002592</td>
+      <td>0.002861</td>
+      <td>-0.025930</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-0.089063</td>
+      <td>-0.044642</td>
+      <td>-0.011595</td>
+      <td>-0.036656</td>
+      <td>0.012191</td>
+      <td>0.024991</td>
+      <td>-0.036038</td>
+      <td>0.034309</td>
+      <td>0.022688</td>
+      <td>-0.009362</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>0.005383</td>
+      <td>-0.044642</td>
+      <td>-0.036385</td>
+      <td>0.021872</td>
+      <td>0.003935</td>
+      <td>0.015596</td>
+      <td>0.008142</td>
+      <td>-0.002592</td>
+      <td>-0.031988</td>
+      <td>-0.046641</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>437</th>
+      <td>0.041708</td>
+      <td>0.050680</td>
+      <td>0.019662</td>
+      <td>0.059744</td>
+      <td>-0.005697</td>
+      <td>-0.002566</td>
+      <td>-0.028674</td>
+      <td>-0.002592</td>
+      <td>0.031193</td>
+      <td>0.007207</td>
+    </tr>
+    <tr>
+      <th>438</th>
+      <td>-0.005515</td>
+      <td>0.050680</td>
+      <td>-0.015906</td>
+      <td>-0.067642</td>
+      <td>0.049341</td>
+      <td>0.079165</td>
+      <td>-0.028674</td>
+      <td>0.034309</td>
+      <td>-0.018114</td>
+      <td>0.044485</td>
+    </tr>
+    <tr>
+      <th>439</th>
+      <td>0.041708</td>
+      <td>0.050680</td>
+      <td>-0.015906</td>
+      <td>0.017293</td>
+      <td>-0.037344</td>
+      <td>-0.013840</td>
+      <td>-0.024993</td>
+      <td>-0.011080</td>
+      <td>-0.046883</td>
+      <td>0.015491</td>
+    </tr>
+    <tr>
+      <th>440</th>
+      <td>-0.045472</td>
+      <td>-0.044642</td>
+      <td>0.039062</td>
+      <td>0.001215</td>
+      <td>0.016318</td>
+      <td>0.015283</td>
+      <td>-0.028674</td>
+      <td>0.026560</td>
+      <td>0.044529</td>
+      <td>-0.025930</td>
+    </tr>
+    <tr>
+      <th>441</th>
+      <td>-0.045472</td>
+      <td>-0.044642</td>
+      <td>-0.073030</td>
+      <td>-0.081413</td>
+      <td>0.083740</td>
+      <td>0.027809</td>
+      <td>0.173816</td>
+      <td>-0.039493</td>
+      <td>-0.004222</td>
+      <td>0.003064</td>
+    </tr>
+  </tbody>
+</table>
+<p>442 rows × 10 columns</p>
+</div></div></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
@@ -1292,23 +1498,23 @@ It can be downloaded/loaded using the
   <tbody>
     <tr>
       <th>0</th>
-      <td>-113.378055</td>
+      <td>87.203718</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-44.966684</td>
+      <td>-187.710364</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>-114.923737</td>
+      <td>111.272130</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>36.256411</td>
+      <td>97.607497</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>-40.091674</td>
+      <td>-95.103340</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1316,23 +1522,23 @@ It can be downloaded/loaded using the
     </tr>
     <tr>
       <th>95</th>
-      <td>98.455506</td>
+      <td>13.974282</td>
     </tr>
     <tr>
       <th>96</th>
-      <td>-25.771828</td>
+      <td>-146.537912</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>-182.530633</td>
+      <td>161.921765</td>
     </tr>
     <tr>
       <th>98</th>
-      <td>-184.432927</td>
+      <td>62.716992</td>
     </tr>
     <tr>
       <th>99</th>
-      <td>23.864387</td>
+      <td>-196.179021</td>
     </tr>
   </tbody>
 </table>
@@ -1365,43 +1571,43 @@ It can be downloaded/loaded using the
   <tbody>
     <tr>
       <th>0</th>
-      <td>0.455371</td>
-      <td>0.214304</td>
-      <td>-0.672363</td>
-      <td>-1.596291</td>
-      <td>0.329294</td>
+      <td>-0.629342</td>
+      <td>0.439731</td>
+      <td>1.303716</td>
+      <td>0.672072</td>
+      <td>-0.705332</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>0.223158</td>
-      <td>0.550130</td>
-      <td>-0.896798</td>
-      <td>-0.249007</td>
-      <td>-0.043468</td>
+      <td>-0.174561</td>
+      <td>-1.747008</td>
+      <td>0.662622</td>
+      <td>-0.714069</td>
+      <td>-1.830631</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>-0.328285</td>
-      <td>-0.006071</td>
-      <td>-0.094975</td>
-      <td>-1.735784</td>
-      <td>0.886606</td>
+      <td>-1.303539</td>
+      <td>-0.679425</td>
+      <td>2.261541</td>
+      <td>1.603538</td>
+      <td>0.255794</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>0.167431</td>
-      <td>2.302704</td>
-      <td>-1.640642</td>
-      <td>0.208307</td>
-      <td>-0.332125</td>
+      <td>0.766450</td>
+      <td>1.212149</td>
+      <td>0.543122</td>
+      <td>-0.355734</td>
+      <td>0.426787</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.980886</td>
-      <td>-1.379053</td>
-      <td>-0.421317</td>
-      <td>0.892622</td>
-      <td>-0.457677</td>
+      <td>-0.840402</td>
+      <td>-0.975108</td>
+      <td>0.915902</td>
+      <td>-0.416067</td>
+      <td>-0.468075</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1413,43 +1619,43 @@ It can be downloaded/loaded using the
     </tr>
     <tr>
       <th>95</th>
-      <td>-0.558509</td>
-      <td>0.257709</td>
-      <td>0.647127</td>
-      <td>0.700404</td>
-      <td>0.239355</td>
+      <td>1.047089</td>
+      <td>0.251184</td>
+      <td>0.590983</td>
+      <td>-0.730914</td>
+      <td>0.380067</td>
     </tr>
     <tr>
       <th>96</th>
-      <td>0.082946</td>
-      <td>-0.105262</td>
-      <td>0.282124</td>
-      <td>-0.735031</td>
-      <td>-0.010461</td>
+      <td>-0.709906</td>
+      <td>0.003709</td>
+      <td>1.301935</td>
+      <td>-1.986960</td>
+      <td>-1.477737</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>-1.513130</td>
-      <td>0.585230</td>
-      <td>0.319383</td>
-      <td>-2.306881</td>
-      <td>-0.661043</td>
+      <td>1.021060</td>
+      <td>0.316778</td>
+      <td>1.502320</td>
+      <td>1.505995</td>
+      <td>-1.625030</td>
     </tr>
     <tr>
       <th>98</th>
-      <td>-0.474040</td>
-      <td>0.234600</td>
-      <td>-1.700091</td>
-      <td>0.001682</td>
-      <td>-0.746937</td>
+      <td>0.926659</td>
+      <td>-0.237865</td>
+      <td>1.077848</td>
+      <td>0.338498</td>
+      <td>0.090144</td>
     </tr>
     <tr>
       <th>99</th>
-      <td>0.227562</td>
-      <td>-1.081684</td>
-      <td>-0.199970</td>
-      <td>2.132289</td>
-      <td>-1.015625</td>
+      <td>-0.732452</td>
+      <td>-1.326236</td>
+      <td>-0.598678</td>
+      <td>-0.925172</td>
+      <td>-0.421198</td>
     </tr>
   </tbody>
 </table>
@@ -1468,13 +1674,42 @@ It can be downloaded/loaded using the
 </div>
 <div class="cell_output docutils container">
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+<span class="ne">ValueError</span><span class="g g-Whitespace">                                </span>Traceback (most recent call last)
+<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
 <span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">sns</span><span class="o">.</span><span class="n">set</span><span class="p">(</span><span class="n">color_codes</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">);</span>
+<span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">sns</span><span class="o">.</span><span class="n">regplot</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">);</span>
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;seaborn&#39;
+<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/seaborn/regression.py:763,</span> in <span class="ni">regplot</span><span class="nt">(data, x, y, x_estimator, x_bins, x_ci, scatter, fit_reg, ci, n_boot, units, seed, order, logistic, lowess, robust, logx, x_partial, y_partial, truncate, dropna, x_jitter, y_jitter, label, color, marker, scatter_kws, line_kws, ax)</span>
+<span class="g g-Whitespace">    </span><span class="mi">752</span> <span class="k">def</span> <span class="nf">regplot</span><span class="p">(</span>
+<span class="g g-Whitespace">    </span><span class="mi">753</span>     <span class="n">data</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">754</span>     <span class="n">x_estimator</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x_bins</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">x_ci</span><span class="o">=</span><span class="s2">&quot;ci&quot;</span><span class="p">,</span>
+   <span class="p">(</span><span class="o">...</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">760</span>     <span class="n">scatter_kws</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">line_kws</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span> <span class="n">ax</span><span class="o">=</span><span class="kc">None</span>
+<span class="g g-Whitespace">    </span><span class="mi">761</span> <span class="p">):</span>
+<span class="ne">--&gt; </span><span class="mi">763</span>     <span class="n">plotter</span> <span class="o">=</span> <span class="n">_RegressionPlotter</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">data</span><span class="p">,</span> <span class="n">x_estimator</span><span class="p">,</span> <span class="n">x_bins</span><span class="p">,</span> <span class="n">x_ci</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">764</span>                                  <span class="n">scatter</span><span class="p">,</span> <span class="n">fit_reg</span><span class="p">,</span> <span class="n">ci</span><span class="p">,</span> <span class="n">n_boot</span><span class="p">,</span> <span class="n">units</span><span class="p">,</span> <span class="n">seed</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">765</span>                                  <span class="n">order</span><span class="p">,</span> <span class="n">logistic</span><span class="p">,</span> <span class="n">lowess</span><span class="p">,</span> <span class="n">robust</span><span class="p">,</span> <span class="n">logx</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">766</span>                                  <span class="n">x_partial</span><span class="p">,</span> <span class="n">y_partial</span><span class="p">,</span> <span class="n">truncate</span><span class="p">,</span> <span class="n">dropna</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">767</span>                                  <span class="n">x_jitter</span><span class="p">,</span> <span class="n">y_jitter</span><span class="p">,</span> <span class="n">color</span><span class="p">,</span> <span class="n">label</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">769</span>     <span class="k">if</span> <span class="n">ax</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+<span class="g g-Whitespace">    </span><span class="mi">770</span>         <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">gca</span><span class="p">()</span>
+
+<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/seaborn/regression.py:107,</span> in <span class="ni">_RegressionPlotter.__init__</span><span class="nt">(self, x, y, data, x_estimator, x_bins, x_ci, scatter, fit_reg, ci, n_boot, units, seed, order, logistic, lowess, robust, logx, x_partial, y_partial, truncate, dropna, x_jitter, y_jitter, color, label)</span>
+<span class="g g-Whitespace">    </span><span class="mi">104</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Mutually exclusive regression options.&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">106</span> <span class="c1"># Extract the data vals from the arguments or passed dataframe</span>
+<span class="ne">--&gt; </span><span class="mi">107</span> <span class="bp">self</span><span class="o">.</span><span class="n">establish_variables</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">x</span><span class="o">=</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">y</span><span class="p">,</span> <span class="n">units</span><span class="o">=</span><span class="n">units</span><span class="p">,</span>
+<span class="g g-Whitespace">    </span><span class="mi">108</span>                          <span class="n">x_partial</span><span class="o">=</span><span class="n">x_partial</span><span class="p">,</span> <span class="n">y_partial</span><span class="o">=</span><span class="n">y_partial</span><span class="p">)</span>
+<span class="g g-Whitespace">    </span><span class="mi">110</span> <span class="c1"># Drop null observations</span>
+<span class="g g-Whitespace">    </span><span class="mi">111</span> <span class="k">if</span> <span class="n">dropna</span><span class="p">:</span>
+
+<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/seaborn/regression.py:53,</span> in <span class="ni">_LinearPlotter.establish_variables</span><span class="nt">(self, data, **kws)</span>
+<span class="g g-Whitespace">     </span><span class="mi">51</span> <span class="k">if</span> <span class="n">np</span><span class="o">.</span><span class="n">ndim</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+<span class="g g-Whitespace">     </span><span class="mi">52</span>     <span class="n">err</span> <span class="o">=</span> <span class="s2">&quot;regplot inputs must be 1d&quot;</span>
+<span class="ne">---&gt; </span><span class="mi">53</span>     <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="n">err</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">54</span> <span class="nb">setattr</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var</span><span class="p">,</span> <span class="n">vector</span><span class="p">)</span>
+
+<span class="ne">ValueError</span>: regplot inputs must be 1d
 </pre></div>
 </div>
 </div>
