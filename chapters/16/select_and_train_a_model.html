@@ -547,8 +547,9 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
-    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">))</span>
 
 <span class="n">X_train</span>
 
@@ -561,47 +562,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">InvalidParameterError</span><span class="g g-Whitespace">                     </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">X_train</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">y_train</span>
-
-<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/sklearn/utils/_param_validation.py:204,</span> in <span class="ni">validate_params.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span> <span class="n">to_ignore</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;self&quot;</span><span class="p">,</span> <span class="s2">&quot;cls&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span> <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">params</span><span class="o">.</span><span class="n">arguments</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">to_ignore</span><span class="p">}</span>
-<span class="ne">--&gt; </span><span class="mi">204</span> <span class="n">validate_parameter_constraints</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="n">parameter_constraints</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">caller_name</span><span class="o">=</span><span class="n">func</span><span class="o">.</span><span class="vm">__qualname__</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">208</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">211</span>             <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
-<span class="g g-Whitespace">    </span><span class="mi">212</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="p">):</span>
-
-<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/sklearn/utils/_param_validation.py:96,</span> in <span class="ni">validate_parameter_constraints</span><span class="nt">(parameter_constraints, params, caller_name)</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span>     <span class="n">constraints_str</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">92</span>         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">constraints</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span><span class="si">}</span><span class="s2"> or&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span>         <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">constraints</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">96</span> <span class="k">raise</span> <span class="n">InvalidParameterError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span>     <span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="n">param_name</span><span class="si">!r}</span><span class="s2"> parameter of </span><span class="si">{</span><span class="n">caller_name</span><span class="si">}</span><span class="s2"> must be&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">constraints_str</span><span class="si">}</span><span class="s2">. Got </span><span class="si">{</span><span class="n">param_val</span><span class="si">!r}</span><span class="s2"> instead.&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span> <span class="p">)</span>
-
-<span class="ne">InvalidParameterError</span>: The &#39;random_state&#39; parameter of train_test_split must be an int in the range [0, 4294967295], an instance of &#39;numpy.random.mtrand.RandomState&#39; or None. Got &lt;module &#39;numpy.random&#39; from &#39;/home/mkzia/anaconda3/envs/book/lib/python3.10/site-packages/numpy/random/__init__.py&#39;&gt; instead.
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 0]
 </pre></div>
 </div>
 </div>
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
-    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
+    <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">))</span>
 
 <span class="n">X_train</span>
 
@@ -614,39 +584,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">InvalidParameterError</span><span class="g g-Whitespace">                     </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span>     <span class="n">X</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.33</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">X_train</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">y_train</span>
-
-<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/sklearn/utils/_param_validation.py:204,</span> in <span class="ni">validate_params.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span> <span class="n">to_ignore</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;self&quot;</span><span class="p">,</span> <span class="s2">&quot;cls&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span> <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">params</span><span class="o">.</span><span class="n">arguments</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">to_ignore</span><span class="p">}</span>
-<span class="ne">--&gt; </span><span class="mi">204</span> <span class="n">validate_parameter_constraints</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="n">parameter_constraints</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">caller_name</span><span class="o">=</span><span class="n">func</span><span class="o">.</span><span class="vm">__qualname__</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">208</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">211</span>             <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
-<span class="g g-Whitespace">    </span><span class="mi">212</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="p">):</span>
-
-<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/sklearn/utils/_param_validation.py:96,</span> in <span class="ni">validate_parameter_constraints</span><span class="nt">(parameter_constraints, params, caller_name)</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span>     <span class="n">constraints_str</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">92</span>         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">constraints</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span><span class="si">}</span><span class="s2"> or&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span>         <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">constraints</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">96</span> <span class="k">raise</span> <span class="n">InvalidParameterError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span>     <span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="n">param_name</span><span class="si">!r}</span><span class="s2"> parameter of </span><span class="si">{</span><span class="n">caller_name</span><span class="si">}</span><span class="s2"> must be&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">constraints_str</span><span class="si">}</span><span class="s2">. Got </span><span class="si">{</span><span class="n">param_val</span><span class="si">!r}</span><span class="s2"> instead.&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span> <span class="p">)</span>
-
-<span class="ne">InvalidParameterError</span>: The &#39;random_state&#39; parameter of train_test_split must be an int in the range [0, 4294967295], an instance of &#39;numpy.random.mtrand.RandomState&#39; or None. Got &lt;module &#39;numpy.random&#39; from &#39;/home/mkzia/anaconda3/envs/book/lib/python3.10/site-packages/numpy/random/__init__.py&#39;&gt; instead.
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 1]
 </pre></div>
 </div>
 </div>
@@ -690,7 +628,8 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="p">)</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">random</span>
+<span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">10000</span><span class="p">))</span>
 
 <span class="n">X_train</span>
 
@@ -703,38 +642,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">InvalidParameterError</span><span class="g g-Whitespace">                     </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">X_train</span><span class="p">,</span> <span class="n">X_test</span><span class="p">,</span> <span class="n">y_train</span><span class="p">,</span> <span class="n">y_test</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="n">y</span><span class="p">,</span> <span class="n">test_size</span><span class="o">=</span><span class="mf">0.2</span><span class="p">,</span> <span class="n">random_state</span><span class="o">=</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">X_train</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">y_train</span>
-
-<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/sklearn/utils/_param_validation.py:204,</span> in <span class="ni">validate_params.&lt;locals&gt;.decorator.&lt;locals&gt;.wrapper</span><span class="nt">(*args, **kwargs)</span>
-<span class="g g-Whitespace">    </span><span class="mi">201</span> <span class="n">to_ignore</span> <span class="o">+=</span> <span class="p">[</span><span class="s2">&quot;self&quot;</span><span class="p">,</span> <span class="s2">&quot;cls&quot;</span><span class="p">]</span>
-<span class="g g-Whitespace">    </span><span class="mi">202</span> <span class="n">params</span> <span class="o">=</span> <span class="p">{</span><span class="n">k</span><span class="p">:</span> <span class="n">v</span> <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">params</span><span class="o">.</span><span class="n">arguments</span><span class="o">.</span><span class="n">items</span><span class="p">()</span> <span class="k">if</span> <span class="n">k</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">to_ignore</span><span class="p">}</span>
-<span class="ne">--&gt; </span><span class="mi">204</span> <span class="n">validate_parameter_constraints</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">205</span>     <span class="n">parameter_constraints</span><span class="p">,</span> <span class="n">params</span><span class="p">,</span> <span class="n">caller_name</span><span class="o">=</span><span class="n">func</span><span class="o">.</span><span class="vm">__qualname__</span>
-<span class="g g-Whitespace">    </span><span class="mi">206</span> <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">208</span> <span class="k">try</span><span class="p">:</span>
-<span class="g g-Whitespace">    </span><span class="mi">209</span>     <span class="k">with</span> <span class="n">config_context</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">210</span>         <span class="n">skip_parameter_validation</span><span class="o">=</span><span class="p">(</span>
-<span class="g g-Whitespace">    </span><span class="mi">211</span>             <span class="n">prefer_skip_nested_validation</span> <span class="ow">or</span> <span class="n">global_skip_validation</span>
-<span class="g g-Whitespace">    </span><span class="mi">212</span>         <span class="p">)</span>
-<span class="g g-Whitespace">    </span><span class="mi">213</span>     <span class="p">):</span>
-
-<span class="nn">File ~/anaconda3/envs/book/lib/python3.10/site-packages/sklearn/utils/_param_validation.py:96,</span> in <span class="ni">validate_parameter_constraints</span><span class="nt">(parameter_constraints, params, caller_name)</span>
-<span class="g g-Whitespace">     </span><span class="mi">90</span> <span class="k">else</span><span class="p">:</span>
-<span class="g g-Whitespace">     </span><span class="mi">91</span>     <span class="n">constraints_str</span> <span class="o">=</span> <span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">92</span>         <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="s1">&#39;, &#39;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="p">)</span><span class="w"> </span><span class="k">for</span><span class="w"> </span><span class="n">c</span><span class="w"> </span><span class="ow">in</span><span class="w"> </span><span class="n">constraints</span><span class="p">[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]])</span><span class="si">}</span><span class="s2"> or&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">93</span>         <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">constraints</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span><span class="si">}</span><span class="s2">&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">94</span>     <span class="p">)</span>
-<span class="ne">---&gt; </span><span class="mi">96</span> <span class="k">raise</span> <span class="n">InvalidParameterError</span><span class="p">(</span>
-<span class="g g-Whitespace">     </span><span class="mi">97</span>     <span class="sa">f</span><span class="s2">&quot;The </span><span class="si">{</span><span class="n">param_name</span><span class="si">!r}</span><span class="s2"> parameter of </span><span class="si">{</span><span class="n">caller_name</span><span class="si">}</span><span class="s2"> must be&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">98</span>     <span class="sa">f</span><span class="s2">&quot; </span><span class="si">{</span><span class="n">constraints_str</span><span class="si">}</span><span class="s2">. Got </span><span class="si">{</span><span class="n">param_val</span><span class="si">!r}</span><span class="s2"> instead.&quot;</span>
-<span class="g g-Whitespace">     </span><span class="mi">99</span> <span class="p">)</span>
-
-<span class="ne">InvalidParameterError</span>: The &#39;random_state&#39; parameter of train_test_split must be an int in the range [0, 4294967295], an instance of &#39;numpy.random.mtrand.RandomState&#39; or None. Got &lt;module &#39;numpy.random&#39; from &#39;/home/mkzia/anaconda3/envs/book/lib/python3.10/site-packages/numpy/random/__init__.py&#39;&gt; instead.
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([310., 109.,  59., 141.,  80., 265.,  90., 210., 220.,  97.,  90.,
+        96.,  54., 186.,  89.,  48., 225.,  72., 128., 317.,  77., 107.,
+       113.,  53.,  85., 103., 139., 182.,  66., 166., 152., 192., 200.,
+        53., 208., 172., 265., 147., 171., 138., 150., 168., 199., 262.,
+       200., 137., 103.,  70., 140., 277., 270., 142., 136., 109.,  31.,
+       283., 268., 154., 121., 180., 137., 109., 233., 126.,  96.,  68.,
+       243.,  70., 200., 336., 275., 173., 281., 209., 306., 146., 178.,
+        71., 178., 179., 144., 214., 178.,  81., 232.,  95., 181., 122.,
+       265.])
 </pre></div>
 </div>
 </div>
@@ -752,7 +668,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>89
 </pre></div>
 </div>
 </div>
@@ -1031,7 +947,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6624.121931898789
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6620.700927084393
 </pre></div>
 </div>
 </div>
@@ -1045,7 +961,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>26265.435135635766
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>25927.374246404266
 </pre></div>
 </div>
 </div>
@@ -1062,7 +978,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/7fd65c0777dfa9ec8997e4426f7bb56379fda6515513f623bf6835d66d4c1958.png" src="../../_images/7fd65c0777dfa9ec8997e4426f7bb56379fda6515513f623bf6835d66d4c1958.png" />
+<img alt="../../_images/545e0e425cb13693d49e3f93951c761008e10c41b0061775186b18af1ec14d4d.png" src="../../_images/545e0e425cb13693d49e3f93951c761008e10c41b0061775186b18af1ec14d4d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1077,7 +993,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/53efa6f0cebce07b6b7b8478f1c32b5412370fa0fca47d0bbf7efa498c8b71e4.png" src="../../_images/53efa6f0cebce07b6b7b8478f1c32b5412370fa0fca47d0bbf7efa498c8b71e4.png" />
+<img alt="../../_images/8f9f9e04d4436126c1aeca80478943b5e58e36443dbb7c251e68f02f9a47257d.png" src="../../_images/8f9f9e04d4436126c1aeca80478943b5e58e36443dbb7c251e68f02f9a47257d.png" />
 </div>
 </div>
 </section>
@@ -1104,7 +1020,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6733.42417843007
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8780.523086164438
 </pre></div>
 </div>
 </div>

@@ -11,8 +11,6 @@ kernelspec:
 ---
 # Select and Train a Model
 
-
-
 ## Splitting data into Train and Test
 
 ```{code-cell} ipython3
@@ -64,8 +62,9 @@ y_test
 ```
 
 ```{code-cell} ipython3
+import random
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.33, random_state=np.random)
+    X, y, test_size=0.33, random_state=random.randint(1, 10000))
 
 X_train
 
@@ -77,8 +76,9 @@ y_test
 ```
 
 ```{code-cell} ipython3
+import random
 X_train, X_test, y_train, y_test = train_test_split(
-    X, y, test_size=0.33, random_state=np.random)
+    X, y, test_size=0.33, random_state=random.randint(1, 10000))
 
 X_train
 
@@ -88,7 +88,6 @@ X_test
 
 y_test
 ```
-
 
 ```{code-cell} ipython3
 import pandas as pd
@@ -112,7 +111,8 @@ df.shape
 ```
 
 ```{code-cell} ipython3
-X_train, X_test, y_train, y_test = train_test_split(df, y, test_size=0.2, random_state=np.random)
+import random
+X_train, X_test, y_train, y_test = train_test_split(df, y, test_size=0.2, random_state=random.randint(1, 10000))
 
 X_train
 
@@ -122,7 +122,6 @@ X_test
 
 y_test
 ```
-
 
 ```{code-cell} ipython3
 X_train.shape
@@ -135,6 +134,7 @@ len(y_test)
 ```
 
 ## Linear Regression Example
+
 - To predict a numerical value
 
 ```{code-cell} ipython3
@@ -154,7 +154,6 @@ reg.intercept_
 
 reg.predict(np.array([[3, 5]]))
 ```
-
 
 ```{code-cell} ipython3
 import numpy as np
@@ -213,7 +212,6 @@ plt.ylabel('Salary')
 plt.show()
 ```
 
-
 ```{code-cell} ipython3
 plt.scatter(X_test,y_test,color='red')
 plt.plot(X_test,regressor.predict(X_test),color='blue')
@@ -224,6 +222,7 @@ plt.show()
 ```
 
 ### Apply DecisionTreeRegressor
+
 - Decision Trees are good for finding complex nonlinear relationships
 
 ```{code-cell} ipython3
@@ -241,7 +240,7 @@ y_test
 metrics.mean_squared_error(y_test, y_pred, squared=False)
 ```
 
-### Cross-Validation 
+### Cross-Validation
 
 ```{code-cell} ipython3
 from sklearn.pipeline import make_pipeline
@@ -265,8 +264,6 @@ tree_pipeline = make_pipeline(preprocessing, DecisionTreeRegressor())
 tree_rmses = cross_val_score(tree_pipeline, X, y, scoring="neg_root_mean_squared_error", cv=10)
 pd.Series(tree_rmses).describe()
 ```
-
-
 
 ## Classification Example
 
