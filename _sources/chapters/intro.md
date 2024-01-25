@@ -32,14 +32,14 @@ Welcome to EAS503! EAS503 is a course taught in the Department of Engineering & 
 
 ## Course Content
 
-- Quizzes (12) - 25%
+- Quizzes (9) - 25%
 - Programming Assignments (9) - 45%
 - Individual Mini-Projects (2) - 20%
 - Group Projects (1) - 10% -- groups of 3-4 students
 
 ## Quizzes
 
-1. **Assessment Format:** Throughout the course, there will be a total of 12 open-note quizzes that you will complete via UB Learns.
+1. **Assessment Format:** Throughout the course, there will be a total of 9 open-note quizzes that you will complete via UB Learns.
 
 2. **Quiz Availability:** Quizzes will be accessible on Saturdays.
 
@@ -63,7 +63,7 @@ These quiz policies are in place to ensure a fair and consistent assessment envi
 
 In this course, programming assignments are a crucial component of your learning experience. To facilitate this, please note the following guidelines:
 
-1. **Codio License Requirement:** A Codio license, priced at $48, is necessary for completing programming assignments. This platform will be the designated environment for assignment completion and evaluation. [Invite Link](https://codio.com/p/signup?courseToken=harmony-basic)
+1. **Codio License Requirement:** A Codio license, priced at $48, is necessary for completing programming assignments. This platform will be the designated environment for assignment completion and evaluation. [Invite Link](https://codio.com/p/signup?courseToken=smart-prague)
 
 2. **Assignment Platform:** All programming assignments will be both assigned and evaluated exclusively on the Codio platform. It is essential to familiarize yourself with Codio's interface and tools to ensure a seamless assignment process.
 
@@ -130,7 +130,7 @@ A successful start to the course requires a few preparatory steps. Before the fi
 
 2. **Course Book Access:** Ensure you can access the course book available at [Course Book](https://mkzia.github.io/eas503-book). Familiarize yourself with this resource to get a head start on the course content.
 
-3. **Codio Licensing:** Verify that you have obtained a license for Codio and can successfully log into the platform. [Invite Link](https://codio.com/p/signup?courseToken=harmony-basic)
+3. **Codio Licensing:** Verify that you have obtained a license for Codio and can successfully log into the platform. [Invite Link](https://codio.com/p/signup?courseToken=smart-prague)
 
 4. **Piazza Login:** Confirm your ability to log into Piazza, where you'll engage in course discussions, ask questions, and stay updated on course-related matters.
 
@@ -172,7 +172,7 @@ Embrace sound cyber-security practices. Refrain from granting physical or electr
 
 **Important Note:** If you come across a solution on a website (Chegg), be aware that it could potentially be intentionally placed there by the instructor to identify instances of academic misconduct. Always approach your coursework with integrity and refrain from using any unauthorized resources. Your commitment to academic honesty is essential to your personal growth and the integrity of the educational process.
 
-**Codio can detect cheating:** Codio’s code editor is the industry-standard editor used in the VSCode IDE. We require you to complete your assignments in Codio partly for autograding reasons but also because Codio has very advanced keystroke analysis tools for generating insights into how students complete their work, including similarity checkers, time spent in error state, external pastes and insertion/deletion tracking.  So do not copy and paste your solution from another location. Do all your work inside the Codio editor. All your keystrokes and copy and pastes are recorded and can be played back.
+**Codio can detect cheating:** Codio’s code editor is the industry-standard editor used in the VSCode IDE. We require you to complete your assignments in Codio partly for autograding reasons but also because Codio has very advanced keystroke analysis tools for generating insights into how students complete their work, including similarity checkers, time spent in error state, external pastes and insertion/deletion tracking.  So do not copy and paste your solution from another location. Do all your work inside the Codio editor. All your keystrokes and copy and pastes are recorded and can be played back. **External pastes has been disabled.**
 :::
 
 ## Syllabus Review

@@ -15,8 +15,8 @@ kernelspec:
 
 # Feature Selection and Evaluation
 
-
 ## PCA
+
 ```{code-cell} ipython3
 from IPython.core.interactiveshell import InteractiveShell
 InteractiveShell.ast_node_interactivity = "all"
@@ -57,7 +57,6 @@ plt.plot(t, x)
 plt.plot(t, y)
 ```
 
-
 ```{code-cell} ipython3
 import numpy as np
 X = np.array([d1[0], d2[0], d3[0], d4[0], d5[0]])
@@ -72,7 +71,7 @@ S
 
 ```{code-cell} ipython3
 for i in range(5):
-    V[:,i] = V[:,i] * np.sqrt(eigen[i])
+    V[:,i] = V[:,i] * np.sqrt(S[i])
 eigen = S**2
 eigen
 ```
@@ -82,10 +81,9 @@ eigen = eigen/N
 eigen = eigen/sum(eigen)
 ```
 
-
 ### Scree plot
-Gives the measure of the associated principal component's importance with regards to how much of the total information it represents. 
 
+Gives the measure of the associated principal component's importance with regards to how much of the total information it represents.
 
 ```{code-cell} ipython3
 plt.plot(range(1,6), eigen)
@@ -96,18 +94,15 @@ plt.plot(V[:,0])
 plt.show()
 ```
 
-
 ```{code-cell} ipython3
 plt.plot(V[:,1])
 plt.show()
 ```
 
-
 ```{code-cell} ipython3
 plt.plot(V[:,2])
 plt.show()
 ```
-
 
 ### PCA on the IRIS Data
 
@@ -176,7 +171,6 @@ X_scaled = preprocessing.scale(X_combined)
 X_combined.mean(axis=0)  
 ```
 
-
 ```{code-cell} ipython3
 U,S,V = np.linalg.svd(X_scaled)
 S
@@ -202,7 +196,6 @@ plt.plot(range(1, 9), eigen)
 X_reduced = PCA(n_components=3).fit_transform(X_scaled)
 ```
 
-
 ## K-Means Clustering
 
 ```{code-cell} ipython3
@@ -214,7 +207,6 @@ X1, Y1 = make_blobs(n_features=2, centers=3, random_state=10)
 plt.scatter(X1[:, 0], X1[:, 1], marker='o', c=Y1,
             s=25, edgecolor='k')
 ```
-
 
 ## Using scikit-learn to perform K-Means clustering
 
@@ -235,13 +227,11 @@ plt.title('Data points and cluster centroids')
 plt.show()
 ```
 
-
 ### Some links
-https://jakevdp.github.io/PythonDataScienceHandbook/05.07-support-vector-machines.html
-https://scikit-learn.org/stable/auto_examples/linear_model/plot_ransac.html
-http://www.cse.psu.edu/~rtc12/CSE486/lecture15.pdf
-https://towardsdatascience.com/accuracy-precision-recall-or-f1-331fb37c5cb9
-
+<https://jakevdp.github.io/PythonDataScienceHandbook/05.07-support-vector-machines.html>
+<https://scikit-learn.org/stable/auto_examples/linear_model/plot_ransac.html>
+<http://www.cse.psu.edu/~rtc12/CSE486/lecture15.pdf>
+<https://towardsdatascience.com/accuracy-precision-recall-or-f1-331fb37c5cb9>
 
 ## Evaluating Algorithms
 
@@ -272,8 +262,6 @@ Y_pred = classifier.predict(X_test)
 accuracy = accuracy_score(Y_test, Y_pred)
 accuracy
 ```
-
-
 
 ```{code-cell} ipython3
 cm = confusion_matrix(Y_test, Y_pred)
@@ -313,7 +301,6 @@ https://stackoverflow.com/questions/56078203/why-scikit-learn-confusion-matrix-i
 [False Negative, True Positive]]
 ```
 
-
 ```{code-cell} ipython3
 results = classification_report(Y_test, Y_pred)
 print(results)
@@ -326,7 +313,6 @@ print(results)
 # recall measures what fraction of the positives our model identified
 # recall = tp / (tp+fn) -- same as sensitivity
 ```
-
 
 ### Lots of Classifiers
 
@@ -373,7 +359,6 @@ cm = confusion_matrix(Y_test, Y_pred)
 cm
 ```
 
-
 ```{code-cell} ipython3
 results = classification_report(Y_test, Y_pred)
 print(results)
@@ -394,7 +379,8 @@ output = fbeta_score(Y_test, Y_pred, average='macro', beta=0.5)
 output
 ```
 
-#### Feature Importance 
+#### Feature Importance
+
 ```{code-cell} ipython3
 for score, name in sorted(zip(classifier.feature_importances_, data.feature_names), reverse=True):
     print(round(score, 2), name)
@@ -404,7 +390,6 @@ for score, name in sorted(zip(classifier.feature_importances_, data.feature_name
 results = classification_report(Y_test, Y_pred)
 print(results)
 ```
-
 
 ```{code-cell} ipython3
 X_train, X_test, Y_train, Y_test = train_test_split(X, Y, test_size = 0.2, random_state = 0)
@@ -426,7 +411,6 @@ from sklearn.metrics import classification_report
 results = classification_report(Y_test, Y_pred)
 print(results)
 ```
-
 
 ```{code-cell} ipython3
 from sklearn.metrics import roc_auc_score
@@ -459,19 +443,18 @@ plt.legend(loc="lower right")
 plt.show()
 ```
 
-
-
 ## Imbalanced Data sets
-- For imbalanced data sets, the AUC of precision/recall curve is more informative than the AUC for sensitivity/specificity curve. 
 
-- https://www.kaggle.com/code/vedbharti/classification-precision-recall-vs-roc-plot
+- For imbalanced data sets, the AUC of precision/recall curve is more informative than the AUC for sensitivity/specificity curve.
 
-## Stratify 
+- <https://www.kaggle.com/code/vedbharti/classification-precision-recall-vs-roc-plot>
+
+## Stratify
 
 stratify
 
-
 ## Vocabulary
+
 - Supervised Learning
 - Unsupervised Learning
 - Classification
@@ -496,7 +479,6 @@ stratify
 - Underfitting
 - Overfitting -- reduced via regularization (reduce degrees of freedom), early stopping (stop when validation error reaches minimum)
 - Bias -- Error due to wrong assumptions, e.g., linear, when non linear; high-bias results in under fit training data
-- Variance -- Excessive sensitivity to small variations in the training data; high results in over fitting. 
+- Variance -- Excessive sensitivity to small variations in the training data; high results in over fitting.
 - Bias/Variance Trade-Off
 - Stratified Sampling
-
