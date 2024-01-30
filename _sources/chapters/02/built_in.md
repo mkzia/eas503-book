@@ -147,6 +147,19 @@ print('ceil:', math.ceil(3.141592653))
 print('floor:', math.floor(3.141592653))
 ```
 
+## Why some numbers are not rounded as expected?
+
+- Floats are only an approximation of the real number.
+
+```{code-cell} ipython3
+import decimal
+print(decimal.Decimal(2.675))
+print(decimal.Decimal(2.6757))
+print(decimal.Decimal(4.65))
+print(decimal.Decimal(3.65))
+```
+
+
 ### help
 
 The `help(fxn)` function gives information about a function
