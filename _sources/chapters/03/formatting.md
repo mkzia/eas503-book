@@ -55,7 +55,7 @@ print(('{0} is {1:.2f}'.format('PI', PI)) ) #
 ## Newest Method
 
 Newest and fastest method for string formatting.
-`{<variable or expression>}:<format-specifier>}` where the format specifier is: `<padding_character><alignment><width>.<comma><precision><type>`
+`{<variable or expression>:<format-specifier>}` where the format specifier is: `<padding_character><alignment><width>.<comma><precision><type>`
 
 - padding_character can be anything. most common are
   - space (default)
