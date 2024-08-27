@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>EAS 503 &#8212; EAS503: Python for Data Scientists</title>
   
@@ -14,57 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../_static/doctools.js?v=888ff710"></script>
+    <script src="../_static/doctools.js?v=9a2dae69"></script>
     <script src="../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../_static/copybutton.js?v=f281be69"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script src="../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/intro';</script>
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/intro.html" />
     <link rel="index" title="Index" href="../genindex.html" />
@@ -79,27 +71,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -121,8 +109,13 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -148,6 +141,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="#">
   
@@ -169,7 +164,7 @@ const thebe_selector_output = ".output, .cell_output"
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -179,7 +174,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="01/fundamentals.html">1. Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="01/fundamentals.html">1. Fundamentals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="01/getting_started.html">1.1. Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01/definitions.html">1.2. Definitions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01/arithmetic.html">1.3. Arithmetic</a></li>
@@ -196,8 +191,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="01/exercises.html">1.14. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="01/quizzes.html">1.15. Quizzes</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="02/functions.html">2. Functions</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="02/functions.html">2. Functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="02/intro.html">2.1. Introduction to Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02/built_in.html">2.2. Built-in Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02/user_defined.html">2.3. User Defined Functions</a></li>
@@ -206,8 +201,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="02/exercises.html">2.6. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="02/quizzes.html">2.7. Quizzes</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="03/intro.html">3. Strings</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="03/intro.html">3. Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="03/basics.html">3.1. String Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03/formatting.html">3.2. String Formatting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03/table.html">3.3. Creating a Table</a></li>
@@ -215,8 +210,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="03/exercises.html">3.5. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="03/quizzes.html">3.6. Quizzes</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="04/intro.html">4. Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="04/intro.html">4. Conditionals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="04/boolean.html">4.1. Boolean/Logical Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04/relational.html">4.2. Relational Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04/strings.html">4.3. String Comparison</a></li>
@@ -224,15 +219,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="04/exercises.html">4.5. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="04/quizzes.html">4.6. Quizzes</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="05/intro.html">5. Lists and Tuples</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="05/intro.html">5. Lists and Tuples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="05/lists.html">5.1. Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05/methods.html">5.2. List Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05/tuples.html">5.3. Tuples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="05/strings.html">5.4. Strings as a List</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="06/intro.html">6. Loops</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="06/intro.html">6. Loops</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="06/loop.html">6.1. for/while loop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="06/for_loop_exercises.html">6.2. For Loop Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="06/while_loop_exercises.html">6.3. While Loop Exercises</a></li>
@@ -241,39 +236,39 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="06/comprehension.html">6.6. List/Tuple Comprehension</a></li>
 <li class="toctree-l2"><a class="reference internal" href="06/additional_exercises.html">6.7. Additional Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="07/intro.html">7. Dictionaries and Sets</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="07/intro.html">7. Dictionaries and Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="07/dictionary.html">7.1. Dictionaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07/dictionary_exercises.html">7.2. Dictionary Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07/sets.html">7.3. Sets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="07/set_exercises.html">7.4. Set Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="08/intro.html">8. Lambda, Filters, Maps, Sorted</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="08/intro.html">8. Lambda, Filters, Maps, Sorted</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="08/lambda.html">8.1. Lambda, Filter, Map, and Sorted</a></li>
 <li class="toctree-l2"><a class="reference internal" href="08/lambda_exercises.html">8.2. Lambda, Filter, Map, and Sorted Solutions</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="09/intro.html">9. Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="09/intro.html">9. Error Handling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="09/errors.html">9.1. Errors and Exception Handling</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="10/intro.html">10. Functions Revisited</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="10/intro.html">10. Functions Revisited</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="10/functions.html">10.1. Functions Revisited</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="11/intro.html">11. Miscellaneous Topics</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="11/intro.html">11. Miscellaneous Topics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="11/misc.html">11.1. Miscellaneous Topics</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="12/intro.html">12. Object Oriented Programming</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="12/intro.html">12. Object Oriented Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="12/oop.html">12.1. Object-Oriented Programming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12/operator_overloading.html">12.2. Operator overloading</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12/self.html">12.3. Self</a></li>
 <li class="toctree-l2"><a class="reference internal" href="12/item_assignment.html">12.4. Item assignment</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="13/sql.html">13. SQL with SQLite</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="13/sql.html">13. SQL with SQLite</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="13/sql_0_tables.html">13.1. Creating Tables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13/sql_1_query_primer.html">13.2. SQL Query Primer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="13/sql_2_filtering.html">13.3. Filtering</a></li>
@@ -289,25 +284,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="13/sql_11_soccer.html">13.13. Soccer Database</a></li>
 
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="14/intro.html">14. Plotting in Python</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="14/intro.html">14. Plotting in Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="14/matplotlib.html">14.1. Matplotlib</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="15/intro.html">15. NumPy and Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="15/intro.html">15. NumPy and Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="15/np_pd.html">15.1. Numpy and Pandas</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="15/exercises.html">15.3. Cross-referenced Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="16/intro.html">16. Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="16/intro.html">16. Machine Learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="16/introduction.html">16.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="16/loading_data.html">16.2. Loading Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="16/preprocessing_data.html">16.3. Preprocessing data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="16/select_and_train_a_model.html">16.4. Select and Train a Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="16/misc.html">16.5. Feature Selection and Evaluation</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -323,7 +318,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -332,14 +327,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -432,10 +427,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -443,14 +438,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -476,6 +471,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quizzes">Quizzes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-assignments">Programming Assignments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-projects">Mini-Projects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project-overview">Final Project Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#late-submission-policy">Late Submission Policy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-resources">Course Resources</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-for-the-first-class">Preparing for the First Class</a></li>
@@ -511,7 +507,7 @@ document.write(`
 <li><p>Quizzes (9) - 25%</p></li>
 <li><p>Programming Assignments (9) - 45%</p></li>
 <li><p>Individual Mini-Projects (2) - 20%</p></li>
-<li><p>Group Projects (1) - 10% – groups of 3-4 students</p></li>
+<li><p>Individual Final-Project (1) - 10%</p></li>
 </ul>
 </section>
 <section id="quizzes">
@@ -520,7 +516,7 @@ document.write(`
 <li><p><strong>Assessment Format:</strong> Throughout the course, there will be a total of 9 open-note quizzes that you will complete via UB Learns.</p></li>
 <li><p><strong>Quiz Availability:</strong> Quizzes will be accessible on Saturdays.</p></li>
 <li><p><strong>Completion Window:</strong> Once a quiz is posted, you will have a window of three days to attempt your quiz. Please ensure you manage your time effectively within this period.</p></li>
-<li><p><strong>Time Limit:</strong> When you begin a quiz, you will be allotted two hours to complete it. Each quiz is designed as an individual assignment, and you are expected to work independently.</p></li>
+<li><p><strong>Time Limit:</strong> When you begin a quiz, you will be allotted three hours to complete it. Each quiz is designed as an individual assignment, and you are expected to work independently.</p></li>
 <li><p><strong>Academic Integrity:</strong> Collaboration is not permitted during quizzes. Use only authorized resources, namely the course website, while working on quizzes. Any collaboration with others or unauthorized external resources will result in a score of 0 for the quiz. Cases of academic integrity violations will be reported to the Office of Academic Integrity. You will find a link to the course website accessible within the quiz through the lockdown browser.</p></li>
 <li><p><strong>Respondus Lockdown Browser Requirement:</strong> Quizzes must be taken using the Respondus LockDown Browser. It is important to familiarize yourself with this browser by completing the practice quiz as soon as possible. Technical issues on the day of the quiz will not warrant extensions, as you have the opportunity to practice and seek clarifications beforehand.</p></li>
 <li><p><strong>Camera Requirement:</strong> A functional camera is essential for the duration of the quiz. Your camera should capture you within the frame throughout the quiz. Any instances of being out of frame or displaying a black screen will result in an automatic score of 0 for the quiz.</p></li>
@@ -533,7 +529,7 @@ document.write(`
 <h2>Programming Assignments<a class="headerlink" href="#programming-assignments" title="Link to this heading">#</a></h2>
 <p>In this course, programming assignments are a crucial component of your learning experience. To facilitate this, please note the following guidelines:</p>
 <ol class="arabic simple">
-<li><p><strong>Codio License Requirement:</strong> A Codio license, priced at $48, is necessary for completing programming assignments. This platform will be the designated environment for assignment completion and evaluation. <a class="reference external" href="https://codio.com/p/signup?courseToken=smart-prague">Invite Link</a></p></li>
+<li><p><strong>Codio License Requirement:</strong> A Codio license, priced at $48, is necessary for completing programming assignments. This platform will be the designated environment for assignment completion and evaluation.</p></li>
 <li><p><strong>Assignment Platform:</strong> All programming assignments will be both assigned and evaluated exclusively on the Codio platform. It is essential to familiarize yourself with Codio’s interface and tools to ensure a seamless assignment process.</p></li>
 <li><p><strong>Submission Protocol:</strong> To have your programming assignments graded, you must submit them through the Codio platform. Submissions made via UB Learns will not undergo the grading process.</p></li>
 <li><p><strong>Submission Retries:</strong> You have the flexibility of unlimited submissions and retries for each assignment up until the specified deadline. This approach encourages iterative learning and allows you to refine your solutions over multiple attempts.</p></li>
@@ -551,12 +547,79 @@ document.write(`
 </ol>
 <p>By engaging actively with the mini-projects, you will refine your programming skills, gain a deeper understanding of the subject matter, and apply your knowledge to real-world scenarios. If you encounter any difficulties or require guidance, feel free to communicate with your instructor for assistance. Successfully completing these mini-projects is integral to your comprehensive learning journey in this course.</p>
 </section>
+<section id="final-project-overview">
+<h2>Final Project Overview<a class="headerlink" href="#final-project-overview" title="Link to this heading">#</a></h2>
+<p>The final project is an individual, intensive endeavor designed to showcase your skills in data analysis, machine learning, and deployment. Below are the detailed requirements and steps to guide you through the project:</p>
+<p><strong>Project Requirements:</strong></p>
+<ol class="arabic simple">
+<li><p><strong>Data Selection:</strong></p>
+<ul class="simple">
+<li><p>Choose a dataset with a significant number of data points to address a classification problem. The dataset must contain more than 1,000 rows and be in CSV format.</p></li>
+</ul>
+</li>
+<li><p><strong>Data Parsing:</strong></p>
+<ul class="simple">
+<li><p>Use basic Python (without Pandas) to parse the data. Ensure that you follow guidelines for extract and transformation structure.</p></li>
+</ul>
+</li>
+<li><p><strong>Data Normalization and Database Loading:</strong></p>
+<ul class="simple">
+<li><p>Normalize the data and load it into a database. Ensure that your database normalization is approved by the TA.</p></li>
+</ul>
+</li>
+<li><p><strong>Data Querying:</strong></p>
+<ul class="simple">
+<li><p>Write SQL join statements to query the necessary data and load it into Pandas for further analysis.</p></li>
+</ul>
+</li>
+<li><p><strong>Machine Learning:</strong></p>
+<ul class="simple">
+<li><p>Utilize Python machine learning libraries to perform classification tasks.</p></li>
+</ul>
+</li>
+<li><p><strong>Experiment Tracking:</strong></p>
+<ul class="simple">
+<li><p>Use MLFlow and DagsHub to record and track your experiments.</p></li>
+</ul>
+</li>
+<li><p><strong>Deployment:</strong></p>
+<ul class="simple">
+<li><p>Create and deploy a Docker container for your inference/classification pipeline.</p></li>
+</ul>
+</li>
+<li><p><strong>User Interface:</strong></p>
+<ul class="simple">
+<li><p>Develop a Streamlit app to interact with your classification pipeline.</p></li>
+</ul>
+</li>
+<li><p><strong>Project Presentation:</strong></p>
+<ul class="simple">
+<li><p>Create a JupyterBook website to host and document your project.</p></li>
+<li><p>Record a 12-minute presentation following a strict rubric to showcase your project.</p></li>
+</ul>
+</li>
+<li><p><strong>Submission:</strong></p>
+<ul class="simple">
+<li><p>Submit the following on UB Learn by <strong>Wednesday, Dec. 18, 2024 11:59PM</strong>:</p>
+<ol class="arabic simple">
+<li><p>MLFlow/DagsHub experiments</p></li>
+<li><p>Docker Hub link to your container</p></li>
+<li><p>Streamlit app</p></li>
+<li><p>JupyterBook website</p></li>
+<li><p>UB Box link to the recorded 12-minute presentation</p></li>
+<li><p>A completed rubric checklist sheet that aligns with the project requirements.</p></li>
+</ol>
+</li>
+</ul>
+</li>
+</ol>
+</section>
 <section id="late-submission-policy">
 <h2>Late Submission Policy<a class="headerlink" href="#late-submission-policy" title="Link to this heading">#</a></h2>
 <p>Understanding the late submission policy is crucial to managing your assignment deadlines effectively. Here’s how it works:</p>
 <ol class="arabic simple">
 <li><p><strong>Late Days Allocation:</strong> You have a total of 10 late days at your disposal. These can be utilized to submit programming assignments and mini-projects after their original due date.</p></li>
-<li><p><strong>Maximum Delay:</strong> It’s important to note that no assignment can be submitted more than <strong>4 days</strong> after its original due date. This ensures a fair and consistent assessment process for all students.</p></li>
+<li><p><strong>Maximum Delay:</strong> It’s important to note that no assignment can be submitted more than <strong>3 days</strong> after its original due date. This ensures a fair and consistent assessment process for all students.</p></li>
 </ol>
 <p>By utilizing your allocated late days wisely, you can navigate unexpected challenges while maintaining a balanced approach to assignment completion. Remember that efficient time management remains key to your success in the course. If you have any questions or need further clarification, don’t hesitate to seek guidance from your instructor.</p>
 </section>
@@ -568,13 +631,12 @@ document.write(`
 <li><p><strong>Lecture Materials:</strong> Lecture Jupyter notebooks will be hosted on GitHub: <a class="reference external" href="https://github.com/mkzia/eas503">Lecture Notebooks</a>. These materials supplement your in-class learning and serve as valuable references.</p></li>
 <li><p><strong>UB Learns:</strong> UB Learns will serve multiple purposes, including:</p>
 <ul class="simple">
-<li><p>Forming groups for project work.</p></li>
 <li><p>Submission of the final project report.</p></li>
 <li><p>Management of your course grades.</p></li>
 </ul>
 </li>
 <li><p><strong>Codio:</strong> Use Codio to submit your programming assignments. This platform offers a controlled environment for coding tasks and assessments.</p></li>
-<li><p><strong>Piazza:</strong>  Piazza will serve as a hub for various activities:</p>
+<li><p><strong>Piazza:</strong> Piazza will serve as a hub for various activities:</p>
 <ul class="simple">
 <li><p>Course announcements and updates.</p></li>
 <li><p>Queries to the instructor and Teaching Assistant (TA).</p></li>
@@ -593,13 +655,13 @@ document.write(`
 <ol class="arabic simple">
 <li><p><strong>Access UB Learns:</strong> Confirm that you can log into the EAS503 course page on UB Learns.</p></li>
 <li><p><strong>Course Book Access:</strong> Ensure you can access the course book available at <a class="reference external" href="https://mkzia.github.io/eas503-book">Course Book</a>. Familiarize yourself with this resource to get a head start on the course content.</p></li>
-<li><p><strong>Codio Licensing:</strong> Verify that you have obtained a license for Codio and can successfully log into the platform. <a class="reference external" href="https://codio.com/p/signup?courseToken=smart-prague">Invite Link</a></p></li>
+<li><p><strong>Codio Licensing:</strong> Verify that you have obtained a license for Codio and can successfully log into the platform.</p></li>
 <li><p><strong>Piazza Login:</strong> Confirm your ability to log into Piazza, where you’ll engage in course discussions, ask questions, and stay updated on course-related matters.</p></li>
 <li><p><strong>Software Installation:</strong></p>
 <ul class="simple">
 <li><p>Install Anaconda, a comprehensive data science platform, from <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda Individual Edition</a>.</p></li>
 <li><p>Install Microsoft Visual Studio Code, from <a class="reference external" href="https://code.visualstudio.com/">website</a>.</p></li>
-<li><p>If you have Windows, install Python 3.11 from the App store.</p></li>
+<li><p>If you have Windows, install Python 3.12 from the App store.</p></li>
 </ul>
 </li>
 </ol>
@@ -628,20 +690,20 @@ document.write(`
 <p><strong>Example 4:</strong> Student F’s non-functional computer leads Student G to allow access. Code copying occurs, resulting in both students earning a zero and reporting to the University.</p>
 <p><strong>Submission of work for grading indicates acceptance of the academic integrity policy.</strong></p>
 <p><strong>Important Note:</strong> If you come across a solution on a website (Chegg), be aware that it could potentially be intentionally placed there by the instructor to identify instances of academic misconduct. Always approach your coursework with integrity and refrain from using any unauthorized resources. Your commitment to academic honesty is essential to your personal growth and the integrity of the educational process.</p>
-<p><strong>Codio can detect cheating:</strong> Codio’s code editor is the industry-standard editor used in the VSCode IDE. We require you to complete your assignments in Codio partly for autograding reasons but also because Codio has very advanced keystroke analysis tools for generating insights into how students complete their work, including similarity checkers, time spent in error state, external pastes and insertion/deletion tracking.  So do not copy and paste your solution from another location. Do all your work inside the Codio editor. All your keystrokes and copy and pastes are recorded and can be played back. <strong>External pastes has been disabled.</strong></p>
+<p><strong>Codio can detect cheating:</strong> Codio’s code editor is the industry-standard editor used in the VSCode IDE. We require you to complete your assignments in Codio partly for autograding reasons but also because Codio has very advanced keystroke analysis tools for generating insights into how students complete their work, including similarity checkers, time spent in error state, external pastes and insertion/deletion tracking. So do not copy and paste your solution from another location. Do all your work inside the Codio editor. All your keystrokes and copy and pastes are recorded and can be played back. <strong>External pastes has been disabled.</strong></p>
 </div>
 </section>
 <section id="syllabus-review">
 <h2>Syllabus Review<a class="headerlink" href="#syllabus-review" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="AnlbREJrTFtA" data-shufflequestions="False"
+<div class="output text_html"><div id="ANJQAWPOGXht" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#AnlbREJrTFtA {
+#ANJQAWPOGXht {
    --jq-multiple-choice-bg: #345995;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -811,230 +873,235 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsAnlbREJrTFtA=[
-    {
-        "question": "The course has a final exam",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "True",
-                "correct": false
-            },
-            {
-                "answer": "False",
-                "correct": true
-            }
-        ]
-    },
-    {
-        "question": "Quizzes are open notes",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "True",
-                "correct": true
-            },
-            {
-                "answer": "False",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "question": "Mini-projects are group projects",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "True",
-                "correct": false
-            },
-            {
-                "answer": "False",
-                "correct": true
-            }
-        ]
-    },
-    {
-        "question": "How many students in a group?",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "1",
-                "correct": false
-            },
-            {
-                "answer": "2-3",
-                "correct": false
-            },
-            {
-                "answer": "3-4",
-                "correct": true
-            },
-            {
-                "answer": "4-5",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "question": "How much time do you have to finish the quiz once started",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "30 minutes",
-                "correct": false
-            },
-            {
-                "answer": "1 hour",
-                "correct": false
-            },
-            {
-                "answer": "2 hours",
-                "correct": true
-            },
-            {
-                "answer": "3 hours",
-                "correct": false
-            }
-        ]
-    },
-    {
-        "question": "Quizzes must be taken in Respondus Lockdown Browser",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "True",
-                "correct": true
-            },
-            {
-                "answer": "False",
-                "correct": false
-            },
-        ]
-    },
-    {
-        "question": "All programming assignments must be completed in the Codio IDE?",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "True",
-                "correct": true
-            },
-            {
-                "answer": "False",
-                "correct": false
-            },
-        ]
-    },
-    {
-        "question": "Codio records keystrokes and copy/pastes",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "True",
-                "correct": true
-            },
-            {
-                "answer": "False",
-                "correct": false
-            },
-        ]
-    },
-    {
-        "question": "How many days do you have to contest your grade after the submission deadline has passed?",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "3",
-                "correct": false
-            },
-            {
-                "answer": "5",
-                "correct": false
-            },
-            {
-                "answer": "6",
-                "correct": false
-            },
-            {
-                "answer": "7",
-                "correct": true
-            },
-        ]
-    },
-    {
-        "question": "How many late days do you have at your disposal to submit programming assignments?",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "5",
-                "correct": false
-            },
-            {
-                "answer": "7",
-                "correct": false
-            },
-            {
-                "answer": "10",
-                "correct": true
-            },
-            {
-                "answer": "15",
-                "correct": false
-            },
-        ]
-    },
-    {
-        "question": "How late can you submit a programming assignment?",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "2 days",
-                "correct": false
-            },
-            {
-                "answer": "3 days",
-                "correct": false
-            },
-            {
-                "answer": "4 days",
-                "correct": true
-            },
-            {
-                "answer": "5 days",
-                "correct": false
-            },
-        ]
-    },
-    {
-        "question": "Your friend was sick, and out of sympathy, you gave them your code so they could understand how to solve the problem. Is this considered cheating?",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "Yes",
-                "correct": true
-            },
-            {
-                "answer": "No",
-                "correct": false
-            },
-        ]
-    },
-    {
-        "question": "Your friend's laptop stopped working right before an assignment deadline, so you lend them your laptop. They use your laptop and upload YOUR solution instead of theirs. Will this be considered cheating on your behalf?",
-        "type": "multiple_choice",
-        "answers": [
-            {
-                "answer": "Yes",
-                "correct": true
-            },
-            {
-                "answer": "No",
-                "correct": false
-            }
-        ]
-    },
-];
+</style></div><script type="application/javascript">var questionsANJQAWPOGXht=[
+  {
+    "question": "The course has a final exam",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "True",
+        "correct": false
+      },
+      {
+        "answer": "False",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Quizzes are open notes",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "True",
+        "correct": true
+      },
+      {
+        "answer": "False",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Mini-projects are group projects",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "True",
+        "correct": false
+      },
+      {
+        "answer": "False",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "How many students are allowed in a group project?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "1",
+        "correct": false
+      },
+      {
+        "answer": "2-3",
+        "correct": false
+      },
+      {
+        "answer": "3-4",
+        "correct": false
+      },
+      {
+        "answer": "4-5",
+        "correct": false
+      },
+      {
+        "answer": "There are no group projects!",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "How much time do you have to finish the quiz once started",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "30 minutes",
+        "correct": false
+      },
+      {
+        "answer": "1 hour",
+        "correct": false
+      },
+      {
+        "answer": "2 hours",
+        "correct": false
+      },
+      {
+        "answer": "3 hours",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "Quizzes must be taken in Respondus Lockdown Browser",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "True",
+        "correct": true
+      },
+      {
+        "answer": "False",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "All programming assignments must be completed in the Codio IDE?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "True",
+        "correct": true
+      },
+      {
+        "answer": "False",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Codio records keystrokes and copy/pastes",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "True",
+        "correct": true
+      },
+      {
+        "answer": "False",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "How many days do you have to contest your grade after the submission deadline has passed?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "3",
+        "correct": false
+      },
+      {
+        "answer": "5",
+        "correct": false
+      },
+      {
+        "answer": "6",
+        "correct": false
+      },
+      {
+        "answer": "7",
+        "correct": true
+      }
+    ]
+  },
+  {
+    "question": "How many late days do you have at your disposal to submit programming assignments?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "5",
+        "correct": false
+      },
+      {
+        "answer": "7",
+        "correct": false
+      },
+      {
+        "answer": "10",
+        "correct": true
+      },
+      {
+        "answer": "15",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "How late can you submit a programming assignment?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "2 days",
+        "correct": false
+      },
+      {
+        "answer": "3 days",
+        "correct": true
+      },
+      {
+        "answer": "4 days",
+        "correct": false
+      },
+      {
+        "answer": "5 days",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Your friend was sick, and out of sympathy, you gave them your code so they could understand how to solve the problem. Is this considered cheating?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Yes",
+        "correct": true
+      },
+      {
+        "answer": "No",
+        "correct": false
+      }
+    ]
+  },
+  {
+    "question": "Your friend's laptop stopped working right before an assignment deadline, so you lend them your laptop. They use your laptop and upload YOUR solution instead of theirs. Will this be considered cheating on your behalf?",
+    "type": "multiple_choice",
+    "answers": [
+      {
+        "answer": "Yes",
+        "correct": true
+      },
+      {
+        "answer": "No",
+        "correct": false
+      }
+    ]
+  }
+]
+;
     // Make a random ID
 function makeid(length) {
     var result = [];
@@ -1783,8 +1850,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("AnlbREJrTFtA")) {
-            show_questions(questionsAnlbREJrTFtA,  AnlbREJrTFtA); 
+          if(document.getElementById("ANJQAWPOGXht")) {
+            show_questions(questionsANJQAWPOGXht,  ANJQAWPOGXht); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1793,8 +1860,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("AnlbREJrTFtA");
-        // console.log(document.getElementById("AnlbREJrTFtA"));
+        //console.log("ANJQAWPOGXht");
+        // console.log(document.getElementById("ANJQAWPOGXht"));
 
         try_show();
         }
@@ -1832,7 +1899,7 @@ if (typeof version == 'undefined') {
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="right-next"
@@ -1865,6 +1932,7 @@ if (typeof version == 'undefined') {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quizzes">Quizzes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-assignments">Programming Assignments</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-projects">Mini-Projects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project-overview">Final Project Overview</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#late-submission-policy">Late Submission Policy</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-resources">Course Resources</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#preparing-for-the-first-class">Preparing for the First Class</a></li>
@@ -1894,7 +1962,7 @@ By Mohammad Zia
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>
@@ -1918,8 +1986,8 @@ By Mohammad Zia
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

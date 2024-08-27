@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>13.9. Normalization &#8212; EAS503: Python for Data Scientists</title>
   
@@ -14,57 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/13/sql_8_normalization';</script>
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/13/sql_8_normalization.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -80,27 +72,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -122,8 +110,13 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -147,6 +140,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../intro.html">
   
@@ -168,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -178,7 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../01/fundamentals.html">1. Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/fundamentals.html">1. Fundamentals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../01/getting_started.html">1.1. Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01/definitions.html">1.2. Definitions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01/arithmetic.html">1.3. Arithmetic</a></li>
@@ -195,8 +190,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../01/exercises.html">1.14. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01/quizzes.html">1.15. Quizzes</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02/functions.html">2. Functions</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02/functions.html">2. Functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../02/intro.html">2.1. Introduction to Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02/built_in.html">2.2. Built-in Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02/user_defined.html">2.3. User Defined Functions</a></li>
@@ -205,8 +200,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../02/exercises.html">2.6. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02/quizzes.html">2.7. Quizzes</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03/intro.html">3. Strings</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03/intro.html">3. Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03/basics.html">3.1. String Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/formatting.html">3.2. String Formatting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/table.html">3.3. Creating a Table</a></li>
@@ -214,8 +209,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../03/exercises.html">3.5. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/quizzes.html">3.6. Quizzes</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04/intro.html">4. Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04/intro.html">4. Conditionals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../04/boolean.html">4.1. Boolean/Logical Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04/relational.html">4.2. Relational Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04/strings.html">4.3. String Comparison</a></li>
@@ -223,15 +218,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../04/exercises.html">4.5. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04/quizzes.html">4.6. Quizzes</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../05/intro.html">5. Lists and Tuples</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05/intro.html">5. Lists and Tuples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../05/lists.html">5.1. Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../05/methods.html">5.2. List Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../05/tuples.html">5.3. Tuples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../05/strings.html">5.4. Strings as a List</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../06/intro.html">6. Loops</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/intro.html">6. Loops</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../06/loop.html">6.1. for/while loop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06/for_loop_exercises.html">6.2. For Loop Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06/while_loop_exercises.html">6.3. While Loop Exercises</a></li>
@@ -240,39 +235,39 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../06/comprehension.html">6.6. List/Tuple Comprehension</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06/additional_exercises.html">6.7. Additional Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../07/intro.html">7. Dictionaries and Sets</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07/intro.html">7. Dictionaries and Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../07/dictionary.html">7.1. Dictionaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/dictionary_exercises.html">7.2. Dictionary Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/sets.html">7.3. Sets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/set_exercises.html">7.4. Set Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../08/intro.html">8. Lambda, Filters, Maps, Sorted</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08/intro.html">8. Lambda, Filters, Maps, Sorted</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../08/lambda.html">8.1. Lambda, Filter, Map, and Sorted</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../08/lambda_exercises.html">8.2. Lambda, Filter, Map, and Sorted Solutions</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../09/intro.html">9. Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09/intro.html">9. Error Handling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../09/errors.html">9.1. Errors and Exception Handling</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../10/intro.html">10. Functions Revisited</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10/intro.html">10. Functions Revisited</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../10/functions.html">10.1. Functions Revisited</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../11/intro.html">11. Miscellaneous Topics</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../11/intro.html">11. Miscellaneous Topics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../11/misc.html">11.1. Miscellaneous Topics</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../12/intro.html">12. Object Oriented Programming</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../12/intro.html">12. Object Oriented Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../12/oop.html">12.1. Object-Oriented Programming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../12/operator_overloading.html">12.2. Operator overloading</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../12/self.html">12.3. Self</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../12/item_assignment.html">12.4. Item assignment</a></li>
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="sql.html">13. SQL with SQLite</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="sql.html">13. SQL with SQLite</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="sql_0_tables.html">13.1. Creating Tables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sql_1_query_primer.html">13.2. SQL Query Primer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sql_2_filtering.html">13.3. Filtering</a></li>
@@ -288,25 +283,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="sql_11_soccer.html">13.13. Soccer Database</a></li>
 
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../14/intro.html">14. Plotting in Python</a><input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../14/intro.html">14. Plotting in Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../14/matplotlib.html">14.1. Matplotlib</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../15/intro.html">15. NumPy and Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../15/intro.html">15. NumPy and Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../15/np_pd.html">15.1. Numpy and Pandas</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../15/exercises.html">15.3. Cross-referenced Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../16/intro.html">16. Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../16/intro.html">16. Machine Learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../16/introduction.html">16.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../16/loading_data.html">16.2. Loading Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../16/preprocessing_data.html">16.3. Preprocessing data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../16/select_and_train_a_model.html">16.4. Select and Train a Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../16/misc.html">16.5. Feature Selection and Evaluation</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -322,7 +317,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -331,14 +326,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -431,10 +426,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -442,14 +437,14 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
 </script>
-<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <span class="fa-solid fa-list"></span>
-</label>
+</button>
 </div></div>
       
     </div>
@@ -559,70 +554,60 @@ document.write(`
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_7968/3490548546.py:2: DeprecationWarning: 
-Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
-(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
-but was not found to be installed on your system.
-If this would cause problems for you,
-please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
-        
-  import pandas as pd
-</pre></div>
-</div>
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_370a9" style="font-size: 12px">
+<table id="T_630b3" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_370a9_level0_col0" class="col_heading level0 col0" >EmployeeID</th>
-      <th id="T_370a9_level0_col1" class="col_heading level0 col1" >Name</th>
-      <th id="T_370a9_level0_col2" class="col_heading level0 col2" >Project</th>
-      <th id="T_370a9_level0_col3" class="col_heading level0 col3" >Time</th>
+      <th id="T_630b3_level0_col0" class="col_heading level0 col0" >EmployeeID</th>
+      <th id="T_630b3_level0_col1" class="col_heading level0 col1" >Name</th>
+      <th id="T_630b3_level0_col2" class="col_heading level0 col2" >Project</th>
+      <th id="T_630b3_level0_col3" class="col_heading level0 col3" >Time</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_370a9_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_370a9_row0_col0" class="data row0 col0" >EN1-26</td>
-      <td id="T_370a9_row0_col1" class="data row0 col1" >Sean O'Brien</td>
-      <td id="T_370a9_row0_col2" class="data row0 col2" >30-452-T3, 30-457-T3, 32-244-T3</td>
-      <td id="T_370a9_row0_col3" class="data row0 col3" >0.25, 0.40, 0.30</td>
+      <th id="T_630b3_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_630b3_row0_col0" class="data row0 col0" >EN1-26</td>
+      <td id="T_630b3_row0_col1" class="data row0 col1" >Sean O'Brien</td>
+      <td id="T_630b3_row0_col2" class="data row0 col2" >30-452-T3, 30-457-T3, 32-244-T3</td>
+      <td id="T_630b3_row0_col3" class="data row0 col3" >0.25, 0.40, 0.30</td>
     </tr>
     <tr>
-      <th id="T_370a9_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_370a9_row1_col0" class="data row1 col0" >EN1-33</td>
-      <td id="T_370a9_row1_col1" class="data row1 col1" >Amy Guya</td>
-      <td id="T_370a9_row1_col2" class="data row1 col2" >30-452-T3, 30-382-TC, 32-244-T3</td>
-      <td id="T_370a9_row1_col3" class="data row1 col3" >0.05, 0.35, 0.60</td>
+      <th id="T_630b3_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_630b3_row1_col0" class="data row1 col0" >EN1-33</td>
+      <td id="T_630b3_row1_col1" class="data row1 col1" >Amy Guya</td>
+      <td id="T_630b3_row1_col2" class="data row1 col2" >30-452-T3, 30-382-TC, 32-244-T3</td>
+      <td id="T_630b3_row1_col3" class="data row1 col3" >0.05, 0.35, 0.60</td>
     </tr>
     <tr>
-      <th id="T_370a9_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_370a9_row2_col0" class="data row2 col0" >EN1-35</td>
-      <td id="T_370a9_row2_col1" class="data row2 col1" >Steven Baranco</td>
-      <td id="T_370a9_row2_col2" class="data row2 col2" >30-452-T3, 31-238-TC</td>
-      <td id="T_370a9_row2_col3" class="data row2 col3" >0.15, 0.80</td>
+      <th id="T_630b3_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_630b3_row2_col0" class="data row2 col0" >EN1-35</td>
+      <td id="T_630b3_row2_col1" class="data row2 col1" >Steven Baranco</td>
+      <td id="T_630b3_row2_col2" class="data row2 col2" >30-452-T3, 31-238-TC</td>
+      <td id="T_630b3_row2_col3" class="data row2 col3" >0.15, 0.80</td>
     </tr>
     <tr>
-      <th id="T_370a9_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_370a9_row3_col0" class="data row3 col0" >EN1-36</td>
-      <td id="T_370a9_row3_col1" class="data row3 col1" >Elizabeth Roslyn</td>
-      <td id="T_370a9_row3_col2" class="data row3 col2" >35-152-TC</td>
-      <td id="T_370a9_row3_col3" class="data row3 col3" >0.90</td>
+      <th id="T_630b3_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_630b3_row3_col0" class="data row3 col0" >EN1-36</td>
+      <td id="T_630b3_row3_col1" class="data row3 col1" >Elizabeth Roslyn</td>
+      <td id="T_630b3_row3_col2" class="data row3 col2" >35-152-TC</td>
+      <td id="T_630b3_row3_col3" class="data row3 col3" >0.90</td>
     </tr>
     <tr>
-      <th id="T_370a9_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_370a9_row4_col0" class="data row4 col0" >EN1-38</td>
-      <td id="T_370a9_row4_col1" class="data row4 col1" >Carol Schaaf</td>
-      <td id="T_370a9_row4_col2" class="data row4 col2" >36-272-TC</td>
-      <td id="T_370a9_row4_col3" class="data row4 col3" >0.75</td>
+      <th id="T_630b3_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_630b3_row4_col0" class="data row4 col0" >EN1-38</td>
+      <td id="T_630b3_row4_col1" class="data row4 col1" >Carol Schaaf</td>
+      <td id="T_630b3_row4_col2" class="data row4 col2" >36-272-TC</td>
+      <td id="T_630b3_row4_col3" class="data row4 col3" >0.75</td>
     </tr>
     <tr>
-      <th id="T_370a9_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_370a9_row5_col0" class="data row5 col0" >EN1-40</td>
-      <td id="T_370a9_row5_col1" class="data row5 col1" >Alexandra Wing</td>
-      <td id="T_370a9_row5_col2" class="data row5 col2" >31-238-TC, 31-241-TC</td>
-      <td id="T_370a9_row5_col3" class="data row5 col3" >0.20, 0.70</td>
+      <th id="T_630b3_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_630b3_row5_col0" class="data row5 col0" >EN1-40</td>
+      <td id="T_630b3_row5_col1" class="data row5 col1" >Alexandra Wing</td>
+      <td id="T_630b3_row5_col2" class="data row5 col2" >31-238-TC, 31-241-TC</td>
+      <td id="T_630b3_row5_col3" class="data row5 col3" >0.20, 0.70</td>
     </tr>
   </tbody>
 </table>
@@ -664,93 +649,93 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_e0959" style="font-size: 12px">
+<table id="T_e8754" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_e0959_level0_col0" class="col_heading level0 col0" >EmployeeID</th>
-      <th id="T_e0959_level0_col1" class="col_heading level0 col1" >Last_Name</th>
-      <th id="T_e0959_level0_col2" class="col_heading level0 col2" >First_Name</th>
-      <th id="T_e0959_level0_col3" class="col_heading level0 col3" >Project1</th>
-      <th id="T_e0959_level0_col4" class="col_heading level0 col4" >Time1</th>
-      <th id="T_e0959_level0_col5" class="col_heading level0 col5" >Project2</th>
-      <th id="T_e0959_level0_col6" class="col_heading level0 col6" >Time2</th>
-      <th id="T_e0959_level0_col7" class="col_heading level0 col7" >Project3</th>
-      <th id="T_e0959_level0_col8" class="col_heading level0 col8" >Time3</th>
+      <th id="T_e8754_level0_col0" class="col_heading level0 col0" >EmployeeID</th>
+      <th id="T_e8754_level0_col1" class="col_heading level0 col1" >Last_Name</th>
+      <th id="T_e8754_level0_col2" class="col_heading level0 col2" >First_Name</th>
+      <th id="T_e8754_level0_col3" class="col_heading level0 col3" >Project1</th>
+      <th id="T_e8754_level0_col4" class="col_heading level0 col4" >Time1</th>
+      <th id="T_e8754_level0_col5" class="col_heading level0 col5" >Project2</th>
+      <th id="T_e8754_level0_col6" class="col_heading level0 col6" >Time2</th>
+      <th id="T_e8754_level0_col7" class="col_heading level0 col7" >Project3</th>
+      <th id="T_e8754_level0_col8" class="col_heading level0 col8" >Time3</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_e0959_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_e0959_row0_col0" class="data row0 col0" >EN1-26</td>
-      <td id="T_e0959_row0_col1" class="data row0 col1" >O'Brien</td>
-      <td id="T_e0959_row0_col2" class="data row0 col2" >Sean</td>
-      <td id="T_e0959_row0_col3" class="data row0 col3" >30-452-T3</td>
-      <td id="T_e0959_row0_col4" class="data row0 col4" >0.250000</td>
-      <td id="T_e0959_row0_col5" class="data row0 col5" >30-457-T3</td>
-      <td id="T_e0959_row0_col6" class="data row0 col6" >0.400000</td>
-      <td id="T_e0959_row0_col7" class="data row0 col7" >32-244-T3</td>
-      <td id="T_e0959_row0_col8" class="data row0 col8" >0.300000</td>
+      <th id="T_e8754_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_e8754_row0_col0" class="data row0 col0" >EN1-26</td>
+      <td id="T_e8754_row0_col1" class="data row0 col1" >O'Brien</td>
+      <td id="T_e8754_row0_col2" class="data row0 col2" >Sean</td>
+      <td id="T_e8754_row0_col3" class="data row0 col3" >30-452-T3</td>
+      <td id="T_e8754_row0_col4" class="data row0 col4" >0.250000</td>
+      <td id="T_e8754_row0_col5" class="data row0 col5" >30-457-T3</td>
+      <td id="T_e8754_row0_col6" class="data row0 col6" >0.400000</td>
+      <td id="T_e8754_row0_col7" class="data row0 col7" >32-244-T3</td>
+      <td id="T_e8754_row0_col8" class="data row0 col8" >0.300000</td>
     </tr>
     <tr>
-      <th id="T_e0959_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_e0959_row1_col0" class="data row1 col0" >EN1-33</td>
-      <td id="T_e0959_row1_col1" class="data row1 col1" >Guya</td>
-      <td id="T_e0959_row1_col2" class="data row1 col2" >Amy</td>
-      <td id="T_e0959_row1_col3" class="data row1 col3" >30-452-T3</td>
-      <td id="T_e0959_row1_col4" class="data row1 col4" >0.050000</td>
-      <td id="T_e0959_row1_col5" class="data row1 col5" >30-382-TC</td>
-      <td id="T_e0959_row1_col6" class="data row1 col6" >0.350000</td>
-      <td id="T_e0959_row1_col7" class="data row1 col7" >32-244-T3</td>
-      <td id="T_e0959_row1_col8" class="data row1 col8" >0.600000</td>
+      <th id="T_e8754_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_e8754_row1_col0" class="data row1 col0" >EN1-33</td>
+      <td id="T_e8754_row1_col1" class="data row1 col1" >Guya</td>
+      <td id="T_e8754_row1_col2" class="data row1 col2" >Amy</td>
+      <td id="T_e8754_row1_col3" class="data row1 col3" >30-452-T3</td>
+      <td id="T_e8754_row1_col4" class="data row1 col4" >0.050000</td>
+      <td id="T_e8754_row1_col5" class="data row1 col5" >30-382-TC</td>
+      <td id="T_e8754_row1_col6" class="data row1 col6" >0.350000</td>
+      <td id="T_e8754_row1_col7" class="data row1 col7" >32-244-T3</td>
+      <td id="T_e8754_row1_col8" class="data row1 col8" >0.600000</td>
     </tr>
     <tr>
-      <th id="T_e0959_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_e0959_row2_col0" class="data row2 col0" >EN1-35</td>
-      <td id="T_e0959_row2_col1" class="data row2 col1" >Baranco</td>
-      <td id="T_e0959_row2_col2" class="data row2 col2" >Steven</td>
-      <td id="T_e0959_row2_col3" class="data row2 col3" >30-452-T3</td>
-      <td id="T_e0959_row2_col4" class="data row2 col4" >0.150000</td>
-      <td id="T_e0959_row2_col5" class="data row2 col5" >31-238-TC</td>
-      <td id="T_e0959_row2_col6" class="data row2 col6" >0.800000</td>
-      <td id="T_e0959_row2_col7" class="data row2 col7" >None</td>
-      <td id="T_e0959_row2_col8" class="data row2 col8" >nan</td>
+      <th id="T_e8754_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_e8754_row2_col0" class="data row2 col0" >EN1-35</td>
+      <td id="T_e8754_row2_col1" class="data row2 col1" >Baranco</td>
+      <td id="T_e8754_row2_col2" class="data row2 col2" >Steven</td>
+      <td id="T_e8754_row2_col3" class="data row2 col3" >30-452-T3</td>
+      <td id="T_e8754_row2_col4" class="data row2 col4" >0.150000</td>
+      <td id="T_e8754_row2_col5" class="data row2 col5" >31-238-TC</td>
+      <td id="T_e8754_row2_col6" class="data row2 col6" >0.800000</td>
+      <td id="T_e8754_row2_col7" class="data row2 col7" >None</td>
+      <td id="T_e8754_row2_col8" class="data row2 col8" >nan</td>
     </tr>
     <tr>
-      <th id="T_e0959_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_e0959_row3_col0" class="data row3 col0" >EN1-36</td>
-      <td id="T_e0959_row3_col1" class="data row3 col1" >Roslyn</td>
-      <td id="T_e0959_row3_col2" class="data row3 col2" >Elizabeth</td>
-      <td id="T_e0959_row3_col3" class="data row3 col3" >35-152-TC</td>
-      <td id="T_e0959_row3_col4" class="data row3 col4" >0.900000</td>
-      <td id="T_e0959_row3_col5" class="data row3 col5" >None</td>
-      <td id="T_e0959_row3_col6" class="data row3 col6" >nan</td>
-      <td id="T_e0959_row3_col7" class="data row3 col7" >None</td>
-      <td id="T_e0959_row3_col8" class="data row3 col8" >nan</td>
+      <th id="T_e8754_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_e8754_row3_col0" class="data row3 col0" >EN1-36</td>
+      <td id="T_e8754_row3_col1" class="data row3 col1" >Roslyn</td>
+      <td id="T_e8754_row3_col2" class="data row3 col2" >Elizabeth</td>
+      <td id="T_e8754_row3_col3" class="data row3 col3" >35-152-TC</td>
+      <td id="T_e8754_row3_col4" class="data row3 col4" >0.900000</td>
+      <td id="T_e8754_row3_col5" class="data row3 col5" >None</td>
+      <td id="T_e8754_row3_col6" class="data row3 col6" >nan</td>
+      <td id="T_e8754_row3_col7" class="data row3 col7" >None</td>
+      <td id="T_e8754_row3_col8" class="data row3 col8" >nan</td>
     </tr>
     <tr>
-      <th id="T_e0959_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_e0959_row4_col0" class="data row4 col0" >EN1-38</td>
-      <td id="T_e0959_row4_col1" class="data row4 col1" >Schaaf</td>
-      <td id="T_e0959_row4_col2" class="data row4 col2" >Carol</td>
-      <td id="T_e0959_row4_col3" class="data row4 col3" >36-272-TC</td>
-      <td id="T_e0959_row4_col4" class="data row4 col4" >0.750000</td>
-      <td id="T_e0959_row4_col5" class="data row4 col5" >None</td>
-      <td id="T_e0959_row4_col6" class="data row4 col6" >nan</td>
-      <td id="T_e0959_row4_col7" class="data row4 col7" >None</td>
-      <td id="T_e0959_row4_col8" class="data row4 col8" >nan</td>
+      <th id="T_e8754_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_e8754_row4_col0" class="data row4 col0" >EN1-38</td>
+      <td id="T_e8754_row4_col1" class="data row4 col1" >Schaaf</td>
+      <td id="T_e8754_row4_col2" class="data row4 col2" >Carol</td>
+      <td id="T_e8754_row4_col3" class="data row4 col3" >36-272-TC</td>
+      <td id="T_e8754_row4_col4" class="data row4 col4" >0.750000</td>
+      <td id="T_e8754_row4_col5" class="data row4 col5" >None</td>
+      <td id="T_e8754_row4_col6" class="data row4 col6" >nan</td>
+      <td id="T_e8754_row4_col7" class="data row4 col7" >None</td>
+      <td id="T_e8754_row4_col8" class="data row4 col8" >nan</td>
     </tr>
     <tr>
-      <th id="T_e0959_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_e0959_row5_col0" class="data row5 col0" >EN1-40</td>
-      <td id="T_e0959_row5_col1" class="data row5 col1" >Wing</td>
-      <td id="T_e0959_row5_col2" class="data row5 col2" >Alexandra</td>
-      <td id="T_e0959_row5_col3" class="data row5 col3" >31-238-TC</td>
-      <td id="T_e0959_row5_col4" class="data row5 col4" >0.200000</td>
-      <td id="T_e0959_row5_col5" class="data row5 col5" >31-241-TC</td>
-      <td id="T_e0959_row5_col6" class="data row5 col6" >0.700000</td>
-      <td id="T_e0959_row5_col7" class="data row5 col7" >None</td>
-      <td id="T_e0959_row5_col8" class="data row5 col8" >nan</td>
+      <th id="T_e8754_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_e8754_row5_col0" class="data row5 col0" >EN1-40</td>
+      <td id="T_e8754_row5_col1" class="data row5 col1" >Wing</td>
+      <td id="T_e8754_row5_col2" class="data row5 col2" >Alexandra</td>
+      <td id="T_e8754_row5_col3" class="data row5 col3" >31-238-TC</td>
+      <td id="T_e8754_row5_col4" class="data row5 col4" >0.200000</td>
+      <td id="T_e8754_row5_col5" class="data row5 col5" >31-241-TC</td>
+      <td id="T_e8754_row5_col6" class="data row5 col6" >0.700000</td>
+      <td id="T_e8754_row5_col7" class="data row5 col7" >None</td>
+      <td id="T_e8754_row5_col8" class="data row5 col8" >nan</td>
     </tr>
   </tbody>
 </table>
@@ -856,81 +841,81 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </table>
 </div></div><div class="output text_html"><style type="text/css">
 </style>
-<table id="T_f09ee" style="font-size: 12px">
+<table id="T_325c8" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_f09ee_level0_col0" class="col_heading level0 col0" >ProjectNum</th>
-      <th id="T_f09ee_level0_col1" class="col_heading level0 col1" >EmployeeID</th>
-      <th id="T_f09ee_level0_col2" class="col_heading level0 col2" >Time</th>
+      <th id="T_325c8_level0_col0" class="col_heading level0 col0" >ProjectNum</th>
+      <th id="T_325c8_level0_col1" class="col_heading level0 col1" >EmployeeID</th>
+      <th id="T_325c8_level0_col2" class="col_heading level0 col2" >Time</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_f09ee_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_f09ee_row0_col0" class="data row0 col0" >30-328-TC</td>
-      <td id="T_f09ee_row0_col1" class="data row0 col1" >EN1-33</td>
-      <td id="T_f09ee_row0_col2" class="data row0 col2" >0.350000</td>
+      <th id="T_325c8_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_325c8_row0_col0" class="data row0 col0" >30-328-TC</td>
+      <td id="T_325c8_row0_col1" class="data row0 col1" >EN1-33</td>
+      <td id="T_325c8_row0_col2" class="data row0 col2" >0.350000</td>
     </tr>
     <tr>
-      <th id="T_f09ee_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_f09ee_row1_col0" class="data row1 col0" >30-452-T3</td>
-      <td id="T_f09ee_row1_col1" class="data row1 col1" >EN1-26</td>
-      <td id="T_f09ee_row1_col2" class="data row1 col2" >0.250000</td>
+      <th id="T_325c8_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_325c8_row1_col0" class="data row1 col0" >30-452-T3</td>
+      <td id="T_325c8_row1_col1" class="data row1 col1" >EN1-26</td>
+      <td id="T_325c8_row1_col2" class="data row1 col2" >0.250000</td>
     </tr>
     <tr>
-      <th id="T_f09ee_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_f09ee_row2_col0" class="data row2 col0" >30-452-T3</td>
-      <td id="T_f09ee_row2_col1" class="data row2 col1" >EN1-33</td>
-      <td id="T_f09ee_row2_col2" class="data row2 col2" >0.050000</td>
+      <th id="T_325c8_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_325c8_row2_col0" class="data row2 col0" >30-452-T3</td>
+      <td id="T_325c8_row2_col1" class="data row2 col1" >EN1-33</td>
+      <td id="T_325c8_row2_col2" class="data row2 col2" >0.050000</td>
     </tr>
     <tr>
-      <th id="T_f09ee_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_f09ee_row3_col0" class="data row3 col0" >30-452-T3</td>
-      <td id="T_f09ee_row3_col1" class="data row3 col1" >EN1-35</td>
-      <td id="T_f09ee_row3_col2" class="data row3 col2" >0.150000</td>
+      <th id="T_325c8_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_325c8_row3_col0" class="data row3 col0" >30-452-T3</td>
+      <td id="T_325c8_row3_col1" class="data row3 col1" >EN1-35</td>
+      <td id="T_325c8_row3_col2" class="data row3 col2" >0.150000</td>
     </tr>
     <tr>
-      <th id="T_f09ee_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_f09ee_row4_col0" class="data row4 col0" >31-238-TC</td>
-      <td id="T_f09ee_row4_col1" class="data row4 col1" >EN1-35</td>
-      <td id="T_f09ee_row4_col2" class="data row4 col2" >0.800000</td>
+      <th id="T_325c8_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_325c8_row4_col0" class="data row4 col0" >31-238-TC</td>
+      <td id="T_325c8_row4_col1" class="data row4 col1" >EN1-35</td>
+      <td id="T_325c8_row4_col2" class="data row4 col2" >0.800000</td>
     </tr>
     <tr>
-      <th id="T_f09ee_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_f09ee_row5_col0" class="data row5 col0" >30-457-T3</td>
-      <td id="T_f09ee_row5_col1" class="data row5 col1" >EN1-26</td>
-      <td id="T_f09ee_row5_col2" class="data row5 col2" >0.400000</td>
+      <th id="T_325c8_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_325c8_row5_col0" class="data row5 col0" >30-457-T3</td>
+      <td id="T_325c8_row5_col1" class="data row5 col1" >EN1-26</td>
+      <td id="T_325c8_row5_col2" class="data row5 col2" >0.400000</td>
     </tr>
     <tr>
-      <th id="T_f09ee_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_f09ee_row6_col0" class="data row6 col0" >31-238-TC</td>
-      <td id="T_f09ee_row6_col1" class="data row6 col1" >EN1-40</td>
-      <td id="T_f09ee_row6_col2" class="data row6 col2" >0.200000</td>
+      <th id="T_325c8_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_325c8_row6_col0" class="data row6 col0" >31-238-TC</td>
+      <td id="T_325c8_row6_col1" class="data row6 col1" >EN1-40</td>
+      <td id="T_325c8_row6_col2" class="data row6 col2" >0.200000</td>
     </tr>
     <tr>
-      <th id="T_f09ee_level0_row7" class="row_heading level0 row7" >7</th>
-      <td id="T_f09ee_row7_col0" class="data row7 col0" >31-241-TC</td>
-      <td id="T_f09ee_row7_col1" class="data row7 col1" >EN1-40</td>
-      <td id="T_f09ee_row7_col2" class="data row7 col2" >0.700000</td>
+      <th id="T_325c8_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_325c8_row7_col0" class="data row7 col0" >31-241-TC</td>
+      <td id="T_325c8_row7_col1" class="data row7 col1" >EN1-40</td>
+      <td id="T_325c8_row7_col2" class="data row7 col2" >0.700000</td>
     </tr>
     <tr>
-      <th id="T_f09ee_level0_row8" class="row_heading level0 row8" >8</th>
-      <td id="T_f09ee_row8_col0" class="data row8 col0" >32-244-T3</td>
-      <td id="T_f09ee_row8_col1" class="data row8 col1" >EN1-33</td>
-      <td id="T_f09ee_row8_col2" class="data row8 col2" >0.600000</td>
+      <th id="T_325c8_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_325c8_row8_col0" class="data row8 col0" >32-244-T3</td>
+      <td id="T_325c8_row8_col1" class="data row8 col1" >EN1-33</td>
+      <td id="T_325c8_row8_col2" class="data row8 col2" >0.600000</td>
     </tr>
     <tr>
-      <th id="T_f09ee_level0_row9" class="row_heading level0 row9" >9</th>
-      <td id="T_f09ee_row9_col0" class="data row9 col0" >35-152-TC</td>
-      <td id="T_f09ee_row9_col1" class="data row9 col1" >EN1-36</td>
-      <td id="T_f09ee_row9_col2" class="data row9 col2" >0.900000</td>
+      <th id="T_325c8_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_325c8_row9_col0" class="data row9 col0" >35-152-TC</td>
+      <td id="T_325c8_row9_col1" class="data row9 col1" >EN1-36</td>
+      <td id="T_325c8_row9_col2" class="data row9 col2" >0.900000</td>
     </tr>
     <tr>
-      <th id="T_f09ee_level0_row10" class="row_heading level0 row10" >10</th>
-      <td id="T_f09ee_row10_col0" class="data row10 col0" >36-272-TC</td>
-      <td id="T_f09ee_row10_col1" class="data row10 col1" >EN1-38</td>
-      <td id="T_f09ee_row10_col2" class="data row10 col2" >0.750000</td>
+      <th id="T_325c8_level0_row10" class="row_heading level0 row10" >10</th>
+      <td id="T_325c8_row10_col0" class="data row10 col0" >36-272-TC</td>
+      <td id="T_325c8_row10_col1" class="data row10 col1" >EN1-38</td>
+      <td id="T_325c8_row10_col2" class="data row10 col2" >0.750000</td>
     </tr>
   </tbody>
 </table>
@@ -970,113 +955,113 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_1fcd6" style="font-size: 12px">
+<table id="T_62762" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_1fcd6_level0_col0" class="col_heading level0 col0" >EmployeeID</th>
-      <th id="T_1fcd6_level0_col1" class="col_heading level0 col1" >Last_Name</th>
-      <th id="T_1fcd6_level0_col2" class="col_heading level0 col2" >First_Name</th>
-      <th id="T_1fcd6_level0_col3" class="col_heading level0 col3" >ProjectNumber</th>
-      <th id="T_1fcd6_level0_col4" class="col_heading level0 col4" >ProjectTitle</th>
+      <th id="T_62762_level0_col0" class="col_heading level0 col0" >EmployeeID</th>
+      <th id="T_62762_level0_col1" class="col_heading level0 col1" >Last_Name</th>
+      <th id="T_62762_level0_col2" class="col_heading level0 col2" >First_Name</th>
+      <th id="T_62762_level0_col3" class="col_heading level0 col3" >ProjectNumber</th>
+      <th id="T_62762_level0_col4" class="col_heading level0 col4" >ProjectTitle</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_1fcd6_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_1fcd6_row0_col0" class="data row0 col0" >EN1-26</td>
-      <td id="T_1fcd6_row0_col1" class="data row0 col1" >O'Brien</td>
-      <td id="T_1fcd6_row0_col2" class="data row0 col2" >Sean</td>
-      <td id="T_1fcd6_row0_col3" class="data row0 col3" >30-452-T3</td>
-      <td id="T_1fcd6_row0_col4" class="data row0 col4" >STAR manual</td>
+      <th id="T_62762_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_62762_row0_col0" class="data row0 col0" >EN1-26</td>
+      <td id="T_62762_row0_col1" class="data row0 col1" >O'Brien</td>
+      <td id="T_62762_row0_col2" class="data row0 col2" >Sean</td>
+      <td id="T_62762_row0_col3" class="data row0 col3" >30-452-T3</td>
+      <td id="T_62762_row0_col4" class="data row0 col4" >STAR manual</td>
     </tr>
     <tr>
-      <th id="T_1fcd6_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_1fcd6_row1_col0" class="data row1 col0" >EN1-26</td>
-      <td id="T_1fcd6_row1_col1" class="data row1 col1" >O'Brien</td>
-      <td id="T_1fcd6_row1_col2" class="data row1 col2" >Sean</td>
-      <td id="T_1fcd6_row1_col3" class="data row1 col3" >30-457-T3</td>
-      <td id="T_1fcd6_row1_col4" class="data row1 col4" >ISO procedures</td>
+      <th id="T_62762_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_62762_row1_col0" class="data row1 col0" >EN1-26</td>
+      <td id="T_62762_row1_col1" class="data row1 col1" >O'Brien</td>
+      <td id="T_62762_row1_col2" class="data row1 col2" >Sean</td>
+      <td id="T_62762_row1_col3" class="data row1 col3" >30-457-T3</td>
+      <td id="T_62762_row1_col4" class="data row1 col4" >ISO procedures</td>
     </tr>
     <tr>
-      <th id="T_1fcd6_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_1fcd6_row2_col0" class="data row2 col0" >EN1-26</td>
-      <td id="T_1fcd6_row2_col1" class="data row2 col1" >O'Brien</td>
-      <td id="T_1fcd6_row2_col2" class="data row2 col2" >Sean</td>
-      <td id="T_1fcd6_row2_col3" class="data row2 col3" >31-124-T3</td>
-      <td id="T_1fcd6_row2_col4" class="data row2 col4" >Employee handbook</td>
+      <th id="T_62762_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_62762_row2_col0" class="data row2 col0" >EN1-26</td>
+      <td id="T_62762_row2_col1" class="data row2 col1" >O'Brien</td>
+      <td id="T_62762_row2_col2" class="data row2 col2" >Sean</td>
+      <td id="T_62762_row2_col3" class="data row2 col3" >31-124-T3</td>
+      <td id="T_62762_row2_col4" class="data row2 col4" >Employee handbook</td>
     </tr>
     <tr>
-      <th id="T_1fcd6_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_1fcd6_row3_col0" class="data row3 col0" >EN1-33</td>
-      <td id="T_1fcd6_row3_col1" class="data row3 col1" >Guya</td>
-      <td id="T_1fcd6_row3_col2" class="data row3 col2" >Amy</td>
-      <td id="T_1fcd6_row3_col3" class="data row3 col3" >30-452-T3</td>
-      <td id="T_1fcd6_row3_col4" class="data row3 col4" >STAR manual</td>
+      <th id="T_62762_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_62762_row3_col0" class="data row3 col0" >EN1-33</td>
+      <td id="T_62762_row3_col1" class="data row3 col1" >Guya</td>
+      <td id="T_62762_row3_col2" class="data row3 col2" >Amy</td>
+      <td id="T_62762_row3_col3" class="data row3 col3" >30-452-T3</td>
+      <td id="T_62762_row3_col4" class="data row3 col4" >STAR manual</td>
     </tr>
     <tr>
-      <th id="T_1fcd6_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_1fcd6_row4_col0" class="data row4 col0" >EN1-33</td>
-      <td id="T_1fcd6_row4_col1" class="data row4 col1" >Guya</td>
-      <td id="T_1fcd6_row4_col2" class="data row4 col2" >Amy</td>
-      <td id="T_1fcd6_row4_col3" class="data row4 col3" >30-482-TC</td>
-      <td id="T_1fcd6_row4_col4" class="data row4 col4" >Web Site</td>
+      <th id="T_62762_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_62762_row4_col0" class="data row4 col0" >EN1-33</td>
+      <td id="T_62762_row4_col1" class="data row4 col1" >Guya</td>
+      <td id="T_62762_row4_col2" class="data row4 col2" >Amy</td>
+      <td id="T_62762_row4_col3" class="data row4 col3" >30-482-TC</td>
+      <td id="T_62762_row4_col4" class="data row4 col4" >Web Site</td>
     </tr>
     <tr>
-      <th id="T_1fcd6_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_1fcd6_row5_col0" class="data row5 col0" >EN1-33</td>
-      <td id="T_1fcd6_row5_col1" class="data row5 col1" >Guya</td>
-      <td id="T_1fcd6_row5_col2" class="data row5 col2" >Amy</td>
-      <td id="T_1fcd6_row5_col3" class="data row5 col3" >31-241-TC</td>
-      <td id="T_1fcd6_row5_col4" class="data row5 col4" >New catalog</td>
+      <th id="T_62762_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_62762_row5_col0" class="data row5 col0" >EN1-33</td>
+      <td id="T_62762_row5_col1" class="data row5 col1" >Guya</td>
+      <td id="T_62762_row5_col2" class="data row5 col2" >Amy</td>
+      <td id="T_62762_row5_col3" class="data row5 col3" >31-241-TC</td>
+      <td id="T_62762_row5_col4" class="data row5 col4" >New catalog</td>
     </tr>
     <tr>
-      <th id="T_1fcd6_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_1fcd6_row6_col0" class="data row6 col0" >EN1-35</td>
-      <td id="T_1fcd6_row6_col1" class="data row6 col1" >Baranco</td>
-      <td id="T_1fcd6_row6_col2" class="data row6 col2" >Steven</td>
-      <td id="T_1fcd6_row6_col3" class="data row6 col3" >30-452-T3</td>
-      <td id="T_1fcd6_row6_col4" class="data row6 col4" >STAR manual</td>
+      <th id="T_62762_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_62762_row6_col0" class="data row6 col0" >EN1-35</td>
+      <td id="T_62762_row6_col1" class="data row6 col1" >Baranco</td>
+      <td id="T_62762_row6_col2" class="data row6 col2" >Steven</td>
+      <td id="T_62762_row6_col3" class="data row6 col3" >30-452-T3</td>
+      <td id="T_62762_row6_col4" class="data row6 col4" >STAR manual</td>
     </tr>
     <tr>
-      <th id="T_1fcd6_level0_row7" class="row_heading level0 row7" >7</th>
-      <td id="T_1fcd6_row7_col0" class="data row7 col0" >EN1-35</td>
-      <td id="T_1fcd6_row7_col1" class="data row7 col1" >Baranco</td>
-      <td id="T_1fcd6_row7_col2" class="data row7 col2" >Steven</td>
-      <td id="T_1fcd6_row7_col3" class="data row7 col3" >31-238-TC</td>
-      <td id="T_1fcd6_row7_col4" class="data row7 col4" >STAR prototype</td>
+      <th id="T_62762_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_62762_row7_col0" class="data row7 col0" >EN1-35</td>
+      <td id="T_62762_row7_col1" class="data row7 col1" >Baranco</td>
+      <td id="T_62762_row7_col2" class="data row7 col2" >Steven</td>
+      <td id="T_62762_row7_col3" class="data row7 col3" >31-238-TC</td>
+      <td id="T_62762_row7_col4" class="data row7 col4" >STAR prototype</td>
     </tr>
     <tr>
-      <th id="T_1fcd6_level0_row8" class="row_heading level0 row8" >8</th>
-      <td id="T_1fcd6_row8_col0" class="data row8 col0" >EN1-36</td>
-      <td id="T_1fcd6_row8_col1" class="data row8 col1" >Roslyn</td>
-      <td id="T_1fcd6_row8_col2" class="data row8 col2" >Elizabeth</td>
-      <td id="T_1fcd6_row8_col3" class="data row8 col3" >35-152-TC</td>
-      <td id="T_1fcd6_row8_col4" class="data row8 col4" >STAR pricing</td>
+      <th id="T_62762_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_62762_row8_col0" class="data row8 col0" >EN1-36</td>
+      <td id="T_62762_row8_col1" class="data row8 col1" >Roslyn</td>
+      <td id="T_62762_row8_col2" class="data row8 col2" >Elizabeth</td>
+      <td id="T_62762_row8_col3" class="data row8 col3" >35-152-TC</td>
+      <td id="T_62762_row8_col4" class="data row8 col4" >STAR pricing</td>
     </tr>
     <tr>
-      <th id="T_1fcd6_level0_row9" class="row_heading level0 row9" >9</th>
-      <td id="T_1fcd6_row9_col0" class="data row9 col0" >EN1-38</td>
-      <td id="T_1fcd6_row9_col1" class="data row9 col1" >Schaaf</td>
-      <td id="T_1fcd6_row9_col2" class="data row9 col2" >Carol</td>
-      <td id="T_1fcd6_row9_col3" class="data row9 col3" >36-272-TC</td>
-      <td id="T_1fcd6_row9_col4" class="data row9 col4" >Order system</td>
+      <th id="T_62762_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_62762_row9_col0" class="data row9 col0" >EN1-38</td>
+      <td id="T_62762_row9_col1" class="data row9 col1" >Schaaf</td>
+      <td id="T_62762_row9_col2" class="data row9 col2" >Carol</td>
+      <td id="T_62762_row9_col3" class="data row9 col3" >36-272-TC</td>
+      <td id="T_62762_row9_col4" class="data row9 col4" >Order system</td>
     </tr>
     <tr>
-      <th id="T_1fcd6_level0_row10" class="row_heading level0 row10" >10</th>
-      <td id="T_1fcd6_row10_col0" class="data row10 col0" >EN1-40</td>
-      <td id="T_1fcd6_row10_col1" class="data row10 col1" >Wing</td>
-      <td id="T_1fcd6_row10_col2" class="data row10 col2" >Alexandra</td>
-      <td id="T_1fcd6_row10_col3" class="data row10 col3" >31-238-TC</td>
-      <td id="T_1fcd6_row10_col4" class="data row10 col4" >STAR prototype</td>
+      <th id="T_62762_level0_row10" class="row_heading level0 row10" >10</th>
+      <td id="T_62762_row10_col0" class="data row10 col0" >EN1-40</td>
+      <td id="T_62762_row10_col1" class="data row10 col1" >Wing</td>
+      <td id="T_62762_row10_col2" class="data row10 col2" >Alexandra</td>
+      <td id="T_62762_row10_col3" class="data row10 col3" >31-238-TC</td>
+      <td id="T_62762_row10_col4" class="data row10 col4" >STAR prototype</td>
     </tr>
     <tr>
-      <th id="T_1fcd6_level0_row11" class="row_heading level0 row11" >11</th>
-      <td id="T_1fcd6_row11_col0" class="data row11 col0" >EN1-40</td>
-      <td id="T_1fcd6_row11_col1" class="data row11 col1" >Wing</td>
-      <td id="T_1fcd6_row11_col2" class="data row11 col2" >Alexandra</td>
-      <td id="T_1fcd6_row11_col3" class="data row11 col3" >31-241-TC</td>
-      <td id="T_1fcd6_row11_col4" class="data row11 col4" >New catalog</td>
+      <th id="T_62762_level0_row11" class="row_heading level0 row11" >11</th>
+      <td id="T_62762_row11_col0" class="data row11 col0" >EN1-40</td>
+      <td id="T_62762_row11_col1" class="data row11 col1" >Wing</td>
+      <td id="T_62762_row11_col2" class="data row11 col2" >Alexandra</td>
+      <td id="T_62762_row11_col3" class="data row11 col3" >31-241-TC</td>
+      <td id="T_62762_row11_col4" class="data row11 col4" >New catalog</td>
     </tr>
   </tbody>
 </table>
@@ -1273,54 +1258,54 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </table>
 </div></div><div class="output text_html"><style type="text/css">
 </style>
-<table id="T_18325" style="font-size: 12px">
+<table id="T_43e75" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_18325_level0_col0" class="col_heading level0 col0" >ProjectNum</th>
-      <th id="T_18325_level0_col1" class="col_heading level0 col1" >ProjectTitle</th>
+      <th id="T_43e75_level0_col0" class="col_heading level0 col0" >ProjectNum</th>
+      <th id="T_43e75_level0_col1" class="col_heading level0 col1" >ProjectTitle</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_18325_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_18325_row0_col0" class="data row0 col0" >30-452-T3</td>
-      <td id="T_18325_row0_col1" class="data row0 col1" >STAR manual</td>
+      <th id="T_43e75_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_43e75_row0_col0" class="data row0 col0" >30-452-T3</td>
+      <td id="T_43e75_row0_col1" class="data row0 col1" >STAR manual</td>
     </tr>
     <tr>
-      <th id="T_18325_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_18325_row1_col0" class="data row1 col0" >30-457-T3</td>
-      <td id="T_18325_row1_col1" class="data row1 col1" >ISO procedures</td>
+      <th id="T_43e75_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_43e75_row1_col0" class="data row1 col0" >30-457-T3</td>
+      <td id="T_43e75_row1_col1" class="data row1 col1" >ISO procedures</td>
     </tr>
     <tr>
-      <th id="T_18325_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_18325_row2_col0" class="data row2 col0" >30-482-TC</td>
-      <td id="T_18325_row2_col1" class="data row2 col1" >Web site</td>
+      <th id="T_43e75_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_43e75_row2_col0" class="data row2 col0" >30-482-TC</td>
+      <td id="T_43e75_row2_col1" class="data row2 col1" >Web site</td>
     </tr>
     <tr>
-      <th id="T_18325_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_18325_row3_col0" class="data row3 col0" >31-124-T3</td>
-      <td id="T_18325_row3_col1" class="data row3 col1" >Employee handbook</td>
+      <th id="T_43e75_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_43e75_row3_col0" class="data row3 col0" >31-124-T3</td>
+      <td id="T_43e75_row3_col1" class="data row3 col1" >Employee handbook</td>
     </tr>
     <tr>
-      <th id="T_18325_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_18325_row4_col0" class="data row4 col0" >31-238-TC</td>
-      <td id="T_18325_row4_col1" class="data row4 col1" >STAR prototype</td>
+      <th id="T_43e75_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_43e75_row4_col0" class="data row4 col0" >31-238-TC</td>
+      <td id="T_43e75_row4_col1" class="data row4 col1" >STAR prototype</td>
     </tr>
     <tr>
-      <th id="T_18325_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_18325_row5_col0" class="data row5 col0" >31-238-TC2</td>
-      <td id="T_18325_row5_col1" class="data row5 col1" >New catalog</td>
+      <th id="T_43e75_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_43e75_row5_col0" class="data row5 col0" >31-238-TC2</td>
+      <td id="T_43e75_row5_col1" class="data row5 col1" >New catalog</td>
     </tr>
     <tr>
-      <th id="T_18325_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_18325_row6_col0" class="data row6 col0" >35-152-TC</td>
-      <td id="T_18325_row6_col1" class="data row6 col1" >STAR pricing</td>
+      <th id="T_43e75_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_43e75_row6_col0" class="data row6 col0" >35-152-TC</td>
+      <td id="T_43e75_row6_col1" class="data row6 col1" >STAR pricing</td>
     </tr>
     <tr>
-      <th id="T_18325_level0_row7" class="row_heading level0 row7" >7</th>
-      <td id="T_18325_row7_col0" class="data row7 col0" >36-272-TC</td>
-      <td id="T_18325_row7_col1" class="data row7 col1" >Order system</td>
+      <th id="T_43e75_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_43e75_row7_col0" class="data row7 col0" >36-272-TC</td>
+      <td id="T_43e75_row7_col1" class="data row7 col1" >Order system</td>
     </tr>
   </tbody>
 </table>
@@ -1357,72 +1342,72 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 <div class="cell_output docutils container">
 <div class="output text_html"><style type="text/css">
 </style>
-<table id="T_f5e98" style="font-size: 12px">
+<table id="T_cba02" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_f5e98_level0_col0" class="col_heading level0 col0" >ProjectNum</th>
-      <th id="T_f5e98_level0_col1" class="col_heading level0 col1" >ProjectTitle</th>
-      <th id="T_f5e98_level0_col2" class="col_heading level0 col2" >ProjectMgr</th>
-      <th id="T_f5e98_level0_col3" class="col_heading level0 col3" >Phone</th>
+      <th id="T_cba02_level0_col0" class="col_heading level0 col0" >ProjectNum</th>
+      <th id="T_cba02_level0_col1" class="col_heading level0 col1" >ProjectTitle</th>
+      <th id="T_cba02_level0_col2" class="col_heading level0 col2" >ProjectMgr</th>
+      <th id="T_cba02_level0_col3" class="col_heading level0 col3" >Phone</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_f5e98_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_f5e98_row0_col0" class="data row0 col0" >30-452-T3</td>
-      <td id="T_f5e98_row0_col1" class="data row0 col1" >STAR manual</td>
-      <td id="T_f5e98_row0_col2" class="data row0 col2" >Garrison</td>
-      <td id="T_f5e98_row0_col3" class="data row0 col3" >2756</td>
+      <th id="T_cba02_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_cba02_row0_col0" class="data row0 col0" >30-452-T3</td>
+      <td id="T_cba02_row0_col1" class="data row0 col1" >STAR manual</td>
+      <td id="T_cba02_row0_col2" class="data row0 col2" >Garrison</td>
+      <td id="T_cba02_row0_col3" class="data row0 col3" >2756</td>
     </tr>
     <tr>
-      <th id="T_f5e98_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_f5e98_row1_col0" class="data row1 col0" >30-457-T3</td>
-      <td id="T_f5e98_row1_col1" class="data row1 col1" >ISO procedures</td>
-      <td id="T_f5e98_row1_col2" class="data row1 col2" >Jacanda</td>
-      <td id="T_f5e98_row1_col3" class="data row1 col3" >2954</td>
+      <th id="T_cba02_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_cba02_row1_col0" class="data row1 col0" >30-457-T3</td>
+      <td id="T_cba02_row1_col1" class="data row1 col1" >ISO procedures</td>
+      <td id="T_cba02_row1_col2" class="data row1 col2" >Jacanda</td>
+      <td id="T_cba02_row1_col3" class="data row1 col3" >2954</td>
     </tr>
     <tr>
-      <th id="T_f5e98_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_f5e98_row2_col0" class="data row2 col0" >30-482-TC</td>
-      <td id="T_f5e98_row2_col1" class="data row2 col1" >Web site</td>
-      <td id="T_f5e98_row2_col2" class="data row2 col2" >Friedman</td>
-      <td id="T_f5e98_row2_col3" class="data row2 col3" >2846</td>
+      <th id="T_cba02_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_cba02_row2_col0" class="data row2 col0" >30-482-TC</td>
+      <td id="T_cba02_row2_col1" class="data row2 col1" >Web site</td>
+      <td id="T_cba02_row2_col2" class="data row2 col2" >Friedman</td>
+      <td id="T_cba02_row2_col3" class="data row2 col3" >2846</td>
     </tr>
     <tr>
-      <th id="T_f5e98_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_f5e98_row3_col0" class="data row3 col0" >31-124-T3</td>
-      <td id="T_f5e98_row3_col1" class="data row3 col1" >Employee handbook</td>
-      <td id="T_f5e98_row3_col2" class="data row3 col2" >Jones</td>
-      <td id="T_f5e98_row3_col3" class="data row3 col3" >3102</td>
+      <th id="T_cba02_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_cba02_row3_col0" class="data row3 col0" >31-124-T3</td>
+      <td id="T_cba02_row3_col1" class="data row3 col1" >Employee handbook</td>
+      <td id="T_cba02_row3_col2" class="data row3 col2" >Jones</td>
+      <td id="T_cba02_row3_col3" class="data row3 col3" >3102</td>
     </tr>
     <tr>
-      <th id="T_f5e98_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_f5e98_row4_col0" class="data row4 col0" >31-238-TC</td>
-      <td id="T_f5e98_row4_col1" class="data row4 col1" >STAR prototype</td>
-      <td id="T_f5e98_row4_col2" class="data row4 col2" >Garrison</td>
-      <td id="T_f5e98_row4_col3" class="data row4 col3" >2756</td>
+      <th id="T_cba02_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_cba02_row4_col0" class="data row4 col0" >31-238-TC</td>
+      <td id="T_cba02_row4_col1" class="data row4 col1" >STAR prototype</td>
+      <td id="T_cba02_row4_col2" class="data row4 col2" >Garrison</td>
+      <td id="T_cba02_row4_col3" class="data row4 col3" >2756</td>
     </tr>
     <tr>
-      <th id="T_f5e98_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_f5e98_row5_col0" class="data row5 col0" >31-241-TC</td>
-      <td id="T_f5e98_row5_col1" class="data row5 col1" >New catalog</td>
-      <td id="T_f5e98_row5_col2" class="data row5 col2" >Jones</td>
-      <td id="T_f5e98_row5_col3" class="data row5 col3" >3102</td>
+      <th id="T_cba02_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_cba02_row5_col0" class="data row5 col0" >31-241-TC</td>
+      <td id="T_cba02_row5_col1" class="data row5 col1" >New catalog</td>
+      <td id="T_cba02_row5_col2" class="data row5 col2" >Jones</td>
+      <td id="T_cba02_row5_col3" class="data row5 col3" >3102</td>
     </tr>
     <tr>
-      <th id="T_f5e98_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_f5e98_row6_col0" class="data row6 col0" >35-152-TC</td>
-      <td id="T_f5e98_row6_col1" class="data row6 col1" >STAR pricing</td>
-      <td id="T_f5e98_row6_col2" class="data row6 col2" >Vance</td>
-      <td id="T_f5e98_row6_col3" class="data row6 col3" >3022</td>
+      <th id="T_cba02_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_cba02_row6_col0" class="data row6 col0" >35-152-TC</td>
+      <td id="T_cba02_row6_col1" class="data row6 col1" >STAR pricing</td>
+      <td id="T_cba02_row6_col2" class="data row6 col2" >Vance</td>
+      <td id="T_cba02_row6_col3" class="data row6 col3" >3022</td>
     </tr>
     <tr>
-      <th id="T_f5e98_level0_row7" class="row_heading level0 row7" >7</th>
-      <td id="T_f5e98_row7_col0" class="data row7 col0" >36-272-TC</td>
-      <td id="T_f5e98_row7_col1" class="data row7 col1" >Order system</td>
-      <td id="T_f5e98_row7_col2" class="data row7 col2" >Jacanda</td>
-      <td id="T_f5e98_row7_col3" class="data row7 col3" >2954</td>
+      <th id="T_cba02_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_cba02_row7_col0" class="data row7 col0" >36-272-TC</td>
+      <td id="T_cba02_row7_col1" class="data row7 col1" >Order system</td>
+      <td id="T_cba02_row7_col2" class="data row7 col2" >Jacanda</td>
+      <td id="T_cba02_row7_col3" class="data row7 col3" >2954</td>
     </tr>
   </tbody>
 </table>
@@ -1515,63 +1500,63 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </table>
 </div></div><div class="output text_html"><style type="text/css">
 </style>
-<table id="T_3866c" style="font-size: 12px">
+<table id="T_541f7" style="font-size: 12px">
   <thead>
     <tr>
       <th class="blank level0" >&nbsp;</th>
-      <th id="T_3866c_level0_col0" class="col_heading level0 col0" >ProjectNum</th>
-      <th id="T_3866c_level0_col1" class="col_heading level0 col1" >ProjectTitle</th>
-      <th id="T_3866c_level0_col2" class="col_heading level0 col2" >ProjectMgr</th>
+      <th id="T_541f7_level0_col0" class="col_heading level0 col0" >ProjectNum</th>
+      <th id="T_541f7_level0_col1" class="col_heading level0 col1" >ProjectTitle</th>
+      <th id="T_541f7_level0_col2" class="col_heading level0 col2" >ProjectMgr</th>
     </tr>
   </thead>
   <tbody>
     <tr>
-      <th id="T_3866c_level0_row0" class="row_heading level0 row0" >0</th>
-      <td id="T_3866c_row0_col0" class="data row0 col0" >30-452-T3</td>
-      <td id="T_3866c_row0_col1" class="data row0 col1" >STAR manual</td>
-      <td id="T_3866c_row0_col2" class="data row0 col2" >Garrison</td>
+      <th id="T_541f7_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_541f7_row0_col0" class="data row0 col0" >30-452-T3</td>
+      <td id="T_541f7_row0_col1" class="data row0 col1" >STAR manual</td>
+      <td id="T_541f7_row0_col2" class="data row0 col2" >Garrison</td>
     </tr>
     <tr>
-      <th id="T_3866c_level0_row1" class="row_heading level0 row1" >1</th>
-      <td id="T_3866c_row1_col0" class="data row1 col0" >30-457-T3</td>
-      <td id="T_3866c_row1_col1" class="data row1 col1" >ISO procedures</td>
-      <td id="T_3866c_row1_col2" class="data row1 col2" >Jacanda</td>
+      <th id="T_541f7_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_541f7_row1_col0" class="data row1 col0" >30-457-T3</td>
+      <td id="T_541f7_row1_col1" class="data row1 col1" >ISO procedures</td>
+      <td id="T_541f7_row1_col2" class="data row1 col2" >Jacanda</td>
     </tr>
     <tr>
-      <th id="T_3866c_level0_row2" class="row_heading level0 row2" >2</th>
-      <td id="T_3866c_row2_col0" class="data row2 col0" >30-482-TC</td>
-      <td id="T_3866c_row2_col1" class="data row2 col1" >Web site</td>
-      <td id="T_3866c_row2_col2" class="data row2 col2" >Friedman</td>
+      <th id="T_541f7_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_541f7_row2_col0" class="data row2 col0" >30-482-TC</td>
+      <td id="T_541f7_row2_col1" class="data row2 col1" >Web site</td>
+      <td id="T_541f7_row2_col2" class="data row2 col2" >Friedman</td>
     </tr>
     <tr>
-      <th id="T_3866c_level0_row3" class="row_heading level0 row3" >3</th>
-      <td id="T_3866c_row3_col0" class="data row3 col0" >31-124-T3</td>
-      <td id="T_3866c_row3_col1" class="data row3 col1" >Employee handbook</td>
-      <td id="T_3866c_row3_col2" class="data row3 col2" >Jones</td>
+      <th id="T_541f7_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_541f7_row3_col0" class="data row3 col0" >31-124-T3</td>
+      <td id="T_541f7_row3_col1" class="data row3 col1" >Employee handbook</td>
+      <td id="T_541f7_row3_col2" class="data row3 col2" >Jones</td>
     </tr>
     <tr>
-      <th id="T_3866c_level0_row4" class="row_heading level0 row4" >4</th>
-      <td id="T_3866c_row4_col0" class="data row4 col0" >31-238-TC</td>
-      <td id="T_3866c_row4_col1" class="data row4 col1" >STAR prototype</td>
-      <td id="T_3866c_row4_col2" class="data row4 col2" >Garrison</td>
+      <th id="T_541f7_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_541f7_row4_col0" class="data row4 col0" >31-238-TC</td>
+      <td id="T_541f7_row4_col1" class="data row4 col1" >STAR prototype</td>
+      <td id="T_541f7_row4_col2" class="data row4 col2" >Garrison</td>
     </tr>
     <tr>
-      <th id="T_3866c_level0_row5" class="row_heading level0 row5" >5</th>
-      <td id="T_3866c_row5_col0" class="data row5 col0" >31-241-TC</td>
-      <td id="T_3866c_row5_col1" class="data row5 col1" >New catalog</td>
-      <td id="T_3866c_row5_col2" class="data row5 col2" >Jones</td>
+      <th id="T_541f7_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_541f7_row5_col0" class="data row5 col0" >31-241-TC</td>
+      <td id="T_541f7_row5_col1" class="data row5 col1" >New catalog</td>
+      <td id="T_541f7_row5_col2" class="data row5 col2" >Jones</td>
     </tr>
     <tr>
-      <th id="T_3866c_level0_row6" class="row_heading level0 row6" >6</th>
-      <td id="T_3866c_row6_col0" class="data row6 col0" >35-152-TC</td>
-      <td id="T_3866c_row6_col1" class="data row6 col1" >STAR pricing</td>
-      <td id="T_3866c_row6_col2" class="data row6 col2" >Vance</td>
+      <th id="T_541f7_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_541f7_row6_col0" class="data row6 col0" >35-152-TC</td>
+      <td id="T_541f7_row6_col1" class="data row6 col1" >STAR pricing</td>
+      <td id="T_541f7_row6_col2" class="data row6 col2" >Vance</td>
     </tr>
     <tr>
-      <th id="T_3866c_level0_row7" class="row_heading level0 row7" >7</th>
-      <td id="T_3866c_row7_col0" class="data row7 col0" >36-272-TC</td>
-      <td id="T_3866c_row7_col1" class="data row7 col1" >Order system</td>
-      <td id="T_3866c_row7_col2" class="data row7 col2" >Jacanda</td>
+      <th id="T_541f7_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_541f7_row7_col0" class="data row7 col0" >36-272-TC</td>
+      <td id="T_541f7_row7_col1" class="data row7 col1" >Order system</td>
+      <td id="T_541f7_row7_col2" class="data row7 col2" >Jacanda</td>
     </tr>
   </tbody>
 </table>
@@ -1615,7 +1600,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1686,7 +1671,7 @@ By Mohammad Zia
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>
@@ -1710,8 +1695,8 @@ By Mohammad Zia
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>

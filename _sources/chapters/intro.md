@@ -35,7 +35,7 @@ Welcome to EAS503! EAS503 is a course taught in the Department of Engineering & 
 - Quizzes (9) - 25%
 - Programming Assignments (9) - 45%
 - Individual Mini-Projects (2) - 20%
-- Group Projects (1) - 10% -- groups of 3-4 students
+- Individual Final-Project (1) - 10%
 
 ## Quizzes
 
@@ -45,7 +45,7 @@ Welcome to EAS503! EAS503 is a course taught in the Department of Engineering & 
 
 3. **Completion Window:** Once a quiz is posted, you will have a window of three days to attempt your quiz. Please ensure you manage your time effectively within this period.
 
-4. **Time Limit:** When you begin a quiz, you will be allotted two hours to complete it. Each quiz is designed as an individual assignment, and you are expected to work independently.
+4. **Time Limit:** When you begin a quiz, you will be allotted three hours to complete it. Each quiz is designed as an individual assignment, and you are expected to work independently.
 
 5. **Academic Integrity:** Collaboration is not permitted during quizzes. Use only authorized resources, namely the course website, while working on quizzes. Any collaboration with others or unauthorized external resources will result in a score of 0 for the quiz. Cases of academic integrity violations will be reported to the Office of Academic Integrity. You will find a link to the course website accessible within the quiz through the lockdown browser.
 
@@ -63,7 +63,7 @@ These quiz policies are in place to ensure a fair and consistent assessment envi
 
 In this course, programming assignments are a crucial component of your learning experience. To facilitate this, please note the following guidelines:
 
-1. **Codio License Requirement:** A Codio license, priced at $48, is necessary for completing programming assignments. This platform will be the designated environment for assignment completion and evaluation. [Invite Link](https://codio.com/p/signup?courseToken=smart-prague)
+1. **Codio License Requirement:** A Codio license, priced at $48, is necessary for completing programming assignments. This platform will be the designated environment for assignment completion and evaluation.
 
 2. **Assignment Platform:** All programming assignments will be both assigned and evaluated exclusively on the Codio platform. It is essential to familiarize yourself with Codio's interface and tools to ensure a seamless assignment process.
 
@@ -87,13 +87,56 @@ In this course, we introduce the concept of mini-projects, which serve as extend
 
 By engaging actively with the mini-projects, you will refine your programming skills, gain a deeper understanding of the subject matter, and apply your knowledge to real-world scenarios. If you encounter any difficulties or require guidance, feel free to communicate with your instructor for assistance. Successfully completing these mini-projects is integral to your comprehensive learning journey in this course.
 
+## Final Project Overview
+
+The final project is an individual, intensive endeavor designed to showcase your skills in data analysis, machine learning, and deployment. Below are the detailed requirements and steps to guide you through the project:
+
+**Project Requirements:**
+
+1. **Data Selection:**
+   - Choose a dataset with a significant number of data points to address a classification problem. The dataset must contain more than 1,000 rows and be in CSV format.
+
+2. **Data Parsing:**
+   - Use basic Python (without Pandas) to parse the data. Ensure that you follow guidelines for extract and transformation structure. 
+
+3. **Data Normalization and Database Loading:**
+   - Normalize the data and load it into a database. Ensure that your database normalization is approved by the TA.
+
+4. **Data Querying:**
+   - Write SQL join statements to query the necessary data and load it into Pandas for further analysis.
+
+5. **Machine Learning:**
+   - Utilize Python machine learning libraries to perform classification tasks.
+
+6. **Experiment Tracking:**
+   - Use MLFlow and DagsHub to record and track your experiments.
+
+7. **Deployment:**
+   - Create and deploy a Docker container for your inference/classification pipeline.
+
+8. **User Interface:**
+   - Develop a Streamlit app to interact with your classification pipeline.
+
+9. **Project Presentation:**
+   - Create a JupyterBook website to host and document your project.
+   - Record a 12-minute presentation following a strict rubric to showcase your project.
+
+10. **Submission:**
+    - Submit the following on UB Learn by **Wednesday, Dec. 18, 2024 11:59PM**:
+      1. MLFlow/DagsHub experiments
+      2. Docker Hub link to your container
+      3. Streamlit app
+      4. JupyterBook website
+      5. UB Box link to the recorded 12-minute presentation
+      6. A completed rubric checklist sheet that aligns with the project requirements.
+
 ## Late Submission Policy
 
 Understanding the late submission policy is crucial to managing your assignment deadlines effectively. Here's how it works:
 
 1. **Late Days Allocation:** You have a total of 10 late days at your disposal. These can be utilized to submit programming assignments and mini-projects after their original due date.
 
-2. **Maximum Delay:** It's important to note that no assignment can be submitted more than **4 days** after its original due date. This ensures a fair and consistent assessment process for all students.
+2. **Maximum Delay:** It's important to note that no assignment can be submitted more than **3 days** after its original due date. This ensures a fair and consistent assessment process for all students.
 
 By utilizing your allocated late days wisely, you can navigate unexpected challenges while maintaining a balanced approach to assignment completion. Remember that efficient time management remains key to your success in the course. If you have any questions or need further clarification, don't hesitate to seek guidance from your instructor.
 
@@ -106,13 +149,13 @@ Throughout the course, you'll have access to a variety of resources that are vit
 2. **Lecture Materials:** Lecture Jupyter notebooks will be hosted on GitHub: [Lecture Notebooks](https://github.com/mkzia/eas503). These materials supplement your in-class learning and serve as valuable references.
 
 3. **UB Learns:** UB Learns will serve multiple purposes, including:
-   - Forming groups for project work.
+
    - Submission of the final project report.
    - Management of your course grades.
 
 4. **Codio:** Use Codio to submit your programming assignments. This platform offers a controlled environment for coding tasks and assessments.
 
-5. **Piazza:**  Piazza will serve as a hub for various activities:
+5. **Piazza:** Piazza will serve as a hub for various activities:
    - Course announcements and updates.
    - Queries to the instructor and Teaching Assistant (TA).
    - Interaction with fellow classmates.
@@ -130,14 +173,14 @@ A successful start to the course requires a few preparatory steps. Before the fi
 
 2. **Course Book Access:** Ensure you can access the course book available at [Course Book](https://mkzia.github.io/eas503-book). Familiarize yourself with this resource to get a head start on the course content.
 
-3. **Codio Licensing:** Verify that you have obtained a license for Codio and can successfully log into the platform. [Invite Link](https://codio.com/p/signup?courseToken=smart-prague)
+3. **Codio Licensing:** Verify that you have obtained a license for Codio and can successfully log into the platform.
 
 4. **Piazza Login:** Confirm your ability to log into Piazza, where you'll engage in course discussions, ask questions, and stay updated on course-related matters.
 
 5. **Software Installation:**
    - Install Anaconda, a comprehensive data science platform, from [Anaconda Individual Edition](https://www.anaconda.com/products/individual).
    - Install Microsoft Visual Studio Code, from [website](https://code.visualstudio.com/).
-   - If you have Windows, install Python 3.11 from the App store.
+   - If you have Windows, install Python 3.12 from the App store.
 
 :::{note}
 This website will undergo regular updates throughout the semester.
@@ -172,7 +215,7 @@ Embrace sound cyber-security practices. Refrain from granting physical or electr
 
 **Important Note:** If you come across a solution on a website (Chegg), be aware that it could potentially be intentionally placed there by the instructor to identify instances of academic misconduct. Always approach your coursework with integrity and refrain from using any unauthorized resources. Your commitment to academic honesty is essential to your personal growth and the integrity of the educational process.
 
-**Codio can detect cheating:** Codio’s code editor is the industry-standard editor used in the VSCode IDE. We require you to complete your assignments in Codio partly for autograding reasons but also because Codio has very advanced keystroke analysis tools for generating insights into how students complete their work, including similarity checkers, time spent in error state, external pastes and insertion/deletion tracking.  So do not copy and paste your solution from another location. Do all your work inside the Codio editor. All your keystrokes and copy and pastes are recorded and can be played back. **External pastes has been disabled.**
+**Codio can detect cheating:** Codio’s code editor is the industry-standard editor used in the VSCode IDE. We require you to complete your assignments in Codio partly for autograding reasons but also because Codio has very advanced keystroke analysis tools for generating insights into how students complete their work, including similarity checkers, time spent in error state, external pastes and insertion/deletion tracking. So do not copy and paste your solution from another location. Do all your work inside the Codio editor. All your keystrokes and copy and pastes are recorded and can be played back. **External pastes has been disabled.**
 :::
 
 ## Syllabus Review

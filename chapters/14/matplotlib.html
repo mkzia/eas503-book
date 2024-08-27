@@ -6,7 +6,7 @@
 
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
     <title>14.1. Matplotlib &#8212; EAS503: Python for Data Scientists</title>
   
@@ -14,57 +14,49 @@
   
   <script data-cfasync="false">
     document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
-    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
   </script>
   
   <!-- Loaded before other Sphinx assets -->
-  <link href="../../_static/styles/theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../_static/styles/bootstrap.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-<link href="../../_static/styles/pydata-sphinx-theme.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
 
   
-  <link href="../../_static/vendor/fontawesome/6.5.1/css/all.min.css?digest=8d27b9dea8ad943066ae" rel="stylesheet" />
-  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-solid-900.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-brands-400.woff2" />
-<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.1/webfonts/fa-regular-400.woff2" />
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=384b581d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
     <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
-    <link rel="stylesheet" type="text/css" href="../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
   <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae" />
-<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae" />
-  <script src="../../_static/vendor/fontawesome/6.5.1/js/all.min.js?digest=8d27b9dea8ad943066ae"></script>
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
 
     <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
-    <script src="../../_static/doctools.js?v=888ff710"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
     <script src="../../_static/copybutton.js?v=f281be69"></script>
-    <script src="../../_static/scripts/sphinx-book-theme.js?v=efea14e4"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script src="../../_static/design-tabs.js?v=36754332"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../../_static/sphinx-thebe.js?v=afe5de03"></script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
     <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/14/matplotlib';</script>
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/14/matplotlib.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
@@ -80,27 +72,23 @@ const thebe_selector_output = ".output, .cell_output"
 
   
   
-  <a id="pst-skip-link" class="skip-link" href="#main-content">Skip to main content</a>
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
   
   <div id="pst-scroll-pixel-helper"></div>
   
   <button type="button" class="btn rounded-pill" id="pst-back-to-top">
-    <i class="fa-solid fa-arrow-up"></i>
-    Back to top
-  </button>
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
 
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__primary"
-          id="__primary"/>
-  <label class="overlay overlay-primary" for="__primary"></label>
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
   
   <input type="checkbox"
           class="sidebar-toggle"
-          name="__secondary"
-          id="__secondary"/>
-  <label class="overlay overlay-secondary" for="__secondary"></label>
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
   
   <div class="search-button__wrapper">
     <div class="search-button__overlay"></div>
@@ -122,8 +110,13 @@ const thebe_selector_output = ".output, .cell_output"
   <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
 </form></div>
   </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
   
-    <header class="bd-header navbar navbar-expand-lg bd-navbar">
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
     </header>
   
 
@@ -147,6 +140,8 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item">
 
   
+    
+  
 
 <a class="navbar-brand logo" href="../intro.html">
   
@@ -168,7 +163,7 @@ const thebe_selector_output = ".output, .cell_output"
 
  <script>
  document.write(`
-   <button class="btn navbar-btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass"></i>
     <span class="search-button__default-text">Search</span>
     <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
@@ -178,7 +173,7 @@ const thebe_selector_output = ".output, .cell_output"
         <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item navbar-nav active">
         <ul class="current nav bd-sidenav">
-<li class="toctree-l1 has-children"><a class="reference internal" href="../01/fundamentals.html">1. Fundamentals</a><input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-1"><i class="fa-solid fa-chevron-down"></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/fundamentals.html">1. Fundamentals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../01/getting_started.html">1.1. Getting Started</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01/definitions.html">1.2. Definitions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01/arithmetic.html">1.3. Arithmetic</a></li>
@@ -195,8 +190,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../01/exercises.html">1.14. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../01/quizzes.html">1.15. Quizzes</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../02/functions.html">2. Functions</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-2"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02/functions.html">2. Functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../02/intro.html">2.1. Introduction to Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02/built_in.html">2.2. Built-in Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02/user_defined.html">2.3. User Defined Functions</a></li>
@@ -205,8 +200,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../02/exercises.html">2.6. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../02/quizzes.html">2.7. Quizzes</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../03/intro.html">3. Strings</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-3"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03/intro.html">3. Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../03/basics.html">3.1. String Basics</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/formatting.html">3.2. String Formatting</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/table.html">3.3. Creating a Table</a></li>
@@ -214,8 +209,8 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../03/exercises.html">3.5. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../03/quizzes.html">3.6. Quizzes</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../04/intro.html">4. Conditionals</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-4"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04/intro.html">4. Conditionals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../04/boolean.html">4.1. Boolean/Logical Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04/relational.html">4.2. Relational Operators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04/strings.html">4.3. String Comparison</a></li>
@@ -223,15 +218,15 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../04/exercises.html">4.5. Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../04/quizzes.html">4.6. Quizzes</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../05/intro.html">5. Lists and Tuples</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-5"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05/intro.html">5. Lists and Tuples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../05/lists.html">5.1. Lists</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../05/methods.html">5.2. List Methods</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../05/tuples.html">5.3. Tuples</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../05/strings.html">5.4. Strings as a List</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../06/intro.html">6. Loops</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-6"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/intro.html">6. Loops</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../06/loop.html">6.1. for/while loop</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06/for_loop_exercises.html">6.2. For Loop Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06/while_loop_exercises.html">6.3. While Loop Exercises</a></li>
@@ -240,39 +235,39 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../06/comprehension.html">6.6. List/Tuple Comprehension</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../06/additional_exercises.html">6.7. Additional Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../07/intro.html">7. Dictionaries and Sets</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-7"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07/intro.html">7. Dictionaries and Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../07/dictionary.html">7.1. Dictionaries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/dictionary_exercises.html">7.2. Dictionary Exercises</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/sets.html">7.3. Sets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../07/set_exercises.html">7.4. Set Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../08/intro.html">8. Lambda, Filters, Maps, Sorted</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-8"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08/intro.html">8. Lambda, Filters, Maps, Sorted</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../08/lambda.html">8.1. Lambda, Filter, Map, and Sorted</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../08/lambda_exercises.html">8.2. Lambda, Filter, Map, and Sorted Solutions</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../09/intro.html">9. Error Handling</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-9"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09/intro.html">9. Error Handling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../09/errors.html">9.1. Errors and Exception Handling</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../10/intro.html">10. Functions Revisited</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-10"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10/intro.html">10. Functions Revisited</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../10/functions.html">10.1. Functions Revisited</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../11/intro.html">11. Miscellaneous Topics</a><input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-11"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../11/intro.html">11. Miscellaneous Topics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../11/misc.html">11.1. Miscellaneous Topics</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../12/intro.html">12. Object Oriented Programming</a><input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-12"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../12/intro.html">12. Object Oriented Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../12/oop.html">12.1. Object-Oriented Programming</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../12/operator_overloading.html">12.2. Operator overloading</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../12/self.html">12.3. Self</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../12/item_assignment.html">12.4. Item assignment</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../13/sql.html">13. SQL with SQLite</a><input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-13"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../13/sql.html">13. SQL with SQLite</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_0_tables.html">13.1. Creating Tables</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_1_query_primer.html">13.2. SQL Query Primer</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_2_filtering.html">13.3. Filtering</a></li>
@@ -288,25 +283,25 @@ const thebe_selector_output = ".output, .cell_output"
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_11_soccer.html">13.13. Soccer Database</a></li>
 
 </ul>
-</li>
-<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">14. Plotting in Python</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-14"><i class="fa-solid fa-chevron-down"></i></label><ul class="current">
+</details></li>
+<li class="toctree-l1 current active has-children"><a class="reference internal" href="intro.html">14. Plotting in Python</a><details open="open"><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul class="current">
 <li class="toctree-l2 current active"><a class="current reference internal" href="#">14.1. Matplotlib</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../15/intro.html">15. NumPy and Pandas</a><input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-15"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../15/intro.html">15. NumPy and Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../15/np_pd.html">15.1. Numpy and Pandas</a></li>
 
 <li class="toctree-l2"><a class="reference internal" href="../15/exercises.html">15.3. Cross-referenced Exercises</a></li>
 </ul>
-</li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../16/intro.html">16. Machine Learning</a><input class="toctree-checkbox" id="toctree-checkbox-16" name="toctree-checkbox-16" type="checkbox"/><label class="toctree-toggle" for="toctree-checkbox-16"><i class="fa-solid fa-chevron-down"></i></label><ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../16/intro.html">16. Machine Learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
 <li class="toctree-l2"><a class="reference internal" href="../16/introduction.html">16.1. Introduction</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../16/loading_data.html">16.2. Loading Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../16/preprocessing_data.html">16.3. Preprocessing data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../16/select_and_train_a_model.html">16.4. Select and Train a Model</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../16/misc.html">16.5. Feature Selection and Evaluation</a></li>
 </ul>
-</li>
+</details></li>
 </ul>
 
     </div>
@@ -322,7 +317,7 @@ const thebe_selector_output = ".output, .cell_output"
 
       </div>
       
-      <main id="main-content" class="bd-main">
+      <main id="main-content" class="bd-main" role="main">
         
         
 
@@ -331,14 +326,14 @@ const thebe_selector_output = ".output, .cell_output"
           <div class="bd-content">
             <div class="bd-article-container">
               
-              <div class="bd-header-article">
+              <div class="bd-header-article d-print-none">
 <div class="header-article-items header-article__inner">
   
     <div class="header-article-items__start">
       
-        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
   <span class="fa-solid fa-bars"></span>
-</label></div>
+</button></div>
       
     </div>
   
@@ -431,10 +426,10 @@ const thebe_selector_output = ".output, .cell_output"
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
-    <span class="theme-switch nav-link" data-mode="light"><i class="fa-solid fa-sun fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="dark"><i class="fa-solid fa-moon fa-lg"></i></span>
-    <span class="theme-switch nav-link" data-mode="auto"><i class="fa-solid fa-circle-half-stroke fa-lg"></i></span>
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
   </button>
 `);
 </script>
@@ -442,7 +437,7 @@ document.write(`
 
 <script>
 document.write(`
-  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
     <i class="fa-solid fa-magnifying-glass fa-lg"></i>
   </button>
 `);
@@ -529,10 +524,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd0d5f7dbd0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6e68c9f260&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/8229a88cffd71c6d014737d7620b756928a07ef626195ee64b8b47b04d655965.png" src="../../_images/8229a88cffd71c6d014737d7620b756928a07ef626195ee64b8b47b04d655965.png" />
+<img alt="../../_images/4df3d3b3f62c876cf7b0233c47899be8b432d699364536bc133147b506071b21.png" src="../../_images/4df3d3b3f62c876cf7b0233c47899be8b432d699364536bc133147b506071b21.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -542,10 +537,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd0d3e11750&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6e68b177a0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/2833800ba2eda3db4f4f66512ff65c9e4a268d414bdfa02d9109af165260eda4.png" src="../../_images/2833800ba2eda3db4f4f66512ff65c9e4a268d414bdfa02d9109af165260eda4.png" />
+<img alt="../../_images/1d0aecac9a93f290d5013fb224c728b0132743e24124e6eb24f16dc90074b8b1.png" src="../../_images/1d0aecac9a93f290d5013fb224c728b0132743e24124e6eb24f16dc90074b8b1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -564,10 +559,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd0d3eac2b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6e68a15580&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/ccc5ad5291435804ae1c453c8ccb6b47de0966ec990b3b5cd4acba09427a2240.png" src="../../_images/ccc5ad5291435804ae1c453c8ccb6b47de0966ec990b3b5cd4acba09427a2240.png" />
+<img alt="../../_images/2d6ea007e4e2e54bb7f79ff68bc5a2bc693c121dd5934c7f2417fd0e91c2cb99.png" src="../../_images/2d6ea007e4e2e54bb7f79ff68bc5a2bc693c121dd5934c7f2417fd0e91c2cb99.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -590,10 +585,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd0d3d06680&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6e68a16870&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/f1dbf2c1869f8bad8d485824a2532b3edf97fc85fc2816714f19ec8675989700.png" src="../../_images/f1dbf2c1869f8bad8d485824a2532b3edf97fc85fc2816714f19ec8675989700.png" />
+<img alt="../../_images/4c1196788f50466ac49b7fb539ac2a08d5764acfa05a26a710076c4467c88a7d.png" src="../../_images/4c1196788f50466ac49b7fb539ac2a08d5764acfa05a26a710076c4467c88a7d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -609,10 +604,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd0d3d5a920&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f6e689e8dd0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/30c82994b057fab859df3db91ef9bcbde39b828b54714529df71386c19a3047e.png" src="../../_images/30c82994b057fab859df3db91ef9bcbde39b828b54714529df71386c19a3047e.png" />
+<img alt="../../_images/5b19cd13307f8d1ba7c0ab496cf5286b77fdde36de305df89a5ce29b6f4a07da.png" src="../../_images/5b19cd13307f8d1ba7c0ab496cf5286b77fdde36de305df89a5ce29b6f4a07da.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -636,7 +631,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Title&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/5136db41dd998644044f859c4c0330e6f6ed02b2df8ba0e88484da59c7abb916.png" src="../../_images/5136db41dd998644044f859c4c0330e6f6ed02b2df8ba0e88484da59c7abb916.png" />
+<img alt="../../_images/9049fe9f8b6983aad54e7e9251a4e9c7af873e845abac01ae3639a3abd84290a.png" src="../../_images/9049fe9f8b6983aad54e7e9251a4e9c7af873e845abac01ae3639a3abd84290a.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -671,7 +666,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/aaf499daec2b95305bae6346853eeb6d0b324331dbbe078eb151f4ac3a26c825.png" src="../../_images/aaf499daec2b95305bae6346853eeb6d0b324331dbbe078eb151f4ac3a26c825.png" />
+<img alt="../../_images/aeeacdfa0122fc1acff91413b291910daf9baf675ecc87cee90676581dcf312f.png" src="../../_images/aeeacdfa0122fc1acff91413b291910daf9baf675ecc87cee90676581dcf312f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -687,7 +682,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c31755c82a3905099241e9cc96072f6ba0f6b5ca108ea33c9ff48e7a828ab9cd.png" src="../../_images/c31755c82a3905099241e9cc96072f6ba0f6b5ca108ea33c9ff48e7a828ab9cd.png" />
+<img alt="../../_images/9798a2839f130e15659a4f376de44b0e63457d4c5599abd8205855097b4b181c.png" src="../../_images/9798a2839f130e15659a4f376de44b0e63457d4c5599abd8205855097b4b181c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -702,7 +697,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/e9d0f0f10c74723ba789fb85bb45fd95adc789c02e76c0830e7eb6018efc10fe.png" src="../../_images/e9d0f0f10c74723ba789fb85bb45fd95adc789c02e76c0830e7eb6018efc10fe.png" />
+<img alt="../../_images/0865e193b4284d139c799d098ae2d8bf746272a58d167f1a104dd6a9a2f251a4.png" src="../../_images/0865e193b4284d139c799d098ae2d8bf746272a58d167f1a104dd6a9a2f251a4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -725,7 +720,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Title&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/426baa8ea83235f6b4bc35cf72c69f40901fda0aaa535d8ce04169f042e4d233.png" src="../../_images/426baa8ea83235f6b4bc35cf72c69f40901fda0aaa535d8ce04169f042e4d233.png" />
+<img alt="../../_images/fd66d73e153fd272a17834b0f9db73978edc4923faccbf4f2b0ad34ecfb9c2ea.png" src="../../_images/fd66d73e153fd272a17834b0f9db73978edc4923faccbf4f2b0ad34ecfb9c2ea.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -741,7 +736,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/1ee150fe9a27721d2e7ed63c47d53f17ecad1aabb662339def401abd593cc256.png" src="../../_images/1ee150fe9a27721d2e7ed63c47d53f17ecad1aabb662339def401abd593cc256.png" />
+<img alt="../../_images/756209b9a6635d283af03428434e63cb33c7be3a32adaf30a245fe4b8552304b.png" src="../../_images/756209b9a6635d283af03428434e63cb33c7be3a32adaf30a245fe4b8552304b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -776,7 +771,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Smallest Plot&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/d04361b0d2c17f31392951ea9467744bb58ac33528ae856a1233b3fe2548640b.png" src="../../_images/d04361b0d2c17f31392951ea9467744bb58ac33528ae856a1233b3fe2548640b.png" />
+<img alt="../../_images/319b9894264e16bb70f3ddea7e2fbbd468bcd28df711d6befd15f7381c6bb4e7.png" src="../../_images/319b9894264e16bb70f3ddea7e2fbbd468bcd28df711d6befd15f7381c6bb4e7.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -804,7 +799,7 @@ document.write(`
        [&lt;Axes: &gt;, &lt;Axes: &gt;]], dtype=object)
 </pre></div>
 </div>
-<img alt="../../_images/506dd465e7e615a9f5e13865f34e26a924582c67f77a17277b1de35d422c67c9.png" src="../../_images/506dd465e7e615a9f5e13865f34e26a924582c67f77a17277b1de35d422c67c9.png" />
+<img alt="../../_images/8d344b0dbef2594becd227a56cd1dbfc85fb12cb6b4ee1a2e7847301c9ab84ee.png" src="../../_images/8d344b0dbef2594becd227a56cd1dbfc85fb12cb6b4ee1a2e7847301c9ab84ee.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -843,7 +838,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/ce1e8268e726cdcc5e76304ffd475232eece99da65aab6eb5212508a16482edc.png" src="../../_images/ce1e8268e726cdcc5e76304ffd475232eece99da65aab6eb5212508a16482edc.png" />
+<img alt="../../_images/b31cc8369986b9db551966375a6654f154c7024239449c9d8c884413ceac6c18.png" src="../../_images/b31cc8369986b9db551966375a6654f154c7024239449c9d8c884413ceac6c18.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -860,7 +855,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/529e3290298433e8485c60eb3658b50cef1587ccccf5e286994e5e0c0efa49bc.png" src="../../_images/529e3290298433e8485c60eb3658b50cef1587ccccf5e286994e5e0c0efa49bc.png" />
+<img alt="../../_images/16f517cf74e9a7611394fe11d6654800ad45a99d3d3e438b4a35847e985085c1.png" src="../../_images/16f517cf74e9a7611394fe11d6654800ad45a99d3d3e438b4a35847e985085c1.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -903,7 +898,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/4f6816b771f935ce040ad327a83baca9e8ec1c211d6221ee26cd85925b16b0dd.png" src="../../_images/4f6816b771f935ce040ad327a83baca9e8ec1c211d6221ee26cd85925b16b0dd.png" />
+<img alt="../../_images/a4b625e604ed9032ba8010f00e5b1073ecb001a7581775a1129e546ec4443dd5.png" src="../../_images/a4b625e604ed9032ba8010f00e5b1073ecb001a7581775a1129e546ec4443dd5.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -950,10 +945,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd0d305e410&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f6e65dccfb0&gt;
 </pre></div>
 </div>
-<img alt="../../_images/24bdb29f12e1d3db8d0c2404c8faddc9fa8966ec1ff39a6afe4a04dc5ea4bb33.png" src="../../_images/24bdb29f12e1d3db8d0c2404c8faddc9fa8966ec1ff39a6afe4a04dc5ea4bb33.png" />
+<img alt="../../_images/b54f3b52bbe61ff8ab4e822935544ee2a5841b74f615604180ff16ebd3abad1d.png" src="../../_images/b54f3b52bbe61ff8ab4e822935544ee2a5841b74f615604180ff16ebd3abad1d.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -973,10 +968,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd0d3867df0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6e662aa3f0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/d5e31256a79c0f62daa3c9008f621b556ec923e133b19475184257819a0cb7e6.png" src="../../_images/d5e31256a79c0f62daa3c9008f621b556ec923e133b19475184257819a0cb7e6.png" />
+<img alt="../../_images/cea11d47910d798389f635fe4ca890929afde3828814fd4edcd9edb62e4dd52f.png" src="../../_images/cea11d47910d798389f635fe4ca890929afde3828814fd4edcd9edb62e4dd52f.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -993,10 +988,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd0d3841a80&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6e6630a6c0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/c0420321b01931a54be3a57b404e78da2da86323e71e338733ae5a75b4a02eeb.png" src="../../_images/c0420321b01931a54be3a57b404e78da2da86323e71e338733ae5a75b4a02eeb.png" />
+<img alt="../../_images/adebb61f197fa4c0ca284583e856c786494580733009d1ea8c0bb5ca47fcaccd.png" src="../../_images/adebb61f197fa4c0ca284583e856c786494580733009d1ea8c0bb5ca47fcaccd.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1015,14 +1010,14 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_8014/75132765.py:4: UserWarning: linestyle is redundantly defined by the &#39;linestyle&#39; keyword argument and the fmt string &quot;r-.&quot; (-&gt; linestyle=&#39;-.&#39;). The keyword argument will take precedence.
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_18368/75132765.py:4: UserWarning: linestyle is redundantly defined by the &#39;linestyle&#39; keyword argument and the fmt string &quot;r-.&quot; (-&gt; linestyle=&#39;-.&#39;). The keyword argument will take precedence.
   axes.plot(x,y, &#39;r-.&#39;, lw=5, linestyle=&#39;:&#39;)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd0d38e6890&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6e66768620&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/3c545c858324efb1d40f08fa5cb324506ef59f38f12b85b28b143a1816b8e319.png" src="../../_images/3c545c858324efb1d40f08fa5cb324506ef59f38f12b85b28b143a1816b8e319.png" />
+<img alt="../../_images/c45ef4d709f2527c63d6c9df22cdcb4789f8513a380b3ff1ace961356a6f44af.png" src="../../_images/c45ef4d709f2527c63d6c9df22cdcb4789f8513a380b3ff1ace961356a6f44af.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1037,10 +1032,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd0d3a1b880&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6e65cd0350&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/d7bb3647b7c73864ddc63168db142ed43ab40d8640d019b5d7a67e02175834fb.png" src="../../_images/d7bb3647b7c73864ddc63168db142ed43ab40d8640d019b5d7a67e02175834fb.png" />
+<img alt="../../_images/a7cce3f07e003cdeaf29f6f0ce8fb8a431c27f76a120c0d9c0fb2788494960b6.png" src="../../_images/a7cce3f07e003cdeaf29f6f0ce8fb8a431c27f76a120c0d9c0fb2788494960b6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1055,10 +1050,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd0d3a65cc0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f6e65d29970&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/88d864a139ff5e3a5cd6521a9a40987aab320513a1b0d79add4b882a1e01bab0.png" src="../../_images/88d864a139ff5e3a5cd6521a9a40987aab320513a1b0d79add4b882a1e01bab0.png" />
+<img alt="../../_images/b988137546b48288c87e07b64cf2e936ba7fa0b0c5a82711cd07198e6a1e272c.png" src="../../_images/b988137546b48288c87e07b64cf2e936ba7fa0b0c5a82711cd07198e6a1e272c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1076,7 +1071,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 30.0)
 </pre></div>
 </div>
-<img alt="../../_images/f2377459139c80cc7eaa258bc4c688d15fbe1204ed84af658d9f1730a3422d74.png" src="../../_images/f2377459139c80cc7eaa258bc4c688d15fbe1204ed84af658d9f1730a3422d74.png" />
+<img alt="../../_images/f0795fa704a5177885b07913d422cfa0698cde6976151ec7aea7e96a42b6bf77.png" src="../../_images/f0795fa704a5177885b07913d422cfa0698cde6976151ec7aea7e96a42b6bf77.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1114,7 +1109,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(-90, -50, &#39;$\\cos(\\frac{2\\pi}{3})=-\\frac{1}{2}$&#39;)
 </pre></div>
 </div>
-<img alt="../../_images/83b99829a5912be3b2da9dc3f4382b571c7ff599501632ace35f6058bbe3f940.png" src="../../_images/83b99829a5912be3b2da9dc3f4382b571c7ff599501632ace35f6058bbe3f940.png" />
+<img alt="../../_images/111afb5c0a04c6c0348fb3c5c43c5eb29ef4187246c9609fea8d6481796e4fe2.png" src="../../_images/111afb5c0a04c6c0348fb3c5c43c5eb29ef4187246c9609fea8d6481796e4fe2.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1130,16 +1125,6 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_8014/1325689307.py:2: DeprecationWarning: 
-Pyarrow will become a required dependency of pandas in the next major release of pandas (pandas 3.0),
-(to allow more performant data types, such as the Arrow string type, and better interoperability with other libraries)
-but was not found to be installed on your system.
-If this would cause problems for you,
-please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
-        
-  import pandas as pd
-</pre></div>
-</div>
 <div class="output text_html"><div>
 <style scoped>
     .dataframe tbody tr th:only-of-type {
@@ -1787,7 +1772,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
     </tr>
   </tbody>
 </table>
-</div></div><img alt="../../_images/8e397309ffe396a839d3043d5957d3619bee7f0016013db7422a06f589c32e97.png" src="../../_images/8e397309ffe396a839d3043d5957d3619bee7f0016013db7422a06f589c32e97.png" />
+</div></div><img alt="../../_images/3366b119324569be10df1f24b646784a9fab51a912c809b37d40bbe6c3b24aa3.png" src="../../_images/3366b119324569be10df1f24b646784a9fab51a912c809b37d40bbe6c3b24aa3.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1824,7 +1809,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/b15323068d6b51c7f1cdd8881a65514f4ead9c63ba4c7bcec8337a6b2fe23d95.png" src="../../_images/b15323068d6b51c7f1cdd8881a65514f4ead9c63ba4c7bcec8337a6b2fe23d95.png" />
+<img alt="../../_images/660e9e6673a93dd635c67e19dbcb9543107c17141534acab6b9e3f08a163acd6.png" src="../../_images/660e9e6673a93dd635c67e19dbcb9543107c17141534acab6b9e3f08a163acd6.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1871,7 +1856,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/9f6055f6df0847ab1f428e8a572a0db6d67a2e6f5376549179f28585e92e4717.png" src="../../_images/9f6055f6df0847ab1f428e8a572a0db6d67a2e6f5376549179f28585e92e4717.png" />
+<img alt="../../_images/606d185e84afc7524dd2693168b07b166b044e9e0cdb06a6a2a441867a5e6bb4.png" src="../../_images/606d185e84afc7524dd2693168b07b166b044e9e0cdb06a6a2a441867a5e6bb4.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1919,7 +1904,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/c8ff960aade8ebacb61846dc2126b677d98ca6a896630a239219d13bec415a8e.png" src="../../_images/c8ff960aade8ebacb61846dc2126b677d98ca6a896630a239219d13bec415a8e.png" />
+<img alt="../../_images/5d88524d683d7a7f736bc0d20a927bb913a1e2dbd6e717593a8de0a2883b5d1d.png" src="../../_images/5d88524d683d7a7f736bc0d20a927bb913a1e2dbd6e717593a8de0a2883b5d1d.png" />
 </div>
 </div>
 </section>
@@ -1951,7 +1936,7 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
               
               
               
-                <footer class="prev-next-footer">
+                <footer class="prev-next-footer d-print-none">
                   
 <div class="prev-next-area">
     <a class="left-prev"
@@ -1979,8 +1964,6 @@ please provide us feedback at https://github.com/pandas-dev/pandas/issues/54466
             
             
               
-                <div class="bd-sidebar-secondary bd-toc"></div>
-              
             
           </div>
           <footer class="bd-footer-content">
@@ -2000,7 +1983,7 @@ By Mohammad Zia
 
   <p class="copyright">
     
-      © Copyright 2023.
+      © Copyright 2024.
       <br/>
     
   </p>
@@ -2024,8 +2007,8 @@ By Mohammad Zia
   </div>
   
   <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../../_static/scripts/bootstrap.js?digest=8d27b9dea8ad943066ae"></script>
-<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=8d27b9dea8ad943066ae"></script>
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
 
   <footer class="bd-footer">
   </footer>
