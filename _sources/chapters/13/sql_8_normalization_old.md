@@ -9,7 +9,7 @@ kernelspec:
   language: python
   name: python3
 ---
-# Normalization
+# Normalization Old
 
 What is database normalization?
 - Ref: https://www.complexsql.com/database-normalization/
@@ -21,10 +21,10 @@ What is database normalization?
 - How is database normalization achieved?
   - By fulfilling five normal forms. Each normal form represents an increasingly stringent set of rules. Usually fulfilling the first three normal forms is sufficient.
   - Ref: https://www.1keydata.com/database-normalization/first-normal-form-1nf.php
-- First Normal Form  (1NF): 
+- First Normal Form  (1NF):
   1. if there are no repeating groups.
   2. all values are atomic, meaning they are the smallest meaningful value
-- Second Normal Form  (2NF): 
+- Second Normal Form  (2NF):
   1. the table is in first normal form
   2. each non-key field is functionally dependent on the entire primary key
 - Third Normal Form (3NF):
@@ -162,7 +162,7 @@ df.style.set_table_attributes('style="font-size: 12px"')
 ```
 
 - Analysis of example 6
-  - Phone number, which is a non-key field, has transitive dependency on another non-key field. 
+  - Phone number, which is a non-key field, has transitive dependency on another non-key field.
 
 ### Example 6
 
@@ -185,7 +185,4 @@ df.style.set_table_attributes('style="font-size: 12px"')
 ```
 
 - Analysis of example7
-  - Removed transitive dependency 
-
-
-
+  - Removed transitive dependency
