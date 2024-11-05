@@ -97,7 +97,7 @@ The final project is an individual, intensive endeavor designed to showcase your
    - Choose a dataset with a significant number of data points to address a classification problem. The dataset must contain more than 1,000 rows and be in CSV format.
 
 2. **Data Parsing:**
-   - Use basic Python (without Pandas) to parse the data. Ensure that you follow guidelines for extract and transformation structure. 
+   - Use basic Python (without Pandas) to parse the data. Ensure that you follow guidelines for extract and transformation structure.
 
 3. **Data Normalization and Database Loading:**
    - Normalize the data and load it into a database. Ensure that your database normalization is approved by the TA.

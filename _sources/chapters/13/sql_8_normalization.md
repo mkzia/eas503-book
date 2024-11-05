@@ -9,183 +9,573 @@ kernelspec:
   language: python
   name: python3
 ---
+
 # Normalization
 
-What is database normalization?
-- Ref: https://www.complexsql.com/database-normalization/
-- Ref: http://www.databasedev.co.uk/1norm_form.html
-- The purpose of database normalization is to:
-- eliminate redundant data
-- reduce complexity of data, making it easier to manage the data and make change
-- ensure logical data dependencies
-- How is database normalization achieved?
-  - By fulfilling five normal forms. Each normal form represents an increasingly stringent set of rules. Usually fulfilling the first three normal forms is sufficient.
-  - Ref: https://www.1keydata.com/database-normalization/first-normal-form-1nf.php
-- First Normal Form  (1NF): 
-  1. if there are no repeating groups.
-  2. all values are atomic, meaning they are the smallest meaningful value
-- Second Normal Form  (2NF): 
-  1. the table is in first normal form
-  2. each non-key field is functionally dependent on the entire primary key
-- Third Normal Form (3NF):
-  1. the table is in second normal form
-  2. there are no transitive dependencies
-- Ref: https://arctype.com/blog/2nf-3nf-normalization-example/
-- Summary
-  1. All values must be atomic
-  2. No redundancy
-  3. No implicit relationship/dependency
-  4. No transitive relationship/dependency
+Database normalization serves several important purposes. The key objectives and benefits are:
 
-## Bad Design Examples
-### Example 1
+1. **Eliminate Data Redundancy**
 
-```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
-import sqlite3
-import pandas as pd
+   - Without normalization: The same doctor's information is repeated for every patient
+   - With normalization: Doctor information is stored once in a Doctors table
+   - Benefits: Saves storage space and ensures consistency
 
-conn = sqlite3.connect('example1.db')
+2. **Prevent Update Anomalies**
 
-sql_statement = "SELECT * FROM EMPLOYEES_PROJECTS_TIME"
-df = pd.read_sql_query(sql_statement, conn)
-df.style.set_table_attributes('style="font-size: 12px"')
+   - Without normalization: Updating a doctor's phone number requires changing multiple patient records
+   - With normalization: Update one record in the Doctors table
+   - Benefits: Reduces errors and maintains data integrity
+
+3. **Prevent Insert Anomalies**
+
+   - Without normalization: Can't add a new doctor without a patient
+   - With normalization: Can add doctors independently in their own table
+   - Benefits: Data can be added more flexibly and logically
+
+4. **Prevent Delete Anomalies**
+
+   - Without normalization: Deleting the last patient of a doctor would lose the doctor's information
+   - With normalization: Doctor information remains even if all their patients are deleted
+   - Benefits: Preserves important data
+
+5. **Ensure Data Consistency**
+
+   - Without normalization: Same data might be entered differently in different places
+   - With normalization: Each piece of data has one authoritative source
+   - Benefits: Maintains data quality and reliability
+
+6. **Better Data Organization**
+
+   - Without normalization: Data is mixed together (like medical history with insurance info)
+   - With normalization: Data is organized by logical entities (patients, doctors, insurance, etc.)
+   - Benefits: Easier to understand and maintain
+
+7. **More Flexible Querying**
+
+   - Without normalization: Complex queries might be difficult or impossible
+   - With normalization: Can join tables in various ways to get needed information
+   - Benefits: Better reporting and analysis capabilities
+
+8. **Easier Maintenance**
+
+   - Without normalization: Changes to data structure affect many parts of the database
+   - With normalization: Changes are localized to specific tables
+   - Benefits: Reduces maintenance effort and risk
+
+9. **Better Data Integrity**
+
+   - Without normalization: Difficult to enforce relationships and constraints
+   - With normalization: Can use foreign keys and constraints effectively
+   - Benefits: Ensures data accuracy and reliability
+
+10. **Reduced Data Modification Issues**
+    - Without normalization: Changes could have unintended consequences
+    - With normalization: Changes are isolated and controlled
+    - Benefits: Safer database updates
+
+In our patient database example:
+
+```sql
+# Before normalization:
+Patients (
+    PatientID,
+    PatientName,
+    DoctorName,      # Repeated for many patients
+    DoctorPhone,     # Repeated for many patients
+    DoctorSpecialty  # Repeated for many patients
+)
+
+# After normalization:
+Patients (
+    PatientID,
+    PatientName,
+    DoctorID         # Reference to Doctors table
+)
+
+Doctors (
+    DoctorID,
+    DoctorName,      # Stored once
+    DoctorPhone,     # Stored once
+    DoctorSpecialty  # Stored once
+)
 ```
 
-- Problems with example1
-  - Repeating group of fields
-  - The project and time fields are not made up of atomic values
-  - Can't sort by last name
-  - Can't sort by time because field is type text
-  - Assumed relationship between project and time
+The trade-offs of normalization include:
 
-### Example 2
+1. More complex queries requiring joins
+2. Potentially slower query performance for some operations
+3. More tables to manage
+4. More complex relationships to maintain
 
-```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
-import sqlite3
-import pandas as pd
+However, these drawbacks are usually outweighed by the benefits in most business applications where data integrity is crucial, like healthcare systems.
 
-conn = sqlite3.connect('example2.db')
+## The Five Normal Forms
 
-sql_statement = "SELECT * FROM EMPLOYEES_PROJECTS_TIME"
-df = pd.read_sql_query(sql_statement, conn)
-df.style.set_table_attributes('style="font-size: 12px"')
+- The five normal forms of database normalization, progressing from 1NF to 5NF, with clear examples from our patient database context.
+
+1. **First Normal Form (1NF)**
+
+   - Rules:
+     - Each cell contains a single value (atomic)
+     - No repeating groups or arrays
+     - Each record is unique
+   - Example:
+
+     ```sql
+     # Before 1NF
+     Patient {
+         PatientID: 1,
+         Medications: "Aspirin, Ibuprofen, Paracetamol",
+         Allergies: ["Penicillin", "Peanuts"]
+     }
+
+     # After 1NF
+     PatientMedications {
+         PatientID: 1,
+         MedicationName: "Aspirin"
+     }
+     PatientMedications {
+         PatientID: 1,
+         MedicationName: "Ibuprofen"
+     }
+     ```
+
+2. **Second Normal Form (2NF)**
+
+   - Rules:
+     - Must be in 1NF
+     - No partial dependencies (non-key attributes must depend on entire primary key)
+   - Example:
+
+     ```sql
+     # Before 2NF
+     PatientMedication {
+         PatientID + MedicationID (composite key),
+         MedicationName,        # Depends only on MedicationID
+         PatientName,           # Depends only on PatientID
+         Dosage                 # Depends on both (OK)
+     }
+
+     # After 2NF
+     Medications {
+         MedicationID,
+         MedicationName
+     }
+     PatientMedications {
+         PatientID,
+         MedicationID,
+         Dosage
+     }
+     ```
+
+3. **Third Normal Form (3NF)**
+
+   - Rules:
+     - Must be in 2NF
+     - No transitive dependencies (non-key attributes can't depend on other non-key attributes)
+   - Example:
+
+     ```sql
+     # Before 3NF
+     Patient {
+         PatientID,
+         Address,
+         City,            # Depends on Address, not PatientID
+         State,           # Depends on Address, not PatientID
+         ZipCode          # Depends on Address, not PatientID
+     }
+
+     # After 3NF
+     Patient {
+         PatientID,
+         AddressID
+     }
+     Address {
+         AddressID,
+         Address,
+         City,
+         State,
+         ZipCode
+     }
+     ```
+
+4. **Boyce-Codd Normal Form (BCNF)**
+
+   - Rules:
+     - Must be in 3NF
+     - For every dependency A → B, A must be a superkey
+   - Example:
+
+     ```sql
+     # Before BCNF
+     DoctorSchedule {
+         Doctor,
+         Specialty,
+         TimeSlot,
+         Room        # Room depends on TimeSlot, but TimeSlot isn't a key
+     }
+
+     # After BCNF
+     DoctorSpecialty {
+         Doctor,
+         Specialty
+     }
+     RoomSchedule {
+         TimeSlot,
+         Room
+     }
+     DoctorAssignment {
+         Doctor,
+         TimeSlot
+     }
+     ```
+
+5. **Fifth Normal Form (5NF)**
+
+   - Rules:
+     - Must be in BCNF
+     - No join dependencies that don't follow from the key constraints
+   - Example:
+
+     ```sql
+
+     # Before 5NF
+     DoctorPatientInsurance {
+         DoctorID,
+         PatientID,
+         InsuranceID
+     }
+
+     # After 5NF
+     DoctorPatient {
+         DoctorID,
+         PatientID
+     }
+     PatientInsurance {
+         PatientID,
+         InsuranceID
+     }
+     DoctorInsurance {
+         DoctorID,
+         InsuranceID
+     }
+     ```
+
+Key Points:
+
+1. Each form builds on the previous one
+2. Higher normal forms reduce redundancy but increase complexity
+3. Most real-world applications aim for 3NF
+4. BCNF and 5NF are rarely implemented fully
+5. Sometimes denormalization is done for performance
+
+Common Stopping Points:
+
+- Most systems stop at 3NF
+- Healthcare systems often aim for BCNF due to data integrity requirements
+- 5NF is rarely implemented in practice
+- Sometimes partial denormalization is done for performance reasons
+
+Practical Considerations:
+
+1. Each higher form:
+
+   - Reduces redundancy
+   - Increases number of tables
+   - Makes queries more complex
+   - Requires more joins
+
+2. Trade-offs between:
+   - Data integrity
+   - Query performance
+   - System complexity
+   - Maintenance effort
+
+## Patient Database Normalization Example
+
+### Non-Normalized Form
+
+```sql
+CREATE TABLE Patients (
+    PatientID INT,
+    PatientName TEXT,
+    DateOfBirth DATE,
+    Address TEXT,
+    Phone TEXT,
+    PrimaryDoctor TEXT,
+    DoctorPhone TEXT,
+    DoctorSpecialty TEXT,
+    Appointments TEXT,  -- Contains multiple appointment dates and times
+    Medications TEXT,   -- Contains multiple medication names and dosages
+    AllergiesList TEXT, -- Contains multiple allergies
+    EmergencyContact TEXT,
+    EmergencyPhone TEXT,
+    EmergencyRelation TEXT,
+    InsuranceProvider TEXT,
+    InsurancePolicyNumber TEXT,
+    InsuranceGroupNumber TEXT
+);
 ```
 
-- Analysis of example2
-  - Can sort now!
-  - How can you add another project?
+#### Issues with Non-Normalized Form:
 
-### Example 3
+- Data redundancy: Doctor information repeated for each patient with the same doctor
+- Multiple values in single columns (Appointments, Medications, Allergies)
+- Update anomalies: Changing a doctor's phone requires updating multiple rows
+- Delete anomalies: Deleting a patient could lose doctor information
+- Insert anomalies: Cannot add a new doctor without a patient
 
-```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
-import sqlite3
-import pandas as pd
+### First Normal Form (1NF)
 
-conn = sqlite3.connect('example3.db')
+```sql
+CREATE TABLE Patients (
+    PatientID INT PRIMARY KEY,
+    PatientName TEXT,
+    DateOfBirth DATE,
+    Address TEXT,
+    Phone TEXT,
+    PrimaryDoctorID INT,
+    EmergencyContactID INT,
+    InsuranceID INT
+);
 
-sql_statement = "SELECT * FROM EMPLOYEES"
-df = pd.read_sql_query(sql_statement, conn)
-df.style.set_table_attributes('style="font-size: 12px"')
-display(df)
+CREATE TABLE Doctors (
+    DoctorID INT PRIMARY KEY,
+    DoctorName TEXT,
+    Phone TEXT,
+    Specialty TEXT
+);
 
-sql_statement = "SELECT * FROM PROJECTS_EMPLOYEES_TIME"
-df = pd.read_sql_query(sql_statement, conn)
-df.style.set_table_attributes('style="font-size: 12px"')
+CREATE TABLE EmergencyContacts (
+    ContactID INT PRIMARY KEY,
+    ContactName TEXT,
+    Phone TEXT,
+    Relation TEXT
+);
+
+CREATE TABLE Insurance (
+    InsuranceID INT PRIMARY KEY,
+    Provider TEXT,
+    PolicyNumber TEXT,
+    GroupNumber TEXT
+);
+
+CREATE TABLE PatientAppointments (
+    AppointmentID INT PRIMARY KEY,
+    PatientID INT,
+    AppointmentDateTime DATETIME,
+    Purpose TEXT
+);
+
+CREATE TABLE PatientMedications (
+    MedicationID INT PRIMARY KEY,
+    PatientID INT,
+    MedicationName TEXT,
+    Dosage TEXT,
+    Frequency TEXT
+);
+
+CREATE TABLE PatientAllergies (
+    AllergyID INT PRIMARY KEY,
+    PatientID INT,
+    Allergy TEXT,
+    Severity TEXT
+);
 ```
 
-- Analysis of example3 -- first normal form
-  - Can do groups by employeeid or projectnum
-  - Can sort by time
-  - Can sort by name
+#### Benefits of 1NF:
 
+- No repeating groups or arrays
+- Each cell contains a single value
+- Each record has a unique identifier
+- Data is atomic (cannot be broken down further)
 
-### Example 4
+### Second Normal Form (2NF)
 
-```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
-import sqlite3
-import pandas as pd
+```sql
+-- Previous tables remain the same, but add:
 
-conn = sqlite3.connect('example4.db')
+CREATE TABLE Medications (
+    MedicationID INT PRIMARY KEY,
+    MedicationName TEXT,
+    Description TEXT,
+    StandardDosage TEXT
+);
 
-sql_statement = "SELECT * FROM EMPLOYEES_PROJECTS"
-df = pd.read_sql_query(sql_statement, conn)
-df.style.set_table_attributes('style="font-size: 12px"')
+CREATE TABLE PatientMedications (
+    PrescriptionID INT PRIMARY KEY,
+    PatientID INT,
+    MedicationID INT,
+    Dosage TEXT,
+    Frequency TEXT,
+    FOREIGN KEY (PatientID) REFERENCES Patients(PatientID),
+    FOREIGN KEY (MedicationID) REFERENCES Medications(MedicationID)
+);
+
+CREATE TABLE Allergies (
+    AllergyID INT PRIMARY KEY,
+    AllergyName TEXT,
+    Description TEXT
+);
+
+CREATE TABLE PatientAllergies (
+    PatientAllergyID INT PRIMARY KEY,
+    PatientID INT,
+    AllergyID INT,
+    Severity TEXT,
+    FOREIGN KEY (PatientID) REFERENCES Patients(PatientID),
+    FOREIGN KEY (AllergyID) REFERENCES Allergies(AllergyID)
+);
 ```
 
-- Analysis of example4
-  - How would you update the project title for a given project? Have to edit in many places
-  - Can you add a project without an employeeid?
-  - How can you delete a project?
+#### Benefits of 2NF
 
-### Example 5
+- Removes partial dependencies
+- Reduces data redundancy
+- Medication and allergy information stored once, referenced many times
+- Consistent data across all patient records
+- Easier maintenance of standard medical information
 
-```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
-import sqlite3
-import pandas as pd
+### Third Normal Form (3NF)
 
-conn = sqlite3.connect('example5.db')
+```sql
+-- Previous tables remain, but add:
 
-sql_statement = "SELECT * FROM EMPLOYEES"
-df = pd.read_sql_query(sql_statement, conn)
-df.style.set_table_attributes('style="font-size: 12px"')
-display(df)
+CREATE TABLE Addresses (
+    AddressID INT PRIMARY KEY,
+    Street TEXT,
+    City TEXT,
+    State TEXT,
+    ZipCode TEXT,
+    Country TEXT
+);
 
-sql_statement = "SELECT * FROM EMPLOYEES_PROJECTS"
-df = pd.read_sql_query(sql_statement, conn)
-df.style.set_table_attributes('style="font-size: 12px"')
-display(df)
+-- Modify Patients table:
+CREATE TABLE Patients (
+    PatientID INT PRIMARY KEY,
+    PatientName TEXT,
+    DateOfBirth DATE,
+    AddressID INT,
+    Phone TEXT,
+    PrimaryDoctorID INT,
+    EmergencyContactID INT,
+    InsuranceID INT,
+    FOREIGN KEY (AddressID) REFERENCES Addresses(AddressID),
+    FOREIGN KEY (PrimaryDoctorID) REFERENCES Doctors(DoctorID),
+    FOREIGN KEY (EmergencyContactID) REFERENCES EmergencyContacts(ContactID),
+    FOREIGN KEY (InsuranceID) REFERENCES Insurance(InsuranceID)
+);
 
-sql_statement = "SELECT * FROM PROJECTS"
-df = pd.read_sql_query(sql_statement, conn)
-df.style.set_table_attributes('style="font-size: 12px"')
+CREATE TABLE InsurancePlans (
+    PlanID INT PRIMARY KEY,
+    InsuranceID INT,
+    PlanName TEXT,
+    Coverage TEXT,
+    FOREIGN KEY (InsuranceID) REFERENCES Insurance(InsuranceID)
+);
 ```
 
-- Analysis of example5
-  - second normal form
+#### Benefits of 3NF
 
-### Example 6
+- Eliminates transitive dependencies
+- Address information stored once and referenced
+- Insurance plan details separated from basic insurance information
+- Reduced redundancy in address storage
+- Easier to update address information for multiple patients
+- Facilitates address validation and standardization
 
-```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
-import sqlite3
-import pandas as pd
+#### More on Transitive Dependency
 
-conn = sqlite3.connect('example6.db')
-sql_statement = "SELECT * FROM PROJECTS"
-df = pd.read_sql_query(sql_statement, conn)
-df.style.set_table_attributes('style="font-size: 12px"')
+Looking at the patient database example, we can identify the transitive dependencies that existed and how we resolved them in 3NF.
+
+A clear example of transitive dependency in our patient database was:
+
+1. `PatientID` → `DoctorID` → `DoctorSpecialty`
+   - A patient is assigned to a doctor (DoctorID)
+   - The doctor's specialty depends on the DoctorID, not the PatientID
+   - In the non-normalized form, we stored specialty with each patient, creating redundancy
+
+Here's another example: 2. `PatientID` → `AddressID` → `City/State/Zip`
+
+- A patient has an address (AddressID)
+- The city, state, and zip depend on the address, not directly on the patient
+
+Let's see this in the actual tables:
+
+Non-normalized version (with transitive dependency):
+
+```sql
+CREATE TABLE Patients (
+    PatientID INTEGER PRIMARY KEY,
+    PatientName TEXT,
+    Address TEXT,          -- Contains full address including city/state/zip
+    PrimaryDoctor TEXT,    -- Contains doctor name
+    DoctorSpecialty TEXT,  -- This is transitively dependent on DoctorID!
+    -- other fields...
+)
 ```
 
-- Analysis of example 6
-  - Phone number, which is a non-key field, has transitive dependency on another non-key field. 
+3NF version (resolved transitive dependencies):
 
-### Example 6
+```sql
+CREATE TABLE Patients (
+    PatientID INTEGER PRIMARY KEY,
+    PatientName TEXT,
+    AddressID INTEGER,     -- Reference to Addresses table
+    PrimaryDoctorID INTEGER,  -- Reference to Doctors table
+    -- other fields...
+)
 
-```{code-cell} ipython3
-:tags: ["hide-input", "output_scroll"]
-import sqlite3
-import pandas as pd
+CREATE TABLE Doctors (
+    DoctorID INTEGER PRIMARY KEY,
+    DoctorName TEXT,
+    Specialty TEXT         -- Now directly dependent on DoctorID
+)
 
-conn = sqlite3.connect('example7.db')
-sql_statement = "SELECT * FROM MANAGERS"
-df = pd.read_sql_query(sql_statement, conn)
-df.style.set_table_attributes('style="font-size: 12px"')
-display(df)
-
-conn = sqlite3.connect('example7.db')
-sql_statement = "SELECT * FROM PROJECTS"
-df = pd.read_sql_query(sql_statement, conn)
-df.style.set_table_attributes('style="font-size: 12px"')
-
+CREATE TABLE Addresses (
+    AddressID INTEGER PRIMARY KEY,
+    Street TEXT,
+    City TEXT,            -- Now directly dependent on AddressID
+    State TEXT,           -- Now directly dependent on AddressID
+    ZipCode TEXT          -- Now directly dependent on AddressID
+)
 ```
 
-- Analysis of example7
-  - Removed transitive dependency 
+Other transitive dependencies we resolved included: 3. `PatientID` → `InsuranceID` → `PlanDetails`
 
+- Plan details depend on the insurance ID, not the patient ID
+- Resolved by creating the InsurancePlans table
 
+4. `PatientID` → `MedicationID` → `StandardDosage`
+   - Standard dosage depends on the medication, not the patient
+   - Resolved by separating standard medication information into the Medications table
 
+The benefits of removing these dependencies in our patient database include:
+
+1. If a doctor changes their specialty, we only update one record in the Doctors table
+2. If a zip code changes for an address, we only update one record in the Addresses table
+3. Standard medication information is stored once, not repeated for each prescription
+4. Insurance plan details are maintained separately from individual patient policies
+
+### Summary of Benefits
+
+1. **Non-Normalized to 1NF:**
+
+   - Eliminates repeating groups
+   - Makes data atomic
+   - Establishes unique identifiers
+   - Enables basic data integrity
+
+2. **1NF to 2NF:**
+
+   - Reduces redundancy in medical reference data
+   - Improves data consistency
+   - Makes updating standard medical information easier
+   - Enables better medication and allergy tracking
+
+3. **2NF to 3NF:**
+   - Further reduces data redundancy
+   - Improves data integrity
+   - Makes address and insurance management more efficient
+   - Reduces storage requirements
+   - Simplifies data updates
