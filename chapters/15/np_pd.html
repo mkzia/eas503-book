@@ -277,10 +277,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_6_conditionals.html">13.7. Conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_7_analytic_functions.html">13.8. Analytic Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization.html">13.9. Normalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_9_python.html">13.10. Python and SQLite3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_10_india_export_data.html">13.11. India Export Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization_old.html">13.10. Normalization Old</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_9_python.html">13.11. Python and SQLite3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_10_india_export_data.html">13.12. India Export Database</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_11_soccer.html">13.13. Soccer Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_11_soccer.html">13.14. Soccer Database</a></li>
 
 </ul>
 </details></li>
@@ -502,7 +503,7 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-square-brackets">15.2.1. Method 1 – Square brackets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-1-index-text-column-wise">15.2.2. Method 1.1 – index/text – #column wise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-2-list-not-tuple-column-wise">15.2.3. Method 1.2 – list, NOT TUPLE # column wise</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-3-a-slice-row-wise">15.2.4. Method 1.3 – a slice  # row wise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-3-a-slice-row-wise">15.2.4. Method 1.3 – a slice # row wise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-4-slice-and-list">15.2.5. Method 1.4?? – slice and list?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-5-slice-and-slice">15.2.6. Method 1.5?? – slice and slice?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-iloc">15.2.7. Method 2 – .iloc</a><ul class="nav section-nav flex-column">
@@ -526,14 +527,14 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-8-slice">15.2.17. Method 3.8 – slice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-9-slice-and-slice">15.2.18. Method 3.9 – slice and slice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterrows-iterate-over-rows">15.2.19. iterrows – iterate over rows</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteritems-iterate-over-columns">15.2.20. iteritems – iterate over columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#items-iterate-over-columns">15.2.20. items – iterate over columns</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-subset-of-data">15.2.21. Select subset of data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-conditions-to-select">15.2.22. Use conditions to select</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-student-index">15.2.23. Adding student index</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-index-data">15.2.24. Multi-index data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-missing-data">15.2.25. Dealing with missing data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">15.2.26. Groupby</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-sql-join">15.2.27. Merging  – SQL JOIN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-sql-join">15.2.27. Merging – SQL JOIN</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation">15.2.28. Concatenation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-pandas-operations">15.2.29. More Pandas Operations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-with-pandas">15.2.30. Lambda with Pandas</a></li>
@@ -631,8 +632,8 @@ document.write(`
 <span class="nb">print</span><span class="p">(</span><span class="n">my_matrix</span><span class="p">)</span>
 
 <span class="n">my_list1</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">],</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span><span class="mi">4</span><span class="p">]]</span>
-<span class="n">my_list2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]]</span>  
-<span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">my_list1</span><span class="p">,</span> <span class="n">my_list2</span><span class="p">])</span>   
+<span class="n">my_list2</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">5</span><span class="p">,</span><span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="mi">7</span><span class="p">,</span><span class="mi">8</span><span class="p">]]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">hstack</span><span class="p">([</span><span class="n">my_list1</span><span class="p">,</span> <span class="n">my_list2</span><span class="p">])</span>
 <span class="n">np</span><span class="o">.</span><span class="n">vstack</span><span class="p">([</span><span class="n">my_list1</span><span class="p">,</span> <span class="n">my_list2</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -657,7 +658,7 @@ document.write(`
 
 <span class="c1">## Create evenly spaced vector</span>
 <span class="c1">### Example use case: when you have Y values for a plot but need to generate X values</span>
-<span class="c1">### *** Includes both start an end </span>
+<span class="c1">### *** Includes both start an end</span>
 <span class="c1"># np.arange(start, end(not included), step size)</span>
 <span class="c1"># np.linspace(start, end(included), number_of_points)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
@@ -684,7 +685,7 @@ document.write(`
 <ul class="simple">
 <li><p>Ref: <a class="reference external" href="https://docs.scipy.org/doc/numpy-1.14.0/reference/routines.random.html">https://docs.scipy.org/doc/numpy-1.14.0/reference/routines.random.html</a></p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uniform distribution </span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Uniform distribution</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">rand</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="c1"># Normal distribution</span>
@@ -693,7 +694,7 @@ document.write(`
 <span class="c1"># Random integers</span>
 <span class="c1"># np.random.randint(start, end(not_included), size)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">)</span>
-<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>  
+<span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">5</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -786,9 +787,9 @@ document.write(`
 </ul>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">))</span><span class="o">.</span><span class="n">reshape</span><span class="p">((</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
 <span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span> 
-<span class="n">matrix</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>  
-<span class="n">matrix</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> 
+<span class="n">matrix</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">matrix</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">matrix</span><span class="p">[</span><span class="mi">2</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span>
 
 
 <span class="n">matrix</span><span class="p">[:,</span><span class="mi">2</span><span class="p">]</span> <span class="c1"># Grab the third column</span>
@@ -826,7 +827,7 @@ document.write(`
 <span class="n">vector</span> <span class="o">+</span> <span class="n">vector</span>
 <span class="n">vector</span> <span class="o">-</span> <span class="n">vector</span>
 <span class="n">vector</span> <span class="o">*</span> <span class="n">vector</span>
-<span class="n">vector</span> <span class="o">/</span> <span class="n">vector</span> <span class="c1"># problem!!! return `nan` </span>
+<span class="n">vector</span> <span class="o">/</span> <span class="n">vector</span> <span class="c1"># problem!!! return `nan`</span>
 <span class="n">vector</span> <span class="o">+</span> <span class="mi">10</span>
 <span class="n">vector</span> <span class="o">-</span> <span class="mi">10</span>
 <span class="n">vector</span> <span class="o">*</span> <span class="mi">10</span>
@@ -848,7 +849,7 @@ document.write(`
 
 <span class="nb">sum</span><span class="p">(</span><span class="n">vector</span><span class="o">&lt;</span><span class="mi">5</span><span class="p">)</span>
 <span class="kn">import</span> <span class="nn">math</span>
-<span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span> 
+<span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">11</span><span class="p">)</span> <span class="o">*</span> <span class="n">math</span><span class="o">.</span><span class="n">pi</span>
 <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
 <span class="n">vector</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">+</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">,</span><span class="n">math</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="mi">4</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">vector</span><span class="p">)</span>
@@ -859,16 +860,16 @@ document.write(`
 <span class="n">np</span><span class="o">.</span><span class="n">ceil</span><span class="p">(</span><span class="n">matrix</span><span class="o">*</span><span class="mi">1000</span><span class="p">)</span><span class="o">/</span><span class="mi">1000</span>
 
 <span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span><span class="mi">10</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
-<span class="n">matrix</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
-<span class="n">matrix</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
-<span class="n">matrix</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span> 
-<span class="n">matrix</span><span class="o">.</span><span class="n">cumprod</span><span class="p">()</span> 
+<span class="n">matrix</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">matrix</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">matrix</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+<span class="n">matrix</span><span class="o">.</span><span class="n">cumprod</span><span class="p">()</span>
 
-<span class="n">matrix</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
-<span class="n">matrix</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
+<span class="n">matrix</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">matrix</span><span class="o">.</span><span class="n">min</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
-<span class="n">matrix</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
-<span class="n">matrix</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span> 
+<span class="n">matrix</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">matrix</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
 
 <span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">3</span><span class="p">]</span><span class="o">*</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">)</span>
 <span class="n">np</span><span class="o">.</span><span class="n">unique</span><span class="p">(</span><span class="n">matrix</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span><span class="mi">3</span><span class="p">))</span>
@@ -879,7 +880,7 @@ document.write(`
 <h2><span class="section-number">15.1.14. </span>Pandas<a class="headerlink" href="#pandas" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Built-on top of NumPy – meaning the underlying data structure used is ndarray</p></li>
-<li><p>Pandas provides series which are like NumPy arrays but with associated index labels – meaning are like column  labels or row labels. Element data type can be different</p></li>
+<li><p>Pandas provides series which are like NumPy arrays but with associated index labels – meaning are like column labels or row labels. Element data type can be different</p></li>
 <li><p>Pandas also provides dataframes which are like Excel sheets or database tables</p></li>
 </ul>
 <section id="basic-examples">
@@ -896,13 +897,13 @@ document.write(`
 <span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span> <span class="c1"># Notice the data type is float</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">header</span><span class="p">)</span>
 
-<span class="c1"># can also do </span>
+<span class="c1"># can also do</span>
 <span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">header</span><span class="p">)</span>
 
 <span class="c1"># can hold different data types</span>
 
-<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;2s&#39;</span><span class="p">,</span> <span class="mi">34</span><span class="p">]</span> 
+<span class="n">data</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;2s&#39;</span><span class="p">,</span> <span class="mi">34</span><span class="p">]</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
 
 <span class="c1"># can use a dictionary to initialize a panda series</span>
@@ -927,7 +928,7 @@ document.write(`
 
 <span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">header1</span><span class="p">)</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data2</span><span class="p">,</span> <span class="n">header2</span><span class="p">)</span>
-<span class="n">s1</span><span class="o">+</span><span class="n">s2</span> 
+<span class="n">s1</span><span class="o">+</span><span class="n">s2</span>
 
 <span class="n">header1</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;chrom&#39;</span><span class="p">,</span> <span class="s1">&#39;pos&#39;</span><span class="p">,</span> <span class="s1">&#39;filter&#39;</span><span class="p">]</span>
 <span class="n">data1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">12345</span><span class="p">,</span> <span class="mf">38.4</span><span class="p">]</span>
@@ -936,7 +937,7 @@ document.write(`
 
 <span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">header1</span><span class="p">)</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data2</span><span class="p">,</span> <span class="n">header2</span><span class="p">)</span>
-<span class="n">s1</span><span class="o">+</span><span class="n">s2</span> 
+<span class="n">s1</span><span class="o">+</span><span class="n">s2</span>
 
 <span class="n">data1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">12345</span><span class="p">,</span> <span class="mf">38.4</span><span class="p">]</span>
 <span class="n">data2</span> <span class="o">=</span> <span class="p">[</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4899</span><span class="p">,</span> <span class="mi">234</span><span class="p">,</span> <span class="mf">89.9</span><span class="p">]</span>
@@ -953,7 +954,7 @@ document.write(`
 
 <span class="n">s1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data1</span><span class="p">,</span> <span class="n">header1</span><span class="p">)</span>
 <span class="n">s2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">(</span><span class="n">data2</span><span class="p">,</span> <span class="n">header2</span><span class="p">)</span>
-<span class="n">s1</span><span class="o">+</span><span class="n">s2</span> 
+<span class="n">s1</span><span class="o">+</span><span class="n">s2</span>
 
 
 <span class="n">data1</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12345</span><span class="p">,</span> <span class="mf">38.4</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
@@ -985,9 +986,9 @@ document.write(`
 <span class="n">df</span><span class="o">.</span><span class="n">exam1</span> <span class="c1"># not a good way to do this</span>
 
 
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;average&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam2&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam3&#39;</span><span class="p">])</span><span class="o">/</span><span class="mi">3</span> 
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;average&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam2&#39;</span><span class="p">]</span> <span class="o">+</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam3&#39;</span><span class="p">])</span><span class="o">/</span><span class="mi">3</span>
 <span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;average&#39;</span><span class="p">)</span> <span class="c1"># does not work because default for drop is to work on row labels</span>
-<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;average&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># works on column labels </span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s1">&#39;average&#39;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> <span class="c1"># works on column labels</span>
 
 <span class="c1">## STILL NOT DROPPED from df</span>
 <span class="n">df</span>
@@ -1034,7 +1035,7 @@ document.write(`
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;E2&#39;</span><span class="p">,</span> <span class="s1">&#39;E3&#39;</span><span class="p">,</span> <span class="s1">&#39;E4&#39;</span><span class="p">,</span><span class="s1">&#39;E5&#39;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">ele</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testdata_1.txt&#39;</span><span class="p">)],</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">])</span>  
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </div>
@@ -1062,7 +1063,7 @@ Name: StudentName, dtype: object
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;E2&#39;</span><span class="p">,</span> <span class="s1">&#39;E3&#39;</span><span class="p">,</span> <span class="s1">&#39;E4&#39;</span><span class="p">,</span><span class="s1">&#39;E5&#39;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">ele</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testdata_1.txt&#39;</span><span class="p">)],</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;E1&#39;</span><span class="p">]])</span> 
+<span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;E1&#39;</span><span class="p">]])</span>
 </pre></div>
 </div>
 </div>
@@ -1146,7 +1147,7 @@ Name: StudentName, dtype: object
 </div>
 </section>
 <section id="method-1-3-a-slice-row-wise">
-<h2><span class="section-number">15.2.4. </span>Method 1.3 – a slice  # row wise<a class="headerlink" href="#method-1-3-a-slice-row-wise" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">15.2.4. </span>Method 1.3 – a slice # row wise<a class="headerlink" href="#method-1-3-a-slice-row-wise" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -1835,7 +1836,7 @@ Name: 3, dtype: object
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;E2&#39;</span><span class="p">,</span> <span class="s1">&#39;E3&#39;</span><span class="p">,</span> <span class="s1">&#39;E4&#39;</span><span class="p">,</span><span class="s1">&#39;E5&#39;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">ele</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testdata_1.txt&#39;</span><span class="p">)],</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;student4&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -1860,7 +1861,7 @@ Name: student4, dtype: object
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;E2&#39;</span><span class="p">,</span> <span class="s1">&#39;E3&#39;</span><span class="p">,</span> <span class="s1">&#39;E4&#39;</span><span class="p">,</span><span class="s1">&#39;E5&#39;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">ele</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testdata_1.txt&#39;</span><span class="p">)],</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;student4&#39;</span><span class="p">,</span> <span class="s1">&#39;student1&#39;</span><span class="p">]])</span>
 </pre></div>
 </div>
@@ -1932,7 +1933,7 @@ Name: student4, dtype: object
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;E2&#39;</span><span class="p">,</span> <span class="s1">&#39;E3&#39;</span><span class="p">,</span> <span class="s1">&#39;E4&#39;</span><span class="p">,</span><span class="s1">&#39;E5&#39;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">ele</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testdata_1.txt&#39;</span><span class="p">)],</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;student4&#39;</span><span class="p">,</span> <span class="s1">&#39;student1&#39;</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;E2&#39;</span><span class="p">]])</span>
 </pre></div>
 </div>
@@ -1988,7 +1989,7 @@ Name: student4, dtype: object
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;E2&#39;</span><span class="p">,</span> <span class="s1">&#39;E3&#39;</span><span class="p">,</span> <span class="s1">&#39;E4&#39;</span><span class="p">,</span><span class="s1">&#39;E5&#39;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">ele</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testdata_1.txt&#39;</span><span class="p">)],</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">[</span><span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;E2&#39;</span><span class="p">]])</span>
 </pre></div>
 </div>
@@ -2084,7 +2085,7 @@ Name: student4, dtype: object
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;E2&#39;</span><span class="p">,</span> <span class="s1">&#39;E3&#39;</span><span class="p">,</span> <span class="s1">&#39;E4&#39;</span><span class="p">,</span><span class="s1">&#39;E5&#39;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">ele</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testdata_1.txt&#39;</span><span class="p">)],</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[[</span><span class="s1">&#39;student1&#39;</span><span class="p">,</span> <span class="s1">&#39;student2&#39;</span><span class="p">],</span> <span class="p">:])</span>
 </pre></div>
 </div>
@@ -2156,7 +2157,7 @@ Name: student4, dtype: object
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;E2&#39;</span><span class="p">,</span> <span class="s1">&#39;E3&#39;</span><span class="p">,</span> <span class="s1">&#39;E4&#39;</span><span class="p">,</span><span class="s1">&#39;E5&#39;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">ele</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testdata_1.txt&#39;</span><span class="p">)],</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;student1&#39;</span><span class="p">:</span><span class="s1">&#39;student5&#39;</span><span class="p">,</span> <span class="p">:])</span>
 </pre></div>
 </div>
@@ -2255,7 +2256,7 @@ Name: student4, dtype: object
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;E2&#39;</span><span class="p">,</span> <span class="s1">&#39;E3&#39;</span><span class="p">,</span> <span class="s1">&#39;E4&#39;</span><span class="p">,</span><span class="s1">&#39;E5&#39;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">ele</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testdata_1.txt&#39;</span><span class="p">)],</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;student1&#39;</span><span class="p">:</span><span class="s1">&#39;student5&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -2354,7 +2355,7 @@ Name: student4, dtype: object
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;E2&#39;</span><span class="p">,</span> <span class="s1">&#39;E3&#39;</span><span class="p">,</span> <span class="s1">&#39;E4&#39;</span><span class="p">,</span><span class="s1">&#39;E5&#39;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">ele</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testdata_1.txt&#39;</span><span class="p">)],</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span> 
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">],</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 <span class="n">display</span><span class="p">(</span><span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;E1&#39;</span><span class="p">:</span><span class="s1">&#39;E4&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
@@ -2558,36 +2559,85 @@ Name: 9, dtype: object
 </div>
 </div>
 </section>
-<section id="iteritems-iterate-over-columns">
-<h2><span class="section-number">15.2.20. </span>iteritems – iterate over columns<a class="headerlink" href="#iteritems-iterate-over-columns" title="Link to this heading">#</a></h2>
+<section id="items-iterate-over-columns">
+<h2><span class="section-number">15.2.20. </span>items – iterate over columns<a class="headerlink" href="#items-iterate-over-columns" title="Link to this heading">#</a></h2>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
 <span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;E2&#39;</span><span class="p">,</span> <span class="s1">&#39;E3&#39;</span><span class="p">,</span> <span class="s1">&#39;E4&#39;</span><span class="p">,</span><span class="s1">&#39;E5&#39;</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="o">=</span><span class="p">[</span><span class="n">ele</span><span class="o">.</span><span class="n">strip</span><span class="p">()</span><span class="o">.</span><span class="n">split</span><span class="p">(</span><span class="s1">&#39;,&#39;</span><span class="p">)</span> <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="nb">open</span><span class="p">(</span><span class="s1">&#39;testdata_1.txt&#39;</span><span class="p">)],</span> <span class="n">columns</span><span class="o">=</span><span class="n">columns</span><span class="p">)</span>
-<span class="k">for</span> <span class="n">column_name</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
+<span class="k">for</span> <span class="n">column_name</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">column_name</span><span class="p">,</span> <span class="n">column</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">AttributeError</span><span class="g g-Whitespace">                            </span>Traceback (most recent call last)
-<span class="nn">/tmp/ipykernel_18445/1236150519.py</span> in <span class="ni">?</span><span class="nt">()</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;E1&#39;</span><span class="p">,</span> <span class="s1">&#39;E2&#39;</span><span class="p">,</span> <span class="s1">&#39;E3&#39;</span><span class="p">,</span> <span class="s1">&#39;E4&#39;</span><span class="p">,</span><span class="s1">&#39;E5&#39;</span><span class="p">)</span>
-<span class="nn">      3 df = pd.DataFrame(data=[ele.strip().split(&#39;,&#39;) for ele</span> in <span class="ni">open</span><span class="nt">(&#39;testdata_1.txt&#39;)], columns=columns)</span>
-<span class="ne">----&gt; </span><span class="mi">4</span> <span class="k">for</span> <span class="n">column_name</span><span class="p">,</span> <span class="n">column</span> <span class="ow">in</span> <span class="n">df</span><span class="o">.</span><span class="n">iteritems</span><span class="p">():</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="nb">print</span><span class="p">(</span><span class="n">column_name</span><span class="p">,</span> <span class="n">column</span><span class="p">)</span>
-
-<span class="nn">~/anaconda3/envs/eas503book/lib/python3.12/site-packages/pandas/core/generic.py</span> in <span class="ni">?</span><span class="nt">(self, name)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6295</span>             <span class="ow">and</span> <span class="n">name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_accessors</span>
-<span class="g g-Whitespace">   </span><span class="mi">6296</span>             <span class="ow">and</span> <span class="bp">self</span><span class="o">.</span><span class="n">_info_axis</span><span class="o">.</span><span class="n">_can_hold_identifiers_and_holds_name</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
-<span class="g g-Whitespace">   </span><span class="mi">6297</span>         <span class="p">):</span>
-<span class="g g-Whitespace">   </span><span class="mi">6298</span>             <span class="k">return</span> <span class="bp">self</span><span class="p">[</span><span class="n">name</span><span class="p">]</span>
-<span class="ne">-&gt; </span><span class="mi">6299</span>         <span class="k">return</span> <span class="nb">object</span><span class="o">.</span><span class="fm">__getattribute__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">)</span>
-
-<span class="ne">AttributeError</span>: &#39;DataFrame&#39; object has no attribute &#39;iteritems&#39;
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>StudentName 0     student1
+1     student2
+2     student3
+3     student4
+4     student5
+5     student6
+6     student7
+7     student8
+8     student9
+9    student10
+Name: StudentName, dtype: object
+E1 0     92
+1     74
+2     83
+3    100
+4     77
+5    100
+6     66
+7     97
+8     95
+9     78
+Name: E1, dtype: object
+E2 0    77
+1    93
+2    96
+3    72
+4    96
+5    86
+6    91
+7    86
+8    98
+9    76
+Name: E2, dtype: object
+E3 0    87
+1    88
+2    74
+3    83
+4    66
+5    84
+6    94
+7    75
+8    99
+9    73
+Name: E3, dtype: object
+E4 0    77
+1    67
+2    79
+3    85
+4    79
+5    70
+6    97
+7    69
+8    85
+9    88
+Name: E4, dtype: object
+E5 0    94
+1    85
+2    92
+3    66
+4    92
+5    71
+6    80
+7    88
+8    86
+9    86
+Name: E5, dtype: object
 </pre></div>
 </div>
 </div>
@@ -2614,10 +2664,10 @@ Name: 9, dtype: object
 
 <span class="n">df</span><span class="o">&gt;=</span><span class="mi">90</span>
 <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="o">&gt;=</span><span class="mi">90</span><span class="p">]</span>
-<span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">85</span> <span class="c1">#   </span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">85</span> <span class="c1">#</span>
 <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">85</span><span class="p">]</span> <span class="c1"># gives all columns where exam1 is greater than 85</span>
-<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">85</span><span class="p">][</span><span class="s1">&#39;exam3&#39;</span><span class="p">]</span> 
-<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">85</span><span class="p">][[</span><span class="s1">&#39;exam2&#39;</span><span class="p">,</span> <span class="s1">&#39;exam3&#39;</span><span class="p">]]</span> 
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">85</span><span class="p">][</span><span class="s1">&#39;exam3&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">85</span><span class="p">][[</span><span class="s1">&#39;exam2&#39;</span><span class="p">,</span> <span class="s1">&#39;exam3&#39;</span><span class="p">]]</span>
 
 
 <span class="n">df</span><span class="p">[(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">85</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;exam2&#39;</span><span class="p">]</span><span class="o">&gt;=</span><span class="mi">85</span><span class="p">)]</span>
@@ -2650,7 +2700,7 @@ Name: 9, dtype: object
 <span class="n">index</span> <span class="o">=</span> <span class="nb">list</span><span class="p">(</span><span class="nb">zip</span><span class="p">(</span><span class="n">students</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span> <span class="n">exams</span><span class="p">))</span>
 <span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">(</span><span class="n">index</span><span class="p">)</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">3</span><span class="o">*</span><span class="mi">3</span><span class="o">*</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="mi">9</span><span class="p">,</span><span class="mi">2</span><span class="p">)</span> <span class="p">,</span> <span class="n">index</span><span class="p">,</span> <span class="n">classes</span><span class="o">.</span><span class="n">split</span><span class="p">())</span>
-<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;student1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">][</span><span class="s1">&#39;class1&#39;</span><span class="p">]</span> 
+<span class="n">df</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;student1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">][</span><span class="s1">&#39;class1&#39;</span><span class="p">]</span>
 <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span>
 <span class="n">df</span><span class="o">.</span><span class="n">index</span><span class="o">.</span><span class="n">names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Students&#39;</span><span class="p">,</span> <span class="s1">&#39;Exams&#39;</span><span class="p">]</span>
 
@@ -2671,32 +2721,74 @@ Name: 9, dtype: object
 <span class="n">df</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">thresh</span><span class="o">=</span><span class="mi">2</span><span class="p">)</span>
 <span class="n">df</span><span class="o">.</span><span class="n">fillna</span><span class="p">(</span><span class="n">value</span><span class="o">=</span><span class="mi">55</span><span class="p">)</span>
 
-<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span> 
-<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;student1&#39;</span><span class="p">])</span> 
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span><span class="mi">2</span><span class="p">])</span>
+<span class="n">df</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">columns</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;student1&#39;</span><span class="p">])</span>
 </pre></div>
 </div>
 </section>
 <section id="groupby">
 <h2><span class="section-number">15.2.26. </span>Groupby<a class="headerlink" href="#groupby" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>In previous versions of pandas, non-numeric columns were silently ignored. Now, however, we need to either explicitly choose numeric columns or ask mean to do it for us with <code class="docutils literal notranslate"><span class="pre">numeric_only=True</span></code> keyword argument.</p>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;Exams&#39;</span><span class="p">:</span> <span class="s1">&#39;exam1 exam1 exam1&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;exam2 exam2 exam2&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;exam3 exam3 exam3&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span>
-    <span class="s1">&#39;Students&#39;</span><span class="p">:</span> <span class="s1">&#39;student1 student2 student3&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span>   
+    <span class="s1">&#39;Students&#39;</span><span class="p">:</span> <span class="s1">&#39;student1 student2 student3&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span><span class="o">*</span><span class="mi">3</span><span class="p">,</span>
     <span class="s1">&#39;Scores&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span><span class="mi">101</span><span class="p">,</span><span class="mi">9</span><span class="p">)</span>
 <span class="p">}</span>
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
-<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Students&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
-<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Students&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;student1&#39;</span><span class="p">]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Exams&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()[</span><span class="s1">&#39;Scores&#39;</span><span class="p">]</span>
-<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Exams&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span> 
-<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Students&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span> 
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Students&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Students&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;student1&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Exams&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">(</span><span class="n">numeric_only</span><span class="o">=</span><span class="kc">True</span><span class="p">)[</span><span class="s1">&#39;Scores&#39;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Exams&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Students&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span><span class="o">.</span><span class="n">transpose</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="n">my_dict</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;Exams&#39;</span><span class="p">:</span> <span class="s1">&#39;exam1 exam1 exam1&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;exam2 exam2 exam2&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="o">+</span> <span class="s1">&#39;exam3 exam3 exam3&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">(),</span>
+  <span class="s1">&#39;Students&#39;</span><span class="p">:</span> <span class="s1">&#39;student1 student2 student3&#39;</span><span class="o">.</span><span class="n">split</span><span class="p">()</span> <span class="o">*</span> <span class="mi">3</span><span class="p">,</span>
+  <span class="s1">&#39;Scores&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">9</span><span class="p">)</span>
+<span class="p">}</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
+
+<span class="c1"># Select only numeric columns</span>
+<span class="n">new_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;Students&quot;</span><span class="p">)</span>
+<span class="n">new_df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">])</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;Students&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Create a sample DataFrame with a multi-level index</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;Scores&#39;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">random</span><span class="o">.</span><span class="n">randint</span><span class="p">(</span><span class="mi">65</span><span class="p">,</span> <span class="mi">101</span><span class="p">,</span> <span class="mi">9</span><span class="p">),</span>
+<span class="p">}</span>
+<span class="n">index</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">MultiIndex</span><span class="o">.</span><span class="n">from_tuples</span><span class="p">(</span>
+  <span class="p">[(</span><span class="s1">&#39;student1&#39;</span><span class="p">,</span> <span class="s1">&#39;exam1&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;student1&#39;</span><span class="p">,</span> <span class="s1">&#39;exam2&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;student1&#39;</span><span class="p">,</span> <span class="s1">&#39;exam3&#39;</span><span class="p">),</span>
+   <span class="p">(</span><span class="s1">&#39;student2&#39;</span><span class="p">,</span> <span class="s1">&#39;exam1&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;student2&#39;</span><span class="p">,</span> <span class="s1">&#39;exam2&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;student2&#39;</span><span class="p">,</span> <span class="s1">&#39;exam3&#39;</span><span class="p">),</span>
+   <span class="p">(</span><span class="s1">&#39;student3&#39;</span><span class="p">,</span> <span class="s1">&#39;exam1&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;student3&#39;</span><span class="p">,</span> <span class="s1">&#39;exam2&#39;</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;student3&#39;</span><span class="p">,</span> <span class="s1">&#39;exam3&#39;</span><span class="p">)],</span>
+  <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Students&#39;</span><span class="p">,</span> <span class="s1">&#39;Exams&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="n">index</span><span class="p">)</span>
+<span class="c1"># Group by the first level of the index (&#39;Students&#39;)</span>
+<span class="n">grouped_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="n">level</span><span class="o">=</span><span class="s1">&#39;Students&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="n">display</span><span class="p">(</span><span class="n">grouped_df</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
 <section id="merging-sql-join">
-<h2><span class="section-number">15.2.27. </span>Merging  – SQL JOIN<a class="headerlink" href="#merging-sql-join" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">departments</span> <span class="o">=</span> <span class="p">{</span> 
+<h2><span class="section-number">15.2.27. </span>Merging – SQL JOIN<a class="headerlink" href="#merging-sql-join" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">departments</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;DepartmentId&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">],</span>
-    <span class="s1">&#39;DepartmentName&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;IT&#39;</span><span class="p">,</span> <span class="s1">&#39;Physics&#39;</span><span class="p">,</span> <span class="s1">&#39;Arts&#39;</span><span class="p">,</span> <span class="s1">&#39;Math&#39;</span><span class="p">]</span> 
+    <span class="s1">&#39;DepartmentName&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;IT&#39;</span><span class="p">,</span> <span class="s1">&#39;Physics&#39;</span><span class="p">,</span> <span class="s1">&#39;Arts&#39;</span><span class="p">,</span> <span class="s1">&#39;Math&#39;</span><span class="p">]</span>
 <span class="p">}</span>
 
 <span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">departments</span><span class="p">)</span>
@@ -2711,7 +2803,7 @@ Name: 9, dtype: object
 
 <span class="n">marks</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;MarkId&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
-    <span class="s1">&#39;StudentId&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span> 
+    <span class="s1">&#39;StudentId&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">],</span>
     <span class="s1">&#39;Mark&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">18</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">16</span><span class="p">,</span> <span class="mi">19</span><span class="p">,</span> <span class="mi">14</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">,</span> <span class="mi">20</span><span class="p">]</span>
 <span class="p">}</span>
 
@@ -2720,12 +2812,12 @@ Name: 9, dtype: object
 <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">df1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;DepartmentId&#39;</span><span class="p">)</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;DepartmentId&#39;</span><span class="p">)</span>
 <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;outer&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;DepartmentId&#39;</span><span class="p">)</span>
-<span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">df1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;DepartmentId&#39;</span><span class="p">)</span> 
+<span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">df1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;right&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;DepartmentId&#39;</span><span class="p">)</span>
 
 <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df3</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">df1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;DepartmentId&#39;</span><span class="p">),</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;StudentId&#39;</span><span class="p">)</span>
 <span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df3</span><span class="p">,</span> <span class="n">pd</span><span class="o">.</span><span class="n">merge</span><span class="p">(</span><span class="n">df2</span><span class="p">,</span> <span class="n">df1</span><span class="p">,</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;DepartmentId&#39;</span><span class="p">),</span> <span class="n">how</span><span class="o">=</span><span class="s1">&#39;inner&#39;</span><span class="p">,</span> <span class="n">on</span><span class="o">=</span><span class="s1">&#39;StudentId&#39;</span><span class="p">)</span>
 
-<span class="n">data</span><span class="p">[[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;Mark&#39;</span><span class="p">,</span> <span class="s1">&#39;DepartmentName&#39;</span><span class="p">]]</span> 
+<span class="n">data</span><span class="p">[[</span><span class="s1">&#39;StudentName&#39;</span><span class="p">,</span> <span class="s1">&#39;Mark&#39;</span><span class="p">,</span> <span class="s1">&#39;DepartmentName&#39;</span><span class="p">]]</span>
 
 </pre></div>
 </div>
@@ -2793,10 +2885,10 @@ Name: 9, dtype: object
 </section>
 <section id="more-pandas-operations">
 <h2><span class="section-number">15.2.29. </span>More Pandas Operations<a class="headerlink" href="#more-pandas-operations" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;DepartmentName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> 
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;DepartmentName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;DepartmentName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;DepartmentName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
 <span class="n">data</span><span class="p">[</span><span class="s1">&#39;DepartmentName&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Mark&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">17</span><span class="p">]</span>  
+<span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;Mark&#39;</span><span class="p">]</span><span class="o">&gt;</span><span class="mi">17</span><span class="p">]</span>
 </pre></div>
 </div>
 </section>
@@ -2828,7 +2920,7 @@ Name: 9, dtype: object
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
 <span class="n">mapping</span> <span class="o">=</span> <span class="p">{</span><span class="mi">18</span><span class="p">:</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="mi">14</span><span class="p">:</span> <span class="s1">&#39;C&#39;</span><span class="p">,</span> <span class="mi">19</span><span class="p">:</span> <span class="s1">&#39;A-&#39;</span><span class="p">,</span> <span class="mi">20</span><span class="p">:</span> <span class="s1">&#39;A+&#39;</span><span class="p">}</span>
-<span class="n">df3</span><span class="p">[</span><span class="s1">&#39;Mark&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>     
+<span class="n">df3</span><span class="p">[</span><span class="s1">&#39;Mark&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">mapping</span><span class="p">)</span>
 
 
 </pre></div>
@@ -2851,13 +2943,13 @@ Name: 9, dtype: object
 <section id="importing-csv-tsv">
 <h2><span class="section-number">15.2.33. </span>Importing CSV, TSV<a class="headerlink" href="#importing-csv-tsv" title="Link to this heading">#</a></h2>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
-<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;students.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lastname&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="p">,</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;exam1&#39;</span><span class="p">,</span> <span class="s1">&#39;exam2&#39;</span><span class="p">,</span> <span class="s1">&#39;exam3&#39;</span><span class="p">])</span> 
+<span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;students.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">names</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;lastname&#39;</span><span class="p">,</span> <span class="s1">&#39;firstname&#39;</span><span class="p">,</span> <span class="s1">&#39;username&#39;</span><span class="p">,</span> <span class="s1">&#39;exam1&#39;</span><span class="p">,</span> <span class="s1">&#39;exam2&#39;</span><span class="p">,</span> <span class="s1">&#39;exam3&#39;</span><span class="p">])</span>
 
-<span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;exam1&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+<span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;exam1&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
-<span class="n">data</span><span class="p">[[</span><span class="s1">&#39;exam1&#39;</span><span class="p">,</span> <span class="s1">&#39;exam2&#39;</span><span class="p">,</span> <span class="s1">&#39;exam3&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> 
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;average&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;exam1&#39;</span><span class="p">,</span> <span class="s1">&#39;exam2&#39;</span><span class="p">,</span> <span class="s1">&#39;exam3&#39;</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span> 
-<span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;average&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> 
+<span class="n">data</span><span class="p">[[</span><span class="s1">&#39;exam1&#39;</span><span class="p">,</span> <span class="s1">&#39;exam2&#39;</span><span class="p">,</span> <span class="s1">&#39;exam3&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;average&#39;</span><span class="p">]</span><span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">(</span><span class="n">data</span><span class="p">[[</span><span class="s1">&#39;exam1&#39;</span><span class="p">,</span> <span class="s1">&#39;exam2&#39;</span><span class="p">,</span> <span class="s1">&#39;exam3&#39;</span><span class="p">]],</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;average&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 
 <span class="n">data</span><span class="o">.</span><span class="n">to_csv</span><span class="p">(</span><span class="s1">&#39;output.tsv&#39;</span><span class="p">,</span> <span class="n">sep</span><span class="o">=</span><span class="s1">&#39;</span><span class="se">\t</span><span class="s1">&#39;</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span> <span class="n">header</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
 </pre></div>
@@ -2872,20 +2964,20 @@ Name: 9, dtype: object
 <span class="n">data</span><span class="o">.</span><span class="n">tail</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span>
 
 <span class="n">data</span><span class="o">.</span><span class="n">shape</span>
-<span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span> 
-<span class="n">data</span><span class="o">.</span><span class="n">columns</span> 
-<span class="n">data</span><span class="o">.</span><span class="n">dtypes</span> 
-<span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>  
+<span class="n">data</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">data</span><span class="o">.</span><span class="n">columns</span>
+<span class="n">data</span><span class="o">.</span><span class="n">dtypes</span>
+<span class="n">data</span><span class="o">.</span><span class="n">info</span><span class="p">()</span>
 <span class="n">data</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
-<span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>  
+<span class="n">data</span><span class="o">.</span><span class="n">describe</span><span class="p">()</span>
 </pre></div>
 </div>
 </section>
 <section id="more-data-manipulation">
 <h2><span class="section-number">15.2.35. </span>More data manipulation<a class="headerlink" href="#more-data-manipulation" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">85</span><span class="p">)]</span> 
-<span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">75</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">95</span><span class="p">])]</span>  
-<span class="n">data</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span> 
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">between</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mi">85</span><span class="p">)]</span>
+<span class="n">data</span><span class="p">[</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="mi">75</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">95</span><span class="p">])]</span>
+<span class="n">data</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">()</span>
 <span class="n">data</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">nunique</span><span class="p">()</span>
 <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;exam1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">unique</span><span class="p">())</span>
 </pre></div>
@@ -2922,10 +3014,10 @@ Name: 9, dtype: object
 
 <span class="n">projects</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;ProjectNum&#39;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;30-452-T3&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;30-457-T3&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;30-482-TC&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;31-124-T3&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;30-452-T3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;30-457-T3&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;30-482-TC&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;31-124-T3&quot;</span><span class="p">,</span>
         <span class="s2">&quot;31-238-TC&quot;</span><span class="p">,</span>
         <span class="s2">&quot;31-238-TC2&quot;</span><span class="p">,</span>
         <span class="s2">&quot;35-152-TC&quot;</span><span class="p">,</span>
@@ -2950,17 +3042,17 @@ Name: 9, dtype: object
 
 <span class="n">employees_projects</span> <span class="o">=</span> <span class="p">{</span>
     <span class="s1">&#39;EmployeeID&#39;</span><span class="p">:</span> <span class="p">[</span>
-        <span class="s2">&quot;EN1-26&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;EN1-26&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;EN1-26&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;EN1-33&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;EN1-33&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;EN1-33&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;EN1-35&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;EN1-35&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;EN1-36&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;EN1-38&quot;</span><span class="p">,</span> 
-        <span class="s2">&quot;EN1-40&quot;</span><span class="p">,</span> 
+        <span class="s2">&quot;EN1-26&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;EN1-26&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;EN1-26&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;EN1-33&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;EN1-33&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;EN1-33&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;EN1-35&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;EN1-35&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;EN1-36&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;EN1-38&quot;</span><span class="p">,</span>
+        <span class="s2">&quot;EN1-40&quot;</span><span class="p">,</span>
         <span class="s2">&quot;EN1-40&quot;</span><span class="p">,</span>
     <span class="p">],</span>
     <span class="s1">&#39;ProjectNum&#39;</span> <span class="p">:</span> <span class="p">[</span>
@@ -3096,7 +3188,7 @@ Ref: <a class="reference external" href="https://pythonspeed.com/memory/">https:
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-square-brackets">15.2.1. Method 1 – Square brackets</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-1-index-text-column-wise">15.2.2. Method 1.1 – index/text – #column wise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-2-list-not-tuple-column-wise">15.2.3. Method 1.2 – list, NOT TUPLE # column wise</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-3-a-slice-row-wise">15.2.4. Method 1.3 – a slice  # row wise</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-3-a-slice-row-wise">15.2.4. Method 1.3 – a slice # row wise</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-4-slice-and-list">15.2.5. Method 1.4?? – slice and list?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-1-5-slice-and-slice">15.2.6. Method 1.5?? – slice and slice?</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-2-iloc">15.2.7. Method 2 – .iloc</a><ul class="nav section-nav flex-column">
@@ -3120,14 +3212,14 @@ Ref: <a class="reference external" href="https://pythonspeed.com/memory/">https:
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-8-slice">15.2.17. Method 3.8 – slice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#method-3-9-slice-and-slice">15.2.18. Method 3.9 – slice and slice</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iterrows-iterate-over-rows">15.2.19. iterrows – iterate over rows</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#iteritems-iterate-over-columns">15.2.20. iteritems – iterate over columns</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#items-iterate-over-columns">15.2.20. items – iterate over columns</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#select-subset-of-data">15.2.21. Select subset of data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#use-conditions-to-select">15.2.22. Use conditions to select</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#adding-student-index">15.2.23. Adding student index</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multi-index-data">15.2.24. Multi-index data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#dealing-with-missing-data">15.2.25. Dealing with missing data</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#groupby">15.2.26. Groupby</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-sql-join">15.2.27. Merging  – SQL JOIN</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#merging-sql-join">15.2.27. Merging – SQL JOIN</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#concatenation">15.2.28. Concatenation</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#more-pandas-operations">15.2.29. More Pandas Operations</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#lambda-with-pandas">15.2.30. Lambda with Pandas</a></li>

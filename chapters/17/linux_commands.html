@@ -1,0 +1,647 @@
+
+<!DOCTYPE html>
+
+
+<html lang="en" data-content_root="../../" >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Linux Command Line &#8212; EAS503: Python for Data Scientists</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="../../_static/styles/theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/bootstrap.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+<link href="../../_static/styles/pydata-sphinx-theme.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+
+  
+  <link href="../../_static/vendor/fontawesome/6.5.2/css/all.min.css?digest=dfe6caa3a7d634c4db9b" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b" />
+<link rel="preload" as="script" href="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b" />
+  <script src="../../_static/vendor/fontawesome/6.5.2/js/all.min.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+    <script src="../../_static/documentation_options.js?v=9eb32ce0"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script src="../../_static/clipboard.min.js?v=a7894cd8"></script>
+    <script src="../../_static/copybutton.js?v=f281be69"></script>
+    <script src="../../_static/scripts/sphinx-book-theme.js?v=887ef09a"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="../../_static/togglebutton.js?v=4a39c7ea"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="../../_static/design-tabs.js?v=f930bc37"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script async="async" src="../../_static/sphinx-thebe.js?v=c100c467"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"; const thebe_selector = ".thebe,.cell"; const thebe_selector_input = "pre"; const thebe_selector_output = ".output, .cell_output"</script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'chapters/17/linux_commands';</script>
+    <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/17/linux_commands.html" />
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="en"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <div id="pst-skip-link" class="skip-link d-print-none"><a href="#main-content">Skip to main content</a></div>
+  
+  <div id="pst-scroll-pixel-helper"></div>
+  
+  <button type="button" class="btn rounded-pill" id="pst-back-to-top">
+    <i class="fa-solid fa-arrow-up"></i>Back to top</button>
+
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-primary-sidebar-checkbox"/>
+  <label class="overlay overlay-primary" for="pst-primary-sidebar-checkbox"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          id="pst-secondary-sidebar-checkbox"/>
+  <label class="overlay overlay-secondary" for="pst-secondary-sidebar-checkbox"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="../../search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+
+  <div class="pst-async-banner-revealer d-none">
+  <aside id="bd-header-version-warning" class="d-none d-print-none" aria-label="Version warning"></aside>
+</div>
+
+  
+    <header class="bd-header navbar navbar-expand-lg bd-navbar d-print-none">
+    </header>
+  
+
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      
+      
+        
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+
+  
+    
+  
+
+<a class="navbar-brand logo" href="../intro.html">
+  
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="../../_static/ub.png" class="logo__image only-light" alt="EAS503: Python for Data Scientists - Home"/>
+    <script>document.write(`<img src="../../_static/ub.png" class="logo__image only-dark" alt="EAS503: Python for Data Scientists - Home"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item">
+
+ <script>
+ document.write(`
+   <button class="btn search-button-field search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+    <span class="search-button__default-text">Search</span>
+    <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd class="kbd-shortcut__modifier">K</kbd></span>
+   </button>
+ `);
+ </script></div>
+        <div class="sidebar-primary-item"><nav class="bd-links bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        <ul class="nav bd-sidenav">
+<li class="toctree-l1 has-children"><a class="reference internal" href="../01/fundamentals.html">1. Fundamentals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../01/getting_started.html">1.1. Getting Started</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/definitions.html">1.2. Definitions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/arithmetic.html">1.3. Arithmetic</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/numeric_data_types.html">1.4. Numeric Data Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/large_numbers.html">1.5. Working with Large Numbers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/operator_precedence.html">1.6. Operator Precedence</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/variables.html">1.7. Variables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/memory.html">1.8. Memory Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/augmented.html">1.9. Augmented Assignments</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/errors.html">1.10. Error Types</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/formatting_code.html">1.11. Formatting Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/describing_code.html">1.12. Describing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/simultaneous_assignment.html">1.13. Simultaneous Assignment</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/exercises.html">1.14. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../01/quizzes.html">1.15. Quizzes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../02/functions.html">2. Functions</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../02/intro.html">2.1. Introduction to Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/built_in.html">2.2. Built-in Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/user_defined.html">2.3. User Defined Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/return.html">2.4. Return Statement</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/namespace.html">2.5. Namespace and Scope</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/exercises.html">2.6. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../02/quizzes.html">2.7. Quizzes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../03/intro.html">3. Strings</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../03/basics.html">3.1. String Basics</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/formatting.html">3.2. String Formatting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/table.html">3.3. Creating a Table</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/methods.html">3.4. String Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/exercises.html">3.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../03/quizzes.html">3.6. Quizzes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../04/intro.html">4. Conditionals</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../04/boolean.html">4.1. Boolean/Logical Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/relational.html">4.2. Relational Operators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/strings.html">4.3. String Comparison</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/statement_selection.html">4.4. Statement Selection</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/exercises.html">4.5. Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../04/quizzes.html">4.6. Quizzes</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../05/intro.html">5. Lists and Tuples</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../05/lists.html">5.1. Lists</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/methods.html">5.2. List Methods</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/tuples.html">5.3. Tuples</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../05/strings.html">5.4. Strings as a List</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../06/intro.html">6. Loops</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../06/loop.html">6.1. for/while loop</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/for_loop_exercises.html">6.2. For Loop Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/while_loop_exercises.html">6.3. While Loop Exercises</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../06/modify_loop_exercises.html">6.5. Modifying Loop Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/comprehension.html">6.6. List/Tuple Comprehension</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../06/additional_exercises.html">6.7. Additional Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../07/intro.html">7. Dictionaries and Sets</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../07/dictionary.html">7.1. Dictionaries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/dictionary_exercises.html">7.2. Dictionary Exercises</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/sets.html">7.3. Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../07/set_exercises.html">7.4. Set Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../08/intro.html">8. Lambda, Filters, Maps, Sorted</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../08/lambda.html">8.1. Lambda, Filter, Map, and Sorted</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../08/lambda_exercises.html">8.2. Lambda, Filter, Map, and Sorted Solutions</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../09/intro.html">9. Error Handling</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../09/errors.html">9.1. Errors and Exception Handling</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../10/intro.html">10. Functions Revisited</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../10/functions.html">10.1. Functions Revisited</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../11/intro.html">11. Miscellaneous Topics</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../11/misc.html">11.1. Miscellaneous Topics</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../12/intro.html">12. Object Oriented Programming</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../12/oop.html">12.1. Object-Oriented Programming</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12/operator_overloading.html">12.2. Operator overloading</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12/self.html">12.3. Self</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../12/item_assignment.html">12.4. Item assignment</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../13/sql.html">13. SQL with SQLite</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_0_tables.html">13.1. Creating Tables</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_1_query_primer.html">13.2. SQL Query Primer</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_2_filtering.html">13.3. Filtering</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_3_sets.html">13.4. Sets</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_4_grouping.html">13.5. Grouping and Aggregates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_5_subqueries.html">13.6. Subqueries</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_6_conditionals.html">13.7. Conditionals</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_7_analytic_functions.html">13.8. Analytic Functions</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization.html">13.9. Normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization_old.html">13.10. Normalization Old</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_9_python.html">13.11. Python and SQLite3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_10_india_export_data.html">13.12. India Export Database</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_11_soccer.html">13.14. Soccer Database</a></li>
+
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../14/intro.html">14. Plotting in Python</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../14/matplotlib.html">14.1. Matplotlib</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../15/intro.html">15. NumPy and Pandas</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../15/np_pd.html">15.1. Numpy and Pandas</a></li>
+
+<li class="toctree-l2"><a class="reference internal" href="../15/exercises.html">15.3. Cross-referenced Exercises</a></li>
+</ul>
+</details></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../16/intro.html">16. Machine Learning</a><details><summary><span class="toctree-toggle" role="presentation"><i class="fa-solid fa-chevron-down"></i></span></summary><ul>
+<li class="toctree-l2"><a class="reference internal" href="../16/introduction.html">16.1. Introduction</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/loading_data.html">16.2. Loading Data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/preprocessing_data.html">16.3. Preprocessing data</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/select_and_train_a_model.html">16.4. Select and Train a Model</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../16/misc.html">16.5. Feature Selection and Evaluation</a></li>
+</ul>
+</details></li>
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main" role="main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article d-print-none">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><button class="sidebar-toggle primary-toggle btn btn-sm" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</button></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+<a href="https://github.com/mkzia/eas503-book" target="_blank"
+   class="btn btn-sm btn-source-repository-button"
+   title="Source repository"
+   data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fab fa-github"></i>
+  </span>
+
+</a>
+
+
+
+
+
+
+<div class="dropdown dropdown-download-buttons">
+  <button class="btn dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" aria-label="Download this page">
+    <i class="fas fa-download"></i>
+  </button>
+  <ul class="dropdown-menu">
+      
+      
+      
+      <li><a href="../../_sources/chapters/17/linux_commands.md" target="_blank"
+   class="btn btn-sm btn-download-source-button dropdown-item"
+   title="Download source file"
+   data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file"></i>
+  </span>
+<span class="btn__text-container">.md</span>
+</a>
+</li>
+      
+      
+      
+      
+      <li>
+<button onclick="window.print()"
+  class="btn btn-sm btn-download-pdf-button dropdown-item"
+  title="Print to PDF"
+  data-bs-placement="left" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-file-pdf"></i>
+  </span>
+<span class="btn__text-container">.pdf</span>
+</button>
+</li>
+      
+  </ul>
+</div>
+
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm nav-link pst-navbar-icon theme-switch-button" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="theme-switch fa-solid fa-sun fa-lg" data-mode="light"></i>
+    <i class="theme-switch fa-solid fa-moon fa-lg" data-mode="dark"></i>
+    <i class="theme-switch fa-solid fa-circle-half-stroke fa-lg" data-mode="auto"></i>
+  </button>
+`);
+</script>
+
+
+<script>
+document.write(`
+  <button class="btn btn-sm pst-navbar-icon search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass fa-lg"></i>
+  </button>
+`);
+</script>
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>Linux Command Line</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ls">ls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="linux-command-line">
+<h1>Linux Command Line<a class="headerlink" href="#linux-command-line" title="Link to this heading">#</a></h1>
+<section id="ls">
+<h2>ls<a class="headerlink" href="#ls" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span></code> most version. Doesn’t show hiddens.</p>
+<ul>
+<li><p>Any file that is prepended with <code class="docutils literal notranslate"><span class="pre">.</span></code> is considered a hidden file and is not listed with <code class="docutils literal notranslate"><span class="pre">ls</span></code>.</p></li>
+</ul>
+</li>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-l</span></code> list all the files and folders with their metadata</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">rw-r--r--</span> <span class="pre">1</span> <span class="pre">codio</span> <span class="pre">codio</span> <span class="pre">9451</span> <span class="pre">Mar</span> <span class="pre">12</span>&#160; <span class="pre">2024</span> <span class="pre">mini_project1.py</span></code></p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">rw-r--r--</span></code></p>
+<ul>
+<li><p>Who can access the file or folder?</p>
+<ul>
+<li><p>first char is empty for file or has <code class="docutils literal notranslate"><span class="pre">d</span></code> for dictionary</p></li>
+<li><p>user (next 3 chars)</p></li>
+<li><p>group (next 3 chars)</p></li>
+<li><p>world (last 3 chars)</p></li>
+</ul>
+</li>
+<li><p>What can you do with the file or folder (attributes)?</p>
+<ul>
+<li><p>read (r)</p></li>
+<li><p>write (w)</p></li>
+<li><p>execute (x)</p>
+<ul>
+<li><p>for files this mean you cannot just run the file itself; think of in windows as clicking a program!</p></li>
+<li><p>for dictionaries if x is not set, then you cannot go into that dictionary</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>The first three characters – user information</p></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>User john belongs to groups: admin and student</p></li>
+<li><p>User jane belongs to groups: student and volunteer</p></li>
+<li><p>folder has group called student?</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span> </code> make the file executable</p></li>
+<li><p>Add a Shebang line</p></li>
+</ul>
+</section>
+<section id="exercise">
+<h2>Exercise<a class="headerlink" href="#exercise" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>open a file with vim and write a simple python print statement</p>
+<ol class="arabic simple">
+<li><p>make sure to add the Shebang line</p></li>
+</ol>
+</li>
+<li><p>close the file</p></li>
+<li><p>change the execution permissions on the file – <code class="docutils literal notranslate"><span class="pre">chmod</span> <span class="pre">+x</span></code></p></li>
+<li><p>run the file</p></li>
+</ol>
+<p>0 - 1 execute</p>
+</section>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./chapters/17"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+              
+              
+                <footer class="prev-next-footer d-print-none">
+                  
+<div class="prev-next-area">
+</div>
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ls">ls</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#exercise">Exercise</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Mohammad Zia
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+
+  <p class="copyright">
+    
+      © Copyright 2024.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="../../_static/scripts/bootstrap.js?digest=dfe6caa3a7d634c4db9b"></script>
+<script src="../../_static/scripts/pydata-sphinx-theme.js?digest=dfe6caa3a7d634c4db9b"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>

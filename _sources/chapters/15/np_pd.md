@@ -10,7 +10,6 @@ kernelspec:
   name: python3
 ---
 
-
 # Numpy and Pandas
 
 ## NumPy
@@ -77,8 +76,8 @@ my_matrix = np.array(my_nested_list)
 print(my_matrix)
 
 my_list1 = [[1,2], [3,4]]
-my_list2 = [[5,6], [7,8]]  
-np.hstack([my_list1, my_list2])   
+my_list2 = [[5,6], [7,8]]
+np.hstack([my_list1, my_list2])
 np.vstack([my_list1, my_list2])
 
 ```
@@ -104,7 +103,7 @@ np.ones(3)*4
 
 ## Create evenly spaced vector
 ### Example use case: when you have Y values for a plot but need to generate X values
-### *** Includes both start an end 
+### *** Includes both start an end
 # np.arange(start, end(not included), step size)
 # np.linspace(start, end(included), number_of_points)
 np.linspace(0, 10, 5)
@@ -128,7 +127,7 @@ np.empty((2,3))
 - Ref: <https://docs.scipy.org/doc/numpy-1.14.0/reference/routines.random.html>
 
 ```python
-# Uniform distribution 
+# Uniform distribution
 np.random.rand(3)
 np.random.rand(3,3)
 # Normal distribution
@@ -137,7 +136,7 @@ np.random.randn(3,3)
 # Random integers
 # np.random.randint(start, end(not_included), size)
 np.random.randint(1,101)
-np.random.randint(1,101,5)  
+np.random.randint(1,101,5)
 ```
 
 ## Reshaping arrays
@@ -224,9 +223,9 @@ print(vector)
 ```python
 matrix = np.array(range(1,10)).reshape((3,3))
 matrix[0,0]
-matrix[0][0] 
-matrix[2,2]  
-matrix[2][2] 
+matrix[0][0]
+matrix[2,2]
+matrix[2][2]
 
 
 matrix[:,2] # Grab the third column
@@ -264,7 +263,7 @@ vector = np.arange(10)
 vector + vector
 vector - vector
 vector * vector
-vector / vector # problem!!! return `nan` 
+vector / vector # problem!!! return `nan`
 vector + 10
 vector - 10
 vector * 10
@@ -285,7 +284,7 @@ np.log(vector)
 
 sum(vector<5)
 import math
-vector = np.arange(1,11) * math.pi 
+vector = np.arange(1,11) * math.pi
 np.sin(vector)
 vector = np.arange(0,math.pi+math.pi/4,math.pi/4)
 np.sin(vector)
@@ -296,16 +295,16 @@ np.round(matrix*1000)/1000
 np.ceil(matrix*1000)/1000
 
 matrix = np.arange(1,10).reshape(3,3)
-matrix.sum(axis=1) 
-matrix.sum(axis=0) 
-matrix.cumsum() 
-matrix.cumprod() 
+matrix.sum(axis=1)
+matrix.sum(axis=0)
+matrix.cumsum()
+matrix.cumprod()
 
-matrix.min(axis=1) 
-matrix.min(axis=0) 
+matrix.min(axis=1)
+matrix.min(axis=0)
 
-matrix.max(axis=1) 
-matrix.max(axis=0) 
+matrix.max(axis=1)
+matrix.max(axis=0)
 
 matrix = np.array([1,2,3]*3).reshape(3,3)
 np.unique(matrix.reshape(3,3))
@@ -314,7 +313,7 @@ np.unique(matrix.reshape(3,3))
 ## Pandas
 
 - Built-on top of NumPy -- meaning the underlying data structure used is ndarray
-- Pandas provides series which are like NumPy arrays but with associated index labels -- meaning are like column  labels or row labels. Element data type can be different
+- Pandas provides series which are like NumPy arrays but with associated index labels -- meaning are like column labels or row labels. Element data type can be different
 - Pandas also provides dataframes which are like Excel sheets or database tables
 
 ### Basic examples
@@ -332,13 +331,13 @@ data_dict = {'chrom': 4, 'pos': 12345, 'filter': 38.4}
 s1 = pd.Series(data=data) # Notice the data type is float
 s2 = pd.Series(data=data, index=header)
 
-# can also do 
+# can also do
 s1 = pd.Series(data)
 s2 = pd.Series(data, header)
 
 # can hold different data types
 
-data = [1, '2s', 34] 
+data = [1, '2s', 34]
 pd.Series(data)
 
 # can use a dictionary to initialize a panda series
@@ -363,7 +362,7 @@ data2 = [3, 4899, 234, 89.9]
 
 s1 = pd.Series(data1, header1)
 s2 = pd.Series(data2, header2)
-s1+s2 
+s1+s2
 
 header1 = ['chrom', 'pos', 'filter']
 data1 = [4, 12345, 38.4]
@@ -372,7 +371,7 @@ data2 = ['3', 4899, 234, 89.9]
 
 s1 = pd.Series(data1, header1)
 s2 = pd.Series(data2, header2)
-s1+s2 
+s1+s2
 
 data1 = [4, 12345, 38.4]
 data2 = [3, 4899, 234, 89.9]
@@ -389,7 +388,7 @@ data2 = [3, 4899, 234, 89.9]
 
 s1 = pd.Series(data1, header1)
 s2 = pd.Series(data2, header2)
-s1+s2 
+s1+s2
 
 
 data1 = [12345, 38.4, 4]
@@ -419,9 +418,9 @@ df['exam1']
 df.exam1 # not a good way to do this
 
 
-df['average'] = (df['exam1'] + df['exam2'] + df['exam3'])/3 
+df['average'] = (df['exam1'] + df['exam2'] + df['exam3'])/3
 df.drop('average') # does not work because default for drop is to work on row labels
-df.drop('average', axis=1) # works on column labels 
+df.drop('average', axis=1) # works on column labels
 
 ## STILL NOT DROPPED from df
 df
@@ -464,7 +463,7 @@ df.iloc[0] ## remember that column names do not count as rows
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
 df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-display(df['StudentName'])  
+display(df['StudentName'])
 ```
 
 ## Method 1.2 -- list, NOT TUPLE # column wise
@@ -473,10 +472,10 @@ display(df['StudentName'])
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
 df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-display(df[['StudentName', 'E1']]) 
+display(df[['StudentName', 'E1']])
 ```
 
-## Method 1.3 -- a slice  # row wise
+## Method 1.3 -- a slice # row wise
 
 ```{code-cell} ipython3
 import pandas as pd
@@ -579,8 +578,6 @@ display(df.iloc[0:3, 1:3])
 When you use `.loc` for indexing, it includes the end point. This is unlike `.iloc`, which does not include the end point.
 :::
 
-
-
 ## Method 3.1 -- index # row-wise
 
 ```{code-cell} ipython3
@@ -596,7 +593,7 @@ display(df.loc[3])
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
 df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-df.set_index(df['StudentName'], inplace=True) 
+df.set_index(df['StudentName'], inplace=True)
 display(df.loc['student4'])
 ```
 
@@ -606,7 +603,7 @@ display(df.loc['student4'])
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
 df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-df.set_index(df['StudentName'], inplace=True) 
+df.set_index(df['StudentName'], inplace=True)
 display(df.loc[['student4', 'student1']])
 ```
 
@@ -616,7 +613,7 @@ display(df.loc[['student4', 'student1']])
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
 df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-df.set_index(df['StudentName'], inplace=True) 
+df.set_index(df['StudentName'], inplace=True)
 display(df.loc[['student4', 'student1'], ['E1', 'E2']])
 ```
 
@@ -626,7 +623,7 @@ display(df.loc[['student4', 'student1'], ['E1', 'E2']])
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
 df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-df.set_index(df['StudentName'], inplace=True) 
+df.set_index(df['StudentName'], inplace=True)
 display(df.loc[:, ['E1', 'E2']])
 ```
 
@@ -636,7 +633,7 @@ display(df.loc[:, ['E1', 'E2']])
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
 df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-df.set_index(df['StudentName'], inplace=True) 
+df.set_index(df['StudentName'], inplace=True)
 display(df.loc[['student1', 'student2'], :])
 ```
 
@@ -646,7 +643,7 @@ display(df.loc[['student1', 'student2'], :])
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
 df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-df.set_index(df['StudentName'], inplace=True) 
+df.set_index(df['StudentName'], inplace=True)
 display(df.loc['student1':'student5', :])
 ```
 
@@ -656,7 +653,7 @@ display(df.loc['student1':'student5', :])
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
 df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-df.set_index(df['StudentName'], inplace=True) 
+df.set_index(df['StudentName'], inplace=True)
 display(df.loc['student1':'student5'])
 ```
 
@@ -666,7 +663,7 @@ display(df.loc['student1':'student5'])
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
 df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-df.set_index(df['StudentName'], inplace=True) 
+df.set_index(df['StudentName'], inplace=True)
 display(df.loc[:, 'E1':'E4'])
 ```
 
@@ -682,13 +679,13 @@ for idx, row in df.iterrows():
     print(idx, row)
 ```
 
-## iteritems -- iterate over columns
+## items -- iterate over columns
 
 ```{code-cell} ipython3
 import pandas as pd
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
 df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-for column_name, column in df.iteritems():
+for column_name, column in df.items():
     print(column_name, column)
 ```
 
@@ -714,10 +711,10 @@ df = pd.DataFrame(data=data, index=students, columns=header)
 
 df>=90
 df[df>=90]
-df['exam1']>=85 #   
+df['exam1']>=85 #
 df[df['exam1']>=85] # gives all columns where exam1 is greater than 85
-df[df['exam1']>=85]['exam3'] 
-df[df['exam1']>=85][['exam2', 'exam3']] 
+df[df['exam1']>=85]['exam3']
+df[df['exam1']>=85][['exam2', 'exam3']]
 
 
 df[(df['exam1']>=85) & (df['exam2']>=85)]
@@ -750,7 +747,7 @@ classes = 'class1 class2'
 index = list(zip(students.split(), exams))
 index = pd.MultiIndex.from_tuples(index)
 df = pd.DataFrame(np.random.randint(65, 101, 3*3*2).reshape(9,2) , index, classes.split())
-df.loc['student1'].loc['exam1']['class1'] 
+df.loc['student1'].loc['exam1']['class1']
 df.index.names
 df.index.names = ['Students', 'Exams']
 
@@ -771,32 +768,76 @@ df.dropna(axis=1)
 df.dropna(thresh=2)
 df.fillna(value=55)
 
-df.drop(axis=0, labels=[1,2]) 
-df.drop(axis=1, columns=['student1']) 
+df.drop(axis=0, labels=[1,2])
+df.drop(axis=1, columns=['student1'])
 ```
 
 ## Groupby
 
+:::{note}
+In previous versions of pandas, non-numeric columns were silently ignored. Now, however, we need to either explicitly choose numeric columns or ask mean to do it for us with `numeric_only=True` keyword argument.
+:::
+
 ```python
+import pandas as pd
+import numpy as np
+
 my_dict = {
     'Exams': 'exam1 exam1 exam1'.split() + 'exam2 exam2 exam2'.split() + 'exam3 exam3 exam3'.split(),
-    'Students': 'student1 student2 student3'.split()*3,   
+    'Students': 'student1 student2 student3'.split()*3,
     'Scores': np.random.randint(65,101,9)
 }
 df = pd.DataFrame(my_dict)
-df.groupby('Students').mean()
-df.groupby('Students').mean().loc['student1']
-df.groupby('Exams').max()['Scores']
-df.groupby('Exams').describe() 
-df.groupby('Students').describe().transpose() 
+df.groupby('Students').mean(numeric_only=True)
+df.groupby('Students').mean(numeric_only=True).loc['student1']
+df.groupby('Exams').max(numeric_only=True)['Scores']
+df.groupby('Exams').describe()
+df.groupby('Students').describe().transpose()
 ```
 
-## Merging  -- SQL JOIN
+```python
+import pandas as pd
+import numpy as np
+my_dict = {
+  'Exams': 'exam1 exam1 exam1'.split() + 'exam2 exam2 exam2'.split() + 'exam3 exam3 exam3'.split(),
+  'Students': 'student1 student2 student3'.split() * 3,
+  'Scores': np.random.randint(65, 101, 9)
+}
+df = pd.DataFrame(my_dict)
+
+# Select only numeric columns
+new_df = df.set_index("Students")
+new_df.select_dtypes(include=[np.number]).groupby("Students").mean()
+```
 
 ```python
-departments = { 
+import pandas as pd
+import numpy as np
+
+# Create a sample DataFrame with a multi-level index
+data = {
+  'Scores': np.random.randint(65, 101, 9),
+}
+index = pd.MultiIndex.from_tuples(
+  [('student1', 'exam1'), ('student1', 'exam2'), ('student1', 'exam3'),
+   ('student2', 'exam1'), ('student2', 'exam2'), ('student2', 'exam3'),
+   ('student3', 'exam1'), ('student3', 'exam2'), ('student3', 'exam3')],
+  names=['Students', 'Exams']
+)
+
+df = pd.DataFrame(data, index=index)
+# Group by the first level of the index ('Students')
+grouped_df = df.groupby(level='Students').mean()
+
+display(grouped_df)
+```
+
+## Merging -- SQL JOIN
+
+```python
+departments = {
     'DepartmentId': [1, 2, 3, 4],
-    'DepartmentName': ['IT', 'Physics', 'Arts', 'Math'] 
+    'DepartmentName': ['IT', 'Physics', 'Arts', 'Math']
 }
 
 df1 = pd.DataFrame(departments)
@@ -811,7 +852,7 @@ df2 = pd.DataFrame(students)
 
 marks = {
     'MarkId': [1, 2, 3, 4, 5, 6, 7, 8],
-    'StudentId': [1, 2, 3, 4, 5, 6, 7, 8], 
+    'StudentId': [1, 2, 3, 4, 5, 6, 7, 8],
     'Mark': [18, 20, 16, 19, 14, 20, 20, 20]
 }
 
@@ -820,12 +861,12 @@ df3 = pd.DataFrame(marks)
 pd.merge(df2, df1, how='inner', on='DepartmentId')
 pd.merge(df1, df2, how='inner', on='DepartmentId')
 pd.merge(df1, df2, how='outer', on='DepartmentId')
-pd.merge(df2, df1, how='right', on='DepartmentId') 
+pd.merge(df2, df1, how='right', on='DepartmentId')
 
 pd.merge(df3, pd.merge(df2, df1, how='inner', on='DepartmentId'), how='inner', on='StudentId')
 data = pd.merge(df3, pd.merge(df2, df1, how='inner', on='DepartmentId'), how='inner', on='StudentId')
 
-data[['StudentName', 'Mark', 'DepartmentName']] 
+data[['StudentName', 'Mark', 'DepartmentName']]
 
 ```
 
@@ -892,10 +933,10 @@ pd.concat([df1, df2, df3])
 ## More Pandas Operations
 
 ```python
-data['DepartmentName'].unique() 
-data['DepartmentName'].nunique() 
+data['DepartmentName'].unique()
+data['DepartmentName'].nunique()
 data['DepartmentName'].value_counts()
-data[data['Mark']>17]  
+data[data['Mark']>17]
 ```
 
 ## Lambda with Pandas
@@ -927,7 +968,7 @@ data['DepartmentName'].apply(lambda string: string.upper())
 ```python
 
 mapping = {18: 'B', 14: 'C', 19: 'A-', 20: 'A+'}
-df3['Mark'].map(mapping)     
+df3['Mark'].map(mapping)
 
 
 ```
@@ -950,13 +991,13 @@ data.sort_values('Mark', ascending=False)
 
 ```python
 
-data = pd.read_csv('students.tsv', sep='\t', names=['lastname', 'firstname', 'username', 'exam1', 'exam2', 'exam3']) 
+data = pd.read_csv('students.tsv', sep='\t', names=['lastname', 'firstname', 'username', 'exam1', 'exam2', 'exam3'])
 
-data.sort_values('exam1', ascending=False) 
+data.sort_values('exam1', ascending=False)
 
-data[['exam1', 'exam2', 'exam3']].mean() 
-data['average']= np.mean(data[['exam1', 'exam2', 'exam3']], axis=1) 
-data.sort_values('average', ascending=False) 
+data[['exam1', 'exam2', 'exam3']].mean()
+data['average']= np.mean(data[['exam1', 'exam2', 'exam3']], axis=1)
+data.sort_values('average', ascending=False)
 
 data.to_csv('output.tsv', sep='\t', index=False, header=False)
 ```
@@ -971,20 +1012,20 @@ data.tail
 data.tail(3)
 
 data.shape
-data.iloc[3] 
-data.columns 
-data.dtypes 
-data.info()  
+data.iloc[3]
+data.columns
+data.dtypes
+data.info()
 data.value_counts()
-data.describe()  
+data.describe()
 ```
 
 ## More data manipulation
 
 ```python
-data[data['exam1'].between(75, 85)] 
-data[data['exam1'].isin([75, 85, 95])]  
-data['exam1'].unique() 
+data[data['exam1'].between(75, 85)]
+data[data['exam1'].isin([75, 85, 95])]
+data['exam1'].unique()
 data['exam1'].nunique()
 np.sort(data['exam1'].unique())
 ```
@@ -1016,10 +1057,10 @@ df_employees = pd.DataFrame(employees)
 
 projects = {
     'ProjectNum': [
-        "30-452-T3", 
-        "30-457-T3", 
-        "30-482-TC", 
-        "31-124-T3", 
+        "30-452-T3",
+        "30-457-T3",
+        "30-482-TC",
+        "31-124-T3",
         "31-238-TC",
         "31-238-TC2",
         "35-152-TC",
@@ -1044,17 +1085,17 @@ print(df_projects)
 
 employees_projects = {
     'EmployeeID': [
-        "EN1-26", 
-        "EN1-26", 
-        "EN1-26", 
-        "EN1-33", 
-        "EN1-33", 
-        "EN1-33", 
-        "EN1-35", 
-        "EN1-35", 
-        "EN1-36", 
-        "EN1-38", 
-        "EN1-40", 
+        "EN1-26",
+        "EN1-26",
+        "EN1-26",
+        "EN1-33",
+        "EN1-33",
+        "EN1-33",
+        "EN1-35",
+        "EN1-35",
+        "EN1-36",
+        "EN1-38",
+        "EN1-40",
         "EN1-40",
     ],
     'ProjectNum' : [

@@ -277,10 +277,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_6_conditionals.html">13.7. Conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_7_analytic_functions.html">13.8. Analytic Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization.html">13.9. Normalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_9_python.html">13.10. Python and SQLite3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_10_india_export_data.html">13.11. India Export Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization_old.html">13.10. Normalization Old</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_9_python.html">13.11. Python and SQLite3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_10_india_export_data.html">13.12. India Export Database</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_11_soccer.html">13.13. Soccer Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_11_soccer.html">13.14. Soccer Database</a></li>
 
 </ul>
 </details></li>
@@ -484,6 +485,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range-condition">15.3.2.3. Range condition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-condition">15.3.2.4. String condition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wildcard-matches">15.3.2.5. Wildcard Matches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-grouping-examples">15.3.2.6. 13.5.1. A Simple Grouping Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-value-from-a-subquery">15.3.2.7. 13.6.1. Using value from a subquery</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-and-not-in-examples">15.3.2.8. 13.6.2. IN and NOT IN examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">15.3.2.9. 13.7. Conditionals</a></li>
 </ul>
 </li>
 </ul>
@@ -1281,9 +1286,9 @@ document.write(`
 <span class="n">df_new</span> <span class="o">=</span> <span class="n">df</span><span class="p">[[</span><span class="s1">&#39;PatientID&#39;</span><span class="p">,</span> <span class="s1">&#39;PatientPopulationPercentageBelowPoverty&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
 <span class="n">df_new</span><span class="o">.</span><span class="n">rename</span><span class="p">(</span>
     <span class="n">columns</span><span class="o">=</span><span class="p">{</span>
-        <span class="s1">&#39;PatientID&#39;</span><span class="p">:</span> <span class="s1">&#39;PTID&#39;</span><span class="p">,</span> 
+        <span class="s1">&#39;PatientID&#39;</span><span class="p">:</span> <span class="s1">&#39;PTID&#39;</span><span class="p">,</span>
         <span class="s1">&#39;PatientPopulationPercentageBelowPoverty&#39;</span><span class="p">:</span> <span class="s1">&#39;Poverty Level&#39;</span>
-    <span class="p">},</span> 
+    <span class="p">},</span>
     <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span>
 <span class="p">)</span>
 <span class="n">df_new</span><span class="o">.</span><span class="n">insert</span><span class="p">(</span><span class="n">loc</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">column</span><span class="o">=</span><span class="s1">&#39;Hospital&#39;</span><span class="p">,</span> <span class="n">value</span><span class="o">=</span><span class="s1">&#39;Buffalo Hospital&#39;</span><span class="p">)</span>
@@ -1599,7 +1604,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_18414/1037439662.py:7: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_98610/1037439662.py:7: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   pd.DataFrame(df[[&#39;PrimaryDiagnosisCode&#39;, &#39;PrimaryDiagnosisDescription&#39;]].apply(lambda row: f&#39;({row[0]}) {row[1]}&#39;, axis=1), columns=[&#39;CodeWDescription&#39;])
 </pre></div>
 </div>
@@ -3552,6 +3557,148 @@ document.write(`
 </div></div></div>
 </div>
 </section>
+<section id="a-simple-grouping-examples">
+<h3><span class="section-number">15.3.2.6. </span>13.5.1. A Simple Grouping Examples<a class="headerlink" href="#a-simple-grouping-examples" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;LabsCorePopulatedTable.txt&quot;</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="c1"># df.set_index(&quot;PatientID&quot;, inplace=True)</span>
+<span class="n">count</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">)[</span><span class="s2">&quot;LabName&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">count</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">count</span><span class="p">)</span>
+<span class="n">count</span><span class="p">[</span><span class="n">count</span><span class="o">&gt;</span><span class="mi">2000</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;LabsCorePopulatedTable.txt&quot;</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="n">df</span><span class="p">[</span><span class="s2">&quot;LabName&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="s2">&quot;URINALYSIS: RED BLOOD CELLS&quot;</span><span class="p">]</span>
+<span class="n">df</span><span class="o">.</span><span class="n">select_dtypes</span><span class="p">(</span><span class="n">include</span><span class="o">=</span><span class="p">[</span><span class="n">np</span><span class="o">.</span><span class="n">number</span><span class="p">])</span>
+<span class="n">count</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">((</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;LabValue&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">,</span> <span class="s2">&quot;min&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">))</span>
+<span class="n">count</span><span class="p">[(</span><span class="s1">&#39;LabValue&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">count</span><span class="p">[(</span><span class="s1">&#39;LabValue&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">count</span><span class="o">.</span><span class="n">sort_values</span><span class="p">((</span><span class="s1">&#39;LabValue&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">),</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;LabsCorePopulatedTable.txt&quot;</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">count</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="s2">&quot;LabName&quot;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">((</span>
+    <span class="p">{</span>
+        <span class="s2">&quot;LabValue&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;count&quot;</span><span class="p">,</span> <span class="s2">&quot;max&quot;</span><span class="p">,</span> <span class="s2">&quot;min&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">,</span> <span class="s2">&quot;mean&quot;</span><span class="p">]</span>
+    <span class="p">}</span>
+<span class="p">))</span>
+<span class="n">count</span><span class="p">[(</span><span class="s1">&#39;LabValue&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">)]</span> <span class="o">=</span> <span class="n">count</span><span class="p">[(</span><span class="s1">&#39;LabValue&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">)]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">count</span><span class="o">.</span><span class="n">sort_values</span><span class="p">([</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="s2">&quot;LabName&quot;</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;LabValue&#39;</span><span class="p">,</span> <span class="s1">&#39;count&#39;</span><span class="p">)],</span> <span class="n">ascending</span><span class="o">=</span><span class="p">(</span><span class="kc">False</span><span class="p">,</span> <span class="kc">True</span><span class="p">,</span> <span class="kc">False</span><span class="p">))</span>
+<span class="c1"># count.loc[&quot;9E18822E-7D13-45C7-B50E-F95CFF92BC3E&quot;].sort_values((&#39;LabValue&#39;, &#39;count&#39;), ascending=False)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;AdmissionsCorePopulatedTable.txt&quot;</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;AdmissionStartDate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;AdmissionStartDate&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;AdmissionEndDate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;AdmissionEndDate&#39;</span><span class="p">])</span>
+<span class="n">df</span><span class="p">[</span><span class="s2">&quot;StayDuration&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;AdmissionEndDate&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;AdmissionStartDate&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
+<span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;StayDuration&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="c1"># df[df[&quot;StayDuration&quot;] &gt; 20]</span>
+</pre></div>
+</div>
+</section>
+<section id="using-value-from-a-subquery">
+<h3><span class="section-number">15.3.2.7. </span>13.6.1. Using value from a subquery<a class="headerlink" href="#using-value-from-a-subquery" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;AdmissionsCorePopulatedTable.txt&quot;</span>
+
+<span class="n">df_adm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">df_adm</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">df_adm</span><span class="p">[</span><span class="s1">&#39;AdmissionStartDate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_adm</span><span class="p">[</span><span class="s1">&#39;AdmissionStartDate&#39;</span><span class="p">])</span>
+<span class="n">df_adm</span><span class="p">[</span><span class="s1">&#39;AdmissionEndDate&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_adm</span><span class="p">[</span><span class="s1">&#39;AdmissionEndDate&#39;</span><span class="p">])</span>
+<span class="n">df_adm</span><span class="p">[</span><span class="s2">&quot;StayDuration&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_adm</span><span class="p">[</span><span class="s1">&#39;AdmissionEndDate&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df_adm</span><span class="p">[</span><span class="s1">&#39;AdmissionStartDate&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span>
+<span class="n">df_adm</span> <span class="o">=</span> <span class="n">df_adm</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">max</span><span class="p">()</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;StayDuration&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df_adm</span> <span class="o">=</span> <span class="n">df_adm</span><span class="p">[</span><span class="n">df_adm</span><span class="p">[</span><span class="s2">&quot;StayDuration&quot;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mi">19</span><span class="p">][</span><span class="s2">&quot;StayDuration&quot;</span><span class="p">]</span>
+<span class="n">df_adm</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;PatientCorePopulatedTable.txt&quot;</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">new_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">df_adm</span><span class="p">)</span>
+<span class="n">new_df</span><span class="p">[</span><span class="n">new_df</span><span class="p">[</span><span class="s2">&quot;StayDuration&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">notna</span><span class="p">()]</span>
+</pre></div>
+</div>
+</section>
+<section id="in-and-not-in-examples">
+<h3><span class="section-number">15.3.2.8. </span>13.6.2. IN and NOT IN examples<a class="headerlink" href="#in-and-not-in-examples" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;LabsCorePopulatedTable.txt&quot;</span>
+
+<span class="n">labs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">labs</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;PatientCorePopulatedTable.txt&quot;</span>
+<span class="n">pt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pt</span>
+<span class="n">labs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pt</span><span class="p">[</span><span class="n">pt</span><span class="p">[</span><span class="s2">&quot;PatientLanguage&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">((</span><span class="s1">&#39;Icelandic&#39;</span><span class="p">,</span> <span class="s1">&#39;Spanish&#39;</span><span class="p">))]</span><span class="o">.</span><span class="n">index</span><span class="p">]</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;81C5B13B-F6B2-4E57-9593-6E7E4C13B2CE&quot;</span><span class="p">]</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;LabsCorePopulatedTable.txt&quot;</span>
+
+<span class="n">labs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">labs</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;PatientCorePopulatedTable.txt&quot;</span>
+<span class="n">pt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pt</span>
+<span class="n">labs</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">pt</span><span class="p">[</span><span class="o">~</span><span class="n">pt</span><span class="p">[</span><span class="s2">&quot;PatientLanguage&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">((</span><span class="s1">&#39;Icelandic&#39;</span><span class="p">,</span> <span class="s1">&#39;Spanish&#39;</span><span class="p">))]</span><span class="o">.</span><span class="n">index</span><span class="p">][:</span><span class="mi">10</span><span class="p">]</span>
+</pre></div>
+</div>
+</section>
+<section id="conditionals">
+<h3><span class="section-number">15.3.2.9. </span>13.7. Conditionals<a class="headerlink" href="#conditionals" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;AdmissionsCorePopulatedTable.txt&quot;</span>
+
+<span class="n">df_adm</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">,</span> <span class="n">usecols</span> <span class="o">=</span><span class="p">[</span><span class="s2">&quot;AdmissionStartDate&quot;</span><span class="p">])</span>
+<span class="n">df_adm</span><span class="p">[</span><span class="s1">&#39;AdmissionMonth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_adm</span><span class="p">[</span><span class="s1">&#39;AdmissionStartDate&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month_name</span><span class="p">()</span>
+<span class="n">df_adm</span>
+<span class="n">df_adm</span> <span class="o">=</span> <span class="n">df_adm</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;AdmissionMonth&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+<span class="n">df_adm</span><span class="o">.</span><span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;AdmissionStartCount&quot;</span><span class="p">]</span>
+<span class="n">df_adm</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;AdmissionStartCount&quot;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">datetime</span> <span class="kn">import</span> <span class="n">datetime</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;PatientCorePopulatedTable.txt&quot;</span>
+<span class="n">pt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pt</span><span class="p">[</span><span class="s1">&#39;PatientDateOfBirth&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="s1">&#39;PatientDateOfBirth&#39;</span><span class="p">])</span>
+<span class="n">pt</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">((</span><span class="n">datetime</span><span class="o">.</span><span class="n">now</span><span class="p">()</span> <span class="o">-</span> <span class="n">pt</span><span class="p">[</span><span class="s1">&#39;PatientDateOfBirth&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">days</span> <span class="o">/</span> <span class="mf">365.25</span><span class="p">)</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">int</span><span class="p">)</span>
+<span class="n">pt</span><span class="p">[</span><span class="s2">&quot;AgeCategory&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">cut</span><span class="p">(</span><span class="n">pt</span><span class="p">[</span><span class="s2">&quot;Age&quot;</span><span class="p">],</span> <span class="n">bins</span><span class="o">=</span><span class="p">[</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">,</span> <span class="mi">17</span><span class="p">,</span> <span class="mi">35</span><span class="p">,</span> <span class="mi">55</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">inf</span><span class="p">],</span> <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;YOUTH&#39;</span><span class="p">,</span> <span class="s1">&#39;YOUNG ADULT&#39;</span><span class="p">,</span> <span class="s1">&#39;ADULT&#39;</span><span class="p">,</span> <span class="s1">&#39;SENIOR&#39;</span><span class="p">])</span>
+<span class="n">new_pt</span> <span class="o">=</span> <span class="n">pt</span><span class="p">[[</span><span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;AgeCategory&quot;</span><span class="p">]]</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s2">&quot;Age&quot;</span><span class="p">)</span>
+<span class="n">new_pt</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;AgeCategory&quot;</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
 </section>
 </section>
 
@@ -3638,6 +3785,10 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#range-condition">15.3.2.3. Range condition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#string-condition">15.3.2.4. String condition</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#wildcard-matches">15.3.2.5. Wildcard Matches</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-simple-grouping-examples">15.3.2.6. 13.5.1. A Simple Grouping Examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-value-from-a-subquery">15.3.2.7. 13.6.1. Using value from a subquery</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-and-not-in-examples">15.3.2.8. 13.6.2. IN and NOT IN examples</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">15.3.2.9. 13.7. Conditionals</a></li>
 </ul>
 </li>
 </ul>

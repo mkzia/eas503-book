@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -276,10 +276,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_6_conditionals.html">13.7. Conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_7_analytic_functions.html">13.8. Analytic Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization.html">13.9. Normalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_9_python.html">13.10. Python and SQLite3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_10_india_export_data.html">13.11. India Export Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization_old.html">13.10. Normalization Old</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_9_python.html">13.11. Python and SQLite3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_10_india_export_data.html">13.12. India Export Database</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_11_soccer.html">13.13. Soccer Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_11_soccer.html">13.14. Soccer Database</a></li>
 
 </ul>
 </details></li>
@@ -537,10 +538,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd906c115b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9b25e38380&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/b55273b711d59f8d14ec93b8516b37f9892e730b75c6d4617a3aacc56cac5c49.png" src="../../_images/b55273b711d59f8d14ec93b8516b37f9892e730b75c6d4617a3aacc56cac5c49.png" />
+<img alt="../../_images/d32bfb61f8cfc57e94fe4f568714421137b46f306d5e5f53547b8f25f4765599.png" src="../../_images/d32bfb61f8cfc57e94fe4f568714421137b46f306d5e5f53547b8f25f4765599.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -550,7 +551,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd904933440&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9b25ed5910&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/34a8cc63cdece5b9242b382516263bdabdc834444e84310d2092ced9e2ed9727.png" src="../../_images/34a8cc63cdece5b9242b382516263bdabdc834444e84310d2092ced9e2ed9727.png" />
@@ -563,7 +564,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd9049aff50&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9b25d55e20&gt;]
 </pre></div>
 </div>
 <img alt="../../_images/c89c3d6258995bc56664e7c2179b6a63ba6afe574baeb4f81c0c366578cd84a5.png" src="../../_images/c89c3d6258995bc56664e7c2179b6a63ba6afe574baeb4f81c0c366578cd84a5.png" />
@@ -579,16 +580,16 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.49194246, -0.43185627, -0.33100721, ..., -0.49905442,
-        -0.52443175, -0.53747719],
-       [-0.20122967, -0.17762773, -0.06132036, ..., -0.32130873,
-        -0.21676715, -0.26832515],
-       [-0.64921555, -0.61019004, -0.5930477 , ..., -0.6824552 ,
-        -0.69534285, -0.65419286],
-       [ 0.45668723,  0.46634364,  0.43039982, ...,  0.4768268 ,
-         0.44066345,  0.43751261],
-       [-0.0988102 , -0.2298443 , -0.07058091, ..., -0.11510435,
-         0.2336222 , -0.03039251]])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[-0.49577998, -0.43911388, -0.30707421, ..., -0.46031308,
+        -0.46742218, -0.46980286],
+       [-0.11763279, -0.16679998, -0.02423898, ..., -0.28749778,
+        -0.21150511, -0.26889486],
+       [-0.66356683, -0.5591988 , -0.50687389, ..., -0.60092988,
+        -0.69128089, -0.69983561],
+       [ 0.58933072,  0.53606769,  0.44182291, ...,  0.39421034,
+         0.46428174,  0.44166366],
+       [-0.19489226, -0.07663694,  0.23930929, ..., -0.10165508,
+         0.17634231, -0.28770572]])
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(5, 1000)
@@ -604,7 +605,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([20.94740342, 14.27988465,  5.46057465,  1.46293147,  0.9892607 ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([20.88215566, 14.24379295,  5.6277403 ,  1.46925551,  0.98238138])
 </pre></div>
 </div>
 </div>
@@ -619,8 +620,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([438.79370992, 203.91510565,  29.81787546,   2.14016849,
-         0.97863674])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([436.06442484, 202.88563767,  31.67146085,   2.15871176,
+         0.96507318])
 </pre></div>
 </div>
 </div>
@@ -643,10 +644,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd9049f5280&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9b25f2cf80&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/8f770d3c28de7feb49742f1bf507f10b36a8db3300670515c16b540ab73a9d19.png" src="../../_images/8f770d3c28de7feb49742f1bf507f10b36a8db3300670515c16b540ab73a9d19.png" />
+<img alt="../../_images/78f324c4be7aa4f72872ab15193c822ff2639a6ae0f9250fc979206a38f13b38.png" src="../../_images/78f324c4be7aa4f72872ab15193c822ff2639a6ae0f9250fc979206a38f13b38.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -657,10 +658,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd906af9670&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9b234a83e0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/bcec508013a53a74b298c1d48c2e66291a5099684bf17d9fc5ed75588040b6ff.png" src="../../_images/bcec508013a53a74b298c1d48c2e66291a5099684bf17d9fc5ed75588040b6ff.png" />
+<img alt="../../_images/b03c838db909bffa1a550238cfe0a9a22cb3832772116776ed4f47338597323c.png" src="../../_images/b03c838db909bffa1a550238cfe0a9a22cb3832772116776ed4f47338597323c.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -671,10 +672,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd90409da30&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9b25e69850&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/33ba5eef9dd287ec6f80e7ca0b6297461744ba9ce2222686c5b137cc4e0b11ad.png" src="../../_images/33ba5eef9dd287ec6f80e7ca0b6297461744ba9ce2222686c5b137cc4e0b11ad.png" />
+<img alt="../../_images/23e20fd1bbebcf28e81752b589c2cde2cac64e5ff2056f5e3b1c8a3a95633b19.png" src="../../_images/23e20fd1bbebcf28e81752b589c2cde2cac64e5ff2056f5e3b1c8a3a95633b19.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -685,10 +686,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd9040ca360&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9b2355e390&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/0ff9f71cf208351c42dfecfd5c8ca38a12c5fdf95ad29a75e3d629ed5173d184.png" src="../../_images/0ff9f71cf208351c42dfecfd5c8ca38a12c5fdf95ad29a75e3d629ed5173d184.png" />
+<img alt="../../_images/cc59c8a44018c7ebaa2d49550e3a1229b1bcecb12107745d15b68388a4ce34d7.png" src="../../_images/cc59c8a44018c7ebaa2d49550e3a1229b1bcecb12107745d15b68388a4ce34d7.png" />
 </div>
 </div>
 </section>
@@ -746,7 +747,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 800x600 with 0 Axes&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd903123410&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f9b21d14b30&gt;
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Sepal length&#39;)
@@ -767,7 +768,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>([], [])
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x7fd906a991c0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;mpl_toolkits.mplot3d.art3d.Path3DCollection at 0x7f9b21d3dca0&gt;
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0.92, &#39;First three PCA directions&#39;)
@@ -813,8 +814,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.006     , 3.428     , 1.462     , 0.246     , 5.03102427,
-       3.45245586, 1.48935329, 0.27219498])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.006     , 3.428     , 1.462     , 0.246     , 5.03084846,
+       3.45157123, 1.4866681 , 0.27342048])
 </pre></div>
 </div>
 </div>
@@ -828,8 +829,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.006     , 3.428     , 1.462     , 0.246     , 5.03102427,
-       3.45245586, 1.48935329, 0.27219498])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([5.006     , 3.428     , 1.462     , 0.246     , 5.03084846,
+       3.45157123, 1.4866681 , 0.27342048])
 </pre></div>
 </div>
 </div>
@@ -842,8 +843,8 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([14.23219169, 10.14038105,  8.27468259,  5.03668795,  0.72085411,
-        0.43862566,  0.19312177,  0.171684  ])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([14.39921277, 10.00322912,  8.15751845,  5.03811249,  0.668255  ,
+        0.39902347,  0.20300037,  0.15297129])
 </pre></div>
 </div>
 </div>
@@ -859,7 +860,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.51 0.26 0.17 0.06 0.   0.   0.   0.  ]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0.52 0.25 0.17 0.06 0.   0.   0.   0.  ]
 </pre></div>
 </div>
 </div>
@@ -883,10 +884,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd902853680&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9b21a347d0&gt;]
 </pre></div>
 </div>
-<img alt="../../_images/0248c7be0ae4dab5d0629b6d0a1916d537c4c91d4f84cda95d992642da211939.png" src="../../_images/0248c7be0ae4dab5d0629b6d0a1916d537c4c91d4f84cda95d992642da211939.png" />
+<img alt="../../_images/427300ff6135d2247da07ab707fa8c0f348deb2e5f3b714f539c764a25728b38.png" src="../../_images/427300ff6135d2247da07ab707fa8c0f348deb2e5f3b714f539c764a25728b38.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -916,7 +917,7 @@ document.write(`
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Three blobs&#39;)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd9027caea0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f9b21a3ab40&gt;
 </pre></div>
 </div>
 <img alt="../../_images/e65e613c843ea1175e0fcb37e2b176ff523f613c51e049cb7f7fd6bca697a4bf.png" src="../../_images/e65e613c843ea1175e0fcb37e2b176ff523f613c51e049cb7f7fd6bca697a4bf.png" />
@@ -945,10 +946,10 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd9021006b0&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f9b21abab40&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7fd90264cc50&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.collections.PathCollection at 0x7f9b2195f920&gt;
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Data points and cluster centroids&#39;)
@@ -3799,10 +3800,10 @@ weighted avg       0.96      0.96      0.96       114
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;Figure size 640x480 with 0 Axes&gt;
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd8fe81e270&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9b1d8b9be0&gt;]
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7fd8fe81e4b0&gt;]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&lt;matplotlib.lines.Line2D at 0x7f9b1d8b8f80&gt;]
 </pre></div>
 </div>
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>(0.0, 1.0)
@@ -3820,7 +3821,7 @@ weighted avg       0.96      0.96      0.96       114
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Receiver operating characteristic example&#39;)
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7fd902147b00&gt;
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.legend.Legend at 0x7f9b1dc178f0&gt;
 </pre></div>
 </div>
 <img alt="../../_images/7260b9328f94f8d9411680998ebdd0cb118e4786b273ea68e01e7264094bc4aa.png" src="../../_images/7260b9328f94f8d9411680998ebdd0cb118e4786b273ea68e01e7264094bc4aa.png" />

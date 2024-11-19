@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -277,10 +277,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_6_conditionals.html">13.7. Conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_7_analytic_functions.html">13.8. Analytic Functions</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization.html">13.9. Normalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_9_python.html">13.10. Python and SQLite3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_10_india_export_data.html">13.11. India Export Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization_old.html">13.10. Normalization Old</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_9_python.html">13.11. Python and SQLite3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_10_india_export_data.html">13.12. India Export Database</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_11_soccer.html">13.13. Soccer Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_11_soccer.html">13.14. Soccer Database</a></li>
 
 </ul>
 </details></li>
@@ -667,15 +668,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([ 55.,  78.,  66., 151., 281.,  55.,  91.,  84., 150., 206., 253.,
-        52.,  70., 163., 263., 214., 274., 147., 232.,  48., 181., 272.,
-       201.,  63., 219., 102.,  94., 190., 220., 237.,  53.,  53., 252.,
-        59., 155., 248., 202., 214., 302., 273.,  91., 153., 174., 146.,
-       293., 214., 143., 179., 174., 265., 104.,  83., 268., 225.,  67.,
-       145., 158.,  91., 150., 109.,  90., 276.,  69.,  43., 248., 245.,
-        92., 283., 277., 308., 275., 136., 225., 127., 198., 162.,  51.,
-       111., 150., 235.,  59.,  51., 185.,  67., 104.,  60., 168., 151.,
-       184.])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([292., 262., 321.,  94., 126.,  65., 155., 144., 277., 182., 160.,
+       173., 103., 178.,  60., 214.,  59.,  95., 219., 179.,  68., 114.,
+        84.,  85., 230., 128.,  69.,  51.,  96.,  74., 210.,  77.,  25.,
+        39., 220.,  63., 174.,  81., 180.,  53.,  51., 257.,  87., 118.,
+        74.,  60., 195.,  40.,  94., 181., 259.,  70., 104., 158.,  88.,
+        97., 202.,  44.,  65., 283., 150.,  85., 158., 127.,  48., 196.,
+        84.,  64., 170., 274.,  93.,  63., 332.,  71.,  31., 162., 189.,
+       139.,  66., 129., 214.,  65., 233.,  65., 202., 206., 115., 109.,
+        88.])
 </pre></div>
 </div>
 </div>
@@ -976,7 +977,7 @@ document.write(`
   warnings.warn(
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(4948.033167520936)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(5826.62642968907)
 </pre></div>
 </div>
 </div>
@@ -990,7 +991,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(26422.324978385186)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(25464.3071225343)
 </pre></div>
 </div>
 </div>
@@ -1007,7 +1008,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/21716319f57edad31eb9eb0582147d02f43911b1048bbc3e312e10cb45b939ca.png" src="../../_images/21716319f57edad31eb9eb0582147d02f43911b1048bbc3e312e10cb45b939ca.png" />
+<img alt="../../_images/b34328bf154f5a220edc34d5213a70524909523d30604e20007343e977b6235b.png" src="../../_images/b34328bf154f5a220edc34d5213a70524909523d30604e20007343e977b6235b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1022,7 +1023,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/56d985b240b18014f93affbe4df27849af43bcc2ef7587424f67e0918a7c9b28.png" src="../../_images/56d985b240b18014f93affbe4df27849af43bcc2ef7587424f67e0918a7c9b28.png" />
+<img alt="../../_images/caac9ce6077840512a028ae68972da742e4093f2c78f44261e39cb27be6c39ca.png" src="../../_images/caac9ce6077840512a028ae68972da742e4093f2c78f44261e39cb27be6c39ca.png" />
 </div>
 </div>
 </section>
@@ -1053,7 +1054,7 @@ document.write(`
   warnings.warn(
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(8737.401291764807)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(6834.143094297437)
 </pre></div>
 </div>
 </div>
