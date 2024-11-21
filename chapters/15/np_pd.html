@@ -2880,6 +2880,36 @@ Name: E5, dtype: object
 <span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">d3</span><span class="p">,</span> <span class="n">index</span><span class="o">=</span><span class="p">[</span><span class="mi">7</span><span class="p">,</span> <span class="mi">8</span><span class="p">,</span> <span class="mi">9</span><span class="p">])</span>
 
 <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">df3</span><span class="p">])</span>
+
+<span class="c1"># Better way</span>
+
+<span class="n">d1</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;C0&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C0R0&#39;</span><span class="p">,</span> <span class="s1">&#39;C0R1&#39;</span><span class="p">,</span> <span class="s1">&#39;C0R2&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;C1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C1R0&#39;</span><span class="p">,</span> <span class="s1">&#39;C1R1&#39;</span><span class="p">,</span> <span class="s1">&#39;C2R2&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;C2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C2R0&#39;</span><span class="p">,</span> <span class="s1">&#39;C2R1&#39;</span><span class="p">,</span> <span class="s1">&#39;C2R2&#39;</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">df1</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">d1</span><span class="p">)</span>
+
+<span class="n">d2</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;C0&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C0R3&#39;</span><span class="p">,</span> <span class="s1">&#39;C0R4&#39;</span><span class="p">,</span> <span class="s1">&#39;C0R5&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;C1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C1R3&#39;</span><span class="p">,</span> <span class="s1">&#39;C1R4&#39;</span><span class="p">,</span> <span class="s1">&#39;C1R5&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;C2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C2R3&#39;</span><span class="p">,</span> <span class="s1">&#39;C2R4&#39;</span><span class="p">,</span> <span class="s1">&#39;C2R5&#39;</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">df2</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">d2</span><span class="p">)</span>
+
+<span class="n">d3</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;C0&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C0R6&#39;</span><span class="p">,</span> <span class="s1">&#39;C0R7&#39;</span><span class="p">,</span> <span class="s1">&#39;C0R8&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;C1&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C1R6&#39;</span><span class="p">,</span> <span class="s1">&#39;C1R7&#39;</span><span class="p">,</span> <span class="s1">&#39;C1R8&#39;</span><span class="p">],</span>
+    <span class="s1">&#39;C2&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;C2R6&#39;</span><span class="p">,</span> <span class="s1">&#39;C2R7&#39;</span><span class="p">,</span> <span class="s1">&#39;C2R8&#39;</span><span class="p">],</span>
+<span class="p">}</span>
+
+<span class="n">df3</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">d3</span><span class="p">)</span>
+
+<span class="n">concat</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">df1</span><span class="p">,</span> <span class="n">df2</span><span class="p">,</span> <span class="n">df3</span><span class="p">])</span>
+<span class="n">concat</span> <span class="o">=</span> <span class="n">concat</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span><span class="o">.</span><span class="n">drop</span><span class="p">(</span><span class="s2">&quot;index&quot;</span><span class="p">,</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">concat</span>
 </pre></div>
 </div>
 </section>

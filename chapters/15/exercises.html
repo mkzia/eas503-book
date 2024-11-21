@@ -491,6 +491,21 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">15.3.2.9. 13.7. Conditionals</a></li>
 </ul>
 </li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-functions">15.3.3. Analytic Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-exmaples">15.3.3.1. More Exmaples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-window-operations">15.3.3.1.1. 1. Basic Window Operations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-window-calculations">15.3.3.1.2. 2. Advanced Window Calculations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ranking-functions">15.3.3.1.3. 3. Ranking Functions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lead-lag-analysis">15.3.3.1.4. 4. Lead/Lag Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-analysis">15.3.3.1.5. 5. Complex Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-statistics">15.3.3.1.6. 6. Summary Statistics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics">15.3.3.1.7. 7. Performance Metrics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#change">15.3.3.1.8. 8. Change</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#various-ranking">15.3.3.2. 9. Various Ranking</a></li>
+</ul>
+</li>
 </ul>
             </nav>
         </div>
@@ -1604,7 +1619,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_98610/1037439662.py:7: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_249881/1037439662.py:7: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   pd.DataFrame(df[[&#39;PrimaryDiagnosisCode&#39;, &#39;PrimaryDiagnosisDescription&#39;]].apply(lambda row: f&#39;({row[0]}) {row[1]}&#39;, axis=1), columns=[&#39;CodeWDescription&#39;])
 </pre></div>
 </div>
@@ -1828,6 +1843,9 @@ document.write(`
   </tbody>
 </table>
 </div></div></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;((PatientRace == &#39;White&#39; &amp; PatientMaritalStatus == &#39;Married&#39;) | (PatientRace == &#39;African American&#39; &amp; PatientMaritalStatus == &#39;Married&#39;)) &amp; PatientPopulationPercentageBelowPoverty &gt; 15&quot;</span><span class="p">)</span>
+</pre></div>
 </div>
 </section>
 <section id="sort-values">
@@ -3698,6 +3716,331 @@ document.write(`
 <span class="n">new_pt</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;AgeCategory&quot;</span><span class="p">,</span> <span class="n">observed</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span><span class="o">.</span><span class="n">count</span><span class="p">()</span>
 </pre></div>
 </div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;PatientCorePopulatedTable.txt&quot;</span>
+<span class="n">pt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="p">(</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;PatientGender == &#39;Male&#39; &amp; PatientMaritalStatus == &#39;Married&#39;&quot;</span><span class="p">))</span> <span class="o">/</span>
+    <span class="nb">len</span><span class="p">(</span><span class="n">pt</span><span class="o">.</span><span class="n">query</span><span class="p">(</span><span class="s2">&quot;PatientGender == &#39;Female&#39; &amp; PatientMaritalStatus == &#39;Married&#39;&quot;</span><span class="p">))</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;LabsCorePopulatedTable.txt&quot;</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+
+<span class="n">urinalysis_exams</span> <span class="o">=</span> <span class="p">[</span>
+  <span class="s1">&#39;URINALYSIS: SPECIFIC GRAVITY&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;URINALYSIS: PH&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;URINALYSIS: RED BLOOD CELLS&#39;</span><span class="p">,</span>
+  <span class="s1">&#39;URINALYSIS: WHITE BLOOD CELLS&#39;</span>
+<span class="p">]</span>
+
+<span class="n">exam_check</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span>
+  <span class="n">df</span><span class="p">[</span><span class="s1">&#39;PatientID&#39;</span><span class="p">],</span>
+  <span class="n">df</span><span class="p">[</span><span class="s1">&#39;LabName&#39;</span><span class="p">]</span>
+<span class="p">)[</span><span class="n">urinalysis_exams</span><span class="p">]</span><span class="o">.</span><span class="n">astype</span><span class="p">(</span><span class="nb">bool</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Sample DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+  <span class="s1">&#39;Gender&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">,</span> <span class="s1">&#39;F&#39;</span><span class="p">,</span> <span class="s1">&#39;M&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;Category&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;A&#39;</span><span class="p">,</span> <span class="s1">&#39;B&#39;</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="c1"># Create a cross-tabulation</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Gender&#39;</span><span class="p">],</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Category&#39;</span><span class="p">])</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">result</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">crosstab</span><span class="p">(</span>
+  <span class="n">df</span><span class="p">[</span><span class="s1">&#39;PatientID&#39;</span><span class="p">],</span>
+  <span class="n">df</span><span class="p">[</span><span class="s1">&#39;LabName&#39;</span><span class="p">],</span>
+  <span class="n">values</span><span class="o">=</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;LabValue&#39;</span><span class="p">],</span>
+  <span class="n">aggfunc</span><span class="o">=</span><span class="s1">&#39;mean&#39;</span>  <span class="c1"># or &#39;sum&#39;, &#39;min&#39;, &#39;max&#39;, etc.</span>
+<span class="p">)</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;LabsCorePopulatedTable.txt&quot;</span>
+<span class="n">lab</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">lab</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">lab</span> <span class="o">=</span> <span class="n">lab</span><span class="p">[</span><span class="n">lab</span><span class="p">[</span><span class="s1">&#39;LabName&#39;</span><span class="p">]</span><span class="o">==</span><span class="s1">&#39;METABOLIC: CREATININE&#39;</span><span class="p">][[</span><span class="s1">&#39;LabName&#39;</span><span class="p">,</span> <span class="s1">&#39;LabValue&#39;</span><span class="p">,</span> <span class="s1">&#39;LabUnits&#39;</span><span class="p">]]</span>
+
+
+<span class="n">filename</span> <span class="o">=</span> <span class="s2">&quot;PatientCorePopulatedTable.txt&quot;</span>
+<span class="n">pt</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="n">filename</span><span class="p">,</span> <span class="n">delimiter</span><span class="o">=</span><span class="s2">&quot;</span><span class="se">\t</span><span class="s2">&quot;</span><span class="p">)</span>
+<span class="n">pt</span><span class="o">.</span><span class="n">set_index</span><span class="p">(</span><span class="s2">&quot;PatientID&quot;</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+<span class="n">pt</span> <span class="o">=</span> <span class="n">pt</span><span class="p">[[</span><span class="s1">&#39;PatientGender&#39;</span><span class="p">]]</span>
+<span class="n">lab</span> <span class="o">=</span> <span class="n">lab</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">pt</span><span class="p">)</span>
+
+<span class="k">def</span> <span class="nf">interpret_creatinine_result</span><span class="p">(</span><span class="n">row</span><span class="p">):</span>
+    <span class="k">if</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;PatientGender&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Male&#39;</span> <span class="ow">and</span> <span class="mf">0.7</span> <span class="o">&lt;=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;LabValue&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">1.3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Normal&#39;</span>
+    <span class="k">elif</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;PatientGender&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Female&#39;</span> <span class="ow">and</span> <span class="mf">0.6</span> <span class="o">&lt;=</span> <span class="n">row</span><span class="p">[</span><span class="s1">&#39;LabValue&#39;</span><span class="p">]</span> <span class="o">&lt;=</span> <span class="mf">1.1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Normal&#39;</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s1">&#39;Out of Range&#39;</span>
+
+<span class="n">lab</span><span class="p">[</span><span class="s1">&#39;Interpretation&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lab</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="n">interpret_creatinine_result</span><span class="p">(</span><span class="n">row</span><span class="p">),</span> <span class="n">axis</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="n">lab</span> <span class="o">=</span> <span class="n">lab</span><span class="p">[[</span><span class="s1">&#39;PatientGender&#39;</span><span class="p">,</span> <span class="s1">&#39;LabName&#39;</span><span class="p">,</span> <span class="s1">&#39;LabValue&#39;</span><span class="p">,</span> <span class="s1">&#39;LabUnits&#39;</span><span class="p">,</span> <span class="s1">&#39;Interpretation&#39;</span><span class="p">]]</span>
+<span class="n">lab</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;LabValue&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">lab</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s1">&#39;81C5B13B-F6B2-4E57-9593-6E7E4C13B2CE&#39;</span><span class="p">][</span><span class="s1">&#39;Interpretation&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="analytic-functions">
+<h2><span class="section-number">15.3.3. </span>Analytic Functions<a class="headerlink" href="#analytic-functions" title="Link to this heading">#</a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;bakery_sales.csv&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;sale_date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;sale_date&#39;</span><span class="p">])</span>
+
+<span class="n">new_df</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">new_df</span><span class="p">[</span><span class="s1">&#39;Quarter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[</span><span class="s1">&#39;sale_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">quarter</span>
+
+<span class="n">new_df</span><span class="p">[</span><span class="s1">&#39;Month&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[</span><span class="s1">&#39;sale_date&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">dt</span><span class="o">.</span><span class="n">month_name</span><span class="p">()</span>
+<span class="n">new_df</span> <span class="o">=</span> <span class="n">new_df</span><span class="p">[[</span><span class="s1">&#39;Quarter&#39;</span><span class="p">,</span> <span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="s1">&#39;total&#39;</span><span class="p">]]</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">new_df</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Quarter&#39;</span><span class="p">,</span> <span class="s1">&#39;Month&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span>
+
+<span class="k">def</span> <span class="nf">month_sort</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="n">month_order</span> <span class="o">=</span> <span class="p">{</span>
+        <span class="s1">&#39;January&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span>
+        <span class="s1">&#39;February&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span>
+        <span class="s1">&#39;March&#39;</span><span class="p">:</span> <span class="mi">3</span><span class="p">,</span>
+        <span class="s1">&#39;April&#39;</span><span class="p">:</span> <span class="mi">4</span><span class="p">,</span>
+        <span class="s1">&#39;May&#39;</span><span class="p">:</span> <span class="mi">5</span><span class="p">,</span>
+        <span class="s1">&#39;June&#39;</span><span class="p">:</span> <span class="mi">6</span><span class="p">,</span>
+        <span class="s1">&#39;July&#39;</span><span class="p">:</span> <span class="mi">7</span><span class="p">,</span>
+        <span class="s1">&#39;August&#39;</span><span class="p">:</span> <span class="mi">8</span><span class="p">,</span>
+        <span class="s1">&#39;September&#39;</span><span class="p">:</span> <span class="mi">9</span><span class="p">,</span>
+        <span class="s1">&#39;October&#39;</span><span class="p">:</span> <span class="mi">10</span><span class="p">,</span>
+        <span class="s1">&#39;November&#39;</span><span class="p">:</span> <span class="mi">11</span><span class="p">,</span>
+        <span class="s1">&#39;December&#39;</span><span class="p">:</span> <span class="mi">12</span>
+    <span class="p">}</span>
+    <span class="k">return</span> <span class="n">x</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">month_order</span><span class="p">)</span>
+
+<span class="n">result</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">month_sort</span><span class="p">(</span><span class="n">x</span><span class="p">))</span>
+</pre></div>
+</div>
+<section id="more-exmaples">
+<h3><span class="section-number">15.3.3.1. </span>More Exmaples<a class="headerlink" href="#more-exmaples" title="Link to this heading">#</a></h3>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Create the sample DataFrame</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;Quarter&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Q1&#39;</span><span class="p">,</span> <span class="s1">&#39;Q1&#39;</span><span class="p">,</span> <span class="s1">&#39;Q1&#39;</span><span class="p">,</span> <span class="s1">&#39;Q2&#39;</span><span class="p">,</span> <span class="s1">&#39;Q2&#39;</span><span class="p">,</span> <span class="s1">&#39;Q3&#39;</span><span class="p">,</span> <span class="s1">&#39;Q3&#39;</span><span class="p">,</span> <span class="s1">&#39;Q3&#39;</span><span class="p">,</span> <span class="s1">&#39;Q4&#39;</span><span class="p">,</span> <span class="s1">&#39;Q4&#39;</span><span class="p">,</span> <span class="s1">&#39;Q4&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;Month&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;January&#39;</span><span class="p">,</span> <span class="s1">&#39;February&#39;</span><span class="p">,</span> <span class="s1">&#39;March&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span><span class="p">,</span> <span class="s1">&#39;May&#39;</span><span class="p">,</span> <span class="s1">&#39;July&#39;</span><span class="p">,</span> <span class="s1">&#39;August&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;September&#39;</span><span class="p">,</span> <span class="s1">&#39;October&#39;</span><span class="p">,</span> <span class="s1">&#39;November&#39;</span><span class="p">,</span> <span class="s1">&#39;December&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4582500</span><span class="p">,</span> <span class="mi">6423700</span><span class="p">,</span> <span class="mi">6445100</span><span class="p">,</span> <span class="mi">4893700</span><span class="p">,</span> <span class="mi">308400</span><span class="p">,</span> <span class="mi">4076500</span><span class="p">,</span>
+                   <span class="mi">6100500</span><span class="p">,</span> <span class="mi">4895500</span><span class="p">,</span> <span class="mi">3959100</span><span class="p">,</span> <span class="mi">4543000</span><span class="p">,</span> <span class="mi">5009500</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+</pre></div>
+</div>
+<section id="basic-window-operations">
+<h4><span class="section-number">15.3.3.1.1. </span>1. Basic Window Operations<a class="headerlink" href="#basic-window-operations" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Running total of sales</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Cumulative_Sales&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+
+<span class="c1"># Average sales by quarter</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Avg_Quarter_Sales&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">)[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+
+<span class="c1"># Sales rank within quarter</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Quarter_Sales_Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">)[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;dense&#39;</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Basic Window Operations:&quot;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</section>
+<section id="advanced-window-calculations">
+<h4><span class="section-number">15.3.3.1.2. </span>2. Advanced Window Calculations<a class="headerlink" href="#advanced-window-calculations" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Rolling 3-month sales average</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Rolling_3Month_Avg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="n">window</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="c1"># Cumulative sum within quarter</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Quarter_Cumulative&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">)[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;cumsum&#39;</span><span class="p">)</span>
+
+<span class="c1"># Percentage of quarterly total</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pct_of_Quarter&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">)[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span>
+  <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span> <span class="o">/</span> <span class="n">x</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Advanced Window Calculations:&quot;</span><span class="p">)</span>
+<span class="n">df</span>
+</pre></div>
+</div>
+</section>
+<section id="ranking-functions">
+<h4><span class="section-number">15.3.3.1.3. </span>3. Ranking Functions<a class="headerlink" href="#ranking-functions" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Different ranking methods within quarter</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Dense_Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">)[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;dense&#39;</span><span class="p">)</span> <span class="c1">#ascending=False</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Regular_Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">)[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Percent_Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">)[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">pct</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Ranking Functions:&quot;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Quarter&#39;</span><span class="p">,</span> <span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;Dense_Rank&#39;</span><span class="p">,</span> <span class="s1">&#39;Regular_Rank&#39;</span><span class="p">,</span> <span class="s1">&#39;Percent_Rank&#39;</span><span class="p">]])</span>
+</pre></div>
+</div>
+</section>
+<section id="lead-lag-analysis">
+<h4><span class="section-number">15.3.3.1.4. </span>4. Lead/Lag Analysis<a class="headerlink" href="#lead-lag-analysis" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Next month&#39;s sales</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Next_Month_Sales&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="o">-</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Previous month&#39;s sales</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Prev_Month_Sales&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">shift</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Sales difference from previous month</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Month_Over_Month_Change&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Prev_Month_Sales&#39;</span><span class="p">]</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Lead/Lag Analysis:&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;Next_Month_Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;Prev_Month_Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;Month_Over_Month_Change&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</section>
+<section id="complex-analysis">
+<h4><span class="section-number">15.3.3.1.5. </span>5. Complex Analysis<a class="headerlink" href="#complex-analysis" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Comprehensive analysis</span>
+<span class="n">df_analyzed</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span>
+  <span class="c1"># Quarter total</span>
+  <span class="n">Quarter_Total</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">)[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;sum&#39;</span><span class="p">),</span>
+
+  <span class="c1"># Percentage of annual sales</span>
+  <span class="n">Pct_of_Annual</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
+
+  <span class="c1"># Quarter-over-Quarter growth</span>
+  <span class="n">QoQ_Growth</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">)[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;sum&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
+
+  <span class="c1"># Running total within quarter</span>
+  <span class="n">Quarter_Running_Total</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">)[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;cumsum&#39;</span><span class="p">),</span>
+
+  <span class="c1"># Difference from quarter average</span>
+  <span class="n">Diff_From_Quarter_Avg</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span> <span class="o">-</span>
+      <span class="n">x</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">)[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="s1">&#39;mean&#39;</span><span class="p">)</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Comprehensive Analysis:&quot;</span><span class="p">)</span>
+<span class="n">df_analyzed</span>
+</pre></div>
+</div>
+</section>
+<section id="summary-statistics">
+<h4><span class="section-number">15.3.3.1.6. </span>6. Summary Statistics<a class="headerlink" href="#summary-statistics" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>
+<span class="c1"># Summary by quarter</span>
+<span class="n">quarterly_summary</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;Quarter&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">({</span>
+  <span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;count&#39;</span><span class="p">,</span> <span class="s1">&#39;sum&#39;</span><span class="p">,</span> <span class="s1">&#39;mean&#39;</span><span class="p">,</span> <span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="s1">&#39;max&#39;</span><span class="p">,</span> <span class="s1">&#39;std&#39;</span><span class="p">]</span>
+<span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Quarterly Summary:&quot;</span><span class="p">)</span>
+<span class="n">display</span><span class="p">(</span><span class="n">quarterly_summary</span><span class="p">)</span>
+
+<span class="c1"># Year-to-date calculations</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;YTD_Sales&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;YTD_Avg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">expanding</span><span class="p">()</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Year-to-Date Analysis:&quot;</span><span class="p">)</span>
+<span class="n">df</span><span class="p">[[</span><span class="s1">&#39;Month&#39;</span><span class="p">,</span> <span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;YTD_Sales&#39;</span><span class="p">,</span> <span class="s1">&#39;YTD_Avg&#39;</span><span class="p">]]</span>
+</pre></div>
+</div>
+</section>
+<section id="performance-metrics">
+<h4><span class="section-number">15.3.3.1.7. </span>7. Performance Metrics<a class="headerlink" href="#performance-metrics" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate various performance metrics</span>
+<span class="n">performance_metrics</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+  <span class="s1">&#39;Month&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Month&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;Sales&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;Pct_of_Year&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">,</span>
+  <span class="s1">&#39;Cumulative_Pct&#39;</span><span class="p">:</span> <span class="p">(</span><span class="n">df</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">cumsum</span><span class="p">()</span> <span class="o">/</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">sum</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span><span class="p">),</span>
+  <span class="s1">&#39;Rolling_3M_Avg&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span>
+  <span class="s1">&#39;Rolling_3M_Std&#39;</span><span class="p">:</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="n">min_periods</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">std</span><span class="p">()</span>
+<span class="p">})</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">Performance Metrics:&quot;</span><span class="p">)</span>
+<span class="n">performance_metrics</span>
+</pre></div>
+</div>
+</section>
+<section id="change">
+<h4><span class="section-number">15.3.3.1.8. </span>8. Change<a class="headerlink" href="#change" title="Link to this heading">#</a></h4>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+
+<span class="c1"># Create the sample DataFrame</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;Quarter&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Q1&#39;</span><span class="p">,</span> <span class="s1">&#39;Q1&#39;</span><span class="p">,</span> <span class="s1">&#39;Q1&#39;</span><span class="p">,</span> <span class="s1">&#39;Q2&#39;</span><span class="p">,</span> <span class="s1">&#39;Q2&#39;</span><span class="p">,</span> <span class="s1">&#39;Q3&#39;</span><span class="p">,</span> <span class="s1">&#39;Q3&#39;</span><span class="p">,</span> <span class="s1">&#39;Q3&#39;</span><span class="p">,</span> <span class="s1">&#39;Q4&#39;</span><span class="p">,</span> <span class="s1">&#39;Q4&#39;</span><span class="p">,</span> <span class="s1">&#39;Q4&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;Month&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;January&#39;</span><span class="p">,</span> <span class="s1">&#39;February&#39;</span><span class="p">,</span> <span class="s1">&#39;March&#39;</span><span class="p">,</span> <span class="s1">&#39;April&#39;</span><span class="p">,</span> <span class="s1">&#39;May&#39;</span><span class="p">,</span> <span class="s1">&#39;July&#39;</span><span class="p">,</span> <span class="s1">&#39;August&#39;</span><span class="p">,</span>
+            <span class="s1">&#39;September&#39;</span><span class="p">,</span> <span class="s1">&#39;October&#39;</span><span class="p">,</span> <span class="s1">&#39;November&#39;</span><span class="p">,</span> <span class="s1">&#39;December&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">4582500</span><span class="p">,</span> <span class="mi">6423700</span><span class="p">,</span> <span class="mi">6445100</span><span class="p">,</span> <span class="mi">4893700</span><span class="p">,</span> <span class="mi">308400</span><span class="p">,</span> <span class="mi">4076500</span><span class="p">,</span>
+                   <span class="mi">6100500</span><span class="p">,</span> <span class="mi">4895500</span><span class="p">,</span> <span class="mi">3959100</span><span class="p">,</span> <span class="mi">4543000</span><span class="p">,</span> <span class="mi">5009500</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Calculate change from previous month</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Change_From_Previous&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">diff</span><span class="p">()</span>
+
+<span class="c1"># Add percentage change</span>
+<span class="n">df</span><span class="p">[</span><span class="s1">&#39;Pct_Change&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df</span><span class="p">[</span><span class="s1">&#39;Monthly_Sales&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">pct_change</span><span class="p">()</span> <span class="o">*</span> <span class="mi">100</span>
+
+<span class="c1"># Format the results</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">copy</span><span class="p">()</span>
+<span class="n">result</span><span class="p">[</span><span class="s1">&#39;Change_From_Previous&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Change_From_Previous&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">result</span><span class="p">[</span><span class="s1">&#39;Pct_Change&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Pct_Change&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">round</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Add trend indicator</span>
+<span class="n">result</span><span class="p">[</span><span class="s1">&#39;Trend&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Change_From_Previous&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
+  <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;↑&#39;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;↓&#39;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;→&#39;</span>
+<span class="p">)</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sales Analysis with Month-over-Month Changes:&quot;</span><span class="p">)</span>
+<span class="n">result</span>
+</pre></div>
+</div>
+</section>
+</section>
+<section id="various-ranking">
+<h3><span class="section-number">15.3.3.2. </span>9. Various Ranking<a class="headerlink" href="#various-ranking" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">rank</span></code>: returns the same ranking in case of a tie, with gaps in the rankings</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">dense_rank</span></code>: returns the same ranking in the case of a tie, with no gaps in the rankings</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">row_number</span></code>: returns a unique number for each row, with rankings arbitrarily assigned in case of a tie</p></li>
+<li><p>Panda offer other types of ranking also.</p></li>
+<li></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+
+<span class="c1"># Create sample data</span>
+<span class="n">data</span> <span class="o">=</span> <span class="p">{</span>
+  <span class="s1">&#39;Name&#39;</span><span class="p">:</span> <span class="p">[</span><span class="s1">&#39;Alice&#39;</span><span class="p">,</span> <span class="s1">&#39;Bob&#39;</span><span class="p">,</span> <span class="s1">&#39;Charlie&#39;</span><span class="p">,</span> <span class="s1">&#39;David&#39;</span><span class="p">,</span> <span class="s1">&#39;Eve&#39;</span><span class="p">,</span> <span class="s1">&#39;Frank&#39;</span><span class="p">],</span>
+  <span class="s1">&#39;Score&#39;</span><span class="p">:</span> <span class="p">[</span><span class="mi">85</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">92</span><span class="p">,</span> <span class="mi">78</span><span class="p">,</span> <span class="mi">85</span><span class="p">,</span> <span class="mi">95</span><span class="p">]</span>
+<span class="p">}</span>
+
+<span class="c1"># Create DataFrame</span>
+<span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+
+<span class="c1"># Sort by Score in descending order first</span>
+<span class="n">df_sorted</span> <span class="o">=</span> <span class="n">df</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Score&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+
+<span class="c1"># Add different types of ranks</span>
+<span class="n">df_sorted</span><span class="p">[</span><span class="s1">&#39;Rank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_sorted</span><span class="p">[</span><span class="s1">&#39;Score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;min&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df_sorted</span><span class="p">[</span><span class="s1">&#39;DenseRank&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_sorted</span><span class="p">[</span><span class="s1">&#39;Score&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rank</span><span class="p">(</span><span class="n">method</span><span class="o">=</span><span class="s1">&#39;dense&#39;</span><span class="p">,</span> <span class="n">ascending</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+<span class="n">df_sorted</span><span class="p">[</span><span class="s1">&#39;RowNumber&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">df_sorted</span><span class="p">)</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># Add row numbers after sorting</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2">DataFrame sorted by Score (descending):&quot;</span><span class="p">)</span>
+<span class="n">df_sorted</span>
+</pre></div>
+</div>
 </section>
 </section>
 </section>
@@ -3789,6 +4132,21 @@ document.write(`
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#using-value-from-a-subquery">15.3.2.7. 13.6.1. Using value from a subquery</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#in-and-not-in-examples">15.3.2.8. 13.6.2. IN and NOT IN examples</a></li>
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#conditionals">15.3.2.9. 13.7. Conditionals</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#analytic-functions">15.3.3. Analytic Functions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#more-exmaples">15.3.3.1. More Exmaples</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#basic-window-operations">15.3.3.1.1. 1. Basic Window Operations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#advanced-window-calculations">15.3.3.1.2. 2. Advanced Window Calculations</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#ranking-functions">15.3.3.1.3. 3. Ranking Functions</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#lead-lag-analysis">15.3.3.1.4. 4. Lead/Lag Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#complex-analysis">15.3.3.1.5. 5. Complex Analysis</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#summary-statistics">15.3.3.1.6. 6. Summary Statistics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#performance-metrics">15.3.3.1.7. 7. Performance Metrics</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#change">15.3.3.1.8. 8. Change</a></li>
+</ul>
+</li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#various-ranking">15.3.3.2. 9. Various Ranking</a></li>
 </ul>
 </li>
 </ul>

@@ -928,6 +928,36 @@ d3 = {
 df3 = pd.DataFrame(d3, index=[7, 8, 9])
 
 pd.concat([df1, df2, df3])
+
+# Better way
+
+d1 = {
+    'C0': ['C0R0', 'C0R1', 'C0R2'],
+    'C1': ['C1R0', 'C1R1', 'C2R2'],
+    'C2': ['C2R0', 'C2R1', 'C2R2'],
+}
+
+df1 = pd.DataFrame(d1)
+
+d2 = {
+    'C0': ['C0R3', 'C0R4', 'C0R5'],
+    'C1': ['C1R3', 'C1R4', 'C1R5'],
+    'C2': ['C2R3', 'C2R4', 'C2R5'],
+}
+
+df2 = pd.DataFrame(d2)
+
+d3 = {
+    'C0': ['C0R6', 'C0R7', 'C0R8'],
+    'C1': ['C1R6', 'C1R7', 'C1R8'],
+    'C2': ['C2R6', 'C2R7', 'C2R8'],
+}
+
+df3 = pd.DataFrame(d3)
+
+concat = pd.concat([df1, df2, df3])
+concat = concat.reset_index().drop("index", axis=1)
+concat
 ```
 
 ## More Pandas Operations
