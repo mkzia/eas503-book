@@ -756,7 +756,7 @@ print("Sales Analysis with Month-over-Month Changes:")
 result
 ```
 
-### 9. Various Ranking
+### 9. Various Rankings
 
 - `rank`: returns the same ranking in case of a tie, with gaps in the rankings
 - `dense_rank`: returns the same ranking in the case of a tie, with no gaps in the rankings
