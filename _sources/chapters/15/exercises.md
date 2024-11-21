@@ -762,7 +762,7 @@ result
 - `dense_rank`: returns the same ranking in the case of a tie, with no gaps in the rankings
 - `row_number`: returns a unique number for each row, with rankings arbitrarily assigned in case of a tie
 - Panda offer other types of ranking also.
--
+
 
 ```python
 import pandas as pd
@@ -787,4 +787,99 @@ df_sorted['RowNumber'] = range(1, len(df_sorted) + 1)  # Add row numbers after s
 
 print("\nDataFrame sorted by Score (descending):")
 df_sorted
+```
+
+## Pivot Tables
+
+### Basic Example
+
+```python
+import pandas as pd
+
+# Create sample data
+data = {
+  'Date': ['2024-01-01', '2024-01-01', '2024-01-02', '2024-01-02', '2024-01-03'],
+  'Product': ['Laptop', 'Phone', 'Laptop', 'Phone', 'Laptop'],
+  'Region': ['North', 'South', 'North', 'North', 'South'],
+  'Sales': [1000, 500, 1200, 600, 900]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Create a pivot table
+pivot_table = pd.pivot_table(
+  df,
+  values='Sales',
+  index='Product',
+  columns='Region',
+  aggfunc='sum', #  'mean', 'count', 'max'
+  fill_value=0 # fill_value=0 replaces any NaN values with 0
+)
+
+print("\nOriginal Data:")
+display(df)
+print("\nPivot Table:")
+display(pivot_table)
+```
+
+### Multiindices
+
+```python
+import pandas as pd
+
+# Create sample data
+data = {
+  'Date': ['2024-01-01', '2024-01-01', '2024-01-01', '2024-01-02', '2024-01-02',
+           '2024-01-02', '2024-01-03', '2024-01-03', '2024-01-03'],
+  'Product': ['Laptop', 'Phone', 'Tablet', 'Laptop', 'Phone',
+              'Tablet', 'Laptop', 'Phone', 'Tablet'],
+  'Category': ['Electronics', 'Electronics', 'Electronics', 'Electronics', 'Electronics',
+               'Electronics', 'Electronics', 'Electronics', 'Electronics'],
+  'Region': ['North', 'South', 'North', 'North', 'South',
+             'South', 'North', 'North', 'South'],
+  'Sales': [1000, 500, 300, 1200, 600, 400, 900, 700, 350],
+  'Units': [5, 10, 6, 6, 12, 8, 4, 14, 7]
+}
+
+# Create DataFrame
+df = pd.DataFrame(data)
+
+# Create a pivot table with multiple indices
+pivot_table = pd.pivot_table(
+  df,
+  values=['Sales', 'Units'],  # Multiple values
+  index=['Category', 'Product'],  # Multiple indices
+  columns=['Region'],
+  aggfunc={'Sales': 'sum', 'Units': 'mean'},  # Different aggregations for different values
+  fill_value=0,
+  margins=True  # Add totals
+)
+
+print("\nOriginal Data:")
+display(df)
+print("\nPivot Table with Multiple Indices:")
+display(pivot_table)
+
+# To make it more readable, we can also flatten the column headers
+pivot_table.columns = [f'{col[0]}_{col[1]}' for col in pivot_table.columns]
+print("\nPivot Table with Flattened Headers:")
+display(pivot_table)
+```
+
+### Multiple Aggregations
+
+```python
+pivot_table = pd.pivot_table(
+  df,
+  values=['Sales', 'Units'],
+  index=['Category', 'Product'],
+  columns=['Region'],
+  aggfunc={
+      'Sales': ['sum', 'mean'],  # Multiple aggregations for Sales
+      'Units': ['mean', 'max']   # Multiple aggregations for Units
+  },
+  fill_value=0
+)
+pivot_table
 ```
