@@ -1625,7 +1625,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_252102/1037439662.py:7: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/tmp/ipykernel_290992/1037439662.py:7: FutureWarning: Series.__getitem__ treating keys as positions is deprecated. In a future version, integer keys will always be treated as labels (consistent with DataFrame behavior). To access a value by position, use `ser.iloc[pos]`
   pd.DataFrame(df[[&#39;PrimaryDiagnosisCode&#39;, &#39;PrimaryDiagnosisDescription&#39;]].apply(lambda row: f&#39;({row[0]}) {row[1]}&#39;, axis=1), columns=[&#39;CodeWDescription&#39;])
 </pre></div>
 </div>
@@ -4005,7 +4005,8 @@ document.write(`
 
 <span class="c1"># Add trend indicator</span>
 <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Trend&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">result</span><span class="p">[</span><span class="s1">&#39;Change_From_Previous&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span>
-  <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s1">&#39;↑&#39;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;↓&#39;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s1">&#39;→&#39;</span>
+    <span class="c1"># lambda x: &#39;↑&#39; if x &gt; 0 else &#39;↓&#39; if x &lt; 0 else &#39;→&#39;</span>
+    <span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="s2">&quot;</span><span class="se">\U0001F600</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;</span><span class="se">\U0001F61E</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">x</span> <span class="o">&lt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="s2">&quot;</span><span class="se">\U0001F610</span><span class="s2">&quot;</span>
 <span class="p">)</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Sales Analysis with Month-over-Month Changes:&quot;</span><span class="p">)</span>

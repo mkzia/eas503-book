@@ -749,7 +749,8 @@ result['Pct_Change'] = result['Pct_Change'].round(2)
 
 # Add trend indicator
 result['Trend'] = result['Change_From_Previous'].apply(
-  lambda x: '↑' if x > 0 else '↓' if x < 0 else '→'
+    # lambda x: '↑' if x > 0 else '↓' if x < 0 else '→'
+    lambda x: "\U0001F600" if x > 0 else "\U0001F61E" if x < 0 else "\U0001F610"
 )
 
 print("Sales Analysis with Month-over-Month Changes:")
