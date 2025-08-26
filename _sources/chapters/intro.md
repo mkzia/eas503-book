@@ -10,6 +10,7 @@ kernelspec:
   name: python3
 ---
 
+
 # EAS 503: Python for Data Scientists
 
 Welcome to **EAS 503**! This course is offered by the Department of Engineering and Applied Sciences at the University at Buffalo.
@@ -107,7 +108,7 @@ The final project is an individual, intensive endeavor showcasing your skills in
    - Host your project on a Jupyter Book website.
    - Deliver a live 12-minute presentation following the rubric.
 10. **Submission deadline:**
-    - Wednesday, Dec. 17, 2024, 11:59 PM
+    - Wednesday, Dec. 17, 2025, 11:59 PM
     - Submit the following on UB Learns:
       - MLflow/DagsHub experiments
       - Docker Hub link
