@@ -116,7 +116,7 @@ The final project is an individual, intensive endeavor showcasing your skills in
       - Recorded presentation (UB Box link)
       - Completed rubric checklist
 
-[Download requirements in Word format](chapters/ML_Project_Plan.docx)
+[Download requirements in Word format](ML_Project_Plan.docx)
 
 ---
 
