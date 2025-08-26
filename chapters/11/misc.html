@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -501,15 +501,15 @@ document.write(`
 <p>Python provides some specialized container data types. We have used <code class="docutils literal notranslate"><span class="pre">defaultdict</span></code>. Now we will
 learn about another useful collection called <code class="docutils literal notranslate"><span class="pre">Counter</span></code>. This collection takes in a list of elements
 and returns a dictionary with the element as keys and their counts as values.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
 <span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;apple&#39;</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">,</span> <span class="s1">&#39;pineapple&#39;</span><span class="p">]</span>
 <span class="n">c</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">my_list</span><span class="p">)</span>
 <span class="o">&gt;&gt;&gt;</span> <span class="n">Counter</span><span class="p">({</span><span class="s1">&#39;apple&#39;</span><span class="p">:</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;banana&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;pineapple&#39;</span><span class="p">:</span> <span class="mi">1</span><span class="p">})</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
 
-<span class="kn">import</span> <span class="nn">random</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
 <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">503</span><span class="p">)</span>
 
 <span class="n">two_dices</span> <span class="o">=</span> <span class="p">[]</span>
@@ -524,12 +524,12 @@ and returns a dictionary with the element as keys and their counts as values.</p
 <section id="sorting">
 <h2><span class="section-number">11.1.2. </span>Sorting<a class="headerlink" href="#sorting" title="Link to this heading">#</a></h2>
 <p>itemgetter accesses elements using <code class="docutils literal notranslate"><span class="pre">[]</span></code>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">operator</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">operator</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">((</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mf">3.5</span><span class="p">),</span> <span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Z&#39;</span><span class="p">,</span> <span class="mi">90</span><span class="p">))</span>
 <span class="nb">sorted</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">2</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">operator</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">operator</span>
 <span class="n">x</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;student2&#39;</span><span class="p">,</span> <span class="s1">&#39;test1&#39;</span><span class="p">:</span> <span class="s1">&#39;100&#39;</span><span class="p">,</span> <span class="s1">&#39;test2&#39;</span><span class="p">:</span> <span class="s1">&#39;90&#39;</span><span class="p">,</span><span class="s1">&#39;test3&#39;</span><span class="p">:</span> <span class="s1">&#39;65&#39;</span><span class="p">,</span> <span class="s1">&#39;test4&#39;</span><span class="p">:</span> <span class="s1">&#39;68&#39;</span><span class="p">,</span> <span class="s1">&#39;test5&#39;</span><span class="p">:</span> <span class="s1">&#39;94&#39;</span><span class="p">},</span>
     <span class="p">{</span><span class="s1">&#39;name&#39;</span><span class="p">:</span> <span class="s1">&#39;student83&#39;</span><span class="p">,</span> <span class="s1">&#39;test1&#39;</span><span class="p">:</span> <span class="s1">&#39;88&#39;</span><span class="p">,</span> <span class="s1">&#39;test2&#39;</span><span class="p">:</span> <span class="s1">&#39;76&#39;</span><span class="p">,</span> <span class="s1">&#39;test3&#39;</span><span class="p">:</span> <span class="s1">&#39;65&#39;</span><span class="p">,</span> <span class="s1">&#39;test4&#39;</span><span class="p">:</span> <span class="s1">&#39;97&#39;</span><span class="p">,</span> <span class="s1">&#39;test5&#39;</span><span class="p">:</span> <span class="s1">&#39;82&#39;</span><span class="p">},</span>
@@ -559,7 +559,7 @@ and returns a dictionary with the element as keys and their counts as values.</p
 <span class="nb">sorted</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="n">operator</span><span class="o">.</span><span class="n">itemgetter</span><span class="p">(</span><span class="mi">3</span><span class="p">))</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">natsort</span> <span class="kn">import</span> <span class="n">natsorted</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">natsort</span><span class="w"> </span><span class="kn">import</span> <span class="n">natsorted</span>
 <span class="n">natsorted</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">ele</span><span class="p">:</span> <span class="n">ele</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
 </pre></div>
 </div>

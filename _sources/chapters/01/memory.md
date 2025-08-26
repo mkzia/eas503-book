@@ -9,42 +9,62 @@ kernelspec:
   language: python
   name: python3
 ---
- 
-# Memory management in Python
 
-The memory model for comprehending how variables are stored in Python differs from that of other programming languages. In many programming languages, variables can be likened to named storage locations in computer memory—essentially boxes where we can place values. When a variable changes, the previous value is overwritten by a new one.
+# Memory Management in Python
 
-![mem_model1](./mem_model1.png)
+The way Python handles variables in memory differs from many other programming languages. In some languages, variables act like named storage locations—literal boxes in memory that hold values. When you assign a new value, it overwrites the old one.
 
-In Python, values can be stored anywhere in memory, and variables are employed to reference them. Assigning a variable is analogous to placing a small yellow sticky note on the value and declaring, 'this is x.' This memory model is commonly referred to as the sticky-note model. Put another way, a Python variable is a symbolic name that is a reference or pointer to the value, which is technically an object.
+![Memory Model 1](./mem_model1.png)
 
-![mem_model2](./mem_model2.png)
+In Python, values (objects) live somewhere in memory, and variables are references to those objects. Assigning a variable is like placing a small sticky note on a value that says, “This is x.” This is often called the sticky-note model. In other words, a Python variable is a symbolic name bound to an object (a value with a type at a memory address).
 
-What happens when we execute the following statement?
+![Memory Model 2](./mem_model2.png)
+
+## What happens when we execute this statement?
 
 ```text
-<<variable>> = <<expression>>
+variable = expression
 ```
 
-This is executed as follows:
+Execution proceeds as follows:
 
-1. Evaluate the expression on the right of the `=` sign to produce a value. This value has a memory address. We can call this an object: a value at a memory address with a type.
-2. Store the memory address of the value in the variable on the left of the `=`. Create a new variable if that name does not already exist; otherwise, just reuse the existing variable, replacing the memory address that it contains.
+1. Evaluate the expression on the right-hand side of = to produce a value (an object with a type and a memory address).
+2. Bind the name on the left-hand side to that object by storing its address/reference in the variable. If the name doesn’t exist yet, Python creates it; if it does, Python rebinds the name to the new object.
 
-```{code-cell} ipython3
+Note: The previous object is not “overwritten.” If nothing else references it, it becomes eligible for garbage collection.
+
+## Example 1
+
+```python
 difference = 20
 double = 2 * difference
-print(double)
+print(double)   # 40
+
 difference = 5
-print(double)
+print(double)   # 40 (unchanged, because double already refers to its own value)
 ```
 
-```{code-cell} ipython3
+Explanation:
+
+- After the first two lines, `double` references the result of `2 * 20`, which is `40`.
+- Rebinding `difference` to `5` does not retroactively change `double`.
+
+## Example 2
+
+```python
 number = 3
-print(number)
+print(number)           # 3
+
 number = 2 * number
-print(number)
+print(number)           # 6
+
 number = number * number
+print(number)           # 36
 ```
 
-You can use [Python Tutor](https://pythontutor.com/) to view how the sticky-notes change.
+Explanation:
+
+- Each assignment rebinds `number` to a new result; it doesn’t mutate a stored value in place.
+
+You can use Python Tutor to visualize the bindings (the “sticky notes”) as they change:
+https://pythontutor.com/

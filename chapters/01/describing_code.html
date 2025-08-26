@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -443,7 +443,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -459,6 +461,15 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiline-comments">1.12.1. Multiline comments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practice">1.12.2. Best practice</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -470,25 +481,52 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="describing-code">
 <h1><span class="section-number">1.12. </span>Describing Code<a class="headerlink" href="#describing-code" title="Link to this heading">#</a></h1>
-<p>Sometimes, it is beneficial to include comments describing your code. Whenever Python encounters the <code class="docutils literal notranslate"><span class="pre">#</span></code> character, it disregards the remainder of the line.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span> <span class="c1"># secret formula</span>
+<p>Comments help explain what your code does and why. In Python, anything following a <code class="docutils literal notranslate"><span class="pre">#</span></code> on a line is a comment and is ignored by the interpreter. The <code class="docutils literal notranslate"><span class="pre">#</span></code> can appear anywhere on a line, but it does not create a comment inside a string literal.</p>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>  <span class="c1"># This is a secret formula</span>
 </pre></div>
 </div>
-<p>You can have multiline comments by surrounding your comments using triple quotes, either single quotes (<code class="docutils literal notranslate"><span class="pre">'</span></code>) or double quotes (<code class="docutils literal notranslate"><span class="pre">&quot;</span></code>)</p>
+<section id="multiline-comments">
+<h2><span class="section-number">1.12.1. </span>Multiline comments<a class="headerlink" href="#multiline-comments" title="Link to this heading">#</a></h2>
+<p>Python has no dedicated multiline comment syntax. Triple-quoted strings (<code class="docutils literal notranslate"><span class="pre">'''...'''</span></code> or <code class="docutils literal notranslate"><span class="pre">&quot;&quot;&quot;...&quot;&quot;&quot;</span></code>) can span multiple lines, but they are strings, not comments. When placed as the first statement in a module, class, or function, they become docstrings; elsewhere, they are still real string objects and may consume memory.</p>
+<p>Examples (not true comments):</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">This is a multiline comment. </span>
-<span class="sd">Test 1234</span>
+<span class="sd">This spans multiple lines.</span>
+<span class="sd">If placed at the top of a module/function/class,</span>
+<span class="sd">it is a docstring, not a comment.</span>
 <span class="sd">&quot;&quot;&quot;</span>
 <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="sd">&#39;&#39;&#39;</span>
-<span class="sd">This is a multiline comment. </span>
-<span class="sd">Test 1234</span>
+<span class="sd">This also spans multiple lines,</span>
+<span class="sd">but it’s still a string literal, not a comment.</span>
 <span class="sd">&#39;&#39;&#39;</span>
 <span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
 </pre></div>
 </div>
+</section>
+<section id="best-practice">
+<h2><span class="section-number">1.12.2. </span>Best practice<a class="headerlink" href="#best-practice" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>Use <code class="docutils literal notranslate"><span class="pre">#</span></code> for comments—even when they span multiple lines—by prefixing each line with <code class="docutils literal notranslate"><span class="pre">#</span></code>. This is unambiguous and cannot be mistaken for a docstring or a string literal.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is a multiline comment.</span>
+<span class="c1"># It spans multiple lines.</span>
+<span class="n">x</span> <span class="o">*</span> <span class="p">(</span><span class="n">x</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+<ul class="simple">
+<li><p>Reserve triple-quoted strings for actual docstrings that document modules, classes, and functions:</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">area</span><span class="p">(</span><span class="n">radius</span><span class="p">:</span> <span class="nb">float</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">float</span><span class="p">:</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Compute the area of a circle with the given radius.&quot;&quot;&quot;</span>
+    <span class="kn">from</span><span class="w"> </span><span class="nn">math</span><span class="w"> </span><span class="kn">import</span> <span class="n">pi</span>
+    <span class="k">return</span> <span class="n">pi</span> <span class="o">*</span> <span class="n">radius</span> <span class="o">*</span> <span class="n">radius</span>
+</pre></div>
+</div>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -545,6 +583,22 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#multiline-comments">1.12.1. Multiline comments</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practice">1.12.2. Best practice</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -470,16 +470,33 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="simultaneous-assignment">
 <h1><span class="section-number">1.13. </span>Simultaneous Assignment<a class="headerlink" href="#simultaneous-assignment" title="Link to this heading">#</a></h1>
-<p>Simultaneous assignment is useful when you want to swap values. So instead of doing this:</p>
-<div class="highlight-Python notranslate"><div class="highlight"><pre><span></span>  <span class="n">temp</span> <span class="o">=</span> <span class="n">x</span>
-  <span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
-  <span class="n">y</span> <span class="o">=</span> <span class="n">temp</span>
+<p>Simultaneous (tuple) assignment lets you assign values to multiple variables in a single statement. It is especially handy for swapping variables without a temporary placeholder.</p>
+<p>Traditional swap:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">temp</span> <span class="o">=</span> <span class="n">x</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">y</span>
+<span class="n">y</span> <span class="o">=</span> <span class="n">temp</span>
 </pre></div>
 </div>
-<p>you can do this:</p>
+<p>Concise swap with simultaneous assignment:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y</span><span class="p">,</span> <span class="n">x</span>
 </pre></div>
 </div>
+<p>More examples:</p>
+<ul class="simple">
+<li><p>Multiple assignments:
+<code class="docutils literal notranslate"><span class="pre">a,</span> <span class="pre">b,</span> <span class="pre">c</span> <span class="pre">=</span> <span class="pre">1,</span> <span class="pre">2,</span> <span class="pre">3</span></code></p></li>
+<li><p>Unpacking iterables:
+<code class="docutils literal notranslate"><span class="pre">x,</span> <span class="pre">y</span> <span class="pre">=</span> <span class="pre">[10,</span> <span class="pre">20]</span></code></p></li>
+<li><p>Ignoring values with a throwaway name:
+<code class="docutils literal notranslate"><span class="pre">first,</span> <span class="pre">_</span> <span class="pre">=</span> <span class="pre">(5,</span> <span class="pre">6)</span></code></p></li>
+<li><p>Extended unpacking:
+<code class="docutils literal notranslate"><span class="pre">head,</span> <span class="pre">*middle,</span> <span class="pre">tail</span> <span class="pre">=</span> <span class="pre">[1,</span> <span class="pre">2,</span> <span class="pre">3,</span> <span class="pre">4,</span> <span class="pre">5]</span> <span class="pre">#</span> <span class="pre">head=1,</span> <span class="pre">middle=[2,3,4],</span> <span class="pre">tail=5</span></code></p></li>
+</ul>
+<p>Notes:</p>
+<ul class="simple">
+<li><p>The right-hand side is fully evaluated before any assignments occur.</p></li>
+<li><p>The number of targets must match the number of values (unless using starred unpacking).</p></li>
+</ul>
 </section>
 
     <script type="text/x-thebe-config">

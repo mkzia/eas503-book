@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.8. Memory management in Python &#8212; EAS503: Python for Data Scientists</title>
+    <title>1.8. Memory Management in Python &#8212; EAS503: Python for Data Scientists</title>
   
   
   
@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -443,7 +443,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -454,11 +456,21 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Memory management in Python</h1>
+    <h1>Memory Management in Python</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-when-we-execute-this-statement">1.8.1. What happens when we execute this statement?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">1.8.2. Example 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">1.8.3. Example 2</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -469,55 +481,58 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="memory-management-in-python">
-<h1><span class="section-number">1.8. </span>Memory management in Python<a class="headerlink" href="#memory-management-in-python" title="Link to this heading">#</a></h1>
-<p>The memory model for comprehending how variables are stored in Python differs from that of other programming languages. In many programming languages, variables can be likened to named storage locations in computer memory—essentially boxes where we can place values. When a variable changes, the previous value is overwritten by a new one.</p>
-<p><img alt="mem_model1" src="../../_images/mem_model1.png" /></p>
-<p>In Python, values can be stored anywhere in memory, and variables are employed to reference them. Assigning a variable is analogous to placing a small yellow sticky note on the value and declaring, ‘this is x.’ This memory model is commonly referred to as the sticky-note model. Put another way, a Python variable is a symbolic name that is a reference or pointer to the value, which is technically an object.</p>
-<p><img alt="mem_model2" src="../../_images/mem_model2.png" /></p>
-<p>What happens when we execute the following statement?</p>
-<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>&lt;&lt;variable&gt;&gt; = &lt;&lt;expression&gt;&gt;
+<h1><span class="section-number">1.8. </span>Memory Management in Python<a class="headerlink" href="#memory-management-in-python" title="Link to this heading">#</a></h1>
+<p>The way Python handles variables in memory differs from many other programming languages. In some languages, variables act like named storage locations—literal boxes in memory that hold values. When you assign a new value, it overwrites the old one.</p>
+<p><img alt="Memory Model 1" src="../../_images/mem_model1.png" /></p>
+<p>In Python, values (objects) live somewhere in memory, and variables are references to those objects. Assigning a variable is like placing a small sticky note on a value that says, “This is x.” This is often called the sticky-note model. In other words, a Python variable is a symbolic name bound to an object (a value with a type at a memory address).</p>
+<p><img alt="Memory Model 2" src="../../_images/mem_model2.png" /></p>
+<section id="what-happens-when-we-execute-this-statement">
+<h2><span class="section-number">1.8.1. </span>What happens when we execute this statement?<a class="headerlink" href="#what-happens-when-we-execute-this-statement" title="Link to this heading">#</a></h2>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>variable = expression
 </pre></div>
 </div>
-<p>This is executed as follows:</p>
+<p>Execution proceeds as follows:</p>
 <ol class="arabic simple">
-<li><p>Evaluate the expression on the right of the <code class="docutils literal notranslate"><span class="pre">=</span></code> sign to produce a value. This value has a memory address. We can call this an object: a value at a memory address with a type.</p></li>
-<li><p>Store the memory address of the value in the variable on the left of the <code class="docutils literal notranslate"><span class="pre">=</span></code>. Create a new variable if that name does not already exist; otherwise, just reuse the existing variable, replacing the memory address that it contains.</p></li>
+<li><p>Evaluate the expression on the right-hand side of = to produce a value (an object with a type and a memory address).</p></li>
+<li><p>Bind the name on the left-hand side to that object by storing its address/reference in the variable. If the name doesn’t exist yet, Python creates it; if it does, Python rebinds the name to the new object.</p></li>
 </ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">difference</span> <span class="o">=</span> <span class="mi">20</span>
+<p>Note: The previous object is not “overwritten.” If nothing else references it, it becomes eligible for garbage collection.</p>
+</section>
+<section id="example-1">
+<h2><span class="section-number">1.8.2. </span>Example 1<a class="headerlink" href="#example-1" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">difference</span> <span class="o">=</span> <span class="mi">20</span>
 <span class="n">double</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">difference</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">double</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">double</span><span class="p">)</span>   <span class="c1"># 40</span>
+
 <span class="n">difference</span> <span class="o">=</span> <span class="mi">5</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">double</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">double</span><span class="p">)</span>   <span class="c1"># 40 (unchanged, because double already refers to its own value)</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>40
-40
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">3</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<p>Explanation:</p>
+<ul class="simple">
+<li><p>After the first two lines, <code class="docutils literal notranslate"><span class="pre">double</span></code> references the result of <code class="docutils literal notranslate"><span class="pre">2</span> <span class="pre">*</span> <span class="pre">20</span></code>, which is <code class="docutils literal notranslate"><span class="pre">40</span></code>.</p></li>
+<li><p>Rebinding <code class="docutils literal notranslate"><span class="pre">difference</span></code> to <code class="docutils literal notranslate"><span class="pre">5</span></code> does not retroactively change <code class="docutils literal notranslate"><span class="pre">double</span></code>.</p></li>
+</ul>
+</section>
+<section id="example-2">
+<h2><span class="section-number">1.8.3. </span>Example 2<a class="headerlink" href="#example-2" title="Link to this heading">#</a></h2>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">3</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>           <span class="c1"># 3</span>
+
 <span class="n">number</span> <span class="o">=</span> <span class="mi">2</span> <span class="o">*</span> <span class="n">number</span>
-<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>           <span class="c1"># 6</span>
+
 <span class="n">number</span> <span class="o">=</span> <span class="n">number</span> <span class="o">*</span> <span class="n">number</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>           <span class="c1"># 36</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-6
-</pre></div>
-</div>
-</div>
-</div>
-<p>You can use <a class="reference external" href="https://pythontutor.com/">Python Tutor</a> to view how the sticky-notes change.</p>
+<p>Explanation:</p>
+<ul class="simple">
+<li><p>Each assignment rebinds <code class="docutils literal notranslate"><span class="pre">number</span></code> to a new result; it doesn’t mutate a stored value in place.</p></li>
+</ul>
+<p>You can use Python Tutor to visualize the bindings (the “sticky notes”) as they change:
+<a class="reference external" href="https://pythontutor.com/">https://pythontutor.com/</a></p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -574,6 +589,23 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#what-happens-when-we-execute-this-statement">1.8.1. What happens when we execute this statement?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-1">1.8.2. Example 1</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example-2">1.8.3. Example 2</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

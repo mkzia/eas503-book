@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>1.4. Numeric Data Types &#8212; EAS503: Python for Data Scientists</title>
+    <title>1.4. Python Data Types &#8212; EAS503: Python for Data Scientists</title>
   
   
   
@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1.5. Working with Large Numbers" href="large_numbers.html" />
-    <link rel="prev" title="1.3. Arithmetic Operators" href="arithmetic.html" />
+    <link rel="prev" title="1.3. Arithmetic Operators in Python" href="arithmetic.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -456,7 +456,7 @@ document.write(`
               
 
 <div id="jb-print-docs-body" class="onlyprint">
-    <h1>Numeric Data Types</h1>
+    <h1>Python Data Types</h1>
     <!-- Table of contents -->
     <div id="print-main-content">
         <div id="jb-print-toc">
@@ -466,8 +466,11 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#int-and-float">1.4.1. Int and Float</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-int-and-float">1.4.1.1. Differences between <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#int-and-float">1.4.1. int and float</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristics">1.4.1.1. Key characteristics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-for-numeric-operations">1.4.1.2. Rules for numeric operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-int-and-float">1.4.1.3. Differences between int and float</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-notes">1.4.1.4. Additional notes</a></li>
 </ul>
 </li>
 </ul>
@@ -481,212 +484,113 @@ document.write(`
 <div id="searchbox"></div>
                 <article class="bd-article">
                   
-  <section class="tex2jax_ignore mathjax_ignore" id="numeric-data-types">
-<h1><span class="section-number">1.4. </span>Numeric Data Types<a class="headerlink" href="#numeric-data-types" title="Link to this heading">#</a></h1>
-<p>Python supports various data types, which we will introduce as we encounter them. Understanding data types is crucial because each value in Python is associated with a specific data type, and the behavior of values when they are combined is determined by their data types.</p>
-<p>To determine the data type of a value, you can use the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+  <section class="tex2jax_ignore mathjax_ignore" id="python-data-types">
+<h1><span class="section-number">1.4. </span>Python Data Types<a class="headerlink" href="#python-data-types" title="Link to this heading">#</a></h1>
+<p>Python supports various data types, which we will introduce as we encounter them. Understanding data types is crucial because every value in Python has an associated type, and how values behave when combined is determined by their types.</p>
+<p>To determine the data type of a value, use the <code class="docutils literal notranslate"><span class="pre">type()</span></code> function:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span> <span class="c1"># Output: &lt;class &#39;int&#39;&gt;</span>
+<span class="nb">type</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span> <span class="c1"># Output: &lt;class &#39;float&#39;&gt;</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mf">3.14</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
-</pre></div>
-</div>
-</div>
 </div>
 <section id="int-and-float">
-<h2><span class="section-number">1.4.1. </span>Int and Float<a class="headerlink" href="#int-and-float" title="Link to this heading">#</a></h2>
-<p>Values such as <code class="docutils literal notranslate"><span class="pre">4</span></code> and <code class="docutils literal notranslate"><span class="pre">-7</span></code> have the data type <code class="docutils literal notranslate"><span class="pre">int</span></code> (short for <code class="docutils literal notranslate"><span class="pre">integer</span></code>). Values like <code class="docutils literal notranslate"><span class="pre">2.5</span></code> and <code class="docutils literal notranslate"><span class="pre">-17.0</span></code> belong to the data type <code class="docutils literal notranslate"><span class="pre">float</span></code> (short for <code class="docutils literal notranslate"><span class="pre">floating</span> <span class="pre">point</span></code>). The value <code class="docutils literal notranslate"><span class="pre">7j</span></code> is an instance of the <code class="docutils literal notranslate"><span class="pre">complex</span></code> data type.</p>
+<h2><span class="section-number">1.4.1. </span>int and float<a class="headerlink" href="#int-and-float" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> stores whole numbers, whether positive or negative, with unlimited range.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code> stores numbers with decimals, both positive and negative.</p></li>
+<li><p>Values such as <code class="docutils literal notranslate"><span class="pre">4</span></code> and <code class="docutils literal notranslate"><span class="pre">-7</span></code> have the data type <code class="docutils literal notranslate"><span class="pre">int</span></code> (short for integer).</p></li>
+<li><p>Values like <code class="docutils literal notranslate"><span class="pre">2.5</span></code> and <code class="docutils literal notranslate"><span class="pre">-17.0</span></code> belong to the data type <code class="docutils literal notranslate"><span class="pre">float</span></code> (short for floating point).</p></li>
+<li><p>The value <code class="docutils literal notranslate"><span class="pre">7j</span></code> is an instance of the <code class="docutils literal notranslate"><span class="pre">complex</span></code> data type (used for complex numbers).</p></li>
 </ul>
-<p>With respect to numeric data types, you should know some rules:</p>
+<section id="key-characteristics">
+<h3><span class="section-number">1.4.1.1. </span>Key characteristics<a class="headerlink" href="#key-characteristics" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>An expression involving two <code class="docutils literal notranslate"><span class="pre">int</span></code> operands results in an <code class="docutils literal notranslate"><span class="pre">int</span></code>:</p></li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>int
-</pre></div>
-</div>
-</div>
-</div>
-<ol class="arabic simple" start="2">
-<li><p>An expression involving two <code class="docutils literal notranslate"><span class="pre">float</span></code> operands results in a <code class="docutils literal notranslate"><span class="pre">float</span></code>:</p></li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">1.0</span> <span class="o">+</span> <span class="mf">2.0</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="mf">2.0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
-</pre></div>
-</div>
-</div>
-</div>
-<ol class="arabic simple" start="3">
-<li><p>When an expression involves an <code class="docutils literal notranslate"><span class="pre">int</span></code> and a <code class="docutils literal notranslate"><span class="pre">float</span></code> as operands, resulting in a mixed data type, Python automatically converts the <code class="docutils literal notranslate"><span class="pre">int</span></code> to a <code class="docutils literal notranslate"><span class="pre">float</span></code>. This is why the following two expressions yield the same data type.</p></li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">17.0</span> <span class="o">-</span> <span class="mi">10</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mf">17.0</span> <span class="o">-</span> <span class="mi">10</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">17</span> <span class="o">-</span> <span class="mf">10.0</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7.0
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">type</span><span class="p">(</span><span class="mi">17</span> <span class="o">-</span> <span class="mf">10.0</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>float
-</pre></div>
-</div>
-</div>
-</div>
-<ol class="arabic simple" start="4">
-<li><p>You can omit <code class="docutils literal notranslate"><span class="pre">0</span></code> after the decimal point, for instance, <code class="docutils literal notranslate"><span class="pre">10.</span></code>, but this practice is generally considered poor style.</p></li>
-</ol>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mf">10.</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10.0
-</pre></div>
-</div>
-</div>
-</div>
-<section id="differences-between-int-and-float">
-<h3><span class="section-number">1.4.1.1. </span>Differences between <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code><a class="headerlink" href="#differences-between-int-and-float" title="Link to this heading">#</a></h3>
+<li><p>int</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code> occupies a fixed amount of space, while <code class="docutils literal notranslate"><span class="pre">int</span></code> takes up a variable amount of space.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">int</span></code> values are stored as <code class="docutils literal notranslate"><span class="pre">bignum</span></code> data type behind the scenes.</p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">sys</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">3</span><span class="p">]:</span> <span class="mi">24</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">30</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">4</span><span class="p">]:</span> <span class="mi">32</span>
-<span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">130</span><span class="p">)</span>
-<span class="n">Out</span><span class="p">[</span><span class="mi">6</span><span class="p">]:</span> <span class="mi">44</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Both <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code> can store both positive and negative numbers.</p></li>
-<li><p>The <code class="docutils literal notranslate"><span class="pre">type()</span></code> function is used to determine the data type.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">float</span></code> can only represent approximations of real numbers due to the finite amount of memory available in computers.</p>
-<ul>
-<li><p><code class="docutils literal notranslate"><span class="pre">2/3</span></code> vs <code class="docutils literal notranslate"><span class="pre">1/3</span></code></p></li>
+<li><p>Stores whole numbers (positive, negative, or zero) with unlimited precision.</p></li>
+<li><p>Examples: <code class="docutils literal notranslate"><span class="pre">-100</span></code>, <code class="docutils literal notranslate"><span class="pre">0</span></code>, <code class="docutils literal notranslate"><span class="pre">42</span></code>.</p></li>
 </ul>
 </li>
-</ul>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6666666666666666
-</pre></div>
-</div>
-</div>
-</div>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">5</span> <span class="o">/</span> <span class="mi">3</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.6666666666666667
-</pre></div>
-</div>
-</div>
-</div>
+<li><p>float</p>
 <ul class="simple">
-<li><p>If you do not need fraction values, use <code class="docutils literal notranslate"><span class="pre">int</span></code>.</p></li>
+<li><p>Stores numbers with decimal points (positive or negative).</p></li>
+<li><p>Examples: <code class="docutils literal notranslate"><span class="pre">3.14</span></code>, <code class="docutils literal notranslate"><span class="pre">-0.001</span></code>, <code class="docutils literal notranslate"><span class="pre">2.0</span></code>.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="rules-for-numeric-operations">
+<h3><span class="section-number">1.4.1.2. </span>Rules for numeric operations<a class="headerlink" href="#rules-for-numeric-operations" title="Link to this heading">#</a></h3>
+<p>Python follows specific rules when performing operations with numeric data types:</p>
+<ol class="arabic">
+<li><p>Two int operands produce an int</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span>           <span class="c1"># Output: 3</span>
+<span class="nb">type</span><span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="mi">2</span><span class="p">)</span>     <span class="c1"># Output: &lt;class &#39;int&#39;&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Two float operands produce a float</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">1.0</span> <span class="o">+</span> <span class="mf">2.0</span>       <span class="c1"># Output: 3.0</span>
+<span class="nb">type</span><span class="p">(</span><span class="mf">1.0</span> <span class="o">+</span> <span class="mf">2.0</span><span class="p">)</span> <span class="c1"># Output: &lt;class &#39;float&#39;&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Mixing int and float produces a float</p>
+<p>Python automatically converts the int to a float in mixed-type operations.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">17.0</span> <span class="o">-</span> <span class="mi">10</span>        <span class="c1"># Output: 7.0</span>
+<span class="nb">type</span><span class="p">(</span><span class="mf">17.0</span> <span class="o">-</span> <span class="mi">10</span><span class="p">)</span>  <span class="c1"># Output: &lt;class &#39;float&#39;&gt;</span>
+
+<span class="mi">17</span> <span class="o">-</span> <span class="mf">10.0</span>        <span class="c1"># Output: 7.0</span>
+<span class="nb">type</span><span class="p">(</span><span class="mi">17</span> <span class="o">-</span> <span class="mf">10.0</span><span class="p">)</span>  <span class="c1"># Output: &lt;class &#39;float&#39;&gt;</span>
+</pre></div>
+</div>
+</li>
+<li><p>Omitting the 0 after the decimal point</p>
+<p>You can write <code class="docutils literal notranslate"><span class="pre">10.</span></code> instead of <code class="docutils literal notranslate"><span class="pre">10.0</span></code>, but this is generally considered poor style.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mf">10.</span>   <span class="c1"># Output: 10.0</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="differences-between-int-and-float">
+<h3><span class="section-number">1.4.1.3. </span>Differences between int and float<a class="headerlink" href="#differences-between-int-and-float" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Memory usage</p>
+<ul class="simple">
+<li><p>float occupies a fixed amount of memory (commonly 24 bytes on many CPython builds; this can vary by platform and Python version).</p></li>
+<li><p>int uses a variable amount of memory depending on the size of the number.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">sys</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="mf">2.0</span><span class="p">)</span>     <span class="c1"># Example output: 24 (bytes)</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">30</span><span class="p">)</span>   <span class="c1"># Example output: 32</span>
+<span class="n">sys</span><span class="o">.</span><span class="n">getsizeof</span><span class="p">(</span><span class="mi">2</span><span class="o">**</span><span class="mi">130</span><span class="p">)</span>  <span class="c1"># Example output: 44</span>
+</pre></div>
+</div>
+<p>Note: Python’s int is implemented as an arbitrary-precision integer (“bignum”), so it grows as needed.</p>
+</li>
+<li><p>Precision</p>
+<ul class="simple">
+<li><p>int values are exact.</p></li>
+<li><p>float values are binary approximations of real numbers due to finite memory, which can lead to rounding behavior.</p></li>
+</ul>
+<p>Example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">/</span> <span class="mi">3</span>  <span class="c1"># Output: 0.6666666666666666</span>
+<span class="mi">5</span> <span class="o">/</span> <span class="mi">3</span>  <span class="c1"># Output: 1.6666666666666667</span>
+</pre></div>
+</div>
+</li>
+<li><p>Use cases</p>
+<ul class="simple">
+<li><p>Use int when you do not need fractional values.</p></li>
+<li><p>Use float when working with real numbers or when fractional values are required.</p></li>
+</ul>
+</li>
+</ol>
+</section>
+<section id="additional-notes">
+<h3><span class="section-number">1.4.1.4. </span>Additional notes<a class="headerlink" href="#additional-notes" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>The <code class="docutils literal notranslate"><span class="pre">type()</span></code> function is a handy way to inspect the data type of a value.</p></li>
+<li><p>Python also supports the <code class="docutils literal notranslate"><span class="pre">complex</span></code> type for complex numbers (e.g., <code class="docutils literal notranslate"><span class="pre">7</span> <span class="pre">+</span> <span class="pre">3j</span></code>), though it’s less common in everyday programming.</p></li>
 </ul>
 </section>
 </section>
@@ -728,7 +632,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.3. </span>Arithmetic Operators</p>
+        <p class="prev-next-title"><span class="section-number">1.3. </span>Arithmetic Operators in Python</p>
       </div>
     </a>
     <a class="right-next"
@@ -756,8 +660,11 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#int-and-float">1.4.1. Int and Float</a><ul class="nav section-nav flex-column">
-<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-int-and-float">1.4.1.1. Differences between <code class="docutils literal notranslate"><span class="pre">int</span></code> and <code class="docutils literal notranslate"><span class="pre">float</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#int-and-float">1.4.1. int and float</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#key-characteristics">1.4.1.1. Key characteristics</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#rules-for-numeric-operations">1.4.1.2. Rules for numeric operations</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#differences-between-int-and-float">1.4.1.3. Differences between int and float</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#additional-notes">1.4.1.4. Additional notes</a></li>
 </ul>
 </li>
 </ul>

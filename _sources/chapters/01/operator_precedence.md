@@ -14,23 +14,45 @@ kernelspec:
 
 What is `8/2(2+2)`?
 
-**PEMDAS**: "Please Excuse My Dear Aunt Sally"
+PEMDAS: “Please Excuse My Dear Aunt Sally”
 
-Order of Precedence:
-
-1. **P** – Parentheses
-2. **E** – Exponents
-3. **MD** - Multiplication and Division (left to right)
-4. **AS** – Addition and Subtraction (left to right)
-
-Precedence in Python:
+Order of precedence:
 
 1. Parentheses
 2. Exponents
-3. Unary plus, Unary minus
-4. Multiplication, Division, Integer division, Modulus (Remainder)
-5. Addition, Subtraction
+3. Multiplication and division (left to right)
+4. Addition and subtraction (left to right)
 
-What is incorrect with the following expression? `212 - 32 * 5 / 9`
+## Precedence in Python
 
-It's advisable to use parentheses to clarify complex expressions, even when they aren't necessary for intent, as this practice enhances code readability.
+1. Parentheses
+2. Exponentiation `**` (right to left)
+3. Unary plus `+x`, unary minus `-x`
+4. Multiplication `*`, division `/`, floor division `//`, modulo `%` (left to right)
+5. Addition `+`, subtraction `-`
+
+## Ambiguity in `8/2(2+2)`
+
+The expression `8/2(2+2)` is ambiguous. Under standard precedence (and Python’s rules), it’s parsed as:
+
+8 / 2 * (2 + 2)
+
+Some readers might interpret `2(2+2)` as implicit multiplication forming a single term:
+
+8 / (2 * (2 + 2))
+
+To avoid ambiguity, always add parentheses to make the intended order explicit.
+
+## What’s potentially unclear about `212 - 32 * 5 / 9`?
+
+The expression is valid, but the intent may be unclear to readers. Parentheses improve readability:
+
+```python
+212 - (32 * 5 / 9)
+```
+
+This makes it obvious that the multiplication and division occur before the subtraction.
+
+## Best practice
+
+Use parentheses to clarify complex expressions, even when not strictly necessary. Clear grouping improves readability and reduces errors.

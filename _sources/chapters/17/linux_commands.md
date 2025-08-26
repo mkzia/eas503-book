@@ -33,6 +33,4 @@
 3. change the execution permissions on the file -- `chmod +x`
 4. run the file
 
-
-
 0 - 1 execute

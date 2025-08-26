@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -471,43 +471,56 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="exercises">
 <h1><span class="section-number">1.14. </span>Exercises<a class="headerlink" href="#exercises" title="Link to this heading">#</a></h1>
 <ol class="arabic simple">
-<li><p>For each of the following expressions, what value will the expression give? Verify your answers by typing the expressions into Python.</p>
+<li><p>For each of the following expressions, what value will the expression produce? Verify your answers by typing the expressions into Python.</p>
 <ol class="arabic simple">
-<li><p>9 - 3</p></li>
-<li><p>8 * 2.5</p></li>
-<li><p>9 / 2</p></li>
-<li><p>9 / -2</p></li>
-<li><p>9 // -2</p></li>
-<li><p>9 % 2</p></li>
-<li><p>9.0 % 2</p></li>
-<li><p>9 % 2.0</p></li>
-<li><p>9 % -2</p></li>
-<li><p>-9 % 2</p></li>
-<li><p>9 / -2.0</p></li>
-<li><p>4 + 3 * 5</p></li>
-<li><p>(4 + 3) * 5</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">-</span> <span class="pre">3</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">*</span> <span class="pre">2.5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">/</span> <span class="pre">2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">/</span> <span class="pre">-2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">//</span> <span class="pre">-2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">%</span> <span class="pre">2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">9.0</span> <span class="pre">%</span> <span class="pre">2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">%</span> <span class="pre">2.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">%</span> <span class="pre">-2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-9</span> <span class="pre">%</span> <span class="pre">2</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">9</span> <span class="pre">/</span> <span class="pre">-2.0</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">4</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">*</span> <span class="pre">5</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(4</span> <span class="pre">+</span> <span class="pre">3)</span> <span class="pre">*</span> <span class="pre">5</span></code></p></li>
 </ol>
 </li>
-<li><p>Unary minus negates a number. Unary plus exists as well; for example, Python understands +5. If x has the value -17, what do you think +x should do? Should it leave the sign of the number alone? Should it act like absolute value, removing any negation? Use the Python shell to find out its behavior.</p></li>
+<li><p>Unary minus negates a number. Unary plus exists as well; for example, Python understands <code class="docutils literal notranslate"><span class="pre">+5</span></code>.
+If <code class="docutils literal notranslate"><span class="pre">x</span></code> has the value <code class="docutils literal notranslate"><span class="pre">-17</span></code>, what do you think <code class="docutils literal notranslate"><span class="pre">+x</span></code> should do?</p>
+<ul class="simple">
+<li><p>Should it leave the sign of the number alone?</p></li>
+<li><p>Should it act like absolute value, removing any negation?
+Use the Python shell to find out its behavior.</p></li>
+</ul>
+</li>
 <li><p>Write two assignment statements that do the following:</p>
 <ol class="arabic simple">
-<li><p>Create a new variable, temp, and assign it the value 24.</p></li>
-<li><p>Convert the value in temp from Celsius to Fahrenheit by multiplying by 1.8 and adding 32; make temp refer to the resulting value. What is temp’s new value?</p></li>
+<li><p>Create a new variable, <code class="docutils literal notranslate"><span class="pre">temp</span></code>, and assign it the value <code class="docutils literal notranslate"><span class="pre">24</span></code>.</p></li>
+<li><p>Convert the value in <code class="docutils literal notranslate"><span class="pre">temp</span></code> from Celsius to Fahrenheit by multiplying by <code class="docutils literal notranslate"><span class="pre">1.8</span></code> and adding <code class="docutils literal notranslate"><span class="pre">32</span></code>. Make <code class="docutils literal notranslate"><span class="pre">temp</span></code> refer to the resulting value.
+What is <code class="docutils literal notranslate"><span class="pre">temp</span></code>’s new value?</p></li>
 </ol>
 </li>
 <li><p>For each of the following expressions, in which order are the subexpressions evaluated?</p>
 <ul class="simple">
-<li><p>6 <em>3 + 7</em> 4</p></li>
-<li><p>5 + 3 / 4</p></li>
-<li><p>5 - 2 * 3 ** 4</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">+</span> <span class="pre">7</span> <span class="pre">*</span> <span class="pre">4</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">+</span> <span class="pre">3</span> <span class="pre">/</span> <span class="pre">4</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">5</span> <span class="pre">-</span> <span class="pre">2</span> <span class="pre">*</span> <span class="pre">3</span> <span class="pre">**</span> <span class="pre">4</span></code></p></li>
 </ul>
 </li>
-<li><p>Exercise
-Create a new variable x, and assign it the value 10.5.
-Create a new variable y, and assign it the value 4.
-Sum x and y, and make x refer to the resulting value. After this statement has been executed, what are the values of x and y?</p></li>
-<li><p>When a variable is used before it has been assigned a value, a NameError occurs. In the Python shell, write an expression that results in a NameError.</p></li>
-<li><p>Which of the following expressions results in SyntaxErrors?</p>
+<li><p><strong>Exercise</strong></p>
+<ul class="simple">
+<li><p>Create a new variable <code class="docutils literal notranslate"><span class="pre">x</span></code>, and assign it the value <code class="docutils literal notranslate"><span class="pre">10.5</span></code>.</p></li>
+<li><p>Create a new variable <code class="docutils literal notranslate"><span class="pre">y</span></code>, and assign it the value <code class="docutils literal notranslate"><span class="pre">4</span></code>.</p></li>
+<li><p>Sum <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>, and make <code class="docutils literal notranslate"><span class="pre">x</span></code> refer to the resulting value.
+After this statement has been executed, what are the values of <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">y</span></code>?</p></li>
+</ul>
+</li>
+<li><p>When a variable is used before it has been assigned a value, a <code class="docutils literal notranslate"><span class="pre">NameError</span></code> occurs.
+In the Python shell, write an expression that results in a <code class="docutils literal notranslate"><span class="pre">NameError</span></code>.</p></li>
+<li><p>Which of the following expressions result in <code class="docutils literal notranslate"><span class="pre">SyntaxError</span></code>s?</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">6</span> <span class="pre">*</span> <span class="pre">———--8</span></code></p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">8</span> <span class="pre">=</span> <span class="pre">people</span></code></p></li>

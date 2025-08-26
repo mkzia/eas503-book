@@ -1,0 +1,11 @@
+- No business value in a jupyter notebook
+- Machine learning platform
+  - tracker experiment (tracking accuracy)
+  - model registry (version your model)
+- Feature pipeline
+  - Raw data into model features
+- Training pipeline
+  - Fetch data from feature store and train model
+  - Push to registry
+- Inference pipeline
+  - new data and predict

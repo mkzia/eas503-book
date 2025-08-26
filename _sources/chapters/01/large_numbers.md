@@ -12,16 +12,30 @@ kernelspec:
 
 # Working with Large Numbers
 
-What is the output of the following?
+What is the output of the following code?
 
-```{code-cell} ipython3
 10000000000 + 0.00000000001
+
+The result should, in theory, reflect the tiny increment. However, due to floating-point precision limits, the actual result is `10000000000.0`—as if the addition never happened. This occurs because Python (like most languages) uses IEEE 754 double-precision floats with finite precision. When two numbers differ greatly in magnitude, the smaller addend can be rounded away.
+
+Adding many small numbers to a very large number can likewise have no observable effect. This is problematic in domains like finance, where every cent matters.
+
+To reduce floating-point error when summing:
+
+- Add numbers in ascending order of magnitude (smallest to largest).
+- Use dedicated high-precision tools when correctness is critical.
+
+Better options for higher precision:
+
+- Python’s built-in decimal arithmetic: the `decimal` module (configurable precision).
+- Arbitrary-precision libraries such as [mpmath](https://mpmath.org/).
+
+Example with Decimal:
+
+```python
+from decimal import Decimal, getcontext
+
+getcontext().prec = 30
+result = Decimal('10000000000') + Decimal('0.00000000001')
+print(result)  # 10000000000.00000000001
 ```
-
-The result should have consisted of twenty zeros between the first and last significant digit. However, this magnitude is excessive for the computer to store. Consequently, the result is merely 10000000000—essentially as though the addition never occurred. Adding numerous small numbers to a large one can result in no effect whatsoever. Such an outcome isn't desirable, especially when a bank is tallying the values of its customers' savings accounts.
-
-When dealing with the addition of floating-point numbers, it's advisable to add them in ascending order of magnitude to minimize the error.
-
-Alternatively, utilizing a specialized library is a preferable option:
-
-- [mpmath: a Python library for arbitrary-precision floating-point arithmetic](https://mpmath.org/)

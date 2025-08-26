@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -443,7 +443,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -459,6 +461,17 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precedence-in-python">1.6.1. Precedence in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambiguity-in-8-2-2-2">1.6.2. Ambiguity in <code class="docutils literal notranslate"><span class="pre">8/2(2+2)</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-potentially-unclear-about-212-32-5-9">1.6.3. What’s potentially unclear about <code class="docutils literal notranslate"><span class="pre">212</span> <span class="pre">-</span> <span class="pre">32</span> <span class="pre">*</span> <span class="pre">5</span> <span class="pre">/</span> <span class="pre">9</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practice">1.6.4. Best practice</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -471,24 +484,44 @@ document.write(`
   <section class="tex2jax_ignore mathjax_ignore" id="operator-precedence">
 <h1><span class="section-number">1.6. </span>Operator Precedence<a class="headerlink" href="#operator-precedence" title="Link to this heading">#</a></h1>
 <p>What is <code class="docutils literal notranslate"><span class="pre">8/2(2+2)</span></code>?</p>
-<p><strong>PEMDAS</strong>: “Please Excuse My Dear Aunt Sally”</p>
-<p>Order of Precedence:</p>
-<ol class="arabic simple">
-<li><p><strong>P</strong> – Parentheses</p></li>
-<li><p><strong>E</strong> – Exponents</p></li>
-<li><p><strong>MD</strong> - Multiplication and Division (left to right)</p></li>
-<li><p><strong>AS</strong> – Addition and Subtraction (left to right)</p></li>
-</ol>
-<p>Precedence in Python:</p>
+<p>PEMDAS: “Please Excuse My Dear Aunt Sally”</p>
+<p>Order of precedence:</p>
 <ol class="arabic simple">
 <li><p>Parentheses</p></li>
 <li><p>Exponents</p></li>
-<li><p>Unary plus, Unary minus</p></li>
-<li><p>Multiplication, Division, Integer division, Modulus (Remainder)</p></li>
-<li><p>Addition, Subtraction</p></li>
+<li><p>Multiplication and division (left to right)</p></li>
+<li><p>Addition and subtraction (left to right)</p></li>
 </ol>
-<p>What is incorrect with the following expression? <code class="docutils literal notranslate"><span class="pre">212</span> <span class="pre">-</span> <span class="pre">32</span> <span class="pre">*</span> <span class="pre">5</span> <span class="pre">/</span> <span class="pre">9</span></code></p>
-<p>It’s advisable to use parentheses to clarify complex expressions, even when they aren’t necessary for intent, as this practice enhances code readability.</p>
+<section id="precedence-in-python">
+<h2><span class="section-number">1.6.1. </span>Precedence in Python<a class="headerlink" href="#precedence-in-python" title="Link to this heading">#</a></h2>
+<ol class="arabic simple">
+<li><p>Parentheses</p></li>
+<li><p>Exponentiation <code class="docutils literal notranslate"><span class="pre">**</span></code> (right to left)</p></li>
+<li><p>Unary plus <code class="docutils literal notranslate"><span class="pre">+x</span></code>, unary minus <code class="docutils literal notranslate"><span class="pre">-x</span></code></p></li>
+<li><p>Multiplication <code class="docutils literal notranslate"><span class="pre">*</span></code>, division <code class="docutils literal notranslate"><span class="pre">/</span></code>, floor division <code class="docutils literal notranslate"><span class="pre">//</span></code>, modulo <code class="docutils literal notranslate"><span class="pre">%</span></code> (left to right)</p></li>
+<li><p>Addition <code class="docutils literal notranslate"><span class="pre">+</span></code>, subtraction <code class="docutils literal notranslate"><span class="pre">-</span></code></p></li>
+</ol>
+</section>
+<section id="ambiguity-in-8-2-2-2">
+<h2><span class="section-number">1.6.2. </span>Ambiguity in <code class="docutils literal notranslate"><span class="pre">8/2(2+2)</span></code><a class="headerlink" href="#ambiguity-in-8-2-2-2" title="Link to this heading">#</a></h2>
+<p>The expression <code class="docutils literal notranslate"><span class="pre">8/2(2+2)</span></code> is ambiguous. Under standard precedence (and Python’s rules), it’s parsed as:</p>
+<p>8 / 2 * (2 + 2)</p>
+<p>Some readers might interpret <code class="docutils literal notranslate"><span class="pre">2(2+2)</span></code> as implicit multiplication forming a single term:</p>
+<p>8 / (2 * (2 + 2))</p>
+<p>To avoid ambiguity, always add parentheses to make the intended order explicit.</p>
+</section>
+<section id="whats-potentially-unclear-about-212-32-5-9">
+<h2><span class="section-number">1.6.3. </span>What’s potentially unclear about <code class="docutils literal notranslate"><span class="pre">212</span> <span class="pre">-</span> <span class="pre">32</span> <span class="pre">*</span> <span class="pre">5</span> <span class="pre">/</span> <span class="pre">9</span></code>?<a class="headerlink" href="#whats-potentially-unclear-about-212-32-5-9" title="Link to this heading">#</a></h2>
+<p>The expression is valid, but the intent may be unclear to readers. Parentheses improve readability:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="mi">212</span> <span class="o">-</span> <span class="p">(</span><span class="mi">32</span> <span class="o">*</span> <span class="mi">5</span> <span class="o">/</span> <span class="mi">9</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>This makes it obvious that the multiplication and division occur before the subtraction.</p>
+</section>
+<section id="best-practice">
+<h2><span class="section-number">1.6.4. </span>Best practice<a class="headerlink" href="#best-practice" title="Link to this heading">#</a></h2>
+<p>Use parentheses to clarify complex expressions, even when not strictly necessary. Clear grouping improves readability and reduces errors.</p>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -545,6 +578,24 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#precedence-in-python">1.6.1. Precedence in Python</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#ambiguity-in-8-2-2-2">1.6.2. Ambiguity in <code class="docutils literal notranslate"><span class="pre">8/2(2+2)</span></code></a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#whats-potentially-unclear-about-212-32-5-9">1.6.3. What’s potentially unclear about <code class="docutils literal notranslate"><span class="pre">212</span> <span class="pre">-</span> <span class="pre">32</span> <span class="pre">*</span> <span class="pre">5</span> <span class="pre">/</span> <span class="pre">9</span></code>?</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#best-practice">1.6.4. Best practice</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

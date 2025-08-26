@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1.6. Operator Precedence" href="operator_precedence.html" />
-    <link rel="prev" title="1.4. Numeric Data Types" href="numeric_data_types.html" />
+    <link rel="prev" title="1.4. Python Data Types" href="numeric_data_types.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -470,25 +470,28 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="working-with-large-numbers">
 <h1><span class="section-number">1.5. </span>Working with Large Numbers<a class="headerlink" href="#working-with-large-numbers" title="Link to this heading">#</a></h1>
-<p>What is the output of the following?</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">10000000000</span> <span class="o">+</span> <span class="mf">0.00000000001</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10000000000.0
-</pre></div>
-</div>
-</div>
-</div>
-<p>The result should have consisted of twenty zeros between the first and last significant digit. However, this magnitude is excessive for the computer to store. Consequently, the result is merely 10000000000—essentially as though the addition never occurred. Adding numerous small numbers to a large one can result in no effect whatsoever. Such an outcome isn’t desirable, especially when a bank is tallying the values of its customers’ savings accounts.</p>
-<p>When dealing with the addition of floating-point numbers, it’s advisable to add them in ascending order of magnitude to minimize the error.</p>
-<p>Alternatively, utilizing a specialized library is a preferable option:</p>
+<p>What is the output of the following code?</p>
+<p>10000000000 + 0.00000000001</p>
+<p>The result should, in theory, reflect the tiny increment. However, due to floating-point precision limits, the actual result is <code class="docutils literal notranslate"><span class="pre">10000000000.0</span></code>—as if the addition never happened. This occurs because Python (like most languages) uses IEEE 754 double-precision floats with finite precision. When two numbers differ greatly in magnitude, the smaller addend can be rounded away.</p>
+<p>Adding many small numbers to a very large number can likewise have no observable effect. This is problematic in domains like finance, where every cent matters.</p>
+<p>To reduce floating-point error when summing:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://mpmath.org/">mpmath: a Python library for arbitrary-precision floating-point arithmetic</a></p></li>
+<li><p>Add numbers in ascending order of magnitude (smallest to largest).</p></li>
+<li><p>Use dedicated high-precision tools when correctness is critical.</p></li>
 </ul>
+<p>Better options for higher precision:</p>
+<ul class="simple">
+<li><p>Python’s built-in decimal arithmetic: the <code class="docutils literal notranslate"><span class="pre">decimal</span></code> module (configurable precision).</p></li>
+<li><p>Arbitrary-precision libraries such as <a class="reference external" href="https://mpmath.org/">mpmath</a>.</p></li>
+</ul>
+<p>Example with Decimal:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">decimal</span><span class="w"> </span><span class="kn">import</span> <span class="n">Decimal</span><span class="p">,</span> <span class="n">getcontext</span>
+
+<span class="n">getcontext</span><span class="p">()</span><span class="o">.</span><span class="n">prec</span> <span class="o">=</span> <span class="mi">30</span>
+<span class="n">result</span> <span class="o">=</span> <span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;10000000000&#39;</span><span class="p">)</span> <span class="o">+</span> <span class="n">Decimal</span><span class="p">(</span><span class="s1">&#39;0.00000000001&#39;</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">result</span><span class="p">)</span>  <span class="c1"># 10000000000.00000000001</span>
+</pre></div>
+</div>
 </section>
 
     <script type="text/x-thebe-config">
@@ -527,7 +530,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.4. </span>Numeric Data Types</p>
+        <p class="prev-next-title"><span class="section-number">1.4. </span>Python Data Types</p>
       </div>
     </a>
     <a class="right-next"

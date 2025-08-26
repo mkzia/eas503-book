@@ -10,25 +10,29 @@ kernelspec:
   name: python3
 ---
 
-
 # Augmented Assignments
 
-An augmented assignment merges an assignment statement with an operator, resulting in a more concise statement. The execution of an augmented assignment involves the following steps:
+An augmented assignment combines an operator with assignment to produce a concise, readable statement.
 
-1. Evaluate the expression on the right side of the `=` sign to yield a value.
-2. Apply the operator associated with the `=` sign to the variable on the left of the `=` and the generated value. This produces another value. Store the memory address of this value in the variable on the left of the `=`.
+Execution steps:
 
-Table {numref}`augmented` shows all the augmented assignments.
+1. Evaluate the expression on the right-hand side of the equals sign to produce a value.
+2. Apply the operator to the left-hand operand and the evaluated value, then assign the result back to the left-hand side. For mutable objects (e.g., lists), the operation may modify the object in place rather than rebind the name.
 
-```{table} Arithmetic operators
-:name: augmented
-| Symbol  | Example        | Result           |
-|-------- |--------------- |----------------- |
-| +=      | x = 7, x += 2   | x refers to 9    |
-| -=      | x = 7, x -= 2   | x refers 5       |
-| *=      | x = 7, x *= 2   | x refers to 14   |
-| /=      | x = 7, x /= 2   | x refers to 3.5  |
-| //=     | x = 7, x //= 2  | x refers to 3    |
-| %=      | x = 7, x %= 2   | x refers to 1    |
-| **=     | x = 7, x **=2   | x refers to 49   |
-```
+## Augmented assignment operators
+
+| Symbol | Example          | Result              |
+| ------ | ---------------- | ------------------- |
+| `+=`   | `x = 7; x += 2`  | `x` refers to `9`   |
+| `-=`   | `x = 7; x -= 2`  | `x` refers to `5`   |
+| `*=`   | `x = 7; x *= 2`  | `x` refers to `14`  |
+| `/=`   | `x = 7; x /= 2`  | `x` refers to `3.5` |
+| `//=`  | `x = 7; x //= 2` | `x` refers to `3`   |
+| `%=`   | `x = 7; x %= 2`  | `x` refers to `1`   |
+| `**=`  | `x = 7; x **= 2` | `x` refers to `49`  |
+
+Notes:
+
+- `/=` always produces a float result, even when both operands are integers.
+- `//=` follows floor-division semantics: it rounds toward negative infinity for negative numbers.
+- `%=` follows Python’s modulo rule: the remainder’s sign matches the divisor’s sign.

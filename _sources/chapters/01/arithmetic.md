@@ -10,132 +10,138 @@ kernelspec:
   name: python3
 ---
 
-# Arithmetic Operators
+# Arithmetic Operators in Python
 
-{numref}`arithmetic-operators` lists the arithmetic operators.
+This section provides an overview of arithmetic operators in Python, including their usage, examples, and behavior with negative numbers.
 
-```{table} Arithmetic operators
-:name: arithmetic-operators
-| **Symbol**  | **Operator**      | **Example**  | **Result**  |
-|------------ |------------------ |------------- |------------ |
-| -           | Negation          | -5           | -5          |
-| +           | Addition          | 11 + 3.1     | 14.1        |
-| -           | Subtraction       | 5 - 19       | -14         |
-| *           | Multiplication    | 8.5 * 4      | 34.0        |
-| /           | Division          | 11 / 2       | 5.5         |
-| //          | Integer Division  | 16 // 5      | 3           |
-| %           | Modulus/Remainder | 31 % 24      | 7           |
-| **          | Exponentiation    | 2 ** 5       | 32          |
-```
+## Arithmetic Operators Overview
 
-Operators that have two operands are called **binary operators**. Negation is a **unary** operator because it applies to one operand.
+| Symbol | Operator         | Example    | Result |
+| ------ | ---------------- | ---------- | ------ |
+| `-`    | Negation (unary) | `-5`       | `-5`   |
+| `+`    | Addition         | `11 + 3.1` | `14.1` |
+| `-`    | Subtraction      | `5 - 19`   | `-14`  |
+| `*`    | Multiplication   | `8.5 * 4`  | `34.0` |
+| `/`    | Division         | `11 / 2`   | `5.5`  |
+| `//`   | Integer division | `16 // 5`  | `3`    |
+| `%`    | Modulo/remainder | `31 % 24`  | `7`    |
+| `**`   | Exponentiation   | `2 ** 5`   | `32`   |
 
 ## Negation
 
-The negation operator simply negates the value.
+The negation operator (`-`) negates the value of its operand.
 
-```{code-cell} ipython3
--5
+### Negation examples
+
+-5 # Result: -5
+--5 # Result: 5
+---5 # Result: -5
+
+## Addition, subtraction, multiplication, and division
+
+These operators perform the standard mathematical operations.
+
+### Examples
+
+```python
+11 + 3.1  # Result: 14.1
+5 - 19    # Result: -14
+8.5 * 4   # Result: 34.0  (result is float because 8.5 is float)
+11 / 2    # Result: 5.5
 ```
 
-```{code-cell} ipython3
---5
+> Note: When operands are of mixed numeric types (e.g., `int` and `float`), the result is a `float`.
+
+## Integer division (`//`) and modulo (`%`)
+
+### Integer division (`//`)
+
+The integer division operator (`//`) returns the floor of the division—i.e., the largest integer less than or equal to the true quotient. If both operands are integers, the result is an integer; if at least one operand is a float, the result is a float.
+
+#### Example
+
+```python
+53 // 24  # Result: 2
 ```
 
-```{code-cell} ipython3
----5
+### Modulo (`%`)
+
+The modulo operator (`%`) returns the remainder of the division. The remainder’s sign matches the divisor’s sign.
+
+#### Example
+
+```python
+53 % 24  # Result: 5
 ```
 
-## Addition, Subtraction, Multiplication, and Division
+## Working with negative numbers
 
-- The addition, subtraction, multiplication, and division operators are the familiar mathematical operators.
+When performing integer division and modulo operations with negative numbers, Python follows these rules:
 
-:::{warning}
-When the operands are of mixed data type, meaning `int` and `float`, the resulting value will be type `float`.
-:::
+1. Integer division rounds toward negative infinity (floor), not toward zero.
+2. The relationship between dividend, divisor, quotient, and remainder is:
+   ```
+   n = q * base + r
+   ```
+   - `n`: dividend (left of `//` or `%`)
+   - `q`: quotient (result of `//`)
+   - `base`: divisor (right of `//` or `%`)
+   - `r`: remainder (result of `%`)
 
-## Integer Division, Modulo
+The sign of the remainder (`r`) always matches the sign of the divisor (`base`). This differs from some other languages where the remainder’s sign may match the dividend’s sign.
 
-To know the integer part of a division result, use the integer division operator. For example, to know how many 24-hour days there are in 53 hours.
+### Case 1: Positive `n` and negative `base`
 
-```{code-cell} ipython3
-53 // 24
+Given `n = 17` and `base = -10`:
+
+```python
+17 // -10  # Result: -2
+17 % -10   # Result: -3
 ```
 
-To find out how many hours are left over, you can use the modulo operator, which gives the remainder of the division:
+Explanation:
 
-```{code-cell} ipython3
-53 % 24 
+- Quotient (`q`) = -2 (floors from -1.7)
+- Remainder (`r`) = -3 (matches the divisor’s sign)
+
+### Case 2: Negative `n` and positive `base`
+
+Given `n = -17` and `base = 10`:
+
+```python
+-17 // 10  # Result: -2
+-17 % 10   # Result: 3
 ```
 
-### Working with Negative Numbers
+Explanation:
 
-To correctly compute the result with negative numbers in integer division and the modulo operation, remember two rules:
+- Quotient (`q`) = -2 (floors from -1.7)
+- Remainder (`r`) = 3 (matches the divisor’s sign)
 
-- **Rule 1**: Python's integer division rounds towards negative infinity, which differs from truncation. Truncation simply discards digits after the decimal point. Therefore, exercise caution when dealing with negative operands.
-- **Rule 2**: `n = q * base + r`, where:
-  - `n` represents the dividend, the number to the left of `//` and `%`.
-  - `q` stands for the quotient, obtained through integer division.
-  - `base` denotes the divisor, the number to the right of `//` and `%`
-  - `r` signifies the remainder, the outcome of the modulo operator.
-  
-By considering the equation in rule **Rule 2**, it will follow that for the modulo operator, the sign of the remainder matches the sign of the divisor.
+### Case 3: Negative `n` and negative `base`
 
-### Case 1: Positive `n` and Negative `base`
+Given `n = -17` and `base = -10`:
 
-Consider:
-
-- `n = 17`
-- `base = -10`
-
-When dividing 17 by -10, the result is -1.7, which rounds down to -2 due to **Rule 1** and is the quotient (`q`). To calculate the modulo operator result, solve for `r` in the equation `17 = -2 * -10 + r`, yielding `r = -3`. Observe that the sign of the remainder matches that of the divisor.
-
-```{code-cell} ipython3
-17 // -10
+```python
+-17 // -10  # Result: 1
+-17 % -10   # Result: -7
 ```
 
-```{code-cell} ipython3
-17 % -10
-```
+Explanation:
 
-### Case 2: Negative `n` and Positive `base`
-
-Consider:
-
-- `n = -17`
-- `base = 10`
-
-When dividing -17 by 10, the result is -1.7, which rounds down to -2 due to **Rule 1** and is the quotient (`q`). To determine the modulo result, solve for `r` in the equation `-17 = -2 * 10 + r`, yielding `r = 3`. Observe that the sign of the remainder matches that of the divisor.
-
-```{code-cell} ipython3
--17 // 10
-```
-
-```{code-cell} ipython3
--17 % 10
-```
-
-### Case 3: Negative `n` and Negative `base`
-
-Consider:
-
-- `n = -17`
-- `base = -10`
-
-When dividing 17 by 10, the result is 1.7, which rounds down to 1 due to **Rule 1** and is the quotient (`q`). To determine the modulo result, solve for `r` in the equation `-17 = 1 * -10 + r`, yielding `r = -7`. Observe that the sign of the remainder matches that of the divisor.
-
-```{code-cell} ipython3
--17 // -10
-```
-
-```{code-cell} ipython3
--17 % -10
-```
+- Quotient (`q`) = 1 (floor of 1.7 is 1)
+- Remainder (`r`) = -7 (matches the divisor’s sign)
 
 ## Exponentiation
 
-The following expression calculates 3 raised to the 6th power:
+The exponentiation operator (`**`) raises a number to the power of another.
 
-```{code-cell} ipython3
-3 ** 6
+### Example
+
+```python
+3 ** 6     # Result: 729
+2 ** -3    # Result: 0.125
+9 ** 0.5   # Result: 3.0
 ```
+
+Python supports negative and fractional exponents.

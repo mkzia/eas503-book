@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -61,7 +61,7 @@
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/01/definitions.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.3. Arithmetic Operators" href="arithmetic.html" />
+    <link rel="next" title="1.3. Arithmetic Operators in Python" href="arithmetic.html" />
     <link rel="prev" title="1.1. Getting Started" href="getting_started.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -466,9 +466,10 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-terms">1.2.1. Previous Terms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-terms">1.2.2. New Terms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">1.2.3. Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">1.2.1. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-terms">1.2.2. Previous Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-terms">1.2.3. New Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">1.2.4. Example</a></li>
 </ul>
             </nav>
         </div>
@@ -482,12 +483,14 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="definitions">
 <h1><span class="section-number">1.2. </span>Definitions<a class="headerlink" href="#definitions" title="Link to this heading">#</a></h1>
-<p>Objectives</p>
+<section id="objectives">
+<h2><span class="section-number">1.2.1. </span>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>To learn the key terms used to comprehend programming.</p></li>
+<li><p>To learn the key terms used to understand programming.</p></li>
 </ul>
+</section>
 <section id="previous-terms">
-<h2><span class="section-number">1.2.1. </span>Previous Terms<a class="headerlink" href="#previous-terms" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.2.2. </span>Previous Terms<a class="headerlink" href="#previous-terms" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p><strong>Hardware:</strong> The physical components of a computing system.</p></li>
 <li><p><strong>Computer:</strong> A machine that stores and manipulates information under the control of a changeable program.</p></li>
@@ -496,75 +499,37 @@ document.write(`
 <li><p><strong>Programming Language:</strong> A notation used for writing computer programs, often referring to high-level languages like Python, Java, C++, etc.</p></li>
 <li><p><strong>High-level Language:</strong> A programming language that is readable by humans.</p></li>
 <li><p><strong>Low-level Language:</strong> A programming language with fewer abstractions than a high-level language, requiring more explicit instructions.</p></li>
-<li><p><strong>Machine Language:</strong> The actual CPU instructions for storing, accessing data from, or writing data into memory, as well as executing computations.</p></li>
+<li><p><strong>Machine Language:</strong> The lowest-level programming language, consisting of binary instructions that the CPU can execute directly. These instructions control operations such as storing, accessing, or writing data into memory, as well as performing computations.</p></li>
 </ul>
 </section>
 <section id="new-terms">
-<h2><span class="section-number">1.2.2. </span>New Terms<a class="headerlink" href="#new-terms" title="Link to this heading">#</a></h2>
+<h2><span class="section-number">1.2.3. </span>New Terms<a class="headerlink" href="#new-terms" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Syntax:</strong> A set of rules that specify the correct arrangement of operators and operands.</p></li>
-<li><p><strong>Operator:</strong> Symbols that perform specific mathematical or logical manipulations.</p></li>
-<li><p><strong>Operand:</strong> The value that an operator acts upon.</p></li>
-<li><p><strong>Expression:</strong> A combination of operators and operands that returns a value.</p></li>
-<li><p><strong>Statement:</strong> A single command in a programming language.</p></li>
+<li><p><strong>Syntax:</strong> A set of rules that define the structure of valid statements, expressions, and programs in a programming language. More specifically, it dictates the correct arrangement of operators and operands.</p></li>
+<li><p><strong>Operator:</strong> Symbols that perform specific operations, such as mathematical, logical, bitwise, string manipulation, or assignment operations.</p></li>
+<li><p><strong>Operand:</strong> A value, variable, or expression that an operator acts upon.</p></li>
+<li><p><strong>Expression:</strong> A combination of operators and operands that returns a value. An expression can also consist of a single operand, such as a literal or variable.</p></li>
+<li><p><strong>Statement:</strong> A single command in a programming language that performs an action, such as assigning a value, printing output, or controlling program flow.</p></li>
 </ul>
-<p>The <strong>syntax</strong> of a computer language consists of a set of rules that guide how you can combine <strong>operators</strong> and <strong>operands</strong> to form valid <strong>expressions</strong>.</p>
+<p>The <strong>syntax</strong> of a computer language consists of a set of rules that guide how operators and operands can be combined to form valid <strong>expressions</strong>.</p>
 </section>
 <section id="example">
-<h2><span class="section-number">1.2.3. </span>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">3</span> <span class="o">+</span> <span class="mi">4</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>7
-</pre></div>
-</div>
-</div>
-</div>
+<h2><span class="section-number">1.2.4. </span>Example<a class="headerlink" href="#example" title="Link to this heading">#</a></h2>
 <p>In the above expression:</p>
 <ul class="simple">
 <li><p><code class="docutils literal notranslate"><span class="pre">3</span></code> is an operand.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> is an operator.</p></li>
 <li><p><code class="docutils literal notranslate"><span class="pre">4</span></code> is an operand.</p></li>
-<li><p>The whole thing is called an expression.</p></li>
+<li><p>The entire combination is called an expression.</p></li>
 </ul>
 <p>The expression <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></code> is <strong>evaluated</strong> to <code class="docutils literal notranslate"><span class="pre">7</span></code>. When an expression is evaluated, it produces a single value.</p>
-<p>The operand can be a value or another expression.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">2</span> <span class="o">-</span> <span class="p">(</span><span class="mi">3</span> <span class="o">/</span> <span class="mi">5</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.4
-</pre></div>
-</div>
-</div>
-</div>
-<p>In the above expression:</p>
+<p>Operands can be values or other <a class="reference external" href="http://expressions.In">expressions.In</a> the above expression:</p>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">3</span></code> is an operand.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">+</span></code> is an operator.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">(3</span> <span class="pre">/</span> <span class="pre">5)</span></code> is an operand which itself is an expression, a legal arrangement of operands and an operator.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">2</span></code> is an operand.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">-</span></code> is an operator.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">(3</span> <span class="pre">/</span> <span class="pre">5)</span></code> is an operand, which itself is an expression—a valid arrangement of operands and an operator.</p></li>
 </ul>
-<p>Expressions do not have to involve an operator.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="mi">212</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>212
-</pre></div>
-</div>
-</div>
-</div>
-<p>The above line is consider both an expression and a value.</p>
+<p>Expressions do not always require an <a class="reference external" href="http://operator.In">operator.In</a> this case, <code class="docutils literal notranslate"><span class="pre">212</span></code> is a valid expression called a “literal expression” because it consists of a single literal value and evaluates to itself.</p>
 </section>
 </section>
 
@@ -612,7 +577,7 @@ document.write(`
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.3. </span>Arithmetic Operators</p>
+        <p class="prev-next-title"><span class="section-number">1.3. </span>Arithmetic Operators in Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -632,9 +597,10 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-terms">1.2.1. Previous Terms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-terms">1.2.2. New Terms</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">1.2.3. Example</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#objectives">1.2.1. Objectives</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#previous-terms">1.2.2. Previous Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#new-terms">1.2.3. New Terms</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#example">1.2.4. Example</a></li>
 </ul>
   </nav></div>
 

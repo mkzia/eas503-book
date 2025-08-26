@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="1.10. Errors in Python" href="errors.html" />
-    <link rel="prev" title="1.8. Memory management in Python" href="memory.html" />
+    <link rel="prev" title="1.8. Memory Management in Python" href="memory.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -443,7 +443,9 @@ document.write(`
   </button>
 `);
 </script>
-
+<button class="sidebar-toggle secondary-toggle btn btn-sm" title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</button>
 </div></div>
       
     </div>
@@ -459,6 +461,14 @@ document.write(`
     <div id="print-main-content">
         <div id="jb-print-toc">
             
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#augmented-assignment-operators">1.9.1. Augmented assignment operators</a></li>
+</ul>
+            </nav>
         </div>
     </div>
 </div>
@@ -470,14 +480,15 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="augmented-assignments">
 <h1><span class="section-number">1.9. </span>Augmented Assignments<a class="headerlink" href="#augmented-assignments" title="Link to this heading">#</a></h1>
-<p>An augmented assignment merges an assignment statement with an operator, resulting in a more concise statement. The execution of an augmented assignment involves the following steps:</p>
+<p>An augmented assignment combines an operator with assignment to produce a concise, readable statement.</p>
+<p>Execution steps:</p>
 <ol class="arabic simple">
-<li><p>Evaluate the expression on the right side of the <code class="docutils literal notranslate"><span class="pre">=</span></code> sign to yield a value.</p></li>
-<li><p>Apply the operator associated with the <code class="docutils literal notranslate"><span class="pre">=</span></code> sign to the variable on the left of the <code class="docutils literal notranslate"><span class="pre">=</span></code> and the generated value. This produces another value. Store the memory address of this value in the variable on the left of the <code class="docutils literal notranslate"><span class="pre">=</span></code>.</p></li>
+<li><p>Evaluate the expression on the right-hand side of the equals sign to produce a value.</p></li>
+<li><p>Apply the operator to the left-hand operand and the evaluated value, then assign the result back to the left-hand side. For mutable objects (e.g., lists), the operation may modify the object in place rather than rebind the name.</p></li>
 </ol>
-<p>Table <a class="reference internal" href="#augmented"><span class="std std-numref">Table 1.2</span></a> shows all the augmented assignments.</p>
-<div class="pst-scrollable-table-container"><table class="table" id="augmented">
-<caption><span class="caption-number">Table 1.2 </span><span class="caption-text">Arithmetic operators</span><a class="headerlink" href="#augmented" title="Link to this table">#</a></caption>
+<section id="augmented-assignment-operators">
+<h2><span class="section-number">1.9.1. </span>Augmented assignment operators<a class="headerlink" href="#augmented-assignment-operators" title="Link to this heading">#</a></h2>
+<div class="pst-scrollable-table-container"><table class="table">
 <thead>
 <tr class="row-odd"><th class="head"><p>Symbol</p></th>
 <th class="head"><p>Example</p></th>
@@ -485,37 +496,44 @@ document.write(`
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p>+=</p></td>
-<td><p>x = 7, x += 2</p></td>
-<td><p>x refers to 9</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">+=</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">7;</span> <span class="pre">x</span> <span class="pre">+=</span> <span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span></code> refers to <code class="docutils literal notranslate"><span class="pre">9</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>-=</p></td>
-<td><p>x = 7, x -= 2</p></td>
-<td><p>x refers 5</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">-=</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">7;</span> <span class="pre">x</span> <span class="pre">-=</span> <span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span></code> refers to <code class="docutils literal notranslate"><span class="pre">5</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>*=</p></td>
-<td><p>x = 7, x *= 2</p></td>
-<td><p>x refers to 14</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">*=</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">7;</span> <span class="pre">x</span> <span class="pre">*=</span> <span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span></code> refers to <code class="docutils literal notranslate"><span class="pre">14</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>/=</p></td>
-<td><p>x = 7, x /= 2</p></td>
-<td><p>x refers to 3.5</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">/=</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">7;</span> <span class="pre">x</span> <span class="pre">/=</span> <span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span></code> refers to <code class="docutils literal notranslate"><span class="pre">3.5</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>//=</p></td>
-<td><p>x = 7, x //= 2</p></td>
-<td><p>x refers to 3</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">//=</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">7;</span> <span class="pre">x</span> <span class="pre">//=</span> <span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span></code> refers to <code class="docutils literal notranslate"><span class="pre">3</span></code></p></td>
 </tr>
-<tr class="row-odd"><td><p>%=</p></td>
-<td><p>x = 7, x %= 2</p></td>
-<td><p>x refers to 1</p></td>
+<tr class="row-odd"><td><p><code class="docutils literal notranslate"><span class="pre">%=</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">7;</span> <span class="pre">x</span> <span class="pre">%=</span> <span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span></code> refers to <code class="docutils literal notranslate"><span class="pre">1</span></code></p></td>
 </tr>
-<tr class="row-even"><td><p>**=</p></td>
-<td><p>x = 7, x **=2</p></td>
-<td><p>x refers to 49</p></td>
+<tr class="row-even"><td><p><code class="docutils literal notranslate"><span class="pre">**=</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span> <span class="pre">=</span> <span class="pre">7;</span> <span class="pre">x</span> <span class="pre">**=</span> <span class="pre">2</span></code></p></td>
+<td><p><code class="docutils literal notranslate"><span class="pre">x</span></code> refers to <code class="docutils literal notranslate"><span class="pre">49</span></code></p></td>
 </tr>
 </tbody>
 </table>
 </div>
+<p>Notes:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">/=</span></code> always produces a float result, even when both operands are integers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">//=</span></code> follows floor-division semantics: it rounds toward negative infinity for negative numbers.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">%=</span></code> follows Python’s modulo rule: the remainder’s sign matches the divisor’s sign.</p></li>
+</ul>
+</section>
 </section>
 
     <script type="text/x-thebe-config">
@@ -554,7 +572,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">1.8. </span>Memory management in Python</p>
+        <p class="prev-next-title"><span class="section-number">1.8. </span>Memory Management in Python</p>
       </div>
     </a>
     <a class="right-next"
@@ -572,6 +590,21 @@ document.write(`
             </div>
             
             
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#augmented-assignment-operators">1.9.1. Augmented assignment operators</a></li>
+</ul>
+  </nav></div>
+
+</div></div>
               
             
           </div>

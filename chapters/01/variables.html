@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -61,7 +61,7 @@
     <link rel="canonical" href="https://mkzia.github.io/eas503-notes/chapters/01/variables.html" />
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="1.8. Memory management in Python" href="memory.html" />
+    <link rel="next" title="1.8. Memory Management in Python" href="memory.html" />
     <link rel="prev" title="1.6. Operator Precedence" href="operator_precedence.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
@@ -468,7 +468,14 @@ document.write(`
                 <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#restrictions-for-variable-names">1.7.1. Restrictions for Variable Names</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-keywords">1.7.2. Python Keywords</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conventions-for-variable-names">1.7.3. Conventions for Variable Names</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-naming-conventions">1.7.3. Python Naming Conventions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-and-function-names">1.7.3.1. Variable and function names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constants">1.7.3.2. Constants</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-names">1.7.3.3. Class names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-conventions">1.7.3.4. Privacy conventions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#avoiding-built-in-names">1.7.3.5. Avoiding built-in names</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-assignment">1.7.4. Variable Assignment</a></li>
 </ul>
             </nav>
@@ -483,34 +490,32 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="variables">
 <h1><span class="section-number">1.7. </span>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h1>
+<ul>
+<li><p>Variables are names bound to values (e.g., numbers, strings, or <code class="docutils literal notranslate"><span class="pre">None</span></code>). They act as identifiers that label a value for later use. A variable’s value can be changed via assignment.</p></li>
+<li><p>Variables must be assigned a value before they are used in expressions.</p></li>
+<li><p>Python does not require declaring a variable’s type at assignment time—the type is inferred from the value. Python is therefore a dynamically typed language. In contrast, languages that require declaring types at assignment are statically typed.</p>
 <ul class="simple">
-<li><p>Variables provide names for values (numbers, strings, None). They act as identifiers that label a value for future reference. The value of a variable can be modified through assignment.</p></li>
-<li><p>Variables must be assigned before they can be utilized in expressions.</p></li>
-<li><p>Variables do not have to specify the data type of data at the time of assignment. The data type is inferred from the value. For this reason, Python is known as a <strong>Dynamically Typed Language</strong>. Languages that require variable data types to be declared at the time of assignment are called <strong>Statically Typed Languages</strong>. A consequence of Python being a dynamically typed language is that you can reassign a variable to a different data type. This is allowed in Python but is not allowed in some programming languages.</p></li>
+<li><p>Because Python is dynamically typed, you can reassign a variable to a value of a different type. This is allowed in Python but disallowed in some languages.</p></li>
 </ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="mi">3</span> <span class="c1"># data type int</span>
-<span class="n">x</span> <span class="o">=</span> <span class="mf">3.14</span> <span class="c1"># data type float; this is allowed!</span>
-</pre></div>
-</div>
-<ul class="simple">
-<li><p>Variable names are case-sensitive, meaning <code class="docutils literal notranslate"><span class="pre">ph</span></code> and <code class="docutils literal notranslate"><span class="pre">pH</span></code> are considered two distinct names.</p></li>
-<li><p>Variable names <strong>MUST</strong> adhere to specific rules, and it is <strong>BEST</strong> to adhere to Python’s guidelines for naming.</p></li>
+<p>x = 3 # type: int
+x = 3.14 # type: float; this is allowed</p>
+</li>
+<li><p>Variable names are case-sensitive, so <code class="docutils literal notranslate"><span class="pre">ph</span></code> and <code class="docutils literal notranslate"><span class="pre">pH</span></code> are distinct.</p></li>
+<li><p>Variable names must follow certain rules, and it’s best to follow Python’s style guidelines when naming.</p></li>
 </ul>
 <section id="restrictions-for-variable-names">
 <h2><span class="section-number">1.7.1. </span>Restrictions for Variable Names<a class="headerlink" href="#restrictions-for-variable-names" title="Link to this heading">#</a></h2>
-<p>You must adhere to these</p>
+<p>You must follow these rules:</p>
 <ol class="arabic simple">
-<li><p>Must start with a letter or underscore.</p></li>
-<li><p>Can consist of letters, underscores, and numbers. <strong>NO SPACES</strong></p></li>
-<li><p>Symbols like <code class="docutils literal notranslate"><span class="pre">(,),&#64;,+,-,*,/</span></code> cannot be used in names.</p></li>
-<li><p>Cannot use Python keywords</p></li>
+<li><p>A variable name must start with a letter (a–z, A–Z) or an underscore (<code class="docutils literal notranslate"><span class="pre">_</span></code>).</p></li>
+<li><p>A variable name may contain letters, digits, and underscores. Spaces are not allowed.</p></li>
+<li><p>Symbols such as <code class="docutils literal notranslate"><span class="pre">(</span> <span class="pre">)</span> <span class="pre">,</span> <span class="pre">&#64;</span> <span class="pre">+</span> <span class="pre">-</span> <span class="pre">*</span> <span class="pre">/</span></code> cannot be used in variable names.</p></li>
+<li><p>Variable names cannot be Python keywords.</p></li>
 </ol>
 </section>
 <section id="python-keywords">
 <h2><span class="section-number">1.7.2. </span>Python Keywords<a class="headerlink" href="#python-keywords" title="Link to this heading">#</a></h2>
-<ul class="simple">
-<li><p>Python keywords are reserved, meaning they cannot be used as variable names.</p></li>
-</ul>
+<p>Python keywords are reserved words and cannot be used as variable names.</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>False      await      else       import     pass
 None       break      except     in         raise
 True       class      finally    is         return
@@ -521,20 +526,94 @@ async      elif       if         or         yield
 </pre></div>
 </div>
 </section>
-<section id="conventions-for-variable-names">
-<h2><span class="section-number">1.7.3. </span>Conventions for Variable Names<a class="headerlink" href="#conventions-for-variable-names" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p>Use snake_case, not camelCase, for variable and function names.</p></li>
-<li><p>Variables should be in lowercase.</p></li>
-<li><p>Uppercase is reserved for constants, such as <code class="docutils literal notranslate"><span class="pre">PI</span> <span class="pre">=</span> <span class="pre">3.14</span></code>.</p></li>
-<li><p>UpperCamelCase is used for classes.</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">__private__</span></code> with a double underscore is a convention that signifies the variable shouldn’t be accessed directly. This convention is analogous to private variables in other programming languages.</p></li>
-<li><p>Avoid using Python functions as variable names, examples, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">type</span></code>, <code class="docutils literal notranslate"><span class="pre">float</span></code></p></li>
-</ol>
+<section id="python-naming-conventions">
+<h2><span class="section-number">1.7.3. </span>Python Naming Conventions<a class="headerlink" href="#python-naming-conventions" title="Link to this heading">#</a></h2>
+<section id="variable-and-function-names">
+<h3><span class="section-number">1.7.3.1. </span>Variable and function names<a class="headerlink" href="#variable-and-function-names" title="Link to this heading">#</a></h3>
 <ul class="simple">
-<li><p><code class="docutils literal notranslate"><span class="pre">int</span> <span class="pre">=</span> <span class="pre">3</span></code> do <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">int</span></code> to restore python keyword</p></li>
-<li><p><code class="docutils literal notranslate"><span class="pre">print</span> <span class="pre">=</span> <span class="pre">'Yah'</span></code> do <code class="docutils literal notranslate"><span class="pre">del</span> <span class="pre">print</span></code> to restore Python keyword</p></li>
+<li><p>Use snake_case (e.g., <code class="docutils literal notranslate"><span class="pre">my_variable</span></code>, <code class="docutils literal notranslate"><span class="pre">calculate_total</span></code>).</p></li>
+<li><p>Keep names lowercase.</p></li>
+<li><p>Choose descriptive, meaningful names.</p></li>
+<li><p>Avoid single-letter names except for short-lived counters or iterators.</p></li>
 </ul>
+</section>
+<section id="constants">
+<h3><span class="section-number">1.7.3.2. </span>Constants<a class="headerlink" href="#constants" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Use UPPER_CASE with underscores (e.g., <code class="docutils literal notranslate"><span class="pre">MAX_VALUE</span></code>, <code class="docutils literal notranslate"><span class="pre">PI</span></code>).</p></li>
+<li><p>Define at module level.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">PI</span> <span class="o">=</span> <span class="mf">3.14159</span>
+<span class="n">MAX_ATTEMPTS</span> <span class="o">=</span> <span class="mi">3</span>
+</pre></div>
+</div>
+</section>
+<section id="class-names">
+<h3><span class="section-number">1.7.3.3. </span>Class names<a class="headerlink" href="#class-names" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Use PascalCase (also called UpperCamelCase) (e.g., <code class="docutils literal notranslate"><span class="pre">BankAccount</span></code>, <code class="docutils literal notranslate"><span class="pre">UserProfile</span></code>).</p></li>
+<li><p>Use nouns that describe the object.</p></li>
+</ul>
+</section>
+<section id="privacy-conventions">
+<h3><span class="section-number">1.7.3.4. </span>Privacy conventions<a class="headerlink" href="#privacy-conventions" title="Link to this heading">#</a></h3>
+<ol class="arabic">
+<li><p>Protected members (<code class="docutils literal notranslate"><span class="pre">_name</span></code>)</p>
+<ul class="simple">
+<li><p>Single leading underscore.</p></li>
+<li><p>Signals “non-public” by convention; not enforced by Python.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Account</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">_balance</span> <span class="o">=</span> <span class="mi">0</span>
+</pre></div>
+</div>
+</li>
+<li><p>Private members (<code class="docutils literal notranslate"><span class="pre">__name</span></code>)</p>
+<ul class="simple">
+<li><p>Double leading underscore triggers name mangling: <code class="docutils literal notranslate"><span class="pre">__name</span></code> becomes <code class="docutils literal notranslate"><span class="pre">_ClassName__name</span></code>.</p></li>
+<li><p>Makes external access harder (but not impossible).</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Account</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">__balance</span> <span class="o">=</span> <span class="mi">0</span>  <span class="c1"># becomes _Account__balance</span>
+</pre></div>
+</div>
+</li>
+<li><p>Special methods (<code class="docutils literal notranslate"><span class="pre">__name__</span></code>)</p>
+<ul class="simple">
+<li><p>Double underscore prefix and suffix.</p></li>
+<li><p>Reserved for Python’s special (“dunder”) methods.</p></li>
+<li><p>Examples: <code class="docutils literal notranslate"><span class="pre">__init__</span></code>, <code class="docutils literal notranslate"><span class="pre">__str__</span></code>, <code class="docutils literal notranslate"><span class="pre">__len__</span></code>.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">Account</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">pass</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__str__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="k">return</span> <span class="s2">&quot;Account instance&quot;</span>
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="avoiding-built-in-names">
+<h3><span class="section-number">1.7.3.5. </span>Avoiding built-in names<a class="headerlink" href="#avoiding-built-in-names" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p>Don’t shadow Python keywords or built-in function/type names.</p></li>
+<li><p>Common built-ins to avoid: <code class="docutils literal notranslate"><span class="pre">list</span></code>, <code class="docutils literal notranslate"><span class="pre">dict</span></code>, <code class="docutils literal notranslate"><span class="pre">str</span></code>, <code class="docutils literal notranslate"><span class="pre">int</span></code>, <code class="docutils literal notranslate"><span class="pre">sum</span></code>, <code class="docutils literal notranslate"><span class="pre">max</span></code>.</p></li>
+<li><p>If you accidentally shadow a built-in, you can restore it by deleting your binding.</p></li>
+</ul>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># Bad</span>
+<span class="nb">list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>  <span class="c1"># shadows built-in list</span>
+
+<span class="c1"># Good</span>
+<span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">]</span>
+
+<span class="c1"># Restore shadowed built-in</span>
+<span class="k">del</span> <span class="nb">list</span>
+</pre></div>
+</div>
+</section>
 </section>
 <section id="variable-assignment">
 <h2><span class="section-number">1.7.4. </span>Variable Assignment<a class="headerlink" href="#variable-assignment" title="Link to this heading">#</a></h2>
@@ -542,33 +621,15 @@ async      elif       if         or         yield
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">degrees_celsius</span> <span class="o">=</span> <span class="mf">26.0</span>
 </pre></div>
 </div>
-<p>This is referred to as an assignment statement; in this case, we assign the value <code class="docutils literal notranslate"><span class="pre">26.0</span></code> to the variable <code class="docutils literal notranslate"><span class="pre">degrees_celsius</span></code>. Whenever Python encounters a variable within an expression, it substitutes the value that the variable represents.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">degrees_celsius</span> <span class="o">=</span> <span class="mf">26.0</span>
+<p>This is an assignment statement: the value <code class="docutils literal notranslate"><span class="pre">26.0</span></code> is bound to the name <code class="docutils literal notranslate"><span class="pre">degrees_celsius</span></code>. When Python encounters a variable in an expression, it substitutes the value bound to that name.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">degrees_celsius</span> <span class="o">=</span> <span class="mf">26.0</span>
 <span class="mi">9</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">degrees_celsius</span> <span class="o">+</span> <span class="mi">32</span>
 </pre></div>
 </div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>78.80000000000001
-</pre></div>
-</div>
-</div>
-</div>
-<p>Variables are called variables because their value can vary as the program executes.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">degrees_celsius</span> <span class="o">=</span> <span class="mf">15.5</span>
+<p>Variables are called “variables” because their values can change during execution.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">degrees_celsius</span> <span class="o">=</span> <span class="mf">15.5</span>
 <span class="mi">9</span> <span class="o">/</span> <span class="mi">5</span> <span class="o">*</span> <span class="n">degrees_celsius</span> <span class="o">+</span> <span class="mi">32</span>
 </pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>59.900000000000006
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 </section>
@@ -617,7 +678,7 @@ async      elif       if         or         yield
        title="next page">
       <div class="prev-next-info">
         <p class="prev-next-subtitle">next</p>
-        <p class="prev-next-title"><span class="section-number">1.8. </span>Memory management in Python</p>
+        <p class="prev-next-title"><span class="section-number">1.8. </span>Memory Management in Python</p>
       </div>
       <i class="fa-solid fa-angle-right"></i>
     </a>
@@ -639,7 +700,14 @@ async      elif       if         or         yield
     <ul class="visible nav section-nav flex-column">
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#restrictions-for-variable-names">1.7.1. Restrictions for Variable Names</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-keywords">1.7.2. Python Keywords</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#conventions-for-variable-names">1.7.3. Conventions for Variable Names</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#python-naming-conventions">1.7.3. Python Naming Conventions</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-and-function-names">1.7.3.1. Variable and function names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#constants">1.7.3.2. Constants</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#class-names">1.7.3.3. Class names</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#privacy-conventions">1.7.3.4. Privacy conventions</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#avoiding-built-in-names">1.7.3.5. Avoiding built-in names</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#variable-assignment">1.7.4. Variable Assignment</a></li>
 </ul>
   </nav></div>

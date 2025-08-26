@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -476,8 +476,26 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features-of-python">1.1.5. Features of Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-python">1.1.6. Using Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-basic-python-program">1.1.6.1. A Basic Python Program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ways-to-use-python">1.1.6.2. Ways to Use Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-local-development-environment-docker-anaconda">1.1.6.3. Setting up a Local Development Environment (Docker + Anaconda)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-project-folder">1.1.6.3.1. 1. Create the project folder</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-the-dockerfile-and-docker-compose-yml">1.1.6.3.2. 2. Add the Dockerfile and docker-compose.yml</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-image">1.1.6.3.3. 3. Build the image</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#start-the-container">1.1.6.3.4. 4. Start the container</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#open-a-shell-in-the-container-you-will-land-in-shared-folder">1.1.6.3.5. 5. Open a shell in the container (you will land in /shared_folder)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-anaconda">1.1.6.3.6. 6. Verify Anaconda</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-python-3-13-environment-and-install-packages">1.1.6.3.7. 7. Create a Python 3.13 environment and install packages</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-jupyter-notebook-already-in-shared-folder">1.1.6.3.8. 8. Launch Jupyter Notebook (already in /shared_folder)</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-docker">1.1.7. About Docker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-essentials">1.1.7.1. Docker Essentials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-layers-caching-basics">1.1.7.2. Docker Layers &amp; Caching Basics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#essential-linux-commands">1.1.8. Essential Linux Commands</a></li>
 </ul>
             </nav>
         </div>
@@ -491,85 +509,83 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="getting-started">
 <h1><span class="section-number">1.1. </span>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading">#</a></h1>
+<p>Welcome to the exciting world of programming!</p>
 <section id="objectives">
 <h2><span class="section-number">1.1.1. </span>Objectives<a class="headerlink" href="#objectives" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p>To understand what a computer is.</p></li>
-<li><p>To understand what a program is.</p></li>
-<li><p>To understand what a programming language is.</p></li>
-<li><p>To learn about the features of Python.</p></li>
-<li><p>To begin using Python.</p></li>
+<li><p>Understand what a computer is.</p></li>
+<li><p>Understand what a program is.</p></li>
+<li><p>Understand what a programming language is.</p></li>
+<li><p>Learn about the features of Python.</p></li>
+<li><p>Begin using Python.</p></li>
 </ul>
 </section>
 <section id="computers">
 <h2><span class="section-number">1.1.2. </span>Computers<a class="headerlink" href="#computers" title="Link to this heading">#</a></h2>
+<p>A modern computer can be defined as “a machine that <strong>stores</strong>, <strong>manipulates</strong>, and <strong>processes</strong> information under the control of a <strong>changeable program</strong>, while also interacting with the external world through input and output.”</p>
 <ul class="simple">
-<li><p>A modern computer can be defined as ‘a machine that <strong>stores</strong> and <strong>manipulates</strong> information under the control of an <strong>changeable program</strong>.’</p>
-<ul>
-<li><p><strong>Manipulation</strong> means transforming information into new, useful forms, and then storing, outputting, or displaying information for our interpretation.</p></li>
+<li><p><strong>Manipulation</strong> means transforming information into new, useful forms, and then storing, outputting, or displaying it for interpretation.</p></li>
 <li><p><strong>Examples</strong>:</p>
 <ul>
 <li><p>Find students with the highest and lowest GPA.</p></li>
-<li><p>Find patients whose stay in a hospital was more than 15 days.</p></li>
-<li><p>Sort the monthly sales of a bakery to determine which months have the highest sales.</p></li>
+<li><p>Identify patients whose hospital stay exceeded 15 days.</p></li>
+<li><p>Sort the monthly sales of a bakery to determine which months had the highest sales.</p></li>
 <li><p>Classify a cancer case as benign or malignant based on diagnostic measurements.</p></li>
 <li><p>Predict house prices based on historical data.</p></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
 </section>
 <section id="what-is-a-program">
 <h2><span class="section-number">1.1.3. </span>What is a Program?<a class="headerlink" href="#what-is-a-program" title="Link to this heading">#</a></h2>
+<p>A computer program is a detailed, step-by-step set of instructions that precisely tells a computer what to do.</p>
 <ul class="simple">
-<li><p>A computer program is a detailed, step-by-step set of instructions that precisely tells a computer what to do.</p></li>
 <li><p>If we <strong>change</strong> the program, the computer performs a different sequence of actions, resulting in the execution of a distinct task.</p></li>
 <li><p>A program is composed of a few fundamental operations that its reader already comprehends. By utilizing these basic operations, you can introduce new operations to a computer by defining them in relation to the foundational ones.</p>
 <ul>
 <li><p><strong>Example</strong>: Computers comprehend basic mathematical operators such as addition and division. You can instruct the computer to calculate the average using these operators by guiding it to add all numbers in a sequence and then divide by the sequence size.</p></li>
-<li><p><strong>Example</strong>: Subsequently, you can integrate the newly created average operation with other functions to generate additional operations. This process is akin to constructing life, where atoms are assembled to form proteins, proteins are combined to construct cells, cells are organized into organs, and organs are assembled to create a living creature.</p></li>
+<li><p><strong>Example</strong>: Subsequently, you can integrate the newly created average operation with other functions to generate additional operations. This process is akin to building with LEGOs, where basic bricks are combined to create more complex structures.</p></li>
 </ul>
 </li>
-<li><p>Defining new operations and combining them to do useful things is the heart and soul of programming.</p></li>
-<li><p>Every computer is essentially a machine designed to execute (carry out) programs.</p></li>
-<li><p>Software (programs) governs the hardware (physical machines), and it is the software that dictates the capabilities of any computer. Without software, computers would be nothing more than costly paperweights. The act of crafting software is referred to as programming.</p></li>
 </ul>
+<p>Defining new operations and combining them to perform useful tasks is the heart and soul of programming.</p>
+<p>Every computer is essentially a machine designed to execute (carry out) programs. Software (programs) governs the hardware (physical machines), and it is the software that dictates the capabilities of any computer. Without software, computers would be nothing more than costly paperweights. The act of crafting software is referred to as <strong>programming</strong>.</p>
 </section>
 <section id="what-is-a-programming-language">
 <h2><span class="section-number">1.1.4. </span>What is a Programming Language?<a class="headerlink" href="#what-is-a-programming-language" title="Link to this heading">#</a></h2>
+<p>You can express directions to the nearest bus station in many different languages, such as English, Spanish, or Hindi. However, natural languages are fraught with ambiguity and imprecision.</p>
+<p><strong>English example</strong>: “I saw a man on a hill with a telescope.”</p>
 <ul class="simple">
-<li><p>You can express directions to the nearest bus station in many different languages, such as English, Spanish, or Hindi.</p></li>
-<li><p>But natural languages are fraught with ambiguity and imprecision.</p>
-<ul>
-<li><p><strong>English example</strong>: “I saw a man on a hill with a telescope”</p>
-<ul>
-<li><p>There is a man on a hill, and I am watching him with my telescope</p></li>
-<li><p>There is a man on a hill, who I am seeing, and he has a telescope</p></li>
-<li><p>There is a man, and he is on a hill that also has a telescope on it</p></li>
-<li><p>I am on a hill, and I saw a man using a telescope</p></li>
+<li><p>There is a man on a hill, and I am watching him with my telescope.</p></li>
+<li><p>There is a man on a hill, who I am seeing, and he has a telescope.</p></li>
+<li><p>There is a man, and he is on a hill that also has a telescope on it.</p></li>
+<li><p>I am on a hill, and I saw a man using a telescope.</p></li>
 <li><p>There is a man on a hill, and I am sawing him with a telescope.</p></li>
 <li><p>source: <a class="reference external" href="https://www.quora.com/What-are-some-examples-of-ambiguous-sentences">https://www.quora.com/What-are-some-examples-of-ambiguous-sentences</a></p></li>
 </ul>
-</li>
+<p>Computer scientists have resolved this issue by devising notations for expressing computations precisely and without ambiguity. These special notations are called <strong>programming languages</strong>.</p>
+<p>Similar to natural languages, numerous programming languages exist. However, they all serve as instructions that machines can comprehend and can exhibit variations in appearance. For instance:</p>
+<ul class="simple">
+<li><p>In Python: <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></code> signifies the addition of three and four.</p></li>
+<li><p>In Scheme: <code class="docutils literal notranslate"><span class="pre">(+</span> <span class="pre">3</span> <span class="pre">4)</span></code> represents the same operation. While both convey the same concept, they are visually distinct.</p></li>
 </ul>
-</li>
-<li><p>Computer scientists have resolved this issue by devising notations for expressing computations precisely and without ambiguity.</p></li>
-<li><p>These special notations are called “programming languages.”</p></li>
-<li><p>Similar to natural languages, there exist numerous programming languages. However, they all serve as instructions that machines can comprehend. These programming languages can also exhibit variations in appearance. For instance, in Python, <code class="docutils literal notranslate"><span class="pre">3</span> <span class="pre">+</span> <span class="pre">4</span></code> signifies the addition of three and four. In Scheme, this equivalent instruction is presented as <code class="docutils literal notranslate"><span class="pre">(+</span> <span class="pre">3</span> <span class="pre">4)</span></code>. While both convey the same concept, they are visually distinct.</p></li>
-<li><p>Every programming language includes methods for crafting mathematical expressions, iterating instructions multiple times, making selections among instructions based on available information, and much more.</p></li>
-<li><p>Programming languages take a <strong>high-level</strong> language, comprising human-readable expressions like <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>, and translate it into machine language that the computer can execute.</p></li>
-<li><p>A machine language consists of precise instructions for CPUs. When it comes to adding two numbers, the CPU instructions might resemble something like this:</p></li>
+<p>Every programming language includes methods for:</p>
+<ul class="simple">
+<li><p>Crafting mathematical expressions</p></li>
+<li><p>Iterating instructions multiple times</p></li>
+<li><p>Making selections among instructions based on available information</p></li>
 </ul>
+<p>Programming languages take a <strong>high-level</strong> language, comprising human-readable expressions like <code class="docutils literal notranslate"><span class="pre">c</span> <span class="pre">=</span> <span class="pre">a</span> <span class="pre">+</span> <span class="pre">b</span></code>, and translate it into machine language that the computer can execute. This translation can occur through <strong>compilation</strong> or <strong>interpretation</strong>, depending on the language and its implementation.</p>
+<p>A machine language consists of precise instructions for CPUs. For example, adding two numbers might involve the following CPU instructions:</p>
 <div class="highlight-text notranslate"><div class="highlight"><pre><span></span>load the number from memory location 2001 into the CPU
 load the number from memory location 2002 into the CPU
 add the two numbers in the CPU
-store the result in to location 2003
+store the result into location 2003
 </pre></div>
 </div>
 <ul class="simple">
-<li><p>Compilers transform programs written in a high-level language into the machine language of a specific computer; the compiled code is dependent on the hardware and operating system.</p></li>
-<li><p>Interpreters simulate a computer that understands a high-level language.</p>
+<li><p><strong>Compilers</strong> transform programs written in a high-level language into the machine language of a specific computer. Some languages, like Python, use a hybrid approach where the source code is first compiled into an intermediate representation (bytecode) and then interpreted by a virtual machine.</p></li>
+<li><p><strong>Interpreters</strong> simulate a computer that understands a high-level language.</p>
 <ul>
 <li><p>The source program is not translated into machine language all at once.</p></li>
 <li><p>An interpreter analyzes and executes the source code instruction by instruction (line by line).</p></li>
@@ -582,92 +598,274 @@ store the result in to location 2003
 <li><p>Once a program has been compiled, it can be executed repeatedly without requiring the source code or compiler. If it is interpreted, both the source code and the interpreter are necessary each time the program runs.</p></li>
 <li><p>Compiled programs generally run faster since the translation of the source code occurs only once.</p></li>
 <li><p>Interpreted languages offer a more flexible programming environment as they can be developed and run interactively.</p></li>
-<li><p>Interpreted programs are more portable, meaning the executable code produced by a compiler for a specific architecture won’t run on a different architecture without recompilation. In contrast, if a suitable interpreter already exists, the interpreted code can be run with no modifications.</p></li>
+<li><p>Interpreted programs are more portable, provided that an interpreter for the target platform is available. The executable code produced by a compiler for a specific architecture won’t run on a different architecture without recompilation.</p></li>
 </ul>
-<div class="admonition warning">
-<p class="admonition-title">Warning</p>
-<p><strong> Bad code can become ambiguous due to human error. However, to a machine, it remains unambiguous. </strong>  When this occurs, the program might exhibit unexpected behavior, which is referred to as a <strong>bug!</strong></p>
-</div>
+<p>It’s important to note that while programming languages are designed for precision, logical errors can still occur, leading to unexpected program behavior. These are commonly referred to as <strong>bugs</strong>!</p>
 </section>
 </section>
 <section id="features-of-python">
 <h2><span class="section-number">1.1.5. </span>Features of Python<a class="headerlink" href="#features-of-python" title="Link to this heading">#</a></h2>
-<p>Python is</p>
+<p>Python is a popular choice for beginners and experienced developers alike due to its clear syntax and powerful capabilities.</p>
+<p>Python is:</p>
 <ul class="simple">
-<li><p><strong>High-level language:</strong></p>
-<ul>
-<li><p>A low-level language provides less abstraction than high-level languages and is closer to the actual machine language.</p></li>
-</ul>
-</li>
-<li><p><strong>Interpreted language:</strong></p>
-<ul>
-<li><p>Technically, Python employs a hybrid compiling/interpreting process. The Python source code in the module file (the <code class="docutils literal notranslate"><span class="pre">.py</span></code> file) is compiled into more primitive instructions known as <code class="docutils literal notranslate"><span class="pre">byte</span> <span class="pre">code</span></code>. This byte code (the <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> file) is subsequently interpreted. The presence of a <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> file enhances the speed of module execution on subsequent runs. If this file is deleted, Python will regenerate it.</p></li>
-</ul>
-</li>
-<li><p><strong>Object-oriented language:</strong></p>
-<ul>
-<li><p>It combines data and the corresponding instructions for data manipulation into a single package.</p></li>
-</ul>
-</li>
-<li><p><strong>Easy to learn:</strong></p>
-<ul>
-<li><p>Python’s syntax is simple, making it easy to understand and read.</p></li>
-</ul>
-</li>
-<li><p><strong>Versatile:</strong></p>
-<ul>
-<li><p>Python can be used for various purposes such as web development, machine learning, and cloud administration.</p></li>
-</ul>
-</li>
-<li><p><strong>Popular:</strong></p>
-<ul>
-<li><p>It boasts numerous third-party packages that extend its functionality, particularly in the realm of data science.</p></li>
-</ul>
-</li>
+<li><p><strong>High-level language</strong></p></li>
+<li><p><strong>Interpreted language</strong>: Python employs a hybrid compiling/interpreting process. The Python source code in the module file (the <code class="docutils literal notranslate"><span class="pre">.py</span></code> file) is compiled into more primitive instructions known as <code class="docutils literal notranslate"><span class="pre">byte</span> <span class="pre">code</span></code>. This byte code (the <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> file) is subsequently interpreted. The <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> file is optional and is generated when the program is run or imported. If the <code class="docutils literal notranslate"><span class="pre">.pyc</span></code> file is deleted or not present, Python will recompile the source code into bytecode.</p></li>
+<li><p><strong>Object-oriented language</strong>: Python is also a multi-paradigm language, supporting procedural and functional programming styles.</p></li>
+<li><p><strong>Dynamically typed</strong>: Variables do not need explicit type declarations.</p></li>
+<li><p><strong>Garbage-collected</strong>: Python automatically manages memory allocation and deallocation.</p></li>
+<li><p><strong>Easy to learn</strong>: Python’s syntax is simple, making it easy to understand and read.</p></li>
+<li><p><strong>Versatile</strong>: Python can be used for various purposes such as web development, machine learning, and cloud administration.</p></li>
+<li><p><strong>Popular</strong>: It boasts numerous third-party packages that extend its functionality, particularly in the realm of data science.</p></li>
 </ul>
 </section>
 <section id="using-python">
 <h2><span class="section-number">1.1.6. </span>Using Python<a class="headerlink" href="#using-python" title="Link to this heading">#</a></h2>
-<p>There are four ways in which you can use Python. We will demonstrate how to utilize all four methods, with a primary focus on Jupyter Notebook and Microsoft Visual Code</p>
+<p>There are four ways to use Python. We will demonstrate how to utilize all four methods, with a primary focus on Jupyter Notebook and Microsoft Visual Studio Code.</p>
 <section id="a-basic-python-program">
 <h3><span class="section-number">1.1.6.1. </span>A Basic Python Program<a class="headerlink" href="#a-basic-python-program" title="Link to this heading">#</a></h3>
-<ul class="simple">
-<li><p>Please install <a class="reference external" href="https://www.anaconda.com/products/distribution">Anaconda Python Distribution</a></p></li>
-</ul>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span><span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<p>Please install <a class="reference external" href="https://www.anaconda.com/products/distribution">Anaconda Python Distribution</a>.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
-<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
     <span class="n">output_string</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;The output of add(</span><span class="si">{</span><span class="n">x</span><span class="si">}</span><span class="s1">, </span><span class="si">{</span><span class="n">y</span><span class="si">}</span><span class="s1">) is </span><span class="si">{</span><span class="n">result</span><span class="si">}</span><span class="s1">.&#39;</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">output_string</span><span class="p">)</span>
 
-<span class="k">if</span> <span class="vm">__name__</span><span class="o">==</span><span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
+<span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s1">&#39;__main__&#39;</span><span class="p">:</span>
     <span class="n">main</span><span class="p">()</span>
 </pre></div>
 </div>
-<ul class="simple">
-<li><p>By convention, the statements of a program are often placed in a function called <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p></li>
-</ul>
+<p>By convention, the statements of a program are often placed in a function called <code class="docutils literal notranslate"><span class="pre">main()</span></code>.</p>
+</section>
+<section id="ways-to-use-python">
+<h3><span class="section-number">1.1.6.2. </span>Ways to Use Python<a class="headerlink" href="#ways-to-use-python" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p>Command Line</p></li>
-<li><p>IDLE</p></li>
-<li><p>Jupyter Notebook</p></li>
-<li><p>Microsoft Visual Code</p>
+<li><p>Command Line: For running quick scripts and executing programs directly.</p></li>
+<li><p>IDLE: A simple integrated development environment (IDE) often used by beginners.</p></li>
+<li><p>Jupyter Notebook: An interactive environment ideal for data analysis, visualization, and sharing code.</p></li>
+<li><p>Microsoft Visual Studio Code: A powerful and versatile code editor with excellent extensions for Python development.</p>
 <ol class="arabic simple">
-<li><p>Recommended Packages</p>
-<ol class="arabic simple">
+<li><p>Python (official extension for Python development)</p></li>
+<li><p>Pylance (for better IntelliSense and type checking)</p></li>
+<li><p>Jupyter (for running Jupyter Notebooks in VS Code)</p></li>
 <li><p>File Utils</p></li>
 <li><p>Markdown All in One</p></li>
 <li><p>SQLite Viewer</p></li>
 </ol>
 </li>
-</ol>
-</li>
+<li><p>Docker + Anaconda: For creating consistent and isolated development environments.</p></li>
 </ol>
 </section>
+<section id="setting-up-a-local-development-environment-docker-anaconda">
+<h3><span class="section-number">1.1.6.3. </span>Setting up a Local Development Environment (Docker + Anaconda)<a class="headerlink" href="#setting-up-a-local-development-environment-docker-anaconda" title="Link to this heading">#</a></h3>
+<p>We will be setting up a local development environment using Docker and Anaconda. This will ensure that everything I do, you can reproduce on your machine without version conflicts.</p>
+<p>Linux is an essential skill for data engineering, data science, and MLOps. Most production systems, cloud services, and orchestration platforms run on Linux, and many tools are designed and tested primarily for Linux environments. We are using containers so that everyone becomes familiar with Linux commands and workflows while working in a consistent, reproducible setup.</p>
+<section id="create-the-project-folder">
+<h4><span class="section-number">1.1.6.3.1. </span>1. Create the project folder<a class="headerlink" href="#create-the-project-folder" title="Link to this heading">#</a></h4>
+<p>We will keep everything in one place and use a shared folder that maps to your host.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>anaconda-ubuntu
+<span class="nb">cd</span><span class="w"> </span>anaconda-ubuntu
+mkdir<span class="w"> </span>shared_folder
+</pre></div>
+</div>
+</section>
+<section id="add-the-dockerfile-and-docker-compose-yml">
+<h4><span class="section-number">1.1.6.3.2. </span>2. Add the Dockerfile and docker-compose.yml<a class="headerlink" href="#add-the-dockerfile-and-docker-compose-yml" title="Link to this heading">#</a></h4>
+<p>Create two files in the anaconda-ubuntu folder with the following contents. Each line includes a brief explanation.</p>
+<p>Dockerfile:</p>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">ubuntu:24.04</span><span class="w">                                                  </span><span class="c"># Use Ubuntu 24.04 LTS (Noble Numbat) as the base image</span>
+
+<span class="k">ENV</span><span class="w"> </span><span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive<span class="w">                                 </span><span class="c"># Prevent interactive prompts during package installs</span>
+
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\ </span><span class="w">                                           </span>#<span class="w"> </span>Update<span class="w"> </span>apt<span class="w"> </span>package<span class="w"> </span>index
+<span class="w">    </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--no-install-recommends<span class="w"> </span><span class="se">\ </span><span class="w">                  </span>#<span class="w"> </span>Install<span class="w"> </span>packages<span class="w"> </span>without<span class="w"> </span>optional<span class="w"> </span>recommendations
+<span class="w">        </span>wget<span class="w"> </span><span class="se">\ </span><span class="w">                                                    </span>#<span class="w"> </span>Downloader<span class="w"> </span>to<span class="w"> </span>fetch<span class="w"> </span>the<span class="w"> </span>Anaconda<span class="w"> </span>installer
+<span class="w">        </span>curl<span class="w"> </span><span class="se">\ </span><span class="w">                                                    </span>#<span class="w"> </span>Alternative<span class="w"> </span>downloader<span class="w"> </span><span class="k">for</span><span class="w"> </span>future<span class="w"> </span>needs
+<span class="w">        </span>ca-certificates<span class="w"> </span><span class="se">\ </span><span class="w">                                         </span>#<span class="w"> </span>SSL<span class="w"> </span>certificates<span class="w"> </span><span class="k">for</span><span class="w"> </span>secure<span class="w"> </span>HTTPS<span class="w"> </span>downloads
+<span class="w">        </span>zip<span class="w"> </span><span class="se">\ </span><span class="w">                                                     </span>#<span class="w"> </span>Zip<span class="w"> </span>utility
+<span class="w">        </span>less<span class="w"> </span><span class="se">\ </span><span class="w">                                                    </span>#<span class="w"> </span>Pager<span class="w"> </span><span class="k">for</span><span class="w"> </span>viewing<span class="w"> </span>files
+<span class="w">        </span>vim<span class="w"> </span><span class="se">\ </span><span class="w">                                                     </span>#<span class="w"> </span>Text<span class="w"> </span>editor
+<span class="w">        </span>bzip2<span class="w"> </span><span class="se">\ </span><span class="w">                                                   </span>#<span class="w"> </span>Compression<span class="w"> </span>utility<span class="w"> </span>used<span class="w"> </span>by<span class="w"> </span>some<span class="w"> </span>archives
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*<span class="w">                                 </span>#<span class="w"> </span>Clean<span class="w"> </span>apt<span class="w"> </span>cache<span class="w"> </span>to<span class="w"> </span>reduce<span class="w"> </span>final<span class="w"> </span>image<span class="w"> </span>size
+
+<span class="k">RUN</span><span class="w"> </span>wget<span class="w"> </span>-q<span class="w"> </span><span class="se">\ </span><span class="w">                                                     </span>#<span class="w"> </span>Quiet<span class="w"> </span>download<span class="w"> </span>to<span class="w"> </span>reduce<span class="w"> </span>log<span class="w"> </span>noise
+<span class="w">    </span>https://repo.anaconda.com/archive/Anaconda3-2025.06-1-Linux-x86_64.sh<span class="w"> </span><span class="se">\ </span><span class="w"> </span>#<span class="w"> </span>Requested<span class="w"> </span>Anaconda<span class="w"> </span>installer<span class="w"> </span>URL
+<span class="w">    </span>-O<span class="w"> </span>/tmp/anaconda.sh<span class="w">                                            </span>#<span class="w"> </span>Save<span class="w"> </span>the<span class="w"> </span>installer<span class="w"> </span>to<span class="w"> </span>/tmp/anaconda.sh
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>bash<span class="w"> </span>/tmp/anaconda.sh<span class="w"> </span>-b<span class="w"> </span>-p<span class="w"> </span>/root/anaconda3<span class="w">                 </span>#<span class="w"> </span>Run<span class="w"> </span>installer<span class="w"> </span>silently<span class="w"> </span><span class="o">(</span>-b<span class="o">)</span>,<span class="w"> </span>install<span class="w"> </span>to<span class="w"> </span>/root/anaconda3
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>/tmp/anaconda.sh<span class="w">                                      </span>#<span class="w"> </span>Remove<span class="w"> </span>the<span class="w"> </span>installer<span class="w"> </span>to<span class="w"> </span>keep<span class="w"> </span>the<span class="w"> </span>image<span class="w"> </span>small
+
+<span class="k">ENV</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/root/anaconda3/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">                             </span>#<span class="w"> </span>Add<span class="w"> </span>conda<span class="w"> </span>and<span class="w"> </span>python<span class="w"> </span>to<span class="w"> </span>PATH<span class="w"> </span><span class="k">for</span><span class="w"> </span>all<span class="w"> </span>subsequent<span class="w"> </span>commands
+
+<span class="k">RUN</span><span class="w"> </span>conda<span class="w"> </span>init<span class="w"> </span>bash<span class="w">                                                </span>#<span class="w"> </span>Initialize<span class="w"> </span>conda<span class="w"> </span><span class="k">for</span><span class="w"> </span>bash<span class="w"> </span>shells<span class="w"> </span><span class="o">(</span>adds<span class="w"> </span>shell<span class="w"> </span>hook<span class="w"> </span>configuration<span class="o">)</span>
+
+<span class="k">SHELL</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/bin/bash&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-c&quot;</span><span class="p">]</span><span class="w">                                          </span>#<span class="w"> </span>Use<span class="w"> </span>bash<span class="w"> </span><span class="k">for</span><span class="w"> </span>subsequent<span class="w"> </span>RUN/CMD<span class="w"> </span>so<span class="w"> </span>conda<span class="w"> </span>initialization<span class="w"> </span>works
+
+<span class="k">RUN</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/shared_folder<span class="w">                                        </span>#<span class="w"> </span>Ensure<span class="w"> </span>the<span class="w"> </span>shared<span class="w"> </span>working<span class="w"> </span>directory<span class="w"> </span>exists<span class="w"> </span>inside<span class="w"> </span>the<span class="w"> </span>image
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/shared_folder                                             # Set /shared_folder as the default working directory</span>
+
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tail&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/dev/null&quot;</span><span class="p">]</span><span class="w">                                    </span>#<span class="w"> </span>Keep<span class="w"> </span>the<span class="w"> </span>container<span class="w"> </span>running<span class="w"> </span><span class="o">(</span>you<span class="w"> </span>will<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>into<span class="w"> </span>it<span class="w"> </span>to<span class="w"> </span>work<span class="o">)</span>
+</pre></div>
+</div>
+<p>docker-compose.yml:</p>
+<div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">services</span><span class="p">:</span><span class="w"> </span><span class="c1"># Declare the services to run</span>
+<span class="w">  </span><span class="nt">ubuntu-service</span><span class="p">:</span><span class="w"> </span><span class="c1"># Name of the development service</span>
+<span class="w">    </span><span class="nt">build</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">.</span><span class="w"> </span><span class="c1"># Build the Dockerfile in the current directory</span>
+<span class="w">    </span><span class="nt">container_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my-dev01</span><span class="w"> </span><span class="c1"># Set a predictable container name</span>
+<span class="w">    </span><span class="nt">volumes</span><span class="p">:</span><span class="w"> </span><span class="c1"># Define storage mounts</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">./shared_folder:/shared_folder</span><span class="w"> </span><span class="c1"># Map host ./shared_folder to /shared_folder in the container for file sharing</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ubuntu-data:/root</span><span class="w"> </span><span class="c1"># Named volume to persist /root (including conda environments and settings)</span>
+<span class="w">    </span><span class="nt">ports</span><span class="p">:</span><span class="w"> </span><span class="c1"># Expose container ports on the host</span>
+<span class="w">      </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="s">&quot;8888:8888&quot;</span><span class="w"> </span><span class="c1"># Map host port 8888 to container port 8888 for Jupyter access</span>
+<span class="w">    </span><span class="nt">stdin_open</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># Keep STDIN open for interactive sessions</span>
+<span class="w">    </span><span class="nt">tty</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">true</span><span class="w"> </span><span class="c1"># Allocate a TTY to improve interactive shell experience</span>
+
+<span class="nt">volumes</span><span class="p">:</span><span class="w"> </span><span class="c1"># Define named volumes</span>
+<span class="w">  </span><span class="nt">ubuntu-data</span><span class="p">:</span><span class="w"> </span><span class="c1"># Volume that persists data across rebuilds and restarts</span>
+</pre></div>
+</div>
+</section>
+<section id="build-the-image">
+<h4><span class="section-number">1.1.6.3.3. </span>3. Build the image<a class="headerlink" href="#build-the-image" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>build
+<span class="c1"># docker-compose build</span>
+</pre></div>
+</div>
+</section>
+<section id="start-the-container">
+<h4><span class="section-number">1.1.6.3.4. </span>4. Start the container<a class="headerlink" href="#start-the-container" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span>compose<span class="w"> </span>up<span class="w"> </span>-d
+<span class="c1"># or:</span>
+<span class="c1"># docker-compose up -d</span>
+</pre></div>
+</div>
+</section>
+<section id="open-a-shell-in-the-container-you-will-land-in-shared-folder">
+<h4><span class="section-number">1.1.6.3.5. </span>5. Open a shell in the container (you will land in /shared_folder)<a class="headerlink" href="#open-a-shell-in-the-container-you-will-land-in-shared-folder" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>docker<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>-it<span class="w"> </span>my-dev01<span class="w"> </span>/bin/bash
+</pre></div>
+</div>
+</section>
+<section id="verify-anaconda">
+<h4><span class="section-number">1.1.6.3.6. </span>6. Verify Anaconda<a class="headerlink" href="#verify-anaconda" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>--version
+python<span class="w"> </span>--version
+</pre></div>
+</div>
+</section>
+<section id="create-a-python-3-13-environment-and-install-packages">
+<h4><span class="section-number">1.1.6.3.7. </span>7. Create a Python 3.13 environment and install packages<a class="headerlink" href="#create-a-python-3-13-environment-and-install-packages" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>py313<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.13<span class="w"> </span>-y
+conda<span class="w"> </span>activate<span class="w"> </span>py313
+pip<span class="w"> </span>install<span class="w"> </span>jupyter<span class="w"> </span>pandas<span class="w"> </span>pyarrow<span class="w"> </span>requests<span class="w"> </span>seaborn<span class="w"> </span>matplotlib
+</pre></div>
+</div>
+<p>If conda activate does not work immediately:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/.bashrc
+conda<span class="w"> </span>activate<span class="w"> </span>py313
+</pre></div>
+</div>
+</section>
+<section id="launch-jupyter-notebook-already-in-shared-folder">
+<h4><span class="section-number">1.1.6.3.8. </span>8. Launch Jupyter Notebook (already in /shared_folder)<a class="headerlink" href="#launch-jupyter-notebook-already-in-shared-folder" title="Link to this heading">#</a></h4>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>notebook<span class="w"> </span>--ip<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="o">=</span><span class="m">8888</span><span class="w"> </span>--no-browser<span class="w"> </span>--allow-root
+</pre></div>
+</div>
+</section>
+</section>
+</section>
+<section id="about-docker">
+<h2><span class="section-number">1.1.7. </span>About Docker<a class="headerlink" href="#about-docker" title="Link to this heading">#</a></h2>
+<section id="docker-essentials">
+<h3><span class="section-number">1.1.7.1. </span>Docker Essentials<a class="headerlink" href="#docker-essentials" title="Link to this heading">#</a></h3>
+<p>Docker packages applications into isolated <strong>containers</strong>.</p>
+<ul class="simple">
+<li><p><strong>Images:</strong> A <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> defines an <strong>image</strong>, which is a blueprint for your app. Each <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> instruction creates a read-only <strong>layer</strong>.</p></li>
+<li><p><strong>Containers:</strong> Running an image creates a <strong>container</strong>, an isolated instance of your application.</p></li>
+<li><p><strong>Isolation:</strong> Containers use Linux features (namespaces, cgroups) to keep app processes, network, and resources separate.</p></li>
+<li><p><strong>Networking:</strong> Docker provides virtual networking. Use <code class="docutils literal notranslate"><span class="pre">-p</span></code> to map ports between your host and a container.</p></li>
+<li><p><strong>Persistence:</strong> Container changes are temporary. Use <strong>volumes</strong> to store data persistently outside the container.</p></li>
+<li><p><strong>Efficiency:</strong> Docker reuses identical image layers (via content-based hashes), speeding up builds and uploads.</p></li>
+</ul>
+</section>
+<section id="docker-layers-caching-basics">
+<h3><span class="section-number">1.1.7.2. </span>Docker Layers &amp; Caching Basics<a class="headerlink" href="#docker-layers-caching-basics" title="Link to this heading">#</a></h3>
+<ul class="simple">
+<li><p><strong>Layers are Building Blocks:</strong> Each instruction in your <code class="docutils literal notranslate"><span class="pre">Dockerfile</span></code> (like <code class="docutils literal notranslate"><span class="pre">FROM</span></code>, <code class="docutils literal notranslate"><span class="pre">RUN</span></code>, <code class="docutils literal notranslate"><span class="pre">COPY</span></code>, <code class="docutils literal notranslate"><span class="pre">ENV</span></code>) creates a new, read-only layer.</p></li>
+<li><p><strong>Stacking Layers:</strong> These layers are stacked on top of each other to form your final Docker image.</p></li>
+<li><p><strong>Writable Top Layer:</strong> When you run a container from an image, a new, thin, writable layer is added on top. Any changes inside the running container go into this layer.</p></li>
+<li><p><strong>Caching for Speed:</strong> Docker intelligently caches these layers. If an instruction and its entire history of preceding layers are identical to a previous build, Docker reuses the cached layer instead of rebuilding it.</p></li>
+<li><p><strong>Order and Content Matter:</strong> For a layer to be reused, not only must the specific instruction be the same, but the content it operates on (e.g., files copied) and the order of all previous instructions must also be identical.</p></li>
+<li><p><strong>Efficiency:</strong> This caching makes builds much faster and reduces storage, as common layers can be shared across multiple images.</p></li>
+</ul>
+</section>
+</section>
+<section id="essential-linux-commands">
+<h2><span class="section-number">1.1.8. </span>Essential Linux Commands<a class="headerlink" href="#essential-linux-commands" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ls</span></code></strong>: List directory contents.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ls</span> <span class="pre">-alh</span></code>: Shows all files, detailed info, and human-readable sizes.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">cd</span></code></strong>: Change directory.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">..</span></code>: Go up one level.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">~</span></code>: Go to home directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cd</span> <span class="pre">-</span></code>: Go to the previous directory.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">pwd</span></code></strong>: Print Working Directory (shows your current location).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">mkdir</span></code> / <code class="docutils literal notranslate"><span class="pre">rmdir</span></code></strong>: Create / Remove directories.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">-p</span></code>: Creates parent directories as needed.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">cp</span></code> / <code class="docutils literal notranslate"><span class="pre">mv</span></code></strong>: Copy / Move files and directories.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">cp</span> <span class="pre">-r</span></code>: Copies directories recursively.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">mv</span></code>: Also used for renaming files/directories.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">rm</span></code></strong>: Remove files or directories.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-r</span></code>: Removes directories recursively.</p></li>
+<li><p><strong>Caution:</strong> <code class="docutils literal notranslate"><span class="pre">rm</span> <span class="pre">-rf</span></code> forces removal and should be used with extreme care.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">cat</span></code> / <code class="docutils literal notranslate"><span class="pre">less</span></code></strong>: View file contents.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">less</span></code>: Allows paging, scrolling, and searching (<code class="docutils literal notranslate"><span class="pre">/pattern</span></code>).</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">grep</span></code></strong>: Search for text patterns in files.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-R</span> <span class="pre">&quot;pattern&quot;</span> <span class="pre">.</span></code>: Searches recursively in the current directory.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">grep</span> <span class="pre">-n</span></code>: Shows line numbers.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">find</span></code></strong>: Locate files based on criteria (name, type, size, time).</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">find</span> <span class="pre">.</span> <span class="pre">-name</span> <span class="pre">&quot;*.py&quot;</span> <span class="pre">-type</span> <span class="pre">f</span></code>: Finds all Python files in the current directory and subdirectories.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">ps</span></code> / <code class="docutils literal notranslate"><span class="pre">top</span></code></strong>: Monitor running processes.</p>
+<ul>
+<li><p><code class="docutils literal notranslate"><span class="pre">ps</span> <span class="pre">aux</span> <span class="pre">|</span> <span class="pre">grep</span> <span class="pre">[process_name]</span></code>: Find specific processes.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">top</span></code> (or <code class="docutils literal notranslate"><span class="pre">htop</span></code>): Interactive, real-time process monitoring.</p></li>
+</ul>
+</li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">nano</span></code> / <code class="docutils literal notranslate"><span class="pre">vim</span></code></strong>: Terminal-based text editors.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">tail</span> <span class="pre">-f</span> <span class="pre">[logfile]</span></code></strong>: View a log file in real-time as it grows.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">du</span> <span class="pre">-sh</span> <span class="pre">.</span></code></strong>: Summarize disk usage of the current directory (human-readable).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">df</span> <span class="pre">-h</span></code></strong>: Show disk space usage for mounted filesystems (human-readable).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">curl</span></code> / <code class="docutils literal notranslate"><span class="pre">wget</span></code></strong>: Download files or fetch data from URLs.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">tar</span></code></strong>: Archive and extract files (e.g., <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-czf</span> <span class="pre">archive.tgz</span> <span class="pre">dir/</span></code> to compress, <code class="docutils literal notranslate"><span class="pre">tar</span> <span class="pre">-xzf</span> <span class="pre">archive.tgz</span></code> to extract).</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">[command]</span></code></strong>: Shows the full path to an executable command.</p></li>
+<li><p><strong><code class="docutils literal notranslate"><span class="pre">history</span></code></strong>: Displays your command history.</p></li>
+</ul>
 </section>
 </section>
 
@@ -745,8 +943,26 @@ store the result in to location 2003
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#features-of-python">1.1.5. Features of Python</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#using-python">1.1.6. Using Python</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#a-basic-python-program">1.1.6.1. A Basic Python Program</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#ways-to-use-python">1.1.6.2. Ways to Use Python</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#setting-up-a-local-development-environment-docker-anaconda">1.1.6.3. Setting up a Local Development Environment (Docker + Anaconda)</a><ul class="nav section-nav flex-column">
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-the-project-folder">1.1.6.3.1. 1. Create the project folder</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#add-the-dockerfile-and-docker-compose-yml">1.1.6.3.2. 2. Add the Dockerfile and docker-compose.yml</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-image">1.1.6.3.3. 3. Build the image</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#start-the-container">1.1.6.3.4. 4. Start the container</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#open-a-shell-in-the-container-you-will-land-in-shared-folder">1.1.6.3.5. 5. Open a shell in the container (you will land in /shared_folder)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-anaconda">1.1.6.3.6. 6. Verify Anaconda</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-python-3-13-environment-and-install-packages">1.1.6.3.7. 7. Create a Python 3.13 environment and install packages</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-jupyter-notebook-already-in-shared-folder">1.1.6.3.8. 8. Launch Jupyter Notebook (already in /shared_folder)</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#about-docker">1.1.7. About Docker</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-essentials">1.1.7.1. Docker Essentials</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#docker-layers-caching-basics">1.1.7.2. Docker Layers &amp; Caching Basics</a></li>
+</ul>
+</li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#essential-linux-commands">1.1.8. Essential Linux Commands</a></li>
 </ul>
   </nav></div>
 
