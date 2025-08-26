@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../_static/styles/sphinx-book-theme.css?v=eba8b062" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css?v=6644e6bb" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -475,7 +475,11 @@ document.write(`
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-content-and-grading">Course Content and Grading</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quizzes">Quizzes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-assignments">Programming Assignments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-projects">Mini-Projects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-projects">Mini-Projects</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nature">Nature</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-and-grading">Platform and Grading</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project-overview">Final Project Overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
 </ul>
@@ -498,73 +502,85 @@ document.write(`
                   
   <section class="tex2jax_ignore mathjax_ignore" id="eas-503-python-for-data-scientists">
 <h1>EAS 503: Python for Data Scientists<a class="headerlink" href="#eas-503-python-for-data-scientists" title="Link to this heading">#</a></h1>
-<p>Welcome to <strong>EAS 503</strong>! This course is offered by the Department of Engineering &amp; Applied Sciences at the University at Buffalo.</p>
+<p>Welcome to <strong>EAS 503</strong>! This course is offered by the Department of Engineering and Applied Sciences at the University at Buffalo.</p>
 <hr class="docutils" />
 <section id="course-information">
 <h2>Course Information<a class="headerlink" href="#course-information" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Course Name:</strong> Python for Data Scientists</p></li>
-<li><p><strong>Course Number:</strong> EAS 503</p></li>
+<li><p><strong>Course name:</strong> Python for Data Scientists</p></li>
+<li><p><strong>Course number:</strong> EAS 503</p></li>
 <li><p><strong>Level:</strong> Graduate</p></li>
 <li><p><strong>Credits:</strong> 3</p></li>
-<li><p><strong>Prerequisite:</strong> None</p></li>
+<li><p><strong>Prerequisites:</strong> None</p></li>
 </ul>
 <section id="description">
 <h3>Description<a class="headerlink" href="#description" title="Link to this heading">#</a></h3>
-<p>This course provides a comprehensive introduction to the essential tools and techniques used in data science, making it suitable for both beginners starting their data-centric journey and experienced programmers seeking to expand their expertise. Topics include Python programming, SQL database management, data visualization, and foundational concepts in machine learning, equipping students with the skills necessary to analyze, manage, and interpret data effectively.</p>
+<p>This course provides a comprehensive introduction to essential tools and techniques in data science. It is suitable for beginners starting their data-centric journey and for experienced programmers seeking to expand their expertise. Topics include Python programming, SQL database management, data visualization, and foundational machine learning concepts, equipping students with the skills to analyze, manage, and interpret data effectively.</p>
 </section>
 <section id="registration">
 <h3>Registration<a class="headerlink" href="#registration" title="Link to this heading">#</a></h3>
-<p>Students outside the MS and MPS Data Science programs should submit a force registration request: <a class="reference external" href="https://academics.eng.buffalo.edu/">Force Registration Request</a>.</p>
+<p>Students outside the MS and MPS in Data Science programs should submit a force registration request: <a class="reference external" href="https://academics.eng.buffalo.edu/">Force Registration Request</a>.</p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="course-content-and-grading">
 <h2>Course Content and Grading<a class="headerlink" href="#course-content-and-grading" title="Link to this heading">#</a></h2>
 <ul class="simple">
-<li><p><strong>Quizzes (7):</strong> 25%</p></li>
-<li><p><strong>Programming Assignments (7):</strong> 45%</p></li>
-<li><p><strong>Individual Mini-Projects (2):</strong> 20%</p></li>
-<li><p><strong>Individual Final Project (1):</strong> 10%</p></li>
+<li><p><strong>Quizzes (12–14):</strong> 10%</p></li>
+<li><p><strong>Programming assignments (7):</strong> 45%</p></li>
+<li><p><strong>Individual mini-projects (2):</strong> 30%</p></li>
+<li><p><strong>Individual final project (1):</strong> 15%</p></li>
 </ul>
 </section>
 <hr class="docutils" />
 <section id="quizzes">
 <h2>Quizzes<a class="headerlink" href="#quizzes" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><strong>Format:</strong> A total of 7 open-note quizzes will be completed via UB Learns.</p></li>
+<li><p><strong>Format:</strong> Weekly open-note quizzes completed via UB Learns.</p></li>
 <li><p><strong>Availability:</strong> Quizzes are posted on Saturdays.</p></li>
-<li><p><strong>Completion Window:</strong> You have three days to complete each quiz after it is posted.</p></li>
-<li><p><strong>Time Limit:</strong> Each quiz must be completed within three hours of starting.</p></li>
-<li><p><strong>Academic Integrity:</strong> Collaboration is prohibited. Use only authorized resources (course website). Violations will result in a score of 0 and will be reported to the Office of Academic Integrity.</p></li>
+<li><p><strong>Completion window:</strong> You have three days to complete each quiz after it is posted.</p></li>
+<li><p><strong>Time limit:</strong> Each quiz must be completed within three hours of starting.</p></li>
+<li><p><strong>Academic integrity:</strong> Collaboration is prohibited. Use only authorized resources (course website). Violations will result in a score of 0 and will be reported to the Office of Academic Integrity.</p></li>
 <li><p><strong>Respondus LockDown Browser:</strong> Quizzes must be taken using this browser. Complete the practice quiz to familiarize yourself.</p></li>
-<li><p><strong>Camera Requirement:</strong> A functional camera is required. Ensure you remain in the frame throughout the quiz.</p></li>
-<li><p><strong>UB ID Verification:</strong> Display your UB ID before starting the quiz.</p></li>
-<li><p><strong>Location Flexibility:</strong> You may take the quiz from any location, but collaboration is strictly prohibited.</p></li>
+<li><p><strong>Camera requirement:</strong> A functional camera is required. Remain in frame throughout the quiz.</p></li>
+<li><p><strong>UB ID verification:</strong> Display your UB ID before starting the quiz.</p></li>
+<li><p><strong>Location:</strong> You may take the quiz from any location, but collaboration is strictly prohibited.</p></li>
 </ol>
-<p>These policies ensure fairness and academic integrity. If you have questions, contact the instructor.</p>
 </section>
 <hr class="docutils" />
 <section id="programming-assignments">
 <h2>Programming Assignments<a class="headerlink" href="#programming-assignments" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><strong>Codio License:</strong> A $48 Codio license is required for completing assignments.</p></li>
-<li><p><strong>Platform:</strong> Assignments are assigned and graded exclusively on Codio.</p></li>
+<li><p><strong>Codio license:</strong> A $48 Codio license is required.</p></li>
+<li><p><strong>Platform:</strong> Assignments are distributed and graded exclusively on Codio.</p></li>
 <li><p><strong>Submission:</strong> Submit assignments via Codio. Submissions on UB Learns will not be graded.</p></li>
 <li><p><strong>Retries:</strong> Unlimited retries are allowed until the deadline.</p></li>
-<li><p><strong>Grade Contestation:</strong> You have seven days after grading to contest your grade.</p></li>
+<li><p><strong>Grade contestation:</strong> You have seven days after grading to contest your grade.</p></li>
 </ol>
-<p>Programming assignments are designed to enhance your practical skills and reinforce theoretical concepts. Contact the instructor for assistance if needed.</p>
+<p>Programming assignments are designed to build practical skills and reinforce key concepts.</p>
 </section>
 <hr class="docutils" />
 <section id="mini-projects">
 <h2>Mini-Projects<a class="headerlink" href="#mini-projects" title="Link to this heading">#</a></h2>
-<ol class="arabic simple">
-<li><p><strong>Nature:</strong> Mini-projects are extended, more complex versions of programming assignments.</p></li>
-<li><p><strong>Platform:</strong> Mini-projects are assigned and graded on Codio.</p></li>
-<li><p><strong>Grade Contestation:</strong> You have seven days after grading to contest your grade.</p></li>
-</ol>
-<p>Mini-projects provide deeper engagement with the material and real-world applications. Contact the instructor for guidance if needed.</p>
+<section id="nature">
+<h3>Nature<a class="headerlink" href="#nature" title="Link to this heading">#</a></h3>
+<p>Mini-projects are extended, more complex programming assignments designed to assess applied skills and multi-component problem-solving. There will be two mini-projects in total.</p>
+</section>
+<section id="platform-and-grading">
+<h3>Platform and Grading<a class="headerlink" href="#platform-and-grading" title="Link to this heading">#</a></h3>
+<p>Each mini-project is assigned and submitted on Codio and is graded in two parts:</p>
+<ul class="simple">
+<li><p><strong>Automated component (Codio):</strong> Automated tests and checks run on your submission.</p></li>
+<li><p><strong>Manual component:</strong> A live presentation to a TA or grader. For the manual component, you must deploy a Streamlit app containerized with Docker. During the presentation, be prepared to:</p>
+<ul>
+<li><p>Demonstrate the deployed Streamlit app and its functionality.</p></li>
+<li><p>For projects that include a database: show that the app connects to and uses the database correctly.</p></li>
+<li><p>Provide access to the project repository and Docker artifacts (Dockerfile and/or docker-compose), or otherwise run the container for the grader to inspect.</p></li>
+</ul>
+</li>
+</ul>
+<p>Mini-projects provide deeper engagement with the material and real-world applications.</p>
+</section>
 </section>
 <hr class="docutils" />
 <section id="final-project-overview">
@@ -573,29 +589,29 @@ document.write(`
 <section id="requirements">
 <h3>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h3>
 <ol class="arabic simple">
-<li><p><strong>Data Selection:</strong> Choose a dataset with over 1,000 rows in CSV format for a classification problem.</p></li>
-<li><p><strong>Data Parsing:</strong> Use basic Python (no Pandas) for data parsing.</p></li>
-<li><p><strong>Normalization and Database Loading:</strong> Normalize data and load it into a database (TA approval required).</p></li>
-<li><p><strong>Data Querying:</strong> Use SQL join statements to query data and load it into Pandas.</p></li>
-<li><p><strong>Machine Learning:</strong> Perform classification tasks using Python ML libraries.</p></li>
-<li><p><strong>Experiment Tracking:</strong> Use MLFlow and DagsHub for experiment tracking.</p></li>
+<li><p><strong>Data selection:</strong> Choose a CSV dataset with over 1,000 rows for a classification problem.</p></li>
+<li><p><strong>Data parsing:</strong> Use basic Python (no Pandas) for data parsing.</p></li>
+<li><p><strong>Normalization and database loading:</strong> Normalize the data and load it into a database (TA approval required).</p></li>
+<li><p><strong>Data querying:</strong> Use SQL JOIN statements to query the data and load it into Pandas.</p></li>
+<li><p><strong>Machine learning:</strong> Perform classification tasks using Python ML libraries.</p></li>
+<li><p><strong>Experiment tracking:</strong> Use MLflow and DagsHub for experiment tracking.</p></li>
 <li><p><strong>Deployment:</strong> Deploy a Docker container for your classification pipeline.</p></li>
-<li><p><strong>User Interface:</strong> Create a Streamlit app for pipeline interaction.</p></li>
+<li><p><strong>User interface:</strong> Create a Streamlit app for pipeline interaction.</p></li>
 <li><p><strong>Presentation:</strong></p>
 <ul class="simple">
-<li><p>Host your project on a JupyterBook website.</p></li>
-<li><p>Record a 12-minute presentation following the rubric.</p></li>
+<li><p>Host your project on a Jupyter Book website.</p></li>
+<li><p>Deliver a live 12-minute presentation following the rubric.</p></li>
 </ul>
 </li>
-<li><p><strong>Submission Deadline:</strong></p>
+<li><p><strong>Submission deadline:</strong></p>
 <ul class="simple">
-<li><p><strong>Wednesday, Dec. 18, 2024, 11:59 PM</strong></p></li>
+<li><p>Wednesday, Dec. 17, 2024, 11:59 PM</p></li>
 <li><p>Submit the following on UB Learns:</p>
 <ul>
-<li><p>MLFlow/DagsHub experiments</p></li>
+<li><p>MLflow/DagsHub experiments</p></li>
 <li><p>Docker Hub link</p></li>
 <li><p>Streamlit app</p></li>
-<li><p>JupyterBook website</p></li>
+<li><p>Jupyter Book website</p></li>
 <li><p>Recorded presentation (UB Box link)</p></li>
 <li><p>Completed rubric checklist</p></li>
 </ul>
@@ -603,27 +619,25 @@ document.write(`
 </ul>
 </li>
 </ol>
-<p><a class="reference internal" href="#chapters/ML_Project_Plan.docx"><span class="xref myst">Download Requirements in Word Format</span></a></p>
+<p><a class="reference internal" href="#chapters/ML_Project_Plan.docx"><span class="xref myst">Download requirements in Word format</span></a></p>
 </section>
 </section>
 <hr class="docutils" />
 <section id="late-submission-policy">
 <h2>Late Submission Policy<a class="headerlink" href="#late-submission-policy" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><strong>Late Days Allocation:</strong> You have 10 late days for programming assignments and mini-projects.</p></li>
-<li><p><strong>Maximum Delay:</strong> No assignment can be submitted more than <strong>3 days</strong> after the due date.</p></li>
+<li><p><strong>Maximum delay:</strong> No assignment may be submitted more than three days after the due date.</p></li>
 </ol>
-<p>Use late days wisely to manage unexpected challenges. Contact the instructor for clarification if needed.</p>
 </section>
 <hr class="docutils" />
 <section id="course-resources">
 <h2>Course Resources<a class="headerlink" href="#course-resources" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><strong>Course Book:</strong> <a class="reference external" href="https://mkzia.github.io/eas503-book">Course Book</a></p></li>
-<li><p><strong>Lecture Materials:</strong> <a class="reference external" href="https://github.com/mkzia/eas503">Lecture Notebooks on GitHub</a></p></li>
+<li><p><strong>Course book:</strong> <a class="reference external" href="https://mkzia.github.io/eas503-book">Course Book</a></p></li>
+<li><p><strong>Lecture materials:</strong> <a class="reference external" href="https://github.com/mkzia/eas503">Lecture notebooks on GitHub</a></p></li>
 <li><p><strong>UB Learns:</strong></p>
 <ul class="simple">
-<li><p>Submit the final project report.</p></li>
+<li><p>Submit final project materials.</p></li>
 <li><p>Access course grades.</p></li>
 </ul>
 </li>
@@ -631,28 +645,29 @@ document.write(`
 <li><p><strong>Piazza:</strong></p>
 <ul class="simple">
 <li><p>Announcements and updates</p></li>
-<li><p>Instructor and TA queries</p></li>
+<li><p>Instructor and TA Q&amp;A</p></li>
 <li><p>Classmate interaction</p></li>
 <li><p>Lecture and solution recordings (pinned post)</p></li>
 <li><p>Office hours and deadlines (pinned post)</p></li>
 </ul>
 </li>
 </ol>
-<p>These resources are essential for your success. Engage actively with them and seek help when needed.</p>
+<p>Engage actively with these resources and seek help when needed.</p>
 </section>
 <hr class="docutils" />
 <section id="preparing-for-the-first-class">
 <h2>Preparing for the First Class<a class="headerlink" href="#preparing-for-the-first-class" title="Link to this heading">#</a></h2>
 <ol class="arabic simple">
-<li><p><strong>UB Learns:</strong> Confirm access to the EAS503 course page.</p></li>
-<li><p><strong>Course Book:</strong> Familiarize yourself with the <a class="reference external" href="https://mkzia.github.io/eas503-book">Course Book</a>.</p></li>
-<li><p><strong>Codio License:</strong> Obtain and log into Codio.</p></li>
-<li><p><strong>Piazza Login:</strong> Ensure access to Piazza for discussions and updates.</p></li>
-<li><p><strong>Software Installation:</strong></p>
+<li><p><strong>UB Learns:</strong> Confirm access to the EAS 503 course page.</p></li>
+<li><p><strong>Course book:</strong> Review the <a class="reference external" href="https://mkzia.github.io/eas503-book">Course Book</a>.</p></li>
+<li><p><strong>Codio license:</strong> Obtain and log into Codio.</p></li>
+<li><p><strong>Piazza:</strong> Ensure access to Piazza for discussions and updates.</p></li>
+<li><p><strong>Software installation:</strong></p>
 <ul class="simple">
 <li><p>Install <a class="reference external" href="https://www.anaconda.com/products/individual">Anaconda</a>.</p></li>
 <li><p>Install <a class="reference external" href="https://code.visualstudio.com/">Visual Studio Code</a>.</p></li>
-<li><p>For Windows users, install Python 3.12 from the App Store.</p></li>
+<li><p>For Windows users: install Python 3.13 from the Microsoft Store.</p></li>
+<li><p>Install <a class="reference external" href="https://docker.com">Docker</a>.</p></li>
 </ul>
 </li>
 </ol>
@@ -663,25 +678,23 @@ document.write(`
 <p>Academic integrity is a cornerstone of the university’s mission. Violations include:</p>
 <ol class="arabic simple">
 <li><p><strong>Collaboration:</strong> Sharing identical homework solutions results in zero points for all involved.</p></li>
-<li><p><strong>Online Platforms:</strong> Posting or viewing solutions on platforms like Chegg or Course Hero results in severe penalties, including course failure.</p></li>
-<li><p><strong>Codio Monitoring:</strong> Codio tracks keystrokes, external pastes, and time spent in error states. Complete all work within Codio to avoid violations.</p></li>
+<li><p><strong>Online platforms:</strong> Posting or viewing solutions on platforms such as Chegg or Course Hero results in severe penalties, including course failure.</p></li>
+<li><p><strong>Codio monitoring:</strong> Codio tracks keystrokes, external pastes, and time spent in error states. Complete all work within Codio to avoid violations.</p></li>
 </ol>
-<p><strong>Examples of Violations:</strong></p>
+<p><strong>Examples of violations:</strong></p>
 <ul class="simple">
 <li><p>Posting assignment questions online.</p></li>
 <li><p>Copying code from another student.</p></li>
 <li><p>Sharing access to your computer or accounts.</p></li>
 </ul>
-<p><strong>Submission of work indicates acceptance of the academic integrity policy.</strong></p>
-<p>For more details, refer to the <a class="reference external" href="https://www.buffalo.edu/grad/succeed/current-students/policy-library.html#academic-integrity">UB Graduate Academic Integrity Policy</a>.</p>
+<p><strong>Submission of work indicates acceptance of the academic integrity policy</strong>. For more details, refer to the <a class="reference external" href="https://www.buffalo.edu/grad/succeed/current-students/policy-library.html#academic-integrity">UB Graduate Academic Integrity Policy</a>.</p>
 </section>
-<hr class="docutils" />
 <section id="syllabus-review">
 <h2>Syllabus Review<a class="headerlink" href="#syllabus-review" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="NCvVmmJxRnjr" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
-#NCvVmmJxRnjr {
+<div class="output text_html"><div id="YLrLLZVZRmJD" data-shufflequestions="False" data-shuffleanswers="True" data-preserveresponses="false" data-numquestions="1000000" data-maxwidth="600" style="border-radius: 10px; text-align: left"><style>
+#YLrLLZVZRmJD {
    --jq-multiple-choice-bg: #345995;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -898,7 +911,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsNCvVmmJxRnjr=[
+</style></div><script type="application/javascript">var questionsYLrLLZVZRmJD=[
   {
     "question": "The course has a final exam",
     "type": "multiple_choice",
@@ -1050,28 +1063,6 @@ document.write(`
       {
         "answer": "7",
         "correct": true
-      }
-    ]
-  },
-  {
-    "question": "How many late days do you have at your disposal to submit programming assignments?",
-    "type": "multiple_choice",
-    "answers": [
-      {
-        "answer": "5",
-        "correct": false
-      },
-      {
-        "answer": "7",
-        "correct": false
-      },
-      {
-        "answer": "10",
-        "correct": true
-      },
-      {
-        "answer": "15",
-        "correct": false
       }
     ]
   },
@@ -2189,8 +2180,8 @@ function make_string(qa, outerqDiv, qDiv, aDiv, id) {
  * Ensures show_questions is called after the container div is in the DOM.
  */
 function try_show() {
-  if (document.getElementById("NCvVmmJxRnjr")) {
-    show_questions(questionsNCvVmmJxRnjr, NCvVmmJxRnjr);
+  if (document.getElementById("YLrLLZVZRmJD")) {
+    show_questions(questionsYLrLLZVZRmJD, YLrLLZVZRmJD);
   } else {
     setTimeout(try_show, 200);
   }
@@ -2270,7 +2261,11 @@ function try_show() {
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#course-content-and-grading">Course Content and Grading</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#quizzes">Quizzes</a></li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#programming-assignments">Programming Assignments</a></li>
-<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-projects">Mini-Projects</a></li>
+<li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#mini-projects">Mini-Projects</a><ul class="nav section-nav flex-column">
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#nature">Nature</a></li>
+<li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#platform-and-grading">Platform and Grading</a></li>
+</ul>
+</li>
 <li class="toc-h2 nav-item toc-entry"><a class="reference internal nav-link" href="#final-project-overview">Final Project Overview</a><ul class="nav section-nav flex-column">
 <li class="toc-h3 nav-item toc-entry"><a class="reference internal nav-link" href="#requirements">Requirements</a></li>
 </ul>
