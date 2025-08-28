@@ -175,37 +175,52 @@ Create two files in the anaconda-ubuntu folder with the following contents. Each
 Dockerfile:
 
 ```Dockerfile
-FROM ubuntu:24.04                                                  # Use Ubuntu 24.04 LTS (Noble Numbat) as the base image
+FROM ubuntu:24.04
 
-ENV DEBIAN_FRONTEND=noninteractive                                 # Prevent interactive prompts during package installs
+ENV DEBIAN_FRONTEND=noninteractive \
+    PYTHONUNBUFFERED=1 \
+    PIP_NO_CACHE_DIR=1
 
-RUN apt-get update && \                                            # Update apt package index
-    apt-get install -y --no-install-recommends \                   # Install packages without optional recommendations
-        wget \                                                     # Downloader to fetch the Anaconda installer
-        curl \                                                     # Alternative downloader for future needs
-        ca-certificates \                                          # SSL certificates for secure HTTPS downloads
-        zip \                                                      # Zip utility
-        less \                                                     # Pager for viewing files
-        vim \                                                      # Text editor
-        bzip2 \                                                    # Compression utility used by some archives
-    && rm -rf /var/lib/apt/lists/*                                 # Clean apt cache to reduce final image size
+# System dependencies + Python 3.12 and pip/venv
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends \
+        wget \
+        curl \
+        ca-certificates \
+        zip \
+        less \
+        vim \
+        bzip2 \
+        build-essential \
+        python3.12 \
+        python3.12-venv \
+        python3-pip \
+    && rm -rf /var/lib/apt/lists/*
 
-RUN wget -q \                                                      # Quiet download to reduce log noise
-    https://repo.anaconda.com/archive/Anaconda3-2025.06-1-Linux-x86_64.sh \  # Requested Anaconda installer URL
-    -O /tmp/anaconda.sh                                            # Save the installer to /tmp/anaconda.sh
-    && bash /tmp/anaconda.sh -b -p /root/anaconda3                 # Run installer silently (-b), install to /root/anaconda3
-    && rm -f /tmp/anaconda.sh                                      # Remove the installer to keep the image small
+# Make 'python' and 'pip' point to Python 3.12
+RUN update-alternatives --install /usr/bin/python python /usr/bin/python3.12 10 && \
+    update-alternatives --install /usr/bin/pip pip /usr/bin/pip3 10
 
-ENV PATH="/root/anaconda3/bin:${PATH}"                             # Add conda and python to PATH for all subsequent commands
+# Optional: create a virtual environment and use it
+RUN python -m venv /opt/venv
+ENV PATH="/opt/venv/bin:${PATH}"
 
-RUN conda init bash                                                # Initialize conda for bash shells (adds shell hook configuration)
+# Upgrade packaging tools and install Jupyter Notebook
+RUN pip install --upgrade pip setuptools wheel && \
+    pip install notebook
 
-SHELL ["/bin/bash", "-c"]                                          # Use bash for subsequent RUN/CMD so conda initialization works
+SHELL ["/bin/bash", "-c"]
 
-RUN mkdir -p /shared_folder                                        # Ensure the shared working directory exists inside the image
-WORKDIR /shared_folder                                             # Set /shared_folder as the default working directory
+# Workspace
+RUN mkdir -p /shared_folder
+WORKDIR /shared_folder
 
-CMD ["tail", "-f", "/dev/null"]                                    # Keep the container running (you will exec into it to work)
+# Expose Jupyter port
+EXPOSE 8888
+
+# Keep container running by default; uncomment the Jupyter CMD to auto-start
+CMD ["tail", "-f", "/dev/null"]
+# CMD ["bash", "-lc", "jupyter notebook --ip=0.0.0.0 --no-browser --NotebookApp.token='' --NotebookApp.password='' --allow-root --NotebookApp.allow_origin='*' --notebook-dir=/shared_folder"]                                
 ```
 
 docker-compose.yml:
@@ -248,29 +263,8 @@ docker compose up -d
 docker exec -it my-dev01 /bin/bash
 ```
 
-#### 6. Verify Anaconda
 
-```bash
-conda --version
-python --version
-```
-
-#### 7. Create a Python 3.13 environment and install packages
-
-```bash
-conda create -n py313 python=3.13 -y
-conda activate py313
-pip install jupyter pandas pyarrow requests seaborn matplotlib
-```
-
-If conda activate does not work immediately:
-
-```bash
-source ~/.bashrc
-conda activate py313
-```
-
-#### 8. Launch Jupyter Notebook (already in /shared_folder)
+#### 6. Launch Jupyter Notebook (already in /shared_folder)
 
 ```bash
 jupyter notebook --ip=0.0.0.0 --port=8888 --no-browser --allow-root

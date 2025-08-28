@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -484,8 +484,8 @@ document.write(`
 <h1><span class="section-number">13.14. </span>Soccer Database<a class="headerlink" href="#soccer-database" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">sqlite3</span>
 
 
 <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;all_players.csv&#39;</span><span class="p">)</span>
@@ -497,8 +497,8 @@ document.write(`
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
 <span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;all_players.csv&#39;</span><span class="p">)</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
@@ -531,13 +531,13 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
-<span class="kn">from</span><span class="w"> </span><span class="nn">sqlite3</span><span class="w"> </span><span class="kn">import</span> <span class="n">Error</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">sqlite3</span>
+<span class="kn">from</span> <span class="nn">sqlite3</span> <span class="kn">import</span> <span class="n">Error</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">create_connection</span><span class="p">(</span><span class="n">db_file</span><span class="p">,</span> <span class="n">delete_db</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="k">def</span> <span class="nf">create_connection</span><span class="p">(</span><span class="n">db_file</span><span class="p">,</span> <span class="n">delete_db</span><span class="o">=</span><span class="kc">False</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">os</span>
     <span class="k">if</span> <span class="n">delete_db</span> <span class="ow">and</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">exists</span><span class="p">(</span><span class="n">db_file</span><span class="p">):</span>
         <span class="n">os</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">db_file</span><span class="p">)</span>
 
@@ -551,14 +551,14 @@ document.write(`
     <span class="k">return</span> <span class="n">conn</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">create_table</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">create_table_sql</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">create_table</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">create_table_sql</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="n">c</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
         <span class="n">c</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">create_table_sql</span><span class="p">)</span>
     <span class="k">except</span> <span class="n">Error</span> <span class="k">as</span> <span class="n">e</span><span class="p">:</span>
         <span class="nb">print</span><span class="p">(</span><span class="n">e</span><span class="p">)</span>
         
-<span class="k">def</span><span class="w"> </span><span class="nf">execute_sql_statement</span><span class="p">(</span><span class="n">sql_statement</span><span class="p">,</span> <span class="n">conn</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">execute_sql_statement</span><span class="p">(</span><span class="n">sql_statement</span><span class="p">,</span> <span class="n">conn</span><span class="p">):</span>
     <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
     <span class="n">cur</span><span class="o">.</span><span class="n">execute</span><span class="p">(</span><span class="n">sql_statement</span><span class="p">)</span>
     <span class="n">rows</span> <span class="o">=</span> <span class="n">cur</span><span class="o">.</span><span class="n">fetchall</span><span class="p">()</span>
@@ -571,9 +571,9 @@ document.write(`
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">1</span>
-<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span><span class="w"> </span><span class="nn">pandas</span><span class="w"> </span><span class="k">as</span><span class="w"> </span><span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span><span class="w"> </span><span class="nn">sqlite3</span>
-<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span><span class="w"> </span><span class="nn">sqlite3</span><span class="w"> </span><span class="kn">import</span> <span class="n">Error</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="kn">from</span> <span class="nn">sqlite3</span> <span class="kn">import</span> <span class="n">Error</span>
 
 <span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
 </pre></div>
@@ -651,7 +651,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 
 <span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">clubs</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
@@ -662,7 +662,7 @@ document.write(`
 <div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
 <span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">3</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span><span class="w"> </span><span class="nn">collections</span><span class="w"> </span><span class="kn">import</span> <span class="n">Counter</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">Counter</span>
 <span class="ne">----&gt; </span><span class="mi">3</span> <span class="n">counter</span> <span class="o">=</span> <span class="n">Counter</span><span class="p">(</span><span class="n">clubs</span><span class="p">)</span>
 <span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="nb">print</span><span class="p">(</span><span class="n">counter</span><span class="p">)</span>
 
@@ -744,7 +744,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">insert_club</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">insert_club</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
     <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO Clubs(Club)</span>
 <span class="s2">                VALUES(?)&quot;&quot;&quot;</span>
     <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
@@ -846,7 +846,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">insert_position</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">insert_position</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
     <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO Positions(Position)</span>
 <span class="s2">                VALUES(?)&quot;&quot;&quot;</span>
     <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
@@ -927,7 +927,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">insert_year</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">insert_year</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
     <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO Years(Year)</span>
 <span class="s2">                VALUES(?)&quot;&quot;&quot;</span>
     <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
@@ -1008,7 +1008,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">insert_season</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">insert_season</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
     <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO Seasons(season)</span>
 <span class="s2">                VALUES(?)&quot;&quot;&quot;</span>
     <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
@@ -1102,7 +1102,7 @@ document.write(`
 </div>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">insert_player</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">insert_player</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
     <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO Players(FirstName, LastName)</span>
 <span class="s2">                VALUES(?, ?)&quot;&quot;&quot;</span>
     <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
@@ -1246,7 +1246,7 @@ document.write(`
 <span class="n">rows</span> <span class="o">=</span> <span class="n">execute_sql_statement</span><span class="p">(</span><span class="n">sql_statement</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">insert_playerstats</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">insert_playerstats</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
     <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO PlayerStats(PlayerID, Club, position, gp, gs, min, year, season)</span>
 <span class="s2">                VALUES(?, ?, ?, ?, ?, ?, ?,?)&quot;&quot;&quot;</span>
     <span class="n">cur</span> <span class="o">=</span> <span class="n">conn</span><span class="o">.</span><span class="n">cursor</span><span class="p">()</span>
@@ -1271,7 +1271,7 @@ document.write(`
 <span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
 <span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;SELECT DISTINCT * FROM players&quot;</span>
 <span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">rows</span> <span class="o">=</span> <span class="n">execute_sql_statement</span><span class="p">(</span><span class="n">sql_statement</span><span class="p">,</span> <span class="n">conn</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span><span class="w"> </span><span class="nf">insert_playerstats</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="k">def</span> <span class="nf">insert_playerstats</span><span class="p">(</span><span class="n">conn</span><span class="p">,</span> <span class="n">values</span><span class="p">):</span>
 <span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">sql</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;INSERT INTO PlayerStats(PlayerID, Club, position, gp, gs, min, year, season)</span>
 <span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2">                 VALUES(?, ?, ?, ?, ?, ?, ?,?)&quot;&quot;&quot;</span>
 

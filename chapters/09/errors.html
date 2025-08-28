@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -500,7 +500,7 @@ document.write(`
 <p>Python raises many different types of errors to inform you of what went wrong. The following are the most common errors that you should know.</p>
 <section id="syntaxerror-invalid-python-syntax">
 <h2><span class="section-number">9.1.1. </span>SyntaxError – invalid Python syntax<a class="headerlink" href="#syntaxerror-invalid-python-syntax" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func</span><span class="p">(()):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">(()):</span>
    <span class="k">pass</span>
 
 <span class="k">for</span> <span class="n">index</span> <span class="ow">in</span> <span class="n">some_list</span>
@@ -510,7 +510,7 @@ document.write(`
 </section>
 <section id="nameerror-using-a-variable-before-it-has-been-defined">
 <h2><span class="section-number">9.1.2. </span>NameError – using a variable before it has been defined<a class="headerlink" href="#nameerror-using-a-variable-before-it-has-been-defined" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">func</span><span class="p">():</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">func</span><span class="p">():</span>
    <span class="nb">print</span><span class="p">(</span><span class="n">variable</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -544,7 +544,7 @@ document.write(`
 </section>
 <section id="attributeerror-missing-attribute-variables-or-methods">
 <h2><span class="section-number">9.1.7. </span>AttributeError – missing attribute – variables or methods<a class="headerlink" href="#attributeerror-missing-attribute-variables-or-methods" title="Link to this heading">#</a></h2>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span><span class="w"> </span><span class="nc">TestClass</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">TestClass</span><span class="p">:</span>
     <span class="n">class_variable1</span> <span class="o">=</span> <span class="mi">2</span>
 
 <span class="nb">print</span><span class="p">(</span><span class="n">TestClass</span><span class="o">.</span><span class="n">class_variable1</span><span class="p">)</span>
@@ -571,7 +571,7 @@ document.write(`
 <span class="k">raise</span> <span class="ne">ValueError</span>
 </pre></div>
 </div>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">calculate_bmi</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">calculate_bmi</span><span class="p">(</span><span class="n">height</span><span class="p">,</span> <span class="n">weight</span><span class="p">):</span>
 
     <span class="k">if</span> <span class="nb">type</span><span class="p">(</span><span class="n">height</span><span class="p">)</span> <span class="ow">not</span> <span class="ow">in</span> <span class="p">[</span><span class="nb">float</span><span class="p">,</span> <span class="nb">int</span><span class="p">]:</span>
         <span class="k">raise</span> <span class="ne">TypeError</span><span class="p">(</span><span class="s1">&#39;Height has to be float or an int&#39;</span><span class="p">)</span>
@@ -639,7 +639,7 @@ user feedback.</p>
 <h3><span class="section-number">9.1.10.2. </span>Example2<a class="headerlink" href="#example2" title="Link to this heading">#</a></h3>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">student</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;john&#39;</span><span class="p">,</span> <span class="s1">&#39;grade&#39;</span><span class="p">:</span> <span class="mi">50</span><span class="p">}</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">get_key</span><span class="p">(</span><span class="n">some_dict</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">get_key</span><span class="p">(</span><span class="n">some_dict</span><span class="p">,</span> <span class="n">key</span><span class="p">,</span> <span class="n">default_value</span><span class="o">=</span><span class="kc">None</span><span class="p">):</span>
     <span class="k">try</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">some_dict</span><span class="p">[</span><span class="n">key</span><span class="p">]</span>
     <span class="k">except</span> <span class="ne">KeyError</span><span class="p">:</span>

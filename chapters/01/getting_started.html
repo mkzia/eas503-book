@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -483,9 +483,7 @@ document.write(`
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-image">1.1.6.3.3. 3. Build the image</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#start-the-container">1.1.6.3.4. 4. Start the container</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#open-a-shell-in-the-container-you-will-land-in-shared-folder">1.1.6.3.5. 5. Open a shell in the container (you will land in /shared_folder)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-anaconda">1.1.6.3.6. 6. Verify Anaconda</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-python-3-13-environment-and-install-packages">1.1.6.3.7. 7. Create a Python 3.13 environment and install packages</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-jupyter-notebook-already-in-shared-folder">1.1.6.3.8. 8. Launch Jupyter Notebook (already in /shared_folder)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-jupyter-notebook-already-in-shared-folder">1.1.6.3.6. 6. Launch Jupyter Notebook (already in /shared_folder)</a></li>
 </ul>
 </li>
 </ul>
@@ -624,10 +622,10 @@ store the result into location 2003
 <section id="a-basic-python-program">
 <h3><span class="section-number">1.1.6.1. </span>A Basic Python Program<a class="headerlink" href="#a-basic-python-program" title="Link to this heading">#</a></h3>
 <p>Please install <a class="reference external" href="https://www.anaconda.com/products/distribution">Anaconda Python Distribution</a>.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">add</span><span class="p">(</span><span class="n">x</span><span class="p">:</span> <span class="nb">int</span><span class="p">,</span> <span class="n">y</span><span class="p">:</span> <span class="nb">int</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">int</span><span class="p">:</span>
     <span class="k">return</span> <span class="n">x</span> <span class="o">+</span> <span class="n">y</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">main</span><span class="p">():</span>
+<span class="k">def</span> <span class="nf">main</span><span class="p">():</span>
     <span class="n">x</span> <span class="o">=</span> <span class="mi">1</span>
     <span class="n">y</span> <span class="o">=</span> <span class="mi">2</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">add</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y</span><span class="p">)</span>
@@ -676,37 +674,52 @@ mkdir<span class="w"> </span>shared_folder
 <h4><span class="section-number">1.1.6.3.2. </span>2. Add the Dockerfile and docker-compose.yml<a class="headerlink" href="#add-the-dockerfile-and-docker-compose-yml" title="Link to this heading">#</a></h4>
 <p>Create two files in the anaconda-ubuntu folder with the following contents. Each line includes a brief explanation.</p>
 <p>Dockerfile:</p>
-<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">ubuntu:24.04</span><span class="w">                                                  </span><span class="c"># Use Ubuntu 24.04 LTS (Noble Numbat) as the base image</span>
+<div class="highlight-Dockerfile notranslate"><div class="highlight"><pre><span></span><span class="k">FROM</span><span class="w"> </span><span class="s">ubuntu:24.04</span>
 
-<span class="k">ENV</span><span class="w"> </span><span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive<span class="w">                                 </span><span class="c"># Prevent interactive prompts during package installs</span>
+<span class="k">ENV</span><span class="w"> </span><span class="nv">DEBIAN_FRONTEND</span><span class="o">=</span>noninteractive<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">PYTHONUNBUFFERED</span><span class="o">=</span><span class="m">1</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="nv">PIP_NO_CACHE_DIR</span><span class="o">=</span><span class="m">1</span>
 
-<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\ </span><span class="w">                                           </span>#<span class="w"> </span>Update<span class="w"> </span>apt<span class="w"> </span>package<span class="w"> </span>index
-<span class="w">    </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--no-install-recommends<span class="w"> </span><span class="se">\ </span><span class="w">                  </span>#<span class="w"> </span>Install<span class="w"> </span>packages<span class="w"> </span>without<span class="w"> </span>optional<span class="w"> </span>recommendations
-<span class="w">        </span>wget<span class="w"> </span><span class="se">\ </span><span class="w">                                                    </span>#<span class="w"> </span>Downloader<span class="w"> </span>to<span class="w"> </span>fetch<span class="w"> </span>the<span class="w"> </span>Anaconda<span class="w"> </span>installer
-<span class="w">        </span>curl<span class="w"> </span><span class="se">\ </span><span class="w">                                                    </span>#<span class="w"> </span>Alternative<span class="w"> </span>downloader<span class="w"> </span><span class="k">for</span><span class="w"> </span>future<span class="w"> </span>needs
-<span class="w">        </span>ca-certificates<span class="w"> </span><span class="se">\ </span><span class="w">                                         </span>#<span class="w"> </span>SSL<span class="w"> </span>certificates<span class="w"> </span><span class="k">for</span><span class="w"> </span>secure<span class="w"> </span>HTTPS<span class="w"> </span>downloads
-<span class="w">        </span>zip<span class="w"> </span><span class="se">\ </span><span class="w">                                                     </span>#<span class="w"> </span>Zip<span class="w"> </span>utility
-<span class="w">        </span>less<span class="w"> </span><span class="se">\ </span><span class="w">                                                    </span>#<span class="w"> </span>Pager<span class="w"> </span><span class="k">for</span><span class="w"> </span>viewing<span class="w"> </span>files
-<span class="w">        </span>vim<span class="w"> </span><span class="se">\ </span><span class="w">                                                     </span>#<span class="w"> </span>Text<span class="w"> </span>editor
-<span class="w">        </span>bzip2<span class="w"> </span><span class="se">\ </span><span class="w">                                                   </span>#<span class="w"> </span>Compression<span class="w"> </span>utility<span class="w"> </span>used<span class="w"> </span>by<span class="w"> </span>some<span class="w"> </span>archives
-<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*<span class="w">                                 </span>#<span class="w"> </span>Clean<span class="w"> </span>apt<span class="w"> </span>cache<span class="w"> </span>to<span class="w"> </span>reduce<span class="w"> </span>final<span class="w"> </span>image<span class="w"> </span>size
+<span class="c"># System dependencies + Python 3.12 and pip/venv</span>
+<span class="k">RUN</span><span class="w"> </span>apt-get<span class="w"> </span>update<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>apt-get<span class="w"> </span>install<span class="w"> </span>-y<span class="w"> </span>--no-install-recommends<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>wget<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>curl<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>ca-certificates<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>zip<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>less<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>vim<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>bzip2<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>build-essential<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>python3.12<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>python3.12-venv<span class="w"> </span><span class="se">\</span>
+<span class="w">        </span>python3-pip<span class="w"> </span><span class="se">\</span>
+<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-rf<span class="w"> </span>/var/lib/apt/lists/*
 
-<span class="k">RUN</span><span class="w"> </span>wget<span class="w"> </span>-q<span class="w"> </span><span class="se">\ </span><span class="w">                                                     </span>#<span class="w"> </span>Quiet<span class="w"> </span>download<span class="w"> </span>to<span class="w"> </span>reduce<span class="w"> </span>log<span class="w"> </span>noise
-<span class="w">    </span>https://repo.anaconda.com/archive/Anaconda3-2025.06-1-Linux-x86_64.sh<span class="w"> </span><span class="se">\ </span><span class="w"> </span>#<span class="w"> </span>Requested<span class="w"> </span>Anaconda<span class="w"> </span>installer<span class="w"> </span>URL
-<span class="w">    </span>-O<span class="w"> </span>/tmp/anaconda.sh<span class="w">                                            </span>#<span class="w"> </span>Save<span class="w"> </span>the<span class="w"> </span>installer<span class="w"> </span>to<span class="w"> </span>/tmp/anaconda.sh
-<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>bash<span class="w"> </span>/tmp/anaconda.sh<span class="w"> </span>-b<span class="w"> </span>-p<span class="w"> </span>/root/anaconda3<span class="w">                 </span>#<span class="w"> </span>Run<span class="w"> </span>installer<span class="w"> </span>silently<span class="w"> </span><span class="o">(</span>-b<span class="o">)</span>,<span class="w"> </span>install<span class="w"> </span>to<span class="w"> </span>/root/anaconda3
-<span class="w">    </span><span class="o">&amp;&amp;</span><span class="w"> </span>rm<span class="w"> </span>-f<span class="w"> </span>/tmp/anaconda.sh<span class="w">                                      </span>#<span class="w"> </span>Remove<span class="w"> </span>the<span class="w"> </span>installer<span class="w"> </span>to<span class="w"> </span>keep<span class="w"> </span>the<span class="w"> </span>image<span class="w"> </span>small
+<span class="c"># Make &#39;python&#39; and &#39;pip&#39; point to Python 3.12</span>
+<span class="k">RUN</span><span class="w"> </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/python<span class="w"> </span>python<span class="w"> </span>/usr/bin/python3.12<span class="w"> </span><span class="m">10</span><span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>update-alternatives<span class="w"> </span>--install<span class="w"> </span>/usr/bin/pip<span class="w"> </span>pip<span class="w"> </span>/usr/bin/pip3<span class="w"> </span><span class="m">10</span>
 
-<span class="k">ENV</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/root/anaconda3/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span><span class="w">                             </span>#<span class="w"> </span>Add<span class="w"> </span>conda<span class="w"> </span>and<span class="w"> </span>python<span class="w"> </span>to<span class="w"> </span>PATH<span class="w"> </span><span class="k">for</span><span class="w"> </span>all<span class="w"> </span>subsequent<span class="w"> </span>commands
+<span class="c"># Optional: create a virtual environment and use it</span>
+<span class="k">RUN</span><span class="w"> </span>python<span class="w"> </span>-m<span class="w"> </span>venv<span class="w"> </span>/opt/venv
+<span class="k">ENV</span><span class="w"> </span><span class="nv">PATH</span><span class="o">=</span><span class="s2">&quot;/opt/venv/bin:</span><span class="si">${</span><span class="nv">PATH</span><span class="si">}</span><span class="s2">&quot;</span>
 
-<span class="k">RUN</span><span class="w"> </span>conda<span class="w"> </span>init<span class="w"> </span>bash<span class="w">                                                </span>#<span class="w"> </span>Initialize<span class="w"> </span>conda<span class="w"> </span><span class="k">for</span><span class="w"> </span>bash<span class="w"> </span>shells<span class="w"> </span><span class="o">(</span>adds<span class="w"> </span>shell<span class="w"> </span>hook<span class="w"> </span>configuration<span class="o">)</span>
+<span class="c"># Upgrade packaging tools and install Jupyter Notebook</span>
+<span class="k">RUN</span><span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>--upgrade<span class="w"> </span>pip<span class="w"> </span>setuptools<span class="w"> </span>wheel<span class="w"> </span><span class="o">&amp;&amp;</span><span class="w"> </span><span class="se">\</span>
+<span class="w">    </span>pip<span class="w"> </span>install<span class="w"> </span>notebook
 
-<span class="k">SHELL</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/bin/bash&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-c&quot;</span><span class="p">]</span><span class="w">                                          </span>#<span class="w"> </span>Use<span class="w"> </span>bash<span class="w"> </span><span class="k">for</span><span class="w"> </span>subsequent<span class="w"> </span>RUN/CMD<span class="w"> </span>so<span class="w"> </span>conda<span class="w"> </span>initialization<span class="w"> </span>works
+<span class="k">SHELL</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;/bin/bash&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-c&quot;</span><span class="p">]</span>
 
-<span class="k">RUN</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/shared_folder<span class="w">                                        </span>#<span class="w"> </span>Ensure<span class="w"> </span>the<span class="w"> </span>shared<span class="w"> </span>working<span class="w"> </span>directory<span class="w"> </span>exists<span class="w"> </span>inside<span class="w"> </span>the<span class="w"> </span>image
-<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/shared_folder                                             # Set /shared_folder as the default working directory</span>
+<span class="c"># Workspace</span>
+<span class="k">RUN</span><span class="w"> </span>mkdir<span class="w"> </span>-p<span class="w"> </span>/shared_folder
+<span class="k">WORKDIR</span><span class="w"> </span><span class="s">/shared_folder</span>
 
-<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tail&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/dev/null&quot;</span><span class="p">]</span><span class="w">                                    </span>#<span class="w"> </span>Keep<span class="w"> </span>the<span class="w"> </span>container<span class="w"> </span>running<span class="w"> </span><span class="o">(</span>you<span class="w"> </span>will<span class="w"> </span><span class="nb">exec</span><span class="w"> </span>into<span class="w"> </span>it<span class="w"> </span>to<span class="w"> </span>work<span class="o">)</span>
+<span class="c"># Expose Jupyter port</span>
+<span class="k">EXPOSE</span><span class="w"> </span><span class="s">8888</span>
+
+<span class="c"># Keep container running by default; uncomment the Jupyter CMD to auto-start</span>
+<span class="k">CMD</span><span class="w"> </span><span class="p">[</span><span class="s2">&quot;tail&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;-f&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;/dev/null&quot;</span><span class="p">]</span>
+<span class="c"># CMD [&quot;bash&quot;, &quot;-lc&quot;, &quot;jupyter notebook --ip=0.0.0.0 --no-browser --NotebookApp.token=&#39;&#39; --NotebookApp.password=&#39;&#39; --allow-root --NotebookApp.allow_origin=&#39;*&#39; --notebook-dir=/shared_folder&quot;]                                </span>
 </pre></div>
 </div>
 <p>docker-compose.yml:</p>
@@ -748,28 +761,8 @@ mkdir<span class="w"> </span>shared_folder
 </pre></div>
 </div>
 </section>
-<section id="verify-anaconda">
-<h4><span class="section-number">1.1.6.3.6. </span>6. Verify Anaconda<a class="headerlink" href="#verify-anaconda" title="Link to this heading">#</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>--version
-python<span class="w"> </span>--version
-</pre></div>
-</div>
-</section>
-<section id="create-a-python-3-13-environment-and-install-packages">
-<h4><span class="section-number">1.1.6.3.7. </span>7. Create a Python 3.13 environment and install packages<a class="headerlink" href="#create-a-python-3-13-environment-and-install-packages" title="Link to this heading">#</a></h4>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>conda<span class="w"> </span>create<span class="w"> </span>-n<span class="w"> </span>py313<span class="w"> </span><span class="nv">python</span><span class="o">=</span><span class="m">3</span>.13<span class="w"> </span>-y
-conda<span class="w"> </span>activate<span class="w"> </span>py313
-pip<span class="w"> </span>install<span class="w"> </span>jupyter<span class="w"> </span>pandas<span class="w"> </span>pyarrow<span class="w"> </span>requests<span class="w"> </span>seaborn<span class="w"> </span>matplotlib
-</pre></div>
-</div>
-<p>If conda activate does not work immediately:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">source</span><span class="w"> </span>~/.bashrc
-conda<span class="w"> </span>activate<span class="w"> </span>py313
-</pre></div>
-</div>
-</section>
 <section id="launch-jupyter-notebook-already-in-shared-folder">
-<h4><span class="section-number">1.1.6.3.8. </span>8. Launch Jupyter Notebook (already in /shared_folder)<a class="headerlink" href="#launch-jupyter-notebook-already-in-shared-folder" title="Link to this heading">#</a></h4>
+<h4><span class="section-number">1.1.6.3.6. </span>6. Launch Jupyter Notebook (already in /shared_folder)<a class="headerlink" href="#launch-jupyter-notebook-already-in-shared-folder" title="Link to this heading">#</a></h4>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>jupyter<span class="w"> </span>notebook<span class="w"> </span>--ip<span class="o">=</span><span class="m">0</span>.0.0.0<span class="w"> </span>--port<span class="o">=</span><span class="m">8888</span><span class="w"> </span>--no-browser<span class="w"> </span>--allow-root
 </pre></div>
 </div>
@@ -950,9 +943,7 @@ conda<span class="w"> </span>activate<span class="w"> </span>py313
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#build-the-image">1.1.6.3.3. 3. Build the image</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#start-the-container">1.1.6.3.4. 4. Start the container</a></li>
 <li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#open-a-shell-in-the-container-you-will-land-in-shared-folder">1.1.6.3.5. 5. Open a shell in the container (you will land in /shared_folder)</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#verify-anaconda">1.1.6.3.6. 6. Verify Anaconda</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#create-a-python-3-13-environment-and-install-packages">1.1.6.3.7. 7. Create a Python 3.13 environment and install packages</a></li>
-<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-jupyter-notebook-already-in-shared-folder">1.1.6.3.8. 8. Launch Jupyter Notebook (already in /shared_folder)</a></li>
+<li class="toc-h4 nav-item toc-entry"><a class="reference internal nav-link" href="#launch-jupyter-notebook-already-in-shared-folder">1.1.6.3.6. 6. Launch Jupyter Notebook (already in /shared_folder)</a></li>
 </ul>
 </li>
 </ul>

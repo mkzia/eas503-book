@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -499,13 +499,13 @@ document.write(`
 <h2><span class="section-number">6.2.1. </span>Exercise 1<a class="headerlink" href="#exercise-1" title="Link to this heading">#</a></h2>
 <p>Write a function that takes in a list of values and returns its sum</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">sum_list</span><span class="p">(</span><span class="n">input_list</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">sum_list</span><span class="p">(</span><span class="n">input_list</span><span class="p">):</span>
     <span class="n">summed_values</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">input_list</span><span class="p">:</span>
         <span class="n">summed_values</span> <span class="o">+=</span> <span class="n">value</span>
@@ -529,13 +529,13 @@ document.write(`
 <h2><span class="section-number">6.2.2. </span>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h2>
 <p>Write a function that takes in a list of values and returns its average</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">avg_list</span><span class="p">(</span><span class="n">input_list</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">avg_list</span><span class="p">(</span><span class="n">input_list</span><span class="p">):</span>
     <span class="n">summed_values</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">number_of_values</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="k">for</span> <span class="n">value</span> <span class="ow">in</span> <span class="n">input_list</span><span class="p">:</span>
@@ -562,13 +562,13 @@ document.write(`
 <p>Write a function that takes in a list of values and returns its average.
 Instead of using a for loop as in ex2, use sum() and len() to calculate the average</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">avg_list</span><span class="p">(</span><span class="n">input_list</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">avg_list</span><span class="p">(</span><span class="n">input_list</span><span class="p">):</span>
 
     <span class="k">return</span> <span class="nb">sum</span><span class="p">(</span><span class="n">input_list</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">input_list</span><span class="p">)</span>
 
@@ -588,13 +588,13 @@ Instead of using a for loop as in ex2, use sum() and len() to calculate the aver
 <h2><span class="section-number">6.2.4. </span>Exercise 4<a class="headerlink" href="#exercise-4" title="Link to this heading">#</a></h2>
 <p>Write a function that multiplies the elements of the list by two and returns them</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">multiply</span><span class="p">(</span><span class="n">input_list</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">multiply</span><span class="p">(</span><span class="n">input_list</span><span class="p">):</span>
     <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">input_list</span><span class="p">:</span>
@@ -619,13 +619,13 @@ Instead of using a for loop as in ex2, use sum() and len() to calculate the aver
 <h2><span class="section-number">6.2.5. </span>Exercise 5<a class="headerlink" href="#exercise-5" title="Link to this heading">#</a></h2>
 <p>Write a pow() function that computes the power of each element in a list</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">pow</span><span class="p">(</span><span class="n">input_list</span><span class="p">,</span> <span class="n">power</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">pow</span><span class="p">(</span><span class="n">input_list</span><span class="p">,</span> <span class="n">power</span><span class="p">):</span>
     <span class="n">output</span> <span class="o">=</span> <span class="p">[]</span>
 
     <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">input_list</span><span class="p">:</span>
@@ -652,13 +652,13 @@ Instead of using a for loop as in ex2, use sum() and len() to calculate the aver
 <h2><span class="section-number">6.2.6. </span>Exercise 6<a class="headerlink" href="#exercise-6" title="Link to this heading">#</a></h2>
 <p>Write a function to remove duplicate from a list</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">remove_duplicate</span><span class="p">(</span><span class="n">input_list</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">remove_duplicate</span><span class="p">(</span><span class="n">input_list</span><span class="p">):</span>
     <span class="k">return</span> <span class="nb">list</span><span class="p">(</span><span class="nb">set</span><span class="p">(</span><span class="n">input_list</span><span class="p">))</span>
 
 
@@ -687,13 +687,13 @@ Instead of using a for loop as in ex2, use sum() and len() to calculate the aver
 <li><p>Be careful about non-numbers!</p></li>
 </ul>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">average_from_file</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">average_from_file</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
     <span class="n">grade_list</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
@@ -726,14 +726,14 @@ Instead of using a for loop as in ex2, use sum() and len() to calculate the aver
 <li><p>Output: a string that concatenates the results, ex. ‘HHHTTTHTHTHT’</p></li>
 </ul>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">coin_toss</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coin_toss</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">random</span>
     <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">503</span><span class="p">)</span>
     <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
@@ -768,14 +768,14 @@ coin_toss function and calculates the probability of H and T</p>
 <li><p>Output: probability of H and T</p></li>
 </ul>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">coin_toss</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">coin_toss</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+    <span class="kn">import</span> <span class="nn">random</span>
     <span class="n">random</span><span class="o">.</span><span class="n">seed</span><span class="p">(</span><span class="mi">503</span><span class="p">)</span>
     <span class="n">output</span> <span class="o">=</span> <span class="s1">&#39;&#39;</span>
     <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
@@ -789,7 +789,7 @@ coin_toss function and calculates the probability of H and T</p>
     <span class="k">return</span> <span class="n">output</span>
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">coin_toss_probability</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">coin_toss_probability</span><span class="p">(</span><span class="n">number</span><span class="p">):</span>
     <span class="n">result</span> <span class="o">=</span> <span class="n">coin_toss</span><span class="p">(</span><span class="n">number</span><span class="p">)</span>
     <span class="n">head_count</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">tail_count</span> <span class="o">=</span> <span class="mi">0</span>
@@ -824,13 +824,13 @@ coin_toss function and calculates the probability of H and T</p>
 <li><p>Output: average probability</p></li>
 </ul>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">simulate_coin_toss_probability</span><span class="p">(</span><span class="n">num_sims</span><span class="p">,</span> <span class="n">num_toss</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">simulate_coin_toss_probability</span><span class="p">(</span><span class="n">num_sims</span><span class="p">,</span> <span class="n">num_toss</span><span class="p">):</span>
 
     <span class="n">head_prob</span> <span class="o">=</span> <span class="mi">0</span>
     <span class="n">tail_prob</span> <span class="o">=</span> <span class="mi">0</span>
@@ -863,13 +863,13 @@ Print average of each student on screen
 Use list comprehension to convert grades to int
 use: for_ex11_data.txt</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">print_student_average</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">print_student_average</span><span class="p">(</span><span class="n">filename</span><span class="p">):</span>
 
     <span class="k">with</span> <span class="nb">open</span><span class="p">(</span><span class="n">filename</span><span class="p">)</span> <span class="k">as</span> <span class="n">file</span><span class="p">:</span>
         <span class="k">for</span> <span class="n">line</span> <span class="ow">in</span> <span class="n">file</span><span class="p">:</span>
@@ -916,16 +916,16 @@ student10,65,89,80,68,89
 </pre></div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">generate_students</span><span class="p">(</span><span class="n">output_filename</span><span class="p">,</span> <span class="n">number_of_students</span><span class="p">,</span> <span class="n">number_of_tests</span><span class="p">,</span> <span class="n">test_score_range</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">generate_students</span><span class="p">(</span><span class="n">output_filename</span><span class="p">,</span> <span class="n">number_of_students</span><span class="p">,</span> <span class="n">number_of_tests</span><span class="p">,</span> <span class="n">test_score_range</span><span class="p">):</span>
 
-    <span class="kn">import</span><span class="w"> </span><span class="nn">csv</span>
-    <span class="kn">import</span><span class="w"> </span><span class="nn">random</span>
+    <span class="kn">import</span> <span class="nn">csv</span>
+    <span class="kn">import</span> <span class="nn">random</span>
 
     <span class="n">number_of_students</span> <span class="o">=</span> <span class="mi">10</span>
     <span class="n">number_of_tests</span> <span class="o">=</span> <span class="mi">5</span>

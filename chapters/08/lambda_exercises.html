@@ -28,11 +28,11 @@
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-brands-400.woff2" />
 <link rel="preload" as="font" type="font/woff2" crossorigin href="../../_static/vendor/fontawesome/6.5.2/webfonts/fa-regular-400.woff2" />
 
-    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=03e43079" />
-    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=eba8b062" />
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=fa44fd50" />
+    <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.8ecb98da25f57f5357bf6f572d296f466b2cfe2517ffebfabe82451661e28f02.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -496,13 +496,13 @@ document.write(`
 <p>Write a function that squares a number and returns the value.
 Write it again again using Lambda functions</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
-<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span><span class="w"> </span><span class="nf">square</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">square</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">num</span> <span class="o">*</span> <span class="n">num</span>
 
 <span class="n">square2</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">num</span><span class="p">:</span> <span class="n">num</span> <span class="o">*</span> <span class="n">num</span>
@@ -525,10 +525,10 @@ Write it again again using Lambda functions</p>
 <h2><span class="section-number">8.2.2. </span>Exercise 2<a class="headerlink" href="#exercise-2" title="Link to this heading">#</a></h2>
 <p>Write a lambda function for adding two numbers</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">add</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span><span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="o">+</span> <span class="n">b</span>
@@ -548,14 +548,14 @@ Write it again again using Lambda functions</p>
 <h2><span class="section-number">8.2.3. </span>Exercise 3<a class="headerlink" href="#exercise-3" title="Link to this heading">#</a></h2>
 <p>Write a lambda function that multiples two numbers. Use the lambda function as an input to another function.</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">func</span> <span class="o">=</span> <span class="k">lambda</span> <span class="n">a</span><span class="p">,</span> <span class="n">b</span><span class="p">:</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span>
-<span class="k">def</span><span class="w"> </span><span class="nf">lambda_test</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">lambda_test</span><span class="p">(</span><span class="n">function</span><span class="p">,</span> <span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">):</span>
     <span class="k">return</span> <span class="n">function</span><span class="p">(</span><span class="n">number1</span><span class="p">,</span> <span class="n">number2</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">lambda_test</span><span class="p">(</span><span class="n">func</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">))</span>
 </pre></div>
@@ -578,10 +578,10 @@ Write it again again using Lambda functions</p>
 </ol>
 <p>map objects are a generator. How many times can you iterate over them?</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">]</span>
@@ -590,7 +590,7 @@ Write it again again using Lambda functions</p>
 
 <span class="c1"># method 1 - define a square function</span>
 
-<span class="k">def</span><span class="w"> </span><span class="nf">square_list</span><span class="p">(</span><span class="n">my_list</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">square_list</span><span class="p">(</span><span class="n">my_list</span><span class="p">):</span>
     <span class="n">new_list</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">ele</span> <span class="ow">in</span> <span class="n">my_list</span><span class="p">:</span>
         <span class="n">new_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">ele</span> <span class="o">*</span> <span class="n">ele</span><span class="p">)</span>
@@ -633,10 +633,10 @@ Write it again again using Lambda functions</p>
 <li><p>using lambda and map</p></li>
 </ol>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;john&#39;</span><span class="p">,</span> <span class="s1">&#39;jane&#39;</span><span class="p">,</span> <span class="s1">&#39;doe&#39;</span><span class="p">]</span>
@@ -675,10 +675,10 @@ Write it again again using Lambda functions</p>
 <p>Using lambda and map, convert the numbers to float</p>
 <p>Covert each value to float</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_dict</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;34.4&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;45.3&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;73.4&#39;</span><span class="p">}]</span>
@@ -704,17 +704,17 @@ value is True/False if the year is a leap year</p>
 <li><p>using filter without a function</p></li>
 </ol>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">years</span> <span class="o">=</span> <span class="nb">range</span><span class="p">(</span><span class="mi">1970</span><span class="p">,</span> <span class="mi">2000</span><span class="p">)</span> <span class="c1"># for these years</span>
 
 
 
-<span class="k">def</span><span class="w"> </span><span class="nf">is_leap_year</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
+<span class="k">def</span> <span class="nf">is_leap_year</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
     <span class="c1"># does not work for century year</span>
     <span class="k">if</span> <span class="n">year</span> <span class="o">%</span> <span class="mi">4</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
         <span class="k">return</span> <span class="kc">True</span>
@@ -728,7 +728,7 @@ value is True/False if the year is a leap year</p>
     <span class="k">if</span> <span class="n">is_leap_year</span><span class="p">(</span><span class="n">year</span><span class="p">):</span>
         <span class="n">leap_years</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">year</span><span class="p">)</span>
 
-<span class="kn">import</span><span class="w"> </span><span class="nn">pprint</span>
+<span class="kn">import</span> <span class="nn">pprint</span>
 <span class="n">pprint</span><span class="o">.</span><span class="n">pprint</span><span class="p">(</span><span class="n">my_dict</span><span class="p">)</span>
 <span class="nb">print</span><span class="p">(</span><span class="n">leap_years</span><span class="p">)</span>
 
@@ -801,10 +801,10 @@ value is True/False if the year is a leap year</p>
 <h2><span class="section-number">8.2.8. </span>Exercise 8<a class="headerlink" href="#exercise-8" title="Link to this heading">#</a></h2>
 <p>Sort <code class="docutils literal notranslate"><span class="pre">x</span></code> using value</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x</span> <span class="o">=</span> <span class="p">((</span><span class="s1">&#39;efg&#39;</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;abc&#39;</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="s1">&#39;hij&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">))</span>
@@ -828,10 +828,10 @@ value is True/False if the year is a leap year</p>
 <h2><span class="section-number">8.2.9. </span>Exercise 9<a class="headerlink" href="#exercise-9" title="Link to this heading">#</a></h2>
 <p>sort dictionary by username; reverse sort</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[</span>
@@ -841,7 +841,7 @@ value is True/False if the year is a leap year</p>
     <span class="p">{</span><span class="s1">&#39;grade&#39;</span><span class="p">:</span> <span class="mi">89</span><span class="p">,</span> <span class="s1">&#39;username&#39;</span><span class="p">:</span> <span class="s1">&#39;Kelly&#39;</span><span class="p">}</span>
 <span class="p">]</span>
 
-<span class="kn">from</span><span class="w"> </span><span class="nn">pprint</span><span class="w"> </span><span class="kn">import</span> <span class="n">pprint</span>
+<span class="kn">from</span> <span class="nn">pprint</span> <span class="kn">import</span> <span class="n">pprint</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">student</span><span class="p">:</span> <span class="n">student</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">]))</span>
 <span class="nb">print</span><span class="p">()</span>
 <span class="nb">print</span><span class="p">(</span><span class="nb">sorted</span><span class="p">(</span><span class="n">students</span><span class="p">,</span> <span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">student</span><span class="p">:</span> <span class="n">student</span><span class="p">[</span><span class="s1">&#39;username&#39;</span><span class="p">],</span> <span class="n">reverse</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
@@ -862,10 +862,10 @@ value is True/False if the year is a leap year</p>
 <h2><span class="section-number">8.2.10. </span>Exercise 10<a class="headerlink" href="#exercise-10" title="Link to this heading">#</a></h2>
 <p>Sort dictionary by grade; reverse sort</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[</span>
@@ -896,10 +896,10 @@ value is True/False if the year is a leap year</p>
 <h2><span class="section-number">8.2.11. </span>Exercise 11<a class="headerlink" href="#exercise-11" title="Link to this heading">#</a></h2>
 <p>Sort array by len of names</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">students</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;john&#39;</span><span class="p">,</span> <span class="s1">&#39;Janette&#39;</span><span class="p">,</span> <span class="s1">&#39;doe&#39;</span><span class="p">]</span>
@@ -929,10 +929,10 @@ Janette
 <h2><span class="section-number">8.2.12. </span>Exercise 12<a class="headerlink" href="#exercise-12" title="Link to this heading">#</a></h2>
 <p>Sort dictionary by value</p>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
-<details class="admonition hide above-input">
+<details class="hide above-input">
 <summary aria-label="Toggle hidden content">
-<p class="collapsed admonition-title">Show code cell source</p>
-<p class="expanded admonition-title">Hide code cell source</p>
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
 </summary>
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;34.4&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;45.3&#39;</span><span class="p">},</span> <span class="p">{</span><span class="s1">&#39;value&#39;</span><span class="p">:</span> <span class="s1">&#39;73.4&#39;</span><span class="p">}]</span>
