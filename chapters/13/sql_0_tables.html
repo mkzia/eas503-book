@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -691,22 +691,74 @@ We fix this by making the student fields <code class="docutils literal notransla
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;primary_key_example.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statements</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> DROP TABLE IF EXISTS Teachers;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> CREATE TABLE Teachers(</span>
-<span class="s2">   (...)     14 SELECT rowid, * FROM Teachers;</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="s2"> &quot;&quot;&quot;</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TeacherName</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>John Smith</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>John Smith</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>rowid</th>
+      <th>TeacherName</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>John Smith</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>John Smith</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <ol class="arabic simple">
 <li><p>Note: <code class="docutils literal notranslate"><span class="pre">DROP</span> <span class="pre">TABLE</span> <span class="pre">IF</span> <span class="pre">EXISTS</span> <span class="pre">Teachers;</span></code> is used to drop the table if it exists. This is useful if you want to run the create statement over and over again with changes.</p></li>
@@ -772,22 +824,30 @@ We fix this by making the student fields <code class="docutils literal notransla
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;primary_key_example.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statements</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> DROP TABLE Teachers;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> CREATE TABLE Teachers (</span>
-<span class="s2">   (...)     14 SELECT * FROM Teachers;</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_3a0d6" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_3a0d6_level0_col0" class="col_heading level0 col0" >TeacherId</th>
+      <th id="T_3a0d6_level0_col1" class="col_heading level0 col1" >TeacherName</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_3a0d6_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_3a0d6_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_3a0d6_row0_col1" class="data row0 col1" >John Smith</td>
+    </tr>
+    <tr>
+      <th id="T_3a0d6_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_3a0d6_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_3a0d6_row1_col1" class="data row1 col1" >John Smith</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </section>
 <section id="adding-a-unique-constraint">
@@ -845,22 +905,33 @@ by using the <code class="docutils literal notranslate"><span class="pre">UNIQUE
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">3</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;primary_key_example.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statements</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> DROP TABLE Teachers;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> CREATE TABLE Teachers (</span>
-<span class="s2">   (...)     15 INSERT INTO Teachers (&#39;TeacherName&#39;, &#39;TeacherEmployeeID&#39;) VALUES (&#39;John Smith&#39;, 100002);</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_dc511" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_dc511_level0_col0" class="col_heading level0 col0" >TeacherId</th>
+      <th id="T_dc511_level0_col1" class="col_heading level0 col1" >TeacherName</th>
+      <th id="T_dc511_level0_col2" class="col_heading level0 col2" >TeacherEmployeeID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_dc511_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_dc511_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_dc511_row0_col1" class="data row0 col1" >John Smith</td>
+      <td id="T_dc511_row0_col2" class="data row0 col2" >100001</td>
+    </tr>
+    <tr>
+      <th id="T_dc511_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_dc511_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_dc511_row1_col1" class="data row1 col1" >John Smith</td>
+      <td id="T_dc511_row1_col2" class="data row1 col2" >100002</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </section>
 <section id="foreign-keys">
@@ -965,23 +1036,6 @@ key constraint.</p>
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">4</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;teachers_courses.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statements</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> PRAGMA foreign_keys = ON;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> DROP TABLE IF EXISTS  Courses;</span>
-<span class="s2">   (...)     36 VALUES (&#39;Introduction to Probability&#39;, &#39;EAS506&#39;, 2);</span>
-<span class="g g-Whitespace">     </span><span class="mi">37</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 </section>
 <section id="using-the-relationship">
@@ -1027,22 +1081,57 @@ key constraint.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">5</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;teachers_courses.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2">     *</span>
-<span class="s2">   (...)     12     Courses c ON t.TeacherId = c.TeacherId;</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="s2"> &quot;&quot;&quot;</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TeacherId</th>
+      <th>TeacherName</th>
+      <th>TeacherEmployeeID</th>
+      <th>CourseId</th>
+      <th>CourseName</th>
+      <th>CourseShortID</th>
+      <th>TeacherId</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Melissa Larson</td>
+      <td>10001</td>
+      <td>1</td>
+      <td>Introduction to Python</td>
+      <td>EAS503</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Christopher Smith</td>
+      <td>10002</td>
+      <td>2</td>
+      <td>Introduction to Probability</td>
+      <td>EAS506</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
 <span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">TeacherName</span><span class="p">,</span>
@@ -1085,22 +1174,45 @@ key constraint.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">6</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;teachers_courses.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2">     t.TeacherName,</span>
-<span class="s2">   (...)     14     Courses c ON t.TeacherId = c.TeacherId;</span>
-<span class="g g-Whitespace">     </span><span class="mi">15</span><span class="s2"> &quot;&quot;&quot;</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TeacherName</th>
+      <th>CourseName</th>
+      <th>CourseShortID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Melissa Larson</td>
+      <td>Introduction to Python</td>
+      <td>EAS503</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Christopher Smith</td>
+      <td>Introduction to Probability</td>
+      <td>EAS506</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <p>Method 2 – let SQLite infers join condition – but you specify the shared column name</p>
 <ul class="simple">
@@ -1141,22 +1253,54 @@ key constraint.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">7</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;teachers_courses.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2">     *</span>
-<span class="s2">   (...)     11 INNER JOIN Courses c USING(TeacherId);</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span><span class="s2"> &quot;&quot;&quot;</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TeacherId</th>
+      <th>TeacherName</th>
+      <th>TeacherEmployeeID</th>
+      <th>CourseId</th>
+      <th>CourseName</th>
+      <th>CourseShortID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Melissa Larson</td>
+      <td>10001</td>
+      <td>1</td>
+      <td>Introduction to Python</td>
+      <td>EAS503</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Christopher Smith</td>
+      <td>10002</td>
+      <td>2</td>
+      <td>Introduction to Probability</td>
+      <td>EAS506</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span>
 <span class="w">    </span><span class="n">t</span><span class="p">.</span><span class="n">TeacherName</span><span class="p">,</span>
@@ -1196,22 +1340,45 @@ key constraint.</p>
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">8</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;teachers_courses.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2">     t.TeacherName,</span>
-<span class="s2">   (...)     13 INNER JOIN Courses c USING(TeacherId);</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="s2"> &quot;&quot;&quot;</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>TeacherName</th>
+      <th>CourseName</th>
+      <th>CourseShortID</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Melissa Larson</td>
+      <td>Introduction to Python</td>
+      <td>EAS503</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Christopher Smith</td>
+      <td>Introduction to Probability</td>
+      <td>EAS506</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 </section>
 </section>
@@ -1257,22 +1424,143 @@ Example database: <code class="docutils literal notranslate"><span class="pre">j
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">9</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;join_example_database.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2">     *</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="s2"> FROM Prices</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2"> &quot;&quot;&quot;</span>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
 
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PK</th>
+      <th>PRODUCT</th>
+      <th>PRICE</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Potatoes</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Avacados</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Kiwis</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Onions</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Melons</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>Oranges</td>
+      <td>5</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>Tomatoes</td>
+      <td>6</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>PK</th>
+      <th>PRODUCT</th>
+      <th>QUANTITY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Potatoes</td>
+      <td>45</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Avacados</td>
+      <td>63</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Kiwis</td>
+      <td>19</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Onions</td>
+      <td>20</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Melons</td>
+      <td>66</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6</td>
+      <td>Broccoli</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>7</td>
+      <td>Squash</td>
+      <td>92</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
 </div>
 <section id="inner-join">
 <h3><span class="section-number">13.1.7.1. </span>Inner Join<a class="headerlink" href="#inner-join" title="Link to this heading">#</a></h3>
@@ -1311,22 +1599,51 @@ Example database: <code class="docutils literal notranslate"><span class="pre">j
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">10</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;join_example_database.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2">     Prices.Product,</span>
-<span class="s2">   (...)     12 INNER JOIN Quantities ON Prices.Product = Quantities.Product;</span>
-<span class="g g-Whitespace">     </span><span class="mi">13</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_58abd" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_58abd_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
+      <th id="T_58abd_level0_col1" class="col_heading level0 col1" >PRICE</th>
+      <th id="T_58abd_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_58abd_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_58abd_row0_col0" class="data row0 col0" >Potatoes</td>
+      <td id="T_58abd_row0_col1" class="data row0 col1" >3</td>
+      <td id="T_58abd_row0_col2" class="data row0 col2" >45</td>
+    </tr>
+    <tr>
+      <th id="T_58abd_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_58abd_row1_col0" class="data row1 col0" >Avacados</td>
+      <td id="T_58abd_row1_col1" class="data row1 col1" >4</td>
+      <td id="T_58abd_row1_col2" class="data row1 col2" >63</td>
+    </tr>
+    <tr>
+      <th id="T_58abd_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_58abd_row2_col0" class="data row2 col0" >Kiwis</td>
+      <td id="T_58abd_row2_col1" class="data row2 col1" >2</td>
+      <td id="T_58abd_row2_col2" class="data row2 col2" >19</td>
+    </tr>
+    <tr>
+      <th id="T_58abd_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_58abd_row3_col0" class="data row3 col0" >Onions</td>
+      <td id="T_58abd_row3_col1" class="data row3 col1" >1</td>
+      <td id="T_58abd_row3_col2" class="data row3 col2" >20</td>
+    </tr>
+    <tr>
+      <th id="T_58abd_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_58abd_row4_col0" class="data row4 col0" >Melons</td>
+      <td id="T_58abd_row4_col1" class="data row4 col1" >5</td>
+      <td id="T_58abd_row4_col2" class="data row4 col2" >66</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </section>
 <section id="left-join">
@@ -1368,22 +1685,63 @@ Example database: <code class="docutils literal notranslate"><span class="pre">j
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;join_example_database.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2">     Prices.Product,</span>
-<span class="s2">   (...)     13 LEFT OUTER JOIN Quantities ON Prices.Product = Quantities.Product;</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_d84a8" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_d84a8_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
+      <th id="T_d84a8_level0_col1" class="col_heading level0 col1" >PRICE</th>
+      <th id="T_d84a8_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_d84a8_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_d84a8_row0_col0" class="data row0 col0" >Potatoes</td>
+      <td id="T_d84a8_row0_col1" class="data row0 col1" >3</td>
+      <td id="T_d84a8_row0_col2" class="data row0 col2" >45.000000</td>
+    </tr>
+    <tr>
+      <th id="T_d84a8_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_d84a8_row1_col0" class="data row1 col0" >Avacados</td>
+      <td id="T_d84a8_row1_col1" class="data row1 col1" >4</td>
+      <td id="T_d84a8_row1_col2" class="data row1 col2" >63.000000</td>
+    </tr>
+    <tr>
+      <th id="T_d84a8_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_d84a8_row2_col0" class="data row2 col0" >Kiwis</td>
+      <td id="T_d84a8_row2_col1" class="data row2 col1" >2</td>
+      <td id="T_d84a8_row2_col2" class="data row2 col2" >19.000000</td>
+    </tr>
+    <tr>
+      <th id="T_d84a8_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_d84a8_row3_col0" class="data row3 col0" >Onions</td>
+      <td id="T_d84a8_row3_col1" class="data row3 col1" >1</td>
+      <td id="T_d84a8_row3_col2" class="data row3 col2" >20.000000</td>
+    </tr>
+    <tr>
+      <th id="T_d84a8_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_d84a8_row4_col0" class="data row4 col0" >Melons</td>
+      <td id="T_d84a8_row4_col1" class="data row4 col1" >5</td>
+      <td id="T_d84a8_row4_col2" class="data row4 col2" >66.000000</td>
+    </tr>
+    <tr>
+      <th id="T_d84a8_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_d84a8_row5_col0" class="data row5 col0" >Oranges</td>
+      <td id="T_d84a8_row5_col1" class="data row5 col1" >5</td>
+      <td id="T_d84a8_row5_col2" class="data row5 col2" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_d84a8_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_d84a8_row6_col0" class="data row6 col0" >Tomatoes</td>
+      <td id="T_d84a8_row6_col1" class="data row6 col1" >6</td>
+      <td id="T_d84a8_row6_col2" class="data row6 col2" >nan</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </section>
 <section id="right-join-doesn-t-work-in-sqlite3">
@@ -1450,22 +1808,63 @@ Example database: <code class="docutils literal notranslate"><span class="pre">j
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">12</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;join_example_database.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2">     Quantities.Product,</span>
-<span class="s2">   (...)     13 LEFT OUTER JOIN Prices ON Quantities.Product = Prices.Product;</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_94279" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_94279_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
+      <th id="T_94279_level0_col1" class="col_heading level0 col1" >PRICE</th>
+      <th id="T_94279_level0_col2" class="col_heading level0 col2" >QUANTITY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_94279_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_94279_row0_col0" class="data row0 col0" >Potatoes</td>
+      <td id="T_94279_row0_col1" class="data row0 col1" >3.000000</td>
+      <td id="T_94279_row0_col2" class="data row0 col2" >45</td>
+    </tr>
+    <tr>
+      <th id="T_94279_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_94279_row1_col0" class="data row1 col0" >Avacados</td>
+      <td id="T_94279_row1_col1" class="data row1 col1" >4.000000</td>
+      <td id="T_94279_row1_col2" class="data row1 col2" >63</td>
+    </tr>
+    <tr>
+      <th id="T_94279_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_94279_row2_col0" class="data row2 col0" >Kiwis</td>
+      <td id="T_94279_row2_col1" class="data row2 col1" >2.000000</td>
+      <td id="T_94279_row2_col2" class="data row2 col2" >19</td>
+    </tr>
+    <tr>
+      <th id="T_94279_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_94279_row3_col0" class="data row3 col0" >Onions</td>
+      <td id="T_94279_row3_col1" class="data row3 col1" >1.000000</td>
+      <td id="T_94279_row3_col2" class="data row3 col2" >20</td>
+    </tr>
+    <tr>
+      <th id="T_94279_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_94279_row4_col0" class="data row4 col0" >Melons</td>
+      <td id="T_94279_row4_col1" class="data row4 col1" >5.000000</td>
+      <td id="T_94279_row4_col2" class="data row4 col2" >66</td>
+    </tr>
+    <tr>
+      <th id="T_94279_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_94279_row5_col0" class="data row5 col0" >Broccoli</td>
+      <td id="T_94279_row5_col1" class="data row5 col1" >nan</td>
+      <td id="T_94279_row5_col2" class="data row5 col2" >27</td>
+    </tr>
+    <tr>
+      <th id="T_94279_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_94279_row6_col0" class="data row6 col0" >Squash</td>
+      <td id="T_94279_row6_col1" class="data row6 col1" >nan</td>
+      <td id="T_94279_row6_col2" class="data row6 col2" >92</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </section>
 <section id="full-outer-join-does-not-work-in-sqlite3">
@@ -1528,22 +1927,120 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">13</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;join_example_database.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT Prices.Product, Prices.Price,  Quantities.Product, Quantities.Quantity</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> FROM Prices</span>
-<span class="s2">   (...)     15 ON Quantities.Product = Prices.Product;</span>
-<span class="g g-Whitespace">     </span><span class="mi">16</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_7f3fd" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_7f3fd_level0_col0" class="col_heading level0 col0" >PRODUCT</th>
+      <th id="T_7f3fd_level0_col1" class="col_heading level0 col1" >PRICE</th>
+      <th id="T_7f3fd_level0_col2" class="col_heading level0 col2" >PRODUCT</th>
+      <th id="T_7f3fd_level0_col3" class="col_heading level0 col3" >QUANTITY</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_7f3fd_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_7f3fd_row0_col0" class="data row0 col0" >Potatoes</td>
+      <td id="T_7f3fd_row0_col1" class="data row0 col1" >3.000000</td>
+      <td id="T_7f3fd_row0_col2" class="data row0 col2" >Potatoes</td>
+      <td id="T_7f3fd_row0_col3" class="data row0 col3" >45.000000</td>
+    </tr>
+    <tr>
+      <th id="T_7f3fd_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_7f3fd_row1_col0" class="data row1 col0" >Avacados</td>
+      <td id="T_7f3fd_row1_col1" class="data row1 col1" >4.000000</td>
+      <td id="T_7f3fd_row1_col2" class="data row1 col2" >Avacados</td>
+      <td id="T_7f3fd_row1_col3" class="data row1 col3" >63.000000</td>
+    </tr>
+    <tr>
+      <th id="T_7f3fd_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_7f3fd_row2_col0" class="data row2 col0" >Kiwis</td>
+      <td id="T_7f3fd_row2_col1" class="data row2 col1" >2.000000</td>
+      <td id="T_7f3fd_row2_col2" class="data row2 col2" >Kiwis</td>
+      <td id="T_7f3fd_row2_col3" class="data row2 col3" >19.000000</td>
+    </tr>
+    <tr>
+      <th id="T_7f3fd_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_7f3fd_row3_col0" class="data row3 col0" >Onions</td>
+      <td id="T_7f3fd_row3_col1" class="data row3 col1" >1.000000</td>
+      <td id="T_7f3fd_row3_col2" class="data row3 col2" >Onions</td>
+      <td id="T_7f3fd_row3_col3" class="data row3 col3" >20.000000</td>
+    </tr>
+    <tr>
+      <th id="T_7f3fd_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_7f3fd_row4_col0" class="data row4 col0" >Melons</td>
+      <td id="T_7f3fd_row4_col1" class="data row4 col1" >5.000000</td>
+      <td id="T_7f3fd_row4_col2" class="data row4 col2" >Melons</td>
+      <td id="T_7f3fd_row4_col3" class="data row4 col3" >66.000000</td>
+    </tr>
+    <tr>
+      <th id="T_7f3fd_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_7f3fd_row5_col0" class="data row5 col0" >Oranges</td>
+      <td id="T_7f3fd_row5_col1" class="data row5 col1" >5.000000</td>
+      <td id="T_7f3fd_row5_col2" class="data row5 col2" >None</td>
+      <td id="T_7f3fd_row5_col3" class="data row5 col3" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_7f3fd_level0_row6" class="row_heading level0 row6" >6</th>
+      <td id="T_7f3fd_row6_col0" class="data row6 col0" >Tomatoes</td>
+      <td id="T_7f3fd_row6_col1" class="data row6 col1" >6.000000</td>
+      <td id="T_7f3fd_row6_col2" class="data row6 col2" >None</td>
+      <td id="T_7f3fd_row6_col3" class="data row6 col3" >nan</td>
+    </tr>
+    <tr>
+      <th id="T_7f3fd_level0_row7" class="row_heading level0 row7" >7</th>
+      <td id="T_7f3fd_row7_col0" class="data row7 col0" >Potatoes</td>
+      <td id="T_7f3fd_row7_col1" class="data row7 col1" >3.000000</td>
+      <td id="T_7f3fd_row7_col2" class="data row7 col2" >Potatoes</td>
+      <td id="T_7f3fd_row7_col3" class="data row7 col3" >45.000000</td>
+    </tr>
+    <tr>
+      <th id="T_7f3fd_level0_row8" class="row_heading level0 row8" >8</th>
+      <td id="T_7f3fd_row8_col0" class="data row8 col0" >Avacados</td>
+      <td id="T_7f3fd_row8_col1" class="data row8 col1" >4.000000</td>
+      <td id="T_7f3fd_row8_col2" class="data row8 col2" >Avacados</td>
+      <td id="T_7f3fd_row8_col3" class="data row8 col3" >63.000000</td>
+    </tr>
+    <tr>
+      <th id="T_7f3fd_level0_row9" class="row_heading level0 row9" >9</th>
+      <td id="T_7f3fd_row9_col0" class="data row9 col0" >Kiwis</td>
+      <td id="T_7f3fd_row9_col1" class="data row9 col1" >2.000000</td>
+      <td id="T_7f3fd_row9_col2" class="data row9 col2" >Kiwis</td>
+      <td id="T_7f3fd_row9_col3" class="data row9 col3" >19.000000</td>
+    </tr>
+    <tr>
+      <th id="T_7f3fd_level0_row10" class="row_heading level0 row10" >10</th>
+      <td id="T_7f3fd_row10_col0" class="data row10 col0" >Onions</td>
+      <td id="T_7f3fd_row10_col1" class="data row10 col1" >1.000000</td>
+      <td id="T_7f3fd_row10_col2" class="data row10 col2" >Onions</td>
+      <td id="T_7f3fd_row10_col3" class="data row10 col3" >20.000000</td>
+    </tr>
+    <tr>
+      <th id="T_7f3fd_level0_row11" class="row_heading level0 row11" >11</th>
+      <td id="T_7f3fd_row11_col0" class="data row11 col0" >Melons</td>
+      <td id="T_7f3fd_row11_col1" class="data row11 col1" >5.000000</td>
+      <td id="T_7f3fd_row11_col2" class="data row11 col2" >Melons</td>
+      <td id="T_7f3fd_row11_col3" class="data row11 col3" >66.000000</td>
+    </tr>
+    <tr>
+      <th id="T_7f3fd_level0_row12" class="row_heading level0 row12" >12</th>
+      <td id="T_7f3fd_row12_col0" class="data row12 col0" >None</td>
+      <td id="T_7f3fd_row12_col1" class="data row12 col1" >nan</td>
+      <td id="T_7f3fd_row12_col2" class="data row12 col2" >Broccoli</td>
+      <td id="T_7f3fd_row12_col3" class="data row12 col3" >27.000000</td>
+    </tr>
+    <tr>
+      <th id="T_7f3fd_level0_row13" class="row_heading level0 row13" >13</th>
+      <td id="T_7f3fd_row13_col0" class="data row13 col0" >None</td>
+      <td id="T_7f3fd_row13_col1" class="data row13 col1" >nan</td>
+      <td id="T_7f3fd_row13_col2" class="data row13 col2" >Squash</td>
+      <td id="T_7f3fd_row13_col3" class="data row13 col3" >92.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </section>
 </section>
@@ -1658,23 +2155,6 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">14</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statements</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> PRAGMA foreign_keys = ON;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> DROP TABLE IF EXISTS Cars;</span>
-<span class="s2">   (...)     48 INSERT INTO Cars (make_model_id, color_id, available) VALUES (3, 3, 0);</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Colors</span><span class="p">;</span>
 </pre></div>
@@ -1701,20 +2181,35 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">15</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT * FROM Colors;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_a9ef2" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_a9ef2_level0_col0" class="col_heading level0 col0" >color_id</th>
+      <th id="T_a9ef2_level0_col1" class="col_heading level0 col1" >color</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_a9ef2_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_a9ef2_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_a9ef2_row0_col1" class="data row0 col1" >Red</td>
+    </tr>
+    <tr>
+      <th id="T_a9ef2_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_a9ef2_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_a9ef2_row1_col1" class="data row1 col1" >Blue</td>
+    </tr>
+    <tr>
+      <th id="T_a9ef2_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_a9ef2_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_a9ef2_row2_col1" class="data row2 col1" >Green</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">;</span>
 </pre></div>
@@ -1741,20 +2236,43 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">16</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT * FROM MakeModels;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_6167a" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_6167a_level0_col0" class="col_heading level0 col0" >make_model_id</th>
+      <th id="T_6167a_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_6167a_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_6167a_level0_col3" class="col_heading level0 col3" >Year</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_6167a_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_6167a_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_6167a_row0_col1" class="data row0 col1" >Ford</td>
+      <td id="T_6167a_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_6167a_row0_col3" class="data row0 col3" >2019</td>
+    </tr>
+    <tr>
+      <th id="T_6167a_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_6167a_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_6167a_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_6167a_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_6167a_row1_col3" class="data row1 col3" >2010</td>
+    </tr>
+    <tr>
+      <th id="T_6167a_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_6167a_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_6167a_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_6167a_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_6167a_row2_col3" class="data row2 col3" >2015</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Cars</span><span class="p">;</span>
 </pre></div>
@@ -1781,20 +2299,64 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">17</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT * FROM Cars;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_323f3" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_323f3_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_323f3_level0_col1" class="col_heading level0 col1" >make_model_id</th>
+      <th id="T_323f3_level0_col2" class="col_heading level0 col2" >color_id</th>
+      <th id="T_323f3_level0_col3" class="col_heading level0 col3" >available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_323f3_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_323f3_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_323f3_row0_col1" class="data row0 col1" >1</td>
+      <td id="T_323f3_row0_col2" class="data row0 col2" >1</td>
+      <td id="T_323f3_row0_col3" class="data row0 col3" >1</td>
+    </tr>
+    <tr>
+      <th id="T_323f3_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_323f3_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_323f3_row1_col1" class="data row1 col1" >2</td>
+      <td id="T_323f3_row1_col2" class="data row1 col2" >1</td>
+      <td id="T_323f3_row1_col3" class="data row1 col3" >1</td>
+    </tr>
+    <tr>
+      <th id="T_323f3_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_323f3_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_323f3_row2_col1" class="data row2 col1" >3</td>
+      <td id="T_323f3_row2_col2" class="data row2 col2" >1</td>
+      <td id="T_323f3_row2_col3" class="data row2 col3" >1</td>
+    </tr>
+    <tr>
+      <th id="T_323f3_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_323f3_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_323f3_row3_col1" class="data row3 col1" >1</td>
+      <td id="T_323f3_row3_col2" class="data row3 col2" >2</td>
+      <td id="T_323f3_row3_col3" class="data row3 col3" >0</td>
+    </tr>
+    <tr>
+      <th id="T_323f3_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_323f3_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_323f3_row4_col1" class="data row4 col1" >1</td>
+      <td id="T_323f3_row4_col2" class="data row4 col2" >2</td>
+      <td id="T_323f3_row4_col3" class="data row4 col3" >0</td>
+    </tr>
+    <tr>
+      <th id="T_323f3_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_323f3_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_323f3_row5_col1" class="data row5 col1" >3</td>
+      <td id="T_323f3_row5_col2" class="data row5 col2" >3</td>
+      <td id="T_323f3_row5_col3" class="data row5 col3" >0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">car_id</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Make</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">model</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">available</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Cars</span>
@@ -1827,23 +2389,78 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">18</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT Cars.car_id, MakeModels.Make, MakeModels.model, MakeModels.year, Colors.color, Cars.available</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> FROM Cars</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="s2">     INNER JOIN MakeModels ON MakeModels.make_model_id = Cars.make_model_id</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2">     INNER JOIN Colors ON Colors.color_id = Cars.color_id;</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_6729a" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_6729a_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_6729a_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_6729a_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_6729a_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_6729a_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_6729a_level0_col5" class="col_heading level0 col5" >available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_6729a_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_6729a_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_6729a_row0_col1" class="data row0 col1" >Ford</td>
+      <td id="T_6729a_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_6729a_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_6729a_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_6729a_row0_col5" class="data row0 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_6729a_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_6729a_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_6729a_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_6729a_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_6729a_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_6729a_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_6729a_row1_col5" class="data row1 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_6729a_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_6729a_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_6729a_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_6729a_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_6729a_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_6729a_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_6729a_row2_col5" class="data row2 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_6729a_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_6729a_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_6729a_row3_col1" class="data row3 col1" >Ford</td>
+      <td id="T_6729a_row3_col2" class="data row3 col2" >Explorer</td>
+      <td id="T_6729a_row3_col3" class="data row3 col3" >2019</td>
+      <td id="T_6729a_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_6729a_row3_col5" class="data row3 col5" >0</td>
+    </tr>
+    <tr>
+      <th id="T_6729a_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_6729a_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_6729a_row4_col1" class="data row4 col1" >Ford</td>
+      <td id="T_6729a_row4_col2" class="data row4 col2" >Explorer</td>
+      <td id="T_6729a_row4_col3" class="data row4 col3" >2019</td>
+      <td id="T_6729a_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_6729a_row4_col5" class="data row4 col5" >0</td>
+    </tr>
+    <tr>
+      <th id="T_6729a_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_6729a_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_6729a_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_6729a_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_6729a_row5_col3" class="data row5 col3" >2015</td>
+      <td id="T_6729a_row5_col4" class="data row5 col4" >Green</td>
+      <td id="T_6729a_row5_col5" class="data row5 col5" >0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </section>
 <section id="updating-tables">
@@ -1968,22 +2585,78 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">19</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statements</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> PRAGMA foreign_keys = ON;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> DROP TABLE IF EXISTS Cars;</span>
-<span class="s2">   (...)     48 INSERT INTO Cars (make_model_id, color_id, available) VALUES (3, 3, 0);</span>
-<span class="g g-Whitespace">     </span><span class="mi">49</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_8c445" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_8c445_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_8c445_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_8c445_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_8c445_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_8c445_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_8c445_level0_col5" class="col_heading level0 col5" >available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_8c445_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_8c445_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_8c445_row0_col1" class="data row0 col1" >Frd</td>
+      <td id="T_8c445_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_8c445_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_8c445_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_8c445_row0_col5" class="data row0 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_8c445_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_8c445_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_8c445_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_8c445_row1_col2" class="data row1 col2" >Camrey</td>
+      <td id="T_8c445_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_8c445_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_8c445_row1_col5" class="data row1 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_8c445_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_8c445_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_8c445_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_8c445_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_8c445_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_8c445_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_8c445_row2_col5" class="data row2 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_8c445_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_8c445_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_8c445_row3_col1" class="data row3 col1" >Frd</td>
+      <td id="T_8c445_row3_col2" class="data row3 col2" >Explorer</td>
+      <td id="T_8c445_row3_col3" class="data row3 col3" >2019</td>
+      <td id="T_8c445_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_8c445_row3_col5" class="data row3 col5" >0</td>
+    </tr>
+    <tr>
+      <th id="T_8c445_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_8c445_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_8c445_row4_col1" class="data row4 col1" >Frd</td>
+      <td id="T_8c445_row4_col2" class="data row4 col2" >Explorer</td>
+      <td id="T_8c445_row4_col3" class="data row4 col3" >2019</td>
+      <td id="T_8c445_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_8c445_row4_col5" class="data row4 col5" >0</td>
+    </tr>
+    <tr>
+      <th id="T_8c445_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_8c445_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_8c445_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_8c445_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_8c445_row5_col3" class="data row5 col3" >2015</td>
+      <td id="T_8c445_row5_col4" class="data row5 col4" >Greene</td>
+      <td id="T_8c445_row5_col5" class="data row5 col5" >0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <section id="update-color">
 <h3><span class="section-number">13.1.9.1. </span>Update Color<a class="headerlink" href="#update-color" title="Link to this heading">#</a></h3>
@@ -2016,23 +2689,6 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">20</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> UPDATE Colors</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> SET color = &#39;Green&#39;</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="s2"> WHERE color = &quot;Greene&quot;;</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">car_id</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Make</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Model</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">available</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Cars</span>
@@ -2065,23 +2721,78 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">21</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT Cars.car_id, MakeModels.Make, MakeModels.Model, MakeModels.year, Colors.color, Cars.available</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> FROM Cars</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="s2">     INNER JOIN MakeModels ON MakeModels.make_model_id = Cars.make_model_id</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2">     INNER JOIN Colors ON Colors.color_id = Cars.color_id;</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_3387a" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_3387a_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_3387a_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_3387a_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_3387a_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_3387a_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_3387a_level0_col5" class="col_heading level0 col5" >available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_3387a_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_3387a_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_3387a_row0_col1" class="data row0 col1" >Frd</td>
+      <td id="T_3387a_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_3387a_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_3387a_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_3387a_row0_col5" class="data row0 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_3387a_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_3387a_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_3387a_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_3387a_row1_col2" class="data row1 col2" >Camrey</td>
+      <td id="T_3387a_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_3387a_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_3387a_row1_col5" class="data row1 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_3387a_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_3387a_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_3387a_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_3387a_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_3387a_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_3387a_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_3387a_row2_col5" class="data row2 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_3387a_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_3387a_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_3387a_row3_col1" class="data row3 col1" >Frd</td>
+      <td id="T_3387a_row3_col2" class="data row3 col2" >Explorer</td>
+      <td id="T_3387a_row3_col3" class="data row3 col3" >2019</td>
+      <td id="T_3387a_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_3387a_row3_col5" class="data row3 col5" >0</td>
+    </tr>
+    <tr>
+      <th id="T_3387a_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_3387a_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_3387a_row4_col1" class="data row4 col1" >Frd</td>
+      <td id="T_3387a_row4_col2" class="data row4 col2" >Explorer</td>
+      <td id="T_3387a_row4_col3" class="data row4 col3" >2019</td>
+      <td id="T_3387a_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_3387a_row4_col5" class="data row4 col5" >0</td>
+    </tr>
+    <tr>
+      <th id="T_3387a_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_3387a_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_3387a_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_3387a_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_3387a_row5_col3" class="data row5 col3" >2015</td>
+      <td id="T_3387a_row5_col4" class="data row5 col4" >Green</td>
+      <td id="T_3387a_row5_col5" class="data row5 col5" >0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </section>
 <section id="update-makemodel">
@@ -2123,23 +2834,6 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">22</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statements</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> UPDATE MakeModels</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> SET Make = &#39;Ford&#39;</span>
-<span class="s2">   (...)     13 WHERE Model = &quot;Camrey&quot;;</span>
-<span class="g g-Whitespace">     </span><span class="mi">14</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">car_id</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Make</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Model</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">available</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Cars</span>
@@ -2172,23 +2866,78 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">23</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT Cars.car_id, MakeModels.Make, MakeModels.Model, MakeModels.year, Colors.color, Cars.available</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> FROM Cars</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="s2">     INNER JOIN MakeModels ON MakeModels.make_model_id = Cars.make_model_id</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2">     INNER JOIN Colors ON Colors.color_id = Cars.color_id;</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_18508" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_18508_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_18508_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_18508_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_18508_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_18508_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_18508_level0_col5" class="col_heading level0 col5" >available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_18508_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_18508_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_18508_row0_col1" class="data row0 col1" >Ford</td>
+      <td id="T_18508_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_18508_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_18508_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_18508_row0_col5" class="data row0 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_18508_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_18508_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_18508_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_18508_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_18508_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_18508_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_18508_row1_col5" class="data row1 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_18508_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_18508_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_18508_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_18508_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_18508_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_18508_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_18508_row2_col5" class="data row2 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_18508_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_18508_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_18508_row3_col1" class="data row3 col1" >Ford</td>
+      <td id="T_18508_row3_col2" class="data row3 col2" >Explorer</td>
+      <td id="T_18508_row3_col3" class="data row3 col3" >2019</td>
+      <td id="T_18508_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_18508_row3_col5" class="data row3 col5" >0</td>
+    </tr>
+    <tr>
+      <th id="T_18508_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_18508_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_18508_row4_col1" class="data row4 col1" >Ford</td>
+      <td id="T_18508_row4_col2" class="data row4 col2" >Explorer</td>
+      <td id="T_18508_row4_col3" class="data row4 col3" >2019</td>
+      <td id="T_18508_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_18508_row4_col5" class="data row4 col5" >0</td>
+    </tr>
+    <tr>
+      <th id="T_18508_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_18508_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_18508_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_18508_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_18508_row5_col3" class="data row5 col3" >2015</td>
+      <td id="T_18508_row5_col4" class="data row5 col4" >Green</td>
+      <td id="T_18508_row5_col5" class="data row5 col5" >0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </section>
 <section id="update-car">
@@ -2222,23 +2971,6 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">24</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> UPDATE Cars</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> SET available = 1</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="s2"> WHERE car_id = 6;</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">car_id</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Make</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Model</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">available</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Cars</span>
@@ -2271,23 +3003,78 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">25</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT Cars.car_id, MakeModels.Make, MakeModels.Model, MakeModels.year, Colors.color, Cars.available</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> FROM Cars</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="s2">     INNER JOIN MakeModels ON MakeModels.make_model_id = Cars.make_model_id</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2">     INNER JOIN Colors ON Colors.color_id = Cars.color_id;</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_c05b1" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_c05b1_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_c05b1_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_c05b1_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_c05b1_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_c05b1_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_c05b1_level0_col5" class="col_heading level0 col5" >available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_c05b1_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_c05b1_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_c05b1_row0_col1" class="data row0 col1" >Ford</td>
+      <td id="T_c05b1_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_c05b1_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_c05b1_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_c05b1_row0_col5" class="data row0 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_c05b1_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_c05b1_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_c05b1_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_c05b1_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_c05b1_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_c05b1_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_c05b1_row1_col5" class="data row1 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_c05b1_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_c05b1_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_c05b1_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_c05b1_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_c05b1_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_c05b1_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_c05b1_row2_col5" class="data row2 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_c05b1_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_c05b1_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_c05b1_row3_col1" class="data row3 col1" >Ford</td>
+      <td id="T_c05b1_row3_col2" class="data row3 col2" >Explorer</td>
+      <td id="T_c05b1_row3_col3" class="data row3 col3" >2019</td>
+      <td id="T_c05b1_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_c05b1_row3_col5" class="data row3 col5" >0</td>
+    </tr>
+    <tr>
+      <th id="T_c05b1_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_c05b1_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_c05b1_row4_col1" class="data row4 col1" >Ford</td>
+      <td id="T_c05b1_row4_col2" class="data row4 col2" >Explorer</td>
+      <td id="T_c05b1_row4_col3" class="data row4 col3" >2019</td>
+      <td id="T_c05b1_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_c05b1_row4_col5" class="data row4 col5" >0</td>
+    </tr>
+    <tr>
+      <th id="T_c05b1_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_c05b1_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_c05b1_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_c05b1_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_c05b1_row5_col3" class="data row5 col3" >2015</td>
+      <td id="T_c05b1_row5_col4" class="data row5 col4" >Green</td>
+      <td id="T_c05b1_row5_col5" class="data row5 col5" >1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </section>
 </section>
@@ -2321,22 +3108,6 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">26</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> DELETE FROM Cars</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> WHERE available = 0;</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="cell tag_hide-input tag_output_scroll docutils container">
 <details class="hide above-input">
@@ -2363,23 +3134,60 @@ Ref: <a class="reference external" href="https://www.sqlitetutorial.net/sqlite-f
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">27</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT Cars.car_id, MakeModels.Make, MakeModels.Model, MakeModels.year, Colors.color, Cars.available</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> FROM Cars</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="s2">     INNER JOIN MakeModels ON MakeModels.make_model_id = Cars.make_model_id</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2">     INNER JOIN Colors ON Colors.color_id = Cars.color_id;</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_675a4" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_675a4_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_675a4_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_675a4_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_675a4_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_675a4_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_675a4_level0_col5" class="col_heading level0 col5" >available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_675a4_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_675a4_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_675a4_row0_col1" class="data row0 col1" >Ford</td>
+      <td id="T_675a4_row0_col2" class="data row0 col2" >Explorer</td>
+      <td id="T_675a4_row0_col3" class="data row0 col3" >2019</td>
+      <td id="T_675a4_row0_col4" class="data row0 col4" >Red</td>
+      <td id="T_675a4_row0_col5" class="data row0 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_675a4_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_675a4_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_675a4_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_675a4_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_675a4_row1_col3" class="data row1 col3" >2010</td>
+      <td id="T_675a4_row1_col4" class="data row1 col4" >Red</td>
+      <td id="T_675a4_row1_col5" class="data row1 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_675a4_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_675a4_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_675a4_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_675a4_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_675a4_row2_col3" class="data row2 col3" >2015</td>
+      <td id="T_675a4_row2_col4" class="data row2 col4" >Red</td>
+      <td id="T_675a4_row2_col5" class="data row2 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_675a4_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_675a4_row3_col0" class="data row3 col0" >6</td>
+      <td id="T_675a4_row3_col1" class="data row3 col1" >Honda</td>
+      <td id="T_675a4_row3_col2" class="data row3 col2" >Accord</td>
+      <td id="T_675a4_row3_col3" class="data row3 col3" >2015</td>
+      <td id="T_675a4_row3_col4" class="data row3 col4" >Green</td>
+      <td id="T_675a4_row3_col5" class="data row3 col5" >1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </section>
 <section id="deleting-a-referenced-row">
@@ -2430,24 +3238,6 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">28</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statements</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> DELETE FROM Cars</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> WHERE car_id IN (SELECT car_id from Cars INNER JOIN Colors clr USING(color_id ) WHERE clr.color=&#39;Red&#39;);</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="s2"> DELETE FROM Colors</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2"> WHERE color = &quot;Red&quot;;</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">car_id</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Make</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Model</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">available</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Cars</span>
@@ -2480,23 +3270,33 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">29</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT Cars.car_id, MakeModels.Make, MakeModels.Model, MakeModels.year, Colors.color, Cars.available</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> FROM Cars</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="s2">     INNER JOIN MakeModels ON MakeModels.make_model_id = Cars.make_model_id</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2">     INNER JOIN Colors ON Colors.color_id = Cars.color_id;</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_58cf4" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_58cf4_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_58cf4_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_58cf4_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_58cf4_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_58cf4_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_58cf4_level0_col5" class="col_heading level0 col5" >available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_58cf4_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_58cf4_row0_col0" class="data row0 col0" >6</td>
+      <td id="T_58cf4_row0_col1" class="data row0 col1" >Honda</td>
+      <td id="T_58cf4_row0_col2" class="data row0 col2" >Accord</td>
+      <td id="T_58cf4_row0_col3" class="data row0 col3" >2015</td>
+      <td id="T_58cf4_row0_col4" class="data row0 col4" >Green</td>
+      <td id="T_58cf4_row0_col5" class="data row0 col5" >1</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <section id="on-delete">
 <h3><span class="section-number">13.1.11.1. </span><code class="docutils literal notranslate"><span class="pre">ON</span> <span class="pre">DELETE</span></code><a class="headerlink" href="#on-delete" title="Link to this heading">#</a></h3>
@@ -2612,23 +3412,6 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">30</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statements</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> PRAGMA foreign_keys = ON;</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> DROP TABLE IF EXISTS Cars;</span>
-<span class="s2">   (...)     50 INSERT INTO Cars (make_model_id, color_id, available) VALUES (3, 3, 0);</span>
-<span class="g g-Whitespace">     </span><span class="mi">51</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">DELETE</span><span class="w"> </span><span class="k">FROM</span><span class="w"> </span><span class="n">Colors</span>
 <span class="k">WHERE</span><span class="w"> </span><span class="n">color</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ss">&quot;Red&quot;</span><span class="p">;</span>
@@ -2664,23 +3447,6 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </div>
 </div>
 </details>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">31</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statements</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> DELETE FROM Colors</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> WHERE color = &quot;Red&quot;;</span>
-<span class="s2">   (...)     11 WHERE make_model_id = 1;</span>
-<span class="g g-Whitespace">     </span><span class="mi">12</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">car_id</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Make</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Model</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">available</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Cars</span>
@@ -2713,23 +3479,33 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">32</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT Cars.car_id, MakeModels.Make, MakeModels.Model, MakeModels.year, Colors.color, Cars.available</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> FROM Cars</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="s2">     INNER JOIN MakeModels ON MakeModels.make_model_id = Cars.make_model_id</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2">     INNER JOIN Colors ON Colors.color_id = Cars.color_id;</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_1c45a" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_1c45a_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_1c45a_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_1c45a_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_1c45a_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_1c45a_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_1c45a_level0_col5" class="col_heading level0 col5" >available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_1c45a_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_1c45a_row0_col0" class="data row0 col0" >6</td>
+      <td id="T_1c45a_row0_col1" class="data row0 col1" >Honda</td>
+      <td id="T_1c45a_row0_col2" class="data row0 col2" >Accord</td>
+      <td id="T_1c45a_row0_col3" class="data row0 col3" >2015</td>
+      <td id="T_1c45a_row0_col4" class="data row0 col4" >Green</td>
+      <td id="T_1c45a_row0_col5" class="data row0 col5" >0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 <div class="highlight-SQL notranslate"><div class="highlight"><pre><span></span><span class="k">SELECT</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">car_id</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Make</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="n">Model</span><span class="p">,</span><span class="w"> </span><span class="n">MakeModels</span><span class="p">.</span><span class="k">year</span><span class="p">,</span><span class="w"> </span><span class="n">Colors</span><span class="p">.</span><span class="n">color</span><span class="p">,</span><span class="w"> </span><span class="n">Cars</span><span class="p">.</span><span class="n">available</span>
 <span class="k">FROM</span><span class="w"> </span><span class="n">Cars</span>
@@ -2762,23 +3538,78 @@ is set to <code class="docutils literal notranslate"><span class="pre">NULL</spa
 </div>
 </details>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
-<span class="ne">ModuleNotFoundError</span><span class="g g-Whitespace">                       </span>Traceback (most recent call last)
-<span class="n">Cell</span> <span class="n">In</span><span class="p">[</span><span class="mi">33</span><span class="p">],</span> <span class="n">line</span> <span class="mi">2</span>
-<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="kn">import</span> <span class="nn">sqlite3</span>
-<span class="ne">----&gt; </span><span class="mi">2</span> <span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
-<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">conn</span> <span class="o">=</span> <span class="n">sqlite3</span><span class="o">.</span><span class="n">connect</span><span class="p">(</span><span class="s1">&#39;cars.db&#39;</span><span class="p">)</span>
-<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="n">sql_statement</span> <span class="o">=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="g g-Whitespace">      </span><span class="mi">7</span><span class="s2"> SELECT Cars.car_id, MakeModels.Make, MakeModels.Model, MakeModels.year, Colors.color, Cars.available</span>
-<span class="g g-Whitespace">      </span><span class="mi">8</span><span class="s2"> FROM Cars</span>
-<span class="g g-Whitespace">      </span><span class="mi">9</span><span class="s2">     LEFT JOIN MakeModels ON MakeModels.make_model_id = Cars.make_model_id</span>
-<span class="g g-Whitespace">     </span><span class="mi">10</span><span class="s2">     LEFT JOIN Colors ON Colors.color_id = Cars.color_id;</span>
-<span class="g g-Whitespace">     </span><span class="mi">11</span><span class="s2"> &quot;&quot;&quot;</span>
-
-<span class="ne">ModuleNotFoundError</span>: No module named &#39;pandas&#39;
-</pre></div>
-</div>
-</div>
+<div class="output text_html"><style type="text/css">
+</style>
+<table id="T_f2ef8" style="font-size: 12px">
+  <thead>
+    <tr>
+      <th class="blank level0" >&nbsp;</th>
+      <th id="T_f2ef8_level0_col0" class="col_heading level0 col0" >car_id</th>
+      <th id="T_f2ef8_level0_col1" class="col_heading level0 col1" >Make</th>
+      <th id="T_f2ef8_level0_col2" class="col_heading level0 col2" >Model</th>
+      <th id="T_f2ef8_level0_col3" class="col_heading level0 col3" >Year</th>
+      <th id="T_f2ef8_level0_col4" class="col_heading level0 col4" >color</th>
+      <th id="T_f2ef8_level0_col5" class="col_heading level0 col5" >available</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th id="T_f2ef8_level0_row0" class="row_heading level0 row0" >0</th>
+      <td id="T_f2ef8_row0_col0" class="data row0 col0" >1</td>
+      <td id="T_f2ef8_row0_col1" class="data row0 col1" >None</td>
+      <td id="T_f2ef8_row0_col2" class="data row0 col2" >None</td>
+      <td id="T_f2ef8_row0_col3" class="data row0 col3" >nan</td>
+      <td id="T_f2ef8_row0_col4" class="data row0 col4" >None</td>
+      <td id="T_f2ef8_row0_col5" class="data row0 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_f2ef8_level0_row1" class="row_heading level0 row1" >1</th>
+      <td id="T_f2ef8_row1_col0" class="data row1 col0" >2</td>
+      <td id="T_f2ef8_row1_col1" class="data row1 col1" >Toyota</td>
+      <td id="T_f2ef8_row1_col2" class="data row1 col2" >Camry</td>
+      <td id="T_f2ef8_row1_col3" class="data row1 col3" >2010.000000</td>
+      <td id="T_f2ef8_row1_col4" class="data row1 col4" >None</td>
+      <td id="T_f2ef8_row1_col5" class="data row1 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_f2ef8_level0_row2" class="row_heading level0 row2" >2</th>
+      <td id="T_f2ef8_row2_col0" class="data row2 col0" >3</td>
+      <td id="T_f2ef8_row2_col1" class="data row2 col1" >Honda</td>
+      <td id="T_f2ef8_row2_col2" class="data row2 col2" >Accord</td>
+      <td id="T_f2ef8_row2_col3" class="data row2 col3" >2015.000000</td>
+      <td id="T_f2ef8_row2_col4" class="data row2 col4" >None</td>
+      <td id="T_f2ef8_row2_col5" class="data row2 col5" >1</td>
+    </tr>
+    <tr>
+      <th id="T_f2ef8_level0_row3" class="row_heading level0 row3" >3</th>
+      <td id="T_f2ef8_row3_col0" class="data row3 col0" >4</td>
+      <td id="T_f2ef8_row3_col1" class="data row3 col1" >None</td>
+      <td id="T_f2ef8_row3_col2" class="data row3 col2" >None</td>
+      <td id="T_f2ef8_row3_col3" class="data row3 col3" >nan</td>
+      <td id="T_f2ef8_row3_col4" class="data row3 col4" >Blue</td>
+      <td id="T_f2ef8_row3_col5" class="data row3 col5" >0</td>
+    </tr>
+    <tr>
+      <th id="T_f2ef8_level0_row4" class="row_heading level0 row4" >4</th>
+      <td id="T_f2ef8_row4_col0" class="data row4 col0" >5</td>
+      <td id="T_f2ef8_row4_col1" class="data row4 col1" >None</td>
+      <td id="T_f2ef8_row4_col2" class="data row4 col2" >None</td>
+      <td id="T_f2ef8_row4_col3" class="data row4 col3" >nan</td>
+      <td id="T_f2ef8_row4_col4" class="data row4 col4" >Blue</td>
+      <td id="T_f2ef8_row4_col5" class="data row4 col5" >0</td>
+    </tr>
+    <tr>
+      <th id="T_f2ef8_level0_row5" class="row_heading level0 row5" >5</th>
+      <td id="T_f2ef8_row5_col0" class="data row5 col0" >6</td>
+      <td id="T_f2ef8_row5_col1" class="data row5 col1" >Honda</td>
+      <td id="T_f2ef8_row5_col2" class="data row5 col2" >Accord</td>
+      <td id="T_f2ef8_row5_col3" class="data row5 col3" >2015.000000</td>
+      <td id="T_f2ef8_row5_col4" class="data row5 col4" >Green</td>
+      <td id="T_f2ef8_row5_col5" class="data row5 col5" >0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div>
 </div>
 </section>
 </section>
