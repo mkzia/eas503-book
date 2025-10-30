@@ -8,7 +8,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>13.14. Soccer Database &#8212; EAS503: Python for Data Scientists</title>
+    <title>13.13. Soccer Database &#8212; EAS503: Python for Data Scientists</title>
   
   
   
@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -62,7 +62,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="14. Plotting in Python" href="../14/intro.html" />
-    <link rel="prev" title="13.12. India Export Database" href="sql_10_india_export_data.html" />
+    <link rel="prev" title="13.11. India Export Database" href="sql_10_india_export_data.html" />
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
   <meta name="docsearch:language" content="en"/>
   </head>
@@ -276,12 +276,11 @@
 <li class="toctree-l2"><a class="reference internal" href="sql_5_subqueries.html">13.6. Subqueries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sql_6_conditionals.html">13.7. Conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sql_7_analytic_functions.html">13.8. Analytic Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sql_8_normalization.html">13.9. Normalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sql_8_normalization_old.html">13.10. Normalization Old</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sql_9_python.html">13.11. Python and SQLite3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sql_10_india_export_data.html">13.12. India Export Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_8_normalization.html">13.9. Database Normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_9_python.html">13.10. Python and SQLite3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sql_10_india_export_data.html">13.11. India Export Database</a></li>
 
-<li class="toctree-l2 current active"><a class="current reference internal" href="#">13.14. Soccer Database</a></li>
+<li class="toctree-l2 current active"><a class="current reference internal" href="#">13.13. Soccer Database</a></li>
 
 </ul>
 </details></li>
@@ -466,8 +465,8 @@ document.write(`
             </div>
             <nav aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">13.14. Soccer Database</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tables">13.15. Tables</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">13.13. Soccer Database</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tables">13.14. Tables</a></li>
 </ul>
 
             </nav>
@@ -481,7 +480,7 @@ document.write(`
                 <article class="bd-article">
                   
   <section class="tex2jax_ignore mathjax_ignore" id="soccer-database">
-<h1><span class="section-number">13.14. </span>Soccer Database<a class="headerlink" href="#soccer-database" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">13.13. </span>Soccer Database<a class="headerlink" href="#soccer-database" title="Link to this heading">#</a></h1>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
@@ -713,7 +712,7 @@ document.write(`
 </div>
 </section>
 <section class="tex2jax_ignore mathjax_ignore" id="tables">
-<h1><span class="section-number">13.15. </span>Tables<a class="headerlink" href="#tables" title="Link to this heading">#</a></h1>
+<h1><span class="section-number">13.14. </span>Tables<a class="headerlink" href="#tables" title="Link to this heading">#</a></h1>
 <ul class="simple">
 <li><p>Club</p></li>
 <li><p>Position</p></li>
@@ -750,7 +749,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Counter({&#39;POR&#39;: 1, &#39;PHI&#39;: 1, &#39;ORL&#39;: 1, &#39;ATL&#39;: 1, &#39;CAN&#39;: 1, &#39;MTL&#39;: 1, &#39;GHA&#39;: 1, &#39;NY&#39;: 1, &#39;HOU&#39;: 1, &#39;VAN&#39;: 1, &#39;TOR&#39;: 1, &#39;SLV&#39;: 1, &#39;USA&#39;: 1, &#39;ROC&#39;: 1, &#39;MET&#39;: 1, &#39;LFC&#39;: 1, &#39;HON&#39;: 1, &#39;MCF&#39;: 1, &#39;SKC&#39;: 1, &#39;HAI&#39;: 1, &#39;KC&#39;: 1, &#39;NE&#39;: 1, &#39;DC&#39;: 1, &#39;COL&#39;: 1, &#39;NYC&#39;: 1, &#39;RSL&#39;: 1, &#39;ECU&#39;: 1, &#39;CIV&#39;: 1, &#39;RBNY&#39;: 1, &#39;TB&#39;: 1, &#39;CHI&#39;: 1, &#39;CHV&#39;: 1, &#39;PAN&#39;: 1, &#39;MIA&#39;: 1, &#39;LAFC&#39;: 1, &#39;CIN&#39;: 1, &#39;MTQ&#39;: 1, &#39;JAM&#39;: 1, &#39;NYR&#39;: 1, &#39;DAL&#39;: 1, &#39;SJ&#39;: 1, &#39;MIN&#39;: 1, &#39;CLB&#39;: 1, &#39;SEA&#39;: 1, &#39;NSH&#39;: 1, &#39;LA&#39;: 1})
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Counter({&#39;POR&#39;: 1, &#39;CHI&#39;: 1, &#39;ATL&#39;: 1, &#39;DAL&#39;: 1, &#39;LA&#39;: 1, &#39;USA&#39;: 1, &#39;LFC&#39;: 1, &#39;TOR&#39;: 1, &#39;NY&#39;: 1, &#39;ROC&#39;: 1, &#39;SLV&#39;: 1, &#39;ECU&#39;: 1, &#39;LAFC&#39;: 1, &#39;NSH&#39;: 1, &#39;HON&#39;: 1, &#39;ORL&#39;: 1, &#39;MCF&#39;: 1, &#39;RBNY&#39;: 1, &#39;NE&#39;: 1, &#39;PAN&#39;: 1, &#39;MET&#39;: 1, &#39;NYC&#39;: 1, &#39;SKC&#39;: 1, &#39;CIN&#39;: 1, &#39;KC&#39;: 1, &#39;RSL&#39;: 1, &#39;SJ&#39;: 1, &#39;DC&#39;: 1, &#39;GHA&#39;: 1, &#39;CAN&#39;: 1, &#39;MTQ&#39;: 1, &#39;TB&#39;: 1, &#39;VAN&#39;: 1, &#39;MIA&#39;: 1, &#39;JAM&#39;: 1, &#39;PHI&#39;: 1, &#39;CHV&#39;: 1, &#39;HOU&#39;: 1, &#39;MTL&#39;: 1, &#39;HAI&#39;: 1, &#39;CIV&#39;: 1, &#39;NYR&#39;: 1, &#39;SEA&#39;: 1, &#39;CLB&#39;: 1, &#39;MIN&#39;: 1, &#39;COL&#39;: 1})
 </pre></div>
 </div>
 </div>
@@ -828,7 +827,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;POR&#39;,), (&#39;PHI&#39;,), (&#39;ORL&#39;,), (&#39;ATL&#39;,), (&#39;CAN&#39;,), (&#39;MTL&#39;,), (&#39;GHA&#39;,), (&#39;NY&#39;,), (&#39;HOU&#39;,), (&#39;VAN&#39;,), (&#39;TOR&#39;,), (&#39;SLV&#39;,), (&#39;USA&#39;,), (&#39;ROC&#39;,), (&#39;MET&#39;,), (&#39;LFC&#39;,), (&#39;HON&#39;,), (&#39;MCF&#39;,), (&#39;SKC&#39;,), (&#39;HAI&#39;,), (&#39;KC&#39;,), (&#39;NE&#39;,), (&#39;DC&#39;,), (&#39;COL&#39;,), (&#39;NYC&#39;,), (&#39;RSL&#39;,), (&#39;ECU&#39;,), (&#39;CIV&#39;,), (&#39;RBNY&#39;,), (&#39;TB&#39;,), (&#39;CHI&#39;,), (&#39;CHV&#39;,), (&#39;PAN&#39;,), (&#39;MIA&#39;,), (&#39;LAFC&#39;,), (&#39;CIN&#39;,), (&#39;MTQ&#39;,), (&#39;JAM&#39;,), (&#39;NYR&#39;,), (&#39;DAL&#39;,), (&#39;SJ&#39;,), (&#39;MIN&#39;,), (&#39;CLB&#39;,), (&#39;SEA&#39;,), (&#39;NSH&#39;,), (&#39;LA&#39;,)]
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[(&#39;POR&#39;,), (&#39;CHI&#39;,), (&#39;ATL&#39;,), (&#39;DAL&#39;,), (&#39;LA&#39;,), (&#39;USA&#39;,), (&#39;LFC&#39;,), (&#39;TOR&#39;,), (&#39;NY&#39;,), (&#39;ROC&#39;,), (&#39;SLV&#39;,), (&#39;ECU&#39;,), (&#39;LAFC&#39;,), (&#39;NSH&#39;,), (&#39;HON&#39;,), (&#39;ORL&#39;,), (&#39;MCF&#39;,), (&#39;RBNY&#39;,), (&#39;NE&#39;,), (&#39;PAN&#39;,), (&#39;MET&#39;,), (&#39;NYC&#39;,), (&#39;SKC&#39;,), (&#39;CIN&#39;,), (&#39;KC&#39;,), (&#39;RSL&#39;,), (&#39;SJ&#39;,), (&#39;DC&#39;,), (&#39;GHA&#39;,), (&#39;CAN&#39;,), (&#39;MTQ&#39;,), (&#39;TB&#39;,), (&#39;VAN&#39;,), (&#39;MIA&#39;,), (&#39;JAM&#39;,), (&#39;PHI&#39;,), (&#39;CHV&#39;,), (&#39;HOU&#39;,), (&#39;MTL&#39;,), (&#39;HAI&#39;,), (&#39;CIV&#39;,), (&#39;NYR&#39;,), (&#39;SEA&#39;,), (&#39;CLB&#39;,), (&#39;MIN&#39;,), (&#39;COL&#39;,)]
 </pre></div>
 </div>
 </div>
@@ -1151,7 +1150,7 @@ document.write(`
       <i class="fa-solid fa-angle-left"></i>
       <div class="prev-next-info">
         <p class="prev-next-subtitle">previous</p>
-        <p class="prev-next-title"><span class="section-number">13.12. </span>India Export Database</p>
+        <p class="prev-next-title"><span class="section-number">13.11. </span>India Export Database</p>
       </div>
     </a>
     <a class="right-next"
@@ -1179,8 +1178,8 @@ document.write(`
   </div>
   <nav class="bd-toc-nav page-toc">
     <ul class="visible nav section-nav flex-column">
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">13.14. Soccer Database</a></li>
-<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tables">13.15. Tables</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#">13.13. Soccer Database</a></li>
+<li class="toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="#tables">13.14. Tables</a></li>
 </ul>
 
   </nav></div>

@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -276,12 +276,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_5_subqueries.html">13.6. Subqueries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_6_conditionals.html">13.7. Conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_7_analytic_functions.html">13.8. Analytic Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization.html">13.9. Normalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization_old.html">13.10. Normalization Old</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_9_python.html">13.11. Python and SQLite3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_10_india_export_data.html">13.12. India Export Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization.html">13.9. Database Normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_9_python.html">13.10. Python and SQLite3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_10_india_export_data.html">13.11. India Export Database</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_11_soccer.html">13.14. Soccer Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_11_soccer.html">13.13. Soccer Database</a></li>
 
 </ul>
 </details></li>
@@ -1520,23 +1519,23 @@ It can be downloaded/loaded using the
   <tbody>
     <tr>
       <th>0</th>
-      <td>-107.635539</td>
+      <td>167.544806</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-407.395525</td>
+      <td>-127.050874</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>-8.155729</td>
+      <td>13.546356</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>-13.945026</td>
+      <td>-148.210532</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>112.930633</td>
+      <td>-160.240417</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1544,23 +1543,23 @@ It can be downloaded/loaded using the
     </tr>
     <tr>
       <th>95</th>
-      <td>125.999579</td>
+      <td>114.666478</td>
     </tr>
     <tr>
       <th>96</th>
-      <td>-20.612372</td>
+      <td>-58.657488</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>-161.349708</td>
+      <td>-43.641008</td>
     </tr>
     <tr>
       <th>98</th>
-      <td>-59.363668</td>
+      <td>0.016739</td>
     </tr>
     <tr>
       <th>99</th>
-      <td>143.092315</td>
+      <td>101.458432</td>
     </tr>
   </tbody>
 </table>
@@ -1593,43 +1592,43 @@ It can be downloaded/loaded using the
   <tbody>
     <tr>
       <th>0</th>
-      <td>-0.326907</td>
-      <td>1.063253</td>
-      <td>-0.592428</td>
-      <td>-0.686498</td>
-      <td>-0.916792</td>
+      <td>-0.114760</td>
+      <td>-0.122782</td>
+      <td>-0.360399</td>
+      <td>0.865737</td>
+      <td>1.942592</td>
     </tr>
     <tr>
       <th>1</th>
-      <td>-0.378790</td>
-      <td>-1.466147</td>
-      <td>-0.651409</td>
-      <td>-1.080930</td>
-      <td>-2.232137</td>
+      <td>-0.241269</td>
+      <td>0.415012</td>
+      <td>-0.536011</td>
+      <td>-1.620626</td>
+      <td>-0.344519</td>
     </tr>
     <tr>
       <th>2</th>
-      <td>0.453455</td>
-      <td>-0.405354</td>
-      <td>-1.092589</td>
-      <td>0.003834</td>
-      <td>-0.053808</td>
+      <td>1.082214</td>
+      <td>-0.230696</td>
+      <td>-0.088566</td>
+      <td>-0.816487</td>
+      <td>-0.484990</td>
     </tr>
     <tr>
       <th>3</th>
-      <td>-0.017093</td>
-      <td>-0.144404</td>
-      <td>0.124310</td>
-      <td>0.877592</td>
-      <td>-0.665950</td>
+      <td>-1.399260</td>
+      <td>-1.456782</td>
+      <td>1.028840</td>
+      <td>0.823597</td>
+      <td>-1.095805</td>
     </tr>
     <tr>
       <th>4</th>
-      <td>0.304034</td>
-      <td>-1.527572</td>
-      <td>-1.441549</td>
-      <td>-0.251716</td>
-      <td>2.155116</td>
+      <td>-0.778828</td>
+      <td>0.715328</td>
+      <td>-1.540260</td>
+      <td>-0.041895</td>
+      <td>-0.832065</td>
     </tr>
     <tr>
       <th>...</th>
@@ -1641,43 +1640,43 @@ It can be downloaded/loaded using the
     </tr>
     <tr>
       <th>95</th>
-      <td>1.154151</td>
-      <td>-0.079708</td>
-      <td>-0.219756</td>
-      <td>0.884938</td>
-      <td>-0.102271</td>
+      <td>0.692788</td>
+      <td>-0.088151</td>
+      <td>-0.693901</td>
+      <td>0.814320</td>
+      <td>0.494745</td>
     </tr>
     <tr>
       <th>96</th>
-      <td>0.671071</td>
-      <td>-0.621433</td>
-      <td>-0.083756</td>
-      <td>1.126934</td>
-      <td>-1.119649</td>
+      <td>0.564895</td>
+      <td>0.678786</td>
+      <td>1.242809</td>
+      <td>-2.194817</td>
+      <td>-0.537096</td>
     </tr>
     <tr>
       <th>97</th>
-      <td>-1.989651</td>
-      <td>-0.273564</td>
-      <td>1.937952</td>
-      <td>-1.404605</td>
-      <td>0.699979</td>
+      <td>-1.759386</td>
+      <td>-0.871281</td>
+      <td>0.891148</td>
+      <td>1.474739</td>
+      <td>0.291375</td>
     </tr>
     <tr>
       <th>98</th>
-      <td>-1.384185</td>
-      <td>-0.038519</td>
-      <td>1.382039</td>
-      <td>-0.745475</td>
-      <td>0.779066</td>
+      <td>0.620797</td>
+      <td>-0.157450</td>
+      <td>0.340723</td>
+      <td>1.320090</td>
+      <td>-1.525702</td>
     </tr>
     <tr>
       <th>99</th>
-      <td>0.497912</td>
-      <td>-1.186538</td>
-      <td>1.192874</td>
-      <td>0.330534</td>
-      <td>1.390287</td>
+      <td>2.099671</td>
+      <td>0.457133</td>
+      <td>0.435888</td>
+      <td>0.825148</td>
+      <td>-1.590219</td>
     </tr>
   </tbody>
 </table>

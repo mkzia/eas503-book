@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -276,12 +276,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_5_subqueries.html">13.6. Subqueries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_6_conditionals.html">13.7. Conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_7_analytic_functions.html">13.8. Analytic Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization.html">13.9. Normalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization_old.html">13.10. Normalization Old</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_9_python.html">13.11. Python and SQLite3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_10_india_export_data.html">13.12. India Export Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization.html">13.9. Database Normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_9_python.html">13.10. Python and SQLite3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_10_india_export_data.html">13.11. India Export Database</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_11_soccer.html">13.14. Soccer Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_11_soccer.html">13.13. Soccer Database</a></li>
 
 </ul>
 </details></li>
@@ -524,7 +523,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1]
 </pre></div>
 </div>
 </div>
@@ -588,7 +587,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 0]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1]
 </pre></div>
 </div>
 </div>
@@ -610,7 +609,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1, 0]
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[0, 1]
 </pre></div>
 </div>
 </div>
@@ -668,15 +667,15 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([262.,  65.,  67.,  80., 154.,  42., 336.,  91.,  51., 114.,  55.,
-        84., 122., 128., 280.,  31.,  64., 109., 273., 265., 118.,  60.,
-       127.,  70., 155.,  97., 174., 140., 220.,  72., 150., 107., 178.,
-       140., 162., 164., 220.,  48., 118., 144., 183.,  81., 129., 262.,
-       288., 230., 185., 257., 113.,  89.,  57., 142., 158.,  63., 225.,
-       196.,  88., 311., 147.,  64.,  84.,  90.,  50.,  72., 131., 104.,
-       275.,  91., 210.,  52., 124.,  95.,  69.,  85., 172., 292., 168.,
-       160., 202., 199., 144., 221., 102., 179.,  63.,  94.,  47., 121.,
-       103.])
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([230.,  95., 258.,  65., 281., 125., 202., 265., 182.,  47.,  87.,
+        64., 111., 141., 200., 129., 196.,  48., 109., 252., 197.,  53.,
+       127.,  97., 142., 178.,  70., 170., 114., 179.,  42., 274., 129.,
+       259., 147.,  80., 265.,  71.,  97., 310., 346.,  85.,  90., 280.,
+       220., 182.,  88., 295.,  85., 120., 129., 178., 170., 277., 109.,
+        43.,  91., 128., 177., 139., 102., 311., 102., 281., 243., 297.,
+       168., 121., 219., 245., 230.,  89., 233., 273., 132., 275., 158.,
+        89., 201., 115.,  88., 202., 252.,  95., 202., 172., 198.,  67.,
+       258.])
 </pre></div>
 </div>
 </div>
@@ -977,7 +976,7 @@ document.write(`
   warnings.warn(
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(5491.508456195069)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(6032.263307583691)
 </pre></div>
 </div>
 </div>
@@ -991,7 +990,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(25257.7748132935)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(26447.678481548566)
 </pre></div>
 </div>
 </div>
@@ -1008,7 +1007,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/8bdf8eaf8ec8fbf980fa41b0ed2b7ce55563806be0a93fcb1d8b1be5373a1c0c.png" src="../../_images/8bdf8eaf8ec8fbf980fa41b0ed2b7ce55563806be0a93fcb1d8b1be5373a1c0c.png" />
+<img alt="../../_images/44baa1870f8502557f900de9c3d800d4d926c2a53a1953992263dd198574624b.png" src="../../_images/44baa1870f8502557f900de9c3d800d4d926c2a53a1953992263dd198574624b.png" />
 </div>
 </div>
 <div class="cell docutils container">
@@ -1023,7 +1022,7 @@ document.write(`
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="../../_images/cd46d7dd53497aee2aebf76b5beba3e5d8fe015d26c042a2934ffeeb2a26abb2.png" src="../../_images/cd46d7dd53497aee2aebf76b5beba3e5d8fe015d26c042a2934ffeeb2a26abb2.png" />
+<img alt="../../_images/d27dbbcb71b8ecebfc81c60d60de6575874a75c761d5b71664e62cafd12f9e99.png" src="../../_images/d27dbbcb71b8ecebfc81c60d60de6575874a75c761d5b71664e62cafd12f9e99.png" />
 </div>
 </div>
 </section>
@@ -1054,7 +1053,7 @@ document.write(`
   warnings.warn(
 </pre></div>
 </div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(6448.29641585021)
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>np.float64(5993.430403366673)
 </pre></div>
 </div>
 </div>

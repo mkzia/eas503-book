@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="../../_static/styles/sphinx-book-theme.css?v=a3416100" />
     <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css?v=13237357" />
     <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css?v=76b2166b" />
-    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css?v=be8a1c11" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css?v=4fa983c6" />
     <link rel="stylesheet" type="text/css" href="../../_static/sphinx-design.min.css?v=95c83b7e" />
   
@@ -276,12 +276,11 @@
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_5_subqueries.html">13.6. Subqueries</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_6_conditionals.html">13.7. Conditionals</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../13/sql_7_analytic_functions.html">13.8. Analytic Functions</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization.html">13.9. Normalization</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization_old.html">13.10. Normalization Old</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_9_python.html">13.11. Python and SQLite3</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_10_india_export_data.html">13.12. India Export Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_8_normalization.html">13.9. Database Normalization</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_9_python.html">13.10. Python and SQLite3</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_10_india_export_data.html">13.11. India Export Database</a></li>
 
-<li class="toctree-l2"><a class="reference internal" href="../13/sql_11_soccer.html">13.14. Soccer Database</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../13/sql_11_soccer.html">13.13. Soccer Database</a></li>
 
 </ul>
 </details></li>
@@ -490,13 +489,13 @@ document.write(`
 <h2><span class="section-number">1.15.1. </span>Getting Started Review<a class="headerlink" href="#getting-started-review" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="vVnNKLecqGIM" data-shufflequestions="False"
+<div class="output text_html"><div id="lXtZQaRqqrNQ" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#vVnNKLecqGIM {
+#lXtZQaRqqrNQ {
    --jq-multiple-choice-bg: #345995;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -666,7 +665,7 @@ document.write(`
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsvVnNKLecqGIM=[
+</style></div><script type="application/javascript">var questionslXtZQaRqqrNQ=[
   {
     "question": "Compiled programs require the source code or compiler to run.",
     "type": "multiple_choice",
@@ -1519,8 +1518,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("vVnNKLecqGIM")) {
-            show_questions(questionsvVnNKLecqGIM,  vVnNKLecqGIM); 
+          if(document.getElementById("lXtZQaRqqrNQ")) {
+            show_questions(questionslXtZQaRqqrNQ,  lXtZQaRqqrNQ); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -1529,8 +1528,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("vVnNKLecqGIM");
-        // console.log(document.getElementById("vVnNKLecqGIM"));
+        //console.log("lXtZQaRqqrNQ");
+        // console.log(document.getElementById("lXtZQaRqqrNQ"));
 
         try_show();
         }
@@ -1541,13 +1540,13 @@ if (typeof version == 'undefined') {
 <h2><span class="section-number">1.15.2. </span>Definitions<a class="headerlink" href="#definitions" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="bpwrnGckYZJY" data-shufflequestions="False"
+<div class="output text_html"><div id="nFSqUgFASjtG" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#bpwrnGckYZJY {
+#nFSqUgFASjtG {
    --jq-multiple-choice-bg: #345995;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -1717,7 +1716,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsbpwrnGckYZJY=[
+</style></div><script type="application/javascript">var questionsnFSqUgFASjtG=[
   {
     "question": "Syntax is",
     "type": "multiple_choice",
@@ -2690,8 +2689,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("bpwrnGckYZJY")) {
-            show_questions(questionsbpwrnGckYZJY,  bpwrnGckYZJY); 
+          if(document.getElementById("nFSqUgFASjtG")) {
+            show_questions(questionsnFSqUgFASjtG,  nFSqUgFASjtG); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -2700,8 +2699,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("bpwrnGckYZJY");
-        // console.log(document.getElementById("bpwrnGckYZJY"));
+        //console.log("nFSqUgFASjtG");
+        // console.log(document.getElementById("nFSqUgFASjtG"));
 
         try_show();
         }
@@ -2712,13 +2711,13 @@ if (typeof version == 'undefined') {
 <h2><span class="section-number">1.15.3. </span>Arithmetic<a class="headerlink" href="#arithmetic" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="pLQObWHcmRPP" data-shufflequestions="False"
+<div class="output text_html"><div id="pLDnMkIfNBlZ" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#pLQObWHcmRPP {
+#pLDnMkIfNBlZ {
    --jq-multiple-choice-bg: #345995;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -2888,7 +2887,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionspLQObWHcmRPP=[
+</style></div><script type="application/javascript">var questionspLDnMkIfNBlZ=[
   {
     "question": "In Python, the '//' (floor division) operator rounds the result toward:",
     "type": "multiple_choice",
@@ -3789,8 +3788,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("pLQObWHcmRPP")) {
-            show_questions(questionspLQObWHcmRPP,  pLQObWHcmRPP); 
+          if(document.getElementById("pLDnMkIfNBlZ")) {
+            show_questions(questionspLDnMkIfNBlZ,  pLDnMkIfNBlZ); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -3799,8 +3798,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("pLQObWHcmRPP");
-        // console.log(document.getElementById("pLQObWHcmRPP"));
+        //console.log("pLDnMkIfNBlZ");
+        // console.log(document.getElementById("pLDnMkIfNBlZ"));
 
         try_show();
         }
@@ -3811,13 +3810,13 @@ if (typeof version == 'undefined') {
 <h2><span class="section-number">1.15.4. </span>Numeric Data Type<a class="headerlink" href="#numeric-data-type" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="gFkNTMkspfwr" data-shufflequestions="False"
+<div class="output text_html"><div id="MtRSJqlemhCq" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#gFkNTMkspfwr {
+#MtRSJqlemhCq {
    --jq-multiple-choice-bg: #345995;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -3987,7 +3986,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsgFkNTMkspfwr=[
+</style></div><script type="application/javascript">var questionsMtRSJqlemhCq=[
   {
     "question": "What is the purpose of the type() function?",
     "type": "multiple_choice",
@@ -5022,8 +5021,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("gFkNTMkspfwr")) {
-            show_questions(questionsgFkNTMkspfwr,  gFkNTMkspfwr); 
+          if(document.getElementById("MtRSJqlemhCq")) {
+            show_questions(questionsMtRSJqlemhCq,  MtRSJqlemhCq); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -5032,8 +5031,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("gFkNTMkspfwr");
-        // console.log(document.getElementById("gFkNTMkspfwr"));
+        //console.log("MtRSJqlemhCq");
+        // console.log(document.getElementById("MtRSJqlemhCq"));
 
         try_show();
         }
@@ -5044,13 +5043,13 @@ if (typeof version == 'undefined') {
 <h2><span class="section-number">1.15.5. </span>Operator Precedence<a class="headerlink" href="#operator-precedence" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="tStEAVohsxzY" data-shufflequestions="False"
+<div class="output text_html"><div id="VncQFWECZlla" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#tStEAVohsxzY {
+#VncQFWECZlla {
    --jq-multiple-choice-bg: #345995;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -5220,7 +5219,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionstStEAVohsxzY=[
+</style></div><script type="application/javascript">var questionsVncQFWECZlla=[
   {
     "question": "The correct order of precedence in Python is",
     "type": "multiple_choice",
@@ -6035,8 +6034,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("tStEAVohsxzY")) {
-            show_questions(questionstStEAVohsxzY,  tStEAVohsxzY); 
+          if(document.getElementById("VncQFWECZlla")) {
+            show_questions(questionsVncQFWECZlla,  VncQFWECZlla); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -6045,8 +6044,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("tStEAVohsxzY");
-        // console.log(document.getElementById("tStEAVohsxzY"));
+        //console.log("VncQFWECZlla");
+        // console.log(document.getElementById("VncQFWECZlla"));
 
         try_show();
         }
@@ -6057,13 +6056,13 @@ if (typeof version == 'undefined') {
 <h2><span class="section-number">1.15.6. </span>Variables<a class="headerlink" href="#variables" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="aGvMQrbBgKrW" data-shufflequestions="False"
+<div class="output text_html"><div id="MYJZMeraklLa" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#aGvMQrbBgKrW {
+#MYJZMeraklLa {
    --jq-multiple-choice-bg: #345995;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -6233,7 +6232,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsaGvMQrbBgKrW=[
+</style></div><script type="application/javascript">var questionsMYJZMeraklLa=[
   {
     "question": "Uppercase letters are equivalent to lowercase letters with respect to variable names.",
     "type": "multiple_choice",
@@ -7192,8 +7191,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("aGvMQrbBgKrW")) {
-            show_questions(questionsaGvMQrbBgKrW,  aGvMQrbBgKrW); 
+          if(document.getElementById("MYJZMeraklLa")) {
+            show_questions(questionsMYJZMeraklLa,  MYJZMeraklLa); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -7202,8 +7201,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("aGvMQrbBgKrW");
-        // console.log(document.getElementById("aGvMQrbBgKrW"));
+        //console.log("MYJZMeraklLa");
+        // console.log(document.getElementById("MYJZMeraklLa"));
 
         try_show();
         }
@@ -7214,13 +7213,13 @@ if (typeof version == 'undefined') {
 <h2><span class="section-number">1.15.7. </span>Miscellaneous<a class="headerlink" href="#miscellaneous" title="Link to this heading">#</a></h2>
 <div class="cell tag_remove-input docutils container">
 <div class="cell_output docutils container">
-<div class="output text_html"><div id="nzWSxpaZhorQ" data-shufflequestions="False"
+<div class="output text_html"><div id="HcTvgZauMkam" data-shufflequestions="False"
                data-shuffleanswers="True"
                data-preserveresponses="false"
                data-numquestions="1000000"
                data-maxwidth="600"
                style="border-radius: 10px; text-align: left"> <style>
-#nzWSxpaZhorQ {
+#HcTvgZauMkam {
    --jq-multiple-choice-bg: #345995;
    --jq-mc-button-bg: #fafafa;
    --jq-mc-button-border: #e0e0e0e0;
@@ -7390,7 +7389,7 @@ if (typeof version == 'undefined') {
         background-color: var(--jq-correct-color);
     }
 }
-</style></div><script type="application/javascript">var questionsnzWSxpaZhorQ=[
+</style></div><script type="application/javascript">var questionsHcTvgZauMkam=[
   {
     "question": "Assuming x has been set to 2, what is the value of x after x += 4?",
     "type": "multiple_choice",
@@ -8273,8 +8272,8 @@ if (typeof version == 'undefined') {
            Someone more knowledgeable could make this better ;-) */
 
         function try_show() {
-          if(document.getElementById("nzWSxpaZhorQ")) {
-            show_questions(questionsnzWSxpaZhorQ,  nzWSxpaZhorQ); 
+          if(document.getElementById("HcTvgZauMkam")) {
+            show_questions(questionsHcTvgZauMkam,  HcTvgZauMkam); 
           } else {
              setTimeout(try_show, 200);
           }
@@ -8283,8 +8282,8 @@ if (typeof version == 'undefined') {
         {
         // console.log(element);
 
-        //console.log("nzWSxpaZhorQ");
-        // console.log(document.getElementById("nzWSxpaZhorQ"));
+        //console.log("HcTvgZauMkam");
+        // console.log(document.getElementById("HcTvgZauMkam"));
 
         try_show();
         }
