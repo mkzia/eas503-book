@@ -178,17 +178,20 @@ SELECT
         WHEN strftime('%m', sale_date) = '11' THEN 'November'
         WHEN strftime('%m', sale_date) = '12' THEN 'December'
     END Month, 
-	Total
+	sum(Total) MonthlySales
 FROM
     bakery_sales
+GROUP BY Month
 )
 SELECT 
 	Quarter,
 	Month, 
-	Sum(Total) MonthlySales,
-	Max(sum(total)) over() max_overall_sales,
-	Max(sum(total)) over(partition by quarter) max_quarter_sales
+	MonthlySales,
+	Max(MonthlySales) over() max_overall_sales,
+	Max(MonthlySales) over(partition by quarter) max_quarter_sales
 FROM SalesTable
+
+
 GROUP BY Quarter, Month
 """
 df = pd.read_sql_query(sql_statement, conn)
@@ -226,17 +229,18 @@ SELECT
         WHEN strftime('%m', sale_date) = '11' THEN 'November'
         WHEN strftime('%m', sale_date) = '12' THEN 'December'
     END Month, 
-	Total
+	sum(Total) MonthlySales
 FROM
     bakery_sales
+GROUP BY Month
 )
 SELECT 
 	Quarter,
 	Month, 
-	Sum(Total) MonthlySales,
-	rank() OVER (ORDER BY -sum(total)) SalesRank
+	MonthlySales,
+	Max(MonthlySales) over() max_overall_sales,
+	Max(MonthlySales) over(partition by quarter) max_quarter_sales
 FROM SalesTable
-GROUP BY Quarter, Month
 ```
 
 ```{code-cell} ipython3

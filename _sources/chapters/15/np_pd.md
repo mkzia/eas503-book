@@ -453,219 +453,239 @@ df.loc['student1']
 df.iloc[0] ## remember that column names do not count as rows
 ```
 
-# Three Methods for Selecting Data
 
-## Method 1 -- Square brackets
+## Three Methods for Selecting Data in Pandas
 
-## Method 1.1 -- index/text -- #column wise
+This guide demonstrates three primary methods for selecting data from pandas DataFrames: square brackets `[]`, `.iloc`, and `.loc`.
+
+### Setup: Loading the Data
 
 ```{code-cell} ipython3
 import pandas as pd
+
+# Load data once for reuse
 columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
+df = pd.read_csv("testdata_1.txt", header=None)
+df.columns = columns
+display(df)
+```
+
+---
+
+### Method 1: Square Brackets `[]`
+
+Square brackets provide basic indexing with **limited functionality**. They work differently depending on the input type.
+
+:::{note}
+
+- **Single column name** or **list of columns** → selects columns
+- **Slice** → selects rows
+- **Cannot combine** row and column selection (will raise an error)
+:::
+
+#### 1.1 Single Column Selection (returns Series)
+
+```{code-cell} ipython3
+# Select one column by name
 display(df['StudentName'])
 ```
 
-## Method 1.2 -- list, NOT TUPLE # column wise
+#### 1.2 Multiple Column Selection (returns DataFrame)
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
+# Select multiple columns using a list (NOT a tuple)
 display(df[['StudentName', 'E1']])
 ```
 
-## Method 1.3 -- a slice # row wise
+#### 1.3 Row Selection with Slice
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
+# Select rows 1 through 4 (excludes row 5)
 display(df[1:5])
 ```
 
-## Method 1.4?? -- slice and list?
+#### ❌ 1.4 Invalid: Slice and List (Will Fail)
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-display(df[1:5, ['E1', 'E2']])
+# This will raise a TypeError
+# display(df[1:5, ['E1', 'E2']])  # NOT SUPPORTED
 ```
 
-## Method 1.5?? -- slice and slice?
+#### ❌ 1.5 Invalid: Two Slices (Will Fail)
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-display(df[1:5, 1:5])
+# This will raise a TypeError
+# display(df[1:5, 1:5])  # NOT SUPPORTED
 ```
 
-## Method 2 -- .iloc
+:::{warning}
+Square brackets **cannot** select rows and columns simultaneously. Use `.iloc` or `.loc` instead.
+:::
 
-- It uses square braces [] and not ()
-- It uses numerical index
+---
 
-### Method 2.1 -- index only!!! Cannot index by location index with a non-integer key
+### Method 2: Position-Based Indexing with `.iloc`
+
+`.iloc` uses **integer positions** (0-based indexing) to select data.
+
+:::{note}
+**Key Features:**
+
+- Uses square brackets `[]`, not parentheses
+- Accepts integers, lists of integers, and slices
+- Syntax: `df.iloc[rows, columns]`
+- Slices **exclude** the end point (like Python lists)
+:::
+
+#### 2.1 Single Row Selection (returns Series)
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
+# Select first row (index 0)
 display(df.iloc[0])
 ```
 
-### Method 2.2 -- list
+#### 2.2 Multiple Rows with List
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
+# Select rows at positions 0, 1, 2
 display(df.iloc[[0, 1, 2]])
 ```
 
-### Method 2.3 -- list and slice
+#### 2.3 Row Slice
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-display(df.iloc[[0, 1, 2], :])
-```
-
-### Method 2.4 -- list and list
-
-```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-display(df.iloc[[0, 1, 2], [0, 1]])
-```
-
-### Method 2.5 -- slice
-
-```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
+# Select rows 0 through 2 (excludes row 3)
 display(df.iloc[0:3])
 ```
 
-### Method 2.6 -- slice and list
+#### 2.4 Rows and All Columns
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
+# Select specific rows, all columns
+display(df.iloc[[0, 1, 2], :])
+```
+
+#### 2.5 Rows and Specific Columns (List)
+
+```{code-cell} ipython3
+# Select specific rows and columns by position
+display(df.iloc[[0, 1, 2], [0, 1]])
+```
+
+#### 2.6 All Rows and Specific Columns
+
+```{code-cell} ipython3
+# Select all rows, columns at positions 1 and 2
 display(df.iloc[:, [1, 2]])
 ```
 
-## Method 2.7 -- sliceS
+#### 2.7 Row and Column Slices
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
+# Select rows 0-2 and columns 1-2 (excludes endpoints)
 display(df.iloc[0:3, 1:3])
 ```
 
-## Method 3 -- .loc
+---
 
-- If you did not specify the index, then numbers are used!
+### Method 3: Label-Based Indexing with `.loc`
+
+`.loc` uses **labels/names** to select data (can also use integer labels if they exist).
 
 :::{warning}
-When you use `.loc` for indexing, it includes the end point. This is unlike `.iloc`, which does not include the end point.
+**Critical Difference:** `.loc` slices **include** the end point, unlike `.iloc` and Python slices.
 :::
 
-## Method 3.1 -- index # row-wise
+:::{note}
+**Key Features:**
+
+- Uses row and column labels (names)
+- If no custom index is set, uses default integer labels (0, 1, 2, ...)
+- Syntax: `df.loc[rows, columns]`
+- Slices **include** both start and end points
+:::
+
+#### 3.1 Single Row by Integer Label
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
+# Select row with label 3 (default integer index)
 display(df.loc[3])
 ```
 
-## Method 3.2 -- txt # row-wise
+#### 3.2 Single Row by Custom Index
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-df.set_index(df['StudentName'], inplace=True)
-display(df.loc['student4'])
+# Set StudentName as index
+df_indexed = df.set_index('StudentName')
+display(df_indexed.loc['student4'])
 ```
 
-## Method 3.3 -- list
+#### 3.3 Multiple Rows with List
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-df.set_index(df['StudentName'], inplace=True)
-display(df.loc[['student4', 'student1']])
+df_indexed = df.set_index('StudentName')
+# Select specific rows by label
+display(df_indexed.loc[['student4', 'student1']])
 ```
 
-## Method 3.4 -- listS
+#### 3.4 Rows and Columns with Lists
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-df.set_index(df['StudentName'], inplace=True)
-display(df.loc[['student4', 'student1'], ['E1', 'E2']])
+df_indexed = df.set_index('StudentName')
+# Select specific rows and columns
+display(df_indexed.loc[['student4', 'student1'], ['E1', 'E2']])
 ```
 
-## Method 3.5 -- slice and list
+#### 3.5 All Rows and Specific Columns
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-df.set_index(df['StudentName'], inplace=True)
-display(df.loc[:, ['E1', 'E2']])
+df_indexed = df.set_index('StudentName')
+# Select all rows, specific columns
+display(df_indexed.loc[:, ['E1', 'E2']])
 ```
 
-## Method 3.6 -- list and Slice
+#### 3.6 Specific Rows and All Columns
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-df.set_index(df['StudentName'], inplace=True)
-display(df.loc[['student1', 'student2'], :])
+df_indexed = df.set_index('StudentName')
+# Select specific rows, all columns
+display(df_indexed.loc[['student1', 'student2'], :])
 ```
 
-## Method 3.7 -- slice and Slice
+#### 3.7 Row Slice (Inclusive)
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-df.set_index(df['StudentName'], inplace=True)
-display(df.loc['student1':'student5', :])
+df_indexed = df.set_index('StudentName')
+# Select from student1 to student5 (INCLUDES student5)
+display(df_indexed.loc['student1':'student5'])
 ```
 
-## Method 3.8 -- slice
+#### 3.8 Row and Column Slices
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-df.set_index(df['StudentName'], inplace=True)
-display(df.loc['student1':'student5'])
+df_indexed = df.set_index('StudentName')
+# Both slices are inclusive
+display(df_indexed.loc['student1':'student5', :])
 ```
 
-## Method 3.9 -- slice and slice
+#### 3.9 Column Slice Only
 
 ```{code-cell} ipython3
-import pandas as pd
-columns = ('StudentName', 'E1', 'E2', 'E3', 'E4','E5')
-df = pd.DataFrame(data=[ele.strip().split(',') for ele in open('testdata_1.txt')], columns=columns)
-df.set_index(df['StudentName'], inplace=True)
-display(df.loc[:, 'E1':'E4'])
+df_indexed = df.set_index('StudentName')
+# Select columns E1 through E4 (INCLUDES E4)
+display(df_indexed.loc[:, 'E1':'E4'])
 ```
+
+---
+
+### Quick Reference Summary
+
+| Method  | Indexing Type                 | Slice Behavior   | Row & Column Selection |
+|---------|-------------------------------|------------------|------------------------|
+| `[]`    | Column names or row positions | Excludes end     | ❌ Limited              |
+| `.iloc` | Integer positions (0-based)   | Excludes end     | ✅ Yes                  |
+| `.loc`  | Labels/names                  | **Includes end** | ✅ Yes                  |
+
 
 ## iterrows -- iterate over rows
 
