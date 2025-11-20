@@ -110,19 +110,19 @@ np.linspace(0, 10, 5)
 np.linspace(1900, 2000, 11)
 ```
 
-## Create an identify matrix
+### Create an identify matrix
 
 ```Python
 np.eye(3)
 ```
 
-## Creating an empty array
+### Creating an empty array
 
 ```python
 np.empty((2,3))
 ```
 
-## Creating Random Numbers
+### Creating Random Numbers
 
 - Ref: <https://docs.scipy.org/doc/numpy-1.14.0/reference/routines.random.html>
 
@@ -139,7 +139,7 @@ np.random.randint(1,101)
 np.random.randint(1,101,5)
 ```
 
-## Reshaping arrays
+### Reshaping arrays
 
 ```python
 
@@ -150,7 +150,7 @@ vector = np.arange(1,13)
 print(vector.reshape(3,4))
 ```
 
-## Basic array operations
+### Basic array operations
 
 ```python
 vector = np.random.randint(1,50,25)
@@ -169,7 +169,7 @@ my_matrix = vector.reshape(5, 5)
 my_matrix.shape
 ```
 
-## Indexing a 1-D array -- vector
+### Indexing a 1-D array -- vector
 
 ```python
 vector = np.array(range(10))
@@ -187,7 +187,7 @@ vector[3:9:2]
 vector[-1]
 ```
 
-## Setting multiple values at once -- Broadcasting
+### Setting multiple values at once -- Broadcasting
 
 - There are two main features of NumPy arrays
   - Broadcasting -- set multiple values at once
@@ -197,7 +197,7 @@ vector[-1]
 vector[3:6] = 12
 ```
 
-## BE CAREFUL
+### BE CAREFUL
 
 - If you store a slice of an array in a new variable, changes in the new variable will be reflected in the original array.
 
@@ -216,7 +216,7 @@ my_slice_copy = vector[3:7].copy()
 print(vector)
 ```
 
-## Indexing a 2-D array -- Matrix
+### Indexing a 2-D array -- Matrix
 
 - Remember -- Python is zero-indexed
 
@@ -235,7 +235,7 @@ matrix[:2,:] # grab the first two rows, all columns
 matrix[:,1:] # grab all the rows, but columns starting from 1
 ```
 
-## Conditional selection
+### Conditional selection
 
 ```python
 vector = np.arange(10)
@@ -255,7 +255,7 @@ cond = (vector>=2) & (vector<=7)
 vector[cond]
 ```
 
-## Array operations -- Basic
+### Array operations -- Basic
 
 ```python
 vector = np.arange(10)
@@ -270,7 +270,7 @@ vector * 10
 vector / 10
 ```
 
-## Array operations -- Advanced
+### Array operations -- Advanced
 
 - Ref: <https://docs.scipy.org/doc/numpy/reference/ufuncs.html#math-operations>
 - <https://stackoverflow.com/questions/25773245/ambiguity-in-pandas-dataframe-numpy-array-axis-definition/43413031>
@@ -398,7 +398,7 @@ s1 = pd.Series(data1)
 s2 = pd.Series(data2)
 ```
 
-## Dataframes --
+### Dataframes --
 
 - Dataframe is composed of series
 - Ref: <https://pandas.pydata.org/docs/reference/api/pandas.io.formats.style.Styler.html#pandas.io.formats.style.Styler>
@@ -441,7 +441,7 @@ df.drop('student3', inplace=True)
 ## (R,C) == (axis=0, axis=1) df.shape
 ```
 
-## Select Dataframe rows
+### Select Dataframe rows
 
 ```python
 header = ['exam1', 'exam2', 'exam3']
@@ -452,7 +452,6 @@ df = pd.DataFrame(data=data, index=students, columns=header)
 df.loc['student1']
 df.iloc[0] ## remember that column names do not count as rows
 ```
-
 
 ## Three Methods for Selecting Data in Pandas
 
@@ -681,13 +680,13 @@ display(df_indexed.loc[:, 'E1':'E4'])
 ### Quick Reference Summary
 
 | Method  | Indexing Type                 | Slice Behavior   | Row & Column Selection |
-|---------|-------------------------------|------------------|------------------------|
+| ------- | ----------------------------- | ---------------- | ---------------------- |
 | `[]`    | Column names or row positions | Excludes end     | ❌ Limited              |
 | `.iloc` | Integer positions (0-based)   | Excludes end     | ✅ Yes                  |
 | `.loc`  | Labels/names                  | **Includes end** | ✅ Yes                  |
 
 
-## iterrows -- iterate over rows
+### iterrows -- iterate over rows
 
 - iterate over the data row-wise. The first element is the index and second element is the row values
 
@@ -699,7 +698,7 @@ for idx, row in df.iterrows():
     print(idx, row)
 ```
 
-## items -- iterate over columns
+### items -- iterate over columns
 
 ```{code-cell} ipython3
 import pandas as pd
